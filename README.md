@@ -5,6 +5,8 @@ Ova skripta nastala je 2023. godine kao popratni materijal za održavanje demons
 studijima _Matematika_ i _Fizika_ na Fakultetu za matematiku Sveučilišta u Rijeci, a od tada se njezin opseg proširio i sada služi kao pomoćna
 literatura za savladavanje vježbi iz _Matematičke analize 1_, ali i kao izvor mnogih naprednijih tema i zadataka za one koji žele znati više.
 
+Treba naglasiti da za sada skripta **nije gotova**. Za sada nedostaju sadržaji o limesu i derivaciji funkcije, koji će stići kasnije.
+
 # Link za skriptu u PDF formatu?
 Skripta u PDF formatu nalazi se na sljedećem linku: [Zadatci_iz_MA1__v2025_2026_-3.pdf](https://github.com/user-attachments/files/22007746/Zadatci_iz_MA1__v2025_2026_-3.pdf).
 
