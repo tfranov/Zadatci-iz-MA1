@@ -1,9 +1,7 @@
 <img width="2346" height="416" alt="Screenshot from 2025-08-27 15-39-21" src="https://github.com/user-attachments/assets/2cac10e2-1f9b-442c-968d-67866781289d" />
 
 # O čemu se radi?
-Ova skripta nastala je 2023. godine kao popratni materijal za održavanje demonstratura iz _Matematičke analize 1_, kolegija prvog semestra na
-studijima _Matematika_ i _Fizika_ na Fakultetu za matematiku Sveučilišta u Rijeci, a od tada se njezin opseg proširio i sada služi kao pomoćna
-literatura za savladavanje vježbi iz _Matematičke analize 1_, ali i kao izvor mnogih naprednijih tema i zadataka za one koji žele znati više.
+Ova skripta je u svojoj početnoj formi nastala 2023. godine kao popratni materijal za održavanje demonstratura iz _Matematičke analize 1_, kolegija prvog semestra na studijima _Matematika_ i _Fizika_ na Fakultetu za matematiku Sveučilišta u Rijeci, a od tada se njezin opseg proširio i sada služi kao pomoćna literatura za savladavanje vježbi iz _Matematičke analize 1_, ali i kao izvor mnogih naprednijih tema i zadataka za one koji žele znati više.
 
 Treba naglasiti da za sada skripta **nije gotova**. Za sada nedostaju sadržaji o limesu i derivaciji funkcije, koji će stići kasnije.
 
