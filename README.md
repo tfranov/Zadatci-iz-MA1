@@ -9,4 +9,4 @@ literatura za savladavanje vježbi iz _Matematičke analize 1_, ali i kao izvor 
 Skripta u PDF formatu nalazi se na sljedećem linku: [Zadatci_iz_MA1__v2025_2026_-3.pdf](https://github.com/user-attachments/files/22007746/Zadatci_iz_MA1__v2025_2026_-3.pdf).
 
 # Pronašao/la sam grešku u skripti.
-Bio bih Vam zahvalan da mi se javite
+Bio bih Vam zahvalan da mi se javite na mail (tomislav.franov@uniri.hr) ili da otvorite "Issue" ovdje na GitHub-u.
