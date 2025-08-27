@@ -1,0 +1,105 @@
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian, croatian]{babel}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{commath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{makeidx}
+\usepackage{etoolbox,refcount}
+\usepackage{xparse}
+\usetikzlibrary{calc}
+\usepackage{parskip}
+\usepackage{xintexpr}
+
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+\NewDocumentCommand{\dsum}{%
+    e{^_}
+}{%
+  {% 
+    \displaystyle\sum
+    \IfValueT{#1}{^{#1}}
+    \IfValueT{#2}{_{#2}}
+  }
+}%
+
+\usepackage{setspace}
+\usepackage{theoremref}
+
+\DeclareMathOperator{\st}{st}
+\DeclareMathOperator{\nzd}{nzd}
+\DeclareMathOperator{\nzv}{nzv}
+\DeclareMathOperator{\img}{Im}
+
+\DeclareMathOperator{\artanh}{arth}
+\DeclareMathOperator{\arcosh}{arch}
+\DeclareMathOperator{\tnh}{th}
+
+\usepackage{multicol}
+
+\newcounter{countitems}
+\newcounter{nextitemizecount}
+\newcommand{\setupcountitems}{%
+  \stepcounter{nextitemizecount}%
+  \setcounter{countitems}{0}%
+  \preto\item{\stepcounter{countitems}}%
+}
+\makeatletter
+\newcommand{\computecountitems}{%
+  \edef\@currentlabel{\number\c@countitems}%
+  \label{countitems@\number\numexpr\value{nextitemizecount}-1\relax}%
+}
+\newcommand{\nextitemizecount}{%
+  \getrefnumber{countitems@\number\c@nextitemizecount}%
+}
+\newcommand{\previtemizecount}{%
+  \getrefnumber{countitems@\number\numexpr\value{nextitemizecount}-1\relax}%
+}
+\makeatother    
+\newenvironment{AutoMultiColItemize}{%
+\ifnumcomp{\nextitemizecount}{>}{3}{\vspace{-\parskip}\begin{multicols}{2}}{}%
+\setupcountitems\begin{itemize}}%
+{\end{itemize}%
+\unskip\computecountitems\ifnumcomp{\previtemizecount}{>}{3}{\end{multicols}}{}\vspace{-\parskip}}
+
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{verbatim}
+\setstretch{1.2}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[left=2.5cm,right=2.5cm,top=3.4cm,bottom=3.4cm]{geometry}
+\setlength{\headheight}{14pt}
+
+\let\oldproof\proof
+\let\endoldproof\endproof
+\renewenvironment{proof}{%
+    \vspace{-\parskip}\begin{oldproof}%
+    }{%
+    \end{oldproof}%
+}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\theoremstyle{definition}
+\newtheorem{theorem}{Teorem}
+\newtheorem*{theorem*}{Teorem}
+\newtheorem{corollary}{Korolar}
+\newtheorem{lemma}{Lema}
+\theoremstyle{definition}
+\newtheorem{definition}{Definicija}
+\newtheorem{exmp}{Primjer}
+\newtheorem{notation}{Notacija}
+\newtheorem{exercise}{Zadatak}
+\theoremstyle{remark}
+\newtheorem*{proof*}{Rješenje}
+\newtheorem{remark}{Napomena}
+\usetikzlibrary{arrows.meta}
+\usepackage{ragged2e}
+\usepackage{systeme, mathtools}

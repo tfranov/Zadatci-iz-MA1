@@ -1,0 +1,873 @@
+\section{Pojam niza. Limes niza}
+\begin{definition} \textbf{}
+\begin{itemize}
+\item Funkcija $a : \mathbb{N}\to S$ zove se \textbf{niz} na $S$. Specijalno, ako je $S=\mathbb{R}$, radi se o nizu realnih brojeva, ako je $S=\mathbb{C}$ radi se o nizu kompleksnih brojeva, a ako je $S$ skup svih funkcija definiranih na nekom skupu, kažemo da imamo niz funkcija.
+
+\item Kažemo da je $a(n)$ $n$-ti član niza, u oznaci $a_n$. Općenito, alternativna oznaka za niz $a$ koju ćemo često koristiti je $(a_n)$. 
+
+\item Na nekim mjestima, ako je jasno kako se niz nastavlja, možemo niz zadati "nizanjem" njegovih prvih nekoliko elemenata:
+$$a_1,\; a_2,\; a_3,\;\dots, a_n,\; \dots $$
+\end{itemize}
+\end{definition}
+U daljnjem tekstu, ako nije navedeno drukčije, smatrat ćemo da se radi o nizu realnih brojeva.
+\begin{definition}
+\textbf{Aritmetički niz} s prvim članom $a_1$ i razlikom $d$ je niz $(a_n)$ zadan općim članom
+$$a_n=a_1+(n-1)d, \; n\in \mathbb{N}.$$
+\end{definition}
+
+\noindent Iz definicije aritmetičkog niza slijedi:
+\begin{itemize}
+\item $a_{n+1}-a_n=d$,
+\item $\dfrac{a_{n-1}+a_{n+1}}{2}=a_n, \; n\geq 2,$
+\item Neka je $S_n=a_1+a_2+\dots+a_n$. Vrijedi
+\begin{gather}
+\label{arsum}
+S_n=\dfrac{n}{2}\left(a_1+a_n\right), \; S_n=\dfrac{n}{2}\left(2a_1+(n-1)d\right)
+\end{gather}
+\end{itemize}
+\begin{definition}
+\label{17}
+\textbf{Geometrijski niz} s prvim članom $a_1$ i kvocijentom $q\neq 0$ je niz $(a_n)$ zadan općim članom
+$$a_n=a_1\cdot q^{n-1}, \; n\in \mathbb{N}.$$
+\end{definition}
+
+\noindent Iz definicije geometrijskog niza slijedi:
+\begin{itemize}
+\item $\dfrac{a_{n+1}}{a_n}=q$,
+\item $\sqrt{a_{n-1}\cdot a_{n+1}}=a_n, \; n\geq 2,$
+\item Neka je $S_n=a_1+a_2+\dots+a_n$. Vrijedi
+\begin{gather}
+\label{geosum}
+S_n=\begin{cases}
+na_1, & q=1, \\
+a_1\dfrac{1-q^n}{1-q}, & q\neq 1.
+   \end{cases}
+\end{gather}
+\end{itemize}
+\begin{exercise}\textbf{}
+\begin{itemize}
+\item[a)] Neka je $(a_n)$ geometrijski niz, $a_1=64$ i $a_7=15625$. Odredite $a_3$.
+\item[b)] Niz $(a_n)$ zadan je općim članom $a_n=-3+\dfrac{1}{4}(n-1)$. Ako je zbroj prvih $m$ članova niza $\dfrac{21}{2}$, koliko je $m$?
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Po definiciji, za niz $(a_n)$ vrijedi $a_n=64\cdot q^n$. Nadalje, dobivamo jednadžbu
+$$a_7=64\cdot q^6=15625,\text{ čije je rješenje } q=\dfrac{5}{2}.$$
+Odavde direktno slijedi $a_3=64\cdot \left(\dfrac{5}{2}\right)^2=400.$
+
+b) Uočimo da je niz $(a_n)$ aritmetički, pa vrijedi (\ref{arsum}). Imamo
+$$\dfrac{m}{2}\left(-6+\dfrac{1}{4}(m-1)\right)=\dfrac{21}{2}.$$
+Rješavanjem kvadratne jednadžbe dobivamo $m_1=28$ i $m_2=-3$. Kako je $(a_n)$ definiran samo za $n\in \mathbb{N}$, slijedi da je jedino moguće rješenje $m=28$.
+\end{proof}
+\begin{definition}
+Niz $(a_n)$ u $\mathbb{R}$ je \textbf{rastući} ako za sve $n\in \mathbb{N}$ vrijedi $a_n\geq a_{n+1}$, \textbf{strogo rastući} ako za sve $n\in \mathbb{N}$ vrijedi $a_n<a_{n+1}$, \textbf{padajući} ako za sve $n\in \mathbb{N}$ vrijedi $a_n\geq a_{n+1}$, te \textbf{strogo padajući} ako za sve $n\in \mathbb{N}$ vrijedi $a_n>a_{n+1}$.
+\end{definition}
+
+\begin{exercise}\textbf{}
+\begin{itemize}
+\item[a)] Dokažite da je niz $(a_n)$ zadan formulom $a_n=2^n+n$ strogo rastući.
+\item[b)] Dokažite da je niz $(a_n)$ zadan formulom $a_n=\sqrt{n+1}-\sqrt{n}$ strogo rastući.
+\item[c)] Dokažite da je niz $(a_n)$ zadan formulom $a_n=\dfrac{n^2+1}{n^2-1}$ strogo padajući.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Treba dokazati da za sve $n\in \mathbb{N}$ vrijedi $2^{n+1}+n+1>2^n+n$. Očito vrijedi $$2^{n+1}+n+1>2^{n+1}+n>2^n+n, \;\;\forall n\in \mathbb{N},$$
+pa je tvrdnja dokazana.
+
+b) Treba dokazati da za sve $n\in \mathbb{N}$ vrijedi $\sqrt{n+2}-\sqrt{n+1}>\sqrt{n+1}-\sqrt{n}$. Znamo da je $$-\sqrt{n}>-\sqrt{n+1}\;\text{ i }\;\sqrt{n+2}>\sqrt{n+1}\;\;\forall n\in \mathbb{N}.$$ Zbrajanjem tih dvaju jednakosti dobivamo tvrdnju.
+
+c) Neka je $n\in \mathbb{N}$ proizvoljan. Vrijedi $\dfrac{n^2+1}{n^2-1}=1+\dfrac{2}{n^2-1}$. Sada treba pokazati da za sve $n\in \mathbb{N}$ vrijedi 
+$$1+\dfrac{2}{n^2-1}>1+\dfrac{2}{(n+1)^2-1}.$$
+No to je ekvivalentno s tvrdnjom $(n+1)^2>n^2$, što je očigledno istinito za sve $n\in \mathbb{N}$.
+\end{proof}
+
+\begin{definition}
+Niz $(a_n)$ je \textbf{odozgo ograničen} ako postoji $M\in \mathbb{R}$ takav da za sve $n\in \mathbb{N}$ vrijedi $a_n\leq M$, \textbf{odozdo ograničen} ako postoji $m\in \mathbb{R}$ takav da za sve $n\in \mathbb{N}$ vrijedi $a_n\geq m$, a \textbf{ograničen} ako je ograničen odozgo i odozdo.
+\end{definition}
+
+\begin{exercise}
+Dokažite da je niz $(a_n)$ zadan formulom $a_n=\dfrac{1}{\left(n-\dfrac{3}{2}\right)^2}$ ograničen.
+\end{exercise}
+\begin{proof}[Rješenje]
+Uočimo da za sve $n\in \mathbb{N}$ vrijedi $\dfrac{1}{\left(n-\dfrac{3}{2}\right)^2}\geq 0$. Nadalje, tvrdimo da za sve $n\in \mathbb{N}$ vrijedi $\left(n-\dfrac{3}{2}\right)^2\geq \dfrac{1}{4}$. Zaista, to je ekvivalentno tvrdnji 
+\begin{gather}
+\label{ineq}
+(n-1)(n-2)\geq 0.
+\end{gather}
+Ako je $n=1, 2$, onda je $(n-1)(n-2)=0$, a za $n>2$ je $(n-1)(n-2)>0$, pa (\ref{ineq}) vrijedi za sve $n\in \mathbb{N}$. Sada je očito $\dfrac{1}{\left(n-\dfrac{3}{2}\right)^2}\leq 4$, za sve $n\in \mathbb{N}$.
+\end{proof}
+\begin{exercise}
+Dokažite da je niz $(a_n)$ ograničen ako i samo ako za sve $n\in \mathbb{N}$ postoji $M\geq 0$ takav da je $|a_n|\leq M$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Prvi smjer očito vrijedi, jer je $M$ gornja međa i $-M$ donja međa. 
+
+Dokažimo drugi smjer. Po definiciji postoje $m\in \mathbb{R}$ i $M\in \mathbb{R}$ takvi da je $$m\leq |a_n|\leq M.$$ Neka je $M_1$ veći od brojeva $|m|$ i $|M|$, tj. $M_1=\max\{|m|, |M|\}$. Tada vrijedi $$a_n\leq M\leq |M|\leq M_1,$$
+dakle $a_n\leq M_1$. S druge strane, vrijedi $$a_n\geq -m\geq -|m|\geq -M_1,$$ 
+tj. $a_n\geq -M_1$. Odavde slijedi $|a_n|<M_1$, što smo i tvrdili.
+\end{proof}
+
+\begin{definition}
+Neka je $(a_n)$ niz realnih brojeva. Kažemo da je $L$ \textbf{limes} niza $(a_n)$ ako
+\begin{gather*}
+(\forall \epsilon>0)\,(\exists n_0\in \mathbb{N})\, (\forall n\in \mathbb{N})\;\;\; n\geq n_0\Rightarrow |a_n-L|<\epsilon.
+\end{gather*}
+\end{definition}
+
+Može se pokazati da limes niza, ukoliko postoji, je jedinstven. Nadalje, ako niz ima limes kažemo da je \textbf{konvergentan}, a ako ga nema kažemo da je \textbf{divergentan}. Ako je $(a_n)$ konvergentan s limesom $L$ pišemo $\lim\limits_{n\to \infty}{a_n}=L$.
+
+\begin{definition}
+Neka je $(a_n)$ niz realnih brojeva. Kažemo da je $(a_n)$ divergentan
+\begin{itemize}
+\item u $\mathbb{\infty}$ ako $(\forall M>0)\,(\exists n_0\in \mathbb{N})\,(\forall n\in \mathbb{N})\;\;\; n\geq n_0\Rightarrow a_n>M,$
+
+\item u $-\mathbb{\infty}$ ako $(\forall M>0)\,(\exists n_0\in \mathbb{N})\,(\forall n\in \mathbb{N})\;\;\; n\geq n_0\Rightarrow a_n<-M.$
+\end{itemize}
+\end{definition}
+
+Ako je niz divergentan u $\mathbb{\infty}$, odnosno $-\mathbb{\infty}$, pišemo $\lim\limits_{n\to \infty}{a_n}=\infty$, odnosno $\lim\limits_{n\to \infty}{a_n}=-\infty$.
+\begin{remark}
+Konvergentan niz ima samo jedan limes.
+\end{remark}
+
+Intuitivno, limes niza predstavlja kojem broju vrijednosti niza "teže" kako je $n$ sve veći.
+
+\begin{exercise}
+Koristeći definiciju limesa niza, odredite
+\begin{itemize}
+\item[a)] $\lim\limits_{n\to \infty}{\dfrac{n}{n+1}}$,
+\item[b)] $\lim\limits_{n\to \infty}{\dfrac{n}{n^2+1}}$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka je $(a_n)$ niz zadan općim članom $a_n=\dfrac{n}{n+1}$. Za velike $n$ vidimo da ovaj niz teži ka $1$. 
+
+Zaista, dokažimo da je $\lim\limits_{n\to \infty}{\dfrac{n}{n+1}}=1$. Treba pokazati da za svaki $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve prirodne $n\geq n_0$ vrijedi
+$$\abs{\dfrac{n}{n+1}-1}=\dfrac{1}{n+1}<\epsilon.$$ Prema Arhimedovu aksiomu znamo da postoji $n_0\in \mathbb{N}$ takav da je $n_0\epsilon>1$. Dokažimo da tvrdnja vrijedi i za sve $n\geq n_0$. Zaista, ako je $n\geq n_0$, onda vrijedi i $n+1\geq n_0+1$, odnosno $$(n+1)\epsilon\geq(n_0+1)\epsilon>n_0\epsilon>1.$$ 
+Odavde imamo $\dfrac{1}{n+1}<\epsilon$ za sve $n\geq n_0$, što smo i tvrdili.
+
+b) Tvrdimo da je $\lim\limits_{n\to \infty}{\dfrac{n}{n^2+1}}=0$, tj. da za svaki $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve prirodne $n\geq n_0$ vrijedi
+$$\abs{\dfrac{n}{n^2+1}-0}=\dfrac{n}{n^2+1}<\epsilon.$$
+Prema Arhimedovu aksiomu postoji $n_0\in \mathbb{N}$ takav da je $n_0\epsilon>1$. Odavde za sve prirodne $n\geq n_0$ imamo
+$$1<n_0\epsilon\leq n\epsilon<\left(n+\dfrac{1}{n}\right)\epsilon=\dfrac{n^2+1}{n}\epsilon,$$
+odnosno $\dfrac{n}{n^2+1}<\epsilon$ za sve $n\geq n_0$, pa je tvrdnja dokazana.
+\end{proof}
+\begin{exercise}
+\label{41}
+Neka je $(a_n)$ niz takav da je $(b_n)$, $b_n=a_{n+1}$ konvergentan. Dokažite da je tada i $(a_n)$ konvergentan i ima isti limes kao i $(b_n)$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Po definiciji, za sve $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve prirodne $n\geq n_0$ vrijedi $$|a_{n+1}-a|<\epsilon.$$ Specijalno, za sve $n\in \mathbb{N}$ takve da je $n-1\geq n_0$ vrijedi 
+\begin{gather}
+\label{40}
+|a_{(n-1)+1}-a|=|a_n-a|<\epsilon.
+\end{gather}
+Očito (\ref{40}) onda vrijedi i za sve $n\geq n_0$, što smo i tvrdili.
+\end{proof}
+\begin{exercise}
+Odredite $\lim\limits_{n\to \infty} \left(n^2+1\right)$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Vidimo da za velike $n$ niz $(a_n)$ zadan formulom $a_n=n^2+1$ teži ka $\infty$. Dokažimo to. 
+
+Treba dokazati da za svaki $M>0$ postoji $n_0\in \mathbb{N}$ takav da za sve $n\geq n_0$ vrijedi $n^2+1>M$. 
+
+Prema Arhimedovu aksiomu postoji $n_0\in \mathbb{N}$ takav da je $n_0>M$, te očito vrijedi i $n>M$. Ako dokažemo da vrijedi $n^2+1>n$ za sve $n\in \mathbb{N}$, tvrdnja će biti dokazana. 
+
+Tvrdnju možemo dokazati indukcijom -- za $n=1$ tvrdnja vrijedi, a pretpostavimo li da tvrdnja vrijedi za neki $n$, trebamo dokazati $(n+1)^2+1=n^2+2n+2>n+1$, odnosno prema pretpostavci indukcije $3n+1>n+1$, što očito vrijedi za sve $n\in \mathbb{N}$.
+\end{proof}
+\begin{exercise}
+\label{6}
+Neka je $(a_n)$ niz takav da je $a_n\neq 0$ i $\lim\limits_{n\to \infty}{a_n}=\infty$. Dokažite da je tada $\left(\dfrac{1}{a_n}\right)$ konvergentan i vrijedi $\lim\limits_{n\to \infty}\left(\dfrac{1}{a_n}\right)=0$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Znamo da za sve $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve $n\geq n_0$ vrijedi $a_n>\dfrac{1}{\epsilon}$, odakle slijedi $\dfrac{1}{a_n}<\epsilon$, jer je $a_n>0$. No ujedno vrijedi i $\abs{\dfrac{1}{a_n}}<\epsilon$, ponovno zbog $a_n>0$.
+\end{proof}
+\begin{exercise}
+\label{liminftylemma}
+Neka su $(a_n)$ i $(b_n)$ nizovi takvi da je $a_n\geq b_n$ za sve $n\in \mathbb{N}$. Dokažite: Ako je $\lim\limits_{n\to \infty}{b_n}=\infty$, onda je i $\lim\limits_{n\to \infty}{a_n}=\infty$.
+\end{exercise}
+\begin{proof}
+Po definiciji, za svaki $M>0$ postoji $n_0\in \mathbb{N}$ takav da za sve $n\geq n_0$ vrijedi $b_n\geq M$. Kako je $a_m\geq b_m$ za sve $m\in \mathbb{N}$, vrijedi i $a_n\geq M$, što smo i tvrdili.
+\end{proof}
+Tvrdnja iz zadatka \ref{liminftylemma} nam može pomoći u dokazivanju divergencije niza u $\infty$. Pokažimo to.
+\begin{exercise}
+Dokažite da je $\lim\limits_{n\to \infty}\left(\sin{n}+\dfrac{n}{2}\right)=\infty$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Promotrimo niz $(a_n)$, $a_n=-1+\dfrac{n}{2}$. Kako je $-1+\dfrac{n}{2}\leq \sin{n}+\dfrac{n}{2}$, dovoljno je pokazati da je $\lim\limits_{n\to \infty}{a_n}=\infty$. Neka je $M>0$ proizvoljan. Prema Arhimedovu aksiomu postoji $n_0\in \mathbb{N}$ takav da je $n_0>2M+2$, odnosno $\dfrac{n_0}{2}-1>M$. Tada za sve $n\geq n_0$ vrijedi 
+$$\dfrac{n}{2}-1\geq \dfrac{n_0}{2}-1>M,$$
+što smo i htjeli dokazati.
+\end{proof}
+\begin{remark}[Binomni teorem]
+Za sve $a, b\in \mathbb{R}$ i $n\in \mathbb{N}$ vrijedi
+$$(a+b)^n=\dsum_{k=0}^n{\binom{n}{k}a^kb^{n-k}}.$$
+\end{remark}
+Binomni teorem nam je često koristan u dokazivanju tvrdnji o konvergenciji nizova. Pokažimo to kroz sljedeće zadatke.
+\begin{exercise}
+\label{liman}
+Dokažite da za sve $a>1$ vrijedi $\lim\limits_{n\to \infty}{a^n}=\infty$.
+\end{exercise}
+\begin{proof}
+Iskoristit ćemo binomni teorem da dođemo do niza $(b_n)$ takvog da je $a^n\geq b_n$ takvog da je $\lim\limits_{n\to \infty}{b_n}=\infty$. Uočimo da je
+$$a^n=(1+(a-1))^n=1+n(a-1)+\dfrac{n(n-1)}{2}(a-1)^2+\dots+(a-1)^n\geq 1+n(a-1),$$
+što vrijedi jer su $\dbinom{n}{k}$ prirodni brojevi za $k=1,\dots, n$ i jer je $a>1$. Preostaje dokazati da je $\lim\limits_{n\to \infty}\left(1+n\left(a-1\right)\right)=\infty$. Neka je $M>0$ proizvoljan. Uzmimo $n_0\in \mathbb{N}$ takav da je $n_0>\dfrac{M-1}{a-1}$.\footnote{Vrijedi i sljedeća općenitija verzija Arhimedova aksioma: Neka je $a>0$ i $b\in \mathbb{R}$. Tada postoji $n\in \mathbb{N}$ takav da je $na>b$. Njome se koristimo na ovom mjestu.} Tada je za sve prirodne $n\geq n_0$
+$$1+n(a-1)\geq 1+n_0(a-1)>M,$$
+što smo i htjeli dokazati.
+\end{proof}
+\begin{exercise}
+Dokažite da za sve $a>1$ vrijedi $\lim\limits_{n\to \infty}{\sqrt[n]{a}}=1$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Treba dokazati da za sve $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve prirodne $n\geq n_0$ vrijedi
+$$|\sqrt[n]{a}-1|=\sqrt[n]{a}-1<\epsilon.$$
+Ideja će biti primijeniti binomni teorem tako da dobijemo izraz veći od $\sqrt[n]{a}-1$, ali i dalje takav da možemo naći $n_0$ takav da je za sve $n\geq n_0$ manji od $\epsilon$.
+
+Uzmimo $n_0\in \mathbb{N}$ takav da je $n\epsilon>a$. Ako je $a>1$, onda je i $\sqrt[n]{a}>1$. Sada slično kao u rješenju zadatka \ref{liman} imamo da za sve prirodne $n\geq n_0$ vrijedi
+$$a=\left(1+(\sqrt[n]{a}-1)\right)^n\geq 1+n(\sqrt[n]{a}-1)>n(\sqrt[n]{a}-1).$$
+Dijeljenjem s $n$ dobivamo da vrijedi $\sqrt[n]{a}-1<\dfrac{a}{n}<\epsilon$, što smo i tvrdili.
+\end{proof}
+
+Ispitivanje konvergencije niza koristeći definiciju limesa niza ima nekoliko mana -- kako bi uopće mogli dokazati da niz konvergira, trebamo biti bar u stanju naslutiti koji je njegov limes, što nije uvijek jednostavno. Nadalje, čak i ako znamo što bi limes trebao biti, dokazati da je to zaista limes nije uvijek jednostavno. Radi toga ćemo u nastavku pokazati nekoliko rezultata koji nam olakšavaju traženje limesa i ispitivanje konvergencije niza.
+
+\section{Osnovne operacije s konvergentnim nizovima. Kriteriji konvergencije niza}
+\begin{remark}[Osnovne operacije s konvergentnim nizovima]
+\label{fundamentalop}
+Neka su $(a_n)$ i $(b_n)$ konvergentni nizovi realnih brojeva. Vrijedi sljedeće:
+\begin{itemize}
+\item Niz $(a_n\pm b_n)$ je konvergentan i vrijedi $\lim\limits_{n\to \infty}(a_n\pm b_n)=\lim\limits_{n\to \infty}{a_n}\pm \lim\limits_{n\to \infty}{b_n}$,
+
+\item Niz $(a_n\cdot b_n)$ je konvergentan i vrijedi $\lim\limits_{n\to \infty}(a_n\cdot b_n)=\lim\limits_{n\to \infty}{a_n}\cdot \lim\limits_{n\to \infty}{b_n}$,
+
+\item Ako za sve $n\in \mathbb{N}$ vrijedi $b_n\neq 0$ i $\lim\limits_{n\to \infty}{b_n}\neq 0$, onda je niz $\left(\dfrac{a_n}{b_n}\right)$ konvergentan i vrijedi $\lim\limits_{n\to \infty}\left(\dfrac{a_n}{b_n}\right)=\dfrac{\lim\limits_{n\to \infty}{a_n}}{\lim\limits_{n\to \infty}{b_n}}$,
+
+\item Niz $\left(|a_n|\right)$ je konvergentan i vrijedi $\lim\limits_{n\to \infty}{|a_n|}=\abs{\lim\limits_{n\to \infty}{a_n}}$.
+\end{itemize}
+\end{remark}
+Napomena \ref{fundamentalop} nam znatno olakšava traženje limesa. Pokažimo to kroz nekoliko zadataka.
+\begin{exercise}
+Odredite $\lim\limits_{n\to \infty}{\dfrac{1+\dfrac{1}{n}}{n+\dfrac{2}{n}}}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Kako su $n\mapsto 1$ i $n\mapsto \dfrac{1}{n}$ konvergentni nizovi i vrijedi $\lim\limits_{n\to \infty}{1}=1$, $\lim\limits_{n\to \infty}{\dfrac{1}{n}}=0$ slijedi da je $n\mapsto 1+\dfrac{1}{n}$ konvergentan i $$\lim\limits_{n\to \infty}\left(1+\dfrac{1}{n}\right)=1.$$ Nadalje, vrijedi $\lim\limits_{n\to \infty}\left(n+\dfrac{2}{n}\right)=\infty$, jer je $n+\dfrac{2}{n}>n$, te $\lim\limits_{n\to \infty}{n}=\infty$. Sada iz zadatka \ref{6} (ali i iz napomene \ref{fundamentalop}) slijedi da je $$\lim\limits_{n\to \infty}{n\mapsto \dfrac{1}{n+\dfrac{2}{n}}}=0,$$ pa je limes početnog niza jednak $0$.
+\end{proof}
+\begin{exercise}
+Odredite $\lim\limits_{n\to \infty}{\dfrac{n^2+3n+4}{n^2+3}}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Vrijedi
+$$\dfrac{n^2+3n+4}{n^2+3}=\dfrac{n^2+3n+4}{n^2+3}\cdot \dfrac{\dfrac{1}{n^2}}{\dfrac{1}{n^2}}=\dfrac{1+\dfrac{3}{n}+\dfrac{4}{n^2}}{1+\dfrac{3}{n^2}},$$
+te kako su $n\mapsto 1+\dfrac{3}{n^2}$ i $n\mapsto 1+\dfrac{3}{n}+\dfrac{4}{n^2}$ konvergentni nizovi čiji je limes $1$, slijedi da je limes početnog niza također $1$.
+\end{proof}
+\begin{remark} \textbf{}
+\label{importantlimits}
+\begin{itemize}
+\item Neka je $q\in \mathbb{R}$. Vrijedi
+$$\lim\limits_{n\to \infty}{q^n}=\begin{cases}
+0, & |q|<1,\\
+1, & q=1,\\
+\infty, & q>1,\\
+\text{ne postoji}, & q\leq -1.
+\end{cases}$$
+\item Neka je $a>0$. Vrijedi
+$$\lim\limits_{n\to \infty}{\sqrt[n]{n}}=1,\;\lim\limits_{n\to \infty}{\sqrt[n]{a}}=1.$$
+\item Neka je $a>1$ i $m>0$. Vrijedi
+$$\lim\limits_{n\to \infty}{\dfrac{a^n}{n!}}=0,\;\; \lim\limits_{n\to \infty}{\dfrac{n^m}{a^n}}=0.$$
+\end{itemize}
+\end{remark}
+\begin{exercise} Odredite sljedeće limese.
+\begin{itemize}
+\item[a)] $\lim\limits_{n\to \infty}{\dfrac{2^n+n}{5^n+1}}$,
+\item[b)] $\lim\limits_{n\to \infty}{\dfrac{2^n(2n^3+1)+3^n(n^3+n)}{3^n(2n^3+1)}}$,
+\item[c)] $\lim\limits_{n\to \infty}{\dfrac{n^m}{n!}}\;\text{ (gdje je } m>0\text{)}$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Koristeći napomenu \ref{importantlimits}, imamo
+$$\lim\limits_{n\to \infty}{\dfrac{2^n+n}{5^n+1}}=\lim\limits_{n\to \infty}{\dfrac{\left(\dfrac{2}{5}\right)^n+\dfrac{n}{5^n}}{1+\dfrac{1}{5^n}}}=\dfrac{\lim\limits_{n\to \infty}{\left(\dfrac{2}{5}\right)^n}+\lim\limits_{n\to \infty}{\dfrac{n}{5^n}}}{\lim\limits_{n\to \infty}{1}+\lim\limits_{n\to \infty}{\dfrac{1}{5^n}}}=\dfrac{0+0}{1}=0.$$
+
+b) Dijeljenjem s $3^n\cdot n^3$ dobivamo
+$$\lim\limits_{n\to \infty}{\dfrac{2^n(2n^3+1)+3^n(n^3+n)}{3^n(2n^3+1)}}=\lim\limits_{n\to \infty}{\dfrac{\left(\dfrac{2}{3}\right)^n\left(2 + \dfrac{1}{n^{3}}\right)+1 + \dfrac{1}{n^{2}}}{2 + \dfrac{1}{n^{3}}}}=\dfrac{1}{2}.$$
+
+c) Vrijedi
+$$\lim\limits_{n\to \infty}{\dfrac{n^m}{n!}}=\lim\limits_{n\to \infty}{\dfrac{n^m}{a^n}\cdot \dfrac{a^n}{n!}}=0.$$
+\end{proof}
+\begin{exercise}
+Odredite $\lim\limits_{n\to \infty}\left(\dfrac{1}{2}+\dfrac{3}{2^2}+\dfrac{5}{2^3}+\dots+\dfrac{2n-1}{2^n}\right)$.
+\end{exercise}
+\begin{proof}
+Neka je
+$$S_n:=\dfrac{1}{2}+\dfrac{3}{2^2}+\dfrac{5}{2^3}+\dots+\dfrac{2n-1}{2^n}.$$
+Vrijedi
+$$\dfrac{1}{2}S_n=\dfrac{1}{2^2}+\dfrac{3}{2^3}+\dfrac{5}{2^4}+\dots+\dfrac{2n-3}{2^{n}}+\dfrac{2n-1}{2^{n+1}},$$
+pa imamo
+\begin{align*}
+S_n-\dfrac{1}{2}S_n=\dfrac{1}{2}S_n&=\dfrac{1}{2}+\dfrac{2}{2^2}+\dfrac{2}{2^3}+\dots+\dfrac{2}{2^n}-\dfrac{2n-1}{2^{n+1}}\\
+&=\dfrac{1}{2}+\left(\dfrac{1}{2}+\dfrac{1}{2^2}+\dots+\dfrac{1}{2^{n-1}}\right)-\dfrac{2n-1}{2^{n+1}}.
+\end{align*}
+Korištenjem (\ref{geosum}), imamo
+$$\dfrac{1}{2}+\dfrac{1}{2}\cdot\dfrac{1-\dfrac{1}{2^{n-1}}}{1-\dfrac{1}{2}}-\dfrac{2n-1}{2^{n+1}}=\dfrac{3}{2}-\dfrac{1}{2^{n-1}}-\dfrac{2n}{2^{n+1}}+\dfrac{1}{2^{n+1}}.$$
+Odavde direktno slijedi $\lim\limits_{n\to \infty}{\dfrac{1}{2}S_n}=\dfrac{3}{2}$. Kako je niz $n\mapsto 2$ konvergentan s limesom u $2$, vrijedi
+$$\lim\limits_{n\to \infty}{S_n}=\lim\limits_{n\to \infty}{2\cdot \dfrac{1}{2}S_n}=\lim\limits_{n\to \infty}{2}\cdot \lim\limits_{n\to \infty}{\dfrac{1}{2}S_n}=2\cdot \dfrac{3}{2}=3.$$
+\end{proof}
+\begin{remark}[Limes čuva uređaj]
+\label{limitpreservesordering}
+Neka su $(a_n)$ i $(b_n)$ konvergentni nizovi realnih brojeva, te $n_0\in \mathbb{N}$. Ako je $a_n\leq b_n$ za sve prirodne $n\geq n_0$, onda je $\lim\limits_{n\to \infty}{a_n}\leq \lim\limits_{n\to \infty}{b_n}$.
+\end{remark}
+\begin{remark}[Kriterij sendviča] 
+Neka su $(a_n)$ i $(b_n)$ konvergentni nizovi realnih brojeva, te $n_0\in \mathbb{N}$. Neka je $(c_n)$ niz realnih brojeva takav da vrijedi $a_n\leq c_n\leq b_n$ za sve prirodne $n\geq n_0$ i $\lim\limits_{n\to \infty}{a_n}=\lim\limits_{n\to \infty}{c_n}=c$. Tada je $(c_n)$ konvergentan niz i vrijedi $\lim\limits_{n\to \infty}{c_n}=b$.
+\end{remark}
+\begin{exercise} Odredite sljedeće limese, ako postoje.
+\begin{itemize}
+\item[a)] $\lim\limits_{n\to \infty}{\dfrac{1}{n2^n}}$,
+\item[b)] $\lim\limits_{n\to \infty}{\dfrac{\sin{n}}{n}}$,
+\item[c)] $\lim\limits_{n\to \infty}{\sqrt[n]{4^n+5^n+6^n}}$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Uočimo da za sve $n\in \mathbb{N}$ vrijedi
+$$0\leq \dfrac{1}{n2^n}\leq \dfrac{1}{2^n},$$
+te kako je $\lim\limits_{n\to \infty}{0}=0$, te $\lim\limits_{n\to \infty}{\dfrac{1}{2^n}}=0$, iz kriterija sendviča imamo $\lim\limits_{n\to \infty}{\dfrac{1}{n2^n}}=0$.
+
+b) Za sve $n\in \mathbb{N}$ vrijedi
+$$-\dfrac{1}{n}\leq \dfrac{\sin{n}}{n}\leq \dfrac{1}{n},$$
+te vrijedi $\lim\limits_{n\to \infty}{\dfrac{1}{n}}=0$ i $\lim\limits_{n\to \infty}{-\dfrac{1}{n}}=0$, pa iz kriterija sendviča dobivamo $\lim\limits_{n\to \infty}{\dfrac{\sin{n}}{n}}=1$.
+
+c) Vrijedi $$\sqrt[n]{4^n+5^n+6^n}\leq \sqrt[n]{3\cdot 6^n}=6\cdot \sqrt[n]{3}$$ i vrijedi $$\lim\limits_{n\to \infty}{6\cdot \sqrt[n]{3}}=\lim\limits_{n\to \infty}{6}\cdot \lim\limits_{n\to \infty}{\sqrt[n]{3}}=6.$$ S druge strane, imamo $$\sqrt[n]{4^n+5^n+6^n}\geq \sqrt[n]{6^n}=6,$$ 
+te očito vrijedi $\lim\limits_{n\to \infty}{6}=6$. Sada iz kriterija sendviča slijedi da je $$\lim\limits_{n\to \infty}{\sqrt[n]{4^n+5^n+6^n}}=0.$$
+\end{proof}
+\begin{exercise}
+\label{7}
+Dokažite da je $\lim\limits_{n\to \infty}{\dfrac{n}{2^n}}=0$.
+\end{exercise}
+\begin{proof}[Rješenje] Tvrdnju ćemo dokazati na dva načina.
+
+\textit{Prvi način.} Prema binomnom teoremu vrijedi
+$$0<\dfrac{n}{2^n}=\dfrac{n}{(1+1)^n}=\dfrac{n}{1+n+\dfrac{n(n-1)}{2}+\dots+1}<\dfrac{n}{\dfrac{n(n-1)}{2}}=\dfrac{2}{n-1},$$
+pa iz kriterija sendviča dobivamo $\lim\limits_{n\to \infty}{\dfrac{n}{2^n}}=0$, što smo i tvrdili.
+
+\textit{Drugi način.} Neka je $\epsilon>0$. Prema Arhimedovu aksiomu postoji $l\in \mathbb{N}$ takav da je $l\epsilon>1$. Neka je $n_0=\max\{l, 5\}$. Vrijedi
+$$n_0\epsilon\geq l\epsilon>1,$$
+dakle $n_0\epsilon>1$. No i za sve $m\in \mathbb{N}$, $m>5$ vrijedi $m<\dfrac{2^m}{m},$ što se lako pokazuje indukcijom. Stoga za sve prirodne $n\geq n_0$ vrijedi $\dfrac{2^{n}}{n}\epsilon>1$, odakle imamo $$\dfrac{n}{2^n}=\abs{\dfrac{n}{2^n}}<\epsilon,$$
+što smo i htjeli pokazati.
+\end{proof}
+\begin{remark} \textbf{}
+\label{suffcond}
+\begin{itemize}
+\item Ako je niz $(a_n)$ rastući i ograničen odozgo, on je konvergentan i vrijedi $$\lim\limits_{n\to\infty}{a_n}=\sup{\left\{a_n : n\in \mathbb{N}\right\}},$$
+\item Ako je niz $(a_n)$ padajući i ograničen odozdo, on je konvergentan i vrijedi $$\lim\limits_{n\to\infty}{a_n}=\inf{\left\{a_n : n\in \mathbb{N}\right\}}.$$
+\end{itemize}
+\end{remark}
+\begin{exercise}
+Dokažite da je niz $(a_n)$, $a_n=\dfrac{1}{\sh{n}}$ konvergentan.
+\end{exercise}
+\begin{proof}[Rješenje]
+Uočimo da za sve $n\in \mathbb{N}$ vrijedi $a_n\geq 0$. Uočimo da je niz $(b_n)$, $b_n=\sh{n}$ strogo rastuća funkcija. Zaista, funkcije $$f_1, f_2, f_3 : \mathbb{N}\to \mathbb{R},\;\;f_1(n)=\dfrac{n}{2},\;\;f_2(n)=n-\dfrac{1}{n},\;\;f_3(n)=e^n$$ su sve strogo rastuće i niz $(b_n)$ je jednak $f_3\circ f_2\circ f_1$, dakle kao kompozicija strogo rastućih funkcija je i sam strogo rastuća funkcija. Odavde slijedi da za sve $n, m\in \mathbb{N}$ vrijedi da $n<m$ povlači $b_n<b_m$, pa specijalno vrijedi $b_n<b_{n+1}$ za sve $n\in \mathbb{N}$, što smo i tvrdili.
+
+Nadalje, tvrdimo da je niz $(a_n)$ strogo padajući. Zaista, za sve $n\in \mathbb{N}$ vrijedi $\sh(n+1)>\sh{n}$, odakle dobivamo $\dfrac{1}{\sh{n}}>\dfrac{1}{\sh(n+1)}$, što smo i tvrdili.
+\end{proof}
+\begin{exercise}
+\label{8}
+Dokažite da je niz $(a_n)$, $a_n=\dfrac{1}{n^2-6n+10}$ konvergentan.
+\end{exercise}
+\begin{proof}[Rješenje]
+Vrijedi
+$$\dfrac{1}{n^2-6n+10}=\dfrac{1}{(n-3)^2+1}>0.$$ Nadalje, nije teško dokazati da $n\mapsto (n-3)^2+1$ pada za $n\leq 3$, te raste za $n\geq 3$. Slijedi da $n\mapsto \dfrac{1}{(n-3)^2+1}$ raste za $n\leq 3$ i pada za $n\geq 3$. 
+
+Budući da ste na predavanju (v. \cite{3}) pokazali da ako nizu promijenimo prvih $k$ članova, da to ne utječe na njegov limes, to možemo napraviti i ovdje i to tako da dobijemo monoton niz s istim limesom kao i početan niz. Uzmimo npr. niz $(a_n)$ zadan na sljedeći način: 
+$$a_n=\begin{cases}
+8, & n=1,\\
+6, & n=2,\\
+\dfrac{1}{(n-3)^2+1}, & n\geq 3.
+\end{cases}$$ 
+Niz $(a_n)$ će ograničen odozdo s $0$ i padajući, pa je stoga konvergentan, što povlači i da je početan niz konvergentan.
+\end{proof}
+\begin{remark}
+\label{generalizedsandwichtheorem}
+Iz zadatka \ref{8} daje se naslutiti sljedeće: Ako za niz $(a_n)$ postoje $M\in \mathbb{R}$ i $n_0\in \mathbb{N}$ takvi da za sve prirodne $n\geq n_0$ vrijedi $a_n\leq M$ i $a_{n}\leq a_{n+1}$, onda je on konvergentan. Analogno, ako postoje $m\in \mathbb{R}$ i $n_1\in \mathbb{N}$ takvi da za sve prirodne $n\geq n_1$ vrijedi $a_n\geq m$ i $a_{n}\geq a_{n+1}$. Ovo nije teško i dokazati.
+\end{remark}
+\begin{exercise}
+Neka je $A=\left\{\dfrac{1}{\sqrt{n+3}+n} : n\in \mathbb{N}\right\}$. Odredite $\inf{A}$ i $\sup{A}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Definiramo niz $(a_n)$, $a_n=\dfrac{1}{\sqrt{n+3}+n}$. Očito je $a_n\geq 0$ za sve $n\in \mathbb{N}$. Uočimo sada da je za sve $n\in \mathbb{N}$
+$$\dfrac{1}{\sqrt{n+3}+n}\geq \dfrac{1}{\sqrt{n+4}+n+1},$$
+pa je $(a_n)$ strogo padajući. Nadalje,
+$$\lim\limits_{n\to \infty}{\dfrac{1}{\sqrt{n+3}+n}}=\dfrac{\dfrac{1}{n}}{\sqrt{\dfrac{1}{n}+\dfrac{3}{n^2}}+1}=0,$$
+pa iz napomene \ref{suffcond} slijedi $\inf{A}=0$. Konačno, za sve $n\in \mathbb{N}$ vrijedi
+$$\dfrac{1}{\sqrt{n+3}+n}\leq \dfrac{1}{\sqrt{1+3}+1}=\dfrac{1}{3},$$
+pa je $\sup{A}=\max{A}=\dfrac{1}{3}$.
+\end{proof}
+
+\section{Podniz. Nizovi zadani rekurzivno}
+\begin{definition}
+Za niz $b : \mathbb{N}\to S$ kažemo da je \textbf{podniz} niza $a :\mathbb{N}\to S$ ako postoji strogo rastući niz prirodnih brojeva $p : \mathbb{N}\to \mathbb{N}$ takav da je $b=a\circ p$. Za podniz $(b_n)$ niza $(a_n)$ pišemo $b_n=b(n)=a\left(p(n)\right)=a_{p_n}$, pa podniz označavamo i sa $(a_{p_n})$.
+\end{definition}
+\begin{remark}
+\label{onsubsequences}
+Neka je $(a_n)$ konvergentan niz realnih brojeva i $(a_{p_n})$ neki njegov podniz. Tada je $(a_{p_n})$ konvergentan i ima isti limes kao i $(a_n)$.
+\end{remark}
+\begin{exercise}
+Ispitajte je li niz $(a_n)$, $a_n=(-1)^n+\dfrac{1}{n}$ konvergentan, te ako je, odredite mu limes.
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdimo da je $(a_n)$ divergentan. Zaista, pretpostavimo da je on konvergentan. Promotrimo podnizove $(a_{2n})$ i $(a_{2n-1})$. Vrijedi
+$$a_{2n}=1+\dfrac{1}{2n},\;\;
+a_{2n-1}=-1+\dfrac{1}{2n-1}.$$
+Odavde slijedi $\lim\limits_{n\to \infty}{a_{2n}}=1$ i $\lim\limits_{n\to \infty}{a_{2n-1}}=-1$, kontradikcija s činjenicom da je $\lim\limits_{n\to \infty}{a_{2n-1}}=\lim\limits_{n\to \infty}{a_{2n}}=\lim\limits_{n\to \infty}{a_{n}}$.
+\end{proof}
+\begin{exercise}
+Neka je $(a_n)$ konvergentan niz takav da je $a_n\neq 0$ za sve $n\in \mathbb{N}$. Konvergira li općenito niz $\left(\dfrac{a_{n+1}}{a_n}\right)$? Za one $(a_n)$ za koje konvergira, što sve može biti limes tog niza?
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $\lim\limits_{n\to \infty}{a_n}\neq 0$. Kako je $(a_{n+1})$ podniz od $(a_n)$, vrijedi $\lim\limits_{n\to \infty}{a_{n+1}}=\lim\limits_{n\to \infty}{a_{n}}$, pa je
+\begin{gather}
+\label{34}
+\lim\limits_{n\to \infty}{\dfrac{a_{n+1}}{a_n}}=\dfrac{a}{a}=1.
+\end{gather}
+Općenito, tvrdimo da $\left(\dfrac{a_{n+1}}{a_n}\right)$ ne mora konvergirati. Zaista, uzmimo $a_n=\dfrac{\dfrac{1}{2}+(-1)^n}{n}$. Tada je
+$$\dfrac{a_{n+1}}{a_n}=\dfrac{\dfrac{\dfrac{1}{2}+(-1)^{n+1}}{n+1}}{\dfrac{\dfrac{1}{2}+(-1)^n}{n}}=\dfrac{\left(2\left(-1\right)^{n+1}+1\right)n}{\left(n+1\right)\left(2\left(-1\right)^n+1\right)}$$
+Definiramo niz $(b_n)$, $b_n=\dfrac{a_{n+1}}{a_n}$. Vidimo da je $$\lim\limits_{n\to \infty}{b_{2n}}=\lim\limits_{n\to \infty}{-\dfrac{2}{3}\cdot \dfrac{n}{n+1}}=-\dfrac{2}{3}\cdot \lim\limits_{n\to \infty}{\dfrac{1}{1+\dfrac{1}{n}}}=-\dfrac{2}{3}$$
+i slično dobivamo $\lim\limits_{n\to \infty}{b_{2n+1}}=-3$. Dakle, pokazali smo da za niz $(a_n)$, $\lim\limits_{n\to \infty}{\dfrac{a_{n+1}}{a_n}}$ ne postoji.
+
+Pretpostavimo sada da $\left(\dfrac{a_{n+1}}{a_n}\right)$ konvergira ili divergira u $\infty$ ili $-\infty$. Neka je $S\subseteq \mathbb{R}\cup \{-\infty, \infty\}$ skup svih mogućih limesa niza $\left(\dfrac{a_{n+1}}{a_n}\right)$. Tvrdimo da je $S=[-1, 1]$. 
+
+Dokažimo da je $[-1, 1]\subseteq S$. Uzmimo zato da je $\lim\limits_{n\to \infty}{a_n}\neq 0$. Lako se provjeri sljedeće:
+\begin{itemize}
+\item $\lim\limits_{n\to \infty}{\dfrac{a_{n+1}}{a_n}}=q$ za $a_n=q^n$, gdje je $q\in \langle -1, 1\rangle\setminus\{0\}$,
+\item $\lim\limits_{n\to \infty}{\dfrac{a_{n+1}}{a_n}}=-1$ za $a_n=(-1)^n\dfrac{1}{n}$,
+\item $\lim\limits_{n\to \infty}{\dfrac{a_{n+1}}{a_n}}=0$ za $a_n=\dfrac{1}{n!}$.
+\end{itemize}
+
+Pretpostavimo sada da je $S\notin [-1, 1]$. Tada postoji  $a\in S$ takav da je $$a\in \langle 1, \infty\rangle\cup \langle -\infty, -1\rangle\cup \{-\infty, \infty\}\;\;\text{ i }\;\;\lim\limits_{n\to \infty}{\dfrac{a_{n+1}}{a_n}}=a.$$ Tvrdimo:
+\begin{itemize}
+\item[a)] Vrijedi $\lim\limits_{n\to \infty}{a_n}=0$.
+\item[b)] Postoji $n_0\in \mathbb{N}$ takav da za sve prirodne $n>m\geq n_0$ vrijedi $|a_{n}|>|a_m|$.
+\end{itemize}
+a) je očigledno -- pretpostavimo li da je $\lim\limits_{n\to \infty}{a_n}\neq 0$, onda je zbog (\ref{34}) $a=1$, što je kontradikcija s pretpostavkom.
+ 
+Dokažimo b). Ako je npr. $a\in \langle 1, \infty\rangle$, onda postoji $m_0\in \mathbb{N}$ takav da za sve prirodne $m\geq m_0$ vrijedi $$\abs{\dfrac{a_{m+1}}{a_m}-a}<\dfrac{a-1}{2},$$
+odakle specijalno imamo
+$$\dfrac{a_{m+1}}{a_m}-a>-\dfrac{a-1}{2},\;\text{ odnosno }\; \dfrac{a_{m+1}}{a_m}>1.$$
+Kako je $\dfrac{a_{m+1}}{a_m}=\abs{\dfrac{a_{m+1}}{a_m}}$, slijedi $|a_{m+1}|>|a_m|$ za sve $m\geq m_0$. Odavde lako slijedi da je $|a_{n}|>|a_m|$ za sve $n>m\geq n_0$. Tvrdnja se analogno pokazuje za $a\in \langle -\infty, -1\rangle$.
+
+Ako je $a=\infty$, onda postoji $n_0\in \mathbb{N}$ takav da za sve prirodne $n\geq n_0$ vrijedi $\dfrac{a_{n+1}}{a_n}>1$, tj. $|a_{n+1}|>|a_n|$, odakle slijedi tvrdnja. Dokaz je analogan u slučaju $a=-\infty$.
+
+Odaberimo sada proizvoljan $n_0\in \mathbb{N}$ takav da za sve prirodne $n>m\geq n_0$ vrijedi $|a_n|>|a_m|$. Znamo da postoji $p_0\in \mathbb{N}$ takav da za sve prirodne $p\geq p_0$ vrijedi $|a_p|<|a_{n_0}|$. Neka je sada $q_0=\max\{n_0, p_0\}$. Tada zbog $q_0\geq n_0$ imamo $|a_{q_0}|\geq |a_{n_0}|$, a zbog $q_0\geq p_0$ imamo da za $p=q_0$ vrijedi $|a_{q_0}|<|a_{n_0}|$. Kontradikcija!
+
+Ovime smo pokazali da je $S=[-1, 1]$, što smo i tvrdili.
+\end{proof}
+Nizove možemo zadati i rekurzivno. Intuitivno, nizovi zadani rekurzivno su oni nizovi definirani pomoću jednog ili više početnih članova i pomoću jednog ili više prethodnih članova. Npr. niz $a_1=1$ i $a_n=a_{n-1}+1$ za $n>1$ je niz $(a_n)$, $a_n=n$ zadan rekurzivno. Precizirajmo!
+\begin{remark}[Princip definicije indukcijom]
+Neka je $n\in \mathbb{N}$ proizvoljan i neka je zadana funkcija $\phi_n : \mathbb{R}^n\to \mathbb{R}$ i neka je $x_0\in \mathbb{R}$. Tada postoji jedinstveni niz $(a_n)$ takav da je
+\begin{gather*}
+a_1=x_0,\\
+a_{n+1}=\phi_n\left( f(1), f(2), \dots, f(n)\right),\;\; \forall n\in \mathbb{N}.
+\end{gather*}
+i kažemo da je taj niz \textit{zadan rekurzivno}. 
+\end{remark} 
+Dokaz principa definicije indukcijom možete pronaći u \cite{9}, str. 44.
+
+U nastavku ćemo vidjeti da je zapisivanje konvergentnih nizova u ovakvom obliku često pogodno za izračunavanje njihovih limesa.
+\begin{exercise}
+Niz $(a_n)$ je zadan rekurzivno uvjetima $a_1=0$ i $a_{n+1}=\dfrac{a_n^2+1}{2}$. Ispitajte je li $(a_n)$ konvergentan i ako je, odredite mu limes.
+\end{exercise}
+\begin{proof}[Rješenje]
+Dokažimo da je $(a_n)$ konvergentan. Zaista, on je rastući, jer je 
+$$\dfrac{a_n^2+1}{2}\geq a_n,$$
+što vrijedi, budući da je ta tvrdnja ekvivalentna s tvrdnjom $a_n^2-2a_n+1=(a_n-1)^2\geq 0$. 
+
+Izračunavanjem velikih vrijednosti naslućujemo da je $(a_n)$ odozgo ograničen s $1$. Zaista, dokažimo to indukcijom. Za $a_1$ tvrdnja očito vrijedi. Pretpostavimo da vrijedi $a_n\leq 1$. Vrijedi i $a_n\geq 0$ zbog činjenice da je $(a_n)$ rastući, što povlači $a_n^2\leq 1$, odnosno $\dfrac{a_n^2+1}{2}\leq 1$. Time smo dokazali konvergenciju. 
+
+Neka je $L$ limes niza $(a_n)$. Kako je $(a_{n+1})$ podniz od $(a_n)$, vrijedi $\lim\limits_{n\to \infty}{a_{n+1}}=\lim\limits_{n\to \infty}{a_n}$, odakle slijedi
+$$\lim\limits_{n\to \infty}{\dfrac{a_n^2+1}{2}}=L,\;\text{ tj. }\; \dfrac{L^2+1}{2}=L.$$
+No posljednje je ekvivalentno s $(L-1)^2=0$, odnosno $L=1$. Dakle, limes niza $(a_n)$ je $1$.
+\end{proof}
+\begin{exercise}
+Niz $(a_n)$ je zadan rekurzivno uvjetima $a_1=3$ i $a_{n+1}=\dfrac{1}{2}\left(a_n+\dfrac{3}{a_n}\right)$. Ispitajte je li $(a_n)$ konvergentan i ako je, odredite mu limes.
+\end{exercise}
+\begin{proof}[Rješenje]
+Lako se indukcijom pokazuje da je $a_n>\sqrt{3}$ za sve $n\in \mathbb{N}$. Naime, za $n=1$ tvrdnja je trivijalna. Pretpostavimo da tvrdnja vrijedi za $n$. Vrijedi
+
+$$\dfrac{1}{2}\left(a_n+\dfrac{3}{a_n}\right)>\sqrt{3}\Leftrightarrow \dfrac{(a_n-\sqrt{3})^2}{a_n}>0.$$
+Međutim, $a_n>\sqrt{3}$ povlači $(a_n-\sqrt{3})^2>0$, što povlači $\dfrac{(a_n-\sqrt{3})^2}{a_n}>0$, pa je korak indukcije dokazan.
+
+Pokažimo da za sve $n\in \mathbb{N}$ vrijedi
+$$\dfrac{1}{2}\left(a_n+\dfrac{3}{a_n}\right)<a_n.$$
+Kako je $a_n>0$ za sve $n\in \mathbb{N}$, gornje je ekvivalentno tvrdnji $a_n^2>3$, tj. $a_n>\sqrt{3}$, što je već dokazano. Dakle, niz $(a_n)$ konvergira.
+
+Neka je $L$ limes niza $(a_n)$. Analogno kao u prethodnom zadatku, imamo da vrijedi 
+$$L=\dfrac{1}{2}\left(L+\dfrac{3}{L}\right).$$ No to vrijedi ako i samo ako je $L=\sqrt{3}$ ili $L=-\sqrt{3}$. Kako vrijedi $a_n> \sqrt{3}$ za sve $n\in \mathbb{N}$, intuitivno zaključujemo da $-\sqrt{3}$ ne može biti limes niza $(a_n)$. 
+
+Da bismo to dokazali, trebamo se pozvati na činjenicu da za sve odozdo ograničene nizove $(b_n)$ vrijedi $$\inf\left\{b_n : n\in \mathbb{N}\right\}\leq \lim\limits_{n\to \infty}{b_n},$$ što zapravo dobivamo primjenom napomene \ref{limitpreservesordering} na nizove $n\to \inf\left\{b_n : n\in \mathbb{N}\right\}$ i $(b_n)$. U našem slučaju imamo $$\sqrt{3}\leq \inf{a_n}\leq \lim\limits_{n\to \infty}{a_n},$$ čime smo dokazali da $-\sqrt{3}$ nije limes, što znači da to mora biti $\sqrt{3}$.
+\end{proof}
+\begin{exercise}
+Neka je $a>1$. Dokažite da je $\lim\limits_{n\to \infty}{\dfrac{a^n}{n!}}=0$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Primijetimo da vrijedi $$a_1=a,\;\;a_{n+1}=\dfrac{a}{n+1}a_{n}.$$ Time je zapravo dana karakterizacija početnog niza, jer je svaki niz zadan rekurzivno jedinstven. Dokažimo sada da $(a_n)$ konvergira! Očito je $\dfrac{a^n}{n!}\geq 0$. 
+
+Prema Arhimedovu aksiomu postoji $n_0\in \mathbb{N}$ takav da je $n_0>a$. Tada za $n\geq n_0>a$ vrijedi $$\dfrac{a}{n+1}<1\Leftrightarrow n>a-1,$$ 
+a $n>a-1$ je istinito, jer je $n\geq n_0>a>a-1$. Sada konvergencija niza $(a_n)$ slijedi iz napomene \ref{generalizedsandwichtheorem}. Ako je $\lim\limits_{n\to \infty}{a_n}=L$, imamo $L=0\cdot L=0$, čime smo dokazali tvrdnju.
+\end{proof}
+Za naredni zadatak bit će nam korisna sljedeća pomoćna tvrdnja.
+\begin{exercise}
+\label{subsequencelemma}
+Neka je $(a_n)$ niz realnih brojeva i $c\in \mathbb{R}$. Ako je $\lim\limits_{n\to \infty}{a_{2n}}=c$ i $\lim\limits_{n\to \infty}{a_{2n-1}}=c$, onda je $\lim\limits_{n\to \infty}{a_{n}}=c$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $\epsilon>0$ proizvoljan. Tada postoje $n_0,\; l_0\in \mathbb{N}$ takvi da za sve prirodne $n\geq n_0$ i $l\geq l_0$ vrijedi 
+$$|a_{2n}-c|<\epsilon\;\;\text{ i }\;\;|a_{2l-1}-c|<\epsilon.$$ 
+Neka je $N_0=2\max\{n_0, l_0\}$ i neka je $N\geq N_0$ proizvoljan prirodan broj. Tada vrijedi ili $N=2q$ ili $N=2q-1$, gdje je $q\in \mathbb{N}$. Ako je $N=2q$, onda vrijedi $2q\geq 2\max\{n_0, l_0\}$, što povlači $q\geq \max\{n_0, l_0\}$, što prema pretpostavci daje $|a_N-c|<\epsilon$. 
+
+Ako je $N=2q-1$, dobivamo $q\geq \max\{n_0,\; l_0\}+\dfrac{1}{2}>\max\{n_0, l_0\}$, što također daje $|a_N-c|<\epsilon$.
+\end{proof}
+\begin{exercise}
+\label{38}
+Niz $(a_n)$ je zadan rekurzivno uvjetima $a_1=-4$, $a_{n+1}=-2+\dfrac{1}{1+a_n}$, za sve $n\in \mathbb{N}$. Ispitajte je li $(a_n)$ konvergentan i ako je, odredite mu limes.
+\end{exercise}
+\begin{proof}[Rješenje]
+Pogledajmo čemu bi bio jednak $\lim\limits_{n\to \infty}{a_n}$ kada bi $(a_n)$ konvergirao. Vrijedilo bi
+$$L=-2+\dfrac{1}{1+L},$$
+pa bi rješavanjem dobili $L_1=\dfrac{-3+\sqrt{5}}{2}$, $L_2=\dfrac{-3-\sqrt{5}}{2}$. Tvrdimo da je $\lim\limits_{n\to \infty}{a_n}=L_2$.
+Za sve $n\in \mathbb{N}$ vrijedi
+$$a_{n+2}=-2+\dfrac{1}{1+\left(-2+\dfrac{1}{1+a_n}\right)}=-2+\dfrac{1}{\frac{-a_n}{1+a_n}}=-3-\dfrac{1}{a_n},$$
+odakle dobivamo
+$$a_{2(n+1)}=a_{2n+2}=-3-\dfrac{1}{a_{2n}},\;\; a_{2(n+1)-1}=a_{2n+1}=a_{(2n-1)+2}=-3-\dfrac{1}{a_{2n-1}}.$$
+Tvrdimo da je $a_{2n}> L_2$ za sve $n\in \mathbb{N}$. Zaista, za $n=1$ imamo $a_2=-\dfrac{7}{3}>L_2$, a pretpostavimo li da tvrdnja vrijedi za $n$, onda je
+$$-3-\dfrac{1}{a_n}>-3-\dfrac{1}{L_2}=L_2.$$
+Analogno se vidi i da je $a_{2n}< L_1$ za sve $n\in \mathbb{N}$.
+
+Dokažimo da je $(a_{2n})$ padajući. Treba dokazati da za sve $n\in \mathbb{N}$ vrijedi
+$$a_{2n}\geq -3-\dfrac{1}{a_{2n}},$$
+što je ekvivalentno nejednadžbi $a_{2n}^2+3a_{2n}+1\geq 0$, koja je ekvivalentna tvrdnji $L_2\leq a_{2n}\leq L_1$, što znamo da vrijedi.
+
+Vrlo slično se dokazuje da je $(a_{2n-1})$ rastući i odozgo ograničen s $L_2$. Dakle, $(a_{2n})$ i $(a_{2n-1})$ su konvergentni. Rješavanjem jednadžbe
+$$L'=-3-\dfrac{1}{L'}$$
+dobivamo $L'_1=L_1$ i $L'_2=L_2$. No $L_1$ ne može biti limes, jer je $L_1>-\dfrac{7}{3}$, a $\dfrac{7}{3}$ je gornja međa oba niza. Zato je $\lim\limits_{n\to \infty}{a_{2n}}=\lim\limits_{n\to \infty}{a_{2n-1}}=L_2$, pa je po zadatku \ref{subsequencelemma} $(a_n)$ konvergentan i vrijedi $\lim\limits_{n\to \infty}{a_{n}}=L_2$.
+\end{proof}
+U zadatku \ref{38} vidjeli smo da možemo upotrijebiti napomenu \ref{onsubsequences} i u slučajevima kad nismo još dokazali da je niz konvergentan. Pokažimo još jednu takvu situaciju.
+\begin{exercise}
+\label{iteration}
+Zadan je niz $(a_n)$. Definiramo niz $(b_n)$, $b_1=0$, $b_n=a_{n}+2a_{n+1}$ za $n\geq 1$. Dokažite: Ako $(b_n)$ konvergira, onda konvergira i $(a_n)$.
+\end{exercise}
+\begin{proof}
+Neka je $a=\lim\limits_{n\to \infty}{b_n}$. Ako $(a_n)$ konvergira s limesom u $a'$, onda je $a=a'+2a'$, tj. vrijedi $a'=\dfrac{a}{3}$. Dakle, trebamo dokazati da $(a_n)$ konvergira s limesom u $\dfrac{a}{3}$.
+
+Neka je $\epsilon>0$ proizvoljan. Tada postoji $n_0\in \mathbb{N}\setminus\{1\}$ takav da za sve $n\geq n_0$ vrijedi
+\begin{gather}
+\label{35}
+\dfrac{\epsilon}{2}>\abs{a_{n-1}+2a_n-a}=\abs{2\left(a_n-\dfrac{a}{3}\right)+a_{n-1}-\dfrac{a}{3}},
+\end{gather}
+pa zbog činjenice da za sve $x, y\in \mathbb{R}$ vrijedi $||x|-|y||\leq |x-y|$, odakle slijedi $|x|-|y|=|x|-|-y|\leq |x+y|$, vrijedi
+$$\abs{2\left(a_n-\dfrac{a}{3}\right)+a_{n-1}-\dfrac{a}{3}}\geq 2\abs{a_n-\dfrac{a}{3}}-\abs{a_{n-1}-\dfrac{a}{3}},$$
+odnosno
+$$\abs{a_n-\dfrac{a}{3}}<\dfrac{\epsilon}{4}+\dfrac{1}{2}\abs{a_{n-1}-\dfrac{a}{3}}.$$
+Tada za sve $m\in \mathbb{N}$ vrijedi
+\begin{align*}
+\abs{a_{n+m}-\dfrac{a}{3}}&<\dfrac{\epsilon}{4}+\dfrac{1}{2}\abs{a_{n+m-1}-\dfrac{a}{3}}<\dfrac{\epsilon}{4}+\dfrac{1}{2}\left(\dfrac{\epsilon}{4}+\dfrac{1}{2}\abs{a_{n+m-1}-\dfrac{a}{3}}\right)\\
+&=\dfrac{\epsilon}{4}+\dfrac{1}{2}\cdot\dfrac{\epsilon}{4}+\dfrac{1}{4}\abs{a_{n+m-1}-\dfrac{a}{3}}=\dots=\dfrac{\epsilon}{4}\sum_{k=0}^m{\dfrac{1}{2^m}}+\dfrac{1}{2^{m+1}}\abs{a_{n-1}-\dfrac{a}{3}}.
+\end{align*}
+Uočimo da je $$\sum_{k=0}^m{\dfrac{1}{2^m}}=2\left(1-\dfrac{1}{2^n}\right)<2.$$
+Zato je
+\begin{gather}
+\label{36}
+\abs{a_{n+m}-\dfrac{a}{3}}<\dfrac{\epsilon}{4}\sum_{k=0}^m{\dfrac{1}{2^m}}+\dfrac{1}{2^{m+1}}\abs{a_{n-1}-\dfrac{a}{3}}<\dfrac{\epsilon}{2}+\dfrac{1}{2^{m+1}}\abs{a_{n-1}-\dfrac{a}{3}}.
+\end{gather}
+Prema Arhimedovu aksiomu, postoji $m_0\in \mathbb{N}$ takav da je $m_0\cdot\dfrac{\epsilon}{2}>\abs{a_{n-1}-\dfrac{a}{3}}$. Tada za sve $m\geq m_0$ vrijedi
+$$\abs{a_{n-1}-\dfrac{a}{3}}<m_0\cdot\dfrac{\epsilon}{2}<(m_0+1)\cdot\dfrac{\epsilon}{2}<2^{m_0+1}\cdot\dfrac{\epsilon}{2}<2^{m+1}\cdot\dfrac{\epsilon}{2},$$
+odnosno
+\begin{gather}
+\label{37}
+\dfrac{1}{2^{m+1}}\abs{a_{n-1}-\dfrac{a}{3}}<\dfrac{\epsilon}{2}.
+\end{gather}
+Sada iz (\ref{35}), (\ref{36}) i (\ref{37}) slijedi da za sve $n\geq n_0$ i $m\geq m_0$ vrijedi
+$$\abs{a_{n+m}-\dfrac{a}{3}}<\epsilon,\;\text{ tj. }\; \abs{a_{p}-\dfrac{a}{3}}<\epsilon,\; \forall p\in \mathbb{N}\;\text{ za kojeg je }\; p\geq n_0+m_0,$$
+što smo i tvrdili.
+\end{proof}
+\begin{exercise}[Cesàro-Stolzov teorem] Neka su $(a_n)$ i $(b_n)$ nizovi takvi da je $b_n\neq 0$ za sve $n\in \mathbb{N}$, te $(b_n)$ strogo rastući i neka je $\lim\limits_{n\to \infty}{b_n}=\infty$. Ako niz $\left(\dfrac{a_{n+1}-a_n}{b_{n+1}-b_n}\right)$ konvergira u $L\in \mathbb{R}$, onda i niz $\left(\dfrac{a_n}{b_n}\right)$ konvergira u $L$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Po definiciji, za svaki $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve prirodne $N\geq N_0$ vrijedi
+$$\abs{\dfrac{a_{N+1}-a_N}{b_{N+1}-b_N}-L}<\dfrac{\epsilon}{2},$$
+te postoji $m_0\in \mathbb{N}$ takav da za sve prirodne $m\geq m_0$ vrijedi $b_m>0$. Tada za sve $n\geq n_0=\max\{m_0, N_0\}$ vrijedi $b_n>0$ i
+$$L-\dfrac{\epsilon}{2}<\dfrac{a_{n+1}-a_n}{b_{n+1}-b_n}<L+\dfrac{\epsilon}{2}.$$
+Kako je $(b_n)$ strogo rastući, to je $b_{n+1}-b_n>0$, pa je
+$$a_{n+1}<\left(L+\dfrac{\epsilon}{2}\right)(b_{n+1}-b_n)+a_n,$$
+pa slično kao u zadatku \ref{iteration} dobivamo
+\begin{align*}
+a_{n+1}&<\left(L+\dfrac{\epsilon}{2}\right)(b_{n+1}-b_n)+\left(L+\dfrac{\epsilon}{2}\right)(b_{n}-b_{n-1})+\dots+ \left(L+\dfrac{\epsilon}{2}\right)(b_{n_0+1}-b_{n_0})+a_{n_0}\\
+&=\left(L+\dfrac{\epsilon}{2}\right)(b_{n+1}-b_{n}+b_{n}-\dots+b_{n_0+1}-b_{n_0})\\
+&=\left(L+\dfrac{\epsilon}{2}\right)(b_{n+1}-b_{n_0})+a_{n_0}.
+\end{align*}
+Dijeljenjem s $b_{n+1}$ dobivamo
+$$\dfrac{a_{n+1}}{b_{n+1}}<\left(L+\dfrac{\epsilon}{2}\right)\left(1-\dfrac{b_{n_0}}{b_{n+1}}\right)+\dfrac{a_{n_0}}{b_{n+1}},$$
+pa promotrimo li niz $(c_n)$, $c_n=\left(L+\dfrac{\epsilon}{2}\right)\left(1-\dfrac{b_{n_0}}{b_{n+1}}\right)+\dfrac{a_{n_0}}{b_{n+1}}$,
+po zadatku \ref{6} vrijedi $\lim\limits_{n\to \infty}{c_n}=L+\dfrac{\epsilon}{2}$, pa postoji $n_1\in \mathbb{N}$ takav da za sve prirodne $n'\geq n_1$ vrijedi $$c_{n}-L-\dfrac{\epsilon}{2}<\dfrac{\epsilon}{2},\;\text{ tj. }\; c_n<L+\epsilon.$$
+Analogno kao i gore dobivamo da je
+$$\left(L-\dfrac{\epsilon}{2}\right)\left(1-\dfrac{b_{n_0}}{b_{n+1}}\right)+\dfrac{a_{n_0}}{b_{n+1}}<\dfrac{a_{n+1}}{b_{n+1}},$$
+te za niz $(c_n')$ definiran s $c_n'=\left(L-\dfrac{\epsilon}{2}\right)\left(1-\dfrac{b_{n_0}}{b_{n+1}}\right)+\dfrac{a_{n_0}}{b_{n+1}}$ postoji $n_2\in \mathbb{N}$ takav da za sve $n''\geq n_2$ vrijedi $L-\epsilon<c_n'$. Sada za sve prirodne $n'''\geq n_3=\max\{n_0, n_1, n_2\}$ dobivamo
+$$\abs{\dfrac{a_{n+1}}{b_{n+1}}-L}<\epsilon,$$
+dakle dobili smo da niz $\left(\dfrac{a_{n+1}}{b_{n+1}}\right)$ konvergira k $L$, pa prema zadatku \ref{41} i $\left(\dfrac{a_{n}}{b_{n}}\right)$ konvergira u $L$.
+\end{proof}
+Prethodni rezultat može biti koristan pri računanju limesa raznih "složenijih" nizova.
+\begin{exercise}
+Odredite sljedeći limes, ako on postoji. 
+$$\lim\limits_{n\to \infty}{\dfrac{1+\sqrt{2}+\sqrt[3]{3}+\dots+\sqrt[n]{n}}{n}}.$$
+\end{exercise}
+\begin{proof}[Rješenje]
+Definiramo nizove $(a_n)$, $(b_n)$ s $a_n=1+\sqrt{2}+\sqrt[3]{3}+\dots+\sqrt[n]{n}$ i $b_n=n$. Uočimo da je $(b_n)$ strogo rastući i vrijedi $\lim\limits_{n\to \infty}{b_n}=\infty$, te je $b_n\neq 0$ za sve $n\in \mathbb{N}$, pa primjenom Cesàro-Stolzovog teorema dobivamo
+\begin{align*}
+\lim\limits_{n\to \infty}{\dfrac{a_n}{b_n}}&=\lim\limits_{n\to \infty}{\dfrac{a_{n+1}-a_n}{b_{n+1}-b_n}}\\
+&=\lim\limits_{n\to \infty}{\dfrac{1+\sqrt{2}+\sqrt[3]{3}+\dots+\sqrt[n]{n}+\sqrt[n+1]{n+1}-(1+\sqrt{2}+\sqrt[3]{3}+\dots+\sqrt[n]{n})}{(n+1)-n}}\\
+&=\lim\limits_{n\to \infty}{\dfrac{\sqrt[n+1]{n+1}}{1}}=1.
+\end{align*}
+\end{proof}
+\begin{exercise}
+Odredite sljedeći limes, ako postoji.
+$$\lim\limits_{n\to \infty}{\dfrac{1}{n^5}\sum_{k=n}^{2n}{k^4}}.$$
+\end{exercise}
+\begin{proof}[Rješenje]
+Promotrimo nizove $(a_n)$, $(b_n)$, $a_n=\dsum_{k=n}^{2n}{k^4}$, $b_n=n^5$. Uočimo da je $b_n$ rastuć, te kako vrijedi $b_n\geq n$, za sve $n\in \mathbb{N}$, iz zadatka \ref{liminftylemma} slijedi da je $\lim\limits_{n\to \infty}{b_n}=\infty$, te $b_n\neq 0$. Prema Cesàro-Stolzovom teoremu imamo
+\begin{align*}
+\lim\limits_{n\to \infty}{\dfrac{a_n}{b_n}}&=\lim\limits_{n\to\infty}{\dfrac{a_{n+1}-a_n}{b_{n+1}-b_n}}
+=\lim\limits_{n\to \infty}{\dfrac{\sum_{k=n+1}^{2n+2}{k^4}-\sum_{k=n}^{2n}{k^4}}{(n+1)^5-n^5}}\\
+&=\lim\limits_{n\to \infty}{\dfrac{(2n+1)^4+(2n+2)^4-(n+1)^4}{(n+1)^5-n^5}}=\dfrac{31n^4+92n^3+114n^2+68n+16}{5n^4+10n^3+10n^2+5n+1}=\dfrac{31}{5}.
+\end{align*}
+\end{proof}
+\section{Limes superior i limes inferior}
+\begin{definition}
+Kažemo da je $\alpha\in \mathbb{R}$ \textbf{gomilište} niza $(a_n)$ realnih brojeva ako postoji podniz $(a_{p_n})$ od $(a_n)$ takav da je $\lim\limits_{n\to \infty}{a_{p_n}}=\alpha$.
+\end{definition}
+
+\begin{remark} Neka je $(a_n)$ ograničen niz. Tada je $\alpha\in \mathbb{R}$ gomilište niza ako i samo ako za svaki $\epsilon>0$ interval $\langle \alpha-\epsilon, \alpha+\epsilon\rangle$ sadrži beskonačno mnogo članova niza $(a_n)$.
+\end{remark}
+
+\begin{exercise}
+\label{limitpoints1}
+Odredite skup svih gomilišta niza $(a_n)$ zadanog formulom $a_n=3+(-1)^n$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Niz $(a_n)$ je zapravo niz $$2,\; 4, \; 2,\; 4,\;\dots,$$ pa vidimo da nizovi $(a_{2n-1})$, $(a_{2n})$ teže ka $2$, odnosno $4$, respektivno. To znači da su $2$ i $4$ gomilišta niza $(a_n)$. 
+
+Dokažimo da su to jedina gomilišta od $(a_n)$. Pretpostavimo da postoji neko gomilište $\alpha\notin \{2, 4\}$ niza $(a_n)$. Neka je $$\epsilon=\min\left\{|\alpha-2|,|\alpha-4|\right\}.$$ Tada interval $\langle\alpha-\epsilon, \alpha+\epsilon\rangle$ ne sadrži ni $2$ ni $4$. Naime, kad bi bilo npr. $2\in \langle\alpha-\epsilon, \alpha+\epsilon\rangle$, ako je $\alpha>2$, onda bi imali $$2>\alpha-|\alpha-2|=\alpha-(\alpha-2)=2,$$ te za $\alpha<2$, bi vrijedilo $$2<\alpha+|\alpha-2|=\alpha+(2-\alpha)=2,$$ 
+što je nemoguće. Analogno se dokazuje da je $4\notin\langle\alpha-\epsilon, \alpha+\epsilon\rangle$. 
+No ova situacija je nemoguća, jer su $2$ i $4$ jedini članovi niza. Time smo dokazali da je skup svih gomilišta niza $(a_n)$ skup $\{2, 4\}$.
+\end{proof}
+\begin{exercise}
+\label{limitpoints3}
+Neka je $(a_n)$ ograničen niz i $\alpha\in \mathbb{R}$ takav da za sve $\epsilon>0$ skup $\langle \alpha-\epsilon, \alpha+\epsilon\rangle\setminus \{\alpha\}$ sadrži bar jedan član niza $(a_n)$. Dokažite da je tada $\alpha$ gomilište niza $(a_n)$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $\epsilon>0$. Tada postoji $a_{p_1}\in \langle \alpha-\epsilon, \alpha+\epsilon\rangle\setminus \{\alpha\}$. 
+
+Za $\epsilon_2=\abs{\alpha-a_{p_1}}$ postoji $a_{p_2}\in \left\langle \alpha-\epsilon_2, \alpha+\epsilon_2\right\rangle\setminus \{\alpha\}$ i vrijedi $a_{p_2}\neq a_{p_1}$. Naime, ako je $\alpha>a_{p_1}$, onda je $$a_{p_2}>\alpha-\abs{\alpha-a_{p_1}}=\alpha-(\alpha-a_{p_1})=a_{p_1}$$
+i analogno $a_{p_2}<a_{p_1}$ ako je $\alpha< a_{p_1}$.
+Uočimo i da je $\epsilon_2<\epsilon$. Naime, vrijedi
+$$\alpha-\epsilon<a_{p_1}<\alpha+\epsilon,$$
+odakle dobivamo
+$$-\epsilon<a_{p_1}-\alpha<\epsilon,\;\text{ tj. } \epsilon_2=|\alpha-a_{p_1}|<\epsilon.$$
+Dakle, imamo $a_{p_2}\in \left\langle \alpha-\epsilon, \alpha+\epsilon\right\rangle\setminus \{\alpha\}$.
+
+Za $\epsilon_3=\abs{\alpha-a_{p_2}}$ postoji $a_{p_3}\in \left\langle \alpha-\epsilon_3, \alpha+\epsilon_3\right\rangle\setminus \{\alpha\}$ i vrijedi $a_{p_3}\notin \left\{a_{p_1},a_{p_2}\right\}$. Tvrdnja $a_{p_3}\neq a_{p_2}$ pokazuje se analogno kao i u prethodnom slučaju. Analogno dobivamo i $a_{p_3}\in \left\langle \alpha-\epsilon_2, \alpha+\epsilon_2\right\rangle\setminus \{\alpha\}$, odakle kao i prije slijedi da je $a_{p_3}\neq a_{p_1}$. Iz iste tvrdnje dobivamo i $a_{p_3}\in \left\langle \alpha-\epsilon, \alpha+\epsilon\right\rangle\setminus \{\alpha\}$.
+
+Ovaj postupak možemo nastaviti i time doći do niza $(a_{p_n})$ međusobno različitih brojeva takvog da za svaki $i\in \mathbb{N}$ vrijedi 
+$$a_{p_i}\in\left\langle \alpha-\epsilon, \alpha+\epsilon\right\rangle\setminus\{\alpha\},$$
+no tada je i $a_{p_i}\in\left\langle \alpha-\epsilon, \alpha+\epsilon\right\rangle$, pa je $\alpha$ gomilište niza $(a_n)$.
+\end{proof}  
+\begin{remark}[Bolzano-Weierstrassov teorem za nizove]
+Neka je $(a_n)$ ograničen niz realnih brojeva. Tada on ima konvergentan podniz.
+\end{remark}
+\begin{definition}
+Neka je $(a_n)$ ograničen niz realnih brojeva. \textbf{Limes superior} niza $(a_n)$ (u oznaci $\limsup{a_n}$) je supremum skupa svih gomilišta od $(a_n)$. \textbf{Limes inferior} niza $(a_n)$ (u oznaci $\liminf{a_n}$) je infimum skupa svih gomilišta od $(a_n)$. 
+\end{definition}
+
+Prema Bolzano-Weierstrassovom teoremu za nizove, svaki ograničen niz ima konvergentan podniz, te kako je limes niza također jedna točka gomilišta, slijedi da je skup svih gomilišta ograničenog niza neprazan, odakle slijedi da prethodna definicija ima smisla.
+
+\begin{remark}
+Za niz $(a_n)$ iz zadatka \ref{limitpoints1} vrijedi $\limsup{a_n}=4$ i $\liminf{a_n}=2$.
+\end{remark}
+
+\begin{exercise}
+\label{limitpoints2}
+Neka je $(a_n)$ niz zadan formulom $a_n=1+(-1)^n+\dfrac{1}{3^n}$. Odredite $\liminf{a_n}$ i $\limsup{a_n}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+(Vidite sliku \ref{fig:6.1}). Prvo ćemo pronaći skup gomilišta niza $(a_n)$. Promotrimo podnizove $(a_{2n})$ i $(a_{2n-1})$, respektivno. Vrijedi $$a_{2n}=2+\dfrac{1}{3^{2n}},\;\text{ te }\;a_{2n-1}=\dfrac{1}{3^{2n-1}}.$$ 
+Imamo $\lim\limits_{n\to \infty}{a_{2n}}=2$ i $\lim\limits_{n\to \infty}{a_{2n-1}}=0$, jer su to podnizovi konvergentnih nizova $n\mapsto 2+\dfrac{1}{3^n}$ i $n\mapsto \dfrac{1}{3^n}$, respektivno. Slijedi da su $0$ i $2$ dva gomilišta niza $(a_n)$. 
+
+Dokažimo da su to jedina gomilišta. Pretpostavimo da postoji $\alpha\in \mathbb{R}\setminus\{0, 2\}$. Uzmimo $$\epsilon=\dfrac{1}{2}\min\left\{|\alpha|, |\alpha-2|\right\}.$$ 
+Tvrdimo da je $$\langle \alpha-\epsilon,\alpha+\epsilon\rangle\cap\langle -\epsilon,\epsilon\rangle=\langle \alpha-\epsilon,\alpha+\epsilon\rangle\cap\langle 2-\epsilon,2+\epsilon\rangle=\emptyset.$$ 
+Zaista, pretpostavimo da postoji $x\in \langle\alpha-\epsilon,\alpha+\epsilon\rangle\cap\langle -\epsilon,\epsilon\rangle$.
+
+Ako je $\alpha<0$, onda je
+$$\alpha+\epsilon=\alpha-\dfrac{\alpha}{2}=\dfrac{\alpha}{2}<-\dfrac{\alpha}{2}=-\epsilon.$$
+No po pretpostavci vrijedi $-\epsilon<x<\alpha+\epsilon$. Kontradikcija! Tvrdnja se analogno pokazuje za $0<\alpha<2$ i $\alpha>2$, te se analogno pokazuje i da je $\langle \alpha-\epsilon,\alpha+\epsilon\rangle\cap\langle 2-\epsilon,2+\epsilon\rangle=\emptyset$.
+Iz dokazanog slijedi i 
+\begin{gather}
+\label{39}
+\langle \alpha-\epsilon,\alpha+\epsilon\rangle\cap\left(\langle -\epsilon,\epsilon\rangle \cup\langle 2-\epsilon,2+\epsilon\rangle\right)=\emptyset.
+\end{gather}
+Nadalje, kako je $\lim\limits_{n\to \infty}{a_{2n}}=2$ i $\lim\limits_{n\to \infty}{a_{2n-1}}=0$, iz definicije slijedi da za gore odabrani $\epsilon$ postoji $n_0\in \mathbb{N}$ takav da za sve $n\geq n_0$ vrijedi $a_{2n-1}\in \langle-\epsilon, \epsilon\rangle$, te postoji $n_1\in \mathbb{N}$ takav da za sve $n'\geq n_1$ vrijedi $a_{2n}\in \langle 2-\epsilon, 2+\epsilon\rangle$. Sada za $N_0=2\max\{n_0, l_0\}$, slično kao u zadatku \ref{subsequencelemma} dobivamo $a_n\in \langle-\epsilon, \epsilon\rangle \cup \langle 2-\epsilon, 2+\epsilon\rangle$. No iz (\ref{39}) slijedi da on sadrži najviše konačno mnogo članova niza $(a_n)$. Stoga $\alpha$ ne može biti gomilište niza $(a_n)$.
+
+Time smo dokazali da su jedina gomilišta $0$ i $2$, pa je $\liminf{a_n}=0$ i $\limsup{a_n}=2$.
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,xlabel=$x$,ylabel=$y$,xmin=-0.5,xmax=9.5,ymin=-2,ymax=4]
+
+\addplot [only marks] table {
+1 0.333
+2 2.111
+3 0.037
+4  2.012
+5 0.004
+6 2.001
+7 0.0005
+8 2.0001
+9 0.00005
+};
+\end{axis}
+\end{tikzpicture}
+\caption{Niz $(a_n)$ iz zadatka \ref{limitpoints2}}
+\label{fig:6.1}
+\end{center}
+\end{figure}
+\end{proof}
+\begin{remark}
+Vidjeli smo da je računanje limesa inferiora i superiora u zadatku \ref{limitpoints2} bio poprilično dugotrajan posao. Srećom, postoji rezultat koji znatno olakšava traženje limesa inferiora, koji ovdje nećemo dokazati i to sljedeći -- Neka su $(a_n)$ i $(b_n)$ ograničeni nizovi i neka je $(a_n)$ konvergentan. Tada su nizovi $(a_n+b_n)$ i $(a_nb_n)$ ograničeni i vrijedi
+\begin{gather*}
+\limsup(a_n+b_n)=\lim\limits_{n\to \infty}(a_n)+\limsup(b_n),\\
+\limsup(a_nb_n)=\lim\limits_{n\to \infty}(a_n)\limsup(b_n),\\
+\liminf(a_n+b_n)=\lim\limits_{n\to \infty}(a_n)+\liminf(b_n),\\
+\liminf(a_nb_n)=\lim\limits_{n\to \infty}(a_n)\liminf(b_n).
+\end{gather*}
+\end{remark}
+\newpage
+\section*{Zadatci za vježbu}
+\begin{exercise}\textbf{}
+\begin{itemize}
+\item[a)] Odredite sve $x\in \mathbb{R}$ za koje postoji aritmetički niz $(a_n)$ takav da su $\sqrt{24x+1}$, $\sqrt{10x-1}$, $\sqrt{x+4}$ neka tri njegova uzastopna člana.
+\item[b)] Dokažite: Ako je $S_n$ zbroj prvih $n$ članova niza $(a_n)$, a $n\mapsto S_n$ je kvadratna funkcija (definirana na nekom podskupu od $\mathbb{N}$) čiji je slobodni član $0$, onda je niz $(a_n)$ aritmetički.
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Dokažite da je niz (strogo) rastući/padajući ako i samo ako je on (strogo) rastuća/padajuća funkcija.
+\end{exercise}
+\begin{exercise}
+Koristeći definiciju limesa niza, dokažite sljedeće tvrdnje:
+\begin{itemize}
+\item[a)] $\lim\limits_{n\to \infty}{\dfrac{(n+1)(n+2)}{n^2}}=1$,
+\item[b)] $\lim\limits_{n\to \infty}{\dfrac{\lfloor 3x+11\rfloor}{x^2-1}}=0$,
+\item[c)] $\lim\limits_{n\to \infty}{\dfrac{1}{\sqrt{x+7}}}$,
+\item[d)] Neka je $(a_n)$ niz realnih brojeva. Vrijedi $$\lim\limits_{n\to \infty}{a_n}=a\;\text{ ako i samo ako vrijedi }\;\lim\limits_{n\to \infty}{|a-a_0|}=0$$
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Ispitajte konvergenciju niza $(a_n)$ i ako je konvergentan odredite mu limes, ako je: 
+\begin{AutoMultiColItemize}
+\item[a)] $a_n=\abs{\abs{x}+\abs{x-16}-2\abs{x-8}-4}$,
+\item[b)] $a_n=\dfrac{(2n+1)(3n+2)(n+1)!}{(4n+3)^3n!}$,
+\item[c)] $a_n=\dfrac{n^2+1}{n+2\sqrt{n^3+1}}$,
+\item[d)] $a_n=\dfrac{7+11+15+\dots+(3+4n)}{4n^2}$,
+\item[e)] $a_n=\sqrt[n]{n2^n+1}$,
+\item[f)] $a_n=2^{\sqrt{n}}$,
+\item[g)] $a_n=\dfrac{1}{n^2+1}+\dfrac{1}{n^2+2}+\dots+\dfrac{1}{n^2+n}$,
+\item[h)] $a_n=\sqrt{x+2}-\sqrt{x}$.
+\end{AutoMultiColItemize}
+\end{exercise}
+\begin{exercise}
+Ispitajte konvergenciju niza $(a_n)$ i ako je konvergentan odredite mu limes, ako je:
+\begin{itemize}
+\item[a)] $a_n=\underbrace{\sqrt{5+\sqrt{5+\dots+\sqrt{5}}}}_\text{$n$ korijena}$,
+\item[b)] $a_1=2$, $a_{n+1}=\dfrac{3a_n-1}{2a_n}$, $n\geq 1$,
+\item[c)] $a_1=1$, $a_{n+1}=\dfrac{a_n+3}{2a_n}$, $n\geq 1$. (Ovaj niz neće biti monoton -- pokušajte se snaći drukčije!)
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Koliko ima prirodnih brojeva $n\in \mathbb{N}$ za koje vrijedi
+$$\dfrac{2n}{n+1}-\dfrac{3}{2^n}-\dfrac{1}{n}-\dfrac{2}{n^4}>1?$$
+Dokažite svoje tvrdnje!
+\end{exercise}
+\begin{exercise} Dokažite:
+\begin{itemize}
+\item[a)] Ako je $(a_n)$ konvergentan, onda je i $(|a_n|)$ konvergentan. Vrijedi li obrat?
+\item[b)] Neka je $(a_n)$ niz takav da je niz $(b_n)$ zadan formulom $b_n=a_1+a_2+\dots+a_n$ konvergentan. Tada je i $(a_n)$ konvergentan i vrijedi $\lim\limits_{n\to \infty}{a_n}=0$.
+\item[c)] Neka su $(a_n)$ i $(b_n)$ dva niza takva da je $a_n\leq b_n$, $(a_n)$ raste i $(b_n)$ pada. Tada oba niza konvergiraju. Jesu li njihovi limesi općenito jednaki?
+\item[d)] Neka je $a_n\geq 0$ za sve $n\in \mathbb{N}$. Ako je $(a_n)$ konvergentan s limesom u $a$, onda je $(\sqrt{a_n})$ konvergentan s limesom u $\sqrt{a}$. $\left(\text{\textbf{Uputa:} Pomnožite }\sqrt{a_n}-\sqrt{a}\text{ s }\dfrac{\sqrt{a_n}+\sqrt{a}}{\sqrt{a_n}+\sqrt{a}}\right)$
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Koristeći činjenicu da je niz $n\mapsto \left(1+\dfrac{1}{n}\right)^n$ konvergentan s limesom u $e$, odredite sljedeće limese.
+\begin{AutoMultiColItemize}
+\item[a)] $\lim\limits_{n\to \infty}\left(\dfrac{n+\frac{1}{2}}{n}\right)^n$
+\item[b)] $\lim\limits_{n\to \infty}\left(1+\dfrac{1}{-n}\right)^{-n}$
+\end{AutoMultiColItemize}
+\end{exercise}
+\begin{exercise}
+Niz $(a_n)$ zadan je formulom $a_n=2\cdot (-1)^n+\dfrac{1}{2^n}$. Neka je $(a_{p_n})$ neki njegov konvergentan podniz. Dokažite da je skup $\{a_{p_n} : n\in \mathbb{N}\}$ beskonačan. (Niz $(a_n)$ zaista ima konvergentan podniz, pa pitanje ima smisla.)
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka je $(a_n)$ monoton niz koji ima konvergentan podniz. Dokažite da je tada $(a_n)$ konvergentan.
+\item[b)] Neka je $(a_n)$ konvergentan niz i neka je $(b_n)$ niz zadan formulom
+\begin{gather*}
+b_1=\sup\{a_m : m\in \mathbb{N}\}\\
+b_n=\sup\left\{a_m : m\in \mathbb{N}\setminus\left\{1, \dots, n-1\right\}\right\}\;(\text{za }n\geq 2).
+\end{gather*}
+\noindent Dokažite da je $(b_n)$ konvergentan i odredite $\lim\limits_{n\to \infty}{b_n}$.
+\end{itemize}
+\end{exercise}
+\begin{exercise} $(*)$
+Neka je $(a_n)$ konvergentan niz i $\sigma : \mathbb{N}\to \mathbb{N}$ bijekcija. Dokažite da je niz $(a_{\sigma(n)})$ konvergentan i odredite mu limes.
+\end{exercise}
+\begin{definition}
+Kažemo da je niz $(a_n)$ realnih brojeva \textbf{Cauchyjev niz} ako za sve $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve $m$, $n\in \mathbb{N}$ vrijedi $|a_n-a_m|<\epsilon$.
+\end{definition}
+
+\begin{remark}
+\label{9}
+Može se pokazati da je niz konvergentan ako i samo ako je Cauchyjev.
+\end{remark}
+
+\begin{exercise}
+Bez pozivanja na napomenu \ref{9}, dokažite da je svaki Cauchyjev niz ograničen.
+\end{exercise}
+\begin{exercise}
+Neka je $(a_n)$ niz zadan formulom $a_n=(-1)^n\left(1-\dfrac{1}{3^n}\right)$. Odredite $\liminf{a_n}$ i $\limsup{a_n}$. (Dokažite sve svoje tvrdnje.)
+\end{exercise}
+\begin{remark}
+Ograničen niz realnih brojeva $(a_n)$ je konvergentan ako i samo ako vrijedi $\liminf{a_n}=\limsup{a_n}$.
+\end{remark}
+
+\begin{exercise}
+Odredite sve $a\in \mathbb{R}$ takve da niz $(a_n)$ zadan formulom $a_n=(1+a)\sin{\dfrac{n\pi}{2}}$ konvergentan.
+\end{exercise}
+
+\begin{definition}
+Za niz $(a_n)$ \textbf{kompleksnih brojeva} kažemo da je konvergentan s limesom u $a\in \mathbb{C}$ ako za sve $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve $n\geq n_0$ vrijedi $|a_n-a|<\epsilon$.
+\end{definition}
+
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka su $(\alpha_n)$ i $(\beta_n)$ nizovi u $\mathbb{R}$. Dokažite da niz $(\alpha_n+\beta_n i)$ konvergira k $\alpha+\beta i$ ako i samo ako niz $(\alpha_n)$ konvergira k $\alpha$ i $(\beta_n)$ konvergira k $\beta$.
+\item[b)] Dokažite da ako niz $(a_n)$ u $\mathbb{C}$ ima limes u nuli, onda i niz $(|a_n|)$ ima limes u nuli. Vrijedi li obrat?
+\end{itemize}
+\end{exercise}
+\begin{center}
+$*\hspace{0.3cm}*\hspace{0.3cm}*\hspace{0.3cm}$
+\end{center}
+\begin{exercise} $(*)$
+Dokažite da svaki konvergentan niz postiže ili svoj infimum, ili svoj supremum, ili oboje. Dajte primjer sva tri tipa niza.
+\end{exercise}
+\begin{exercise} $(*)$
+Neka je $f : \mathbb{R}\to \langle 0, \infty\rangle$ padajuća funkcija, te neka je zadan niz $(a_n)$ takav da je $a_1=1$ i za sve $n\in \mathbb{N}$ vrijedi $a_{n+1}=a_n+f(a_n)$. Dokažite da $(a_n)$ divergira u $\infty$.
+\end{exercise}
+\begin{exercise} $(**)$
+Dokažite koristeći definiciju limesa niza da je $\lim\limits_{n\to \infty}{2^{\frac{1}{2^n}}}=1$.
+\end{exercise}
+\begin{exercise} $(**)$
+Neka je $(a_n)$ ograničen niz realnih brojeva takav da za sve $n\geq 2$ vrijedi
+$$a_n\leq \dfrac{a_{n-1}+a_{n+1}}{2}.$$
+Pokažite da je $(a_n)$ konvergentan.
+\end{exercise}

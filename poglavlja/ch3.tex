@@ -1,0 +1,1088 @@
+\begin{remark}
+\label{ordrem}
+Svojstva uređaja $\leq$ i $<$ na $\mathbb{R}$:
+\begin{itemize}
+\item Trihotomija: Za sve $x$, $y\in \mathbb{R}$ vrijedi točno jedna od sljedećih tvrdnji
+$$(x<y),\; (x=y),\; (x>y),$$
+\item Linearnost: Za sve $x$, $y\in \mathbb{R}$ vrijedi
+$$(x\leq y) \vee (y\leq x),$$
+\item Antisimetričnost: Za sve $x$, $y\in \mathbb{R}$ vrijedi
+$$x\leq y\; \wedge\; y\leq x\Rightarrow x=y,$$
+\item Tranzitivnost: Za sve $x$, $y$, $z\in \mathbb{R}$ vrijedi
+$$x\leq y\; \wedge\; y\leq z\Rightarrow x\leq z,\hspace{0.3cm}x< y\; \wedge\; y< z\Rightarrow x< z,$$
+\item Kompatibilnost s $+$ : Za sve $x$, $y$, $z\in \mathbb{R}$ vrijedi
+$$x\leq y\Leftrightarrow x+z\leq y+z,\hspace{0.3cm}x< y\Leftrightarrow x+z< y+z,$$
+\item Kompatibilnost s $\cdot$ : Za sve $x$, $y$, $z\in \mathbb{R}$ vrijedi
+$$x\leq y\wedge z>0\Leftrightarrow xz\leq yz,\hspace{0.3cm}x< y\wedge z>0\Leftrightarrow xz< yz.$$
+\end{itemize}
+\end{remark}
+
+Svojstva iz napomene \ref{ordrem} imaju teorijsku važnost (Zapravo, ova svojstva dio su aksioma realnih brojeva vezanih uz uređaj), ali ovdje ih navodimo da bi se lakše vidjelo kako primjenjujemo ova vrlo jednostavna pravila u rješavanju zadataka.
+
+\section{Uvod u nejednakosti}
+U ovoj točki pokazujemo kako dokazivati razne nejednakosti, što će biti korisno u narednim zadatcima, ali i na drugim mjestima u analizi.
+\begin{exercise}
+\label{25}
+Neka su $x, y\in \mathbb{R}$ proizvoljni. Dokažite da vrijedi
+\begin{itemize}
+\item[a)] $\dfrac{1}{1+x^2}>0$,
+\item[b)] Ako je $x-5y^2>0$, onda je $x+5y^2>0$,
+\item[c)] Ako su $x, y\geq 0$, onda vrijedi $\dfrac{x+y}{2}\geq \sqrt{xy}$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Znamo da za svaki $x\in \mathbb{R}$ vrijedi $x^2\geq 0$, što povlači $1+x^2\geq 1>0$, što povlači $1+x^2>0$. Odavde slijedi da vrijedi $\dfrac{1}{1+x^2}>0$ ako i samo ako vrijedi $1>0$, dakle tvrdnja je dokazana.
+
+b) Iz $x-5y^2>0$ slijedi $x-5y^2+10y^2>10y^2$. Kako vrijedi $y^2\geq 0$, pa i $10y^2\geq 0$, pa smo time dokazali da je $x-5y^2+10y^2\geq 0$, odnosno $x+5y^2>0$.
+
+c) Uočimo da vrijedi
+$$\dfrac{x+y}{2}\geq \sqrt{xy}\Leftrightarrow x+y\geq 2\sqrt{xy}\Leftrightarrow \sqrt{x}^2-2\sqrt{xy}+\sqrt{y}^2\geq 0\Leftrightarrow \left(\sqrt{x}-\sqrt{y}\right)^2\geq 0,$$
+čime je tvrdnja dokazana.
+\end{proof}
+\begin{remark}
+\label{10}
+Neka su $a, b, c, d\in \mathbb{R}$. Ako je $a\leq c$ i $b\leq d$, onda je $a+b\leq c+d$, te ako su pritom i $a$, $c\geq 0$, onda je $ab\leq cd$. Vrijedi i varijanta za $<$, tj. $a<c$ i $b<d$ povlači $a+b<c+d$, a ako vrijedi i $a,\;c> 0$ onda vrijedi i $ac<bd$.
+\end{remark}
+
+\begin{exercise}
+Dokažite:
+\begin{itemize}
+\item[a)] Za sve $x\in \mathbb{R}$ vrijedi $\dfrac{1}{(1+x^2)(2+x^2)}\leq \dfrac{1}{2}$.
+\item[b)] Za sve realne $x$, $y$ takve da je $x>0$ i $y>1$ vrijedi $x^2-2x\sqrt{y}+y^2> 0$.
+\end{itemize}
+\end{exercise}
+\begin{proof*}
+a) Neka je $x\in \mathbb{R}$ proizvoljan. Tada je $x^2+1\geq 1$ i $x^2+2\geq 2$ slijedi $$\dfrac{1}{1+x^2}\leq 1 \;\; \text{ i }\;\;\dfrac{1}{2+x^2}\leq \dfrac{1}{2}.$$ Kako vrijedi $\dfrac{1}{1+x^2},$ $\dfrac{1}{2+x^2}>0$, te su očito $1$ i $\dfrac{1}{2}$ pozitivni, korištenjem napomene $\ref{10}$ dobivamo tvrdnju.
+
+b) Neka su $x>0$ i $y>1$ proizvoljni. Tvrdimo da vrijedi $\sqrt{y}< y$. Zaista, zbog $y\geq 0$ to vrijedi ako i samo ako vrijedi $y<y^2$ (a da bi to tvrdili treba nam da za sve $a$, $b\geq 0$ vrijedi da $a<b\Rightarrow \sqrt{a}<\sqrt{b}$, što se lako dokazuje kontrapozicijom), tj. ako i samo ako vrijedi $y>1$, što je istinito prema pretpostavci. Sada iz $x>0$ slijedi $2xy>2x\sqrt{y}$, odakle slijedi i $-2xy<-2x\sqrt{y}$, te konačno imamo
+\[
+\pushQED{\qed}
+x^2-2x\sqrt{y}+y^2>x^2-2xy+y^2=(x-y)^2\geq 0.\qedhere
+\popQED
+\]
+\end{proof*}
+\begin{exercise}
+Dokažite da za sve $a, b, c\in \mathbb{R}$ vrijedi $a^2+b^2+c^2\geq ab+bc+ca$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka su $a, b, c\in \mathbb{R}$ proizvoljni. Vrijedi
+\begin{align*}
+a^2+b^2+c^2&\geq ab+bc+ca\\
+2a^2+2b^2+2c^2&\geq 2ab+2bc+2ca\\
+a^2-2ab+b^2+b^2-2ac+c^2+c^2-2ca+a^2&\geq 0\\
+(a-b)^2+(b-c)^2+(c-a)^2&\geq 0.
+\end{align*}
+Posljednja tvrdnja je očito istinita za realne brojeve $a, b, c$, pa je tvrdnja zadatka dokazana.
+\end{proof}
+\begin{exercise}
+Neka su $a, b\in \mathbb{R}$ takvi da je $a+b\geq 1$. Dokažite da je $a^4+b^4\geq \dfrac{1}{8}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Uzmimo proizvoljne $a, b\in \mathbb{R}$ takve da je $a+b\geq 1$. Kvadriranjem jednakosti dobivamo $a^2+2ab+b^2\geq 1$, no kako je $(a-b)^2\geq 0$ imamo i $a^2-2ab+b^2\geq 0$. Zbrajanjem te dvije nejednakosti dobivamo $2a^2+2b^2\geq 1$, odnosno $$a^2+b^2\geq \dfrac{1}{2}.$$ Sad kvadriranjem dobivamo $$a^4+2a^2b^2+b^4\geq \dfrac{1}{4}.$$ Sada iz $a^4-2a^2b^2+b^4=(a^2-b^2)^2\geq 0$ zbrajanjem nejednakosti dobivamo $$2a^4+2b^4\geq \dfrac{1}{4},$$ odnosno $a^4+b^4\geq \dfrac{1}{8}$, što smo i tvrdili.
+\end{proof}
+\begin{exercise}[Županijsko natjecanje, 4. razred, A varijanta, 2021.]
+Neka su $x, y, z\in \mathbb{R}\setminus\{0\}$ realni brojevi takvi da je $xy+zy+xz=1$, te neka je
+$$S=\dfrac{x^2}{1+x^2}+\dfrac{y^2}{1+y^2}+\dfrac{z^2}{1+z^2}.$$
+Dokažite da vrijedi $S<1$ ako i samo ako su brojevi $x, y, z$ istog predznaka.
+\end{exercise}
+\begin{proof}[Rješenje]
+Za početak ćemo pojednostaviti izraz $S$ kako bi bilo manje "raspisivanja". Vrijedi
+$$S=\dfrac{x^2+1-1}{1+x^2}+\dfrac{y^2+1-1}{1+y^2}+\dfrac{z^2+1-1}{1+z^2}=3-\dfrac{1}{1+x^2}-\dfrac{1}{1+y^2}-\dfrac{1}{1+z^2},$$
+pa očito vrijedi $S<1$ ako i samo ako vrijedi
+$$\dfrac{1}{1+x^2}+\dfrac{1}{1+y^2}+\dfrac{1}{1+z^2}=\dfrac{3+2x^2+2y^2+2z^2+x^2y^2+y^2z^2+x^2z^2}{(1+x^2)(1+y^2)(1+z^2)}>2,$$
+pa, kako je nazivnik pozitivan, množenjem s nazivnikom dobivamo da je prethodna nejednakost ekvivalentna s
+$$3+2x^2+2y^2+2z^2+x^2y^2+y^2z^2+x^2z^2>2+2x^2+2y^2+2z^2+2x^2y^2+2y^2z^2+2x^2z^2+2x^2y^2z^2,$$
+što je ekvivalentno nejednakosti
+\begin{gather}
+\label{3.1}
+x^2y^2+y^2z^2+x^2z^2+2x^2y^2z^2<1.
+\end{gather}
+S druge strane, iz početnog uvjeta $xy+zy+xz=1$ kvadriranjem dobivamo uvjet
+\begin{gather}
+\label{3.2}
+x^2y^2+z^2y^2+x^2z^2+2xy^2z+2x^2yz+2xyz^2=1
+\end{gather}
+Sada uvrštavanjem (\ref{3.2}) u (\ref{3.1}) umjesto $1$ i poništavanjem dobivamo
+\begin{align*}
+x^2yz+xy^2z+xyz^2-x^2y^2z^2&>0 \Leftrightarrow\\
+xyz(x+y+z-xyz)&>0.
+\end{align*}
+Sada iz početnog uvjeta $xy+zy+xz=1$ imamo 
+\begin{align*}
+x+y+z-xyz&=x(1-yz)+y+z=x(xy+xz)+y+z\\
+&=x^2(y+z)+y+z=(x^2+1)(y+z).
+\end{align*}
+Iz svega zaključujemo da je tvrdnja $S<1$ ekvivalentna tvrdnji $xyz(x^2+1)(y+z)>0$, odnosno tvrdnji 
+\begin{align}
+\label{27}
+xyz(y+z)>0,
+\end{align}
+budući da je $x^2+1>0$ za sve $x\in \mathbb{R}$. Sada vidimo da ako su $x, y, z$ svi istog predznaka, (\ref{27}) vrijedi. Zaista, ako su $x, y, z>0$, onda je $xyz>0$ i $y+z>0$, pa (\ref{27}) vrijedi, a ako su $x, y, z<0$, onda je $xyz<0$ i $y+z<0$, pa (\ref{27}) i u ovom slučaju vrijedi. Time je prva implikacija tvrdnje zadatka dokazana. 
+
+S druge strane, tvrdimo da ako je $S<1$, onda su svi brojevi $x, y, z$ istog predznaka. Da bismo to vidjeli, dokažimo kontrapoziciju -- Za sve $x, y, z$ iz uvjeta zadatka vrijedi: Ako brojevi $x, y, z$ nisu svi istog predznaka, onda je $S\geq 1$. Možemo bez smanjenja općenitosti pretpostaviti da je $x\leq y\leq z$, jer je izraz simetričan u odnosu na te tri varijable, odnosno zamjenom uloga tih varijabli izraz se neće promijeniti. Imamo dva slučaja:
+\begin{itemize}
+\item $x<0$, $y>0$, $z>0$,
+\item $x<0$, $y<0$, $z>0$.
+\end{itemize}
+U prvom slučaju imamo $xyz<0$ i $y+z>0$, pa je $xyz(y+z)<0$, pa vrijedi $S\geq 1$. Da bismo pokazali drugi slučaj, primijetimo i da je tvrdnja $S<1$ ekvivalentna s $xyz(x+y)>0$ -- ovo se dokazuje potpuno analogno kao i uvjet (\ref{27}). Sada je $xyz>0$ i $x+y<0$, pa analogno dobivamo da vrijedi $S\geq 1$.
+\end{proof}
+\begin{remark}[A-G nejednakost]
+\label{agrem}
+Za sve $n\in \mathbb{N}$, $n>1$ i $a_1, \dots, a_n\geq 0$, aritmetička sredina brojeva $a_1, \dots, a_n\geq 0$ veća je ili jednaka geometrijskoj sredini tih brojeva, tj.
+$$\dfrac{a_1+a_2+\dots+a_n}{n}\geq \sqrt[n]{a_1a_2\dots a_n},$$
+a jednakost vrijedi ako i samo ako je $a_1=a_2=\dots=a_n$.
+\end{remark}
+
+\begin{exercise}[H-G nejednakost]
+Dokažite da je za sve $n\in \mathbb{N}$, $n>1$ i $a_1, \dots, a_n> 0$, geometrijska sredina brojeva $a_1, \dots, a_n\geq 0$ veća ili jednaka harmonijskoj sredini tih brojeva, tj.
+$$\sqrt[n]{a_1a_2\dots a_n}\geq \dfrac{n}{\dfrac{1}{a_1}+\dfrac{1}{a_2}+\dots+\dfrac{1}{a_n}}.$$
+Jednakost vrijedi ako i samo ako je $a_1=a_2=\dots=a_n$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Iz A-G nejednakosti imamo
+$$\sqrt[n]{\dfrac{1}{a_1}\cdot \dfrac{1}{a_2}\cdot ...\cdot \dfrac{1}{a_n}}\leq \dfrac{\dfrac{1}{a_1}+\dfrac{1}{a_2}+\dots+\dfrac{1}{a_n}}{n},$$
+što je ekvivalentno tvrdnji zadatka, budući da za pozitivne brojeve $a$ i $b$, $a\leq b$ ekvivalentno s $\dfrac{1}{b}\leq \dfrac{1}{a}$.
+\end{proof}
+\noindent Iz prethodne dvije tvrdnje izravno slijedi sljedeća tvrdnja.
+\begin{corollary}[A-H nejednakost]
+Za sve $n\in \mathbb{N}$, $n>1$ i $a_1, \dots, a_n> 0$ vrijedi
+$$\dfrac{a_1+a_2+\dots+a_n}{n}\geq \dfrac{n}{\dfrac{1}{a_1}+\dfrac{1}{a_2}+\dots+\dfrac{1}{a_n}}.$$
+Jednakost vrijedi ako i samo ako je $a_1=a_2=\dots=a_n$.
+\end{corollary}
+\begin{exercise}\textbf{}
+\begin{itemize}
+\item[a)] Neka su $x, y, z\geq 0$. Dokažite: Vrijedi $(x+y)(y+z)(x+z)\geq 8xyz$.
+\item[b)] Neka su $x, y, z> 0$ takvi da je $\dfrac{1}{x}+\dfrac{1}{y}+\dfrac{1}{z}=1$. Dokažite: Vrijedi $x+y+z\geq 9$.
+\item[c)] Neka su $a, b, c> 0$. Dokažite: Vrijedi
+$abc(a+b+c)\leq a^4+b^4+c^4$.
+\item[d)] Neka su $a, b, c> 0$. Dokažite: Vrijedi
+$\dfrac{a^2}{b^2}+\dfrac{b^2}{c^2}+\dfrac{c^2}{a^2}\geq \dfrac{b}{a}+\dfrac{c}{b}+\dfrac{a}{c}$
+\item[e)] Neka su $a, b, c, d\geq 0$. Dokažite: Vrijedi
+$\dfrac{a^2}{b}+\dfrac{b^2}{c}+\dfrac{c^2}{d}+\dfrac{d^2}{a}\geq a+b+c+d$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Uočite da iz A-G nejednakosti slijedi $\dfrac{u+v}{2}\geq \sqrt{uv}$ (Ovo smo i dokazali u zadatku \ref{25}), odnosno $u+v\geq 2\sqrt{uv}$, za sve $u, v\geq 0$. Odavde slijedi
+$$(x+y)(y+z)(x+z)\geq 2\sqrt{xy}\cdot 2\sqrt{yz}\cdot 2\sqrt{xz}=8xyz.$$
+
+b) Primjenom A-H nejednakosti dobivamo da za proizvoljan $n\in \mathbb{N}$ vrijedi
+$\dfrac{\dfrac{1}{x}+\dfrac{1}{y}+\dfrac{1}{z}}{3}\geq \dfrac{3}{x+y+z},$
+pa korištenjem pretpostavke $\dfrac{1}{x}+\dfrac{1}{y}+\dfrac{1}{z}=1$ dobivamo $\dfrac{1}{3}\geq\dfrac{3}{x+y+z}$, odnosno $x+y+z\geq 9$, što smo i tvrdili.
+
+c) Uočimo da na prvi pogled ne možemo primijeniti neke od prethodnih nejednakosti da bi dokazali tvrdnju. Međutim, uočimo da je lijeva strana nejednakosti jednaka $a^2bc+ab^2c+abc^2$. Pokušajmo primijeniti A-G nejednakost na svaki od pribrojnika. Imamo
+$$a^2bc=\sqrt[4]{a^4a^4b^4c^4}\leq \dfrac{2a^4+b^4+c^4}{4},\;ab^2c\leq \dfrac{a^4+2b^4+c^4}{4},\;abc^2\leq \dfrac{a^4+b^4+2c^4}{4},$$
+pa zbrajanjem tih nejednakosti dobivamo $a^2bc+ab^2c+abc^2=abc(a+b+c)\leq a^4+b^4+c^4$, što smo i tvrdili.
+
+d) Pokušamo li direktno primijeniti A-G nejednakost, dobit ćemo
+$$\dfrac{a^2}{b^2}+\dfrac{b^2}{c^2}+\dfrac{c^2}{a^2}\geq 3\sqrt[3]{\dfrac{a^2}{b^2}\cdot \dfrac{b^2}{c^2}\cdot \dfrac{c^2}{a^2}}=3,$$
+no budući da vrijedi i $\dfrac{b}{a}+\dfrac{c}{b}+\dfrac{a}{c}\geq 3\sqrt[3]{\dfrac{a}{b}\cdot \dfrac{b}{c}\cdot \dfrac{c}{a}}=3$, vidimo da ovim pristupom ne dobivamo nikakav nama koristan zaključak. Pokušajmo zato sličnim razmišljanjem kao u prethodnom zadatku doći do rješenja, i to tako da na svaki član jedne strane nejednakosti primijenimo A-G nejednakost. Uočimo da je $\dfrac{a}{c}=\dfrac{a}{b}\cdot \dfrac{b}{c}=\sqrt{\dfrac{a^2}{b^2}\cdot\dfrac{b^2}{c^2}}$ i analogno $\dfrac{b}{a}=\sqrt{\dfrac{b^2}{c^2}\cdot\dfrac{c^2}{a^2}}$, $\dfrac{c}{b}=\sqrt{\dfrac{c^2}{a^2}\cdot\dfrac{a^2}{b^2}}$. Vrijedi
+$$\dfrac{a}{c}=\sqrt{\dfrac{a^2}{b^2}\cdot\dfrac{b^2}{c^2}}\leq \dfrac{\dfrac{a^2}{b^2}+\dfrac{b^2}{c^2}}{2},\; \dfrac{b}{a}=\sqrt{\dfrac{b^2}{c^2}\cdot\dfrac{c^2}{a^2}}\leq \dfrac{\dfrac{b^2}{c^2}+\dfrac{c^2}{a^2}}{2},\; \sqrt{\dfrac{c^2}{a^2}\cdot\dfrac{a^2}{b^2}}\leq \dfrac{c}{b}=\dfrac{\dfrac{c^2}{a^2}+\dfrac{a^2}{b^2}}{2}.$$
+Zbrajanjem ovih nejednakosti dobivamo tvrdnju.
+
+e) Ponovno ćemo na svaki član primijeniti A-G nejednakost, analognom metodom kao u prethodna dva primjera. Uočimo da je
+$a=\sqrt{\dfrac{a^2}{b}\cdot b}\leq \dfrac{\dfrac{a^2}{b}+b}{2}$. Uočimo da smo ovo rastavili ovako jer smo htjeli pod korijen "ubaciti" izraz $\dfrac{a^2}{b}$ koji se pojavljuje kao jedan od sumanada na lijevoj strani nejednakosti. Pritom nam $b$ neće smetati, jer kad budemo sumirali, dobit ćemo $\dfrac{a+b+c+d}{2}$, kojeg ćemo onda moći "prebaciti" na drugu stranu jednakosti, na kojoj ćemo imati $a+b+c+d$. Zaista, imamo $$b=\sqrt{\dfrac{b^2}{c}\cdot c}\leq \dfrac{\dfrac{b^2}{c}+c}{2},\;c=\sqrt{\dfrac{c^2}{d}\cdot d}\leq \dfrac{\dfrac{c^2}{d}+d}{2},\;d=\sqrt{\dfrac{d^2}{a}\cdot a}\leq \dfrac{\dfrac{d^2}{a}+a}{2}. $$Sumiranjem svih nejednakosti dobivamo
+$$a+b+c+d\leq\dfrac{\dfrac{a^2}{b}+\dfrac{b^2}{c}+\dfrac{c^2}{d}+\dfrac{d^2}{a}+a+b+c+d}{2}\Leftrightarrow \dfrac{a+b+c+d}{2}\leq \dfrac{\dfrac{a^2}{b}+\dfrac{b^2}{c}+\dfrac{c^2}{d}+\dfrac{d^2}{a}}{2},$$
+pa množenjem s 2 dobivamo tvrdnju.
+\end{proof}
+\begin{remark}
+Uvjerite se da smo e) mogli riješiti i tako da uzmemo $a=\sqrt[4]{\dfrac{a^2}{b}\cdot \dfrac{a^2}{b}\cdot \dfrac{b^2}{c}\cdot c}$, analogno rastavimo i $b, c, d$ i primijenimo A-G nejednakost.
+\end{remark}
+
+Napomena \ref{agrem} kaže i da jednakost vrijedi ako i samo ako su svi brojevi $a_1, \dots, a_n$ međusobno jednaki. Ponekad i ta informacija može biti korisna, kao što ćemo vidjeti u sljedećim zadatcima.
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Pronađite sve uređene parove $(a, b)$ pozitivnih realnih brojeva za koje je $a^3+b^3+1\leq 3ab$.
+\item[b)] (Županijsko natjecanje, 4. razred, A varijanta, 2018.)\footnote{Ovaj zadatak je i u prethodnom poglavlju dan za vježbu (zadatak \ref{nejedn}).} Za sve $n\in \mathbb{N}$ vrijedi $$\dfrac{1}{n+1}+\dfrac{1}{n+2}+...+\dfrac{1}{3n+1}>1.$$
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka su $a, b\in \mathbb{R}$ proizvoljni brojevi takvi da je $a^3+b^3+1\leq 3ab$. Uočimo da iz A-G nejednakosti dobivamo $$a^3+b^3+1\geq 3\sqrt{a^3\cdot b^3\cdot 1}=3ab.$$
+Zato je nužno $a^3+b^3+1=3ab$. Međutim, znamo iz napomene \ref{agrem} da jednakost vrijedi ako i samo ako je $a=b=1$, pa je jedini uređeni par koji zadovoljava polazni uvjet par $(1, 1)$.
+
+b) Primjenom A-H nejednakosti dobivamo
+\begin{align}
+\label{har}
+\dfrac{1}{n+1}+\dfrac{1}{n+2}+...+\dfrac{1}{3n+1}>\dfrac{(2n+1)^2}{(n+1)+(n+2)+...+(3n+1)},   
+\end{align}
+gdje vrijedi stroga nejednakost jer su brojevi $\dfrac{1}{n+1},\; \dots,\; \dfrac{1}{3n+1}$ međusobno različiti. Nadalje, imamo
+\begin{align*}
+(n+1)+(n+2)+\dots+(3n+1)&=(n+1)+(n+2)+\dots+(n+2n)+(n+2n+1)\\
+&=n(2n+1)+\dfrac{(2n+1)(2n+2)}{2}=(2n+1)^2.
+\end{align*}
+Uvrštavanjem u (\ref{har}) dobivamo tvrdnju.
+\end{proof}
+\begin{exercise}[Nejednakost Cauchy-Schwarz-Bunjakovskog]
+Neka su $a_1, \dots, a_n$ i $b_1, \dots, b_n$ realni brojevi. Dokažite:
+$$\left(\sum_{k=1}^n{a_kb_k}\right)^2\leq \left(\sum_{k=1}^n{a_k^2}\right)\cdot\left(\sum_{k=1}^n{b_k^2}\right)$$
+Jednakost vrijedi ako i samo ako postoji $k\in \mathbb{R}$ takav da je $b_i=ka_i$, za sve $i=1, \dots, n$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Promotrimo izraz $D=\left(\dsum_{k=1}^n{\,a_kb_k}\right)^2- \left(\dsum_{k=1}^n{\,a_k^2}\right)\cdot\left(\dsum_{k=1}^n{\,b_k^2}\right)$. Trebamo pokazati da je $D\leq 0$. No uočimo da je $D$ diskriminanta kvadratne funkcije $f : \mathbb{R}\to \mathbb{R}$,
+$$f(x)=\dfrac{1}{2}\cdot\left(\dsum_{k=1}^n{\,a_k^2}\right)x^2+\left(\dsum_{k=1}^n{\,a_kb_k}\right)x+\dfrac{1}{2}\left(\dsum_{k=1}^n{\,b_k^2}\right).$$
+Očito je dovoljno pokazati da je $f(x)\geq 0$ za sve $x\in \mathbb{R}$, jer ćemo time dobiti da $f$ ima najviše jednu nultočku (Uvjerite se u to!), što povlači da za njezinu diskriminantu $D$ vrijedi $D\leq 0$, što i želimo pokazati. Uočimo da je
+$$f(x)=\dfrac{1}{2}\,\dsum_{k=1}^n{\,a_k^2x^2+2a_kb_kx+b_k^2}=\dfrac{1}{2}\,\dsum_{k=1}^n{\,(a_kx+b_k)^2}\geq 0,$$
+što smo i htjeli pokazati. Nadalje, znamo da je $D=0$ ako i samo ako $f$ ima jedinstvenu nultočku $x_0$. Tada je $$\dsum_{k=1}^n{\,(a_kx_0+b_k)^2}=0,$$ što vrijedi ako i samo ako je $a_kx_0+b_k=0$ za sve $k=1, \dots, n$.\footnote{Općenito, za sve $x_1, \dots, x_n\in \mathbb{R}$ vrijedi $x_1^2+\dots+x_n^2=0$ ako i samo ako vrijedi $x_1=\dots=x_n=0$. Dokažite to!} No to je ekvivalentno tvrdnji $b_k=(-x_0)a_k$ za sve $k=1, \dots, n$, što smo i htjeli dokazati.
+\end{proof}
+Ova nejednakost, koju često u kraćem obliku zovemo \textit{CSB-nejednakost} ima i svoju teorijsku važnost (S generalizacijom upravo dokazane tvrdnje susrest ćete se na kolegiju \textit{Linearna algebra 2}), ali je korisna i za dokazivanje raznih nejednakosti.
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka je $n\in \mathbb{N}$ i $a_1, \dots, a_n\in \mathbb{R}$ takvi da je $a_1+a_2+\dots+ a_n=1$. Dokažite da je $$a_1^2+a_2^2\dots+a_n^2\geq \dfrac{1}{n}.$$
+\item[b)] Neka su $a_1, a_2, a_3>0$ takvi da je $a_1^2+a_2^2+a_3^2=1$. Dokažite da je $2a_1+2a_2+a_3\leq 3$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Primjenom CSB-nejednakosti imamo
+\begin{align*}
+1=(a_1+a_2+\dots+a_n)^2&=(a_1\cdot1+a_2\cdot 1+\dots+a_n\cdot 1)^2\\
+&\leq(a_1^2+a_2^2+\dots+a_n^2)(1^2+1^2+\dots+1^2)\\
+&=n(a_1^2+a_2^2+\dots+a_n^2)
+\end{align*}
+Odnosno $a_1^2+a_2^2\dots+a_n^2\geq \dfrac{1}{n}$, što smo i tvrdili.
+
+b) Koristeći CSB-nejednakost dobivamo
+$$(2a_1+2a_2+a_3)^2\leq (2^2+2^2+1)(a_1^2+a_2^2+a_3^2)=9,$$
+pa korjenovanjem obje strane dobivamo traženu tvrdnju.
+\end{proof}
+\begin{exercise}[Nesbittova nejednakost]
+Dokažite da za sve $a, b, c>0$ vrijedi
+$$\dfrac{a}{b+c}+\dfrac{b}{a+c}+\dfrac{c}{a+b}\geq \dfrac{3}{2}.$$
+\end{exercise}
+\begin{proof}[Rješenje]
+Uočimo da ako svakom razlomku na lijevoj strani nejednakosti dodamo $1$, u brojniku svakog razlomka ćemo dobiti izraz $a+b+c$, odakle slijedi da ćemo moći faktorizirati taj izraz, što je često korisno ukoliko se CSB-nejednakost pokaže korisnom u dokazivanju dane nejednakosti. Imamo
+\begin{gather*}
+\dfrac{a}{b+c}+1+\dfrac{b}{a+c}+1+\dfrac{c}{a+b}+1\geq \dfrac{9}{2}\\
+\dfrac{a+b+c}{b+c}+\dfrac{a+b+c}{a+c}+\dfrac{a+b+c}{a+b}\geq \dfrac{9}{2}\\
+(a+b+c)\left(\dfrac{1}{b+c}+\dfrac{1}{a+c}+\dfrac{1}{a+b}\right)\geq \dfrac{9}{2}\\
+(2a+2b+2c)\left(\dfrac{1}{b+c}+\dfrac{1}{a+c}+\dfrac{1}{a+b}\right)\geq 9.
+\end{gather*}
+Uočimo da vrijedi $2a+2b+2c=(a+b)+(a+c)+(b+c)$, pa je nejednakost ekvivalentna s
+$$\left((b+c)+(a+c)+(a+b)\right)\left(\dfrac{1}{b+c}+\dfrac{1}{a+c}+\dfrac{1}{a+b}\right)\geq 9,$$
+što slijedi direktno iz CSB-nejednakosti. Zaista,
+\begin{align*}
+&\left((b+c)+(a+c)+(a+b)\right)\left(\dfrac{1}{b+c}+\dfrac{1}{a+c}+\dfrac{1}{a+b}\right)\\ &\geq\left(\sqrt{b+c}\cdot \dfrac{1}{\sqrt{b+c}}+\sqrt{a+c}\cdot \dfrac{1}{\sqrt{a+c}}+\sqrt{a+b}\cdot \dfrac{1}{\sqrt{a+b}}\right)^2=9. \qedhere
+\end{align*}
+\end{proof}
+\section{Minimum i maksimum. Arhimedov aksiom}
+Sigurno ste se prije u obrazovanju susreli s pojmovima otvorenih, zatvorenih, poluotvorenih i poluzatvorenih intervala, za koje sad dajemo preciznu definiciju.
+\begin{definition}
+Neka su zadani $a, b\in \mathbb{R}$, $a<b$. Definiramo sljedeće skupove:
+\begin{AutoMultiColItemize}
+\item $\langle a, b\rangle:=\{x\in \mathbb{R} : a<x<b\}$,
+\item $[a, b]:=\{x\in \mathbb{R} : a\leq x\leq b\}$,
+\item $[a, b\rangle:=\{x\in \mathbb{R} : a\leq x< b\}$,
+\item $\langle a, b]:=\{x\in \mathbb{R} : a< x\leq b\}$,
+\item $\langle -\infty, b]:=\{x\in \mathbb{R} : x\leq b\}$,
+\item $\langle -\infty, b\rangle:=\{x\in \mathbb{R} : x< b\}$,
+\item $[a, \infty\rangle:=\{x\in \mathbb{R} : a\leq x\}$,
+\item $\langle a, \infty\rangle:=\{x\in \mathbb{R} : a< x\}$.
+\end{AutoMultiColItemize}
+Skupovi $\langle a,b \rangle$, $\langle a,\infty \rangle$, $\langle -\infty,b \rangle$ su \textbf{otvoreni intervali}, skup $[a, b]$ je \textbf{zatvoreni interval}, a skupovi $[a, b\rangle$, $\langle a, b]$, $\langle -\infty, b]$, $[a, \infty\rangle$ su \textbf{poluotvoreni intervali}.
+\end{definition}
+\begin{exercise}
+Dokažite da je $[0, 1\rangle \subseteq \langle -1, 2\rangle$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $x\in [0, 1\rangle$ proizvoljan. Po definiciji vrijedi $0\leq x<1$. No tada vrijedi i $-1<x<2$, odnosno $x\in \langle -1, 2\rangle$.
+\end{proof}
+\begin{definition}
+\label{minimax}
+Kažemo da je $a\in \mathbb{R}$ \textbf{gornja međa} skupa $S\subseteq{\mathbb{R}}$ ako za svaki $x\in S$ vrijedi $x\leq a$, odnosno \textbf{donja međa} skupa $S$ ako za svaki $x\in S$ vrijedi $a\leq x$. Ako je pritom $a\in S$, onda je $a$ \textbf{maksimum} (ako je on gornja međa), odnosno \textbf{minimum} (ako je on donja međa) skupa $S$. Maksimum skupa $S$ označavamo sa $\max{S}$, a minimum s $\min{S}$. Ako skup ima gornju (donju među), onda kažemo da je odozgo (odozdo) ograničen/omeđen. Ako ima obje, onda samo kažemo da je ograničen/omeđen.
+\end{definition}
+
+\begin{exmp}
+Skup $T=\{1, 2, 3, 4, 5.5, 8\}$ je odozgo ograničen, jer je $8$ jedna njegova gornja međa. Uočite da su njegove gornje međe npr. $9$, $12$ te $2000$ (Općenito, svi brojevi iz skupa $[8,\infty\rangle$). S druge strane, skup $\mathbb{N}$ nije odozgo ograničen. 
+
+Analogno imamo da ako skup sadrži neku svoju donju među, onda je ona najveća od svih donjih međa.
+\end{exmp}
+\begin{exercise} Navedite primjer...
+\begin{itemize}
+\item[a)] ...skupa $A\subseteq \mathbb{R}$ koji je odozgo ograničen, odozdo neograničen, te nema maksimum.
+\item[b)] ...beskonačnog skupa $A\subseteq \mathbb{R}$ takvog da je $\min{A}=0$, $\max{A}=5$, te vrijedi $1\notin A$ i $3\notin A$.
+\item[c)] Ograničenog skupa $A\subseteq \mathbb{R}$ takvog da je $\max{A}=1$, nema minimum i sadrži točno dva racionalna broja.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Jedan takav skup je npr. $A:=\langle -\infty, 3\rangle$. Zaista, očito je odozgo ograničen (vrijedi $x\in A$ ako i samo ako je $x<3$, dakle jedna gornja međa je npr. $4$), odozdo neograničen (za svaki $a\in \mathbb{R}$ postoji $x\in A$ takav da je $x<a$, npr. bilo koji član skupa $A$ ako je $a\geq 3$ i $a-1$ ako je $a<3$), te nema maksimum (kad bi postojao maksimum $b$, po definiciji je $b<3$, no $b<\dfrac{b+3}{2}<3$, što je kontradikcija s činjenicom da je $b$ maksimum). Još nekoliko primjera skupova s danim svojstvom: $\mathbb{N}^-\cup [3, 4\rangle$, $\langle -\infty, 2]\cap \mathbb{I}$.
+
+b) Uzmimo npr. $A:=\left[0,\dfrac{1}{2}\right]\cup \left[4, 5\right]$. Uvjerimo se npr. da je $\min{A}=0$. Neka je $x\in A$ proizvoljan. Vrijedi $x\in A$ ako i samo ako vrijedi $x\in \left[0,\dfrac{1}{2}\right]$ ili $x\in [4, 5]$. Ako je $x\in \left[0,\dfrac{1}{2}\right]$, tj. $0\leq x\leq \dfrac{1}{2}$, onda je očito i $x\geq 0$, isto vrijedi i ako je $x\in [4, 5]$. Dakle, $0\leq x$ za sve $x\in A$. Kako je $0\in A$, zaključujemo da je $\min{A}=0$. Analogno se zaključuje da je $\max{A}=5$. Očito vrijedi $1\notin A$, jer bi inače trebalo vrijediti $0\leq 1\leq \dfrac{1}{2}$ ili $4\leq 1\leq 5$, a nikoja od te dvije tvrdnje nije istinita. Slično vidimo i da vrijedi $3\notin A$.
+
+c) Uzmimo $A:=\left(\langle 0, 1\rangle\cap \mathbb{I}\right)\cup \left\{\dfrac{1}{2}, 1\right\}$. Lako se vidi da $A$ sadrži točno dva racionalna broja ($\dfrac{1}{2}$ i $1$, ostali su svi iracionalni po definiciji) i slično kao i u b) se pokaže da je $\max{A}=1$. Pretpostavimo da skup $A$ ima minimum, neka je to $a$. Očito je $a>0$ (jer za sve $x\in A$ vrijedi $a>0$), pa uzmemo li bilo koji iracionalan broj u intervalu $\langle 0, a\rangle$. Tvrdimo da za svaki $a>0$ zaista postoji bar jedan iracionalan broj $0<b<a$. Naime, ako je $a$ iracionalan, onda je $\dfrac{a}{2}$ jedan takav broj, a ako je $a$ racionalan, onda je $\dfrac{a\sqrt{2}}{2}$ jedan takav broj. Dokažimo radi ilustracije da je $\dfrac{a\sqrt{2}}{2}$ iracionalan. \textbf{DOVRŠITI!!} neka je to $b$, dobivamo $b<a$ i $b\in A$, što je kontradikcija s minimalnošću od $A$.
+\end{proof}
+Sada uvodimo korisnu notaciju kojom ćemo se koristiti na više mjesta.
+
+\begin{definition}
+Neka je $f(x)$ neki realan broj u ovisnosti o $x\in A\subseteq \mathbb{R}$. Oznaka $S=\left\{f(x) : x\in A\right\}$ je zapravo oznaka za skup $S=\left\{y\in \mathbb{R} : \exists x\in A \;\mathrm{t.d.}\; y=f(x)\right\}$.
+\end{definition}
+
+\begin{exercise}
+Zadan je skup $S=\left\{\dfrac{1}{x^2+1} : x\in \mathbb{R}\right\}$. Odredite $\min{S}$ i $\max{S}$, ako postoje.
+\end{exercise}
+\begin{proof}[Rješenje]
+Pokušamo li umjesto $x$ uvrstiti razne brojeve, naslućujemo da bi njegov maksimum mogao biti $1$. Zaista, za sve $x\in \mathbb{R}$ vrijedi $$\dfrac{1}{x^2+1}\leq 1,$$ jer je ta tvrdnja ekvivalentna tvrdnji $x^2\geq 0$. Vrijedi i $1\in S$, i to za $x=0$. Dakle, $\max{S}=1$. 
+
+Nadalje, tvrdimo da $\min{S}$ ne postoji. Zaista, pretpostavimo da postoji $\min{S}=m\in \mathbb{R}$. Kako je $m\in S$, po definiciji postoji $x_0\in \mathbb{R}$ takav da je $m=\dfrac{1}{x_0^2+1}$. Uzmimo $x_1:=|x_0|+1$. Vrijedi $$\dfrac{1}{x_0^2+1}> \dfrac{1}{(|x_0|+1)^2+1},$$
+jer je
+$$\dfrac{1}{x_0^2+1}> \dfrac{1}{(|x_0|+1)^2+1}\Leftrightarrow x_0^2+1<(|x_0|+1)^2+1\Leftrightarrow -1<2|x_0|,$$
+a tvrdnja $-1<2|x_0|$ je očito istinita. Nadalje, očito je $|x_0|+1\in \mathbb{R}$, pa vrijedi $$\dfrac{1}{(|x_0|+1)^2+1}\in S,$$ što je u kontradikciji s minimalnošću od $m$.
+\end{proof}
+\begin{exercise}
+Neka je $S=\{x^3-x : x\geq 1\}$. Odredite $\min{S}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Očito je $0\in S$. Dokažimo da je $x^3-x\geq 0$ za sve $x\geq 1$. Zaista, taj uvjet je ekvivalentan sa 
+$$x(x^2-1)\geq 0, \;\; \forall x\geq 1,$$
+što je ekvivalentno tvrdnji da je $x^2-1\geq 0$ za sve $x\geq 1$, što očito vrijedi. Prema tome tvrdnja vrijedi po definiciji minimuma.
+\end{proof}
+\begin{exercise}
+\label{tjeme}
+Neka su $a, b, c\in \mathbb{R}$ i $a> 0$. Neka je $S=\left\{ax^2+bx+c : x\in \mathbb{R}\right\}$. Odredimo $\min{S}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Za sve $x\in \mathbb{R}$ vrijedi
+\begin{align*}
+ax^2+bx+c&=a\left(x^2+\dfrac{b}{a}x+\dfrac{c}{a}\right)=a\left(x^2+\dfrac{b}{a}x+\dfrac{b^2}{4a^2}+\dfrac{c}{a}-\dfrac{b^2}{4a^2}\right)\\
+&=a\left(\left(x+\dfrac{b}{2a}\right)^2+\dfrac{4ac-b^2}{4a^2}\right)=a\left(x+\dfrac{b}{2a}\right)^2+\dfrac{4ac-b^2}{4a},
+\end{align*}
+pa zbog $a>0$ vrijedi $$a\left(x+\dfrac{b}{2a}\right)^2+\dfrac{4ac-b^2}{4a}\geq \dfrac{4ac-b^2}{4a}$$ 
+i $\dfrac{4ac-b^2}{4a}$ je ujedno i minimum jer se on postiže za $x=-\dfrac{b}{2a}$.
+\end{proof}
+\begin{remark}
+Analogno se pokazuje da, ukoliko je $a<0$, vrijedi da je $\max{S}=\dfrac{4ac-b^2}{4a}$ i on se, kao i u prethodnom slučaju, postiže za $x=-\dfrac{b}{2a}$. Ovo je vrlo koristan rezultat, za koji se nadamo da Vam je poznat iz srednje škole.
+\end{remark}
+
+\begin{exercise}
+Neka je $S=\left\{\dfrac{1}{\sqrt{x^2+3x+4}} : x\in \mathbb{R}\right\}$. Odredite $\max{S}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $x\in \mathbb{R}$ proizvoljan. Iz tvrdnje prethodnog zadatka imamo da vrijedi $$x^2+3x+4\geq \dfrac{7}{4},$$
+gdje jednakost vrijedi za $x=-\dfrac{3}{2}$. Odavde iz monotonog rasta funkcije funkcije korijen dobivamo $$\sqrt{x^2+3x+4}\geq \dfrac{\sqrt{7}}{2},$$
+odnosno
+$$\dfrac{1}{\sqrt{x^2+3x+4}}\leq \dfrac{2}{\sqrt{7}}.$$ Zaključujemo i da je ovo maksimum, jer jednakost vrijedi za $x=-\dfrac{3}{2}$.
+\end{proof}
+\begin{exercise}
+Neka je $S=\left\{\dfrac{\pi^2}{4x\sin{x}}+x\sin{x} : 0<x<\pi\right\}$. Odredite $\min{S}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $x>0$ proizvoljan. Kako vrijedi $\sin{x}>0$ za sve $x\in \langle 0, \pi\rangle$, možemo primijeniti A-G nejednakost. Vrijedi
+$$\dfrac{\pi^2}{4x\sin{x}}+x\sin{x}\geq 2\cdot \sqrt{\dfrac{\pi^2}{4x\sin{x}}\cdot x\sin{x}}=\pi.$$
+Dakle, $\pi$ je jedna donja međa. Pokažimo i da je $\pi\in S$. Naime, jednakost se postiže ako i samo ako je $$\dfrac{\pi^2}{4x\sin{x}}=x\sin{x},$$ što je ekvivalentno tvrdnji $$x\sin{x}=\dfrac{\pi}{2}.$$ Očito je jednadžba zadovoljena npr. za $x=\dfrac{\pi}{2}$, pa zaključujemo da u tom slučaju vrijedi $$\dfrac{\pi^2}{4x\sin{x}}+x\sin{x}=\pi.$$ Dakle $\pi\in S$, pa je on i minimum.
+\end{proof}
+\begin{exercise}
+Neka je $S=\left\{(1+x)^2(1-x) : x>0\right\}$. Odredite $\max{S}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $x>0$ proizvoljan. Direktnom primjenom A-G nejednakosti dobivamo $$(1+x)(1+x)(1-x)\geq \left(\dfrac{1+x+1+x+1-x}{3}\right)^3=\dfrac{3+x}{3}.$$ Kako želimo pri korištenju A-G nejednakosti doći do konstante, ova nejednakost nam nije korisna. Međutim, uočite da, kad bi umjesto $1-x$ imali $2-2x$, onda bi se varijable $x$ u brojniku poništile i u tom slučaju bi došli do konstante. No to možemo i postići. Zaista,
+$$(1+x)^2(1-x)=\dfrac{1}{2}(1+x)(1+x)(2-2x)\geq \dfrac{1}{2}\left(\dfrac{1+x+1+x+2-2x}{3}\right)^3=\dfrac{1}{2}\left(\dfrac{4}{3}\right)^3=\dfrac{32}{27}.$$
+Jednakost se postiže ako i samo ako je $1+x=2-2x$, odnosno $x=\dfrac{1}{3}$. Dakle, $\max{S}=\dfrac{32}{27}$ i on se postiže za $x=\dfrac{1}{3}$.
+\end{proof}
+\begin{remark}[Arhimedov aksiom]
+Neka su $a>0$ i $b>0$ proizvoljni. Tada postoji $n\in \mathbb{N}$ takav da je $na>b$.
+\end{remark}
+\begin{exercise}
+Dokažite da za svaki realan $r>0$ postoji bar jedan $a\in \mathbb{N}$ takav da je $\dfrac{1}{a}<r$. Postoji li i beskonačno mnogo prirodnih brojeva koji zadovoljavaju tvrdnju?
+\end{exercise}
+\begin{proof}[Rješenje]
+Prema Arhimedovu aksiomu za svaki $r>0$ postoji $a\in \mathbb{N}$ takav da je $ra>1$, odnosno $\dfrac{1}{a}<r$. Nadalje, za svaki $b\in \mathbb{N}$ takav da je $b>a$ vrijedi $$\dfrac{1}{b}<\dfrac{1}{a}<r,$$ pa očito ako tvrdnja vrijedi za $a$, onda vrijedi i za svaki $b>a$. Dakle, postoji beskonačno mnogo takvih prirodnih brojeva.
+\end{proof}
+\begin{exercise}
+\label{12}
+Dokažite koristeći Arhimedov aksiom da je skup $A=\{x^2 : x\in \mathbb{N}\}$ odozgo neograničen, tj. nema gornju među.
+\end{exercise}
+\begin{proof}[Rješenje]
+Da skup $S$ ima gornju među znači da postoji bar jedan $M\in \mathbb{R}$ tako da za svaki $x\in S$ vrijedi $x\leq M$. Mi moramo dokazati negaciju ove tvrdnje, tj. moramo dokazati da za svaki $M\in \mathbb{R}$ postoji $x_0\in A$ takav da je $x_0>M$. Da je $x_0\in S$ znači da je on oblika $x^2$, gdje je $x\in \mathbb{N}$, pa zapravo trebamo dokazati da za svaki $M\in \mathbb{R}$ postoji $x\in \mathbb{N}$ takav da je $x^2>M$. 
+
+Prema Arhimedovu aksiomu za svaki $M\in \mathbb{R}$ postoji $x\in \mathbb{N}$ takav da je $x>M$. Znamo da je $n^2\geq n$ za sve $n\in \mathbb{N}$, pa vrijedi $$x^2\geq x>M,$$ 
+čime smo pokazali da za tako odabrani $x$ vrijedi i $x^2>M$. Time je tvrdnja dokazana.
+\end{proof}
+\begin{remark}
+Prethodni zadatak mogli smo riješiti i pomoću dokaza kontradikcijom. Zaista, pretpostavimo da je $M$ jedna gornja međa za $A$, tj. da postoji $M\in \mathbb{N}$ takav da za svaki $x\in \mathbb{N}$ vrijedi $x^2\leq M$. Dobivamo kontradikciju s činjenicom da tvrdnja očito ne vrijedi npr. za $x=M+1$.
+\end{remark}
+
+\begin{exercise}
+Dokažite da za svaki $a\in \mathbb{R}$ postoji $n\in \mathbb{Z}$ takav da je $n-1\leq a\leq n$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Uzmimo prvo da je $a>0$. Tada prema Arhimedovu aksiomu postoji $n\in \mathbb{N}$ takav da je $n>a$. Uzmimo od svih prirodnih brojeva takvih da je $n>a$ najmanji takav broj, nazovimo ga $n_0$. Tada je $n_0>a$, pa i $n_0\geq a$ i $n_0-1\leq a$, No $n_0$ je upravo broj koji smo tražili. Za $a=0$ tvrdnja vrijedi za $n=0$, a ako je $a<0$, onda je zahtjev 
+$$n-1\leq a\leq n
+\Longleftrightarrow -n\leq -a\leq -n+1.$$ 
+No sada je $-a>0$, pa prema dokazanom upravo postoji $l\in \mathbb{Z}$ takav da je $l-1\leq -a\leq l$, pa za $-n=l-1$, tj. $n=1-l$ tvrdnja vrijedi.
+\end{proof}
+
+\section{Supremum i infimum}
+
+\begin{definition}
+Neka je $S$ odozgo ograničen skup. \textbf{Supremum} skupa $S$ je najmanja gornja međa od $S$.
+\end{definition}
+
+\begin{definition}
+Neka je $S$ odozdo ograničen skup. \textbf{Infimum} skupa $S$ je najveća donja međa od $S$.
+\end{definition}
+
+Kako su supremum i infimum jedinstveni ako postoje, ima smisla uvesti oznake $\sup{A}$ i $\inf{A}$.
+Napomenimo da infimum (supremum) odozdo (odozgo) ograničenog skupa može, ali i ne mora biti unutar tog skupa. Vrijedi sljedeće -- ako je $S\subseteq \mathbb{R}$ odozgo omeđen skup koji sadrži neku svoju gornju među $b$, onda je $\sup{S}=b$. Zaista, kad bi postojao $a\in S$ takav da je $a<b$ i da za sve $x\in S$ vrijedi $x\leq a$, onda $b\in S$ povlači $b\leq a$, što je u kontradikciji s $a<b$. Analogno se pokaže da ako je $S$ odozdo omeđen skup koji sadrži neku svoju donju među, onda je ona infimum tog skupa.
+\begin{exercise}
+Dokažite da je $\sup{[0, 1\rangle}=1$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Pretpostavimo da $1$ nije supremum, tj. da postoji neka gornja međa $M$ takva da je $M<1$, dakle vrijedi $a\leq M$ za svaki $a\in [0, 1\rangle$. Očito je $M\geq 0$. No dobivamo kontradikciju s činjenicom da je $$\dfrac{M+1}{2}>M\;\;\text{i}\;\;0\leq \dfrac{M+1}{2}<1,$$ što znači da je $\dfrac{M+1}{2}\in [0, 1\rangle$.
+\end{proof}
+\begin{exercise}
+Neka je $A=\left\{\dfrac{4}{4n^2-1} : n\in \mathbb{Z}\right\}$. Odredite $\inf{A}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $n\in \mathbb{Z}$ proizvoljan. Kako za $n=0$ dobivamo da je $-4$ element ovog skupa, te uvrštavanjem ostalih brojeva dobivamo pozitine brojeve, naslućujemo da je $-4$ minimum, pa i infimum. Zapravo, moramo dokazati da za $n\neq 0$ vrijedi $$\dfrac{4}{4n^2-1}>0.$$ No da bismo to dokazali, potrebno je prvo pokazati da je $4n^2-1>0$ za $n\neq 0$. Kako je $4(-n)^2-1=4n^2-1$, slijedi da je nužan i dovoljan uvjet da tvrdnja vrijedi za sve $n\neq 0$ upravo taj da tvrdnja vrijedi za sve $n\in \mathbb{N}$. Za $n=1$ tvrdnja vrijedi. Pretpostavimo li da tvrdnja vrijedi za neki $n$, onda za $n+1$ imamo $$4(n+1)^2-1=4n^2+8n+4-1.$$ Znamo da vrijedi $8n+4>0$, jer je to ekvivalentno s istinitom tvrdnjom $n>-\dfrac{1}{2}$. Sada očigledno vrijedi $$4n^2-1+8n+4>0.$$ Zato je $-4$ nužno minimum, pa i infimum, te je $\inf{A}=-4$.
+\end{proof}
+\begin{exercise}
+\label{13}
+Neka je $S=\left\{\dfrac{1}{x+1} : x>-1\right\}$. Odredite $\inf{S}$ i $\sup{S}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $x>-1$ proizvoljan. Tvrdimo da je $\inf{S}=0$. Zaista, $0$ je očito jedna donja međa, kako je $x+1>0$, vrijedi $\dfrac{1}{x+1}>0$ (dijelili smo s $(x+1)^2$), pa je onda i $\dfrac{1}{x+1}\geq 0.$ 
+
+Pretpostavimo da $0$ nije infimum. Tada postoji neka donja međa skupa $S$, nazovimo ju $a$, takva da je $a>0$. Po definiciji, za sve $x>-1$ vrijedi $$\dfrac{1}{x+1}\geq a.$$ Odavde iz $a>0$ slijedi $$x\leq \dfrac{1}{a}-1.$$ 
+Dobili smo gornju među skupa $\langle-1, \infty\rangle$, što je kontradikcija jer znamo da je taj skup neograničen.
+
+Tvrdimo da ovaj skup nema supremum, tj. $\sup{S}=\infty$. Moramo, dakle, pokazati da je ovaj skup odozgo neograničen. Pretpostavimo da je odozgo ograničen, tj. da postoji $M\in \mathbb{R}$ takav da vrijedi 
+$$\dfrac{1}{x+1}\leq M.$$
+Očito je $M>0$, jer za npr. $x=0$ imamo $\dfrac{1}{0+1}=1\leq M$. Sada trebamo dobiti kontradikciju i to tako da pronađemo neki $x_0$ takav da je $\dfrac{1}{x_0+1}>M$. Rješavanjem jednadžbe $\dfrac{1}{x_0+1}=M$ dobivamo $$x_0=\dfrac{1}{M}-1,$$ pa kako bi "naštimali" kontradikciju, uzmimo 
+$$x_0=\dfrac{1}{M+1}-1.$$ 
+Tada je $x_0>-1$ i
+$$\dfrac{1}{\dfrac{1}{M+1}-1+1}=M+1>M,$$ i time zaista dobivamo kontradikciju s činjenicom da za svaki $x> -1$ vrijedi $\dfrac{1}{x+1}\leq M$! Time smo dokazali da je $S$ odozgo neograničen.
+\end{proof}
+\begin{exercise}
+\label{11}
+Neka je $S=\left\{\dfrac{x^2-5}{x^2+5} : x\in \mathbb{R}\right\}$. Odredite $\sup{S}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $x\in \mathbb{R}$ proizvoljan. Vrijedi
+\begin{gather}
+\label{2}
+\dfrac{x^2-5}{x^2+5}=\dfrac{x^2+5-10}{x^2+5}=1-\dfrac{10}{x^2+5}.
+\end{gather}
+Odavde vidimo da je očito $1$ jedna gornja međa. Naslućujemo da je $1$ supremum. Zaista, pretpostavimo da postoji $a\in \mathbb{R}$ takav da je $$\dfrac{x^2-5}{x^2+5}\leq a$$ za svaki $x\in \mathbb{R}$, gdje je $a<1$. Množenjem s $x^2+5$ dobivamo $$x^2-5\leq ax^2+5a,$$ odnosno $$(1-a)x^2\leq 5(a+1).$$ Kako je $a<1$, možemo podijeliti s $1-a$, pa dobivamo $$x^2\leq \dfrac{5(a+1)}{1-a},$$
+što je u kontradikciji s činjenicom da je skup $\{x^2 : x\in \mathbb{R}\}$ odozgo neograničen (što smo pokazali u zadatku \ref{12}).
+\end{proof}
+U rješenju prethodnog zadatka smo naslutili da je $1$ supremum koristeći (\ref{2}). Intuitivno, promotrimo li graf funkcije $x\mapsto \dfrac{10}{x^2+5}$ vidimo da ona poprima sve pozitivne vrijednosti, dakle i one jako bliske nuli, što znači da će $1-\dfrac{10}{x^2+5}$ biti po volji blizu broju $1$, pa ne može postojati gornja međa manja od $1$ jer ćemo uvijek moći odabrati takav $x$ koji će "premašiti" tako odabranu "gornju među".
+Ova razmatranja vode na sljedeće zaključke, koji nisu teški za dokazati.
+\begin{lemma}
+\label{14}
+Neka je $S$ odozgo ograničen skup. Tada je $L\in \mathbb{R}$ supremum skupa $S$ ako i samo ako je on gornja međa od $S$, tj. za svaki $x\in S$ vrijedi $x\leq L$, te za svaki $\epsilon >0$ postoji $a\in S$ takav da je $L-\epsilon<a$.
+\end{lemma}
+\begin{lemma}
+\label{26}
+Neka je $S$ odozdo ograničen skup. Tada je $L\in \mathbb{R}$ infimum skupa $S$ ako i samo ako je on donja međa od $S$, tj. za svaki $x\in S$ vrijedi $x\geq L$, te za svaki $\epsilon >0$ postoji $a\in S$ takav da je $L+\epsilon>a$.
+\end{lemma}
+Ovi rezultati pokazuju se zgodnima za dokazivanje tvrdnji o supremumima i infimumima u mnogo slučajeva. Navedimo nekoliko primjera.
+\begin{exercise}
+Odredite infimum skupa iz zadatka \ref{13} koristeći lemu \ref{26}.
+\end{exercise}
+\begin{proof}[Rješenje]
+U rješenju zadatka \ref{13} smo već pokazali da je $0$ jedna donja međa. Dokažimo sada da za proizvoljan $\epsilon>0$ postoji $a\in S$ takav da je $\epsilon>a$. To je ekvivalentno tvrdnji da za proizvoljan $\epsilon>0$ postoji $x>-1$ takav da je $$\dfrac{1}{x+1}<\epsilon.$$ Da bismo dobili ideju kako bi $x$ trebao izgledati, riješimo jednadžbu $\dfrac{1}{x+1}=\epsilon$ po $x$. Imamo
+$$\dfrac{1}{x+1}=\epsilon \Leftrightarrow (x+1)\epsilon=1\Leftrightarrow x\epsilon=1-\epsilon\Leftrightarrow x=\dfrac{1-\epsilon}{\epsilon}=\dfrac{1}{\epsilon}-1.$$
+Kako je $\dfrac{1}{\epsilon}-1$ rješenje jednadžbe $\dfrac{1}{x+1}=\epsilon$, slijedi da je $$\dfrac{1}{\left(\dfrac{1}{\epsilon}-1\right)+1}=\epsilon.$$ Sada trebamo taj izbor $x$-a "popraviti" tako da za novi izbor $x$-a vrijedi $\dfrac{1}{x+1}<\epsilon$. Kako je $$\dfrac{1}{\left(\dfrac{1}{\epsilon}-1\right)+1}=\epsilon>0,$$ očito ako mu "povećamo" nazivnik, broj kojim time dobivamo bit će sigurno manji od $\epsilon$. Zato ima smisla uzeti da je $$x=\dfrac{1}{\epsilon}+1.$$ Tada vrijedi
+$$x>\dfrac{1}{\epsilon}-1\Rightarrow x+1>\dfrac{1}{\epsilon}\Rightarrow \dfrac{1}{x+1}<\dfrac{1}{\dfrac{1}{\epsilon}}=\epsilon,$$
+čime smo dokazali tvrdnju.
+\end{proof}
+\begin{exercise}
+Neka je $A=\left\{\dfrac{n}{n+1} : n\in \mathbb{N}\right\}$. Odredite $\sup{A}$, ako postoji.
+\end{exercise}
+\begin{proof}[Rješenje]
+Za svaki $n\in \mathbb{N}$ vrijedi
+$$\dfrac{n}{n+1}=\dfrac{n+1-1}{n+1}=1-\dfrac{1}{n+1}$$
+$1$ je očito jedna gornja međa ovog skupa. Tvrdimo da je $1$ i supremum ovog skupa. Zaista, treba dokazati da za svaki $\epsilon>0$ postoji $n\in \mathbb{N}$ takav da vrijedi
+$$\dfrac{n}{n+1}>1-\epsilon,$$
+što je ekvivalentno tvrdnji
+$$(n+1)\epsilon>1.$$
+Prema Arhimedovu aksiomu postoji $n\in \mathbb{N}$ takav da je $n\epsilon>1$. No za taj $n$ očito vrijedi $$(n+1)\epsilon>n\epsilon>1.$$ Time smo dokazali tvrdnju.
+\end{proof}
+\begin{exercise}
+Neka je $A=\left\{\dfrac{2}{x^2-1} : |x|>3\right\}$. Odredite $\inf{A}$, ako postoji.
+\end{exercise}
+\begin{proof}[Rješenje]
+Uzmimo proizvoljan  $x\in \mathbb{R}$ takav da je $|x|>3$. Naslućujemo da je $\inf{A}=0$, jer broj $\dfrac{2}{x^2-1}$ teži ka $0$ za po apsolutnoj vrijednosti velike $x$. Zaista, pokažimo da je $0$ jedna donja međa. Zapravo je dovoljno pokazati da je $x^2-1>0$, jer onda je očito $\dfrac{2}{x^2-1}\geq 0$. Zaista, iz $|x|>3$ slijedi $x^2>9$, odakle slijedi $x^2-1>8>0$, pa tvrdnja vrijedi. 
+
+Pokažimo sada da za svaki $\epsilon >0$ postoji $x\in \mathbb{R}$ takav da je $$0+\epsilon=\epsilon>\dfrac{2}{x^2-1}\;\;\text{i}\;\; |x|>3.$$ Rješavanjem jednadžbe $\epsilon=\dfrac{2}{x^2-1}$ po $x$ dobivamo da je jedno od rješenja $$x=\sqrt{\dfrac{2}{\epsilon}+1},$$ pa sličnom intuicijom kao i prije pokušajmo "povećati" nazivnik, s time da treba imati na umu i da treba vrijediti $|x|>3$. Naslućujemo da će tvrdnja vrijediti za $$x=\sqrt{\dfrac{2}{\epsilon}+9}.$$ Zaista, vrijedi $$|x|=x=\sqrt{\dfrac{2}{\epsilon}+9}>\sqrt{9}=3,$$ te vrijedi
+$$x>\sqrt{\dfrac{2}{\epsilon}+1}\Rightarrow x^2>\dfrac{2}{\epsilon}+1\Rightarrow x^2-1>\dfrac{2}{\epsilon}\Rightarrow \dfrac{1}{x^2-1}<\dfrac{\epsilon}{2}\Rightarrow \dfrac{2}{x^2-1}<\epsilon.$$
+Time smo pokazali da je $\inf{A}=0$.
+\end{proof}
+\begin{exercise}
+Neka je $S=\left\{\dfrac{x^2-5}{x^2+5} : x\in \mathbb{R}\right\}$ (skup iz zadatka \ref{11}). Već je dokazano da je supremum ovog skupa $1$, ali dokažite da je $\sup{A}=1$ koristeći karakterizaciju danu lemom \ref{14}.
+\end{exercise}
+\begin{proof}[Rješenje]
+U rješenju zadatka \ref{11} smo već vidjeli da je $1$ jedna gornja međa. Treba pokazati da za sve $\epsilon>0$ postoji $x\in \mathbb{R}$ takav da je 
+$$1-\dfrac{10}{x^2+5}>1-\epsilon,$$ 
+što je ekvivalentno uvjetu $$\dfrac{10}{x^2+5}<\epsilon.$$ Kroz rješavanje prethodnih zadataka pokazalo se je da je rješavanje jednadžbe po $x$ često od pomoći, pa rješavanjem jednadžbe $\dfrac{10}{x^2+5}=\epsilon$ dobivamo $$x=\sqrt{\dfrac{10}{\epsilon}-5}=\sqrt{\dfrac{10-5\epsilon}{\epsilon}}.$$ No primijetimo da ovaj izraz nije definiran ako je $10-5\epsilon<0$, tj. ako je $\epsilon>2$. No uočimo da ako je $\epsilon>2$, onda tvrdnja koju želimo dokazati vrijedi i to za $x=0$. Zato možemo pretpostaviti da je $\epsilon\leq 2$. Sličnom intuicijom kao i prije, uzmemo li $x=\sqrt{\dfrac{10}{\epsilon}}$,
+vrijedi
+$$x>\sqrt{\dfrac{10}{\epsilon}-5}\Rightarrow x^2>\dfrac{10}{\epsilon}-5\Rightarrow x^2+5>\dfrac{10}{\epsilon}\Rightarrow \dfrac{1}{x^2+5}<\dfrac{\epsilon}{10}\Rightarrow \dfrac{10}{x^2+5}<\epsilon,$$
+čime smo dokazali tvrdnju.
+\end{proof}
+\begin{remark}
+Prethodni zadatak mogao se riješiti i kraće. Primijetimo da je $$\dfrac{10}{x^2+5}<\dfrac{10}{x}$$ za sve $x>0$. Rješavanjem jednadžbe $\dfrac{10}{x}=\epsilon$ dobivamo $x=\dfrac{10}{\epsilon}>0$, pa nam se isplati upravo uzeti taj $x$. Dobivamo $$\epsilon=\dfrac{10}{x}>\dfrac{10}{x^2+5},$$ pa smo time dokazali tvrdnju.
+\end{remark}
+
+\begin{exercise}
+Neka je $A=\left\{\dfrac{m^2}{n^2} : m, n\in \mathbb{N}\right\}$. Postoji li $\sup{A}$?
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdimo da ne postoji $\sup{A}$, tj. da je ovaj skup odozgo neograničen i to tako što ćemo pronaći neki njegov odozgo neograničen podskup. Zaista, to je dovoljno da bismo dokazali tvrdnju jer kontrapozicijom dobivamo da ako je skup odozgo ograničen, onda je i svaki njegov podskup odozgo ograničen, a to je očigledna tvrdnja. Neka je $$A':=\left\{m^2 : m\in \mathbb{N}\right\}.$$ Očito je $A'\subseteq A$ i on je odozgo neograničen, pa je i $A$ odozgo neograničen.
+\end{proof}
+Istaknimo sljedeću korisnu lemu.
+\begin{lemma}
+Neka su $A, B\subseteq \mathbb{R}$ neprazni, $A\subseteq B$ i neka je $B$ odozgo (odozdo) ograničen skup. Tada je i $A$ odozgo (odozdo) ograničen skup, te vrijedi $\sup{A}\leq \sup{B}$ ($\inf{A}\geq \inf{B}$).
+\end{lemma}
+\begin{exercise}
+Neka je $A=\left\{\dfrac{n}{1+nx^2} : n\in \mathbb{N},\; x\in \mathbb{R}\right\}$. Odredite $\inf{A}$, ako postoji.
+\end{exercise}
+\begin{proof}[Rješenje]
+Prvo dokažimo sljedeću jednostavnu tvrdnju: Neka je $A\subseteq \mathbb{R}$ neprazan i odozdo ograničen, te neka je $a\in \mathbb{R}$ donja međa skupa $A$. Ako postoji $B\subseteq A$ sa svojstvom da je $\inf{B}=a$, onda je $a=\inf{A}$. Zaista, iz prethodne leme slijedi da je $B$ odozdo ograničen, te $a=\inf{B}\geq \inf{A}$. S druge strane, po definiciji infimuma vrijedi $a\leq \inf{A}$, pa je zaista $a=\inf{A}$.
+
+Promotrimo skup
+$$A'=\left\{\dfrac{1}{1+x^2} : x\in \mathbb{R}\right\}.$$
+Uočimo da je $A'\subseteq A$ (dobiven za $n=1$) i $\inf{A'}=0$ (ovo se pokazuje slično kao u prethodnim zadatcima). Kako za sve $x\in \mathbb{R}$ i $n\in \mathbb{N}$ vrijedi $\dfrac{n}{1+nx^2}\geq 0$, vrijedi $\inf{A}=0$.
+\end{proof}
+\begin{exercise}
+Neka je $A=\left\{\dfrac{4x}{4x^2-1} : x>\dfrac{1}{2}\right\}$. Odredite $\sup{A}$ i $\inf{A}$, ako postoje.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $$A'=\left\{\dfrac{4x}{4x^2-1} : \dfrac{1}{2}<x<1\right\}.$$ Tvrdimo da je $A'$ odozgo neograničen. Pretpostavimo da postoji $M\in \mathbb{R}$ takav da za proizvoljan $x\in \left\langle \dfrac{1}{2}, 1\right\rangle$ vrijedi $$\dfrac{4x}{4x^2-1}\leq M.$$ Očito je $M> 1$. Kako je tada $$\dfrac{4}{4x^2-1}<\dfrac{4x}{4x^2-1},$$ očito je $M$ gornja međa i za skup $$A''=\left\{\dfrac{4}{4x^2-1} : \dfrac{1}{2}<x<1\right\}.$$ Pokažimo sada da postoji element skupa $A''$ koji je veći od $M$, čime dobivamo kontradikciju. Zaista, jedno od rješenja jednadžbe $\dfrac{4}{4x^2-1}=M$ je $x=\dfrac{\sqrt{4+M}}{2\sqrt{M}},$ pa ima smisla uzeti $$x=\dfrac{\sqrt{3+M}}{2\sqrt{M}}$$ da bismo dobili kontradikciju, jer je očito $x<\dfrac{\sqrt{4+M}}{2\sqrt{M}},$ što iz pozitivnosti oba izraza povlači $$\dfrac{4}{4x^2-1}>\dfrac{4}{4\left(\dfrac{(\sqrt{4+M}}{2\sqrt{M}}\right)^2-1}=M.$$ Još samo treba pokazati da je ovakav izbor $x$-a smislen, tj. da vrijedi $x> \dfrac{1}{2}$ i $x<1$. Zaista, prvi uvjet je ekvivalentan s $M\geq 0$, a drugi s $M>1$, a obje tvrdnje su očito istinite. Time smo dobili kontradikciju s činjenicom da je $M$ gornja međa od $A''$, pa zaključujemo da $A$ nema supremum. 
+
+Odredimo sada infimum. Kako vidimo da ovaj izraz teži ka $0$ za sve veće i veće $x$, intuitivno možemo pretpostaviti da je $0$ infimum. Zaista, $0$ je donja međa, jer vrijedi $\dfrac{4x}{4x^2-1}\geq 0$ za sve $x>\dfrac{1}{2}$, što se lako provjeri. Sada još treba provjeriti da za svaki $\epsilon>0$ postoji $x>\dfrac{1}{2}$ takav da je $$0+\epsilon=\epsilon>\dfrac{4x}{4x^2-1}.$$ Vrijedi
+$$x>\dfrac{1}{2}\Rightarrow \dfrac{1}{x}<2\Rightarrow 4x-\dfrac{1}{x}>4x-2\Rightarrow \dfrac{1}{4x-\dfrac{1}{x}}<\dfrac{4}{4x-2}\Rightarrow \dfrac{4x}{4x^2-1}<\dfrac{4}{4x-2}.$$
+Rješenje jednadžbe $\dfrac{4}{4x-2}=\epsilon$ je $$x=\dfrac{\epsilon+2}{2\epsilon}=\dfrac{1}{\epsilon}+\dfrac{1}{2}>\dfrac{1}{2}$$ i uzmemo li upravo taj $x$, tvrdnja je dokazana.
+\end{proof}
+\begin{exercise}
+Neka je $A=\left\{\dfrac{1}{m+n} : n\in \mathbb{N},\; m\in \mathbb{N}\right\}$. Odredite $\inf{A}$ i $\sup{A}$, ako postoje.
+\end{exercise}
+\begin{proof}[Rješenje]
+Lako se vidi da je maksimum ovog skupa $\dfrac{1}{2}$ i on se postiže za $m=n=1$. Tvrdimo da je $0$ infimum. Zaista, treba dokazati da za sve $\epsilon>0$ postoje $m$, $n\in \mathbb{N}$ takvi da je $$\epsilon>\dfrac{1}{m+n}.$$ što je ekvivalentno sa $$(m+n)\epsilon>1.$$ Zaista, prema Arhimedovu aksiomu postoje prirodni brojevi $m$ i $n$ takvi da je $m\epsilon>\dfrac{1}{2}$ i $n\epsilon>\dfrac{1}{2}$. Zbrajanjem ovih nejednakosti dobivamo tvrdnju.
+\end{proof}
+\begin{exercise}
+Neka je $A=\left\{\dfrac{n^2+4m^2}{mn} : n, m\in \mathbb{N}\right\}$. Odredite $\inf{A}$ i $\sup{A}$, ako postoje.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka su $m, n\in \mathbb{N}$ proizvoljni. Znamo da je $$(n-2m)^2=n^2-4mn+4m^2\geq 0,$$
+odakle slijedi $n^2+4m^2\geq 4mn$, odnosno $$\dfrac{n^2+4m^2}{mn}\geq 4.$$ Dakle $4$ je jedna donja međa, no ona je i minimum jer se postiže za $n=2$ i $m=1$. Stoga je $\inf{A}=4$. Tvrdimo da $A$ nema supremum. Uzmimo $m=1$. Pretpostavimo li da skup $$A'=\left\{\dfrac{n^2+4}{n} : n\in \mathbb{N}\right\}$$ ima gornju među $M$, onda dobivamo kontradikciju za $n=M$.
+\end{proof}
+\begin{remark}
+Neka su $m, n\in \mathbb{N}$ proizvoljni. Iz A-G nejednakosti imamo
+$$\dfrac{n^2+4m^2}{mn}=\dfrac{n}{m}+\dfrac{4m}{n}\geq 2\sqrt{\dfrac{n}{m}\cdot \dfrac{4m}{n}}=4,$$
+pa smo i tako mogli dobiti da je $4$ donja međa, ali i minimum jer jednakost vrijedi ako i samo ako je $\dfrac{n}{m}=\dfrac{4m}{n}$, odnosno $\dfrac{n}{m}=2$ i to vrijedi za $n=2$ i $m=1$, ali mogli smo uzeti i neke druge brojeve, npr. $n=50$ i $m=25$.
+\end{remark}
+
+\begin{remark}
+\label{prodsumsupinf}
+Vrijedi:
+\begin{itemize}
+\item[a)] Ako su $A$, $B\subseteq \mathbb{R}$ odozgo (odozdo) ograničeni skupovi, onda je skup
+$$A+B=\{a+b : a\in A,\; b\in B\}$$
+odozgo (odozdo) ograničen i vrijedi
+$$\sup(A+B)=\sup{A}+\sup{B}\hspace{0.5cm}\left(\inf(A+B)=\inf{A}+\inf{B}\right).$$
+\item[b)] Ako su $A$, $B\in \mathbb{R}$ odozgo ograničeni skupovi, takvi da je $a\geq 0$ za svaki $a\in A$, te $b\geq 0$ za svaki $b\in B$ (kraće: $A\geq 0$ i $B\geq 0$, dakle oni su i odozdo ograničeni), tada je skup
+$$A\cdot B=\{a\cdot b : a\in A,\; b\in B\}$$
+ograničen i vrijedi
+$$\sup(A\cdot B)=\sup{A}\cdot \sup{B} \; \wedge \; \inf(A\cdot B)=\inf{A}\cdot \inf{B}.$$
+\item[c)] Ako je $A\subseteq \mathbb{R}$ odozdo (odozgo) ograničen skup, tada je skup
+$$-A=\{-a : a\in A\}$$
+odozgo (odozdo) ograničen i vrijedi
+$$\sup(-A)=-\inf{A}, \hspace{0.5cm} \left(\inf(-A)=-\sup{A}\right).$$
+\item[d)] Ako su $A$, $B\in \mathbb{R}$ odozgo (odozdo) ograničeni skupovi, tada je skup $A\cup B$ odozgo (odozdo) ograničen i vrijedi
+$$\sup(A\cup B)=\max\{\sup{A},\sup{B}\},\hspace{0.5cm} \left(\inf(A\cup B)=\min\{\inf{A}, \inf{B}\}\right).$$
+\end{itemize}
+\end{remark}
+
+\begin{exercise}
+Neka je $A=\left\{\dfrac{n}{n+1}+\dfrac{1}{m^2} : n\in \mathbb{N},\; m\in \mathbb{N}\right\}$. Odredite $\sup{A}$ i $\inf{A}$ ako postoje.
+\end{exercise}
+\begin{proof*}
+Neka je $$A'=\left\{\dfrac{n}{n+1} : n\in \mathbb{N}\right\}\;\;\text{i}\;\;A''=\left\{\dfrac{1}{m^2} : m\in \mathbb{N}\right\}.$$ Prije smo pokazali da je $\sup{A'}=1$. No vrijedi da je $\inf{A'}=\dfrac{1}{2}$, jer je to i minimum, s obzirom da se postiže za $n=1$ i da vrijedi $$\dfrac{n}{n+1}\geq\dfrac{1}{2}$$ za sve $n\in \mathbb{N}$. Nadalje, vrijedi $\sup{A''}=1$, jer je to i maksimum koji se postiže za $m=1$, te $\inf{A''}=0$, jer prema Arhimedovu aksiomu za svaki $\epsilon>0$ postoji $m\in \mathbb{N}$ takav da je $m>\dfrac{1}{\epsilon}$, te kako je $y^2\geq y$ za sve $y\in \mathbb{N}$, slijedi da za tako odabrani $m$ vrijedi $\epsilon>\dfrac{1}{m^2}$. Dakle vrijedi $$\sup{A}=\sup(A'+A'')=\sup{A'}+\sup{A''}=2,$$ 
+te analogno \[\pushQED{\qed}
+\inf{A}=\inf(A'+A'')=\inf{A'}+\inf{A''}=\dfrac{1}{2}.\qedhere
+\popQED
+\]
+\end{proof*}
+\begin{exercise}
+Neka je $A=\left\{\dfrac{n+1}{(n+7)(nm+5n+m+5)} : m, n\in \mathbb{N}\right\}$. Odredite $\sup{A}$, ako postoji.
+\end{exercise}
+\begin{proof}[Rješenje]
+Za proizvoljne $m, n\in \mathbb{N}$ vrijedi
+\begin{align*}
+\dfrac{n+1}{(n+7)(nm+5n+m+5)}&=\dfrac{n+1}{(n+7)(m(n+1)+5(n+1))}=\\
+&\dfrac{n+1}{(n+7)(n+1)(m+5)}=\dfrac{1}{(n+7)(m+5)}.
+\end{align*}
+Neka je $A'=\left\{\dfrac{1}{n+7} : n\in \mathbb{N}\right\}$ i $A''=\left\{\dfrac{1}{m+5} : m\in \mathbb{N}\right\}$. Lako se vidi da su $A',\; A''\geq 0$ i da je $\sup{A'}=\dfrac{1}{8}$, $\sup{A''}=\dfrac{1}{6}$, pa je $\sup{A}=\dfrac{1}{48}$.
+\end{proof}
+\begin{exercise}
+Neka je $A=\left\{\dfrac{4n+13}{n+2}\cdot \dfrac{5m+12}{m+3} : n\in \mathbb{N},\; m\in \mathbb{N}\right\}$. Odredite $\sup{A}$, ako postoji.
+\end{exercise}
+\begin{proof}[Rješenje]
+Za proizvoljne $m, n\in \mathbb{N}$ vrijedi $$\dfrac{4n+13}{n+2}=4+\dfrac{5}{n+2}\;\;\text{i}\;\;\dfrac{5m+12}{m+3}=5-\dfrac{3}{m+3}.$$
+Promotrimo skup 
+$$A'=\left\{5-\dfrac{3}{m+3} : m\in \mathbb{N}\right\}=\left\{\dfrac{5m+12}{m+3} : m\in \mathbb{N}\right\}.$$
+Uočimo da je $A'=X+(-Y)$, gdje je $X=\{5\}$ i $Y=\left\{\dfrac{3}{m+3} : m\in \mathbb{N}\right\}$, pa kako je $\sup{X}=\inf{X}=5$, $\sup{Y}=\dfrac{3}{4}$ i $\inf{Y}=0$, zaključujemo da je $$\sup{A'}=\sup\left((X+(-Y)\right)=\sup{X}+\sup(-Y)=\sup{X}-\inf{Y}=5.$$ Nadalje, lako se vidi da je supremum svih brojeva oblika $$A''=\left\{4+\dfrac{5}{n+2} : n\in \mathbb{N}\right\}=\left\{\dfrac{4n+13}{n+2} : n\in \mathbb{N}\right\}$$ jednak $\dfrac{17}{3}$ (dobiva se za $n=1$, to je ujedno i maksimum skupa). Sada iz činjenice da za sve $n\in \mathbb{N}$ vrijedi $4+\dfrac{5}{n+2}\geq 0$ i $5-\dfrac{3}{n+3}\geq 0$, slijedi da je $\sup{A}=\dfrac{17}{3}\cdot 5=\dfrac{85}{3}$.
+\end{proof}
+\begin{exercise}
+Neka je $A=\left\{\dfrac{n-(-1)^n}{n} : n\in \mathbb{N}\right\}$. Odredite $\sup{A}$ i $\inf{A}$, ako postoje.
+\end{exercise}
+\begin{proof}[Rješenje]
+Pokazat ćemo dva rješenja.
+
+\textit{Prvi način.} Neka je $n\in \mathbb{N}$ proizvoljan. Iz činjenice da je $(-1)^n\geq -1$ slijedi $-(-1)^n\leq 1$, odakle slijedi
+$$\dfrac{n-(-1)^n}{n}\leq \dfrac{n+1}{n}=1+\dfrac{1}{n}\leq 2$$
+i to je maksimum, jer se postiže za $n=1$. Slično, iz $(-1)^n\leq 1$ slijedi $-(-1)^n\geq -1$, odakle slijedi
+$$\dfrac{n-(-1)^n}{n}\geq \dfrac{n-1}{n}=1-\dfrac{1}{n}\geq \dfrac{1}{2},$$
+što je i minimum, jer se postiže za $n=2$. Dakle, $\sup{A}=2$ i $\inf{A}=\dfrac{1}{2}$.
+
+\textit{Drugi način.} Definiramo
+$$A'=\left\{\dfrac{n-1}{n} : n \;\mathrm{paran}\right\}\;\;\text{i}\;\;A''=\left\{\dfrac{n+1}{n} : n \;\mathrm{neparan}\right\}.$$ Lako je pokazati da je $A'\cup A''=A$. Nadalje realan broj $a$ je element skupa $A'$ ako i samo ako postoji paran $n$ takav da je $a=\dfrac{n-1}{n}$. No prirodan broj $n$ je paran ako postoji $k\in \mathbb{N}$ takav da je $n=2k$, što povlači prema napomeni $1$ da je $$A'=\left\{\dfrac{2k-1}{2k} : k\in \mathbb{N}\right\}.$$ Sada analogno kao i u prethodnim zadatcima možemo pokazati da je $\sup{A'}=2$, $\inf{A'}=\dfrac{1}{2}$ (Dokažite to!). Analogno vidimo da vrijedi $$A''=\left\{\dfrac{2k}{2k-1} : k\in \mathbb{N}\right\},$$ iz činjenice da je $a\in \mathbb{N}$ neparan ako i samo ako postoji $k\in \mathbb{N}$ takav da je $a=2k-1$. Provjerite da je $\sup{A''}=2$, te $\inf{A''}=1$. Dakle, sveukupno imamo $\sup{A}=2$ i $\inf{A}=\dfrac{1}{2}$.
+\end{proof}
+\begin{exercise}
+Neka je $A\subseteq \mathbb{R}$ odozgo ograničen skup koji ima dva ili više elemenata. Dokažite da je $A':=A\setminus \{\min{A}\}$ također odozgo ograničen i vrijedi $\sup{A}=\sup{A'}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Skup $A'$ je neprazan, pa tvrdnja zadatka ima smisla. Nadalje, očito $\sup{A'}$ postoji, jer je npr. $\sup{A}$ jedna gornja međa skupa $A'$. Prema pretpostavci znamo da za svaki $\epsilon>0$ postoji $a\in A$ takav da je $L-\epsilon<a$. Naš je cilj dokazati da za svaki $\epsilon>0$ postoji $a'\in A'$ takav da je $L-\epsilon<a$. Imamo dva slučaja.
+\begin{itemize}
+\item $\epsilon<\dfrac{L-\min{A}}{2}$. Tada postoji $a$ za kojeg vrijedi
+
+$$a>L-\epsilon>L-\dfrac{L-\min{A}}{2}=\dfrac{L+\min{A}}{2}>\min{A}.$$
+Dakle, pronašli smo $a\in A'$ koji zadovoljava tvrdnju.
+\item $\epsilon\geq \dfrac{L-\min{A}}{2}$. Ovdje možemo uzeti neki $a$ za kojeg je $L-\epsilon'<a$, gdje je $\epsilon'$ proizvoljan broj takav da je $\epsilon'<\dfrac{L-\min{A}}{2}$. Kako je $\epsilon>\epsilon'$, vrijedi
+$$L-\epsilon<L-\epsilon'<a,$$
+te analogno kao i u prethodnom slučaju imamo $a>\min{A}$, odnosno $a\in A'$, pa i u ovom slučaju smo pronašli $a\in A$ koji zadovoljava tvrdnju. \qedhere
+\end{itemize}
+\end{proof}
+\begin{remark}
+\label{unprfam}
+Neka su $S,I$ neprazni skupovi i $\mathcal{F}=\left\{A_n : n\in I\right\}$ familija skupova (skup nekih podskupova od $S$), dakle $A_n\subseteq S$, za sve $n\in I$. Definiramo:
+\begin{gather}
+\label{un}
+\bigcup_{n\in I}{A_n}:=\left\{x\in S : (\exists n\in I)\; x\in A_n\right\},\\
+\label{pr}
+\bigcap_{n\in I}{A_n}:=\left\{x\in S : (\forall n\in I)\; x\in A_n\right\}.
+\end{gather}
+Skup (\ref{un}) zovemo \textbf{unija familije $\mathcal{F}$}, (\ref{pr}) zovemo \textbf{presjek familije $\mathcal{F}$}. Unije i presjeci familija se inače definiraju i za neindeksirane familije, ali ovo će za nas biti dovoljno. Više o familijama skupova možete vidjeti u \cite{9}, str. 9.
+\end{remark}
+
+\begin{exercise}[Cantorov aksiom]
+\label{Cantor}
+Neka je za sve $n\in \mathbb{N}$ zadan segment $[a_n, b_n]\subseteq \mathbb{R}$ i neka za sve $m\in \mathbb{N}$, $m\geq n$ povlači $[a_m, b_m]\subseteq [a_n, b_n]$. Dokažite:
+$$\bigcap_{n\in \mathbb{N}}{[a_n, b_n]}\neq \emptyset.$$
+\end{exercise}
+\begin{proof}[Rješenje]
+Naš je cilj dokazati da postoji $b\in \mathbb{R}$ takav da za sve $n\in \mathbb{N}$ vrijedi $a_n\leq b\leq b_n$. Uočimo prvo da je tvrdnja $[a_m, b_m]\subseteq [a_n, b_n]$ ekvivalentna tvrdnji $a_n\leq a_m\leq b_m\leq b_n$. Neka je sada $$A=\{a_n : n\in \mathbb{N}\}\;\;\text{i}\;\;B=\{b_n : n\in \mathbb{N}\}.$$ Uočimo da za sve $n_1, n_2\in \mathbb{N}$ vrijedi $a_{n_1}\leq b_{n_2}$. Zaista, ako je $n_1\leq n_2$, onda vrijedi $a_{n_1}\leq a_{n_2}\leq b_{n_2}$, a ako je $n_2\leq n_1$, onda je $a_{n_1}\leq b_{n+1}\leq b_{n_2}$. Kako je svaki element skupa $A$ jedna donja međa od $B$, očito postoji $b=\inf{B}$. Očito je $b_n\geq b$ za sve $n\in \mathbb{N}$. Tvrdimo da za sve $n\in \mathbb{N}$ vrijedi $a_n\leq b$. Pretpostavimo suprotno, tj. da postoji $n_1\in \mathbb{N}$ takav da je $b<a_{n_1}$. Tada $a_{n_1}$ sigurno nije donja međa skupa $B$, pa postoji $n_2\in \mathbb{N}$ takav da je $b_{n_2}<a_{n_1}$, kontradikcija s $A\leq B$! Dakle, vrijedi $a_n\leq b\leq b_n$, pa je tvrdnja dokazana.
+\end{proof}
+\begin{definition}
+Za funkciju $p : \mathbb{R}^2\to \mathbb{R}$ kažemo da je \textbf{polinom $n+m$-tog stupnja u dvije varijable} (kraće: polinom u dvije varijable) ako postoje brojevi $i=1, \dots, n$, $j=1,\dots, m$ i $a_{ij}\in \mathbb{R}$ takvi da je
+$$p(x, y)=\sum_{i=0}^n{\sum_{j=0}^m{{a_{ij}}x^{i}y^j}},$$
+pri čemu nisu svi $a_{ij}$ takvi da je $i+j=n+m$ jednaki $0$.
+\end{definition}
+Tako su npr. $p_1, p_2 : \mathbb{R}^2\to \mathbb{R}$,
+\begin{gather*}
+p_1(x, y)=x^2+2xy+3y^2,\\
+p_2(x, y)=xy+2
+\end{gather*}
+dva polinoma u dvije varijable.
+\begin{exercise}
+Dokažite da postoji polinom u dvije varijable $p : \mathbb{R}^2\to \mathbb{R}$ takav da je $p(x, y)>0$ za sve $(x, y)\in \mathbb{R}^2$, koji nema minimum, tj. ne postoji $\min\{p(x, y) : x\in \mathbb{R},\; y\in \mathbb{R}\}.$
+\end{exercise}
+\begin{proof}[Rješenje]
+Označimo $S=\{p(x, y) : x\in \mathbb{R},\; y\in \mathbb{R}\}$. Definirat ćemo polinom drugog stupnja za koji je $\inf{S}=0$, ali $0\notin S$. Korisna opservacija je da za polinome $q : \mathbb{R}^2\to \mathbb{R}$ zapisane u obliku
+$$q(x, y)=(\dots)^2+(\dots)^2$$
+vrijedi $q(x, y)>0$ ako (i samo ako) izrazi u ove dvije zagrade ne mogu istodobno biti $0$. Dakle, nama je cilj u ove dvije zagrade dodati izraze (najprirodnije je dodati polinome) koji ne mogu istodobno biti $0$, ali tako da infimum skupa $S$ bude jednak $0$, tj. tako da možemo odabrati brojeve $x, y$ tako da izraz $p(x, y)$ bude "proizvoljno malen". Možda je najjednostavnije u prvu zagradu staviti izraz $x$. U drugu zagradu ćemo morati staviti izraz koji ne može biti $0$ kada je $x=0$. To možemo postići tako da npr. uzmemo neki izraz koji je $0$ kada je $x=0$ (možemo naprosto uzeti neki izraz koji sadrži u sebi $x$ kao faktor) i tom izrazu dodamo $1$. Tu je najlakše uzeti $xy+1$ kao taj izraz u drugoj zagradi\footnote{Uočimo da npr. $x^2+1$ ne bi bio dobar odabir, jer ne bi izraze u obije zagrade istovremeno mogli učiniti po volji malima.}, jer taj izraz možemo skupa s izrazom u prvoj zagradi učiniti po volji malim (uzimajući $x$ vrlo blizu $0$ da prva zagrada bude mali broj i kao $y$ suprotnu i recipročnu vrijednost tog broja kojeg smo uzeli za $x$, kako bi druga zagrada bila $0$). Dakle, uzet ćemo
+$$p(x, y)=x^2+(xy+1)^2.$$
+Sad ćemo formalizirati naša razmatranja. Tvrdimo da za skup
+$$S=\{x^2+(xy+1)^2 : x\in \mathbb{R},\; y\in \mathbb{R}\}$$
+vrijedi $\inf{S}=0$, te $0\notin S$. Uočimo da je očito $x^2+(xy+1)^2\geq 0$ i vrijedi $x^2+(xy+1)^2=0$ ako i samo ako je $x=0$ i $xy=-1$, što je nemoguće, dakle vrijedi $x^2+(xy+1)^2>0$ za sve $x, y\in \mathbb{R}$, što povlači $0\notin S$.
+
+Dokažimo da je $\inf{S}=0$. Treba pokazati da za proizvoljan $\epsilon>0$ postoje $x, y\in \mathbb{R}$ tako da vrijedi
+$$\epsilon> x^2+(xy+1)^2$$
+Uzmimo $x=\dfrac{\sqrt{\epsilon}}{2}$ i $y=-\dfrac{2}{\sqrt{\epsilon}}$. Tada je
+$$x^2+(xy+1)^2=\dfrac{\epsilon}{4}<\epsilon.$$
+Dakle, $p : \mathbb{R}^2\to \mathbb{R}$, $p(x, y)=x^2+(xy+1)^2$ je jedan polinom koji zadovoljava uvjete zadatka.
+\end{proof}
+\section{Kompleksni brojevi}
+
+\begin{definition}
+Skup kompleksnih brojeva je skup $\mathbb{C}=\left\{a+bi : a,\; b\in \mathbb{R},\, i=\sqrt{-1}\right\}$.
+(Ova definicija nije stroga, strogu definiciju obradili ste na predavanjima.)
+\end{definition}
+
+\noindent Kompleksne brojeve zbrajamo i oduzimamo "po komponentama", tj. $$(a+bi)\pm (c+di)=(a+c)\pm (b+d)i,$$ te ih množimo poput polinoma, tj. $$(a+bi)(c+di)=ac+adi+bci-bd=(ac-bd)+(ad+bc)i.$$ Vrijedi i $$\dfrac{1}{a+bi}=\dfrac{a-bi}{a^2+b^2},$$ što se lako pamti kao "racionalizacija nazivnika", tj. množimo brojnik i nazivnik s $a-bi$, pa u nazivniku dobivamo $$(a+bi)(a-bi)=a^2-abi+abi+b^2=a^2+b^2.$$
+\begin{exercise}
+Neka je $z=\dfrac{(2+3i)(4+5i)}{6+7i}$. Napišite $z$ u standardnom obliku.\\
+\textit{Rješenje.} Vrijedi $(2+3i)(4+5i)=8+10i+12i-15=-7+22i$. Imamo
+$$z=\dfrac{-7+22i}{6+7i}\cdot \dfrac{6-7i}{6-7i}=\dfrac{(-7+22i)(6-7i)}{85}=\dfrac{-42+49i+132i-154}{85}=\dfrac{112}{85}+\dfrac{181}{85}i.$$
+\end{exercise}
+\begin{remark} \textbf{}
+\label{18}
+\begin{itemize}
+\item Vrijedi $a+bi=c+di$ ako i samo ako vrijedi $a=c$ i $b=d$.
+\item \textbf{Modul} kompleksnog broja $z=a+bi$ je broj $\;\abs{z}=\sqrt{a^2+b^2}$.
+\item Neka je $z=x+yi$. Tada je \textbf{realni dio} od $z$ broj $\mathrm{Re}(z)=x$, a \textbf{imaginarni dio} od $z$ broj $\mathrm{Im}(z)=y$.
+\item \textbf{Kompleksno-konjugirani} broj od $z=x+yi$ je broj $\overline{z}=x-yi$.
+\end{itemize}
+\end{remark}
+
+\begin{exercise}\textbf{}
+\begin{itemize}
+\item[a)] Odredite sve $a\in \mathbb{R}$ takve da je $(a+3i)^2=216+90i$.
+\item[b)] Dokažite da za sve $z_1$, $z_2\in \mathbb{C}$ vrijedi $\abs{z_1z_2}=\abs{z_1}\abs{z_2}$.
+\item[c)] Dokažite da za sve $z_1$, $z_2\in \mathbb{C}$ vrijedi $\abs{z_1+z_2}\leq \abs{z_1}+\abs{z_2}$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka je $a\in \mathbb{R}$ proizvoljan. Tvrdnja vrijedi ako i samo ako vrijedi $a^2+6ai-9=216+90i$, što vrijedi ako i samo ako vrijedi $a^2-9=216$ i $6a=90$. Sada lako vidimo da obje tvrdnje vrijede za $a=15$ i to je jedini takav $a$.
+
+b) Neka su $z_1=a+bi$ i $z_2=c+di$ proizvoljni. Sjetimo se da je $$(a+bi)(c+di)=ac+adi+bci-bd=(ac-bd)+(ad+bc)i.$$ Stoga tvrdimo da vrijedi
+$$\sqrt{(ac-bd)^2+(ad+bc)^2}=\sqrt{a^2+b^2}\sqrt{c^2+d^2}=\sqrt{(a^2+b^2)(c^2+d^2)}.$$
+No vrijedi $$(ac-bd)^2+(ad+bc)^2=a^2c^2+b^2d^2+a^2d^2+b^2c^2$$ 
+i 
+$$(a^2+b^2)(c^2+d^2)=a^2c^2+a^2d^2+b^2c^2+b^2d^2,$$ pa zaključujemo da su ta dva broja jednaka, odakle slijedi tvrdnja.
+
+c) Stavimo li $z_1=a+bi$ i $z_2=c+di$, treba dokazati
+$$\sqrt{(a+c)^2+(b+d)^2}\leq \sqrt{a^2+b^2}+\sqrt{c^2+d^2}$$
+Kvadriranjem i pojednostavljivanjem dobivamo ekvivalentnu tvrdnju
+$$ac+bd\leq \sqrt{(a^2+b^2)(c^2+d^2)}.$$
+Primijetimo da općenito ne možemo kvadrirati ovu nejednakost jer $ac+bd$ može biti negativan. Međutim, vrijedi obrat -- ako vrijedi $x^2\geq y^2$, gdje je $x\geq 0$, a $y\in \mathbb{R}$, onda vrijedi $x\geq y$. Zaista, vrijedi $\sqrt{y^2}=\abs{y}$, pa vrijedi $x^2\geq y^2\Rightarrow x\geq |y|\geq y$, što povlači $x\geq y$. Zato je dovoljno dokazati da vrijedi
+$$(ac+bd)^2\leq (a^2+b^2)(c^2+d^2).$$
+Zaista, ova tvrdnja je ekvivalentna $(ad-bc)^2\geq 0$, što je istina.\footnote{Tvrdnja je i specijalan slučaj CSB-nejednakosti.}
+\end{proof}
+\begin{exercise}
+Prikažite u Gaussovoj ravnini skup $S=\left\{z :\; \abs{z-3}=4\right\}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Ideja u rješavanju zadataka ovog tipa je pronaći nužne i dovoljne uvjete da je neki kompleksan broj u $S$ takve da pomoću njih lako možemo skicirati $S$ u Gaussovoj ravnini. Neka je $z=x+yi$. Tada vrijedi $|z-3|=|(x-3)+yi|=4$, odnosno $\sqrt{(x-3)^2+y^2}=4$, što vrijedi ako i samo ako vrijedi $(x-3)^2+y^2=16$. Prema tome, vrijedi $z\in S$ ako i samo ako vrijedi $(x-3)^2+y^2=16$, gdje je $z=x+yi$. No znamo da je ovaj skup kružnica radijusa $4$ sa središtem u točki $(3, 0)$.
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,xlabel=Re,ylabel=Im,xmin=-7.5,xmax=7.5,ymin=-7.5,ymax=7.5, smooth, samples=200, unit vector ratio=1 1 1,]
+
+\addplot[thick,color=black,domain=-1:6.999] {sqrt(16-(x-3)^2)};
+\addplot[thick,color=black,domain=-1:6.999] {-sqrt(16-(x-3)^2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\end{proof}
+\begin{exercise}
+Prikažite u Gaussovoj ravnini skup 
+$$S=\left\{z : |z+1+8i|^2-|z+2+i|^2=100\right\}.$$
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $z\in \mathbb{C}$ proizvoljan. Vrijedi
+\begin{align*}
+|z+1+8i|^2-|z+2+i|^2&=100\\
+\sqrt{(x+1)^2+(y+8)^2}^2-\sqrt{(x+2)^2+(y+1)^2}^2&=100\\
+(x+1)^2+(y+8)^2-(x+2)^2-(y+1)^2&=100\\
+14x-2y&=40\\
+y&=7x-20.
+\end{align*}
+Pravac je prikazan na slici \ref{pravac}.
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[domain=0:4]
+\begin{axis}[axis lines=middle,xlabel=Re,ylabel=Im,xmin=-2,xmax=7,ymin=-21,ymax=21, smooth]
+
+\addplot[thick,color=black,domain=-7:7] {7*x-20};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{Pravac $y=7x-20$}
+\label{pravac}
+\end{figure}
+\end{proof}
+\begin{exercise}
+Odredite skup $S=\left\{z : z+|z|=8-4i\right\}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $z=x+yi$. Uvjet $z+|z|=8-4i$ je tada ekvivalentan uvjetu
+$$x+\sqrt{x^2+y^2}+yi=8-4i.$$ No to vrijedi ako i samo ako vrijedi
+$$\begin{cases}
+x+\sqrt{x^2+y^2}=8,\\
+y=-4.
+\end{cases}$$
+Supstitucijom $y=-4$ dobivamo $x+\sqrt{x^2+16}=8$. Rješavanjem jednadžbe dobivamo $x=3$. Dakle $S=\{3-4i\}$ i on je u Gaussovoj ravnini točka $(3, -4)$.
+\end{proof}
+Neka je $S\subseteq \mathbb{C}$ neprazan i neka su zadane $f, g : S\to \mathbb{C}$. Problem određivanja skupa $T=\left\{z : f(z)=g(z)\right\}$ zovemo \textit{rješavanje jednadžbe} $f(z)=g(z)$ u skupu $\mathbb{C}$.
+\begin{exercise} Riješite sljedeće jednadžbe u $\mathbb{C}$.
+\begin{itemize}
+\item[a)] $|z-1|^2+2\overline{z}=6-2i$.
+\item[b)] $z\cdot |z|+2z+i=0.$
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka je $z=x+yi$. Tada je početna jednadžba ekvivalentna jednadžbi $$(x-1)^2+y^2+2x-2yi=6-2i,$$
+što vrijedi ako i samo ako je
+$$\begin{cases}
+(x-1)^2+y^2+2x=6,\\
+-2y=-2.
+\end{cases}$$
+Odavde slijedi $y=1$ i $(x-1)^2+2x=5$, odnosno $x^2=4$, tj $x=2$ ili $x=-2$. Dakle, jedina rješenja su $z=2+i$ i $z=-2+i$.
+
+b) Neka je $z=x+yi$. Tada vrijedi
+\begin{align*}
+z\cdot |z|+2z+i=0\Leftrightarrow (x+yi)\sqrt{x^2+y^2}+2x+(2y+1)i&=0\\
+\Leftrightarrow x\sqrt{x^2+y^2}+2x+y\sqrt{x^2+y^2}i+(2y+1)i=0.
+\end{align*}
+Posljednje vrijedi ako i samo ako je
+$$\begin{cases}
+x\sqrt{x^2+y^2}+2x=0,\\
+y\sqrt{x^2+y^2}+(2y+1)=0.
+\end{cases}$$
+Uočimo da vrijedi $$x\sqrt{x^2+y^2}+2x=x(\sqrt{x^2+y^2}+2)=0,$$ pa kako je $\sqrt{x^2+y^2}+2>0$ slijedi $x=0$. Odavde dobivamo da početna tvrdnja vrijedi ako i samo ako je 
+$$y|y|+2y+1=0.$$ Sada razlikujemo dva slučaja -- $y\geq 0$ i $y<0$.
+
+Ako je $y\geq 0$, onda je $|y|=y$, pa imamo jednadžbu $$y^2+2y+1=0,$$ čije rješenje je $y=-1$, ali kako je $y\geq 0$, ovo rješenje "odbacujemo". 
+
+Ako je $y<0$, imamo jednadžbu $$-y^2+2y+1=0,$$ čija rješenja su $y=1-\sqrt{2}$ i $y=1+\sqrt{2}$, ali jedino uzimamo u obzir rješenje $y=1-\sqrt{2}$, jer je $1+\sqrt{2}\geq 0$. Dakle, jedino rješenje početne jednadžbe je $z=(1-\sqrt{2})i$.
+\end{proof}
+\begin{remark}
+Kompleksan broj $z$ je napisan u \textbf{trigonometrijskom obliku} ako je $z=r(\cos{\theta}+i\sin{\theta})$, gdje je $r=|z|$ i $\theta\in [0, 2\pi \rangle$ kut koji taj broj zatvara s osi $x$. Vrijedi:
+\begin{itemize}
+\item $\tg{\theta}=\dfrac{y}{x}$, s time da pri određivanju broja $\theta$ treba uzeti u obzir i kvadrant u kojem se $z$ nalazi.
+\item Neka je $z_1=r_1(\cos{\theta_1}+i\sin{\theta_1})$, $z_2=r_2(\cos{\theta_2}+i\sin{\theta_2})$. Tada je
+\begin{gather*}
+z_1z_2=r_1r_2\left(\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)\right),\\
+\dfrac{z_1}{z_2}=\dfrac{r_1}{r_2}\left(\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2)\right), \;\mathrm{gdje}\;\mathrm{je}\; z_2\neq 0.
+\end{gather*}
+\item Za sve $z\in \mathbb{C}$ i $n\in \mathbb{N}$ vrijedi $z^n=r^n(\cos{n\theta}+i\sin{n\theta})$.
+\end{itemize}
+\end{remark}
+
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Zapišite $z=1-\sqrt{3}i$ u trigonometrijskom obliku. Odredite $z^5$.
+\item[b)] Odredite najmanji $\alpha\in \mathbb{N}$ takav da je $z=\left(1+i\right)^{\alpha}\left(-\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i\right)^{\alpha}\in \mathbb{R}$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) $z=2\left(\cos\left(-\dfrac{\pi}{3}\right)+i\sin\left(-\dfrac{\pi}{3}\right)\right)$, $z^5=32\left(\cos{\dfrac{\pi}{3}}+i\sin{\dfrac{\pi}{3}}\right)$.
+
+b) Vrijedi 
+\begin{align*}
+\left(1+i\right)^{\alpha}\left(-\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i\right)^{\alpha}&=\sqrt{2}^{\alpha}\left(\cos{\dfrac{\alpha \pi}{4}}+i\sin{\dfrac{\alpha \pi}{4}}\right)\left(\cos{\dfrac{2\alpha \pi}{3}}+i\sin{\dfrac{2\alpha \pi}{3}}\right)\\
+&=\sqrt{2}^{\alpha}\left(\cos{\dfrac{11\alpha \pi}{12}}+i\sin{\dfrac{11\alpha \pi}{12}}\right)
+\end{align*}
+Kompleksan broj $z$ je realan ako i samo ako je $\mathrm{Im}(z)=0$. Zato je najmanji takav $\alpha\in \mathbb{N}$ upravo najmanji $\alpha$ koji zadovoljava $\sin{\dfrac{11\alpha \pi}{12}}=0$, a to je $\alpha=12$.
+\end{proof}
+
+\begin{definition}
+Neka je $z\in \mathbb{C}$. Kažemo da je \textbf{$n$-ti korijen} iz $z$, u oznaci $\sqrt[n]{z}$, skup svih $w\in \mathbb{C}$ takvih da je $w^n=z$.
+\end{definition}
+
+\begin{remark}
+Vrijedi $\sqrt[n]{z}=\sqrt[n]{r}\left(\cos{\dfrac{\phi+2k\pi}{n}}+\sin{\dfrac{\phi+2k\pi}{n}}\right), \; k\in\{0, 1, 2, \dots, n-1\}$.
+\end{remark}
+
+\begin{exercise}
+Odredite $\sqrt[3]{1+i}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+$$\sqrt[3]{1+i}=\left\{\sqrt[6]{2}\left(\cos{\dfrac{\pi}{12}}+i\sin{\dfrac{\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{3\pi}{12}}+i\sin{\dfrac{3\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{17\pi}{12}}+i\sin{\dfrac{17\pi}{12}}\right)\right\}.$$
+\end{proof}
+\newpage
+\section*{Zadatci za vježbu}
+\subsection*{Uvod u nejednakosti}
+\begin{exercise}
+Dokažite da za sve $x>1$ vrijedi 
+\begin{itemize}
+\item[a)] $x^3-x^2+\dfrac{1}{x}>0$,
+\item[b)] $x^2\geq x\sin{x}$.
+\end{itemize}
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da za sve $x\in \mathbb{R}$ vrijedi $|x|\geq -x$.
+\item[b)] Koristeći tvrdnju a) dijela zadatka, dokažite da za sve $x\in \mathbb{R}$ vrijedi $$\left|x^{3}-2x\cos{x}+\sin^2{x}+1\right|+\left|x^{3}-2x\cos{x}-\cos^2{x}+6\right|\geq 4.$$ 
+\end{itemize}
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] (Državno natjecanje, 4. razred, A varijanta, 2018.) Neka je $n\in \mathbb{N}$. Dokažite da za sve $x_1, \dots, x_n\in [0, 1]$ vrijedi
+$$(x_1+x_2+\dots+x_n+1)^2\geq 4(x_1+x_2+\dots+x_n).$$
+\item[b)] (Državno natjecanje, 1. razred, A varijanta, 2019.) Neka su $a, b, c>0$ takvi da je $a+b+c=1$. Dokažite:
+$$\dfrac{1+9a^2}{1+2a+2b^2+2c^2}+\dfrac{1+9b^2}{1+2b+2c^2+2a^2}+\dfrac{1+9c^2}{1+2c+2a^2+2b^2}<4$$
+\item[c)] Neka su $x, y, z>0$. Dokažite:
+$$\sqrt{x(3x+y)}+\sqrt{y(3y+z)}+\sqrt{z(3z+x)} \leq 2(x+y+z).$$
+\item[d)] Neka je $n\in \mathbb{N}$, $p : \{1, \dots, n\}\to \{1,\dots, n\}$ permutacija skupa $\{1, \dots, n\}$ i $a_1, \dots a_n>0$. Dokažite:
+$$\dfrac{a_1}{a_{p(1)}}+\dfrac{a_2}{a_{p(2)}}+\dots+\dfrac{a_n}{a_{p(n)}}\geq n$$
+\end{itemize}
+\end{exercise}
+\begin{exercise}(HMO 2016.) $(**)$
+Dokažite da za sve $n\in \mathbb{N}$ i sve $x_1, x_2, \dots, x_n\geq 0$ vrijedi
+$$\left(x_1+\dfrac{x_2}{2}+\dots+\dfrac{x_n}{n}\right)\left(x_1+2x_2+\dots+nx_n\right)\leq \dfrac{(n+1)^2}{4n}(x_1+x_2+\dots+x_n)^2.$$
+\end{exercise}
+\subsection*{Minimum i maksimum. Arhimedov aksiom}
+\begin{exercise} Dokažite ili opovrgnite (Univerzalni skup je $\mathbb{R}$):
+\begin{itemize}
+\item[a)] Postoji odozgo neograničen skup $A\subseteq \mathbb{R}$ takav da je $A^c$ odozgo ograničen.
+\item[b)] Postoji odozgo ograničen skup $A\subseteq \mathbb{R}$ takav da je $A^c$ odozgo neograničen.
+\item[c)] Postoji odozgo neograničen skup $A\subseteq \mathbb{R}$ takav da je $A^c$ odozgo neograničen.
+\item[d)] Postoji odozgo ograničen skup $A\subseteq \mathbb{R}$ takav da je $A^c$ odozgo ograničen.
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Neka je $A=\left\{n^2-2^n : n\in \mathbb{N}\right\}$. Odredite $\min{A}$ i $\max{A}$, ako postoje.
+\end{exercise}
+\begin{exercise}
+Neka je $S=\left\{\sin^2{x}\cos{2x} : 0\leq x\leq \dfrac{\pi}{2}\right\}$. Odredite $\max{S}$ i $\min{S}$, ako postoje.
+\end{exercise}
+\begin{exercise}
+Dokažite koristeći Arhimedov aksiom da je skup $A=\{x^2-x : x\in \mathbb{N}\}$ odozgo neograničen.
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da svaki $a\in \mathbb{R}$ ima najmanji prirodan broj veći ili jednak $a$.
+\item[b)] Dokažite: Neka je $a\geq 0$ i $b>0$. Ako za sve $n\in \mathbb{N}$ vrijedi $a\leq \dfrac{b}{2^n}$, onda je $a=0$.
+\end{itemize}
+\end{exercise}
+\begin{exercise} $(*)$
+Dokažite da Arhimedov aksiom i Cantorov aksiom (v. zadatak \ref{Cantor}) povlače aksiom potpunosti.
+\end{exercise}
+\begin{remark}
+Kako iz aksioma realnih brojeva možemo dokazati Arhimedov i Cantorov aksiom (Za dokaz Arhimedova aksioma v. \cite{3}), iz ovog zadatka slijedi da se u aksiomima realnih brojeva aksiom potpunosti može zamijeniti konjunkcijom Arhimedova i Cantorova aksioma.
+\end{remark}
+\subsection*{Supremum i infimum}
+\begin{exercise}\textbf{}
+\begin{itemize}
+\item[a)] Odredite primjer skupa $S\subseteq \mathbb{R}$ takvog da je $\sup{A^c}=1$.
+\item[b)] Odredite primjer dva skupa $A, B\subseteq \mathbb{R}$, $A\neq B$ takva da je $\sup{A\cap B}=3$ i da $A\cap B$ nema infimum.
+\item[c)] Odredite primjer beskonačnog skupa $A\subseteq \mathbb{Q}$ čiji je infimum $2$, a supremum $3$.
+\item[d)] Odredite primjer skupa $A\subseteq \mathbb{R}$ takvog da je $\inf{A}$=2, $\sup{A}=3$, nema minimum ni maksimum, te se ne može prikazati kao unija konačno mnogo otvorenih intervala. (Dokažite da skup koji ste naveli zaista zadovoljava navedene tvrdnje.)
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Odredite $\inf{A}$, $\sup{A}$, $\min{A}$, $\max{A}$ ako postoje, gdje je
+\begin{AutoMultiColItemize}
+\item[a)] $A=\left\{\dfrac{18-2n}{2n+1} : n\in \mathbb{N}\right\}$,
+\item[b)] $A=\left\{\dfrac{x^2-10}{x^2+10} : x\in \mathbb{R}\right\}$,
+\item[c)] $A=\left\{\dfrac{1}{n+2} : n\in \mathbb{N},\, n\neq 4\right\}$,
+\item[d)] $A=\left\{\dfrac{n}{(n+1)!} : n\in \mathbb{N}\right\}$,
+\item[e)] $A=\left\{(2+(-1)^m)\cdot \dfrac{3}{n} : m, n\in \mathbb{N}\right\}$, 
+\item[f)] $A=\left\{\dfrac{n^2}{m^2+2mn+5n^2} : m, n\in \mathbb{N}\right\}$,
+\item[g)] $A=\left\{\dfrac{n+1}{2m+1} : m, n\in \mathbb{N}\right\}$
+\item[h)] $A=\left\{\dfrac{n^2}{m^2+m+7n^2} : m, n\in \mathbb{N}\right\}$,
+\item[i)] $A=\left\{1+\dfrac{n}{n+1}\cos\left(\dfrac{n\pi}{2}\right) : n\in \mathbb{N}\right\}$,
+\item[j)] $A=\left\{\dfrac{1}{3-\left(-1\right)^{n}\cdot n}+\left(-1\right)^{n} : n\in \mathbb{N}\right\}$,
+\item[k)] $A=\left\{\dfrac{1}{\sqrt{n}+1} : n\in \mathbb{N}\right\}$.
+\item[l)] $A=\left\{\dfrac{1}{p} : p\text{ prost}\right\}$.
+\end{AutoMultiColItemize}
+\end{exercise}
+\begin{exercise}
+Odredite $\inf{A}$, $\sup{A}$, $\min{A}$, $\max{A}$ ako postoje, gdje je
+\begin{itemize}
+\item[a)] $A=\left\{\dfrac{12m-n-3mn+7}{5n-2n-2mn+5} : n\in \mathbb{N},\; m\in \mathbb{N},\; n>4\right\}$,
+\item[b)] $A=\left\{\dfrac{1}{3n+4}\cdot \dfrac{1}{3m-4} : m, n\in \mathbb{N}\right\}$ (Budite pažljivi ovdje!),
+\item[c)] $A=\left\{\dfrac{m^2+4mn\cos{\dfrac{x}{2}}+5n^2}{mn} : m, n\in \mathbb{N},\; x\in [\pi, 3\pi]\right\}$,
+\item[d)] $A=\left\{\dfrac{3}{x+4} : x\in \mathbb{I},\, x>-4\right\}$.
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Neka je $A\subseteq \mathbb{R}$ skup koji nema maksimum, takav da $A\setminus\langle 1, 2\rangle$ ima maksimum. Dokažite da je $A$ odozgo ograničen i da je $\sup{A}\leq 2$. Postoji li $a\in \mathbb{R}$, $a<2$ takav da za svaki $A\subseteq \mathbb{R}$ s gornjim svojstvima vrijedi $\sup{A}=a$?
+\end{exercise}
+\begin{exercise}
+Neka su $a, b\in \mathbb{R}$, $a<b$. Odredite supremum skupa $\langle a, b\rangle\cap \mathbb{Q}$, ako postoji.
+\end{exercise}
+\begin{exercise}
+Odredite sve $a\in \mathbb{R}\setminus\{0\}$ takve da za skup
+$$S=\left\{a-\dfrac{2}{an} : n\in \mathbb{N}\right\}$$
+vrijedi $\sup{S}=1$.
+\end{exercise}
+\begin{exercise}
+Neka je $A\subseteq \langle 0,\infty\rangle$ i neka je $\inf{A}>0$. Definiramo
+$$\dfrac{1}{A}=\left\{\dfrac{1}{a} : a\in A\right\}.$$
+Dokažite da je tada $\dfrac{1}{A}$ odozgo ograničen i da vrijedi
+$\sup{\dfrac{1}{A}}=\dfrac{1}{\inf{A}}$.
+\end{exercise}
+\begin{exercise} $(*)$
+Odredite $\inf{A}$, $\sup{A}$, $\min{A}$, $\max{A}$ ako postoje, gdje je
+\begin{itemize}
+\item[a)] (Županijsko natjecanje, 3. razred, A varijanta, 2020.) $$A=\left\{\dfrac{1}{\sin^4{x}+\cos^2{x}}+\dfrac{1}{\sin^2{x}+\cos^4{x}} : x\in \mathbb{R}\right\},$$
+\item[b)]
+$A=\left\{\dfrac{n+k^2}{2^n+k^2+1} : n, k\in \mathbb{N}\right\},$
+\item[c)] $A=\left\{\cos{\sqrt{\dfrac{\pi}{2}-x^2}} : 0<x\leq \dfrac{\pi}{2}\right\}$,
+\item[d)] $A=\left\{\dfrac{mn}{1+m+n} : m, n\in \mathbb{N}\right\}$
+\item[e)] $A=\left\{\sqrt{n}-\lfloor \sqrt{n}\rfloor : n\in \mathbb{N}\right\}$.
+\end{itemize}
+\subsection*{Kompleksni brojevi}
+\begin{exercise}
+Prikažite $z=\dfrac{(3+i+i^{140})^2}{3-i}$ u standardnom obliku.
+\end{exercise}
+\begin{exercise}\textbf{}
+\begin{itemize}
+\item[a)] Dokažite da za sve $z\in \mathbb{C}$ vrijedi $z\cdot \overline{z}=|z|^2$.
+\item[b)] Dokažite da za sve $z_1$, $z_2\in \mathbb{C}$ vrijedi $\abs{z_1+z_2}\leq \abs{z_1}+\abs{z_2}$ koristeći a). (\textbf{Uputa:} Promotrite izraz $|z_1+z_2|^2$).
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Za kompleksne brojeve $z$ i $w$ vrijedi $|z+w|=\sqrt{3}$ i $|z|=|w|=1$. Izračunajte $|z-w|$.
+\end{exercise}
+\begin{exercise}
+Dokažite da za sve $z$, $w\in \mathbb{C}$ vrijedi
+\begin{itemize}
+\item[a)] $|z+w|^2+|z-w|^2=2\left(|z|^2+|w|^2\right)$.
+\item[b)] $\abs{|z|-|w|}\leq |z-w|$,
+\end{itemize}
+Sada se lako vidi da se prethodni zadatak može riješiti i pomoću a).
+\end{exercise}
+\begin{exercise}
+Riješite jednadžbu $|z|-\overline{z}=1+2i$.
+\end{exercise}
+\begin{exercise}\textbf{}
+\begin{itemize}
+\item[a)] Dokažite: Ako je $|z|=0$, onda je $z=0$.
+\item[b)] Riješite jednadžbu $\left(\mathrm{Im}(z)-2z-2\overline{z}\right)^2+\left(|z|-4\right)^2=0$.
+\item[c)] Riješite jednadžbu $z^3+z^2+z+1=0$.
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Odredite skup $S$ i skicirajte ga u Gaussovoj ravnini, gdje je
+\begin{AutoMultiColItemize}
+\item[a)] $S=\{z : \mathrm{Re}(z-3)=|z+2i|\}$.
+\item[b)] $S=\left\{z : |z+2|=|1-\overline{z}|\right\}$,
+\item[c)] $S=\{z : |z-2i|\leq 1 \; \mathrm{i} \; z^2\overline{z}^2=1\}$,
+\item[d)] $S=\left\{z : \mathrm{Re}\left(\dfrac{z+3+2i}{\overline{z}-3+2i}\right)=0\right\}$,
+\item[e)] $S=\left\{z : z^5=1\right\}$,
+\item[f)] $S=\left\{z : |z-4-4i|>\sqrt{2}\right\}$,
+\end{AutoMultiColItemize}
+\end{exercise}
+\begin{exercise}
+Neka je $n\in \mathbb{N}$ proizvoljan i neka je $S=\left\{z : z^n=1 \right\}$. Dokažite da je $S$ grupa u odnosu na množenje.
+\end{exercise}
+Općenito, skup svih $n$-tih korijena nekog kompleksnog broja čini pravilni $n$-terokut sa središtem u ishodištu.
+\begin{exercise}
+Neka je $z=\dfrac{(2+3i)^{2024}}{(2-3i)^{2020}}$. Odredite $|z|$.
+\end{exercise}
+\begin{exercise}
+Neka je $S=\left\{\abs{z-\dfrac{1}{z}} : z\in \mathbb{C},\; |z|=2\right\}$. Odredite $\inf{S}$ i $\sup{S}$, ako postoje.
+\end{exercise}
+\begin{exercise}
+Odredite sve $z\in \mathbb{C}$ za koje vrijedi
+$$\begin{cases}
+\mathrm{Re}(z)=9, \\
+\mathrm{Im}(z^2)=\mathrm{Im}(z^3).
+   \end{cases}$$
+\end{exercise}
+\begin{exercise}
+Za $n\in \mathbb{N}$ definiramo kompleksan broj
+$$a_n=(1+i)\left(1+\dfrac{i}{\sqrt{2}}\right)\left(1+\dfrac{i}{\sqrt{3}}\right)\dots \left(1+\dfrac{i}{\sqrt{n}}\right).$$
+Izračunajte $|a_1-a_2|+|a_2-a_3|+\dots+|a_{2019}-a_{2020}|$.
+\end{exercise}
+\begin{exercise}
+Odredite sve $z\in \mathbb{C}$ za koje vrijedi $|z-5|=|z-1|+4$.
+\end{exercise}
+\begin{exercise}
+Neka je $S=\left\{z : \exists{n}\in \mathbb{N}\;\mathrm{t. d.}\; z^n=1 \right\}$. Dokažite ili opovrgnite: Vrijedi $S=\left\{z : |z|=1 \right\}$.
+\end{exercise}
+\begin{exercise}
+Neka je $d\in \mathbb{R}$ i $P, Q\in \mathbb{R}^2$. Skup $A\subseteq \mathbb{R}^2$ ima svojstvo da za sve $T\in A$ vrijedi $|PT|^2+|QT|^2=d^2$. Koju krivulju u koordinatnom sustavu čini taj skup? Dokažite.
+\end{exercise}
+\begin{exercise} $(*)$
+Neka je $n\in \mathbb{N}$ i neka su $a_n$ i $b_n$ realni brojevi takvi da je $(\sqrt{3}+i)^n=a_n+ib_n$. Dokažite da izraz
+$$\dfrac{a_nb_{n+1}-a_{n+1}b_n}{a_{n+1}a_n+b_{n+1}b_n}$$
+poprima istu vrijednost za sve $n\in \mathbb{N}$ i odredite tu vrijednost.
+\end{exercise}
+\begin{exercise} $(**)$
+Neka je $n\in \mathbb{N}$ proizvoljan. Odredite sve $z\in \mathbb{C}$ takve da vrijedi
+$$\left(1-z+z^2\right)\left(1-z^2+z^4\right)\left(1-z^4+z^8\right)\dots\left(1-z^{2^{n-1}}+z^{2^n}\right)=\dfrac{3z^{2^n}}{1+z+z^2}$$
+\end{exercise}
+\end{exercise}

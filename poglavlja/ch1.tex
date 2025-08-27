@@ -1,0 +1,582 @@
+\section{Osnove matematičke logike}
+Za početak ćemo definirati neke važne osnovne pojmove vezane uz matematičku logiku. Iako naša razmatranja neće biti skroz precizna, za naše potrebe bit će sasvim u redu. Važnost poznavanja bar osnovnih elemenata matematičke logike se sastoji u tome da se, u velikoj većini matematike, matematički jezik i simboli zapisuju upravo pomoću logičkih simbola (\textit{predikata}, \textit{kvantifikatora}, \textit{veznika}), te zato što se neke od osnovnih činjenica koje ćemo ovdje spomenuti koriste vrlo često u matematici.
+
+\begin{definition} Vrijedi:
+\label{first}
+\begin{itemize}
+
+\item Sud je smislena rečenica koja može biti istinita ili lažna. Npr. rečenica "Postoji beskonačno mnogo prirodnih brojeva." je sud i to istinit sud, rečenica "Zemlja je ravna." je sud i to lažan sud, a "Pada li kiša?" nije sud jer je to rečenica za koju nema smisla govoriti je li točna ili ne. Sudove označavamo velikim tiskanim slovima i ta slova nazivamo \textit{propozicionalnim varijablama}.
+\item Svaki sud $A$ ima \textit{negaciju}, tj. sudu $A$ odgovara jedinstveni sud kojeg označavamo s $\neg A$ i koji je lažan ako je $A$ istinit, odnosno istinit ako je $A$ lažan. Zapravo, $\neg A$ znači "Ne vrijedi $A$".
+\item Sudove možemo kombinirati veznicima \textit{i} (konjunkcija, $\wedge$), \textit{ili} (disjunkcija, $\vee$), \textit{implikacijom} ($\Rightarrow$) i \textit{ekvivalencijom} ($\Leftrightarrow$), i tako dobivamo nove sudove. Pritom $A\wedge B$ znači "Vrijedi $A$ i $B$", $A\vee B$ znači "Vrijedi $A$ ili $B$", gdje je "ili" ovdje inkluzivno, tj. vrijedi ili $A$, ili $B$, ili oboje. $A\Rightarrow B$ znači "Ako vrijedi $A$, onda vrijedi $B$", a $A\Leftrightarrow B$ znači "Ako vrijedi $A$, vrijedi $B$, te ako vrijedi $B$, vrijedi $A$".
+\item Konjunkcija $A\wedge B$ je istinita isključivo ako je $A$ istinit i $B$ istinit, disjunkcija $A\vee B$ je istinita isključivo ako je bar jedan od $A$ i $B$ istinit, vrijedi $A\Rightarrow B$ isključivo kada iz istinitosti od $A$ slijedi istinitost od $B$, te vrijedi $A\Leftrightarrow B$ samo ako je iz istinosti od $A$ slijedi istinitost od $B$ i iz lažnosti od $A$ slijedi lažnost od $B$. Pritom se u implikaciji $A\Rightarrow B$, sud $A$ zove \textit{antecedenta}, a sud $B$ \textit{konzekventa}. Ako vrijedi $A\Leftrightarrow B$, onda još kažemo i "Vrijedi $A$ ako i samo ako vrijedi $B$" ili "$A$ je nužan i dovoljan uvjet za $B$".
+\end{itemize}
+\end{definition}
+\begin{exmp} Vrijedi:
+\label{16}
+\begin{itemize}
+\item Neka je $A$ sud "Vrijedi $1+1=2$.", a $B$ sud "\textit{Superman} postoji u stvarnosti." Sud $A\vee B$ je istinit.
+\item Neka je $A$ sud "Vrijedi $3>2$" i $B$ sud "Crna boja je tamnija od bijele." Sud $\neg(A\wedge B)$ je lažan.
+\item Neka je $A$ sud "Zemlja je ravna" i $B$ sud "Vrijedi $1+1=2$". Sud $A\Rightarrow B$ je istinit. (U ovakvim slučajevima, kada je antecedenta lažna, uvijek uzimamo da je tvrdnja trivijalno\footnote{Riječ \textit{trivijalno} česta je u matematičkom žargonu i ona znači \textit{jednostavno}, \textit{očigledno}.} istinita, bez obzira na istinitost konzekvente. Ovako definirati istinitost implikacije se pokazuje korisnim u logici (v. \cite{1}, napomena 1.7.)
+\item Za implikaciju $A\Rightarrow B$ definiramo njezin \textbf{obrat} kao implikaciju $B\Rightarrow A$. Uočite da $A\Rightarrow B$ može biti istinita, a da njezin obrat bude lažan. Uzmite npr. da je $A$ sud "Padala je kiša.", a $B$ sud "Ulice su mokre.".
+\end{itemize}
+\end{exmp}
+
+Označimo li istinitost neke tvrdnje s $1$, a lažnost s $0$, onda definiciju \ref{first} možemo zapisati u obliku \textbf{tablice istinitosti}:
+\begin{center}
+\begin{tabular}{ |c|c||c|c|c|c|c| } 
+ \hline
+ A & B & $\neg A$ & $A\vee B$ & $A\wedge B$ & $A\Rightarrow B$ & $A \Leftrightarrow B$ \\
+ \hline \hline
+ 0 & 0 & 1 & 0 & 0 & 1 & 1 \\ 
+ 0 & 1 & 1 & 1 & 0 & 1 & 0 \\ 
+ 1 & 0 & 0 & 1 & 0 & 0 & 0 \\
+ 1 & 1 & 0 & 1 & 1 & 1 & 1 \\
+ \hline
+\end{tabular}
+\end{center}
+U navedenoj tablici, jedan redak korespondira jednome od četiri moguća izbora istinitosti od $A$ i $B$ -- tako prvi redak predstavlja situaciju gdje su $A$ i $B$ oba lažni, drugi redak predstavlja situaciju gdje je $A$ lažan i $B$ istinit, treći redak predstavlja situaciju gdje je $A$ istinit i $B$ lažan, a četvrti redak predstavlja situaciju gdje su $A$ i $B$ oba istiniti. Izborom jedne od te četiri mogućnosti je jednoznačno određena vrijednost istinitosti svih ostalih formula, koje su prikazane u nastavku u istome retku.
+\begin{exercise}
+Zapišite sljedeće sudove koristeći propozicionalne varijable i veznike.
+\begin{itemize}
+\item[a)] Broj $2$ je veći od broja $1$ i $3$ nije prirodan broj.
+\item[b)] Ako je $5$ prost broj, onda Sunce nije zvijezda niti da je Zemlja planet.
+\item[c)] $369$ je djeljiv s $3$ ako je suma njegovih znamenaka djeljiva s $3$.
+\item[d)] Ako je $1+1=2$, onda iz $1+2=3$ slijedi da je Zemlja okrugla.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Uzmemo li da je $A$ sud "Broj $2$ je veći od broja $1$.", a $B$ sud "$3$ je prirodan broj.". Tada je sud iz zadatka $A\wedge \neg B$. Mogli smo i uzeti da je $B_1$ sud "$3$ nije prirodan broj", pa bi sud iz zadatka bio sud $A\wedge B_1$.
+
+b) Ako je $A$ sud "$5$ je prost broj", $B$ sud "Sunce je zvijezda.", a $C$ sud "Zemlja nije planet.", onda je sud iz zadatka $A\Rightarrow (\neg B\wedge \neg C)$. Ovdje se zagrade mogu i ispustiti, budući da je standardna praksa u logici da $\neg$ ima prednost nad $\wedge$, koji ima prednost nad $\vee$, $\Rightarrow$ i $\Leftrightarrow$ (međutim, u različitoj literaturi se ovaj dogovor može razlikovati).
+
+c) Ako je $A$ sud "$369$ je djeljiv s $3$.", a $B$ sud "Suma znamenaka broja $369$ je djeljiva s $3$." Tada je sud iz zadatka $B\Rightarrow A$.
+
+d) Ako je $A$ sud "Vrijedi $1+1=2$.", $B$ sud "Vrijedi $1+2=3$", a $C$ sud "Zemlja je okrugla." Tada je sud iz zadatka $A\Rightarrow(B\Rightarrow C)$.
+\end{proof}
+\begin{remark}
+\label{taut}
+Neka su $A, B, C$ sudovi. Bez obzira na to je li bilo koji od sudova $A, B, C$ istinit ili lažan, istiniti su sljedeći sudovi.
+\begin{center}
+\begin{tabular}{c c c}
+\label{tabl}
+$A\wedge \neg A \Leftrightarrow 0$ & $A\wedge 0\Leftrightarrow 0$ & $(A\vee B)\vee C\Leftrightarrow A\vee (B\vee C)$\\
+$A\vee \neg A \Leftrightarrow 1$ & $A\vee B\Leftrightarrow B\vee A$ & $(A\wedge B)\wedge C\Leftrightarrow A\wedge (B\wedge C)$\\
+$A\wedge B \Leftrightarrow B\wedge A$ & $\neg \neg A\Leftrightarrow A$ & $A\wedge(B\vee C)\Leftrightarrow (A\wedge B)\vee (A\wedge C)$\\
+$\neg(A\wedge B)\Leftrightarrow \neg A \vee \neg B$ & $\neg (A\vee B)\Leftrightarrow \neg A\wedge \neg B$ & $A\vee (B\wedge C)\Leftrightarrow (A\vee B)\wedge (A\vee C)$\\
+$A\wedge A\Leftrightarrow A$ & $A\Rightarrow A$ & $A\Rightarrow B \Leftrightarrow \neg B\Rightarrow \neg A$\\
+$\neg (A\Rightarrow B)\Leftrightarrow A\wedge \neg B$ & $A\vee 1\Leftrightarrow A$ & $A\wedge 1\Leftrightarrow 1$
+\end{tabular}
+\end{center}
+Navedeni sudovi su primjeri \textit{tautologija}, sudova koji su istiniti bez obzira na istinitost sudova koji se u njima javljaju. Pritom je u gornjim pravilima $1$ proizvoljna tautologija, a $0$ proizvoljna \textit{antitautologija} (tj. sud koji je uvijek lažan bez obzira na istinitost propozicionalnih varijabli. Skupa s činjenicom da ako je $A$ istinit, te $A\Rightarrow B$ istinit, onda je i $B$ istinit (tzv. \textit{modus ponens}), navedeni sudovi bit će neophodni alati u argumentiranju i logičkom zaključivanju u matematici.
+\end{remark}
+\begin{exercise}
+\label{contra}
+Pokažite da je $(A\Leftrightarrow B)\Leftrightarrow (\neg B\Leftrightarrow \neg A)$ istinit bez obzira na istinitost sudova $A$ i $B$.
+\end{exercise}
+\begin{proof}[Rješenje]
+U ovo se možemo uvjeriti koristeći tablicu istinitosti. 
+
+\begin{center}
+\begin{tabular}{ |c|c||c|c|c|c| } 
+ \hline
+ A & B & $A\Leftrightarrow B$ & $\neg A$ & $\neg B$ & $\neg B\Leftrightarrow \neg A$\\
+ \hline \hline
+ 0 & 0 & 1 & 1 & 1 & 1 \\ 
+ 0 & 1 & 0 & 1 & 0 & 0 \\ 
+ 1 & 0 & 0 & 0 & 1 & 0 \\
+ 1 & 1 & 1 & 0 & 0 & 1 \\
+ \hline
+\end{tabular}
+\end{center}
+Kao što vidimo, bez obzira na koji redak promotrimo u tablici, ako je $A\Leftrightarrow B$ istinit, onda je i $\neg B\Leftrightarrow \neg A$, te ako je $A\Leftrightarrow B$ lažan, onda je i $\neg B\Leftrightarrow \neg A$ lažan, što zaključujemo iz činjenice da ta dva suda imaju jednake stupce u tablici. Ovo po definiciji znači da je istinit $(A\Leftrightarrow B)\Leftrightarrow (\neg B\Leftrightarrow \neg A)$. 
+
+Alternativno, u tablicu se može dodati i sud $(A\Leftrightarrow B)\Leftrightarrow (\neg B\Leftrightarrow \neg A)$, čiji bi stupac imao sve vrijednosti $1$, pa se i tako može primijetiti da je dani sud istinit bez obzira na istinitost sudova $A$ i $B$.
+\end{proof}
+\begin{remark}
+\label{equivtransitivity}
+Slično kao u zadatku \ref{contra} može se pokazati da bez obzira na istinitost sudova $A,B,C$, vrijedi
+\begin{itemize}
+\item Ako je $A\Leftrightarrow B$ istinit, te $B\Leftrightarrow C$ istinit, onda je i $A\Leftrightarrow C$ istinit.
+\item Ako je istinit $A\Leftrightarrow B$, onda je istinit i $B\Leftrightarrow A$ i obratno.
+\end{itemize}
+Ovom važnim činjenicama ćemo se koristiti u nastavku.
+\end{remark}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Ako je $A$ istinit, te su istiniti $A\Rightarrow B$ i $B\Rightarrow C$, možemo li tada zaključiti da je $C$ istinit?
+\item[b)] Ako je istinit $A\Rightarrow B$, možemo li tada zaključiti da je $\neg A\vee B$ istinit?
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Možemo. Naime, iz činjenice da su $A$ i $A\Rightarrow B$ istiniti slijedi da je $B$ istinit, odakle iz činjenice da je i $B\Rightarrow C$ istinit slijedi da je $C$ istinit.
+
+b) Možemo. Kako znamo da je $A\Rightarrow B$ istinit, kako bi mogli primijeniti modus ponens, preostaje se uvjeriti samo da je $(A\Rightarrow B)\Rightarrow (\neg A\vee B)$ istinit. Jedan način za to pokazati bi bio direktno iz tablice istinitosti.
+\begin{center}
+\begin{tabular}{ |c|c||c|c|c| } 
+ \hline
+ A & B & $\neg A$ & $A\Rightarrow B$ & $\neg A\vee B$\\
+ \hline \hline
+ 0 & 0 & 1 & 1 & 1 \\ 
+ 0 & 1 & 1 & 1 & 1 \\ 
+ 1 & 0 & 0 & 0 & 0 \\
+ 1 & 1 & 0 & 1 & 1 \\
+ \hline
+\end{tabular}
+\end{center}
+Iz tablice vidimo da, u svakom retku u kojem $A\Rightarrow B$ poprima vrijednost $1$ (prvi, treći i četvrti), $\neg A\vee B$ također poprima vrijednost $1$, tj. iz istinitosti od $A\Rightarrow B$ slijedi $\neg A\vee B$, dakle po definiciji je istinit $(A\Rightarrow B)\Rightarrow (\neg A\vee B)$ što smo i tvrdili. 
+
+Uočimo još jedan način da pokažemo da je $(A\Rightarrow B)\Rightarrow (\neg A\vee B)$ istinit. Naime, prema napomeni \ref{taut}, za sudove $A$ i $B$ je istinit sud $\neg(A\Rightarrow B)\Leftrightarrow A\wedge \neg B$. Odavde direktno slijedi istinitost suda $\neg\neg(A\Rightarrow B)\Leftrightarrow \neg(A\wedge \neg B)$ (koristimo tvrdnju zadatka \ref{contra} i činjenicu da je antecedenta istinita, pa je po definiciji i konzekventa istinita).  Sada iz činjenice da za proizvoljan sud $D$, bez obzira na njegovu istinitost, vrijedi $\neg\neg D\Leftrightarrow D$ (pa posljedično i $D\Leftrightarrow \neg\neg D$), slijedi da je istinit sud
+$$(A\Rightarrow B)\Leftrightarrow \neg\neg (A\Rightarrow B) \Leftrightarrow \neg(A\wedge \neg B)\Leftrightarrow \neg A \vee \neg\neg B\Leftrightarrow \neg A\vee B,$$
+odakle prema napomeni \ref{equivtransitivity} slijedi da je istinit sud $(A\Rightarrow B)\Leftrightarrow (\neg A\vee B)$. Lako se vidi da je onda istinit i sud $(A\Rightarrow B)\Rightarrow (\neg A\vee B)$. Naime, ako iz istinitosti (odnosno lažnosti) od $A\Rightarrow B$ slijedi istinitost (odnosno lažnost) od $\neg A\vee B$, onda trivijalno iz istinitosti od $A\Rightarrow B$ slijedi istinitost od $\neg A\vee B$.\footnote{U ovom zadatku smo se implicitno koristili vrlo intuitivnom tvrdnjom da}
+\end{proof}
+Pokazuje se da je korištenje samo propozicionalnih varijabli i veznika previše restriktivno za velik dio matematike, pa se u nastavku bavimo sudovima koji uključuju \textit{svojstva} (predikate) nekih objekata $x_1, x_2,\dots x_n$, označimo ih sa $p(x_1, \dots, x_n)$. I tu za svaki izbor objekata $x_i$ (gdje je $i$ prirodan broj takav da je $1\leq i\leq n$) koji dolazi u obzir moramo biti u stanju odrediti je li $p(x_1, \dots, x_n)$ istinit ili lažan. 
+\begin{exmp}
+Neka je $P(x, y)$ sud "$x$ je veći od $y$.". Tada je $P(1, 2)$ lažan, a $P(2, 1)$ istinit. S druge strane, $P(x, 1)$ nećemo smatrati sudom, jer ne možemo na nedvosmislen način odrediti je li on istinit, njegova istinitost ovisi o vrijednosti broja $x$. 
+\end{exmp}
+Sada uvodimo još i \textit{kvantifikatore}. Ove pojmove, kao ni one prethodne, nećemo strogo uvoditi, ali ćemo ih objasniti na primjeru. Kvantifikatori su oznake $\forall$ (\textit{za svaki}) i $\exists$ (\textit{postoji}), tj. ako je $p(x)$ neko svojstvo od $x$, onda će $\forall{x}\, p(x)$ značiti "Za svaki $x$ vrijedi $p(x)$", a $\exists{x}\, p(x)$ "Postoji bar jedan $x$ takav da vrijedi $p(x)$". Pritom vrijedi
+$$\neg \left(\forall{x}\, p(x)\right)\Leftrightarrow \exists{x}\, \neg p(x), \, \neg \left(\exists{x}\, p(x)\right)\Leftrightarrow \forall{x}\, \neg p(x).$$
+Napominjemo i da svojstva iz napomene \ref{taut} vrijede i za formule s predikatima i kvantifikatorima.
+\begin{exercise}
+Zapišite sljedeće sudove koristeći predikate, kvantifikatore i veznike.
+\begin{itemize}
+\item[a)] Svaki čovjek je smrtan.
+\item[b)] Ne postoji prirodan broj koji je susjedan svakom prirodnom broju.
+\item[c)] Za svaki $x\in \mathbb{N}$ i za svaki $y\in \mathbb{N}$ vrijedi $x+y=y+x$.
+\item[d)] Za svaki $x\in \mathbb{N}$ postoji $y\in \mathbb{N}$ takav da je $x<y$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka je $P(x)$ sud "Čovjek $x$ je smrtan.". Sud iz zadatka je $\forall{x}\, P(x)$.
+
+b) Neka je $P(x, y)$ sud "Prirodan broj $x$ je susjedan prirodnom broju $y$.". Sud iz zadatka je $\neg(\exists{x}\, \forall{y}\, P(x, y))$.
+
+c) Neka je $P(x, y)$ sud "Za prirodne brojeve $x$ i $y$ vrijedi $x+y=y+x$." Tada je traženi sud $\forall{x}\, \forall{y}\, P(x, y)$.
+
+d) Neka je $P(x, y)$ sud "Za prirodne brojeve $x$ i $y$ vrijedi $x<y$.". Tada je traženi sud $\forall{x}\,\exists{y}\, P(x, y)$.
+\end{proof}
+\begin{exercise}
+Odredite negaciju sljedećih sudova (i neke njoj ekvivalentne sudove).
+\begin{itemize}
+\item[a)] Svi trokuti su jednakostranični.
+\item[b)] Postoji prirodan broj koji je istovremeno paran i neparan.
+\end{itemize}
+\end{exercise}
+\begin{proof*}
+a) Prvo zapišimo dani sud u jeziku predikata, kvantifikatora i veznika. Ako je $P(x)$ sud "Trokut $x$ je jednakostraničan.", tada početni sud glasi $\forall{x}\, P(x)$. Pripadna negacija je $\neg \forall{x}\, P(x)$, koja vrijedi ako i samo ako vrijedi 
+\begin{align}
+\label{quantifier}
+\exists{x}\,\neg P(x).
+\end{align}
+Dakle, u prirodnom jeziku negacija je "Nije istina da su svi trokuti jednakostranični.", te možemo promatrati njoj ekvivalentan sud (\ref{quantifier}), "Postoji trokut koji nije jednakostraničan.". (Pokazuje se da je promatranje ovakvih sudova ekvivalentnih negaciji vrlo bitno u dokazivanju tvrdnji i u matematici općenito, što ćete ubrzo vidjeti i na konkretnim primjerima.)
+
+b) Neka je $P_1(x)$ sud "Prirodan broj $x$ je paran.", te $P_2(x)$ sud "Prirodan broj $x$ je neparan.". Početni sud je $\exists{x}\, \left(P_1(x)\wedge P_2(x)\right)$, njegova negacija je $\neg\exists{x}\, \left(P_1(x)\wedge P_2(x)\right)$, a jedna njoj ekvivalentna tvrdnja $\forall{x}\, \left(\neg P_1(x)\vee \neg P_2(x)\right)$. Dakle, u prirodnom jeziku, pripadna negacija je "Ne postoji prirodan broj koji je istovremeno paran i neparan.", a pripadna ekvivalentna tvrdnja je 
+\begin{align}
+\label{centeredtext}
+\text{"Svaki prirodan broj ili nije paran, ili nije neparan (ili oboje).".}
+\end{align}
+Imajući na umu činjenice da prirodan broj ne može istovremeno biti paran i neparan, da je svaki prirodan broj paran ako i samo ako nije neparan, te neparan ako i samo ako nije paran, imamo da je (\ref{centeredtext}) ekvivalentno sudu 
+\[
+\pushQED{\qed}
+\text{"Svaki prirodan broj je ili paran ili neparan.".}\qedhere
+\popQED
+\]
+\end{proof*}
+\section{Skupovi}
+Jedan od temeljnih pojmova u matematici je pojam skupa. Skup ne
+definiramo, no intuitivno ga zamišljamo kao kolekciju nekih objekata
+za koje kažemo da su elementi ili članovi skupa.
+Činjenicu da neki objekt $x$ pripada skupu $A$ zapisujemo sa $x\in A$
+i čitamo "$x$ je element skupa $A$". U suprotnom pišemo $x\notin A$.
+Skup koji nema niti jedan element zovemo \textbf{prazan skup} i označavamo sa $\emptyset$. S druge strane, skup svih matematičkih objekata relevantnih za diskusiju nazivamo \textbf{univerzalni skup}\footnote{Čitatelj/ica će se možda zapitati zašto uzimamo skup svih matematičkih objekata relevantnih za diskusiju, a ne naprosto skup \textit{svega}. Uspostavlja se da, za pojam skupa kako ga mi opisujemo i zamišljamo u većini matematike (tzv. \textit{naivna} teorija skupova), skup svega ne postoji, zbog tzv. \textit{Russellovog paradoksa}.}. Nadalje, $S=\{x\; |\; P(x)\}$ će nam značiti da je $S$ skup svih objekata $x$ za koje vrijedi $P(x)$ i samo takvih objekata. Preciznije, vrijedi $a\in S$ ako i samo ako vrijedi $P(a)$. 
+
+Elemente skupova često nabrajamo u vitičastim zagradama, npr. skup koji sadrži brojeve $1, 2, 3$ i niti jedan drugi element označavamo s $\{1, 2, 3\}$. Često je nabrajanje svih elemenata nepraktično pa tada koristimo tri točkice $(\,\dots)$, npr skup svih elemenata od $1$ do $100$ označavamo s $\{1, 2,\dots, 100\}$.
+
+Važno je naglasiti i da kod skupova često koristimo $(\forall x\in S)\, P(x)$, odnosno $(\exists x\in S)\, P(x)$, što znači "Za svaki $x$ iz $S$ vrijed $P(x)$", odnosno "Postoji $x$ iz $S$ za kojeg vrijedi $P(x)$". Nadalje, $(\forall x\in S)\, P(x)$ se u logici promatra kao pokrata za sud $\forall x\; \left(x\in S\Rightarrow P(x)\right)$, a $(\exists x\in S)\, P(x)$ kao pokrata za sud $\exists x\; \left(x\in S\wedge P(x)\right)$. Nadalje, koristit ćemo i notaciju $\{x\in S : P(x)\}$ ("skup svih elemenata $x$ iz $S$ za koje vrijedi $P(x)$"), i to se promatra kao pokrata za skup $\{x : x\in S\wedge P(x)\}$
+
+\begin{definition} Neka je $U$ univerzalni skup.
+\begin{itemize}
+\item Kažemo da je $A\subseteq B$ ako za svaki $x\in U$, gdje je $U$ univerzalni skup, vrijedi $x\in A\Rightarrow x\in B$.
+\item Kažemo da su $A$ i $B$ \textbf{jednaki} i pišemo $A=B$ ako vrijedi $A\subseteq B$ i $B\subseteq A$.
+\item \textbf{Unija} skupova $A$ i $B$ je skup $A\cup B=\{x\in U : x\in A\vee x\in B\}$.
+\item \textbf{Presjek} skupova $A$ i $B$ je skup $A\cap B=\{x\in U : x\in A\wedge x\in B\}$.
+\item \textbf{Razlika} skupova $A$ i $B$ je skup $A\setminus B=\{x\in U : x\in A\wedge x\notin B\}$.
+\item \textbf{Simetrična razlika} skupova $A$ i $B$ je skup $A\triangle B=\{x\in U : x\in A\cup B \wedge x\notin A\cap B\}$.
+\item \textbf{Komplement} skupa $A$ (s obzirom na univerzalni skup $U$ je skup $A^c=\{x\in U : x\notin A\}$
+\item \textbf{Partitivni skup} skupa $A$ je skup svih podskupova od $A$.
+\item \textbf{Kartezijev produkt} nepraznih skupova $A$ i $B$ je $A\times B=\{(a, b) : a\in A \wedge b\in B\}$.
+\end{itemize}
+Pritom je $(a, b)$ oznaka za \textbf{uređeni par}, što je zapravo kolekcija dva elementa u kojoj je \textit{bitan poredak}, dakle ako su $a$ i $b$ različiti elementi onda je $(a, b)\neq (b, a)$. Nadalje, kažemo da su $A$ i $B$ \textbf{disjunktni} ako vrijedi $A\cap B=\emptyset$.
+\end{definition}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka je $$A=\{1, 2, \dots, 30\},\; B=\{x\in \mathbb{R} : x+1<x\},\; C=\{n\in \mathbb{Z} : n<9\}\setminus\{n \in \mathbb{Z} : n<-7\}.$$ 
+Odredite $(A\cap C)\cup B$.
+\item[b)] Neka je $\mathbb{N}$ univerzalni skup. Odredite $\{2, 3, 4\}\times \{4, 5, 6 \dots\}^c$.
+\item[c)] Odredite $\mathcal{P}\left(\{1, 2, 3\}\right)$.
+\item[d)] Je li $\left\{\left\{\emptyset, \{\emptyset\}\right\}\right\} \in \mathcal{P}\left(\mathcal{P}\left(\mathcal{P}\left(\mathcal{P}\left(\emptyset\right)\right)\right)\right)$?
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Vrijedi $B=\emptyset$ -- očito ne postoji realan broj takav da je $x+1<x$. Skup $C$ se sastoji od svih cijelih brojeva manjih od $9$, te onih brojeva koji \textit{nisu} manji od $-7$. Dakle, vrijedi $C=\{-7, -6, -5, -4, \dots, 6, 7, 8\}$. Dakle, vrijedi $A\cap C=\{1, 2, \dots, 8\}$, te $\{1, 2, \dots, 8\}\cup B=\{1, 2, \dots, 8\}$, budući da je $B$ prazan skup.
+
+b) Vrijedi $\{4, 5, 6, \dots\}^c=\{1, 2, 3\}$, dakle 
+\begin{align*}
+\{2, 3, 4\}\times \{4, 5, 6, \dots\}^c&=\{2, 3, 4\}\times \{1, 2, 3\}\\
+&=\{(2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3), (4, 1), (4, 2), (4, 3)\}.
+\end{align*}
+
+c) Vrijedi
+$$\mathcal{P}\left(\{1, 2, 3\}\right)=\left\{\emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\}\right\}.$$
+
+d) Vrijedi $\mathcal{P}(\emptyset)=\{\emptyset\}$ i $\mathcal{P}\left(\mathcal{P}\left(\emptyset\right)\right)=\left\{\emptyset, \{\emptyset\}\right\}$. Kako je $\left\{\emptyset, \{\emptyset\}\right\}\subseteq \left\{\{\emptyset, \{\emptyset\}\right\}=\mathcal{P}\left(\mathcal{P}\left(\emptyset\right)\right)$, vrijedi $\left\{\emptyset, \{\emptyset\}\right\}\in \mathcal{P}\left(\mathcal{P}\left(\mathcal{P}\left(\emptyset\right)\right)\right)$. Konačno, kako je $\left\{\left\{\emptyset, \{\emptyset\}\right\}\right\}\subseteq \mathcal{P}\left(\mathcal{P}\left(\mathcal{P}\left(\emptyset\right)\right)\right)$, vrijedi $\left\{\left\{\emptyset, \{\emptyset\}\right\}\right\}\in \mathcal{P}\left(\mathcal{P}\left(\mathcal{P}\left(\mathcal{P}\left(\emptyset\right)\right)\right)\right)$.
+\end{proof}
+\section{Direktni dokazi}
+U ostatku ovog poglavlja na intuitivnoj razini uvodimo pojam dokaza. Dokaz možemo shvatiti kao precizan logički argument koji pokazuje zašto je neka tvrdnja istinita. Obično se u dokazima koristimo osnovnim činjenicama kojih ne dokazujemo (aksiomima), definicijama tvrdnji o kojima govorimo, te prethodno dokazanim tvrdnjama. 
+
+Obično se kaže da je matematika \textit{deduktivna znanost}. Naime, u znanostima poput fizike, kemije i biologije koje ispituju svijet oko nas, nemamo luksuz koristiti samo deduktivne argumente, nego koristimo kombinaciju induktivnih i deduktivnih argumenata. Induktivno zaključivanje je ono gdje iz prethodno poznatih činjenica i podataka pokušavamo doći do novih zaključaka i pokušavamo potkrijepiti te nove zaključke sa što više podataka koji podupiru taj zaključak, a deduktivno zaključivanje je ono gdje iz prethodnih činjenica primjenom logičkog zaključivanja dobivamo nove činjenice -- ono za razliku od induktivnog zaključivanja donosi zaključke za koje možemo \textit{garantirati} da su istiniti. 
+
+U matematici, za razliku od drugih prirodnih znanosti, imamo mogućnost razviti cijele matematičke teorije koristeći deduktivno zaključivanje, te zato uvijek inzistiramo da nešto što tvrdimo budemo u stanju dokazati (kada god je to moguće), jer nam to daje sigurnost da je tvrdnja koju smo dokazali točna. Bitno je naglasiti da u matematici također koristimo induktivno zaključivanje, ali nikad u samoj teoriji, već u samom procesu otkrivanja novih činjenica, gdje onda iste pokušavamo dokazati koristeći deduktivno zaključivanje. 
+
+Slijede zadatci koji će služiti kao uvod u dokazivanje matematičkih tvrdnji, i to uglavnom na primjeru osnovnih činjenica o parnim i neparnim brojevima, djeljivosti, te racionalnim i iracionalnim brojevima. Dokazi se obično u matematici javljaju u dva oblika -- \textbf{direktan dokaz} i \textbf{svođenje na kontradikciju}.\footnote{U literaturi ćete još za dokaze kontradikcijom naći i sljedeće nazive -- \textit{metoda suprotnog}, \textit{indirektan dokaz}, \textit{reductio ad absurdum}.}
+
+Direktan dokaz je proces dokazivanja tvrdnji direktnom primjenom definicija i prethodno dokazanih tvrdnji. Za početak, krenut ćemo od definicija parnosti i neparnosti.
+
+\begin{definition}
+\label{15}
+Kažemo da je cijeli broj $a\in \mathbb{Z}$ \textbf{paran} ako postoji bar jedan $k\in \mathbb{Z}$ takav da je $a=2k$. Nadalje, kažemo da je $a$ \textbf{neparan} ako postoji bar jedan $l\in \mathbb{Z}$ takav da je $a=2l+1$.
+\end{definition}
+
+Uočite da naš odabir ovih dvaju definicija možda i nije najprirodniji, ali prednost ovakve definicije je njezina jednostavnost, jer da smo npr. definirali parne brojeve kao one čija je zadnja znamenka $0$, $2$, $4$, $6$ ili $8$, tada se pozivamo na pojam dekadskog zapisa broja, a u definiciji \ref{15} se ne pozivamo na ništa osim na množenje cijelih brojeva, pojam koji je za naše svrhe elementaran i kojeg na ovom mjestu nećemo definirati. Nadalje, uočite da smo mogli definirati da je $a\in \mathbb{Z}$ paran ako postoji \textit{točno} jedan $k\in \mathbb{Z}$ takav da je $a=2k$, no kasnije ćemo pokazati da jedinstvenost broja $k$ zapravo slijedi iz same definicije. Napominjemo i da je česta praksa u matematici promotriti definicije s najmanje pretpostavki (pogledajte npr. točku 2.6. u \cite{2}).
+
+\begin{exercise}
+Riješite sljedeće zadatke. \begin{itemize}
+
+\item[a)] Dokažite da je zbroj dva parna broja ponovno paran broj.
+\item[b)] Dokažite da je umnožak dva neparna broja neparan broj.
+\item[c)] Odredite sve $n\in \mathbb{N}_0$ za koje je $n!$ paran (Sjetite se da se za $n\in \mathbb{N}_0$, broj $n!$ definira kao broj za kojeg je $0!=0$, te $n!=n\cdot (n-1)\cdot ...\cdot 2\cdot 1$ za $n\in \mathbb{N}$).
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka su $a$, $b\in \mathbb{Z}$ proizvoljni parni brojevi. To znači da postoje $k$, $l\in \mathbb{Z}$ takvi da je $a=2k$ i $b=2l$. No tada je $$a+b=2k+2l=2(k+l).$$ Budući da je $k+l\in \mathbb{Z}$, slijedi i da je $a+b$ paran. Time smo dokazali tvrdnju.
+
+b) Dokaz ide analogno\footnote{Riječ \textit{analogno} ćete često vidjeti u matematičkim tekstovima i ona znači \textit{slično}, \textit{usporedivo}.} prethodnom. Zaista, neka su $a$, $b\in \mathbb{Z}$ proizvoljni neparni brojevi. Tada postoje $k, l\in \mathbb{Z}$ takvi da je $a=2k+1$ i $b=2l+1$. Tada je
+$$ab=(2k+1)(2l+1)=4kl+2k+2l+1=2(2kl+k+l)+1,$$
+pa tvrdnja očito vrijedi, kako je $2kl+k+l\in \mathbb{Z}$.
+
+c) Za $n=0$ i $n=1$ vrijedi $n!=1$, a $1$ očito nije paran broj, jer ne postoji $k\in \mathbb{Z}$ takav da je $1=2k$. Međutim, vrijedi $2!=2$, a $2$ je paran jer je $2=2\cdot 1$. Za $n>2$ vrijedi
+$$n!=1\cdot 2\cdot 3\cdot ...\cdot (n-1)\cdot n=2\cdot (1\cdot 3\cdot ...\cdot (n-1)\cdot n),$$
+pa je $n!$ očito paran i za $n>2$. Slijedi da je $n!$ paran ako i samo ako je $n\in \mathbb{N}_0\setminus \{0, 1\}$.
+\end{proof}
+\begin{exercise}
+Dokažite da za svaki $x\in \mathbb{R}$ vrijedi $x^2-4x\geq -4$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $x\in \mathbb{R}$ proizvoljan. Vrijedi
+$$x^2-4x\geq -4\Leftrightarrow x^2-4x+4\geq 0\Leftrightarrow (x-2)^2\geq 0,$$
+te kako smo dobili ekvivalenciju s istinitom tvrdnjom $(x-2)^2\geq 0$, tvrdnja mora vrijediti. Uočite da bi zapravo jedan direktan dokaz bio sljedeći: Znamo da za svaki $x\in \mathbb{R}$ vrijedi $(x-2)^2\geq 0$. Imamo
+$$(x-2)^2\geq 0\Rightarrow x^2-4x+4\geq 0\Rightarrow x^2-4x\geq -4,$$
+što smo i tvrdili. Međutim, u prethodnom dokazu je bilo puno intuitivnije ići "unazad", tj. od zaključka ka nekoj istinitoj tvrdnji, pa ako dobijemo da su te tvrdnje ekvivalentne, tvrdnja sigurno vrijedi i možemo konstruirati i direktan dokaz, analogno kako smo to napravili u ovom primjeru.
+\end{proof}
+\begin{exercise}
+Dokažite da za sve skupove $A$, $B$, $C$ vrijede sljedeća svojstva.
+\begin{AutoMultiColItemize}
+\item[a)] $A\cup B=B\cup A,$
+\item[b)] $A\subseteq B\Rightarrow \mathcal{P}(A)\subseteq \mathcal{P}(B),$
+\item[c)] $(A\cup B)\times C=(A\times C)\cup (B\times C),$
+\item[d)] $(A\cup B)^c=A^c\cap B^c \hspace{0.3cm} \mathrm{(De} \hspace{0.1cm}\mathrm{Morgan)}.$
+\end{AutoMultiColItemize}
+\begin{proof}[Rješenje]
+a) Neka su $A$ i $B$ proizvoljni. Ako je barem jedan od njih prazan, onda tvrdnja vrijedi, pa pretpostavimo da su svi oni neprazni. Neka je zatim $x\in A\cup B$ proizvoljan. Tada vrijedi $x\in A\vee x\in B$, što povlači $x\in B\vee x\in A$, tj. $x\in B\cup A$. Obratno, ako je $x\in B\cup A$, to znači da je $x\in B\vee x\in A$, odnosno $x\in A\vee x\in B$, tj. $x\in A\cup B$.
+
+b) Neka su $A$ i $B$ proizvoljni i neka je $X\in \mathcal{P}(A)$ proizvoljan. Iz definicije slijedi $X\subseteq A$. Kako vrijedi $X\subseteq A$ i $A\subseteq B$, slijedi $X\subseteq B$, odnosno $X\in \mathcal{P}(B)$.
+
+c) Neka su $A$, $B$ i $C$ proizvoljni i neka je $(x, y)\in (A\cup B)\times C$ proizvoljan. Tada je $x\in A\cup B$ i $y\in C$, odnosno $(x\in A\vee x\in B)\wedge y\in C$. Dobivamo $$x\in A\wedge y\in C\vee x\in B\wedge y\in C,$$
+\textbf{(v. tautologije na str. )}, tj. $(x, y)\in A\times C$ ili $(x, y)\in B\times C$, odakle dobivamo $(x, y)\in (A\times C)\cup (B\times C)$.
+
+d) Neka su $A$ i $B$ proizvoljni i neka je $x\in (A\cup B)^c$ proizvoljan. Tada vrijedi $x\notin A\cup B$, što je drukčiji zapis za $\neg(x\in A\cup B)$. Kako $x\in A\cup B$ povlači $x\in A \vee x\in B$, vrijedi $$\neg(x\in A\cup B)\Leftrightarrow\neg(x\in A \vee x\in B)\Leftrightarrow\neg (x\in A)\wedge \neg (x\in B),$$ odnosno $x\notin A \wedge x\notin B$, pa vrijedi $x\in A^c\wedge x\in B^c$, odnosno $x\in A^c\cap B^c$. Analogno se dokazuje drugi smjer.
+\end{proof}
+\end{exercise}
+\begin{remark}
+\label{firstrem}
+Znamo da vrijedi $A=B$ ako i samo ako vrijedi $A\subseteq B$ i $B\subseteq A$. No to po definiciji vrijedi ako i samo ako da za svaki $x\in U$, gdje je $U$ univerzalni skup, vrijedi $x\in A\Rightarrow x\in B$ i $x\in B\Rightarrow x\in A$, tj. $x\in A\Leftrightarrow x\in B$. Prema tome, da bi vrijedilo $A=B$ nužno je i dovoljno za proizvoljan $x\in U$ vrijedi $x\in A\Leftrightarrow x\in B$ da bismo pokazali jednakost. To znači da zapravo u podzadatcima a), c) i d) zapravo i ne treba dokazivati drugi smjer, jer imamo niz ekvivalencija za koje znamo da vrijedi tranzitivnost.
+\end{remark}
+
+\begin{remark}
+Uočite da vrijedi $\{a, a\}=\{a\}$ i $\{a, b\}=\{b, a\}$. Zaista, zapis $\{a, a\}$ znači da promatrani skup sadrži samo elemente $a$ i $a$ i niti jedan drugi. Očito to vrijedi ako i samo ako skup sadrži samo element $a$ i niti jedan drugi, dakle on je jednak $\{a\}$. Slično se dokazuje i druga jednakost, te da gornja svojstva vrijede i za elemente skupova s više članova. Odavde slijedi da u skupu nije bitan poredak elemenata, te da duplikate možemo zanemariti. Međutim, postoje određeni slučajevi u kojima je bitno postojanje duplikata, odnosno u kojima je poredak bitan (tada se koristimo \textit{multiskupovima}, \textit{indeksiranim familijama skupova}, \textit{uređenim $n$-torkama}).
+\end{remark}
+\begin{exercise}
+Dokažite da tvrdnja da za sve skupove $A$, $B$ vrijedi $A\cap B\supseteq A\cup B$ nije istinita.
+\end{exercise}
+\begin{proof}[Rješenje]
+Dokažimo da je istinita njezina negacija, tj. da je istinita tvrdnja 
+$$\left(\exists A, B\in U\right)\; A\cap B\subset A\cup B.$$
+Ovo dokazujemo naprosto po definiciji unije i presjeka. Zaista, uzmimo $A=\left\{1, 2, 3\right\}$ i $B=\left\{3, 4, 5\right\}$. Vrijedi $A\cap B=\left\{3\right\}$ i $A\cup B=\left\{1, 2, 3, 4, 5\right\}$, te očito vrijedi $A\cap B\subset A\cup B$.
+\end{proof}
+Iz prethodnog primjera vidimo da, kako bi pokazali da tvrdnja oblika $\forall{x}\, P(x)$ nije istinita, dovoljno je naći samo jedan primjer $x_0$ takav da je $P(x_0)$ lažna. Takav primjer zove se \textit{kontraprimjer}. Ako neka tvrdnja s univerzalnim kvantifikatorom nije istinita, onda često kažemo da \textit{općenito nije istinita}, jer se može ipak dogoditi da postoji skup za kojeg je tvrdnja istinita. Npr. za $A=B=\emptyset$ vrijedi $A\cap B\supseteq A\cup B$.
+\begin{definition}
+Neka je $x\in \mathbb{R}$. Kažemo da je $x$ \textbf{racionalan} ako postoje cijeli brojevi $a$ i $b\neq 0$ takvi da je $x=\dfrac{a}{b}$. Ako $x$ nije racionalan, kažemo da je on \textbf{iracionalan}.
+\end{definition}
+\begin{exercise}
+Dokažite da za svaki racionalan broj postoji racionalan broj koji je strogo veći od njega.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $q\in \mathbb{Q}$ proizvoljan. Tada postoje brojevi $m\in \mathbb{Z}$ i $n\in \mathbb{Z}\setminus\{0\}$ takvi da je $q=\dfrac{m}{n}$. Promotrimo broj $q+1$. Očito je $q+1>q$, te vrijedi
+$$q+1=\dfrac{m}{n}+1=\dfrac{m+n}{n}.$$
+Kako je $m+n\in \mathbb{Z}$ i po definiciji $n\in \mathbb{Z}\setminus\{0\}$, imamo i da je $q+1$ racionalan broj.
+\end{proof}
+\section{Dokazi kontradikcijom}
+Ideja dokaza kontradikcijom je pretpostaviti da je tvrdnja koju želimo dokazati lažna, a zatim zdravim logičkim zaključivanjem doći do apsurdnog zaključka, odakle slijedi da je početna pretpostavka (da je tvrdnja koju želimo dokazati lažna) bila sama lažna, odakle dobivamo istinitost tvrdnje koju smo htjeli dokazati. Pokažimo to kroz nekoliko primjera.
+\begin{exercise}
+Dokažite da ako je $b$ paran, tj. ako postoji bar jedan $k\in \mathbb{Z}$ takav da je $b=2k$, onda je taj $k$ jedinstven.
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdnju dokazujemo svođenjem na kontradikciju. Pretpostavimo da postoje $k, l\in \mathbb{Z}$, $k\neq l$, takvi da je $$b=2k\;\;\text{ i }\;\;b=2l.$$ No tada je $2k=2l$, odnosno $k=l$. Dakle, dobili smo da istovremeno vrijedi $k\neq l$ i $k=l$, što je apsurdno. Dakle, zaključujemo da je naša početna pretpostavka bila lažna, odnosno takav $k$ je zaista jedinstven.
+\end{proof}
+\begin{exercise}
+Dokažite: Niti jedan cijeli broj nema svojstvo da je istovremeno paran i neparan. (Iako se ova tvrdnja na prvi pogled čini očiglednom, zapravo nije odmah vidljiva iz naših definicija parnosti i neparnosti!)
+\end{exercise}
+\begin{proof}[Rješenje]
+Pretpostavimo da postoji takav broj, neka je to $a\in \mathbb{Z}$. Tada postoje cijeli brojevi $k, l\in \mathbb{Z}$ takvi da je $a=2k$ i $a=2l+1$. Odavde imamo $2k=2l+1$, odnosno 
+$$2(k-l)=1.$$
+Zapravo, dobili smo da je $1$ paran broj, što intuitivno znamo da ne vrijedi, ali to možemo i dokazati. Možda najprirodniji argument je iskoristiti činjenicu da, kad bi ove operacije proširili na skup $\mathbb{Q}$, onda bi imali $k-l=\dfrac{1}{2}$, što je kontradikcija s činjenicom da je $k-l$ cijeli broj. No ovo možemo i dokazati i bez pozivanja na skup racionalnih brojeva. Uočimo da je $$1=2(k-l)>0,$$ pa slijedi i da je $k-l>0$. S druge strane, kako je $k-l>0$, imamo $$k-l<2(k-l)=1.$$ Dakle $0<k-l<1$, kontradikcija s $k-l\in \mathbb{Z}$, jer nema cijelih brojeva između $0$ i $1$.\footnote{Ovu, na prvi pogled očiglednu činjenicu, dokazujemo u zadatku \ref{23}.}
+\end{proof}
+\begin{exercise}
+Dokažite da ne postoji broj $a\in \mathbb{R}$ sa svojstvom da za svaki $\epsilon>0$ vrijedi $a>\epsilon$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Pretpostavimo da postoji takav $a\in \mathbb{R}$. Za $\epsilon=a+1$ vrijedi $a>a+1$, što je očito nemoguće. Međutim, da bi ovakav izbor broja $\epsilon$ bio dobar, mora vrijediti $\epsilon=a+1>0$. Međutim, to lagano slijedi iz činjenice da uvrštavanjem $0$ umjesto $\epsilon$ u početnu pretpostavku imamo $a>0$, pa posljedično i $a+1>0$.
+\end{proof}
+Još jedan tip dokazivanja zove se \textit{dokaz kontrapozicijom}, a on se sastoji u sljedećem -- iz činjenice da za sudove $A$ i $B$ vrijedi 
+$$A\Rightarrow B\Leftrightarrow \neg B\Rightarrow \neg A$$
+slijedi da je dovoljno dokazati $\neg B\Rightarrow \neg A$. Uočimo da se dokaz kontrapozicijom može gledati kao specijalan slučaj dokaza kontradikcijom i to onaj slučaj gdje, ako pretpostavimo da je tvrdnja koju želimo dokazati lažna, dobivamo negaciju pretpostavke.
+
+\begin{exercise}
+Dokažite: \begin{itemize}
+\item[a)] Neka je $a\in \mathbb{N}$ proizvoljan. Ako $4a$ nije kvadrat nekog prirodnog broja, onda to nije ni $a$.
+\item[b)] Neka je $a\in \mathbb{Z}$ proizvoljan. Vrijedi da je $a^2$ paran ako i samo ako je $a$ paran.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Dokazat ćemo ovu tvrdnju kontrapozicijom. Dovoljno je pokazati sljedeće: Ako je $a$ kvadrat nekog prirodnog broja, onda je to i $4a$. Ako postoji $p$ takav da je $a=p^2$, onda je $$4a=4p^2=2^2p^2=(2p)^2,$$ 
+pa tvrdnja vrijedi.
+
+b) Dokazat ćemo ovu tvrdnju tako da prvo pokažemo jednu implikaciju, a onda drugu. Pretpostavimo da je $a$ paran, tj. $a=2k$ za neki $k\in \mathbb{Z}$. Tada je $$a^2=4k^2=2(2k^2),$$ dakle i $a^2$ je paran. 
+
+Dokažimo sada drugi smjer i to kontrapozicijom, tj. da ako je $a$ neparan, da je tada i $a^2$ neparan. Zaista, ako je $a$ neparan, onda postoji $k$ takav da je $a=2k+1$. Tada je $$a^2=4k^2+4k+1=2(2k^2+2k)+1,$$ 
+pa tvrdnja vrijedi.
+\end{proof}
+\begin{definition}
+Neka su $a, b\in \mathbb{Z}$ i $b\neq 0$. Kažemo da je $a$ \textbf{djeljiv} s $b$ ako postoji $q\in \mathbb{Z}$ takav da je $a=bq$. Ako za broj $c\in \mathbb{Z}\backslash \{0\}$ vrijedi da je $a$ djeljiv s $c$ i $b$ djeljiv s $c$, onda kažemo da je broj $c$ \textbf{zajednički djelitelj} tih dvaju brojeva. Najveći od tih zajedničkih djelitelja naprosto zovemo \textbf{najveći zajednički djelitelj} i označavamo taj broj s $M(a, b)$. Kažemo da su $a$ i $b$ \textbf{relativno prosti} ako je $M(a, b)=1$.
+\end{definition}
+
+Relativno prosti brojevi su npr. $3$ i $7$, $14$ i $25$ itd. Može se intuitivno gledati na relativno proste brojeve kao one za koje vrijedi da ako od njih napravimo razlomak, da se taj razlomak ne može dalje kratiti, a da brojnik i nazivnik i dalje budu cijeli brojevi.
+
+\begin{exercise}
+Dokažite da je $\sqrt{2}$ iracionalan.
+\end{exercise}
+\begin{proof}[Rješenje]
+Pretpostavimo suprotno, da je $\sqrt{2}$ racionalan. Tada postoje cijeli brojevi $a$ i $b\neq 0$ takvi da je
+$$\sqrt{2}=\dfrac{a}{b}$$
+Možemo bez smanjenja općenitosti pretpostaviti da je $M(a, b)=1$ (da je razlomak "maksimalno skraćen"), jer kada bi vrijedilo $M(a, b)>1$ onda bi imali
+$$\dfrac{a}{b}=\dfrac{M(a, b)a'}{M(a, b)b'}=\dfrac{a'}{b'},$$
+tj. vrijednost razlomka se ne mijenja. Sada kvadriranjem obiju strana dobivamo
+$$2=\dfrac{a^2}{b^2}\Leftrightarrow b^2=2a^2$$
+Iz definicije parnosti slijedi da je $b^2$ paran, pa je i $b$ paran. No tada postoji $k\in \mathbb{Z}$ takav da je $b=2k$, tj. $b^2=4k^2$. Sada vrijedi $4k^2=2a^2$, odnosno $$2k^2=a^2.$$ Odavde slijedi da je $a^2$ paran, pa je i $a$ paran. Dakle $2$ je zajednički djelitelj od $a$ i $b$, što je kontradikcija s pretpostavkom $M(a, b)=1$.
+\end{proof}
+
+\begin{definition}
+Kažemo da $a$ dijeli $b$ i pišemo $a\; \vert \;b$ ako je $b$ djeljiv s $a$.
+\end{definition}
+
+\begin{exercise}
+Odredite sve $a\in \mathbb{Z}\setminus \{0\}$ takve da je $\dfrac{4}{a}$ cijeli broj.
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdnja očito vrijedi ako je $a\; \vert \;4$, tj. tvrdnja vrijedi za $a=1, -1, 2, -2, 4, -4$. Naime, da $a\; \vert \;4$ znači da postoji $k\in \mathbb{Z}$ takav da je $4=ak$, pa vrijedi $$\dfrac{4}{a}=\dfrac{ak}{a}=k\in \mathbb{Z}.$$ Dokažimo da su ovo jedine mogućnosti. Tvrdnja očito ne vrijedi za $3$ i $-3$, te pretpostavimo li da postoji neki $a>4$ takav da tvrdnja vrijedi, onda djeljenjem s $a$ dobivamo $\dfrac{4}{a}<1$, no tada očito vrijedi i $\dfrac{4}{a}>0$, jer to vrijedi ako i samo ako je $4>0$, što je istina. Znamo da ne postoji cijeli broj između $0$ i $1$, pa imamo kontradikciju. Tvrdnja se analogno pokazuje za $a<-4$.
+\end{proof}
+Analogno se pokazuje da je $\dfrac{b}{a}$ cijeli broj ako i samo ako je $a$ djelitelj od $b$.
+
+\begin{exercise}
+Odredite sve $a\in \mathbb{Z}$ takve da je
+\begin{itemize}
+\item[a)] $\dfrac{a+2}{a}$ cijeli broj, $a\neq 0$.
+\item[b)] $\dfrac{2a}{a+2}$ cijeli broj, $a\neq -2$.
+\end{itemize}
+\begin{proof}[Rješenje]
+a) Vrijedi
+$$\dfrac{a+2}{a}=1+\dfrac{2}{a},$$
+te kako znamo da je $1+x$ cijeli broj ako i samo ako je $x$ cijeli broj, treba pronaći kada je sve $\dfrac{2}{a}$ cijeli broj, a prema već pokazanome to vrijedi ako i samo ako je $a=1, -1, 2, -2$.
+
+b) Vrijedi
+$$\dfrac{2a}{a+2}=\dfrac{2a+4-4}{a+2}=2-\dfrac{4}{a+2},$$
+što je cijeli broj ako i samo ako je $a=0, -4, -3, -1, 2, -6$.
+\end{proof}
+\end{exercise}
+\section{Primjeri raznih dokaznih zadataka iz teorije brojeva}
+
+\begin{definition}
+Neka je $n\in \mathbb{N}$ i $n>1$. Kažemo da je $n$ \textbf{prost broj} ako su jedini njegovi djelitelji $1$ i $n$. Kažemo da je $n$ \textbf{složen broj} ako nije prost broj.
+\end{definition}
+
+\noindent Uočimo da je $n\in \mathbb{N}$ složen ako i samo ako postoje prirodni brojevi $k, l>1$ takvi da je $n=k\cdot l$.
+\begin{exercise}
+Dokažite da svaki složeni broj $n\in \mathbb{N}$ ima prosti faktor (tj. prosti broj s kojim je djeljiv), nazovimo ga $p$, sa svojstvom da je $p\leq \sqrt{n}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Kako je $n$ složen, sigurno postoji prirodan broj veći od $1$ s kojim je djeljiv. Nadalje, prirodnih brojeva s tim svojstvom ima konačno mnogo, jer za svaki djelitelj $k>1$ od $n$ vrijedi $1<k\leq n$. Kako ih ima konačno mnogo, sigurno među njima postoji najmanji takav -- neka je to $p$. Tada po definiciji postoji $m\in \mathbb{N}$ takav da je $n=m\cdot p$. No kako je $p$ najmanji, očito je $p\leq m$. No tada slijedi $$p^2\leq m\cdot p=n,$$ odnosno $p\leq \sqrt{n}$, što smo i tvrdili.
+\end{proof}
+\begin{exercise}
+Dokažite da za svaki $n\in \mathbb{N}$ postoji $n$ uzastopnih složenih brojeva.
+\end{exercise}
+\begin{proof}[Rješenje]
+Dovoljno je naći neki $x\in \mathbb{N}$ sa svojstvom da su 
+$$x+2,\, \dots,\, x+n,\, x+(n+1)$$ 
+složeni brojevi, te ako to uspijemo, dokazali smo tvrdnju. Uočimo da je dovoljno uzeti broj $x$ koji je djeljiv sa svim brojevima $2, 3, \dots, n, n+1$. Jedan takav broj je $x=(n+1)!$, jer za proizvoljan $i\in \mathbb{N}$ takav da je $i\leq n$ vrijedi
+\begin{align*}
+(n+1)!+i&=(n+1)n\dots (i+1)i(i-1)\dots\cdot2\cdot1+i\\
+&=i\left((n+1)n\dots (i+1)(i-1)\dots\cdot2\cdot1+1\right),
+\end{align*}
+pa je $$(n+1)!+2, \dots, (n+1)!+n, (n+1)!+(n+1)$$
+traženi niz od $n$ uzastopnih složenih brojeva.
+\end{proof}
+\begin{remark}
+Uočite da u prethodnom zadatku nismo promatrali niz $x,\, \dots,\, x+(n-1)$, nego niz $x+2,\, \dots,\, x+n,\, x+(n+1)$, iako je promatranje prvog niza pri rješavanju zadatka sigurno intuitivnije. Naime, da smo promatrali prvi niz, ne bismo mogli primijeniti ideju iz prethodnog zadatka, jer nam "smetaju" brojevi $x$ i $x+1$. Dakako, možemo u ovom slučaju uzeti $x=(n+1)!+2$ i tvrdnja će vrijediti, ali da smo to napravili, ne bi bilo na prvi pogled jasno kako smo došli do tog broja.
+\end{remark}
+
+\begin{definition}
+Kažemo da je $\overline{a_1a_2\dots a_n}$ \textbf{dekadski zapis} broja $L\in \mathbb{N}$ ako vrijedi
+$$L=10^{n-1}a_1+10^{n-2}a_2+10^{n-3}a_3+\dots+10a_{n-1}+a_n.$$
+Npr. dekadski zapis broja deset je $\overline{10}$, a dekadski zapis broja sto devetnaest je $\overline{119}$. Obično potez na vrhu izostavljamo, ako je iz konteksta jasno da se radi o dekadskom zapisu broja.
+\end{definition}
+
+\noindent Imajući na umu prethodnu definiciju, promotrimo sljedeći zadatak.
+\begin{exercise}[Školsko natjecanje, 4. razred, A varijanta, 2015.]
+Za $n\in \mathbb{N}$ označimo s $R_n$ broj $\underbrace{\overline{111\dots 11}}_\text{$n$ puta}$. Dokažite da ako je $R_n$ prost broj, onda je i $n$ prost broj.
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdnju dokazujemo kontrapozicijom, tj. dokazat ćemo da za proizvoljan $n\in \mathbb{N}$ vrijedi sljedeće: Ako je $n$ složen, da je onda i $R_n$ složen. Korištenjem definicije dekadskog zapisa broja i formule za sumu prvih $n$ članova geometrijskog niza (v. definiciju \ref{17}), imamo
+$$R_n=10^{n-1}\cdot 1+10^{n-2}\cdot 1+\dots+10\cdot 1+1=10^{n-1}+10^{n-2}+\dots+10+1=\dfrac{10^n-1}{9}.$$
+Kako je $n$ složen, postoje prirodni brojevi $k, l>1$ takvi da je $n=k\cdot l$. Dobivamo
+\begin{align*}
+R_n&=\dfrac{10^n-1}{9}=\dfrac{10^{kl}-1^l}{9}=\dfrac{\left(10^{k}\right)^l-1^l}{9}\\
+&=\dfrac{(10^k-1)(10^{k(l-1)}+10^{k(l-2)}+\dots+10^k)}{9}\\
+&=\dfrac{(10-1)(10^{k-1}+10^{k-2}+\dots+1)(10^{k(l-1)}+10^{k(l-2)}+\dots+10^k)}{9},
+\end{align*}
+pa dobivamo da je $R_n=(10^{k-1}+10^{k-2}+\dots+1)(10^{k(l-1)}+10^{k(l-2)}+\dots+10^k)$. Kako je $R_n$ očito umnožak brojeva većih od $1$, zaključujemo da je složen.
+\end{proof}
+\begin{remark}[Osnovni teorem aritmetike]
+Svaki prirodan broj $n>1$ može se na jedinstven način (do na poredak) prikazati kao produkt jednog ili više prostih brojeva (\textit{Napomena.} Produkt od jednog prostog broja, radi jednostavnosti, definiramo kao sam taj prost broj.)
+\end{remark}
+Ovaj teorem ostavljamo bez dokaza (Dokaz možete naći u \cite{4}), naveli smo ga jer je vrlo elementaran i bit će vrlo bitan pri rješavanju sljedećih zadataka.
+\begin{exercise}
+Dokažite da prostih brojeva ima beskonačno mnogo.
+\end{exercise}
+\begin{proof}[Rješenje]
+Pretpostavimo da prostih brojeva ima konačno mnogo, neka su to $p_1, p_2, \dots, p_n$. Prema osnovnom teoremu aritmetike, znamo da se svaki broj može prikazati kao produkt brojeva $p_1, p_2\dots, p_n$. Dovoljno je, dakle, konstruirati broj koji nije djeljiv ni s jednim od brojeva $p_1, p_2\dots, p_n$, jer ćemo tada dobiti kontradikciju s činjenicom da se svaki broj može prikazati kao produkt brojeva $p_1, \dots, p_n$. Međutim -- nije teško konstruirati takav broj, jedan primjer je
+$$p=p_1p_2p_3\dots p_n+1.$$
+Lako se vidi da $p$ nije djeljiv ni s jednim od brojeva $p_1,\dots, p_n$. Naime, kad bi postojao broj $p_i$ takav da $p_i\; |\; p$, onda kako vrijedi $$p_i \; |\; p_1p_2\dots p_i\dots p_n,$$ očito vrijedi i $$p_i\; |\; p-p_1p_2\dots p_n,$$ tj. $p_i\; |\; 1$. To bi povlačilo da je $p_i=1$, što je kontradikcija s činjenicom da je $p_i$ prost, dakle veći od $1$.
+\end{proof}
+\begin{exercise}
+Za proizvoljan $n\in \mathbb{N}_0$, definiramo \textit{$n$-ti Fermatov broj} kao broj $f_n:=2^{2^n}+1$.
+\begin{itemize}
+\item[a)] Dokažite da za sve $m, n\in \mathbb{N}$ vrijedi sljedeće: Ako je $m\neq n$, onda je $M(f_n, f_m)=1$.
+\item[b)] Pokažite da a) povlači da prostih brojeva ima beskonačno mnogo.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+Da bismo dokazali tvrdnju a), dokažimo sljedeću pomoćnu tvrdnju: Za svaki $n\in \mathbb{N}$ vrijedi $f_{n+1}=f_nf_{n-1}f_{n-2}\dots f_1f_0+2$. Zaista, imamo
+\begin{align*}
+f_{n+1}-2&=2^{2^{n+1}}-1=(2^{2^n}-1)(2^{2^n}+1)\\
+&=(2^{2^{n-1}}-1)(2^{2^{n-1}}+1)(2^{2^n}+1)=(2^{2^{n-2}}-1)(2^{2^{n-2}}+1)(2^{2^{n-1}}+1)(2^{2^n}+1)\\
+&=...=(2^{2^0}-1)(2^{2^0}+1)(2^{2^1}+1)(2^{2^2}+1)\dots(2^{2^{n-1}}+1)(2^{2^n}+1)\\
+&=f_0f_1\dots f_n,
+\end{align*}
+što smo i tvrdili. Pretpostavimo sada da je $m\neq n$ i da postoji zajednički djelitelj $p>1$ brojeva $f_m$ i $f_n$. Bez smanjenja općenitosti možemo uzeti da je $m>n$ (Dokaz bi bio potpuno analogan u slučaju da je $n>m$). Kako je $$f_m=f_{m-1}f_{m-2}\dots f_{n}\dots f_1f_0+2,$$ onda iz činjenice da $p\; |\; f_n$ slijedi da $$p\; |\; f_1\dots f_n\dots f_{m-1},$$ a s druge strane $p\; |\; f_m$, pa $$p \; |\; f_m-f_1\dots f_n\dots f_{m-1},$$ tj. $p\; |\; 2$. Odavde zaključujemo da je $p=2$, ali to je nemoguće jer su Fermatovi brojevi neparni.
+
+Dokažimo b). Rastavimo li $f_0$ na proste faktore, onda kako su $f_{0}$ i $f_{1}$ relativno prosti, slijedi da $f_{1}$ sadrži bar jedan prosti faktor koji nije prosti faktor od $f_{n}$. Nadalje, $f_{2}$ je relativno prost s $f_{1}$ i $f_{0}$, pa on sadrži bar jedan prost faktor koji nije prosti faktor niti jednog od ta dva broja. 
+
+Ponavljanjem tog argumenta vidimo da je svaki Fermatov broj ima bar jedan prosti faktor koji ujedno i nije bio prosti faktor prethodnih Fermatovih brojeva. Time smo dobili beskonačno mnogo prostih brojeva, čime smo dokazali tvrdnju.
+\end{proof}
+\newpage
+\section*{Zadatci za vježbu}
+\subsection*{Osnove matematičke logike, Skupovi}
+\begin{exercise} Zapišite sljedeće skupove matematičkim simbolima. Po potrebi koristite i skupovne operacije (unija, presjek, razlika skupova, simetrična razlika).
+\begin{itemize}
+\item[a)] Skup svih realnih brojeva koji su strogo manji od $100$ i nisu prirodni brojevi,
+\item[b)] Skup svih prirodnih brojeva koji su manji ili jednaki od svih prirodnih brojeva,
+\item[c)] Skup koji sadrži sva slova hrvatske abecede i sve prirodne brojeve od $1$ do $30$.
+\item[d)] Skup svih podskupova skupa $\{1, 2, 3\}$ koji imaju točno dva elementa.
+\end{itemize}
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Izračunajte $\{1, 2, 3\}\triangle\{4, 5, 6\}$.
+\item[b)] Navedite primjer univerzalnog skupa $U$ takvog da $\{1, 2, 3\}^c$ ima $5$ elemenata.
+\item[c)] Prikažite skup
+$$\left\{(1, 5), (2, 1), (1, 1), (2, 4), (1, 6), (2, 5), (1, 4), (2, 6)\right\}$$
+kao kartezijev produkt dva skupa.
+\item[d)] Navedite primjer skupova $A$ i $B$ takvih da vrijedi $$\mathcal{P}(A)\cup \mathbb{N}\setminus B=\{\emptyset, \{1\}, \{3\}, \{1, 3\}, 1, 2,3, 4\}.$$
+\end{itemize}
+\end{exercise}
+\subsection*{Direktni dokazi, Dokazi kontradikcijom}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da je zbroj parnog broja i neparnog broja neparan broj.
+\item[b)] Dokažite da je umnožak dva kvadrata nekog prirodnog broja ponovno kvadrat nekog prirodnog broja.
+\end{itemize}
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da za svaki prirodan broj postoji neparan broj veći od njega.
+\item[b)] Neka su $a, b\in \mathbb{Z}$ parni brojevi. Dokažite da postoji $n\in \mathbb{Z}$ takav da je $a<n<b$.
+\item[c)] Dokažite da ne postoje $p, q\in \mathbb{N}$ takvi da je $p$ paran, $q$ neparan, te $2p^2+q=500$.
+\item[d)] Neka je $a\in \mathbb{N}$, $a>1$. Dokažite da ne postoji $n\in \mathbb{N}$ sa svojstvom da $a \mid n$ i $a \mid n+1$.
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Dokažite da za skupove $A$, $B$, $C$ vrijedi
+\begin{itemize}
+\item[a)] $A\cap B\subseteq A\cup B$,
+\item[b)] $A\cap (B\setminus C)=(A\cap B)\setminus (A\cap C)$.
+\end{itemize}
+\end{exercise}
+\begin{exercise} \textbf{} 
+\begin{itemize}
+\item[a)] Ako je $\mathcal{P}(A)$ jednočlan skup (skup koji sadrži jedan i samo jedan element), dokažite da je $A=\emptyset$.
+\item[b)] Dokažite: Ako je $A\cup B=\emptyset$, onda je $A=B=\emptyset$.
+\item[c)] Neka je $U$ univerzalni skup. Odredite sve skupove $A\subseteq U$ za koje vrijedi $A\subseteq A^c$.
+\item[d)] Dokažite: Ako dva skupa nisu disjunktna, tada oni imaju zajednički neprazan podskup.
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Dokažite:
+\begin{itemize}
+\item[a)] Simetrična razlika je komutativna, tj. vrijedi $A\triangle B=B\triangle A$,
+\item[b)] Simetrična razlika je asocijativna, tj. vrijedi $(A\triangle B)\triangle C=A\triangle (B\triangle C)$.
+\item[c)] Dokažite da za sve skupove $A$, $B$ vrijedi $A\cup (A^c\cap B)=A\cup B$.
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Neka je $U$ univerzalni skup i $A$, $B$, $C\subseteq U$. Dokažite da vrijedi $A\cap B\subseteq C$ ako i samo ako je $A\subseteq B^c\cup C$.
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da za svaki $a>0$ postoje tri točke $A(x_1, y_1)$, $B(x_2, y_2)$, $C(x_3, y_3)$ u pravokutnom koordinatnom sustavu (tj. tri elementa iz $\mathbb{R}^2=\mathbb{R}\times\mathbb{R}$) takve da je trokut $\triangle ABC$ jednakostraničan i ima površinu $a$.
+\item[b)] Dokažite da za svaki $(x_1, x_2)\in \mathbb{R}^2$ postoji $(y_1, y_2)\in \mathbb{Z}^2$ takav da je $$d\left(\left(0, 0\right), \left(y_1, y_2\right)\right)>d\left(\left(0, 0\right), \left(x_1, x_2\right)\right).$$
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Dokažite da je $\sqrt{27}$ iracionalan.
+\end{exercise}
+\begin{exercise}\textbf{}
+\begin{itemize}
+\item[a)] Dokažite da je zbroj racionalnog i iracionalnog broja uvijek iracionalan broj.
+\item[b)] Dokažite da ako je barem jedan od brojeva $\sqrt{a}$ i $\sqrt{b}$ iracionalan, da je tada i $\sqrt{a}+\sqrt{b}$ iracionalan.
+\item[c)] Dokažite da ako pozitivan realan broj $x$ nije racionalna potencija broja $10$, onda je $\log{x}$ iracionalan broj.
+\item[d)] Dokažite da je $\log_2{3}$ iracionalan broj.
+\end{itemize}
+\begin{exercise} $(*)$
+Neka je $U$ univerzalni skup i $A\subseteq U$ proizvoljan. Odredite sve $X\subseteq U$ takve da je $X\cap A=X\cup A$.
+\end{exercise}
+\end{exercise}
+\large

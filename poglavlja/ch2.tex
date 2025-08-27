@@ -1,0 +1,357 @@
+\section{Princip matematičke indukcije}
+\begin{remark}[Princip matematičke indukcije]
+\label{20}
+Neka je $P(n)$ neka tvrdnja koja ovisi o prirodnom broju $n$. Ako vrijedi:
+\begin{itemize}
+\item $P(1)$ je istinita (baza indukcije),
+\item Za svaki $k\in \mathbb{N}$ vrijedi da ako je $P(k)$ istinita (pretpostavka indukcije), onda je $P(k+1)$ istinita (korak indukcije),
+\end{itemize}
+tada je $P(n)$ istinita za svaki $n\in \mathbb{N}$.
+\end{remark}
+
+\begin{remark}
+\label{22}
+Ako smo primijenili princip matematičke indukcije na tvrdnju $P(n)$ da bi dokazali da ona vrijedi za sve $n\in \mathbb{N}$, onda još kažemo da smo \textit{tvrdnju $P(n)$ dokazali indukcijom}.
+\end{remark}
+
+Alternativna formulacija principa matematičke indukcije je sljedeća:
+$$\text{Neka je }S\subseteq \mathbb{N}. \text{ Ako je }1\in S\text{ i za svaki }n\in \mathbb{N}\text{ vrijedi } n\in S\Rightarrow n+1\in S,\text{ onda je }S=\mathbb{N}.$$
+Ova formulacija je često zgodnija zbog teorijskih razloga (primijetite da je ovo peti Peanov aksiom, v. \cite{3}), ali mi ćemo se na većini mjesta koristiti formulacijom navedenom u napomeni \ref{20}.
+\begin{exercise}
+Dokažite da za svaki $n\in \mathbb{N}$ vrijedi
+$$1+2+...+n=\dfrac{n(n+1)}{2}.$$
+\end{exercise}
+\begin{proof}[Rješenje]
+Za $n=1$ tvrdimo da je $1=\dfrac{1\cdot 2}{2}$, što očigledno vrijedi -- time smo dokazali bazu indukcije. Pretpostavimo da tvrdnja vrijedi za neki $n\in \mathbb{N}$ -- ovo je pretpostavka indukcije. Treba pokazati da tvrdnja tada vrijedi i za $n+1$ -- korak indukcije. Zaista, iz pretpostavke indukcije slijedi
+$$1+2+...+n+(n+1)=\dfrac{n(n+1)}{2}+(n+1)=\dfrac{(n+1)(n+2)}{2},$$
+čime smo dokazali korak indukcije, pa time i početnu tvrdnju.
+\end{proof}
+\begin{exercise}
+Dokažite da za svaki $n\in \mathbb{N}$ vrijedi
+$$1^3+2^3+...+n^3=\dfrac{n^2(n+1)^2}{4}.$$
+\end{exercise}
+\begin{proof}[Rješenje]
+Za $n=1$ tvrdnja očito vrijedi. Pretpostavimo li da tvrdnja vrijedi za neki $n$, onda prema toj pretpostavci imamo
+$$1^3+...+n^3+(n+1)^3=\dfrac{n^2(n+1)^2}{4}+(n+1)^3=(n+1)^2\left(\dfrac{n^2}{4}+n+1\right)=\dfrac{(n+1)^2(n+2)^2}{4},$$
+čime je tvrdnja dokazana.
+\end{proof}
+\begin{remark}
+\label{21}
+Možemo indukcijom dokazivati i tvrdnje koje ne vrijede nužno za sve prirodne brojeve, nego i tvrdnje koje vrijede za neki prirodan broj i za sve njegove sljedbenike. Preciznije, neka je $P(n)$ tvrdnja koja ovisi o prirodnom broju $n$. Ako vrijedi:
+\begin{itemize}
+\item $P(n_0)$ je istinita, gdje je $n_0\in \mathbb{N}$,
+\item Za svaki prirodni broj $k\geq n_0$ vrijedi da ako je $P(k)$ istinita, onda je $P(k+1)$ istinita,
+\end{itemize}
+tada je $P(n)$ istinita za sve $n\in \{n_0, n_0+1,\dots\}$.
+\end{remark}
+
+\begin{exercise}
+Dokažite da za sve $n\in \mathbb{N}$ takve da je $n\geq 3$ vrijedi $3^n>2^n+3n$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdnja vrijedi za $n=3$. Pretpostavimo da tvrdnja vrijedi za neki $n$. Treba dokazati $3^{n+1}>2^{n+1}+3(n+1)$. Iz činjenice da je $6k>3$ za sve $k\in \mathbb{N}$, imamo
+$$3^{n+1}>3\cdot (2^n+3n)=3\cdot 2^n+9n=3\cdot 2^n+3n+6n>2\cdot 2^n+3n+3=2^{n+1}+3(n+1),$$
+što smo i tvrdili.
+\end{proof}
+\begin{exercise}
+Neka je $n\in \mathbb{N}$ proizvoljan. Odredite sumu
+$$\dfrac{1}{1\cdot 2}+\dfrac{1}{2\cdot 3}+\dots+\dfrac{1}{n(n+1)}.$$
+\end{exercise}
+\begin{proof}[Rješenje]
+Označimo
+$$S(n)=\dfrac{1}{1\cdot 2}+\dfrac{1}{2\cdot 3}+\dots+\dfrac{1}{n(n+1)}.$$
+Vrijedi $S(1)=\dfrac{1}{2}$, $S(2)=\dfrac{2}{3}$, $S(3)=\dfrac{3}{4}$ itd. Odavde je razumno pretpostaviti da vrijedi
+$$\dfrac{1}{1\cdot 2}+\dfrac{1}{2\cdot 3}+\dots+\dfrac{1}{n(n+1)}=\dfrac{n}{n+1}.$$
+Zaista, dokažimo indukcijom da ovo vrijedi. Za $n=1$ tvrdnja vrijedi. Pretpostavimo da tvrdnja vrijedi za neki $n$. Tada
+\begin{align*}
+S(n+1)&=\dfrac{1}{1\cdot 2}+\dfrac{1}{2\cdot 3}+\dots+\dfrac{1}{n(n+1)}+\dfrac{1}{n(n+2)}=\dfrac{n}{n+1}+\dfrac{1}{(n+1)(n+2)}\\
+&=\dfrac{n^2+2n+1}{(n+1)(n+2)}=\dfrac{(n+1)^2}{(n+1)(n+2)}=\dfrac{n+1}{n+2}.
+\qedhere
+\end{align*}
+\end{proof}
+\begin{exercise}
+Dokažite da je
+$$1+2\cdot 2+3\cdot 2^2+4\cdot 2^3+\dots+2024\cdot 2^{2023}=2023\cdot 2^{2024}+1.$$
+\end{exercise}
+\begin{proof}[Rješenje]
+Dokazat ćemo općenitiju tvrdnju, i to da za svaki $n\in \mathbb{N}$ vrijedi
+$$1+2\cdot 2+3\cdot 2^2+4\cdot 2^3+\dots+(n+1)\cdot 2^{n}=n\cdot 2^{n+1}+1.$$
+Za $n=1$ tvrdnja vrijedi, pa pretpostavimo da tvrdnja vrijedi za neki $n$. Tada po pretpostavci indukcije imamo
+\begin{align*}
+&1+2\cdot 2+\dots+(n+1)\cdot 2^{n}+(n+2)\cdot 2^{n+1}=n\cdot 2^{n+1}+1+(n+2)\cdot 2^{n+1}\\
+&=(2n+2)\cdot 2^{n+1}+1=(n+1)\cdot 2^{n+2}+1.\qedhere
+\end{align*}
+\end{proof}
+\newpage
+\begin{exercise}
+Dokažite da za svaki $n\in \mathbb{N}$ vrijedi $7 \; |\; 13^{2n}-1$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Dokaz provodimo indukcijom. Za $n=1$ imamo tvrdnju $7 \; |\; 168$, što je istinito, jer je $168 \div 7=24$. Pretpostavimo da tvrdnja vrijedi za neki $n$, tj. da postoji $k\in \mathbb{Z}$ takav da je $13^{2n}-1=7k$. Tada vrijedi
+$$13^{2(n+1)}-1=169\cdot 13^{2n}-1=168\cdot 13^{2n}+13^{2n}-1=7\cdot (24\cdot 13^{2n})+7k=7(24\cdot 13^{2n}+k),$$
+što je i trebalo pokazati.
+\end{proof}
+\begin{exercise}
+Dokažite da za svaki $n\in \mathbb{N}$ vrijedi $33\; |\; 6^{2n}+3^{n+2}+3^n$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Za $n=1$ tvrdnja vrijedi. Pretpostavimo da tvrdnja vrijedi za neki $n\in \mathbb{N}$, tj. neka je $6^{2n}+3^{n+2}+3^n=33k$ za neki $k\in \mathbb{Z}$. Tada imamo
+\begin{align*}
+6^{2n+2}+3^{n+3}&+3^{n+1}=36\cdot 6^{2n}+3\cdot 3^{n+2}+3\cdot 3^n\\
+&=3\cdot 6^{2n}+3\cdot 3^{n+2}+3\cdot 3^n+33\cdot 6^{2n}=33\cdot 3k+33\cdot 6^{2n}=33(3k+6^{2n}).\qedhere
+\end{align*}
+\end{proof}
+\begin{exercise}
+Dokažite da za svaki $n\in \mathbb{N}$ vrijedi $84\; |\; 4^{2n}-3^{2n}-7$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Za $n=1$ tvrdnja vrijedi. Pretpostavimo da postoji $k\in \mathbb{Z}$ takav da je $4^{2n}-3^{2n}-7=84k$. Tada vrijedi
+\begin{align*}
+4^{2n+2}-3^{2n+2}-7&=16\cdot 4^{2n}-9\cdot 3^{2n}-7=16\cdot 4^{2n}-16\cdot 3^{2n}-112+105+7\cdot 3^{2n}=\\
+&=84\cdot 16k+105+7\cdot 3^{2n}=84\cdot 16k+7(15+3^{2n})
+\end{align*}
+Kako je $84\div 7=12$, preostaje pokazati da vrijedi $12 \; |\; 15+3^{2n}$, što se lako pokazuje indukcijom.
+\end{proof}
+\begin{exercise}[Županijsko natjecanje, 4. razred, A varijanta, 2015.]
+Neka je $a=\sqrt[2024]{2024}$ i neka je $(a_n)$ niz takav da je $a_1=a$ i $a_{n+1}=a^{a_n}$ za $n\geq 1$. Postoji li $n\in \mathbb{N}$ takav da je $a_n\geq 2024$?
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdimo da takav prirodan broj $n$ ne postoji. Zaista, dokažimo da za sve $n\in \mathbb{N}$ vrijedi $a_n<2024$. Za $n=1$ tvrdnja očito vrijedi. Uzmemo li da tvrdnja vrijedi za neki $n$, onda je $$a_{n+1}=a^{a_n}=2024^{\frac{a_n}{2024}},$$ 
+te kako je $\dfrac{a_n}{2024}<1$ prema pretpostavci, te vrijedi $x^k<x^1$ za sve $k<1$ i $x>1$, očito je $2024^{\frac{a_n}{2024}}<2024$, pa tvrdnja vrijedi.
+\end{proof}
+\begin{exercise}[Županijsko natjecanje, 3. razred, A varijanta, 2013.] Dokažite da je $\cos{\dfrac{\pi}{2\cdot 3^n}}$ iracionalan za sve $n\in \mathbb{N}$.
+\end{exercise}
+\begin{proof}
+Za $n=1$ vrijedi $\cos{\dfrac{\pi}{6}}=\dfrac{\sqrt{3}}{2}$. Pretpostavimo da tvrdnja vrijedi za neki $n$. Ideja je "povezati" izraze $\cos{\dfrac{\pi}{2\cdot 3^{n+1}}}$ i $\cos{\dfrac{\pi}{2\cdot 3^{n}}}$ pomoću činjenice da za sve $x\in \mathbb{R}$ vrijedi
+\begin{align}
+\label{tripleangle}
+\cos{3x}=4\cos^3{x}-3\cos{x}.
+\end{align}
+Zaista, (\ref{tripleangle}) vrijedi jer za sve $x\in \mathbb{R}$ imamo
+\begin{align*}
+\cos{3x}&=\cos(x+2x)=\cos{x}\cos{2x}-\sin{x}\sin{2x}\\
+&=\cos{x}\left(\cos^2{x}-\sin^2{x}\right)-2\sin^2{x}\cos{x}=\cos^3{x}-3\sin^2{x}\cos{x}\\
+&=\cos^3x-3(1-\cos^2{x})\cos{x}=4\cos^2{x}-3\cos{x}.
+\end{align*}
+Direktno iz (\ref{tripleangle}) slijedi
+\begin{align}
+\label{tripleangle2}
+\cos{\dfrac{\pi}{2\cdot 3^{n}}}=\cos\left(3\cdot \dfrac{\pi}{2\cdot 3^{n+1}}\right)=4\cos^3{\dfrac{\pi}{2\cdot 3^{n+1}}}-3\cos{\dfrac{\pi}{2\cdot 3^{n+1}}}.
+\end{align}
+Kad bi $\cos{\dfrac{\pi}{2\cdot 3^{n+1}}}$ bio racionalan, onda iz činjenice da je umnožak ili zbroj racionalnih brojeva racionalan broj slijedi da je desna strana jednakosti (\ref{tripleangle2}) racionalan broj, tj. $\cos{\dfrac{\pi}{2\cdot 3^{n}}}$ je racionalan broj, što je u kontradikciji s pretpostavkom indukcije.
+\end{proof}
+\section{Princip jake indukcije}
+U nekim situacijama je zgodno primijeniti sljedeću, naizgled jaču verziju principa matematičke indukcije, koja je ekvivalentna "običnom" principu matematičke indukcije, što pokazujemo na kraju ovog poglavlja.
+
+\begin{remark}[Princip jake indukcije]
+Neka je $P(n)$ neka tvrdnja koja ovisi o prirodnom broju $n$. Ako vrijedi
+\begin{itemize}
+\item P(1) je istinita (baza indukcije),
+\item Za svaki prirodni broj $k$ vrijedi da ako su tvrdnje $P(1), P(2), \dots, P(k)$ istinite (pretpostavka indukcije), onda je i $P(k+1)$ istinita (korak indukcije),
+\end{itemize}
+tada je $P(n)$ istinita za svaki $n\in \mathbb{N}$.
+\end{remark}
+
+Nadalje, analogoni napomene \ref{21} i dogovora iz napomene \ref{22} vrijede i za princip jake indukcije.
+
+\begin{exercise}
+\label{19}
+Dokažite da se svaki prirodan broj $n>1$ može prikazati kao produkt jednog ili više prostih brojeva. (\textit{Napomena.} Ovo je specijalan slučaj osnovnog teorema aritmetike koji se obično koristi kao međukorak u dokazivanju samog teorema.)
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdnju dokazujemo jakom indukcijom. Za $n=2$ tvrdnja vrijedi, jer je $2$ prost, dakle umnožak jednog prostog broja. Uzmimo da sada tvrdnja vrijedi za sve brojeve $1, \dots, n$. Tvrdimo da se tada i $n+1$ može prikazati kao produkt prostih brojeva. Zaista, ako je $n+1$ prost, tvrdnja je dokazana, a ako nije, onda postoje cijeli brojevi $n_1, n_2\in \{2, \dots, n\}$ takvi da je $$n+1=n_1n_2.$$ No prema pretpostavci indukcije vrijedi da se $n_1$ i $n_2$ mogu zapisati kao umnožak prostih brojeva, uzmimo npr. 
+$$n_1=p_1\cdot ...\cdot p_k,\; n_2=q_1\cdot... \cdot q_l,$$ gdje su $p_i, q_j$ prosti brojevi, $i=1,..., k$, $j=1,\dots, l$. Tada je $$n+1=p_1\cdot ...\cdot p_k\cdot q_1\cdot... \cdot q_l,$$ što smo i tvrdili.
+\end{proof}
+\begin{exercise}[Školsko natjecanje, 4. razred, A varijanta, 2024.]
+Neka je $(a_n)$ niz definiran s $a_1=1$, $a_2=2$ i
+$$a_n=a_{n-1}+(n-1)a_{n-2}\;\;\;\text{za } n\geq 3.$$
+Dokažite da vrijedi $a_{2024}\geq \sqrt{2024!}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Dokazat ćemo općenitiju tvrdnju -- tvrdimo da vrijedi $a_n\geq \sqrt{n!}$ za sve $n\in \mathbb{N}$. Lako se vidi da tvrdnja vrijedi za $n=1$ i $n=2$. Tvrdnju za $n\geq 3$ dokazujemo jakom indukcijom. Za $n=3$ tvrdnja vrijedi, jer je $a_3=2+(3-1)\cdot 1=4$ i $4\geq \sqrt{3!}$. Pretpostavimo da tvrdnja vrijedi za sve brojeve $3, \dots, n$. Treba dokazati da je $a_{n+1}\geq\sqrt{(n+1)!}$. Po pretpostavci indukcije imamo
+\begin{align*}
+a_{n+1}=a_n+na_{n-1}&\geq \sqrt{n!}+n\sqrt{(n-1)!}=\sqrt{n!}+\sqrt{n}\cdot\sqrt{n}\sqrt{(n-1)!}\\
+&=\sqrt{n!}+\sqrt{n}\sqrt{n!}=\sqrt{n!}(1+\sqrt{n}).
+\end{align*}
+Uočimo da je dovoljno pokazati da je $$1+\sqrt{n}\geq \sqrt{n+1}, \;\;\;\forall n\in \mathbb{N}.$$ 
+Zaista, vrijedi $1+\sqrt{n}\geq \sqrt{n+1}$ ako i samo ako je $(1+\sqrt{n})^2\geq n+1$, odnosno $1+2\sqrt{n}+n\geq n+1$, što očito vrijedi zbog $\sqrt{n}\geq 0$. Dakle, imamo 
+$$\sqrt{n!}(1+\sqrt{n})\geq \sqrt{n!}\sqrt{n+1}=\sqrt{(n+1)!},$$
+dakle $a_{n+1}\geq \sqrt{(n+1)!}$, što smo i tvrdili.
+\end{proof}
+\section{Princip dobrog uređaja}
+Princip dobrog uređaja je sljedeće, na prvi pogled očigledno svojstvo skupa prirodnih brojeva, koje kaže sljedeće: \textit{Svaki neprazan podskup skupa} $\mathbb{N}$ \textit{ima minimum} (v. definiciju \ref{minimax}). Ova činjenica je zanimljiva jer je često vrlo koristan alat u nekim dokazima, a ovdje ga navodimo, između ostalog, jer je zapravo ekvivalentan indukciji i jakoj indukciji.
+\begin{exercise}
+\label{23}
+Ne postoji cijeli broj $n$ koji ima svojstvo $0<n<1$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Pretpostavimo suprotno, da postoji takav cijeli broj, nazovimo ga $w$. Očito je tada $w\in \mathbb{N}$, jer je $w>0$. Dakle, trebamo pokazati da ne postoje prirodni brojevi manji od $1$. Promotrimo skup svih prirodnih brojeva u intervalu $\langle 0, 1\rangle$. To je, prema pretpostavci, neprazan podskup od $\mathbb{N}$, pa on ima minimum, neka je to $n$. Kako je umnožak dva cijela broja opet cijeli broj, slijedi i da je $n^2$ cijeli broj. No kako je $n>0$ i $n<1$, vrijedi $n^2<n$, što daje kontradikciju s minimalnošću od $n$.
+\end{proof}
+\begin{exercise}
+\label{24}
+Dokažite da za svaki $a\in \mathbb{Z}$ vrijedi da svaki neprazan podskup skupa $\mathbb{N}\cup\{a\}$ ima minimum.
+\end{exercise}
+\begin{proof}[Rješenje]
+Ako je $a>0$, nemamo što dokazivati. Uzmimo zato da je $a\leq 0$. Neka je $S$ proizvoljan neprazan podskup skupa $\mathbb{N}\cup\{a\}$. Ako on ne sadrži $a$, onda je $S\subseteq \mathbb{N}$ i on ima minimum, a ako on sadrži $a$, onda je očito $a$ minimum. Zaista, pretpostavimo li da postoji element $n_0$ manji od $a$, onda je $n_0$ različit od $a$, pa je $n_0\in \mathbb{N}$, što je nemoguće jer je $a\leq 0$.
+\end{proof}
+\begin{exercise}[Teorem o dijeljenju s ostatkom]
+Neka je $b\in \mathbb{Z}$ i $a\in \mathbb{N}$. Dokažite da tada postoje jedinstveni cijeli brojevi $q$, $r$ takvi da je $b=qa+r$, gdje je $0\leq r<a$. Kažemo da je u tom zapisu $q$ \textbf{kvocijent}, a $r$ \textbf{ostatak} pri dijeljenju $a$ sa $b$.
+\end{exercise}
+\begin{proof}[Rješenje]
+\textit{Egzistencija.} Ideja dokaza je interpretirati dijeljenje u cijelim brojevima kao uzastopno oduzimanje broja $a$ od broja $b$ (ili dodavanje ako je $b$ negativan), recimo da smo to napravili $q$ puta, sve dok ne dođemo do broja $r$ većeg od $0$ manjeg od broja $a$. U toj interpretaciji pokazat će se da je $q$ zaista kvocijent, a $r$ zaista ostatak pri dijeljenju broja $b$ sa $a$. Tako bi npr. dijeljenjem broja $25$ sa $6$ dobili ostatak $25-6-6-6-6=1,$ a kako smo oduzeli $6$ od $25$ točno $4$ puta, kvocijent je $4$. U tu svrhu promotrimo skup
+$$S=\{x : x=b-am,\; m\in \mathbb{Z},\; x\geq 0\}\subseteq \mathbb{N}_0$$
+Skup $S$ je neprazan, jer je $$b-a(-|b|)=b+a|b|\geq 0.$$ 
+Prema zadatku \ref{24}, svaki neprazan podskup skupa $\mathbb{N}_0$ ima minimum, pa onda i $S$ ima minimum, označimo ga s $r$. Očito je $r\geq 0$, te kako je on element iz $S$, postoji $q\in \mathbb{Z}$ takav da je $r=b-aq$, odnosno $b=aq+r$. 
+
+Preostaje dokazati da je $r<a$. Pretpostavimo li da je $r\geq a$, onda imamo $r-a\geq 0$ i $$r-a=b-a(q+1)\in S.$$ 
+Kako je $r-a<r$, dobili smo kontradikciju s minimalnosti od $r$.
+
+\textit{Jedinstvenost.} Pretpostavimo da postoji još jedan par brojeva $q_1, r_1\in \mathbb{Z}$ takvih da je $b=aq_1+r_1$. Bez smanjenja općenitosti uzmimo $r_1<r$. Tada je $0<r-r_1<a$. S druge strane, za $r=b-qa$ i $r_1=b-q_1a$ slijedi $b-qa>b-q_1a$, odakle slijedi $q<q_1$, odnosno $q_1-q>0$. Sada oduzimanjem jednakosti $b=aq+r$ i $b=aq_1+r_1$ dobivamo $$r-r_1=(q_1-q)a\geq a,$$ 
+kontradikcija s $r-r_1<a$.
+\end{proof}
+U nastavku, kao što je najavljeno, dokazujemo da su principi dobrog uređaja, matematičke indukcije i jake indukcije međusobno ekvivalentni. To ćemo dokazati tako da dokažemo sljedeće implikacije:
+\begin{itemize}
+\item Princip matematičke indukcije $\Rightarrow$ Princip dobrog uređaja,
+\item Princip dobrog uređaja $\Rightarrow$ Princip jake indukcije,
+\item Princip jake indukcije $\Rightarrow$ Princip matematičke indukcije.
+\end{itemize}
+Uvjerite se da, ukoliko dokažemo ove tri implikacije, iz njih slijedi ekvivalencija sve tri tvrdnje.
+\begin{exercise}
+Princip matematičke indukcije povlači princip dobrog uređaja.
+\end{exercise}
+\begin{proof}[Rješenje]
+Dokaz provodimo kontradikcijom -- Pretpostavimo da postoji neprazan $S\subseteq \mathbb{N}$ koji nema minimum. Tvrdimo da za svaki $n\in \mathbb{N}$ vrijedi $n\notin S$. 
+
+Pokušajmo tvrdnju dokazati indukcijom. Zaista, uočimo da vrijedi $1\notin S$. Zaista, pretpostavimo li da je $1\in S$, onda slijedi da u skupu $S$ postoji prirodan broj strogo manji od $1$, što je nemoguće. Pretpostavimo da za $n\in \mathbb{N}$ vrijedi $n\notin S$. Treba dokazati da tada $n+1\notin S$. Uočimo da bi nam bilo zgodno kad bi za pretpostavku imali da $$1, \dots, n\notin S,$$ jer uz tu pretpostavku, pretpostavimo li da je $n+1\in S$, iz činjenice da je $n+1$ minimum skupa $N\setminus \{1, \dots, n\}\supseteq S$ slijedi da je $n+1$ nužno minimum. Ovaj argument ne možemo primijeniti samo uz pretpostavku $n\notin S$, jer nemamo pretpostavku da brojevi $1, \dots, n-1$ nisu u skupu $S$ (Na ovom mjestu ne možemo koristiti princip jake indukcije dok ga ne dokažemo!). Pokušajmo zato modificirati naš argument. 
+
+Umjesto da za svaki $n\in \mathbb{N}$ vrijedi $n\notin S$, pokazat ćemo sličnu tvrdnju: Za svaki $n\in \mathbb{N}$ vrijedi: Niti jedan element iz skupa $\{1, \dots, n\}$ nije u skupu $S$. Tvrdnju možemo zapisati u sljedećem obliku: Za svaki $n\in \mathbb{N}$ vrijedi $S\cap \{1, \dots, n\}=\emptyset$. Zaista, trebamo dokazati da je 
+$$\left((\forall x\in \mathbb{N})\;\; x\in \{1, \dots, n\}\Rightarrow x\notin S\right)\Leftrightarrow \left((\forall x\in \mathbb{N})\; \; S\cap \{1, \dots, n\}=\emptyset\right)$$
+istinita tvrdnja. No tvrdnja $A\Leftrightarrow B$ je istinita ako i samo ako je istinita tvrdnja $\neg B\Leftrightarrow \neg A$, a to je u ovom slučaju tvrdnja
+$$\left((\exists x\in \mathbb{N})\; \; x\in S, x\in \{1, \dots, n\}\right)\Leftrightarrow\left((\exists x\in \mathbb{N})\;\; x\in \{1, \dots, n\}, x\in S\right)$$
+koja je očito istinita.
+
+Tvrdnja za $n=1$ je već dokazana u prethodnom slučaju. Pretpostavimo sada da za $n\in \mathbb{N}$ vrijedi $S\cap \{1, \dots, n\}=\emptyset$. Tvrdimo da tada za $n+1$ vrijedi $S\cap \{1, \dots, n+1\}=\emptyset$. Zaista, pretpostavimo da postoji $a\in \mathbb{N}$ takav da je $a\in S$ i $a\in \{1, \dots, n+1\}$. Tada je sigurno $a=n+1$, jer kad bi bilo $a=1, \dots, n$ to bi bilo u kontradikciji s pretpostavkom indukcije. Međutim, ovo povlači da je $n+1$ minimum u $S$, što je nemoguće, pa je korak indukcije dokazan.
+
+Konačno, $S$ je neprazan, pa postoji prirodan broj $q\in S$. No tada je $S\cap \{1, 2\dots, q\}=\emptyset$, pa zaključujemo da vrijedi $q\notin S$, kontradikcija!
+\end{proof}
+\begin{exercise}
+Princip dobrog uređaja povlači princip jake indukcije.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $S\subseteq \mathbb{N}$ skup takav da je
+\begin{itemize}
+\item $1\in S$
+\item Za svaki $k\in \mathbb{N}$, iz $1, \dots, k\in S$ slijedi $k+1\in S$.
+\end{itemize}
+Pretpostavimo da je $S\neq \mathbb{N}$, te označimo sa $S'\subseteq \mathbb{N}$ skup svih brojeva koji nisu u $S$. Prema pretpostavci je $S'$ neprazan, pa on ima minimum, neka je to $k_0$. Kako je $1\in S$, očito je $1\notin S'$. Nadalje, kako je $k_0$ najmanji i $k_0-1\in \mathbb{N}$, slijedi da za sve $n=1,\dots, k_0-1$ vrijedi $n\in S$. No odavde slijedi $k_0\in S$, što je nemoguće jer $k_0\in S'$ povlači $k_0\notin S$.
+\end{proof}
+\begin{exercise}
+Princip jake indukcije povlači princip matematičke indukcije.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $S\subseteq \mathbb{N}$ skup takav da je
+\begin{itemize}
+\item $1\in S$
+\item Za svaki $k\in \mathbb{N}$, iz $k\in S$ slijedi $k+1\in S$.
+\end{itemize}
+Uočimo da iz tvrdnje "Za svaki $k\in \mathbb{N}$, iz $k\in S$ slijedi $k+1\in S$." slijedi tvrdnja "Za svaki $k\in \mathbb{N}$, iz $1, \dots, k\in S$ slijedi $k+1\in S$.", no ovo po principu jake indukcije povlači $S=\mathbb{N}$, što upravo i tvrdi princip matematičke indukcije.
+\end{proof}
+\newpage
+\section*{Zadatci za vježbu}
+\subsection*{Princip matematičke indukcije}
+\begin{exercise}
+Dokažite da za svaki $n\in \mathbb{N}$ vrijede sljedeće tvrdnje.
+\begin{itemize}
+\item[a)] $\dfrac{1}{1\cdot 3}+\dfrac{1}{3\cdot 5}+...+\dfrac{1}{(2n-1)(2n+1)}=\dfrac{n}{2n+1},$
+\item[b)] $\dfrac{1^2}{1\cdot 3}+\dfrac{2^2}{3\cdot 5}+... +\dfrac{n^2}{(2n-1)(2n+1)}=\dfrac{n(n+1)}{2(2n+1)}.$
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+\label{nejedn}
+Dokažite da vrijede sljedeće tvrdnje.
+\begin{itemize}
+\item[a)] $1+\dfrac{1}{\sqrt{2}}+\dfrac{1}{\sqrt{3}}+...+\dfrac{1}{\sqrt{n}}<2\sqrt{n}-1, \; \; \forall n>2$
+\item[b)] (Županijsko natjecanje, 4. razred, A varijanta, 2018.) Za sve $n\in \mathbb{N}$ vrijedi $$\dfrac{1}{n+1}+\dfrac{1}{n+2}+...+\dfrac{1}{3n+1}>1.$$
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Dokažite:
+\begin{itemize}
+\item[a)] Za sve $n\in \mathbb{N}$ vrijedi $13 \; |\; 2^{12n+4}-3^{6n+1}$.
+\item[b)] Za sve $n\in \mathbb{N}$ vrijedi $8\; |\; 3^n-2n^2-1$.
+\item[c)] Odredite najmanji prirodan broj $a>1$ takav da vrijedi
+$$a \mid 2^{6n-1}+5\cdot 9^n,\; \forall n\in \mathbb{N}.$$
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Dokažite da za svaki $n\in \mathbb{N}$ vrijedi $7 \; |\; 2^{4n+1}-3\cdot 7^n+5^{n+1}\cdot 6^n$. (\textbf{Uputa:} Ovaj zadatak možete si pojednostaviti na sljedeći način -- dokažite da vrijedi $7 \; |\; 2^{4n+1}-3\cdot 7^n+5^{n+1}\cdot 6^n$ ako i samo ako vrijedi $7 \; |\; 2^{4n+1}+5^{n+1}\cdot 6^n$).
+\end{exercise}
+\begin{exercise}
+Dokažite da za pozitivne brojeve $a$ i $b$ i za svaki prirodan broj $n$ vrijedi
+$$\left(\dfrac{a+b}{2}\right)^n\leq \dfrac{a^n+b^n}{2}.$$
+\end{exercise}
+\begin{exercise}
+Dokažite za za sve $n\in \mathbb{N}$ vrijedi
+$$\sum_{k=0}^n{\dbinom{m+k}{k}}=\dbinom{n+m+1}{n}.$$
+\end{exercise}
+\begin{exercise}
+Izračunajte
+$$\sum_{k=0}^n{(-1)^k\dfrac{1}{k+1}\dbinom{n}{k}}.$$
+\end{exercise}
+\begin{exercise}
+Dokažite da se svaki iznos od $n$ kuna, gdje je $n\in \mathbb{N}$ i $n\geq 4$, može platiti kovanicama od $2$ i $5$ kuna.
+\end{exercise}
+\begin{exercise} U ravnini je zadano $n$ pravaca tako da se nikoja tri ne sijeku u jednoj točki i nikoja dva nisu međusobno paralelna.
+\begin{itemize}
+\item[a)] Na koliko dijelova je ravnina podijeljena s tim pravcima?
+\item[b)] Dokažite da se svi dijelovi mogu obojiti s dvije boje tako da susjedna područja budu obojena različitim bojama (Sva područja su jednobojna).
+\end{itemize}
+\end{exercise}
+\begin{remark}
+Neka je $(G, \circ)$ polugrupa i $a_i\in G$, gdje je $i\in \{1, 2, \dots, m\}$. Tada produkt od $n\geq 1$ elemenata definiramo induktivno
+\begin{gather*}
+\prod_{k=1}^{1}{a_k}=a_1,\hspace{0.5cm}
+\prod_{k=1}^{n+1}{a_k}=\left(\prod_{k=1}^{n}{a_k}\right)\circ a_{n+1}.
+\end{gather*}
+Lako se vidi da je svaki skup polugrupa u odnosu na uniju, odnosno presjek. Također uvodimo oznaku
+$$a_1\circ a_2\circ \dots\circ a_n=\prod_{k=1}^{n}{a_k}.$$
+U svezi s time riješite sljedeće zadatke.
+\end{remark}
+
+\begin{exercise}
+Neka je $U$ univerzalni skup i $A_i\in U$, gdje je $i\in \mathbb{N}$. Dokažite da vrijedi
+$$\left(\bigcap_{k=1}^n{A_k}\right)^c=\bigcup_{k=1}^n{A_k^c}.$$
+\end{exercise}
+\begin{exercise}
+\label{genasoc}
+Neka je $(G,\circ)$ polugrupa. Dokažite da tada za bilo kojih $m+n$ elemenata $a_1$, $a_2$, $\dots$, $a_{m+n-1}$, $a_{m+n}\in G$ vrijedi
+$$a_1\circ\dots\circ a_{m+n}=(a_1\circ\dots\circ a_m)\circ(a_{m+1}\circ\dots\circ a_{m+n})$$
+\end{exercise}
+Uvjerite se da se iz prethodnog zadatka lako može dokazati \textit{generalizirana asocijativnost}, tj. ako su $n$, $m$, $...$, $p$ prirodni brojevi, onda vrijedi
+$$(a_1\circ\dots \circ a_n)\circ (b_1\circ \dots \circ b_m)\circ\dots\circ (d_1\circ\dots\circ d_p)=a_1\circ\dots\circ a_n\circ b_1\circ\dots\circ b_m\circ\dots\circ d_1\circ\dots\circ d_p,$$
+gdje su $a_1$, $a_2$, $...$, $d_p\in G$. Ovime smo zapravo dokazali da kad imamo produkt od konačno mnogo elemenata, onda možemo po volji dodavati i brisati zagrade gdje god to ima smisla.
+
+\begin{exercise} $(*)$
+Dokažite da se ploča dimenzija $2^n\times 2^n$ s jednim izbačenim kvadratićem (bilo od kuda) dimenzija $1\times 1$, može pokriti pločicama dimenzija $4\times 4$ s jednim izbačenim kvadratićem dimenzija $1\times 1$.
+\end{exercise}
+\begin{exercise}[Županijsko natjecanje, 4. razred, A varijanta, 2017.] $(*)$
+Dan je niz pozitivnih realnih brojeva $a_0$, $a_1$, $a_2$, $\dots$ takvih da vrijedi
+$$a_1=1-a_0,\; a_{n+1}=1-a_n(1-a_n) \; \mathrm{za} \; n\geq 1.$$
+Dokažite da za sve $n\in \mathbb{N}$ vrijedi
+$$a_0a_1\dots a_n\left(\dfrac{1}{a_0}+\dfrac{1}{a_1}+\dots+ \dfrac{1}{a_n}\right)=1.$$
+\end{exercise}
+\begin{exercise}[Županijsko natjecanje, 4. razred, A varijanta, 2013.] $(*)$
+Dokažite da je broj čiji se dekadski zapis sastoji od 2187 znamenki 1 djeljiv s 2187.
+\end{exercise}
+\begin{exercise}[Županijsko natjecanje, 4. razred, A varijanta, 2016.] $(**)$
+Dokažite da za svaki prirodni broj $n\geq 3$ postoji $n$ različitih prirodnih brojeva čiji je zbroj recipročnih vrijednosti jednak 1.
+\end{exercise}
+
+\subsection*{Princip dobrog uređaja}
+\begin{exercise}
+Neka je $S\subseteq \mathbb{R}$ dobro uređen skup i $S'\subseteq S$. Dokažite ili opovrgnite: $S'$ je dobro uređen skup.
+\end{exercise}
+\begin{exercise}
+Dokažite da svaki podskup skupa svih negativnih cijelih brojeva ima maksimum (v. definiciju \ref{minimax}).
+\textbf{DODATI JOŠ}
+\end{exercise}
