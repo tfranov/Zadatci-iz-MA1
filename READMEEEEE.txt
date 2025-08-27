@@ -1,0 +1,33 @@
+Kada budeš razdvajao dokument u dijelove, probaj to napravit tako da podijeliš actual dokument u dijelove a ne ko prošle godine, jer ćeš razbit reference između poglavlja.
+
+Provjeri još dal ima "prelamanja" na kraju stranica.
+
+Intervali na slikama exim3 i exim4 su ružni!
+
+Graf funkcije u zadatku excompim1?
+
+Maknuti sva spominjanja predavanja i vježbi
+
+Makni \addtocontents{toc}{\protect\pagebreak[4]} ako ces dodavat jos potpoglavlja
+
+Preimenuj napomene u teoreme
+
+Raspisati zadatak 250 d)
+
+Ispraviti greške nedostatka kvantifikatora.
+
+Dodati detalje u slici 7.2!
+
+Greska kod zadatka s linearnom funkcijom (Kompleksni brojevi, zadatak koji je poslala Ana na WhatsAppu, zad 126 at the time of writing this)
+
+Dodati onu ljubicastu knjigu u bibliografiju
+
+Zamijeniti x sa n u limesima
+
+Dovršiti popravljanje qed-ova
+
+Objasniti bolje nuzan i dovoljan uvjet
+
+Dodati međuzadatke
+
+Mozda promijeniti zadatke u prvom poglavlju?
