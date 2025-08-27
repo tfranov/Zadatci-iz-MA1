@@ -4,3 +4,6 @@ studijima _Matematika_ i _Fizika_ na Fakultetu za matematiku Sveučilišta u Rij
 literatura za savladavanje vježbi iz _Matematičke analize 1_, ali i kao izvor mnogih naprednijih tema i zadataka za one koji žele znati više.
 
 Treba naglasiti da ova skripta za sada **nije dovršena**, još nedostaju dva poglavlja koja će s vremenom stići.
+
+# Pronašao/la sam grešku u skripti.
+Bio bih Vam zahvalan da mi se javite
