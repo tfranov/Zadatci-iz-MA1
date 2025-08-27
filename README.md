@@ -3,5 +3,4 @@ Ova skripta nastala je 2023. godine kao popratni materijal za održavanje demons
 studijima _Matematika_ i _Fizika_ na Fakultetu za matematiku Sveučilišta u Rijeci, a od tada se njezin opseg proširio i sada služi kao pomoćna
 literatura za savladavanje vježbi iz _Matematičke analize 1_, ali i kao izvor mnogih naprednijih tema i zadataka za one koji žele znati više.
 
-Treba naglasiti da ova skripta za sada **nije dovršena**, još nedostaju dva poglavlja koja će s vremenom (vjerojatno iduće godine zbog autorovih
-obveza) stići.
+Treba naglasiti da ova skripta za sada **nije dovršena**, još nedostaju dva poglavlja koja će s vremenom stići.
