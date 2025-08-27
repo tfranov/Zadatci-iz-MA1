@@ -198,10 +198,7 @@ c) Na slici \ref{gr3} prikazan je točkastom linijom graf funkcije $x\mapsto x$ 
 \begin{proof}[Rješenje]
 Zrcaljenjem dobivamo $x\mapsto -\sin{x}$, pomakom za dvije jedinične dužine udesno dobivamo $x\mapsto -\sin(x-2)$, dilatacijom po $x$ dobivamo $x\mapsto -\sin\left(2x-2\right)$, a dilatacijom po $y$ imamo $x\mapsto \dfrac{1}{2}\sin(2x-2)$. Prema tome novodobiveni skup je graf funkcije $x\mapsto \dfrac{1}{2}\sin(2x-2)$.
 \end{proof}
-\begin{definition}
-\label{monotonic}
-Neka je $S\subseteq \mathbb{R}$ neprazan, te $x, y\in S$. Kažemo da je funkcija $f : S\to \mathbb{R}$ \textbf{monotono rastuća} (kraće: rastuća) ako vrijedi $x<y\Rightarrow f(x)\leq f(y)$, \textbf{strogo rastuća} ako vrijedi $x<y\Rightarrow f(x)<f(y)$, \textbf{monotono padajuća} (kraće: padajuća) ako vrijedi $x<y\Rightarrow f(x)\geq f(y)$, \textbf{strogo padajuća} ako vrijedi $x<y\Rightarrow f(x)>f(y)$.
-\end{definition}
+
 \section{Injekcija, surjekcija i bijekcija. Slika i praslika skupa}
 
 \begin{definition}
@@ -289,11 +286,15 @@ gdje je $\dfrac{1}{2^{p-1}}\in S$, budući da je $y\neq 1$.
 
 d) Tvrdimo da takva bijekcija ne postoji. Zaista, pretpostavimo da postoji bijekcija $f : \mathbb{R}\to \mathbb{R}^{\mathbb{R}}$. Tada je ona surjekcija, što znači da za svaki $y\in \mathbb{R}^{\mathbb{R}}$ postoji $x_0\in \mathbb{R}$ takav da je $f(x_0)=y$, što povlači da je $f(x_0)(x_0)=y(x_0)$. No to očito ne vrijedi ako promotrimo funkciju $y : \mathbb{R}\to \mathbb{R}$ definiranu formulom $y(x)=f(x)(x)+1$, za svaki $x\in \mathbb{R}$.
 \end{proof}
+\begin{definition}
+\label{monotonic}
+Neka je $S\subseteq \mathbb{R}$ neprazan, te $x, y\in S$. Kažemo da je funkcija $f : S\to \mathbb{R}$ \textbf{monotono rastuća} (kraće: rastuća) ako vrijedi $x<y\Rightarrow f(x)\leq f(y)$, \textbf{strogo rastuća} ako vrijedi $x<y\Rightarrow f(x)<f(y)$, \textbf{monotono padajuća} (kraće: padajuća) ako vrijedi $x<y\Rightarrow f(x)\geq f(y)$, \textbf{strogo padajuća} ako vrijedi $x<y\Rightarrow f(x)>f(y)$.
+\end{definition}
 \begin{remark}
-Neka su $S, S'\subseteq \mathbb{R}$ neprazni i neka je zadana $f : S\to S'$. Ako je $f$ strogo monotona (tj. strogo rastuća ili strogo padajuća)\footnote{v. definiciju \ref{monotonic}.}, ona je injekcija.
+Neka su $S, S'\subseteq \mathbb{R}$ neprazni i neka je zadana $f : S\to S'$. Ako je $f$ strogo monotona (tj. strogo rastuća ili strogo padajuća), ona je injekcija.
 \end{remark}
 \begin{exercise}
-Zadana je $f : \mathbb{R}\to \mathbb{R}$, $f(x)=e^{-2x}$. Dokažite da je $f$ injekcija.
+Zadana je $f : \mathbb{R}\to \mathbb{R}$, $f(x)=e^{-2x}$. Dokažite da je $f$ injekcija koristeći se činjenicom da je strogo monotona.
 \end{exercise}
 \begin{proof}[Rješenje]
 Iz grafa se vidi da je $f$ strogo padajuća. 
@@ -1089,15 +1090,66 @@ Ako je $k$ neparan, onda je $\sin(x+k\pi)=-\sin{x}$. Uzmimo $x$ takav da je $x\i
 \newpage
 \section*{Zadatci za vježbu}
 \addtocontents{toc}{\protect\pagebreak[4]}
+\subsection*{Pojam funkcije. Crtanje grafa funkcije}
+\begin{exercise}
+Nacrtajte grafove sljedećih funkcija. (Kada je interval cijeli $\mathbb{R}$, prikažite "najreprezentativniji" dio grafa). 
+\begin{itemize}
+\item[a)] $f : [-1, 1]\to \mathbb{R}$, $f(x)=x^2+4x+5$,
+\item[b)] $f : \mathbb{R}\to \mathbb{R}$, $f(x)=|x+2|-|x|$,
+\item[c)] $f : \mathbb{R}\to \mathbb{R}$, $f(x)=(x-2025)^3-2025$.
+\item[d)] $f : \mathbb{R}\setminus\{0\}\to \mathbb{R}$, $f(x)=x+\dfrac{1}{x}$.
+\end{itemize}
+\end{exercise}
+\begin{exercise} Promotrite sljedeću sliku.
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=$x$,ylabel=$y$,xmin=-2.25,xmax=6.3,ymin=-0.5,ymax=9, samples=350]
+
+\addplot[thick, color=black,domain=-2.26:6.24] {abs(abs(x*x-4*x-5)-2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{figure}
+
+Ako je poznato da postoje $a, b, c\in \mathbb{R}$, $a\neq 0$ takvi da je graf na slici upravo graf funkcije $f(x)=\left|\left|ax^2+bx+c\right|-2\right|$, odredite neke takve $a, b, c$.
+\end{exercise}
+\subsection*{Injekcija, surjekcija i bijekcija. Slika i praslika skupa}
+\begin{exercise}
+Za svaku od sljedećih funkcija odredite je li bijekcija. Ako smatrate da je, dokažite da je, u suprotnom dokažite zašto nije.
+\begin{itemize}
+\item[a)] $f : \mathbb{R}\to \mathbb{R}$, $f(x)=x^4-x^2$,
+\item[b)] $f : \mathbb{R}\to \mathbb{R}$, $f(x)=2x^3+3$.
+\item[c)] $f : \mathbb{R}\to [-2, \infty]$, $f(x)=e^x-2$,
+\end{itemize}
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Navedite primjer rastuće funkcije $f : \mathbb{R}\to [-1, 1]$.
+\item[b)] Navedite primjer padajuće funkcije s $\mathbb{R}$ u $\mathbb{R}$ koja nije ni injekcija ni surjekcija.
+\item[b)] Navedite primjer bijekcije $f : \mathbb{R}\to \langle 10, \infty\rangle$.
+\item[c)] Navedite primjer bijekcije $f : \langle 10, 20\rangle\to \mathbb{R}$.
+\item[d)] Navedite primjer bijekcije $f : \mathbb{R}\to [-1, 0\rangle\cup \langle 0, 1]\cup \{2025\}$.
+\item[e)] Navedite primjer bijekcije $f : \mathbb{R}\to \langle -1, 1\rangle \cup \mathbb{N}$.
+\end{itemize}
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Navedite primjer funkcije $f : \mathbb{R}\to \mathbb{R}$ za koju vrijedi $f([0, 5])=[2, 3]$.
+\item[b)] Navedite primjer funkcije $f : \mathbb{R}\to \mathbb{R}$ za koju vrijedi $f([0, 5])=[2, 3]$ \textbf{i} $f^{-1}\left(\langle 5, 15]\right)=[-2, -1]\cup \langle 5, 7.5]$.
+\item[c)] Postoji li funkcija $f : \mathbb{R}\to \mathbb{R}$ za koju vrijedi $f\left([0, 1]\right)=[1, 2]$ i $f^{-1}\left([1, 3]\right)=[4, 5]$? Dokažite svoje tvrdnje.
+\end{itemize}
+\end{exercise}
 \begin{exercise}
 Neka je $f : \mathbb{R} \to \mathbb{R}$ zadana formulom $f(x)=x^3-2x^2$.
 \begin{itemize}
 \item[a)] Nacrtajte graf funkcije $f$.
 \item[b)] Dokažite da je $f|_{[0, 1]}$ injekcija. Je li $f$ injekcija?
-\item[c)] Odredite $f^{-1}\left([2024, 2025]\right)\cap f^{-1}\left([23, 24]\right)$.
+\item[c)] Odredite $f^{-1}\left([0, 9]\right)$ i $f^{-1}\left([2024, 2025]\right)\cap f^{-1}\left([23, 24]\right)$.
 \item[d)] Koristeći graf, odredite $f\left([2, 2.2\rangle\right)$.
 \end{itemize}
 \end{exercise}
+\textbf{MALO LJEPŠE POSLOŽITI OVE ZADATKE!!}
 \begin{exercise} \textbf{}
 \begin{itemize}
 \item[a)] Dokažite da je $f : \left[0, \dfrac{\pi}{2}\right]\to [4, 8]$ za koju je $f(x)=\sin^4{x}+3\sin^2{x}+4$ bijekcija i odredite njezin inverz.
@@ -1108,7 +1160,7 @@ Neka je $f : \mathbb{R} \to \mathbb{R}$ zadana formulom $f(x)=x^3-2x^2$.
 \end{exercise}
 \begin{exercise} \textbf{}
 \begin{itemize}
-\item[a)] Navedite primjer padajuće funkcije s $\mathbb{R}$ u $\mathbb{R}$ koja nije ni injekcija ni surjekcija.
+\item[a)] Dokažite da postoji skup $S$ takav da $f : \mathbb{R}\to S$, $f(x)=\th^3{x}+1$ bude bijekcija.
 \item[b)] Neka je $f : \mathbb{R}\to [-2, \infty\rangle$ zadana formulom $f(x)=\abs{\abs{\abs{x}-2}-2}-2$. Ispitajte injektivnost, surjektivnost i koristeći graf odredite $f^{-1}\left(\left[\dfrac{1}{2}, 4\right\rangle\right)$.
 \end{itemize}
 \end{exercise}

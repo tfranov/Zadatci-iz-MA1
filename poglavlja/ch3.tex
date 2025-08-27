@@ -306,7 +306,7 @@ a) Jedan takav skup je npr. $A:=\langle -\infty, 3\rangle$. Zaista, očito je od
 
 b) Uzmimo npr. $A:=\left[0,\dfrac{1}{2}\right]\cup \left[4, 5\right]$. Uvjerimo se npr. da je $\min{A}=0$. Neka je $x\in A$ proizvoljan. Vrijedi $x\in A$ ako i samo ako vrijedi $x\in \left[0,\dfrac{1}{2}\right]$ ili $x\in [4, 5]$. Ako je $x\in \left[0,\dfrac{1}{2}\right]$, tj. $0\leq x\leq \dfrac{1}{2}$, onda je očito i $x\geq 0$, isto vrijedi i ako je $x\in [4, 5]$. Dakle, $0\leq x$ za sve $x\in A$. Kako je $0\in A$, zaključujemo da je $\min{A}=0$. Analogno se zaključuje da je $\max{A}=5$. Očito vrijedi $1\notin A$, jer bi inače trebalo vrijediti $0\leq 1\leq \dfrac{1}{2}$ ili $4\leq 1\leq 5$, a nikoja od te dvije tvrdnje nije istinita. Slično vidimo i da vrijedi $3\notin A$.
 
-c) Uzmimo $A:=\left(\langle 0, 1\rangle\cap \mathbb{I}\right)\cup \left\{\dfrac{1}{2}, 1\right\}$. Lako se vidi da $A$ sadrži točno dva racionalna broja ($\dfrac{1}{2}$ i $1$, ostali su svi iracionalni po definiciji) i slično kao i u b) se pokaže da je $\max{A}=1$. Pretpostavimo da skup $A$ ima minimum, neka je to $a$. Očito je $a>0$ (jer za sve $x\in A$ vrijedi $a>0$), pa uzmemo li bilo koji iracionalan broj u intervalu $\langle 0, a\rangle$. Tvrdimo da za svaki $a>0$ zaista postoji bar jedan iracionalan broj $0<b<a$. Naime, ako je $a$ iracionalan, onda je $\dfrac{a}{2}$ jedan takav broj, a ako je $a$ racionalan, onda je $\dfrac{a\sqrt{2}}{2}$ jedan takav broj. Dokažimo radi ilustracije da je $\dfrac{a\sqrt{2}}{2}$ iracionalan. \textbf{DOVRŠITI!!} neka je to $b$, dobivamo $b<a$ i $b\in A$, što je kontradikcija s minimalnošću od $A$.
+c) Uzmimo $A:=\left(\langle 0, 1\rangle\cap \mathbb{I}\right)\cup \left\{\dfrac{1}{2}, 1\right\}$. Lako se vidi da $A$ sadrži točno dva racionalna broja ($\dfrac{1}{2}$ i $1$, ostali su svi iracionalni po definiciji) i slično kao i u b) se pokaže da je $\max{A}=1$. Pretpostavimo da skup $A$ ima minimum, neka je to $a$. Očito je $a>0$ (jer za sve $x\in A$ vrijedi $a>0$), pa uzmemo li bilo koji iracionalan broj u intervalu $\langle 0, a\rangle$\footnote{To možemo po napomeni \ref{den}, za $\epsilon=x=\dfrac{a}{2}$. Pokušajte za vježbu dokazati da je to moguće i bez pozivanja na taj teorem.}, neka je to $b$, dobivamo $b<a$ i $b\in A$, što je kontradikcija s minimalnošću od $A$.
 \end{proof}
 Sada uvodimo korisnu notaciju kojom ćemo se koristiti na više mjesta.
 
@@ -378,6 +378,14 @@ Jednakost se postiže ako i samo ako je $1+x=2-2x$, odnosno $x=\dfrac{1}{3}$. Da
 \begin{remark}[Arhimedov aksiom]
 Neka su $a>0$ i $b>0$ proizvoljni. Tada postoji $n\in \mathbb{N}$ takav da je $na>b$.
 \end{remark}
+\begin{remark}[Gustoća $\mathbb{Q}$ i $\mathbb{I}$ u $\mathbb{R}$] Vrijedi sljedeće.
+\label{den}
+\textbf{}
+\begin{itemize}
+\item[a)] Za svaki $\epsilon>0$ i za sve $x\in \mathbb{R}$, $\langle x-\epsilon, x+\epsilon\rangle\cap \mathbb{Q}\neq \emptyset$,
+\item[b)] Za svaki $\epsilon>0$ i za sve $x\in \mathbb{R}$, $\langle x-\epsilon, x+\epsilon\rangle\cap \mathbb{I}\neq \emptyset$.
+\end{itemize}
+\end{remark}
 \begin{exercise}
 Dokažite da za svaki realan $r>0$ postoji bar jedan $a\in \mathbb{N}$ takav da je $\dfrac{1}{a}<r$. Postoji li i beskonačno mnogo prirodnih brojeva koji zadovoljavaju tvrdnju?
 \end{exercise}
@@ -386,7 +394,7 @@ Prema Arhimedovu aksiomu za svaki $r>0$ postoji $a\in \mathbb{N}$ takav da je $r
 \end{proof}
 \begin{exercise}
 \label{12}
-Dokažite koristeći Arhimedov aksiom da je skup $A=\{x^2 : x\in \mathbb{N}\}$ odozgo neograničen, tj. nema gornju među.
+Dokažite koristeći Arhimedov aksiom da je skup $A=\{x^2 : x\in \mathbb{N}\}$ odozgo neograničen.
 \end{exercise}
 \begin{proof}[Rješenje]
 Da skup $S$ ima gornju među znači da postoji bar jedan $M\in \mathbb{R}$ tako da za svaki $x\in S$ vrijedi $x\leq M$. Mi moramo dokazati negaciju ove tvrdnje, tj. moramo dokazati da za svaki $M\in \mathbb{R}$ postoji $x_0\in A$ takav da je $x_0>M$. Da je $x_0\in S$ znači da je on oblika $x^2$, gdje je $x\in \mathbb{N}$, pa zapravo trebamo dokazati da za svaki $M\in \mathbb{R}$ postoji $x\in \mathbb{N}$ takav da je $x^2>M$. 
@@ -407,7 +415,18 @@ $$n-1\leq a\leq n
 \Longleftrightarrow -n\leq -a\leq -n+1.$$ 
 No sada je $-a>0$, pa prema dokazanom upravo postoji $l\in \mathbb{Z}$ takav da je $l-1\leq -a\leq l$, pa za $-n=l-1$, tj. $n=1-l$ tvrdnja vrijedi.
 \end{proof}
+Napomena \ref{den} je često korisna ako treba dokazati egzistenciju nekog racionalnog ili iracionalnog broja u nekom intervalu bez da ga eksplicitno konstruiramo. Pokažimo to u sljedećem zadatku.
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da između svaka dva realna broja $c<d$, $c, d\in \mathbb{R}$ postoji $x\in \mathbb{I}$ takav da je $c<x<d$.
+\item[b)] Dokažite da je skup $A'=\{x^2 : x\in \mathbb{I}\}$ odozgo neograničen.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Uvrstimo u napomenu \ref{den} $x=\dfrac{c+d}{2}$, $\epsilon=\dfrac{d-c}{2}$. Tada dobivamo da postoji bar jedan $x\in \mathbb{I}$ u intervalu $\langle c, d\rangle$, tj. bar jedan $x\in \mathbb{I}$ takav da je $c<x<d$, što smo i tvrdili.
 
+b) Analogno kao i u zadatku \ref{12}, dovoljno je dokazati da za svaki $M\in \mathbb{R}$ postoji $x\in \mathbb{I}$ takav da je $x^2>M$. Uzmimo bilo koji $x_0\in \mathbb{I}$ takav da je $x_0\in \langle M, M+1\rangle$. Očito je $x_0^2\geq x_0>M$, pa je $x_0$ upravo traženi broj.
+\end{proof}
 \section{Supremum i infimum}
 
 \begin{definition}
