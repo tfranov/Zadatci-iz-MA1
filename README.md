@@ -1,4 +1,4 @@
-<img width="2352" height="424" alt="Screenshot from 2025-08-27 15-36-34" src="https://github.com/user-attachments/assets/c54f24c8-03ec-4d75-a725-87d169047459" />
+<img width="2346" height="416" alt="Screenshot from 2025-08-27 15-39-21" src="https://github.com/user-attachments/assets/2cac10e2-1f9b-442c-968d-67866781289d" />
 
 # O čemu se radi?
 Ova skripta nastala je 2023. godine kao popratni materijal za održavanje demonstratura iz _Matematičke analize 1_, kolegija prvog semestra na
