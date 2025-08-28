@@ -1129,14 +1129,14 @@ Za svaku od sljedećih funkcija odredite je li bijekcija. Ako smatrate da je, do
 \item[b)] Navedite primjer padajuće funkcije s $\mathbb{R}$ u $\mathbb{R}$ koja nije ni injekcija ni surjekcija.
 \item[b)] Navedite primjer bijekcije $f : \mathbb{R}\to \langle 10, \infty\rangle$.
 \item[c)] Navedite primjer bijekcije $f : \langle 10, 20\rangle\to \mathbb{R}$.
-\item[d)] Navedite primjer bijekcije $f : \mathbb{R}\to [-1, 0\rangle\cup \langle 0, 1]\cup \{2025\}$.
-\item[e)] Navedite primjer bijekcije $f : \mathbb{R}\to \langle -1, 1\rangle \cup \mathbb{N}$.
+\item[d)] Navedite primjer surjekcije $f : \mathbb{R}\to [-1, 0\rangle\cup \langle 0, 1]\cup \{2025\}$.
+\item[e)] Navedite primjer surjekcije $f : \mathbb{R}\to \langle -1, 1\rangle \cup \mathbb{N}$.
 \end{itemize}
 \end{exercise}
 \begin{exercise} \textbf{}
 \begin{itemize}
 \item[a)] Navedite primjer funkcije $f : \mathbb{R}\to \mathbb{R}$ za koju vrijedi $f([0, 5])=[2, 3]$.
-\item[b)] Navedite primjer funkcije $f : \mathbb{R}\to \mathbb{R}$ za koju vrijedi $f([0, 5])=[2, 3]$ \textbf{i} $f^{-1}\left(\langle 5, 15]\right)=[-2, -1]\cup \langle 5, 7.5]$.
+\item[b)] Navedite primjer funkcije $f : \mathbb{R}\to \mathbb{R}$ za koju vrijedi $f([0, 5])=[2, 3]$ \textbf{i} $f^{-1}\left(\langle 5, 15]\right)=[-2, -1\rangle \cup \langle 5, 7.5]$.
 \item[c)] Postoji li funkcija $f : \mathbb{R}\to \mathbb{R}$ za koju vrijedi $f\left([0, 1]\right)=[1, 2]$ i $f^{-1}\left([1, 3]\right)=[4, 5]$? Dokažite svoje tvrdnje.
 \end{itemize}
 \end{exercise}
@@ -1149,10 +1149,8 @@ Neka je $f : \mathbb{R} \to \mathbb{R}$ zadana formulom $f(x)=x^3-2x^2$.
 \item[d)] Koristeći graf, odredite $f\left([2, 2.2\rangle\right)$.
 \end{itemize}
 \end{exercise}
-\textbf{MALO LJEPŠE POSLOŽITI OVE ZADATKE!!}
 \begin{exercise} \textbf{}
 \begin{itemize}
-\item[a)] Dokažite da je $f : \left[0, \dfrac{\pi}{2}\right]\to [4, 8]$ za koju je $f(x)=\sin^4{x}+3\sin^2{x}+4$ bijekcija i odredite njezin inverz.
 \item[b)] Zadana je $f : \mathbb{R}\to \mathbb{R}$, $f(x)=x^4+3|x|^3+4$. Odredite $\mathcal{R}(f)$.
 \item[c)] Zadana je $f : [0, \infty\rangle\to \mathbb{R}$, $f(x)=e^{\frac{1-\sqrt{x}}{1+\sqrt{x}}}$. Odredite $f^{-1}\left([1, e]\right)$.
 \item[d)] Odredite primjer funkcije $f : \mathbb{R}\to \mathbb{R}$ za koju je $f^{-1}\left([4, 5]\right)=[-3, 2]\cup [6, 7]$.
@@ -1160,10 +1158,13 @@ Neka je $f : \mathbb{R} \to \mathbb{R}$ zadana formulom $f(x)=x^3-2x^2$.
 \end{exercise}
 \begin{exercise} \textbf{}
 \begin{itemize}
-\item[a)] Dokažite da postoji skup $S$ takav da $f : \mathbb{R}\to S$, $f(x)=\th^3{x}+1$ bude bijekcija.
-\item[b)] Neka je $f : \mathbb{R}\to [-2, \infty\rangle$ zadana formulom $f(x)=\abs{\abs{\abs{x}-2}-2}-2$. Ispitajte injektivnost, surjektivnost i koristeći graf odredite $f^{-1}\left(\left[\dfrac{1}{2}, 4\right\rangle\right)$.
+\item[a)] Dokažite da je $f : \left[0, \dfrac{\pi}{2}\right]\to [4, 8]$ za koju je $f(x)=\sin^4{x}+3\sin^2{x}+4$ bijekcija i odredite njezin inverz.
+\item[a)] Odredite skup $S$ (ako postoji) takav da $f : \mathbb{R}\to S$, $f(x)=\th^3{x}+1$ bude bijekcija.
+\item[b)] Neka je $f : \mathbb{R}\to [-2, \infty\rangle$ zadana formulom $f(x)=\abs{\abs{\abs{x}-2}-2}-2$. 
+Ispitajte injektivnost, surjektivnost i koristeći graf odredite $f^{-1}\left(\left[\dfrac{1}{2}, 4\right\rangle\right)$.
 \end{itemize}
 \end{exercise}
+\subsection*{Rastav na parcijalne razlomke}
 \begin{exercise}
 Rastavite sljedeće funkcije na parcijalne razlomke (po potrebi prvo funkciju prikazati kao zbroj polinoma i prave racionalne funkcije). 
 \begin{itemize}
@@ -1171,6 +1172,12 @@ Rastavite sljedeće funkcije na parcijalne razlomke (po potrebi prvo funkciju pr
 \item[b)] $x\mapsto \dfrac{1}{x^3+1}$.
 \end{itemize}
 \end{exercise}
+\begin{exercise}
+Zadana je $f : \mathbb{R}\setminus\{-1\}\to\mathbb{R}$,
+$$f(x)=\dfrac{x^3+6x^2+12x+9}{(x+1)^3}.$$
+Odredite $f\left([0, 2]\right)$.
+\end{exercise}
+\subsection*{Prirodna domena}
 \begin{exercise}
 Odredite prirodnu domenu sljedećih funkcija.
 \begin{AutoMultiColItemize}
@@ -1189,21 +1196,11 @@ Odredite prirodnu domenu sljedećih funkcija.
 \end{itemize}
 (\textbf{Uputa:} Elementarne funkcije su sve one funkcije koje se mogu dobiti pomoću konačnog broja operacija zbrajanja, množenja, oduzimanja, dijeljenja i kompozicije iz potencija, eksponencijalnih, hiperbolnih, trigonometrijskih funkcija i njihovih inverznih funkcija -- korijena, logaritamskih, area i arkus funkcija).
 \end{exercise}
-\begin{exercise}
-Dokažite ili opovrgnite: 
-\begin{itemize}
-\item[a)] Neka su $f$ i $g$ ograničene funkcije na $S\subseteq \mathbb{R}$. Tada je $f+g$ ograničena funkcija na $S$.
-\item[b)] Ako za funkciju $f : \mathbb{R}\to \mathbb{R}$ vrijedi $f(-x)=f(x)$ za sve $x\in \mathbb{R}$ (Drugim riječima, ona je \textit{neparna}), ona je injekcija.
-\item[c)] Ako je funkcija $f : \mathbb{R}\to \mathbb{R}$ strogo rastuća, ona nije periodična.
-\item[d)] Ako je funkcija injekcija, ona je strogo monotona.
-\end{itemize}
-\end{exercise}
 \begin{exercise} \textbf{}
 \begin{itemize}
-\item[a)] Pokažite primjerom da $x\mapsto \dfrac{1}{x}$ nije strogo padajuća.
+\item[a)] Odredite najmanji $a\in\mathbb{R}$ takav da je $f : \mathbb{R}\to \mathbb{R}$, $f(x)=x^4-2x^2$ injekcija.
 \item[b)] Neka su zadane $f, g : S\to \mathbb{R}$. Dokažite ili opovrgnite: Ako su $f$ i $g$ strogo rastuće i ako vrijedi $f(x)\geq 0$ i $g(x)\geq 0$ za sve $x\in S$, onda je i $fg$ strogo rastuća.
 \item[c)] Odredite sve $x\in \mathbb{R}$ takve da je $x^3-2x=4$. (Dokažite svoje tvrdnje!)
-\item[d)] Navedite primjer funkcije s $\mathbb{R}$ u $\mathbb{R}$ koja je istovremeno padajuća i rastuća.
 \end{itemize}
 \end{exercise}
 \begin{exercise} \textbf{}
@@ -1212,6 +1209,7 @@ Dokažite ili opovrgnite:
 \item[b)] Neka su zadane $f : A\to B$ i $g : B\to C$. Dokažite da ako je $g\circ f$ injekcija, onda je i $f$ injekcija.
 \end{itemize}
 \end{exercise}
+\subsection*{Periodične funkcije}
 \begin{exercise}
 Je li $x\mapsto \sin^2{x}$ periodična? Ako je, koji joj je temeljni period?
 \end{exercise}
@@ -1244,3 +1242,4 @@ Dokažite (bez korištenja rezultata iz linearne algebre i bez rješavanja susta
 \begin{exercise} $(**)$
 Može li se funkcija $x\mapsto x\cos(x^3-x)$ prikazati kao kompozicija konačno mnogo funkcija $x\mapsto -x$, $x\mapsto x\sin{x}$, $x\mapsto \sh{x}$, $x\mapsto x^3+x$? Dokažite.
 \end{exercise}
+\textbf{DOVRŠITI!!}
