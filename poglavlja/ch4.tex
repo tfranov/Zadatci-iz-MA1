@@ -1104,7 +1104,7 @@ Nacrtajte grafove sljedećih funkcija. (Kada je interval cijeli $\mathbb{R}$, pr
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}
-\begin{axis}[axis lines=middle, xlabel=$x$,ylabel=$y$,xmin=-2.25,xmax=6.3,ymin=-0.5,ymax=9, samples=350]
+\begin{axis}[axis lines=middle, xlabel=$x$,ylabel=$y$, xtick={-2,-1, 1,2,3,4,5,6}, ytick={1,2,3,4,5,6,7,8},xmin=-2.25,xmax=6.3,ymin=-0.5,ymax=9, samples=350]
 
 \addplot[thick, color=black,domain=-2.26:6.24] {abs(abs(x*x-4*x-5)-2)};
 \end{axis}
@@ -1178,6 +1178,9 @@ Ispitajte injektivnost, surjektivnost i koristeći graf odredite $f^{-1}\left(\l
 \item[c)] Odredite sve $x\in \mathbb{R}$ takve da je $x^3-2x=4$. (Dokažite svoje tvrdnje!)
 \end{itemize}
 \end{exercise}
+\begin{exercise}
+Neka je $g : \mathbb{R}\to \mathbb{R}$ funkcija takva da za funkciju $h : \mathbb{R}\to \mathbb{R}$, $h(x)=g^9(x)+2g^3(x)+1$, vrijedi $h\left([0, 2]\right)=[-2, 4]$. Odredite $g\left([0, 2]\right)$.
+\end{exercise}
 \begin{exercise} $(*)$
 Neka je $f : \mathbb{R}\to \mathbb{R}$ dana izrazom $f(x)=\dfrac{x}{\sqrt{1+x^2}}$. Neka je $f_n(x)=\underbrace{f(f(\dots f(x))\dots)}_\text{$n$ puta}$. Izračunajte $f_{2024}(2024)$ i pokažite da je $f_{2024}$ injekcija.
 \end{exercise}
@@ -1222,21 +1225,39 @@ Dokažite (bez korištenja rezultata iz linearne algebre i bez rješavanja susta
 Odredite prirodnu domenu sljedećih funkcija.
 \begin{AutoMultiColItemize}
 \item[a)] $x\mapsto \mathrm{arch}\left(\arccos{\dfrac{x-1}{x+2}}+1\right)$,
-\item[b)] $x\mapsto \dfrac{1}{\sqrt{1-\dfrac{1}{x}}}$
-\item[c)] $x\mapsto \arcsin{\sin{x}}$,
+\item[b)] $x\mapsto \dfrac{1}{\sqrt{\dfrac{1}{x^2}-\dfrac{3}{x}-4}}$
+\item[c)] $x\mapsto \arcsin\left(\sqrt{x+2}-\sqrt{x+1}\right)$,
 \item[d)] $x\mapsto \sqrt{1+\log\lfloor x^2-1\rfloor},$
 \item[e)] $x\mapsto \ln\left(\dfrac{1}{\sin{x}}-2\cos{x}\right).$
 \end{AutoMultiColItemize}
 \end{exercise}
 \begin{exercise} Navedite primjer elementarne funkcije čija je prirodna domena:
-\begin{itemize}
+\begin{AutoMultiColItemize}
 \item[a)] $[1, \infty\rangle \setminus \{2\}$,
-\item[b)] $\langle 1, \infty\rangle \setminus{\mathbb{N}}$.
-\item[c)] $\langle -\infty, 2]\cup [3, \infty\rangle$.
-\end{itemize}
+\item[b)] $\langle 1, \infty\rangle \setminus{\mathbb{N}}$,
+\item[c)] $\langle -\infty, 2]\cup [3, \infty\rangle$,
+\item[d)] $\mathbb{N}$,
+\item[e)] $\langle 0, \infty\rangle\setminus\{2025^n : n\in \mathbb{N}\}$.
+\end{AutoMultiColItemize}
 (\textbf{Uputa:} Elementarne funkcije su sve one funkcije koje se mogu dobiti pomoću konačnog broja operacija zbrajanja, množenja, oduzimanja, dijeljenja i kompozicije iz potencija, eksponencijalnih, hiperbolnih, trigonometrijskih funkcija i njihovih inverznih funkcija -- korijena, logaritamskih, area i arkus funkcija).
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Zadana je elementarna funkcija $f : \mathbb{R}\to \mathbb{R}$. Dokažite da je za svaki konačan skup $S\subseteq \mathbb{R}$ restrikcija $f|_{\mathbb{R}\setminus{S}}$ također elementarna funkcija.
+\item[b)] Dokažite da za svaki konačan skup $S\subseteq \mathbb{R}$ postoji elementarna funkcija čija je prirodna domena $S$.
+\end{itemize}
 \end{exercise}
 \subsection*{Periodične funkcije}
 \begin{exercise}
-Je li $x\mapsto \sin^2{x}$ periodična? Ako je, koji joj je temeljni period?
+Je li $x\mapsto \sin^2{x}$ periodična? Ako je, koji joj je temeljni period? Dokažite sve svoje tvrdnje.
+\end{exercise}
+\begin{exercise}
+Zadana je funkcija $f : \mathbb{R}\to \mathbb{R}$,
+$$f(x)=\begin{cases}
+-x+5n+1 & \text{za } x\in [5n, 5n+1],\, n\in \mathbb{N},\\
+0 & \text{za } x\in [5n+1, 5n+2],\, n\in \mathbb{N},\\
+-x+5n+2 & \text{za } x\in [5n+2, 5n+3],\, n\in \mathbb{N},\\
+x-5n-4 & \text{za } x\in [5n+3, 5n+5],\, n\in \mathbb{N},
+\end{cases}$$
+Dokažite da je $f$ periodična i odredite joj temeljni period. Dokažite sve svoje tvrdnje.
 \end{exercise}

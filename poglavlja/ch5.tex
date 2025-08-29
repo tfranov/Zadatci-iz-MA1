@@ -348,7 +348,7 @@ pa iz kriterija sendviča dobivamo $\lim\limits_{n\to \infty}{\dfrac{n}{2^n}}=0$
 
 \textit{Drugi način.} Neka je $\epsilon>0$. Prema Arhimedovu aksiomu postoji $l\in \mathbb{N}$ takav da je $l\epsilon>1$. Neka je $n_0=\max\{l, 5\}$. Vrijedi
 $$n_0\epsilon\geq l\epsilon>1,$$
-dakle $n_0\epsilon>1$. No i za sve $m\in \mathbb{N}$, $m>5$ vrijedi $m<\dfrac{2^m}{m},$ što se lako pokazuje indukcijom. Stoga za sve prirodne $n\geq n_0$ vrijedi $\dfrac{2^{n}}{n}\epsilon>1$, odakle imamo $$\dfrac{n}{2^n}=\abs{\dfrac{n}{2^n}}<\epsilon,$$
+dakle $n_0\epsilon>1$. No i za sve $m\in \mathbb{N}$, $m\geq 5$ vrijedi $m<\dfrac{2^m}{m},$ što se lako pokazuje indukcijom. Stoga za sve prirodne $n\geq n_0$ vrijedi $\dfrac{2^{n}}{n}\epsilon>1$, odakle imamo $$\dfrac{n}{2^n}=\abs{\dfrac{n}{2^n}}<\epsilon,$$
 što smo i htjeli pokazati.
 \end{proof}
 \begin{remark} \textbf{}
@@ -631,7 +631,7 @@ $$\lim\limits_{n\to \infty}{\dfrac{1}{n^5}\sum_{k=n}^{2n}{k^4}}.$$
 Promotrimo nizove $(a_n)$, $(b_n)$, $a_n=\dsum_{k=n}^{2n}{k^4}$, $b_n=n^5$. Uočimo da je $b_n$ rastuć, te kako vrijedi $b_n\geq n$, za sve $n\in \mathbb{N}$, iz zadatka \ref{liminftylemma} slijedi da je $\lim\limits_{n\to \infty}{b_n}=\infty$, te $b_n\neq 0$. Prema Cesàro-Stolzovom teoremu imamo
 \begin{align*}
 \lim\limits_{n\to \infty}{\dfrac{a_n}{b_n}}&=\lim\limits_{n\to\infty}{\dfrac{a_{n+1}-a_n}{b_{n+1}-b_n}}
-=\lim\limits_{n\to \infty}{\dfrac{\sum_{k=n+1}^{2n+2}{k^4}-\sum_{k=n}^{2n}{k^4}}{(n+1)^5-n^5}}\\
+=\lim\limits_{n\to \infty}{\dfrac{\dsum_{k=n+1}^{2n+2}{k^4}-\dsum_{k=n}^{2n}{k^4}}{(n+1)^5-n^5}}\\
 &=\lim\limits_{n\to \infty}{\dfrac{(2n+1)^4+(2n+2)^4-(n+1)^4}{(n+1)^5-n^5}}=\dfrac{31n^4+92n^3+114n^2+68n+16}{5n^4+10n^3+10n^2+5n+1}=\dfrac{31}{5}.
 \end{align*}
 \end{proof}
@@ -745,6 +745,7 @@ Vidjeli smo da je računanje limesa inferiora i superiora u zadatku \ref{limitpo
 \end{remark}
 \newpage
 \section*{Zadatci za vježbu}
+\subsection*{Pojam niza. Limes niza}
 \begin{exercise}\textbf{}
 \begin{itemize}
 \item[a)] Odredite sve $x\in \mathbb{R}$ za koje postoji aritmetički niz $(a_n)$ takav da su $\sqrt{24x+1}$, $\sqrt{10x-1}$, $\sqrt{x+4}$ neka tri njegova uzastopna člana.
@@ -752,17 +753,24 @@ Vidjeli smo da je računanje limesa inferiora i superiora u zadatku \ref{limitpo
 \end{itemize}
 \end{exercise}
 \begin{exercise}
-Dokažite da je niz (strogo) rastući/padajući ako i samo ako je on (strogo) rastuća/padajuća funkcija.
-\end{exercise}
-\begin{exercise}
 Koristeći definiciju limesa niza, dokažite sljedeće tvrdnje:
+\begin{AutoMultiColItemize}
+\item[a)] $\lim\limits_{n\to \infty}{\dfrac{4}{2n+3}}=0$,
+\item[b)] $\lim\limits_{n\to \infty}{\dfrac{1}{\sqrt{n+7}}}=0$,
+\item[c)] $\lim\limits_{n\to \infty}{\dfrac{1}{n^2-2}}=0$,
+\item[d)] $\lim\limits_{n\to\infty}{\dfrac{n}{n+2^n}}=0$
+\item[d)] $\lim\limits_{n\to \infty}{\dfrac{(n+1)(n+2)}{n^2}}=1$,
+\item[e)] $\lim\limits_{n\to \infty}{\dfrac{\lfloor 3n+11\rfloor}{n^2+1}}=0$,
+\end{AutoMultiColItemize}
+\end{exercise}
+\begin{exercise} \textbf{}
 \begin{itemize}
-\item[a)] $\lim\limits_{n\to \infty}{\dfrac{(n+1)(n+2)}{n^2}}=1$,
-\item[b)] $\lim\limits_{n\to \infty}{\dfrac{\lfloor 3x+11\rfloor}{x^2-1}}=0$,
-\item[c)] $\lim\limits_{n\to \infty}{\dfrac{1}{\sqrt{x+7}}}$,
-\item[d)] Neka je $(a_n)$ niz realnih brojeva. Vrijedi $$\lim\limits_{n\to \infty}{a_n}=a\;\text{ ako i samo ako vrijedi }\;\lim\limits_{n\to \infty}{|a-a_0|}=0$$
+\item[a)] Dokažite da je niz rastući ako i samo ako je on rastuća funkcija.
+\item[b)] Neka je $(a_n)$ niz realnih brojeva. Vrijedi $$\lim\limits_{n\to \infty}{a_n}=a\;\text{ ako i samo ako vrijedi }\;\lim\limits_{n\to \infty}{|a-a_0|}=0$$
+\textbf{DOVRŠITI!!!}
 \end{itemize}
 \end{exercise}
+\subsection*{Osnovne operacije s konvergentnim nizovima. Kriteriji konvergencije niza}
 \begin{exercise}
 Ispitajte konvergenciju niza $(a_n)$ i ako je konvergentan odredite mu limes, ako je: 
 \begin{AutoMultiColItemize}
@@ -773,7 +781,7 @@ Ispitajte konvergenciju niza $(a_n)$ i ako je konvergentan odredite mu limes, ak
 \item[e)] $a_n=\sqrt[n]{n2^n+1}$,
 \item[f)] $a_n=2^{\sqrt{n}}$,
 \item[g)] $a_n=\dfrac{1}{n^2+1}+\dfrac{1}{n^2+2}+\dots+\dfrac{1}{n^2+n}$,
-\item[h)] $a_n=\sqrt{x+2}-\sqrt{x}$.
+\item[h)] $a_n=\sqrt{n+2}-\sqrt{n}$.
 \end{AutoMultiColItemize}
 \end{exercise}
 \begin{exercise}
