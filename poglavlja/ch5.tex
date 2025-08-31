@@ -206,7 +206,7 @@ $$\dfrac{n}{2}-1\geq \dfrac{n_0}{2}-1>M,$$
 Neka je $(a_n)$ konvergentan niz. Dokažite da on tada ne divergira u $\infty$. (Ovo se možda na prvi pogled čini očiglednim, ali je ipak nešto što je potrebno dokazati!)
 \end{exercise}
 \begin{proof}
-Pretpostavimo da $(a_n)$ divergira u $\infty$. Kako $(a_n)$ konvergira, on je ograničen. S druge strane, ako niz divergira u $\infty$, on ne može biti odozgo ograničen, što onda daje kontradikciju. Zaista, pretpostavimo da postoji $M\in \mathbb{R}$ (Možemo bez smanjenja općenitosti uzeti $M>0$) takav da za sve $n\in \mathbb{N}$ vrijedi $a_n\leq M$. Tada za taj $M$ postoji $n_0\in \mathbb{N}$ takav da za sve $n\geq n_0$ vrijedi $a_n>M$, što daje kontradikciju.
+Pretpostavimo da $(a_n)$ divergira u $\infty$. Kako $(a_n)$ konvergira, on je ograničen. S druge strane, ako niz divergira u $\infty$, on ne može biti odozgo ograničen, što onda daje kontradikciju. Zaista, pretpostavimo da postoji $M\in \mathbb{R}$ (Možemo bez smanjenja općenitosti uzeti $M>0$) takav da za sve $n\in \mathbb{N}$ vrijedi $a_n\leq M$. Tada za taj $M$ postoji $n_0\in \mathbb{N}$ takav da za sve $n\geq n_0$ vrijedi $a_n>M$, što nije moguće.
 \end{proof}
 \begin{remark}[Binomni teorem]
 Za sve $a, b\in \mathbb{R}$ i $n\in \mathbb{N}$ vrijedi
@@ -413,7 +413,7 @@ Neka je $(a_n)$ rastući niz. Dokažite: Ako $(a_n)$ ne divergira u $\infty$, on
 \begin{proof}
 Po definiciji, postoji $M>0$ takav da za svaki $n_0\in \mathbb{N}$ postoji $n\in \mathbb{N}$, $n\geq n_0$ takav da je $a_n\leq M$. Neka je $m\in \mathbb{N}$ proizvoljan. Tada postoji $m'\geq m$ takav da je $a_{m'}\leq M$, no tada vrijedi i $a_m\leq M$, jer je niz rastući (v. a) dio zadatka \ref{seqfunex}). Time smo dokazali da je niz odozgo omeđen, pa kako je rastući, on je i konvergentan.
 \end{proof}
-\section{Podniz. Nizovi zadani rekurzivno}
+\section{Podniz. Nizovi zadani rekurzivno. Limesi složenijih nizova}
 \begin{definition}
 Za niz $b : \mathbb{N}\to S$ kažemo da je \textbf{podniz} niza $a :\mathbb{N}\to S$ ako postoji strogo rastući niz prirodnih brojeva $p : \mathbb{N}\to \mathbb{N}$ takav da je $b=a\circ p$. Za podniz $(b_n)$ niza $(a_n)$ pišemo $b_n=b(n)=a\left(p(n)\right)=a_{p_n}$, pa podniz označavamo i sa $(a_{p_n})$.
 \end{definition}
@@ -470,6 +470,17 @@ Ako je $a=\infty$, onda postoji $n_0\in \mathbb{N}$ takav da za sve prirodne $n\
 Odaberimo sada proizvoljan $n_0\in \mathbb{N}$ takav da za sve prirodne $n>m\geq n_0$ vrijedi $|a_n|>|a_m|$. Znamo da postoji $p_0\in \mathbb{N}$ takav da za sve prirodne $p\geq p_0$ vrijedi $|a_p|<|a_{n_0}|$. Neka je sada $q_0=\max\{n_0, p_0\}$. Tada zbog $q_0\geq n_0$ imamo $|a_{q_0}|\geq |a_{n_0}|$, a zbog $q_0\geq p_0$ imamo da za $p=q_0$ vrijedi $|a_{q_0}|<|a_{n_0}|$. Kontradikcija!
 
 Ovime smo pokazali da je $S=[-1, 1]$, što smo i tvrdili.
+\end{proof}
+\begin{exercise}
+Odredite sve $a\in \mathbb{R}$ takve da niz $(a_n)$ zadan formulom $$a_n=\left(1+a+\dfrac{a}{n}\right)\sin{\dfrac{n\pi}{2}}$$
+bude konvergentan.
+\end{exercise}
+\begin{proof}[Rješenje]
+Promotrimo sljedeće podnizove od $(a_n)$:
+$$a_{4n}=0,\;\;a_{4n-1}=-1-a-\dfrac{a}{4n-1},\;\;a_{4n-2}=0,\;\;a_{4n-3}=1+a+\dfrac{a}{4n-3}.$$
+Da bi niz bio konvergentan, svaki podniz mora konvergirati k istom limesu (a to je $0$), pa je jedini potencijalni kandidat $a=-1$. U tom slučaju je $a_n=-\dfrac{1}{n}\sin{\dfrac{n\pi}{2}}$. Vrijedi
+$$0\leq \abs{-\dfrac{1}{n}\sin{\dfrac{n\pi}{2}}}=\dfrac{1}{n}\abs{\sin{\dfrac{n\pi}{2}}}\leq \dfrac{1}{n},$$
+pa po kriteriju sendviča slijedi da je $\lim\limits_{n\to \infty}{|a_n|}=0$, odakle imamo i $\lim\limits_{n\to \infty}{a_n}=0$ (v. b) dio zadatka \ref{seqfunex}).
 \end{proof}
 Nizove možemo zadati i rekurzivno. Intuitivno, nizovi zadani rekurzivno su oni nizovi definirani pomoću jednog ili više početnih članova i pomoću jednog ili više prethodnih članova. Npr. niz $a_1=1$ i $a_n=a_{n-1}+1$ za $n>1$ je niz $(a_n)$, $a_n=n$ zadan rekurzivno. Precizirajmo!
 \begin{remark}[Princip definicije indukcijom]
@@ -757,6 +768,20 @@ Vidjeli smo da je računanje limesa inferiora i superiora u zadatku \ref{limitpo
 \liminf(a_nb_n)=\lim\limits_{n\to \infty}(a_n)\liminf(b_n).
 \end{gather*}
 \end{remark}
+\begin{remark}
+Ograničen niz realnih brojeva $(a_n)$ je konvergentan ako i samo ako vrijedi $\liminf{a_n}=\limsup{a_n}$.
+\end{remark}
+\begin{exercise}
+\label{iteraaaate}
+Neka je $(a_n)$ ograničen niz za kojeg vrijedi $\lim\limits_{n\to \infty}{(a_{2^n}-3a_n)}=0$. Dokažite da je $(a_n)$ konvergentan i odredite mu limes.
+\end{exercise}
+\begin{proof}[Rješenje]
+Pretpostavimo da $(a_n)$ ne konvergira. Tada je $\liminf{a_n}\neq \limsup{a_n}$, što znači da $(a_n)$ ima barem dva gomilišta. Pokažimo da to ne vrijedi, tj. da $(a_n)$ ima samo jedno gomilište i to $0$.
+
+Neka je $a\in \mathbb{R}$ gomilište niza $(a_n)$. Tada postoji podniz $(a_{p_n})$ takav da je $\lim\limits_{n\to \infty}{a_{p_n}}=a$. Promotrimo niz $(a_{2^{p_n}}-3a_{p_n})$. To je podniz od $(a_{2^n}-3a_n)$, pa vrijedi $\lim\limits_{n\to \infty}{(a_{2^{p_n}}-3a_{p_n})}=0$, odakle iz činjenice da je $(3a_{p_n})$ niz koji konvergira u $3a$ i iz teorema o osnovnim operacijama s konvergentnim nizovima slijedi da je $(a_{2^{p_n}})$ konvergentan i vrijedi $\lim\limits_{n\to \infty}{a_{2^{p_n}}}=3a$.
+
+Odavde zaključujemo da ako je $a$ gomilište, da je onda i $3a$ gomilište. No i $3a$ je gomilište, pa je i $9a$ gomilište, i tako dalje. Općenito, ako je $a$ gomilište, imamo da je za sve $n\in \mathbb{N}$ i $3^na$ gomilište. Kad bi bilo $a>0$, ovo vodi na to da bi postojalo neko gomilište koje je veće od $\limsup{a_n}$ (prema Arhimedovu aksiomu postoji $n_0\in \mathbb{N}$ takav da je $n_0a>\limsup{a_n}$, te iz $3^{n_0}a\geq n_0a>\limsup{a_n}$ slijedi tvrdnja). Analogno za $a<0$ dobivamo da postoji neko gomilište koje je manje od $\liminf{a_n}$. Zato mora nužno biti $a=0$, i time je tvrdnja dokazana.
+\end{proof}
 \newpage
 \section*{Zadatci za vježbu}
 \subsection*{Pojam niza. Limes niza}
@@ -817,11 +842,11 @@ Ispitajte konvergenciju niza $(a_n)$ i ako je konvergentan odredite mu limes, ak
 \begin{AutoMultiColItemize}
 \item[a)] $a_n=\dfrac{n^2+4n+3}{2n^2+2n+1}$,
 \item[b)] $a_n=\dfrac{(2n+1)(3n+2)(4n+3)(5n+4)}{(4n+4)(5n+5)(6n+6)(7n+7)}$,
-\item[b)] $a_n=\dfrac{(2n+1)(3n+2)(n+1)!}{(4n+3)^3n!}$,
-\item[c)] $a_n=\dfrac{n^2+1}{n+2\sqrt{n^4+1}}$,
-\item[d)] $a_n=\dfrac{7+11+15+\dots+(3+4n)}{4n^2}$,
-\item[e)] $a_n=\dfrac{2^n+3^n}{4^n+5^n}$,
-\item[f)] $a_n=\sqrt{n+2}-\sqrt{n}$
+\item[c)] $a_n=\dfrac{(2n+1)(3n+2)(n+1)!}{(4n+3)^3n!}$,
+\item[d)] $a_n=\dfrac{n^2+1}{n+2\sqrt{n^4+1}}$,
+\item[e)] $a_n=\dfrac{7+11+15+\dots+(3+4n)}{4n^2}$,
+\item[f)] $a_n=\dfrac{2^n+3^n}{4^n+5^n}$,
+\item[g)] $a_n=\sqrt{n+2}-\sqrt{n}$
 \end{AutoMultiColItemize}
 \end{exercise}
 \begin{exercise} Ispitajte konvergenciju niza $(a_n)$ i ako je konvergentan odredite mu limes, ako je:
@@ -832,19 +857,11 @@ Ispitajte konvergenciju niza $(a_n)$ i ako je konvergentan odredite mu limes, ak
 \end{itemize}
 \end{exercise}
 \begin{exercise}
-Ispitajte konvergenciju niza $(a_n)$ i ako je konvergentan odredite mu limes, ako je:
-\begin{itemize}
-\item[a)] $a_n=\underbrace{\sqrt{5+\sqrt{5+\dots+\sqrt{5}}}}_\text{$n$ korijena}$,
-\item[b)] $a_1=2$, $a_{n+1}=\dfrac{3a_n-1}{2a_n}$, $n\geq 1$,
-\item[c)] $a_1=1$, $a_{n+1}=\dfrac{a_n+3}{2a_n}$, $n\geq 1$. (Ovaj niz neće biti monoton -- pokušajte se snaći drukčije!)
-\end{itemize}
-\end{exercise}
-\begin{exercise}
 Koristeći činjenicu da je niz $n\mapsto \left(1+\dfrac{1}{n}\right)^n$ konvergentan s limesom u $e$, odredite sljedeće limese.
-\begin{AutoMultiColItemize}
+\begin{itemize}
 \item[a)] $\lim\limits_{n\to \infty}\left(\dfrac{n+\frac{1}{2}}{n}\right)^n$
 \item[b)] $\lim\limits_{n\to \infty}\left(1+\dfrac{1}{-n}\right)^{-n}$
-\end{AutoMultiColItemize}
+\end{itemize}
 \end{exercise}
 \begin{exercise}
 Koliko ima prirodnih brojeva $n\in \mathbb{N}$ za koje vrijedi
@@ -867,7 +884,7 @@ Neka je $(a_n)$ ograničen niz realnih brojeva takav da za sve $n\geq 2$ vrijedi
 $$a_n\leq \dfrac{a_{n-1}+a_{n+1}}{2}.$$
 Pokažite da je $(a_n)$ konvergentan.
 \end{exercise}
-\subsection*{Podniz. Nizovi zadani rekurzivno}
+\subsection*{Podniz. Nizovi zadani rekurzivno. Limesi složenijih nizova}
 \begin{exercise} Neka su $(a_n),\,(b_n)\, (c_n)$ nizovi zadani formulama 
 $$a_n=2n+1,\;b_n=8n^2+8n+3, \; c_n=8n^2-9$$
 \begin{itemize}
@@ -875,10 +892,18 @@ $$a_n=2n+1,\;b_n=8n^2+8n+3, \; c_n=8n^2-9$$
 \item[b)] Je li niz $(c_n)$ podniz od $(a_n)$? Dokažite.
 \end{itemize}
 \end{exercise}
+\begin{exercise}
+Ispitajte konvergenciju niza $(a_n)$ i ako je konvergentan odredite mu limes, ako je:
+\begin{itemize}
+\item[a)] $a_n=\underbrace{\sqrt{5+\sqrt{5+\dots+\sqrt{5}}}}_\text{$n$ korijena}$,
+\item[b)] $a_1=2$, $a_{n+1}=\dfrac{3a_n-1}{2a_n}$, $n\geq 1$,
+\item[c)] $a_1=1$, $a_{n+1}=\dfrac{a_n+3}{2a_n}$, $n\geq 1$. (Ovaj niz neće biti monoton -- pokušajte se snaći drukčije!)
+\end{itemize}
+\end{exercise}
 \begin{exercise} \textbf{}
 \begin{itemize}
 \item[a)] Neka je $(a_n)$ monoton niz koji ima konvergentan podniz. Dokažite da je tada $(a_n)$ konvergentan.
-\item[b)] Neka je $(a_n)$ konvergentan niz i neka je $(b_n)$ niz zadan formulom
+\item[b)] $(*)$ Neka je $(a_n)$ konvergentan niz i neka je $(b_n)$ niz zadan formulom
 \begin{gather*}
 b_1=\sup\{a_m : m\in \mathbb{N}\}\\
 b_n=\sup\left\{a_m : m\in \mathbb{N}\setminus\left\{1, \dots, n-1\right\}\right\}\;(\text{za }n\geq 2).
@@ -886,16 +911,18 @@ b_n=\sup\left\{a_m : m\in \mathbb{N}\setminus\left\{1, \dots, n-1\right\}\right\
 \noindent Dokažite da je $(b_n)$ konvergentan i odredite $\lim\limits_{n\to \infty}{b_n}$.
 \end{itemize}
 \end{exercise}
+\begin{exercise} Ispitajte konvergenciju niza $(a_n)$ i ako je konvergentan odredite mu limes, ako je:
+\begin{itemize}
+\item[a)] $a_n=\dfrac{1}{(2n)!^2}\cdot\dsum_{i=1}^{2n}{i!^2}$,
+\item[b)] $a_n=\dfrac{\dsum_{i=n}^{2n}{(-i)^i}}{(2n)^{2n}}$,
+\end{itemize}
+\end{exercise}
+\begin{exercise} $(**)$
+Dokažite tvrdnje zadatka \ref{iteraaaate} koristeći definiciju limesa niza.
+\end{exercise}
 \subsection*{Limes superior i limes inferior}
 \begin{exercise}
 Neka je $(a_n)$ niz zadan formulom $a_n=(-1)^n\left(1-\dfrac{1}{3^n}\right)$. Odredite $\liminf{a_n}$ i $\limsup{a_n}$. (Dokažite sve svoje tvrdnje.)
-\end{exercise}
-\begin{remark}
-Ograničen niz realnih brojeva $(a_n)$ je konvergentan ako i samo ako vrijedi $\liminf{a_n}=\limsup{a_n}$.
-\end{remark}
-
-\begin{exercise}
-Odredite sve $a\in \mathbb{R}$ takve da niz $(a_n)$ zadan formulom $a_n=(1+a)\sin{\dfrac{n\pi}{2}}$ konvergentan.
 \end{exercise}
 \begin{exercise} $(*)$
 Dokažite da svaki konvergentan niz postiže ili svoj infimum, ili svoj supremum, ili oboje. Dajte primjer sva tri tipa niza.
