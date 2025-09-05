@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.4)  5 SEP 2025 11:39
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.4)  5 SEP 2025 14:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1142,29 +1142,29 @@ Poglavlje 4.
 
 [125]
 
+[126]
 
 
 
 
 
 
-
-
-
-
-
-
-[126])
 
 [127]
+
+
+
+
+
+)
+
+[128]
 Poglavlje 5.
 (./poglavlja/ch5.tex
 
-[128
+[129
 
 ]
-
-[129]
 
 [130]
 
@@ -1218,37 +1218,37 @@ Poglavlje 5.
 
 [155]
 
-
-
-
-
-
-
 [156]
-
-
-
-
-
-
 
 [157]
 
-[158])
+
+
+
+
+
+
+[158]
+
+
+
+
+
+
 
 [159]
+
+[160]
+
+[161])
+
+[162]
 Poglavlje 6.
 (./poglavlja/ch6.tex
 
-[160
+[163
 
 ]
-
-[161]
-
-[162]
-
-[163]
 
 [164]
 
@@ -1268,18 +1268,24 @@ Poglavlje 6.
 
 [172]
 
-[173]) (./bibliografija.tex
+[173]
 
 [174]
+
+[175]
+
+[176]) (./bibliografija.tex
+
+[177]
 Package babel Info: 'russian' activates 'russian' shorthands.
 (babel)             Reported on input line 23.
 
 
-[175
+[178
 
 ])
 
-[176] (./main.aux)
+[179] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
@@ -1290,10 +1296,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  41930 strings out of 468441
  935818 string characters out of 5445544
- 1833393 words of memory out of 5000000
+ 1832401 words of memory out of 5000000
  69730 multiletter control sequences out of 15000+600000
  639848 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,16n,107p,2744b,2442s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (176 pages, 2626092 bytes).
+Output written on main.xdv (179 pages, 2627692 bytes).

@@ -18,16 +18,16 @@
 \contentsline {chapter}{\numberline {4}Funkcije}{88}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Pojam funkcije. Crtanje grafa funkcije}{88}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Injekcija, surjekcija i bijekcija. Slika i praslika skupa}{93}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Kompozicija funkcija. Inverzna funkcija}{103}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Rastav na parcijalne razlomke}{113}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Prirodna domena}{115}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Periodične funkcije}{120}{section.4.6}%
+\contentsline {section}{\numberline {4.3}Kompozicija funkcija. Inverzna funkcija}{104}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Rastav na parcijalne razlomke}{114}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Prirodna domena}{117}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Periodične funkcije}{121}{section.4.6}%
 \pagebreak [4]
-\contentsline {chapter}{\numberline {5}Nizovi}{128}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Pojam niza. Limes niza}{128}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Osnovne operacije s konvergentnim nizovima. Kriteriji konvergencije niza}{135}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Podniz. Nizovi zadani rekurzivno. Limesi složenijih nizova}{141}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Limes superior i limes inferior}{152}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{160}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{160}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{166}{section.6.2}%
+\contentsline {chapter}{\numberline {5}Nizovi}{129}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Pojam niza. Limes niza}{129}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Osnovne operacije s konvergentnim nizovima. Kriteriji konvergencije niza}{136}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Podniz. Nizovi zadani rekurzivno. Limesi složenijih nizova}{143}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Limes superior i limes inferior}{153}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{163}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{163}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{169}{section.6.2}%

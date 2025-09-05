@@ -74,11 +74,12 @@
 \usepackage{amsthm}
 \usepackage[left=2.5cm,right=2.5cm,top=3.4cm,bottom=3.4cm]{geometry}
 \setlength{\headheight}{14pt}
+\setlength{\topsep}{\parskip}
 
 \let\oldproof\proof
 \let\endoldproof\endproof
 \renewenvironment{proof}{%
-    \vspace{-\parskip}\begin{oldproof}%
+    \vspace{-\parskip}\vspace{-\parskip}\begin{oldproof}%
     }{%
     \end{oldproof}%
 }
