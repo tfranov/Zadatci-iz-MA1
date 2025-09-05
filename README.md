@@ -11,6 +11,6 @@ Skripta u PDF formatu nalazi se [ovdje](https://github.com/user-attachments/file
 
 # Pronašli ste pogrešku u skripti ili imate prijedlog za poboljšanje?
 Bio bih Vam vrlo zahvalan da mi to javite, što možete na sljedeće načine:
-- Javljanjem na mail (tomislav.franov@uniri.hr),
-- Otvaranjem *issue*-a ovdje na GitHub-u,
+- Javite mi se na mail (tomislav.franov@uniri.hr),
+- Otvorite *issue* ovdje na GitHub-u,
 - Napravite *fork* repozitorija, samostalno napravite promjene koje u skripti želite vidjeti i napravite *pull request*.
