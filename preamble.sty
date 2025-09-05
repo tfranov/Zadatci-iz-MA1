@@ -86,7 +86,7 @@
 
 \usepackage{caption}
 \usepackage{subcaption}
-\newtheoremstyle{exampstyle}
+\newtheoremstyle{newthm}
   {\parskip} % Space above
   {0pt} % Space below
   {} % Body font
@@ -95,7 +95,18 @@
   {.} % Punctuation after theorem head
   {.5em} % Space after theorem head
   {} % Theorem head spec
-\theoremstyle{exampstyle}
+
+\newtheoremstyle{newrem}
+  {\parskip} % Space above
+  {0pt} % Space below
+  {} % Body font
+  {} % Indent amount
+  {\textit} % Theorem head font
+  {.} % Punctuation after theorem head
+  {.5em} % Space after theorem head
+  {} % Theorem head spec
+
+\theoremstyle{newthm}
 \newtheorem{theorem}{Teorem}
 \newtheorem*{theorem*}{Teorem}
 \newtheorem{corollary}{Korolar}
@@ -104,7 +115,7 @@
 \newtheorem{exmp}{Primjer}
 \newtheorem{notation}{Notacija}
 \newtheorem{exercise}{Zadatak}
-\theoremstyle{remark}
+\theoremstyle{newrem}
 \newtheorem*{proof*}{Rješenje}
 \newtheorem{remark}{Napomena}
 \usetikzlibrary{arrows.meta}
