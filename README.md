@@ -7,7 +7,10 @@ Treba naglasiti da za sada skripta **nije gotova**. Trenutno nedostaju sadržaji
 
 # Link za skriptu u PDF formatu?
 
-Skripta u PDF formatu nalazi se na sljedećem linku: [Zadatci_iz_MA1__v2025_2026_-4.pdf](https://github.com/user-attachments/files/22048212/Zadatci_iz_MA1__v2025_2026_-4.pdf)
+Skripta u PDF formatu nalazi se [ovdje](https://github.com/user-attachments/files/22176205/main.pdf).
 
-# Pronašao/la sam grešku u skripti.
-Bio bih Vam zahvalan da mi se javite na mail (tomislav.franov@uniri.hr) ili da otvorite "Issue" ovdje na GitHub-u.
+# Pronašli ste pogrešku u skripti ili imate prijedlog za poboljšanje?
+Bio bih Vam vrlo zahvalan da mi to javite, što možete na sljedeće načine:
+- Javljanjem na mail (tomislav.franov@uniri.hr),
+- Otvaranjem *issue*-a ovdje na GitHub-u,
+- Napravite *fork* repozitorija, samostalno napravite promjene koje u skripti želite vidjeti i napravite *pull request*.
