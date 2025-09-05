@@ -20,7 +20,7 @@
 \contentsline {section}{\numberline {4.2}Injekcija, surjekcija i bijekcija. Slika i praslika skupa}{93}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Kompozicija funkcija. Inverzna funkcija}{104}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Rastav na parcijalne razlomke}{114}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Prirodna domena}{117}{section.4.5}%
+\contentsline {section}{\numberline {4.5}Prirodna domena}{116}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Periodične funkcije}{121}{section.4.6}%
 \pagebreak [4]
 \contentsline {chapter}{\numberline {5}Nizovi}{129}{chapter.5}%
