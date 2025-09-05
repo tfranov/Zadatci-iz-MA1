@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex main.idx"] 1757087732.98028 "main.idx" "main.ind" "main" 1757087846.54448 0
-  "main.idx" 1757087834.17018 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1757087732.98028 "main.idx" "main.ind" "main" 1757088363.85079 0
+  "main.idx" 1757088349.82642 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1757087832.36484 "/home/tomi/Documents/repoz2/Zadatci-iz-MA1/main.tex" "main.pdf" "main" 1757087846.54471 0
+["pdflatex"] 1757088347.75209 "/home/tomi/Documents/repoz2/Zadatci-iz-MA1/main.tex" "main.pdf" "main" 1757088363.85101 0
   "/home/tomi/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/larm1200.tfm" 1757081442.7157 3240 c2435f2b5cd66d4930bc29b8df87967e ""
   "/home/tomi/Documents/repoz2/Zadatci-iz-MA1/main.tex" 1757087817.29432 4884 154a1cf21ca86932af276a27b4ca8fd0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -298,12 +298,12 @@
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1757075765 3605789 e09902ba7ea89d4ed39702706b586fc4 ""
   "/usr/local/texlive/2025/texmf.cnf" 1757075399.67089 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "bibliografija.tex" 1757067523.44541 2159 3d3d8098cd0ef99f38ae2c8a5ba5d241 ""
-  "main.aux" 1757087846.13408 15581 7739eef137f314624968ebbaca880a8c "pdflatex"
+  "main.aux" 1757088363.27833 15581 7739eef137f314624968ebbaca880a8c "pdflatex"
   "main.ind" 1757087757.51883 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1757087846.13808 6528 951031c90f8413e23b6f4b8fe1eac449 "pdflatex"
+  "main.out" 1757088363.28233 6528 951031c90f8413e23b6f4b8fe1eac449 "pdflatex"
   "main.tex" 1757087817.29432 4884 154a1cf21ca86932af276a27b4ca8fd0 ""
-  "main.toc" 1757087846.13808 2859 63c728019bdf8de5f380ed2c623eaecd "pdflatex"
-  "poglavlja/ch1.tex" 1757067523.50941 52090 71239e8e1236857613f486bb4409394e ""
+  "main.toc" 1757088363.28633 2859 63c728019bdf8de5f380ed2c623eaecd "pdflatex"
+  "poglavlja/ch1.tex" 1757088347.15444 52089 d3487a8593d83d590f9207f600767735 ""
   "poglavlja/ch2.tex" 1757067523.50941 24898 bfc71f869b39e5eb481086e5ff617544 ""
   "poglavlja/ch3.tex" 1757087757.54683 82320 f79a6372e381be4f3e657fae374b09e5 ""
   "poglavlja/ch4.tex" 1757067523.50941 85079 318c4c51cf65f3c42848fc7ac423b2b8 ""
