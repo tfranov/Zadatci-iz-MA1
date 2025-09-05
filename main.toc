@@ -31,3 +31,5 @@
 \contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{163}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{163}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{169}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Derivacija}{178}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Definicija derivacije}{178}{section.7.1}%
