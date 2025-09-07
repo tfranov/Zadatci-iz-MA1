@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.4)  5 SEP 2025 20:01
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.4)  7 SEP 2025 17:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1278,20 +1278,28 @@ Poglavlje 6.
 
 [177]
 Poglavlje 7.
-(./poglavlja/ch7.tex) (./bibliografija.tex
+(./poglavlja/ch7.tex
 
 [178
 
 ]
+
+[179]
+
+[180]
+
+[181]) (./bibliografija.tex
+
+[182]
 Package babel Info: 'russian' activates 'russian' shorthands.
 (babel)             Reported on input line 23.
 
 
-[179
+[183
 
 ])
 
-[180] (./main.aux)
+[184] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
@@ -1308,4 +1316,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  103i,16n,107p,2744b,2442s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (180 pages, 2628136 bytes).
+Output written on main.xdv (184 pages, 2677824 bytes).

@@ -1,1 +1,99 @@
-TBD
+\begin{definition}
+Neka je $I\subseteq \mathbb{R}$ otvoreni interval. Kažemo da je $f : I\to \mathbb{R}$ \textbf{diferencijabilna} (ili \textit{derivabilna}) u točki $c\in I$ ako postoji $\lim\limits_{x\to c}{\dfrac{f(x)-f(c)}{x-c}}\in \mathbb{R}$. Taj broj zovemo \textbf{derivacija} funkcije $f$ u točki $c$ i pišemo
+$$f'(c)=\lim\limits_ {x\to c}{\dfrac{f(x)-f(c)}{x-c}}.$$
+Često se koristi i oznaka $\dfrac{\mathrm{d}f}{\mathrm{d}x}(c)$. Nadalje, kažemo da je $f$ \textbf{diferencijabilna na $I$} ako je diferencijabilna u svakoj točki intervala $I$.
+\end{definition}
+Ako je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I\to \mathbb{R}$ diferencijabilna na $I$, onda funkciju $x\mapsto f'(x)$ zovemo \textbf{derivacija} funkcije $f$. Tako definiranu funkciju označavamo s $f'$, s $\dfrac{\mathrm{d}f}{\mathrm{d}x}$, ili s $\dfrac{\mathrm{d}}{\mathrm{d}x}\left(f(x)\right)$.
+\begin{remark}
+Neka je $I\subseteq \mathbb{R}$. Tada je $f : I\to \mathbb{R}$ diferencijabilna u $c\in I$ ako i samo ako postoji $\lim\limits_{h\to 0}{\dfrac{f(c+h)-f(c)}{h}}$. Tada je
+$$f'(c)=\lim\limits_{h\to 0}{\dfrac{f(c+h)-f(c)}{h}}$$
+\end{remark}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da je $x\mapsto x^3$ diferencijabilna na $\mathbb{R}$ i odredite joj derivaciju.
+\item[b)] Je li $f : \mathbb{R}\to \mathbb{R}$,
+$$f(x)=\begin{cases}
+x^3, & x\geq 0,\\
+x, & x\leq 0.
+\end{cases}$$
+diferencijabilna na $\mathbb{R}$?
+\item[c)] Dokažite da je $x\mapsto \ln{x}$ diferencijabilna na $\langle 0,\infty\rangle$ i odredite joj derivaciju.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka je $c\in \mathbb{R}$ proizvoljan. Vrijedi
+$$\lim\limits_{x\to c}{\dfrac{x^3-c^3}{x-c}}=\lim\limits_{x\to c}{\dfrac{(x-c)(x^2+xc+c^2)}{x-c}}=\lim\limits_{x\to c}{\left(x^2+xc+c^2\right)}=3c^2.$$
+Dakle, za sve $c\in \mathbb{R}$, $x\mapsto x^3$ je diferencijabilna u $c$ i vrijedi $f'(c)=3c^2$. Stoga je derivacija funkcije $x\mapsto x^3$ funkcija $x\mapsto 3x^2$.
+
+b) Tvrdimo da $f$ nije diferencijabilna u $0$. Zaista, vrijedi $$\lim\limits_{x\to 0+}{f(x)}=\lim\limits_{x\to 0+}{\dfrac{x^3}{x}}=0,$$
+a s druge strane imamo 
+$$\lim\limits_{x\to 0-}{f(x)}=\lim\limits_{x\to 0-}{\dfrac{x}{x}}=1,$$
+dakle $f$ nije diferencijabilna na $\mathbb{R}$.
+
+c) Neka je $c>0$ proizvoljan. Imamo
+$$\lim\limits_{x\to c}{\dfrac{\ln{x}-\ln{c}}{x-c}}=\lim\limits_{x\to c}{\dfrac{\ln{\dfrac{x}{c}}}{x-c}}=\lim\limits_{x\to c}{\ln\left(\left(\dfrac{x}{c}\right)^\frac{1}{x-c}\right)}.$$
+Uočimo da vrijedi
+$$\lim\limits_{x\to c}{\left(\dfrac{x}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(\dfrac{x-c+c}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(1+\dfrac{x-c}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(\left(1+\dfrac{x-c}{c}\right)^\frac{c}{x-c}\right)^\frac{1}{c}}.$$
+Želimo supstituirati $y=\dfrac{x-c}{c}$, pa se želimo uvjeriti da su zadovoljeni svi uvjeti teorema 13 u \cite{14}. Zaista, neka su $f, g : \langle 0, \infty\rangle\setminus\{c\}\to \mathbb{R}$ dane s 
+$$f(x)=\left((1+x)^\frac{1}{x}\right)^\frac{1}{c},\;\;\;\;g(x)=\dfrac{x-c}{c}.$$ 
+Tada je $f\circ g$ definirana na $\langle 0, \infty\rangle\setminus\{c\}$, $f$ ima limes $0$ u $c$ i $g$ ima limes u $e^\frac{1}{c}$ u $0$, te npr. za $\epsilon=c$ vrijedi da je $f(x)\neq 0$ za sve $x\in \langle c-\epsilon, c+\epsilon\rangle$, $x\neq c$, budući da je na tom intervalu $f$ strogo monotona. Stoga je
+$$\lim\limits_{x\to c}{\left(\dfrac{x}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(\left(1+\dfrac{x-c}{c}\right)^\frac{c}{x-c}\right)^\frac{1}{c}}=\lim\limits_{y\to 0}{\left((1+y)^\frac{1}{y}\right)^\frac{1}{c}}=e^\frac{1}{c}.$$
+Odavde i iz činjenice da je $\ln$ neprekidna u $c$ $\left(\text{pa ima limes u }f(c)\right)$ i strogo rastuća, analognom primjenom teorema 13 u \cite{14} slijedi
+$$\lim\limits_{x\to c}{\ln\left(\left(\dfrac{x}{c}\right)^\frac{1}{x-c}\right)}=\ln{e^\frac{1}{c}}=\dfrac{1}{c}.$$
+Stoga je $\ln$ diferencijabilna na $\langle 0, \infty\rangle$ i njezina derivacija je $x\mapsto \dfrac{1}{x}$.
+\end{proof}
+\begin{remark}
+Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna u točki $c\in I$. Tada je $f$ i neprekidna u $c$.
+\end{remark}
+Obrat gornje napomene općenito ne vrijedi. Funkcije koje su neprekidne, ali ne i diferencijabilne u danoj točki u toj točki imaju "šiljak".
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Postoji li $c>0$ takav da je $f : \mathbb{R}\to \mathbb{R}$,
+$$f(x)=\begin{cases}
+cx^3,& x\geq 0,\\
+-x^2-1-c,& x<0.
+\end{cases}$$
+diferencijabilna na $\mathbb{R}$?
+\item[b)] Odredite sve $a, b\in \mathbb{R}$ takve da je $g : \mathbb{R}\to \mathbb{R}$,
+$$g(x)=\begin{cases}
+x^3,& x\leq 1,\\
+ax+b,& x>1.
+\end{cases}$$
+\end{itemize}
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna u $c\in I$. Dokažite da ako je $f'(c)>0$, da tada postoji $\delta>0$ takav da vrijedi
+$$
+\begin{cases}
+x\in \langle c-\delta, c\rangle\cap I\Rightarrow f(x)<f(c),\\
+x\in \langle c, c+\delta\rangle\cap I\Rightarrow f(x)>f(c).
+\end{cases}
+$$
+\item[b)] Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna na $I$. Koristeći a) i do sada poznate rezultate, dokažite da ako za sve $x\in I$ vrijedi $f'(x)\geq 0$, da je tada $f$ rastuća.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Po definiciji, za $\epsilon=f'(c)$ postoji $\delta>0$ takav da za sve $x\in I$ takve da je $0<|x-c|<\delta$ vrijedi
+$$0<\dfrac{f(x)-f(c)}{x-c}<2f'(c)$$
+Ako je $x>c$, tj. $x\in \langle c,c+\delta\rangle\cap I$, tada množenjem nejednakosti $0<\dfrac{f(x)-f(c)}{x-c}$ s $x-c$ dobivamo $f(x)>f(c)$. Analogno za $x<c$, odnosno $x\in \langle c-\delta, c\rangle\cap I$ dobivamo $f(x)<f(c)$.
+
+b) Pretpostavimo suprotno, tj. da postoje $x_1, x_2\in I$ takvi da je $x_1<x_2$, ali $f(x_1)>f(x_2)$. Ideja dokaza će biti sljedeća -- u segmentu $[x_1, x_2]$ ćemo promotriti najveći element za koji $f$ postiže maksimum na tom segmentu. Najprije ćemo dokazati da taj najveći element uopće postoji i to tako da ga definiramo kao supremum svih elemenata koji postižu maksimum na segmentu. Svaki element u segmentu strogo veći od tog elementa će dakle biti strogo manji od tog elementa, što će biti u kontradikciji s a) dijelom zadatka.
+
+Neka je 
+$$S=\left\{x\in [x_1, x_2] : f(x)=\max{f|_{[x_1, x_2]}}\right\}.$$ 
+Uočimo da je $f$ neprekidna na segmentu $[x_1, x_2]$ i na tom segmentu nije konstanta, pa postoji bar jedan $x_i\in [x_1, x_2]$ takav da je $f(x_i)=\max{f|_{[x_1, x_2]}}$. Dakle, postoji $\sup{S}$.
+
+Tvrdimo da je $\sup{S}\neq x_2$. Zaista, po a) dijelu zadatka postoji $\delta>0$ takav da za sve $x\in \langle x_2-\delta, x_2\rangle\cap I$ vrijedi $f(x)<f(x_2)$. S druge strane, po lemi \ref{14} imamo da za $\epsilon=\delta$ postoji $x_0\in [x_1, x_2]$ takav da je $f(x_0)=\max{f|_{[x_1, x_2]}}$ i vrijedi $x_2-\delta<x_0$. Pritom vrijedi $x_0<x_2$, jer kad bi bilo $x_0=x_2$, onda bi vrijedilo $f(x_2)=\max{f|_{[x_1, x_2]}}$, što je kontradikcija s činjenicom da je $f(x_2)<f(x_1)$. Sada iz činjenice da je $x_0\in \langle x_2-\delta, x_2\rangle\cap I$ slijedi da je $f(x_0)<f(x_2)$, što je kontradikcija s činjenicom da je $f(x_0)=\max{f|_{[x_1, x_2]}}$.
+
+Kako je $S\subseteq [x_1, x_2]$, to je $\sup{S}\leq \sup{[x_1, x_2]}=x_2$, pa iz činjenice da je $\sup{S}\neq x_2$ imamo da je $\sup{S}<x_2$. Dokažimo i da je
+$\sup{S}=\max{S}.$
+Zaista, po lemi \ref{14} za svaki $n\in \mathbb{N}$ postoji $z_n\in [x_1, x_2]$ takav da je $f(z_n)=\max{f|_{[x_1, x_2]}}$ i vrijedi $\sup{S}-\dfrac{1}{n}<z_n$. Promotrimo niz $(z_n)$. Očito vrijedi $z_n\leq \sup{S}$, pa po kriteriju sendviča imamo $\lim\limits_{x\to\infty}{z_n}=\sup{S}$, pa iz činjenice da je $f$ diferencijabilna, pa i neprekidna u $\sup{S}$ slijedi
+$$f(\sup{S})=\lim\limits_{x\to\infty}{f(z_n)}=\lim\limits_{x\to\infty}{\max{f|_{[x_1, x_2]}}}=\max{f|_{[x_1, x_2]}}.$$
+Odavde imamo da je $\sup{S}\in S$, pa je i $\sup{S}=\max{S}$.
+
+Konačno, kako je $f'(\max{S})>0$, postoji $\delta>0$ takav da za sve $x\in \langle \max{S}, \max{S}+\delta\rangle\cap I$ vrijedi $f(x)>f(\max{S})$. Neka je $\delta'=\min\{\delta, x_2-\max{S}\}$. Tada je 
+$$\max{S}+\delta'\leq \max{S}+x_2-\max{S}=x_2,$$
+pa za sve $\langle \max{S}, \max{S}+\delta'\rangle\cap I\subseteq \langle \max{S}, x_2\rangle$ vrijedi $f(x)>f(\max{S})$. No ovo znači da npr. vrijedi $$f\left(\max{S}+\dfrac{\delta'}{2}\right)>f(\max{S}).$$ S druge strane, kako je $\max{S}+\dfrac{\delta'}{2}\in [x_1, x_2]$ i $\max{S}+\dfrac{\delta'}{2}>\max{S}$, vrijedi $\max{S}+\dfrac{\delta'}{2}\notin S$,
+pa je $f\left(\max{S}+\dfrac{\delta'}{2}\right)<\max{f|_{[x_1, x_2]}}=f(\max{S})$, kontradikcija!
+\end{proof}
