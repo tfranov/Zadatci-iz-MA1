@@ -1,14 +1,19 @@
+\section{Definicija derivacije}
 \begin{definition}
-Neka je $I\subseteq \mathbb{R}$ otvoreni interval. Kažemo da je $f : I\to \mathbb{R}$ \textbf{diferencijabilna} (ili \textit{derivabilna}) u točki $c\in I$ ako postoji $\lim\limits_{x\to c}{\dfrac{f(x)-f(c)}{x-c}}\in \mathbb{R}$. Taj broj zovemo \textbf{derivacija} funkcije $f$ u točki $c$ i pišemo
-$$f'(c)=\lim\limits_ {x\to c}{\dfrac{f(x)-f(c)}{x-c}}.$$
-Često se koristi i oznaka $\dfrac{\mathrm{d}f}{\mathrm{d}x}(c)$. Nadalje, kažemo da je $f$ \textbf{diferencijabilna na $I$} ako je diferencijabilna u svakoj točki intervala $I$.
+Neka je $I\subseteq \mathbb{R}$ otvoreni interval. Kažemo da je $f : I\to \mathbb{R}$ \textbf{diferencijabilna} (ili \textit{derivabilna}) u točki $c\in I$ ako postoji $\lim\limits_{x\to c}{\dfrac{f(x)-f(c)}{x-c}}\in \mathbb{R}$. Taj broj zovemo \textbf{derivacija} funkcije $f$ u točki $c$ i označavamo ga s $f'(c)$. Nadalje, kažemo da je $f$ \textbf{diferencijabilna na $I$} ako je diferencijabilna u svakoj točki intervala $I$.
 \end{definition}
-Ako je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I\to \mathbb{R}$ diferencijabilna na $I$, onda funkciju $x\mapsto f'(x)$ zovemo \textbf{derivacija} funkcije $f$. Tako definiranu funkciju označavamo s $f'$, s $\dfrac{\mathrm{d}f}{\mathrm{d}x}$, ili s $\dfrac{\mathrm{d}}{\mathrm{d}x}\left(f(x)\right)$.
+Često se koristi i oznaka $\dfrac{\mathrm{d}f}{\mathrm{d}x}(c)$.
+
+Ako je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I\to \mathbb{R}$ diferencijabilna na $I$, onda funkciju $x\mapsto f'(x)$ zovemo \textbf{derivacija} funkcije $f$. Tako definiranu funkciju označavamo s $f'$, $\left(f(x)\right)'$ $\dfrac{\mathrm{d}f}{\mathrm{d}x}$, ili s $\dfrac{\mathrm{d}}{\mathrm{d}x}\left(f(x)\right)$.
+\textbf{MAKNUTI D/DX GDJE GOD MOGUCE}
 \begin{remark}
-Neka je $I\subseteq \mathbb{R}$. Tada je $f : I\to \mathbb{R}$ diferencijabilna u $c\in I$ ako i samo ako postoji $\lim\limits_{h\to 0}{\dfrac{f(c+h)-f(c)}{h}}$. Tada je
+Neka je $I\subseteq \mathbb{R}$ otvoreni interval. Tada je $f : I\to \mathbb{R}$ diferencijabilna u $c\in I$ ako i samo ako postoji $\lim\limits_{h\to 0}{\dfrac{f(c+h)-f(c)}{h}}$. Tada je
 $$f'(c)=\lim\limits_{h\to 0}{\dfrac{f(c+h)-f(c)}{h}}$$
 \end{remark}
+\begin{definition} Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $c\in I$. Ako postoji limes $\lim\limits_ {x\to c+}{\dfrac{f(x)-f(c)}{x-c}}\in \mathbb{R}$, taj broj zovemo \textbf{desna derivacija} funkcije $f$ u točki $c$ i označavamo ga s $f_d'(c)$. Analogno, ako postoji limes $\lim\limits_ {x\to c-}{\dfrac{f(x)-f(c)}{x-c}}\in \mathbb{R}$, zovemo ga \textbf{lijeva derivacija} funkcije $f$ u točki $c$ i označavamo ga s $f_l'(c)$.
+\end{definition}
 \begin{exercise} \textbf{}
+\label{firstder}
 \begin{itemize}
 \item[a)] Dokažite da je $x\mapsto x^3$ diferencijabilna na $\mathbb{R}$ i odredite joj derivaciju.
 \item[b)] Je li $f : \mathbb{R}\to \mathbb{R}$,
@@ -17,7 +22,6 @@ x^3, & x\geq 0,\\
 x, & x\leq 0.
 \end{cases}$$
 diferencijabilna na $\mathbb{R}$?
-\item[c)] Dokažite da je $x\mapsto \ln{x}$ diferencijabilna na $\langle 0,\infty\rangle$ i odredite joj derivaciju.
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -25,27 +29,30 @@ a) Neka je $c\in \mathbb{R}$ proizvoljan. Vrijedi
 $$\lim\limits_{x\to c}{\dfrac{x^3-c^3}{x-c}}=\lim\limits_{x\to c}{\dfrac{(x-c)(x^2+xc+c^2)}{x-c}}=\lim\limits_{x\to c}{\left(x^2+xc+c^2\right)}=3c^2.$$
 Dakle, za sve $c\in \mathbb{R}$, $x\mapsto x^3$ je diferencijabilna u $c$ i vrijedi $f'(c)=3c^2$. Stoga je derivacija funkcije $x\mapsto x^3$ funkcija $x\mapsto 3x^2$.
 
-b) Tvrdimo da $f$ nije diferencijabilna u $0$. Zaista, vrijedi $$\lim\limits_{x\to 0+}{f(x)}=\lim\limits_{x\to 0+}{\dfrac{x^3}{x}}=0,$$
+b) Tvrdimo da $f$ nije diferencijabilna u $0$. Zaista, vrijedi $$f_d'(0)=\lim\limits_{x\to 0+}{f'(x)}=\lim\limits_{x\to 0+}{\dfrac{x^3}{x}}=0,$$
 a s druge strane imamo 
-$$\lim\limits_{x\to 0-}{f(x)}=\lim\limits_{x\to 0-}{\dfrac{x}{x}}=1,$$
+$$f_l'(0)=\lim\limits_{x\to 0-}{f'(x)}=\lim\limits_{x\to 0-}{\dfrac{x}{x}}=1,$$
 dakle $f$ nije diferencijabilna na $\mathbb{R}$.
-
-c) Neka je $c>0$ proizvoljan. Imamo
-$$\lim\limits_{x\to c}{\dfrac{\ln{x}-\ln{c}}{x-c}}=\lim\limits_{x\to c}{\dfrac{\ln{\dfrac{x}{c}}}{x-c}}=\lim\limits_{x\to c}{\ln\left(\left(\dfrac{x}{c}\right)^\frac{1}{x-c}\right)}.$$
-Uočimo da vrijedi
-$$\lim\limits_{x\to c}{\left(\dfrac{x}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(\dfrac{x-c+c}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(1+\dfrac{x-c}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(\left(1+\dfrac{x-c}{c}\right)^\frac{c}{x-c}\right)^\frac{1}{c}}.$$
-Želimo supstituirati $y=\dfrac{x-c}{c}$, pa se želimo uvjeriti da su zadovoljeni svi uvjeti teorema 13 u \cite{14}. Zaista, neka su $f, g : \langle 0, \infty\rangle\setminus\{c\}\to \mathbb{R}$ dane s 
-$$f(x)=\left((1+x)^\frac{1}{x}\right)^\frac{1}{c},\;\;\;\;g(x)=\dfrac{x-c}{c}.$$ 
-Tada je $f\circ g$ definirana na $\langle 0, \infty\rangle\setminus\{c\}$, $f$ ima limes $0$ u $c$ i $g$ ima limes u $e^\frac{1}{c}$ u $0$, te npr. za $\epsilon=c$ vrijedi da je $f(x)\neq 0$ za sve $x\in \langle c-\epsilon, c+\epsilon\rangle$, $x\neq c$, budući da je na tom intervalu $f$ strogo monotona. Stoga je
-$$\lim\limits_{x\to c}{\left(\dfrac{x}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(\left(1+\dfrac{x-c}{c}\right)^\frac{c}{x-c}\right)^\frac{1}{c}}=\lim\limits_{y\to 0}{\left((1+y)^\frac{1}{y}\right)^\frac{1}{c}}=e^\frac{1}{c}.$$
-Odavde i iz činjenice da je $\ln$ neprekidna u $c$ $\left(\text{pa ima limes u }f(c)\right)$ i strogo rastuća, analognom primjenom teorema 13 u \cite{14} slijedi
-$$\lim\limits_{x\to c}{\ln\left(\left(\dfrac{x}{c}\right)^\frac{1}{x-c}\right)}=\ln{e^\frac{1}{c}}=\dfrac{1}{c}.$$
-Stoga je $\ln$ diferencijabilna na $\langle 0, \infty\rangle$ i njezina derivacija je $x\mapsto \dfrac{1}{x}$.
+\end{proof}
+\textbf{OVDJE DODATI ZADATKE IZ OSNOVNIH OPERACIJA S DERIVACIJAMA!}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Navedite primjer funkcije $f : \mathbb{R}\to \mathbb{R}$ takve da je $f'(1)=1$ i $f'(5)=2$.
+\item[b)] Navedite primjer funkcije $f : \mathbb{R}\to \mathbb{R}$ koja je neprekidna na $\mathbb{R}$, te diferencijabilna svugdje osim u točkama $1$ i $2$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Znamo da je npr. za $a\in \mathbb{R}$, $\left(ax\right)'=a$, stoga možemo uzeti npr. $f : \mathbb{R}\to \mathbb{R}$,
+$$f(x)=\begin{cases}
+x, & x\leq 2,\\
+5x, & x\geq 2.
+\end{cases}$$
+Primijetimo da je $f'(1)=(x)'(1)=1$. Zaista, iz činjenice da za svaki $\epsilon>0$ postoji $\delta>0$ takav da za svaki $x\in I$ takav da je $0<|x-1|<\delta$ slijedi $|\dfrac{f(x)-1}{x-1}-f'(1)|<\epsilon$, za $\delta'=\min\left\{\delta, 1\right\}$ posebno imamo da iz $0<|x-1|<1$, tj. $x\in \langle 0, 2\rangle\setminus\{1\}$ vrijedi $f(x)=x$, i $|\dfrac{x-1}{x-1}-f'(1)|=|1-f'(1)|=<\epsilon$, pa kako to vrijedi za svaki $\epsilon>0$ zaključujemo da je $f'(1)=1$. \textbf{OVAJ ARGUMENT STAVITI U PRETHODNI ZADATAK!!}.
 \end{proof}
 \begin{remark}
 Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna u točki $c\in I$. Tada je $f$ i neprekidna u $c$.
 \end{remark}
-Obrat gornje napomene općenito ne vrijedi. Funkcije koje su neprekidne, ali ne i diferencijabilne u danoj točki u toj točki imaju "šiljak".
+Obrat gornje napomene općenito ne vrijedi. Funkcije koje su neprekidne, ali ne i diferencijabilne u danoj točki imaju "šiljak" u toj točki.
 \begin{exercise} \textbf{}
 \begin{itemize}
 \item[a)] Postoji li $c>0$ takav da je $f : \mathbb{R}\to \mathbb{R}$,
@@ -59,8 +66,23 @@ $$g(x)=\begin{cases}
 x^3,& x\leq 1,\\
 ax+b,& x>1.
 \end{cases}$$
+diferencijabilna na $\mathbb{R}$.
+\item[c)] Odredite neku funkciju $h : \langle -3, 3\rangle\to \mathbb{R}$ takvu da funkcija
+$$f(x)=\begin{cases}
+-3,& x\leq 3,\\
+h(x),& x\in \langle -3, 3\rangle,\\
+3,& x\geq 3.
+\end{cases}$$
+bude diferencijabilna na $\mathbb{R}$.
 \end{itemize}
 \end{exercise}
+\begin{proof}[Rješenje]
+a) Pretpostavimo da postoji takav $c>0$. Da bi $f$ bila diferencijabilna u $0$, mora biti i neprekidna u $0$. Vrijedi
+$$\lim\limits_{x\to 0+}{f(x)}=\lim\limits_{x\to 0+}{cx^3}=0,\;\; \lim\limits_{x\to 0-}{f(x)}=\lim\limits_{x\to 0-}{-x^2-1-c}=-1-c,$$
+Kako je $-1-c<0$, lijevi i desni limes ne mogu biti jednaki, pa ne postoji takav $c$.
+
+b) Slično kao i u a), uspoređivanjem lijevog i desnog limesa vidimo da mora vrijediti $a+b=1$. S druge strane, imamo $g_d'(1)=\dfrac{\mathrm{d}}{\mathrm{d}x}(ax+b)(1)=a$ i analogno $g_l'(1)=3$, stoga mora vrijediti $a=3$. Odavde imamo da je $b=-2$. Za ovako odabrane $a$ i $b$ je $g$ diferencijabilna u $0$. Ako je $x>1$, onda je $g'(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}(ax+b)$, a za $x<1$ imamo $g'(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}(x^3)$. Stoga je $g$ diferencijabilna na $\mathbb{R}$ ako i samo ako je $a=3$ i $b=-2$.
+\end{proof}
 \begin{exercise} \textbf{}
 \begin{itemize}
 \item[a)] Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna u $c\in I$. Dokažite da ako je $f'(c)>0$, da tada postoji $\delta>0$ takav da vrijedi
@@ -70,15 +92,37 @@ x\in \langle c-\delta, c\rangle\cap I\Rightarrow f(x)<f(c),\\
 x\in \langle c, c+\delta\rangle\cap I\Rightarrow f(x)>f(c).
 \end{cases}
 $$
-\item[b)] Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna na $I$. Koristeći a) i do sada poznate rezultate, dokažite da ako za sve $x\in I$ vrijedi $f'(x)\geq 0$, da je tada $f$ rastuća.
+\item[b)] \textbf{TODO!!}
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
 a) Po definiciji, za $\epsilon=f'(c)$ postoji $\delta>0$ takav da za sve $x\in I$ takve da je $0<|x-c|<\delta$ vrijedi
 $$0<\dfrac{f(x)-f(c)}{x-c}<2f'(c)$$
 Ako je $x>c$, tj. $x\in \langle c,c+\delta\rangle\cap I$, tada množenjem nejednakosti $0<\dfrac{f(x)-f(c)}{x-c}$ s $x-c$ dobivamo $f(x)>f(c)$. Analogno za $x<c$, odnosno $x\in \langle c-\delta, c\rangle\cap I$ dobivamo $f(x)<f(c)$.
+\end{proof}
 
-b) Pretpostavimo suprotno, tj. da postoje $x_1, x_2\in I$ takvi da je $x_1<x_2$, ali $f(x_1)>f(x_2)$. Ideja dokaza će biti sljedeća -- u segmentu $[x_1, x_2]$ ćemo promotriti najveći element za koji $f$ postiže maksimum na tom segmentu. Najprije ćemo dokazati da taj najveći element uopće postoji i to tako da ga definiramo kao supremum svih elemenata koji postižu maksimum na segmentu. Svaki element u segmentu strogo veći od tog elementa će dakle biti strogo manji od tog elementa, što će biti u kontradikciji s a) dijelom zadatka.
+\begin{exercise}
+Dokažite da je $x\mapsto \ln{x}$ diferencijabilna na $\langle 0,\infty\rangle$ i odredite joj derivaciju.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je $c>0$ proizvoljan. Imamo
+$$\lim\limits_{x\to c}{\dfrac{\ln{x}-\ln{c}}{x-c}}=\lim\limits_{x\to c}{\dfrac{\ln{\dfrac{x}{c}}}{x-c}}=\lim\limits_{x\to c}{\ln\left(\left(\dfrac{x}{c}\right)^\frac{1}{x-c}\right)}.$$
+Uočimo da vrijedi
+$$\lim\limits_{x\to c}{\left(\dfrac{x}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(\dfrac{x-c+c}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(1+\dfrac{x-c}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(\left(1+\dfrac{x-c}{c}\right)^\frac{c}{x-c}\right)^\frac{1}{c}}.$$
+Želimo supstituirati $y=\dfrac{x-c}{c}$, pa se želimo uvjeriti da su zadovoljeni svi uvjeti teorema 13 u \cite{14}. Zaista, neka su $f, g : \langle 0, \infty\rangle\setminus\{c\}\to \mathbb{R}$ dane s 
+$$f(x)=\left((1+x)^\frac{1}{x}\right)^\frac{1}{c},\;\;\;\;g(x)=\dfrac{x-c}{c}.$$ 
+Tada je $f\circ g$ definirana na $\langle 0, \infty\rangle\setminus\{c\}$, $f$ ima limes $0$ u $c$ i $g$ ima limes u $e^\frac{1}{c}$ u $0$, te npr. za $\epsilon=c$ vrijedi da je $f(x)\neq 0$ za sve $x\in \langle c-\epsilon, c+\epsilon\rangle$, $x\neq c$, budući da je na tom intervalu $f$ strogo monotona. Stoga je
+$$\lim\limits_{x\to c}{\left(\dfrac{x}{c}\right)^\frac{1}{x-c}}=\lim\limits_{x\to c}{\left(\left(1+\dfrac{x-c}{c}\right)^\frac{c}{x-c}\right)^\frac{1}{c}}=\lim\limits_{y\to 0}{\left((1+y)^\frac{1}{y}\right)^\frac{1}{c}}=e^\frac{1}{c}.$$
+Odavde i iz činjenice da je $\ln$ neprekidna u $c$ $\left(\text{pa ima limes u }f(c)\right)$ i strogo rastuća, analognom primjenom teorema 13 u \cite{14} slijedi
+$$\lim\limits_{x\to c}{\ln\left(\left(\dfrac{x}{c}\right)^\frac{1}{x-c}\right)}=\ln{e^\frac{1}{c}}=\dfrac{1}{c}.$$
+Stoga je $\ln$ diferencijabilna na $\langle 0, \infty\rangle$ i njezina derivacija je $x\mapsto \dfrac{1}{x}$.
+\end{proof}
+\begin{exercise}
+Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna na $I$. Koristeći do sada poznate rezultate, dokažite da ako za sve $x\in I$ vrijedi $f'(x)\geq 0$, da je tada $f$ rastuća.
+\end{exercise}
+\begin{proof}[Rješenje]
+\textbf{ISPRAVITI REFERENCE NA A DIO ZADATKA!!}
+Pretpostavimo suprotno, tj. da postoje $x_1, x_2\in I$ takvi da je $x_1<x_2$, ali $f(x_1)>f(x_2)$. Ideja dokaza će biti sljedeća -- u segmentu $[x_1, x_2]$ ćemo promotriti najveći element za koji $f$ postiže maksimum na tom segmentu. Najprije ćemo dokazati da taj najveći element uopće postoji i to tako da ga definiramo kao supremum svih elemenata koji postižu maksimum na segmentu. Svaki element u segmentu strogo veći od tog elementa će dakle biti strogo manji od tog elementa, što će biti u kontradikciji s a) dijelom zadatka.
 
 Neka je 
 $$S=\left\{x\in [x_1, x_2] : f(x)=\max{f|_{[x_1, x_2]}}\right\}.$$ 
