@@ -63,6 +63,8 @@ b) Primijenit ćemo napomenu \ref{graphrem}.
 \item Graf funkcije $x\mapsto |x|-4$ je dobiven translacijom grafa funkcije $x\mapsto |x|$ četiri jedinične dužine prema dolje. Njezin graf je na slici $\ref{gr1}$ prikazan iscrtkanom linijom.
 \item Graf funkcije $x\mapsto \abs{|x|-4}$ je dobiven zrcaljenjem cijelog dijela grafa funkcije $x\mapsto |x|-4$ ispod osi $x$ u odnosu na os $x$, a ostali dijelovi su nepromijenjeni. Njezin graf je na slici \ref{gr1} prikazan punom linijom.
 \end{itemize}
+\end{proof}
+\newpage
 \begin{figure}[ht]
 \begin{subfigure}[t]{.5\textwidth}
 \centering
@@ -100,8 +102,6 @@ b) Primijenit ćemo napomenu \ref{graphrem}.
 \end{subfigure}
 \caption{\label{gr1} Grafovi funkcija iz zadatka \ref{exgraph1}} 
 \end{figure}
-\end{proof}
-\newpage
 \begin{exercise}
 \label{exgraph2}
 Nacrtajte graf funkcije $x\mapsto f(x)$, gdje je
@@ -393,7 +393,6 @@ Neka je $y\in \mathbb{R}$ takav da je $y\neq 6$. Tvrdimo da tada postoji $x\in \
 
 S druge strane, neka je $y\in \mathcal{R}(f)$. Tvrdimo da je $y\neq 6$. Zaista, postoji $x\in \mathbb{R}$ takav da je $y=f(x)$. Ako je $x<3$, onda je $y=2x<6$, te analogno $y=2x>6$ za $x>3$. Za $x=3$ imamo $y=0\neq 6$, pa je tvrdnja dokazana.
 \end{proof}
-\newpage
 \begin{exercise}
 \label{eximg2}
 Zadana je funkcija $f : \mathbb{R}\to \mathbb{R}$, $f(x)=\dfrac{1}{x^2+5x+8}$. Odredite $\mathcal{R}(f)$.
@@ -515,7 +514,7 @@ Iz grafa vidimo da je $f\left(\left[1, 2\right]\right)=[2, 7]$, te $f^{-1}\left(
 Dokažimo da je $f^{-1}\left(\left[2, 7\right]\right)=[-4, -3]\cup [1, 2]$. Trebamo pronaći sve $x\in \mathbb{R}$ takve da je $f(x)\in [2, 7]$, tj. trebamo riješiti sustav 
 $$\begin{cases}
 x^2+2x-1\geq 2,\\
-x^2+2x-1\leq 7,
+x^2+2x-1\leq 7.
 \end{cases}$$
 Vrijedi
 $$x^2+2x-1\geq 2\Leftrightarrow x^2+2x-3\geq 0\Leftrightarrow (x-1)(x+3)\geq 0\Leftrightarrow x\in \langle-\infty, -3]\cup [1,\infty\rangle.$$
@@ -796,6 +795,7 @@ Iz prethodne napomene slijedi da sve funkcije $$\mathrm{Sin}:=\sin|_{\left[-\fra
 imaju inverze, jer su strogo monotone. Funkciju $\arcsin:=\mathrm{Sin}^{-1}$ zovemo \textbf{arkus sinus}, $\arccos:=\mathrm{Cos}^{-1}$ je \textbf{arkus kosinus}, $\arctg:=\mathrm{Tg}^{-1}$ je \textbf{arkus tangens}, $\arcctg:=\mathrm{Ctg}^{-1}$ je \textbf{arkus kotangens}.
 
 Slično definiramo i tzv. \textbf{area funkcije} -- $\mathrm{arsh}:=\sh^{-1}$ je \textbf{area sinus hiperbolni}, $\mathrm{arch}:={\ch|_{[0, \infty\rangle}}^{-1}$ je \textbf{area kosinus hiperbolni}, $\mathrm{arth}:=\th^{-1}$ je \textbf{area tangens hiperbolni}, a $\mathrm{arcth}:={\cth|_{\langle 0, \infty\rangle}}^{-1}$
+\newpage
 \begin{exercise}
 Zadana je $f : \mathbb{R}\to \mathbb{R}$, $f(x)=x+2^x$. Dokažite da postoji $f^{-1}$ i odredite $f^{-1}(6)$.
 \end{exercise}
@@ -894,7 +894,7 @@ Prethodna tvrdnja je zapravo generalizacija teorema o jednakosti polinoma i na o
 \begin{exercise}
 Rastavite funkciju $x\mapsto \dfrac{1}{(x+2)(x+3)^2}$ na parcijalne razlomke.
 \end{exercise}
-\begin{proof}[Rješenje]
+\begin{proof*}
 Prema napomeni \ref{partfrac} znamo da postoje i jedinstveni su brojevi $A$, $B$ i $C$ takvi da za sve $x\in \mathbb{R}\setminus\{-2, -3\}$ vrijedi
 $$\dfrac{1}{(x+2)(x+3)^2}=\dfrac{A}{x+2}+\dfrac{B}{x+3}+\dfrac{C}{(x+3)^2}.$$
 Želimo odrediti $A$, $B$ i $C$. Pomnožimo li obje strane s $(x+2)(x+3)^2$, proširivanjem dobivamo da za sve $x\in \mathbb{R}\setminus\{-2, -3\}$ vrijedi
@@ -908,8 +908,12 @@ A+B=0, \\
 9A+6B+2C=1.
    \end{cases}$$
 Rješavanjem prethodnog sustava dobivamo $A=1$, $B=-1$ i $C=-1$, pa zaključujemo da je
-$$\dfrac{1}{(x+2)(x+3)^2}=\dfrac{1}{x+2}-\dfrac{1}{x+3}-\dfrac{1}{(x+3)^2}.$$
-\end{proof}
+\[
+\pushQED{\qed}
+\dfrac{1}{(x+2)(x+3)^2}=\dfrac{1}{x+2}-\dfrac{1}{x+3}-\dfrac{1}{(x+3)^2}.\qedhere
+\popQED
+\]
+\end{proof*}
 \begin{exercise}
 Dokažite da je funkcija zadana formulom $x\mapsto R(x)=\dfrac{x^3+6x^2+9x+1}{x^2+5x+6}$ injekcija na $\langle -2, \infty\rangle$.
 \end{exercise}
@@ -1024,11 +1028,10 @@ Analogno, ako je $k\leq 0$, onda također možemo "množiti" s  $x$ i $\dfrac{\p
 $$x\in \bigcup_{k\in \mathbb{Z}\setminus{\mathbb{N}}}{\left[\dfrac{1}{\dfrac{\pi}{4}-1+k\pi}, \dfrac{1}{-\dfrac{\pi}{4}-1+k\pi}\right]},$$
 te kako oba uvjeta obuhvaćaju i uvjet $x\neq 0$ (jer su ili oba "ruba" segmenta negativna ili oba pozitivna), slijedi da je prirodna domena početne funkcije upravo 
 \begin{align*}
-\bigcup_{k\in \mathbb{N}}{\left[\dfrac{1}{\dfrac{\pi}{4}-1+k\pi}, \dfrac{1}{-\dfrac{\pi}{4}-1+k\pi}\right]}&\cup \bigcup_{k\in \mathbb{Z}\setminus{\mathbb{N}}}{\left[\dfrac{1}{\dfrac{\pi}{4}-1+k\pi}, \dfrac{1}{-\dfrac{\pi}{4}-1+k\pi}\right]}\\
-=\bigcup_{k\in \mathbb{Z}}{\left[\dfrac{1}{\dfrac{\pi}{4}-1+k\pi}, \dfrac{1}{-\dfrac{\pi}{4}-1+k\pi}\right]}.
+&\bigcup_{k\in \mathbb{N}}{\left[\dfrac{1}{\dfrac{\pi}{4}-1+k\pi}, \dfrac{1}{-\dfrac{\pi}{4}-1+k\pi}\right]}\cup \bigcup_{k\in \mathbb{Z}\setminus{\mathbb{N}}}{\left[\dfrac{1}{\dfrac{\pi}{4}-1+k\pi}, \dfrac{1}{-\dfrac{\pi}{4}-1+k\pi}\right]}\\
+&=\bigcup_{k\in \mathbb{Z}}{\left[\dfrac{1}{\dfrac{\pi}{4}-1+k\pi}, \dfrac{1}{-\dfrac{\pi}{4}-1+k\pi}\right]}.\qedhere
 \end{align*}
 \end{proof}
-\newpage
 \begin{remark}
 Uočite da smo u prethodnom zadatku primijenili vrlo intuitivnu činjenicu da je za sve familije $\mathcal{F}=\{A_n : n\in \mathbb{Z}\}$, $\mathcal{F}'=\{A_n : n\in \mathbb{N}\}$ i $\mathcal{F}''=\{A_n : n\in \mathbb{Z}\setminus\mathbb{N}\}$,
 $$\bigcup_{k\in \mathbb{Z}}{A_n}=\bigcup_{k\in \mathbb{N}}{A_n}\cup \bigcup_{k\in \mathbb{Z}\setminus\mathbb{N}}{A_n}.$$
@@ -1104,7 +1107,7 @@ Nacrtajte grafove sljedećih funkcija. (Kada je interval cijeli $\mathbb{R}$, pr
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}
-\begin{axis}[axis lines=middle, xlabel=$x$,ylabel=$y$, xtick={-2,-1, 1,2,3,4,5,6}, ytick={1,2,3,4,5,6,7,8},xmin=-2.25,xmax=6.3,ymin=-0.5,ymax=9, samples=350]
+\begin{axis}[axis lines=middle, xlabel=$x$,ylabel=$y$, xtick={-2,-1, 1,2,3,4,5,6}, ytick={1,2,3,4,5,6,7,8},xmin=-2.25,xmax=6.3,ymin=-0.5,ymax=9, samples=400]
 
 \addplot[thick, color=black,domain=-2.26:6.24] {abs(abs(x*x-4*x-5)-2)};
 \end{axis}
@@ -1231,6 +1234,7 @@ Odredite prirodnu domenu sljedećih funkcija.
 \item[e)] $x\mapsto \ln\left(\dfrac{1}{\sin{x}}-2\cos{x}\right).$
 \end{AutoMultiColItemize}
 \end{exercise}
+\newpage
 \begin{exercise} Navedite primjer elementarne funkcije čija je prirodna domena:
 \begin{AutoMultiColItemize}
 \item[a)] $[1, \infty\rangle \setminus \{2\}$,

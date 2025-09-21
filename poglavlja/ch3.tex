@@ -166,7 +166,7 @@ a) Uočite da iz A-G nejednakosti slijedi $\dfrac{u+v}{2}\geq \sqrt{uv}$ (Ovo sm
 $$(x+y)(y+z)(x+z)\geq 2\sqrt{xy}\cdot 2\sqrt{yz}\cdot 2\sqrt{xz}=8xyz.$$
 
 b) Primjenom A-H nejednakosti dobivamo da za proizvoljan $n\in \mathbb{N}$ vrijedi
-$\dfrac{\dfrac{1}{x}+\dfrac{1}{y}+\dfrac{1}{z}}{3}\geq \dfrac{3}{x+y+z},$
+$$\dfrac{\dfrac{1}{x}+\dfrac{1}{y}+\dfrac{1}{z}}{3}\geq \dfrac{3}{x+y+z},$$
 pa korištenjem pretpostavke $\dfrac{1}{x}+\dfrac{1}{y}+\dfrac{1}{z}=1$ dobivamo $\dfrac{1}{3}\geq\dfrac{3}{x+y+z}$, odnosno $x+y+z\geq 9$, što smo i tvrdili.
 
 c) Uočimo da na prvi pogled ne možemo primijeniti neke od prethodnih nejednakosti da bi dokazali tvrdnju. Međutim, uočimo da je lijeva strana nejednakosti jednaka $a^2bc+ab^2c+abc^2$. Pokušajmo primijeniti A-G nejednakost na svaki od pribrojnika. Imamo
@@ -311,6 +311,7 @@ c) Uzmimo $A:=\left(\langle 0, 1\rangle\cap \mathbb{I}\right)\cup \left\{\dfrac{
 Sada uvodimo korisnu notaciju kojom ćemo se koristiti na više mjesta.
 
 \begin{definition}
+\label{usefulnotation}
 Neka je $f(x)$ neki realan broj u ovisnosti o $x\in A\subseteq \mathbb{R}$. Oznaka $S=\left\{f(x) : x\in A\right\}$ je zapravo oznaka za skup $S=\left\{y\in \mathbb{R} : \exists x\in A \;\mathrm{t.d.}\; y=f(x)\right\}$.
 \end{definition}
 
@@ -895,9 +896,13 @@ Vrijedi $\sqrt[n]{z}=\sqrt[n]{r}\left(\cos{\dfrac{\phi+2k\pi}{n}}+\sin{\dfrac{\p
 \begin{exercise}
 Odredite $\sqrt[3]{1+i}$.
 \end{exercise}
-\begin{proof}[Rješenje]
-$$\sqrt[3]{1+i}=\left\{\sqrt[6]{2}\left(\cos{\dfrac{\pi}{12}}+i\sin{\dfrac{\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{3\pi}{12}}+i\sin{\dfrac{3\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{17\pi}{12}}+i\sin{\dfrac{17\pi}{12}}\right)\right\}.$$
-\end{proof}
+\begin{proof*}
+\[
+\pushQED{\qed}
+\sqrt[3]{1+i}=\left\{\sqrt[6]{2}\left(\cos{\dfrac{\pi}{12}}+i\sin{\dfrac{\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{3\pi}{12}}+i\sin{\dfrac{3\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{17\pi}{12}}+i\sin{\dfrac{17\pi}{12}}\right)\right\}.
+\popQED
+\]
+\end{proof*}
 \newpage
 \section*{Zadatci za vježbu}
 \subsection*{Uvod u nejednakosti}

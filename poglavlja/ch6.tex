@@ -117,7 +117,7 @@ Dokažite sljedeće tvrdnje koristeći definiciju neprekidnosti funkcije.
 \item[b)] $f : \mathbb{R}\setminus\{0\}\to \mathbb{R}$, $f(x)=\dfrac{1}{x^2}$ je neprekidna na svojoj domeni.
 \end{itemize}
 \end{exercise}
-\begin{proof}[Rješenje]
+\begin{proof*}
 a) Neka su $c\in \mathbb{R}$ i $\epsilon>0$ proizvoljni. Uzmimo $$\delta=\min\left\{\dfrac{\epsilon}{1+2|c|}, 1\right\}.$$ 
 Tada za sve $x\in \mathbb{R}$ takve da je $|x-c|<\delta$ vrijedi 
 \begin{gather*}
@@ -132,8 +132,12 @@ Uzmimo
 $$\delta=\min\left\{\dfrac{\epsilon\cdot c^4}{4\left(1+2|c|\right)}, 1, \dfrac{|c|}{2}\right\}.$$
 Iz (\ref{42}) imamo $$|x|>|c|-\dfrac{|c|}{2}=\dfrac{|c|}{2},\; \text{ tj. }\; x^2>\dfrac{c^2}{4}.$$
 Nadalje, kao i u a) dijelu zadatka imamo $|x|+|c|\leq 1+2|c|$. Sve skupa, imamo
-$$\dfrac{|x^2-c^2|}{|x|^2|c|^2}=\dfrac{|x-c||x+c|}{x^2c^2}<\dfrac{4|x-c|(1+2|c|)}{c^4}<\epsilon.$$
-\end{proof}
+\[
+\pushQED{\qed}
+\dfrac{|x^2-c^2|}{|x|^2|c|^2}=\dfrac{|x-c||x+c|}{x^2c^2}<\dfrac{4|x-c|(1+2|c|)}{c^4}<\epsilon.\qedhere
+\popQED
+\]
+\end{proof*}
 \begin{remark}
 U b) dijelu zadatka \ref{cont2}, gornju među od $|x+c|$ mogli smo naći i na sljedeći način.
 
@@ -180,14 +184,20 @@ Dokažite sljedeće tvrdnje koristeći definiciju neprekidnosti funkcije.
 \item[b)] $f : \mathbb{R} \to \mathbb{R}$, $f(x)=\sin{x}$ je neprekidna na svojoj domeni.
 \end{itemize}
 \end{exercise}
-\begin{proof}[Rješenje]
+\begin{proof*}
 a) Neka je $\epsilon, c>0$ proizvoljni. Uzmemo li $\delta=\sqrt{c}\epsilon$, za sve $x\geq 0$ za koje je $|x-c|<\delta$ imamo
 $$|\sqrt{x}-\sqrt{c}|=\abs{\left(\sqrt{x}-\sqrt{c}\right)\dfrac{\sqrt{x}+\sqrt{c}}{\sqrt{x}+\sqrt{c}}}=\dfrac{|x-c|}{\sqrt{x}+\sqrt{c}}<\dfrac{|x-c|}{\sqrt{c}}<\epsilon$$
 
 b) Neka su $\epsilon>0$ i $c\in \mathbb{R}$ proizvoljni. Uzmemo li $\delta=\epsilon$, za sve $x\in \mathbb{R}$ za koje je $|x-c|<\delta$ vrijedi
 $$\abs{\sin{x}-\sin{c}}=\abs{2\cos{\dfrac{x+c}{2}}\sin{\dfrac{x-c}{2}}}\leq 2\abs{\sin{\dfrac{x-c}{2}}},$$
-gdje smo iskoristili činjenicu da je $\abs{\cos{\dfrac{x+c}{2}}}\leq 1$. Kako za sve $x\in \mathbb{R}$ vrijedi $\abs{\sin{\dfrac{x-c}{2}}}\leq \abs{\dfrac{x-c}{2}},$ imamo $$2\abs{\sin{\dfrac{x-c}{2}}}\leq |x-c|<\epsilon.$$
-\end{proof}
+gdje smo iskoristili činjenicu da je $\abs{\cos{\dfrac{x+c}{2}}}\leq 1$. Kako za sve $x\in \mathbb{R}$ vrijedi $\abs{\sin{\dfrac{x-c}{2}}}\leq \abs{\dfrac{x-c}{2}},$ imamo
+\[
+\pushQED{\qed}
+2\abs{\sin{\dfrac{x-c}{2}}}\leq |x-c|<\epsilon.\qedhere
+\popQED
+\]
+\end{proof*}
+\newpage
 \begin{exercise}
 \label{cont3}
 Koristeći definiciju neprekidnosti funkcije, odredite najveći\footnote{Najveći skup $S\subseteq \mathbb{R}$ takav da je $f$ neprekidna je skup sa svojstvom da za sve $T\subseteq \mathbb{R}$ za koje je $f$ neprekidna vrijedi $T\subseteq S$.} skup na kojem je funkcija $f : \mathbb{R}\to \mathbb{R}$,
@@ -197,7 +207,7 @@ $$f(x)=\begin{cases}
 \end{cases}$$
 neprekidna.
 \end{exercise}
-\begin{proof}[Rješenje]
+\begin{proof*}
 
 Iz grafa funkcije $f$ vidimo da će ona biti neprekidna svugdje osim u točki $1$. Dokažimo prvo da je $f$ neprekidna na skupu $\mathbb{R}\setminus\{1\}$. 
 
@@ -219,7 +229,12 @@ $$\abs{\left(\dfrac{1}{2}-x\right)-\left(\dfrac{1}{2}-c\right)}=|x-c|<\epsilon.$
 Pokažimo sada da funkcija ima prekid za $c=1$. Uzmimo $\epsilon=\dfrac{1}{2}$ i neka je $\delta>0$ proizvoljan. Uzmimo sada $x_\delta=\max\left\{0,\; 1-\dfrac{\delta}{2}\right\}$. Uočimo da vrijedi 
 $$|x_\delta-1|\leq\dfrac{\delta}{2}<\delta.$$
 Naime, ako je $1-\dfrac{\delta}{2}\geq 0$, to je jasno, a ako je $1-\dfrac{\delta}{2}\leq 0$, onda je $\delta\geq 2$ i $x_\delta=0$, pa je $$|x_\delta-1|=|0-1|=1\leq\dfrac{\delta}{2}.$$
-Kako je $0\leq x_\delta<1$, slijedi $f(x_\delta)=\dfrac{1}{2}-x_\delta\in \left\langle -\dfrac{1}{2}, \dfrac{1}{2}\right]$. To povlači $$|f(x_\delta)-1|\geq \dfrac{1}{2}=\epsilon.$$
+Kako je $0\leq x_\delta<1$, slijedi $f(x_\delta)=\dfrac{1}{2}-x_\delta\in \left\langle -\dfrac{1}{2}, \dfrac{1}{2}\right]$. To povlači
+\[
+\pushQED{\qed}
+|f(x_\delta)-1|\geq \dfrac{1}{2}=\epsilon.\qedhere
+\popQED
+\]
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}
@@ -234,7 +249,7 @@ Kako je $0\leq x_\delta<1$, slijedi $f(x_\delta)=\dfrac{1}{2}-x_\delta\in \left\
 \end{center}
 \caption{Graf funkcije iz zadatka \ref{cont3}}
 \end{figure}
-\end{proof}
+\end{proof*}
 \section{Svojstva neprekidnih funkcija}
 \begin{remark}[Neprekidnost kompozicije funkcija]
 \label{compcont}

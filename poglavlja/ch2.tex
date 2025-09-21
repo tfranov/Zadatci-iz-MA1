@@ -179,7 +179,10 @@ $$\sqrt{n!}(1+\sqrt{n})\geq \sqrt{n!}\sqrt{n+1}=\sqrt{(n+1)!},$$
 dakle $a_{n+1}\geq \sqrt{(n+1)!}$, što smo i tvrdili.
 \end{proof}
 \section{Princip dobrog uređaja}
-Princip dobrog uređaja je sljedeće, na prvi pogled očigledno svojstvo skupa prirodnih brojeva, koje kaže sljedeće: \textit{Svaki neprazan podskup skupa} $\mathbb{N}$ \textit{ima minimum} (v. definiciju \ref{minimax}). Ova činjenica je zanimljiva jer je često vrlo koristan alat u nekim dokazima, a ovdje ga navodimo, između ostalog, jer je zapravo ekvivalentan indukciji i jakoj indukciji.
+\begin{definition}
+Neka je $S\subseteq \mathbb{R}$. Kažemo da je $S$ \textbf{dobro uređen} ako svaki neprazan skup $S'\subseteq S$ ima minimum (v. definiciju \ref{minimax}).
+\end{definition}
+Princip dobrog uređaja je činjenica da je skup $\mathbb{N}$ dobro uređen. Ova činjenica je zanimljiva jer je često vrlo koristan alat u nekim dokazima, a ovdje je navodimo, između ostalog, jer je zapravo ekvivalentna indukciji i jakoj indukciji.
 \begin{exercise}
 \label{23}
 Ne postoji cijeli broj $n$ koji ima svojstvo $0<n<1$.
@@ -347,11 +350,22 @@ Dokažite da je broj čiji se dekadski zapis sastoji od 2187 znamenki 1 djeljiv 
 Dokažite da za svaki prirodni broj $n\geq 3$ postoji $n$ različitih prirodnih brojeva čiji je zbroj recipročnih vrijednosti jednak 1.
 \end{exercise}
 
-\subsection*{Princip dobrog uređaja}
+\subsection*{Princip jake indukcije. Princip dobrog uređaja}
 \begin{exercise}
-Neka je $S\subseteq \mathbb{R}$ dobro uređen skup i $S'\subseteq S$. Dokažite ili opovrgnite: $S'$ je dobro uređen skup.
+Neka je $(x_n)$ niz realnih brojeva dan sa $x_n=2^n+3^n$. Dokažite da za sve $n\in \mathbb{N}$ vrijedi $x_{n+2}=5x_{n+1}-6x_n$.
 \end{exercise}
 \begin{exercise}
-Dokažite da svaki podskup skupa svih negativnih cijelih brojeva ima maksimum (v. definiciju \ref{minimax}).
-\textbf{DODATI JOŠ}
+Neka su $m, n\in \mathbb{N}$ i neka je dana ploča dimenzija $m\times n$ koju želimo "razrezati" do kvadratića $1\times 1$ (režemo između kvadratića i to tako da razrežemo cijeli redak ili stupac i time rastavimo početnu ploču na dvije manje ploče). Dokažite da je za to potrebno točno $mn-1$ koraka, bez obzira kako tu ploču razrezali. (\textbf{Uputa: } Indukcijom po $n$ dokažite da je potrebno točno $mn-1$ koraka za sve $m$).
+\end{exercise}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka je $S\subseteq \mathbb{R}$ dobro uređen i $S'\subseteq S$. Dokažite ili opovrgnite: $S$ je dobro uređen skup.
+\item[b)] Dokažite da svaki podskup skupa svih negativnih cijelih brojeva ima maksimum (v. definiciju \ref{minimax}).
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Dokažite da je skup $A=\left\{-\dfrac{1}{p} : p \text{ prost}\right\}$\footnote{v. definiciju \ref{usefulnotation}.} dobro uređen.
+\end{exercise}
+\begin{exercise}[Školsko natjecanje, 4. razred, A varijanta, 2022.] $(*)$
+Za $p, q\in \mathbb{C}$ vrijedi $p+q=5$ i $p^2+q^2=9$. Dokažite da je $p^n+q^n$ neparan cijeli broj za sve $n\in \mathbb{N}$.
 \end{exercise}

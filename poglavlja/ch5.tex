@@ -160,12 +160,17 @@ odnosno $\dfrac{n}{n^2+1}<\epsilon$ za sve $n\geq n_0$, pa je tvrdnja dokazana.
 Neka je $(a_n)$ niz takav da je $(b_n)$, $b_n=a_{n+1}$ konvergentan. Dokažite da je tada i $(a_n)$ konvergentan i ima isti limes kao i $(b_n)$.
 \end{exercise}
 \begin{proof}[Rješenje]
-Po definiciji, za sve $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve prirodne $n\geq n_0$ vrijedi $$|a_{n+1}-a|<\epsilon.$$ Specijalno, za sve $n\in \mathbb{N}$ takve da je $n-1\geq n_0$ vrijedi 
+Neka je $\epsilon>0$ proizvoljan. Tada postoji $n_0\in \mathbb{N}$ takav da za sve prirodne $n\geq n_0$ vrijedi
+\begin{gather}
+\label{anplus1}
+|a_{n+1}-a|<\epsilon.
+\end{gather}
+Uzmimo proizvoljan $m\in \mathbb{N}$ takav da je $m\geq n_0+1$. Posebno je $m-1\geq n_0$, pa posljedično i
 \begin{gather}
 \label{40}
-|a_{(n-1)+1}-a|=|a_n-a|<\epsilon.
+|a_{(n-1)+1}-a|=|a_n-a|<\epsilon,
 \end{gather}
-Očito (\ref{40}) onda vrijedi i za sve $n\geq n_0$, što smo i tvrdili. \textbf{PROMIJENITI!!}
+odakle slijedi tvrdnja zadatka.
 \end{proof}
 \begin{exercise}
 Odredite $\lim\limits_{n\to \infty} \left(n^2+1\right)$.
@@ -190,7 +195,7 @@ Znamo da za sve $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve $n\geq 
 \label{liminftylemma}
 Neka su $(a_n)$ i $(b_n)$ nizovi takvi da je $a_n\geq b_n$ za sve $n\in \mathbb{N}$. Dokažite: Ako je $\lim\limits_{n\to \infty}{b_n}=\infty$, onda je i $\lim\limits_{n\to \infty}{a_n}=\infty$.
 \end{exercise}
-\begin{proof}
+\begin{proof}[Rješenje]
 Po definiciji, za svaki $M>0$ postoji $n_0\in \mathbb{N}$ takav da za sve $n\geq n_0$ vrijedi $b_n\geq M$. Kako je $a_m\geq b_m$ za sve $m\in \mathbb{N}$, vrijedi i $a_n\geq M$, što smo i tvrdili.
 \end{proof}
 Tvrdnja iz zadatka \ref{liminftylemma} nam može pomoći u dokazivanju divergencije niza u $\infty$. Pokažimo to.
@@ -268,6 +273,7 @@ Vrijedi
 $$\dfrac{n^2+3n+4}{n^2+3}=\dfrac{n^2+3n+4}{n^2+3}\cdot \dfrac{\dfrac{1}{n^2}}{\dfrac{1}{n^2}}=\dfrac{1+\dfrac{3}{n}+\dfrac{4}{n^2}}{1+\dfrac{3}{n^2}},$$
 te kako su $n\mapsto 1+\dfrac{3}{n^2}$ i $n\mapsto 1+\dfrac{3}{n}+\dfrac{4}{n^2}$ konvergentni nizovi čiji je limes $1$, slijedi da je limes početnog niza također $1$.
 \end{proof}
+\newpage
 \begin{remark} \textbf{}
 \label{importantlimits}
 \begin{itemize}
@@ -291,7 +297,7 @@ $$\lim\limits_{n\to \infty}{\dfrac{a^n}{n!}}=0,\;\; \lim\limits_{n\to \infty}{\d
 \item[c)] $\lim\limits_{n\to \infty}{\dfrac{n^m}{n!}}\;\text{ (gdje je } m>0\text{)}$.
 \end{itemize}
 \end{exercise}
-\begin{proof}[Rješenje]
+\begin{proof*}
 a) Koristeći napomenu \ref{importantlimits}, imamo
 $$\lim\limits_{n\to \infty}{\dfrac{2^n+n}{5^n+1}}=\lim\limits_{n\to \infty}{\dfrac{\left(\dfrac{2}{5}\right)^n+\dfrac{n}{5^n}}{1+\dfrac{1}{5^n}}}=\dfrac{\lim\limits_{n\to \infty}{\left(\dfrac{2}{5}\right)^n}+\lim\limits_{n\to \infty}{\dfrac{n}{5^n}}}{\lim\limits_{n\to \infty}{1}+\lim\limits_{n\to \infty}{\dfrac{1}{5^n}}}=\dfrac{0+0}{1}=0.$$
 
@@ -299,12 +305,16 @@ b) Dijeljenjem s $3^n\cdot n^3$ dobivamo
 $$\lim\limits_{n\to \infty}{\dfrac{2^n(2n^3+1)+3^n(n^3+n)}{3^n(2n^3+1)}}=\lim\limits_{n\to \infty}{\dfrac{\left(\dfrac{2}{3}\right)^n\left(2 + \dfrac{1}{n^{3}}\right)+1 + \dfrac{1}{n^{2}}}{2 + \dfrac{1}{n^{3}}}}=\dfrac{1}{2}.$$
 
 c) Vrijedi
-$$\lim\limits_{n\to \infty}{\dfrac{n^m}{n!}}=\lim\limits_{n\to \infty}{\dfrac{n^m}{a^n}\cdot \dfrac{a^n}{n!}}=0.$$
-\end{proof}
+\[
+\pushQED{\qed}
+\lim\limits_{n\to \infty}{\dfrac{n^m}{n!}}=\lim\limits_{n\to \infty}{\dfrac{n^m}{a^n}\cdot \dfrac{a^n}{n!}}=0.\qedhere
+\popQED
+\]
+\end{proof*}
 \begin{exercise}
 Odredite $\lim\limits_{n\to \infty}\left(\dfrac{1}{2}+\dfrac{3}{2^2}+\dfrac{5}{2^3}+\dots+\dfrac{2n-1}{2^n}\right)$.
 \end{exercise}
-\begin{proof}
+\begin{proof*}
 Neka je
 $$S_n:=\dfrac{1}{2}+\dfrac{3}{2^2}+\dfrac{5}{2^3}+\dots+\dfrac{2n-1}{2^n}.$$
 Vrijedi
@@ -317,8 +327,12 @@ S_n-\dfrac{1}{2}S_n=\dfrac{1}{2}S_n&=\dfrac{1}{2}+\dfrac{2}{2^2}+\dfrac{2}{2^3}+
 Korištenjem (\ref{geosum}), imamo
 $$\dfrac{1}{2}+\dfrac{1}{2}\cdot\dfrac{1-\dfrac{1}{2^{n-1}}}{1-\dfrac{1}{2}}-\dfrac{2n-1}{2^{n+1}}=\dfrac{3}{2}-\dfrac{1}{2^{n-1}}-\dfrac{2n}{2^{n+1}}+\dfrac{1}{2^{n+1}}.$$
 Odavde direktno slijedi $\lim\limits_{n\to \infty}{\dfrac{1}{2}S_n}=\dfrac{3}{2}$. Kako je niz $n\mapsto 2$ konvergentan s limesom u $2$, vrijedi
-$$\lim\limits_{n\to \infty}{S_n}=\lim\limits_{n\to \infty}{2\cdot \dfrac{1}{2}S_n}=\lim\limits_{n\to \infty}{2}\cdot \lim\limits_{n\to \infty}{\dfrac{1}{2}S_n}=2\cdot \dfrac{3}{2}=3.$$
-\end{proof}
+\[
+\pushQED{\qed}
+\lim\limits_{n\to \infty}{S_n}=\lim\limits_{n\to \infty}{2\cdot \dfrac{1}{2}S_n}=\lim\limits_{n\to \infty}{2}\cdot \lim\limits_{n\to \infty}{\dfrac{1}{2}S_n}=2\cdot \dfrac{3}{2}=3.\qedhere
+\popQED
+\]
+\end{proof*}
 \begin{remark}[Limes čuva uređaj]
 \label{limitpreservesordering}
 Neka su $(a_n)$ i $(b_n)$ konvergentni nizovi realnih brojeva, te $n_0\in \mathbb{N}$. Ako je $a_n\leq b_n$ za sve prirodne $n\geq n_0$, onda je $\lim\limits_{n\to \infty}{a_n}\leq \lim\limits_{n\to \infty}{b_n}$.
@@ -333,7 +347,7 @@ Neka su $(a_n)$ i $(b_n)$ konvergentni nizovi realnih brojeva, te $n_0\in \mathb
 \item[c)] $\lim\limits_{n\to \infty}{\sqrt[n]{4^n+5^n+6^n}}$.
 \end{itemize}
 \end{exercise}
-\begin{proof}[Rješenje]
+\begin{proof*}
 a) Uočimo da za sve $n\in \mathbb{N}$ vrijedi
 $$0\leq \dfrac{1}{n2^n}\leq \dfrac{1}{2^n},$$
 te kako je $\lim\limits_{n\to \infty}{0}=0$, te $\lim\limits_{n\to \infty}{\dfrac{1}{2^n}}=0$, iz kriterija sendviča imamo $\lim\limits_{n\to \infty}{\dfrac{1}{n2^n}}=0$.
@@ -343,8 +357,13 @@ $$-\dfrac{1}{n}\leq \dfrac{\sin{n}}{n}\leq \dfrac{1}{n},$$
 te vrijedi $\lim\limits_{n\to \infty}{\dfrac{1}{n}}=0$ i $\lim\limits_{n\to \infty}{-\dfrac{1}{n}}=0$, pa iz kriterija sendviča dobivamo $\lim\limits_{n\to \infty}{\dfrac{\sin{n}}{n}}=1$.
 
 c) Vrijedi $$\sqrt[n]{4^n+5^n+6^n}\leq \sqrt[n]{3\cdot 6^n}=6\cdot \sqrt[n]{3}$$ i vrijedi $$\lim\limits_{n\to \infty}{6\cdot \sqrt[n]{3}}=\lim\limits_{n\to \infty}{6}\cdot \lim\limits_{n\to \infty}{\sqrt[n]{3}}=6.$$ S druge strane, imamo $$\sqrt[n]{4^n+5^n+6^n}\geq \sqrt[n]{6^n}=6,$$ 
-te očito vrijedi $\lim\limits_{n\to \infty}{6}=6$. Sada iz kriterija sendviča slijedi da je $$\lim\limits_{n\to \infty}{\sqrt[n]{4^n+5^n+6^n}}=0.$$
-\end{proof}
+te očito vrijedi $\lim\limits_{n\to \infty}{6}=6$. Sada iz kriterija sendviča slijedi da je
+\[
+\pushQED{\qed}
+\lim\limits_{n\to \infty}{\sqrt[n]{4^n+5^n+6^n}}=0.\qedhere
+\popQED
+\]
+\end{proof*}
 \begin{exercise}
 \label{7}
 Dokažite da je $\lim\limits_{n\to \infty}{\dfrac{n}{2^n}}=0$.
@@ -645,7 +664,7 @@ Definiramo nizove $(a_n)$, $(b_n)$ s $a_n=1+\sqrt{2}+\sqrt[3]{3}+\dots+\sqrt[n]{
 \begin{align*}
 \lim\limits_{n\to \infty}{\dfrac{a_n}{b_n}}&=\lim\limits_{n\to \infty}{\dfrac{a_{n+1}-a_n}{b_{n+1}-b_n}}\\
 &=\lim\limits_{n\to \infty}{\dfrac{1+\sqrt{2}+\sqrt[3]{3}+\dots+\sqrt[n]{n}+\sqrt[n+1]{n+1}-(1+\sqrt{2}+\sqrt[3]{3}+\dots+\sqrt[n]{n})}{(n+1)-n}}\\
-&=\lim\limits_{n\to \infty}{\dfrac{\sqrt[n+1]{n+1}}{1}}=1.
+&=\lim\limits_{n\to \infty}{\dfrac{\sqrt[n+1]{n+1}}{1}}=1.\qedhere
 \end{align*}
 \end{proof}
 \begin{exercise}
@@ -656,8 +675,8 @@ $$\lim\limits_{n\to \infty}{\dfrac{1}{n^5}\sum_{k=n}^{2n}{k^4}}.$$
 Promotrimo nizove $(a_n)$, $(b_n)$, $a_n=\dsum_{k=n}^{2n}{k^4}$, $b_n=n^5$. Uočimo da je $b_n$ rastući, te kako vrijedi $b_n\geq n$, za sve $n\in \mathbb{N}$, iz zadatka \ref{liminftylemma} slijedi da je $\lim\limits_{n\to \infty}{b_n}=\infty$, te $b_n\neq 0$. Prema Cesàro-Stolzovom teoremu imamo
 \begin{align*}
 \lim\limits_{n\to \infty}{\dfrac{a_n}{b_n}}&=\lim\limits_{n\to\infty}{\dfrac{a_{n+1}-a_n}{b_{n+1}-b_n}}
-=\lim\limits_{n\to \infty}{\dfrac{\dsum_{k=n+1}^{2n+2}{k^4}-\dsum_{k=n}^{2n}{k^4}}{(n+1)^5-n^5}}\\
-&=\lim\limits_{n\to \infty}{\dfrac{(2n+1)^4+(2n+2)^4-(n+1)^4}{(n+1)^5-n^5}}=\dfrac{31n^4+92n^3+114n^2+68n+16}{5n^4+10n^3+10n^2+5n+1}=\dfrac{31}{5}.
+=\lim\limits_{n\to \infty}{\dfrac{\dsum_{k=n+1}^{2n+2}{k^4}-\dsum_{k=n}^{2n}{k^4}}{(n+1)^5-n^5}}=\lim\limits_{n\to \infty}{\dfrac{(2n+1)^4+(2n+2)^4-(n+1)^4}{(n+1)^5-n^5}}\\
+&=\dfrac{31n^4+92n^3+114n^2+68n+16}{5n^4+10n^3+10n^2+5n+1}=\dfrac{31}{5}.\qedhere
 \end{align*}
 \end{proof}
 \section{Limes superior i limes inferior}
