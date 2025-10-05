@@ -7,7 +7,7 @@ Treba naglasiti da za sada skripta **nije gotova**. Trenutno nedostaju sadržaji
 
 # Link za skriptu u PDF formatu?
 
-Skripta u PDF formatu nalazi se [ovdje](https://github.com/user-attachments/files/22498028/main-1.pdf).
+Skripta u PDF formatu nalazi se [ovdje](https://github.com/user-attachments/files/22707238/main.pdf).
 
 # Pronašli ste pogrešku u skripti ili imate prijedlog za poboljšanje?
 Bio bih Vam vrlo zahvalan da mi to javite, što možete na sljedeće načine:
