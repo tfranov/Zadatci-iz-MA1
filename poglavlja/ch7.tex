@@ -4,11 +4,10 @@ Neka je $I\subseteq \mathbb{R}$ otvoreni interval. Kažemo da je $f : I\to \math
 \end{definition}
 Često se koristi i oznaka $\dfrac{\mathrm{d}f}{\mathrm{d}x}(c)$.
 
-Ako je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I\to \mathbb{R}$ diferencijabilna na $I$, onda funkciju $x\mapsto f'(x)$ zovemo \textbf{derivacija} funkcije $f$. Tako definiranu funkciju označavamo s $f'$, $\left(f(x)\right)'$ $\dfrac{\mathrm{d}f}{\mathrm{d}x}$, ili s $\dfrac{\mathrm{d}}{\mathrm{d}x}\left(f(x)\right)$.
-\textbf{MAKNUTI D/DX GDJE GOD MOGUCE}
+Ako je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I\to \mathbb{R}$ diferencijabilna na $I$, onda funkciju $x\mapsto f'(x)$ zovemo \textbf{derivacija} funkcije $f$. Tako definiranu funkciju označavamo s $f'$, $\left(f(x)\right)'$, $\dfrac{\mathrm{d}f}{\mathrm{d}x}$, ili s $\dfrac{\mathrm{d}}{\mathrm{d}x}\left(f(x)\right)$.
 \begin{remark}
 Neka je $I\subseteq \mathbb{R}$ otvoreni interval. Tada je $f : I\to \mathbb{R}$ diferencijabilna u $c\in I$ ako i samo ako postoji $\lim\limits_{h\to 0}{\dfrac{f(c+h)-f(c)}{h}}$. Tada je
-$$f'(c)=\lim\limits_{h\to 0}{\dfrac{f(c+h)-f(c)}{h}}$$
+$$f'(c)=\lim\limits_{h\to 0}{\dfrac{f(c+h)-f(c)}{h}}.$$
 \end{remark}
 \begin{definition} Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $c\in I$. Ako postoji limes $\lim\limits_ {x\to c+}{\dfrac{f(x)-f(c)}{x-c}}\in \mathbb{R}$, taj broj zovemo \textbf{desna derivacija} funkcije $f$ u točki $c$ i označavamo ga s $f_d'(c)$. Analogno, ako postoji limes $\lim\limits_ {x\to c-}{\dfrac{f(x)-f(c)}{x-c}}\in \mathbb{R}$, zovemo ga \textbf{lijeva derivacija} funkcije $f$ u točki $c$ i označavamo ga s $f_l'(c)$.
 \end{definition}
@@ -34,26 +33,32 @@ a s druge strane imamo
 $$f_l'(0)=\lim\limits_{x\to 0-}{f'(x)}=\lim\limits_{x\to 0-}{\dfrac{x}{x}}=1,$$
 dakle $f$ nije diferencijabilna na $\mathbb{R}$.
 \end{proof}
-\textbf{OVDJE DODATI ZADATKE IZ OSNOVNIH OPERACIJA S DERIVACIJAMA!}
+
 \begin{exercise} \textbf{}
 \begin{itemize}
 \item[a)] Navedite primjer funkcije $f : \mathbb{R}\to \mathbb{R}$ takve da je $f'(1)=1$ i $f'(5)=2$.
 \item[b)] Navedite primjer funkcije $f : \mathbb{R}\to \mathbb{R}$ koja je neprekidna na $\mathbb{R}$, te diferencijabilna svugdje osim u točkama $1$ i $2$.
 \end{itemize}
 \end{exercise}
-\begin{proof}[Rješenje]
+\begin{proof*}
 a) Znamo da je npr. za $a\in \mathbb{R}$, $\left(ax\right)'=a$, stoga možemo uzeti npr. $f : \mathbb{R}\to \mathbb{R}$,
 $$f(x)=\begin{cases}
 x, & x\leq 2,\\
 5x, & x\geq 2.
 \end{cases}$$
-Primijetimo da je $f'(1)=(x)'(1)=1$. Zaista, iz činjenice da za svaki $\epsilon>0$ postoji $\delta>0$ takav da za svaki $x\in I$ takav da je $0<|x-1|<\delta$ slijedi $|\dfrac{f(x)-1}{x-1}-f'(1)|<\epsilon$, za $\delta'=\min\left\{\delta, 1\right\}$ posebno imamo da iz $0<|x-1|<1$, tj. $x\in \langle 0, 2\rangle\setminus\{1\}$ vrijedi $f(x)=x$, i $|\dfrac{x-1}{x-1}-f'(1)|=|1-f'(1)|=<\epsilon$, pa kako to vrijedi za svaki $\epsilon>0$ zaključujemo da je $f'(1)=1$. \textbf{OVAJ ARGUMENT STAVITI U PRETHODNI ZADATAK!!}.
-\end{proof}
+Primijetimo da je $f'(1)=1$. Zaista, očito vrijedi
+\[
+\pushQED{\qed}
+\lim\limits_{x\to 1}{\dfrac{f(x)-f(1)}{x-1}}=\lim\limits_{x\to 1}{\dfrac{x-1}{x-1}}=1.\qedhere
+\popQED
+\]
+\end{proof*}
 \begin{remark}
 Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna u točki $c\in I$. Tada je $f$ i neprekidna u $c$.
 \end{remark}
-Obrat gornje napomene općenito ne vrijedi. Funkcije koje su neprekidne, ali ne i diferencijabilne u danoj točki imaju "šiljak" u toj točki.
+Obrat gornje napomene općenito ne vrijedi, i to npr. za funkciju $x\mapsto |x|$. Intuitivno, klasični primjeri funkcija koje su neprekidne ali ne i diferencijabilne u nekoj točki su one čiji grafovi imaju "šiljak" u toj točki.
 \begin{exercise} \textbf{}
+\label{idkhowtonamethis}
 \begin{itemize}
 \item[a)] Postoji li $c>0$ takav da je $f : \mathbb{R}\to \mathbb{R}$,
 $$f(x)=\begin{cases}
@@ -67,11 +72,11 @@ x^3,& x\leq 1,\\
 ax+b,& x>1.
 \end{cases}$$
 diferencijabilna na $\mathbb{R}$.
-\item[c)] Odredite neku funkciju $h : \langle -3, 3\rangle\to \mathbb{R}$ takvu da funkcija
-$$f(x)=\begin{cases}
--3,& x\leq 3,\\
-h(x),& x\in \langle -3, 3\rangle,\\
-3,& x\geq 3.
+\item[c)] Odredite neku funkciju $F : \langle -3, 3\rangle\to \mathbb{R}$ takvu da funkcija $c:\mathbb{R}\to \mathbb{R}$,
+$$c(x)=\begin{cases}
+-8,& x\leq -3,\\
+F(x),& x\in \langle -3, 3\rangle,\\
+8,& x\geq 3.
 \end{cases}$$
 bude diferencijabilna na $\mathbb{R}$.
 \end{itemize}
@@ -81,22 +86,60 @@ a) Pretpostavimo da postoji takav $c>0$. Da bi $f$ bila diferencijabilna u $0$, 
 $$\lim\limits_{x\to 0+}{f(x)}=\lim\limits_{x\to 0+}{cx^3}=0,\;\; \lim\limits_{x\to 0-}{f(x)}=\lim\limits_{x\to 0-}{-x^2-1-c}=-1-c,$$
 Kako je $-1-c<0$, lijevi i desni limes ne mogu biti jednaki, pa ne postoji takav $c$.
 
-b) Slično kao i u a), uspoređivanjem lijevog i desnog limesa vidimo da mora vrijediti $a+b=1$. S druge strane, imamo $g_d'(1)=\dfrac{\mathrm{d}}{\mathrm{d}x}(ax+b)(1)=a$ i analogno $g_l'(1)=3$, stoga mora vrijediti $a=3$. Odavde imamo da je $b=-2$. Za ovako odabrane $a$ i $b$ je $g$ diferencijabilna u $0$. Ako je $x>1$, onda je $g'(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}(ax+b)$, a za $x<1$ imamo $g'(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}(x^3)$. Stoga je $g$ diferencijabilna na $\mathbb{R}$ ako i samo ako je $a=3$ i $b=-2$.
+b) Slično kao i u a), uspoređivanjem lijevog i desnog limesa vidimo da mora vrijediti $a+b=1$. S druge strane, imamo $g_d'(1)=a$ i analogno $g_l'(1)=3$, stoga mora vrijediti $a=3$. Odavde imamo da je $b=-2$. Očito je za ovako odabrane $a$ i $b$ funkcija $g$ diferencijabilna u $1$. Ako je $x>1$, onda je $g'(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}(ax+b)=a$, a za $x<1$ imamo $g'(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}(x^3)=3x^2$. Stoga je $g$ diferencijabilna na $\mathbb{R}$ ako i samo ako je $a=3$ i $b=-2$.
+
+c) Funkcija $f : \mathbb{R}\to \mathbb{R}$, $f(x)=x^3$ ima svojstvo $f'(0)=0$, pa će ideja biti njezin graf translatirati tako da točka ishodišta prijeđe u npr. točku $(-3, 8)$, tj. za $3$ jedinične dužine ulijevo i $8$ jediničnih dužina prema dolje (te ga, naravno, i restringirati tako da konačna funkcija $F$ ima domenu $\langle -3, 3\rangle$). Tražena funkcija je (v. napomenu \ref{graphrem}) $g : \langle -3, 1]\to \mathbb{R}$, 
+$$g(x)=(x+3)^3-8,$$
+(v. sliku \ref{dergraph}). Uočimo da je $g$ "na pola puta" između $-8$ i $8$ gledajući po $y$-osi upravo u svojoj nultočki, tj. točki $(-1,0)$, pa će sada biti ideja uzeti funkciju $h : [-1, 1]\to \mathbb{R}$ koja će biti pogodna translacija dijela "lijevog dijela" grafa funkcije $x\mapsto (x+3)^3-8$, tako da iz točke $(-1, 0)$ dođemo do točke $(1, 8)$, na način da vrijedi $h_d'(1)=0$. Uočimo da je $g'(-1)=12$, te je broj $a\in \mathbb{R}$, $a\neq -1$ takav da je $g'(a)=12$, broj $a=-5$, pa kako želimo da se desna derivacija od $g$ te lijeva derivacija od $h$ u točki $-1$ i njihove funkcijske vrijednosti u toj točki podudaraju, zahtijevati ćemo da točka $(-5, -16)$ prijeđe u točku $(-1, 0)$. Slijedi da graf funkcije $g$ moramo translatirati za $4$ jedinične dužine udesno i $16$ jediničnih dužina prema gore, čime dobivamo 
+$$h(x)=(x-1)^3+8.$$ Sada je $h(1)=8$ i $h_d'(1)=0$, pa kako bi došli do točke $(3, 8)$ možemo iskoristiti dio grafa konstantne funkcije $x\mapsto 8$. Dakle, tražena funkcija biti će $F : \langle -3, 3\rangle\to \mathbb{R}$,
+$$F(x)=\begin{cases}
+(x+3)^3-8, & x\in \langle -3, -1],\\
+(x-1)^3+8, & x\in [-1, 1],\\
+8, & x\in [1, 3\rangle.
+\end{cases}$$
+Nije teško provjeriti da je $F$ zaista diferencijabilna na $\mathbb{R}$.
+\begin{figure}[ht]
+\begin{subfigure}[t]{.5\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,xlabel=$x$,ylabel=$y$,xmin=-6.5,xmax=4,ymin=-20,ymax=15, smooth, samples=200]
+
+\addplot[very thick,dashed,color=black,domain=-8:1] {(x+3)^3-8};
+\addplot[thick,color=black,domain=-3:3] {(x-1)^3+8};
+\end{axis}
+\end{tikzpicture}
+\caption*{Grafovi funkcija $x\mapsto (x+3)^3-8$ (iscrtkana linija) i $x\mapsto (x-1)^3+8$ (puna linija)}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,xlabel=$x$,ylabel=$y$,xmin=-6.5,xmax=4,ymin=-20,ymax=15, smooth, samples=200]
+
+\addplot[thick,dotted,color=black,domain=-20:-3] {-8};
+\addplot[very thick,dashed,color=black,domain=-3:-1] {(x+3)^3-8};
+\addplot[thick,color=black,domain=-1:1] {(x-1)^3+8};
+\addplot[very thick,dashdotted,color=black,domain=1:3] {8};
+\addplot[thick,dotted,color=black,domain=3:4] {8};
+\end{axis}
+\end{tikzpicture}
+\caption*{Graf funkcije $F$ iz rješenja c) dijela zadatka \ref{idkhowtonamethis}}
+\end{subfigure}
+\caption{\label{dergraph}}
+\end{figure}
 \end{proof}
-\begin{exercise} \textbf{}
-\begin{itemize}
-\item[a)] Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna u $c\in I$. Dokažite da ako je $f'(c)>0$, da tada postoji $\delta>0$ takav da vrijedi
+\newpage
+\begin{exercise} 
+\label{localder}
+Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna u $c\in I$. Dokažite da ako je $f'(c)>0$, da tada postoji $\delta>0$ takav da vrijedi
 $$
 \begin{cases}
 x\in \langle c-\delta, c\rangle\cap I\Rightarrow f(x)<f(c),\\
 x\in \langle c, c+\delta\rangle\cap I\Rightarrow f(x)>f(c).
 \end{cases}
 $$
-\item[b)] \textbf{TODO!!}
-\end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-a) Po definiciji, za $\epsilon=f'(c)$ postoji $\delta>0$ takav da za sve $x\in I$ takve da je $0<|x-c|<\delta$ vrijedi
+Po definiciji, za $\epsilon=f'(c)$ postoji $\delta>0$ takav da za sve $x\in I$ takve da je $0<|x-c|<\delta$ vrijedi
 $$0<\dfrac{f(x)-f(c)}{x-c}<2f'(c)$$
 Ako je $x>c$, tj. $x\in \langle c,c+\delta\rangle\cap I$, tada množenjem nejednakosti $0<\dfrac{f(x)-f(c)}{x-c}$ s $x-c$ dobivamo $f(x)>f(c)$. Analogno za $x<c$, odnosno $x\in \langle c-\delta, c\rangle\cap I$ dobivamo $f(x)<f(c)$.
 \end{proof}
@@ -121,14 +164,13 @@ Stoga je $\ln$ diferencijabilna na $\langle 0, \infty\rangle$ i njezina derivaci
 Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna na $I$. Koristeći do sada poznate rezultate, dokažite da ako za sve $x\in I$ vrijedi $f'(x)\geq 0$, da je tada $f$ rastuća.
 \end{exercise}
 \begin{proof}[Rješenje]
-\textbf{ISPRAVITI REFERENCE NA A DIO ZADATKA!!}
-Pretpostavimo suprotno, tj. da postoje $x_1, x_2\in I$ takvi da je $x_1<x_2$, ali $f(x_1)>f(x_2)$. Ideja dokaza će biti sljedeća -- u segmentu $[x_1, x_2]$ ćemo promotriti najveći element za koji $f$ postiže maksimum na tom segmentu. Najprije ćemo dokazati da taj najveći element uopće postoji i to tako da ga definiramo kao supremum svih elemenata koji postižu maksimum na segmentu. Svaki element u segmentu strogo veći od tog elementa će dakle biti strogo manji od tog elementa, što će biti u kontradikciji s a) dijelom zadatka.
+Pretpostavimo suprotno, tj. da postoje $x_1, x_2\in I$ takvi da je $x_1<x_2$, ali $f(x_1)>f(x_2)$. Ideja dokaza će biti sljedeća -- u segmentu $[x_1, x_2]$ ćemo promotriti najveći element za koji $f$ postiže maksimum na tom segmentu. Najprije ćemo dokazati da taj najveći element uopće postoji i to tako da ga definiramo kao supremum svih elemenata koji postižu maksimum na segmentu. Svaki element u segmentu strogo veći od tog elementa će dakle biti strogo manji od tog elementa, što će biti u kontradikciji sa zadatkom \ref{localder}.
 
 Neka je 
 $$S=\left\{x\in [x_1, x_2] : f(x)=\max{f|_{[x_1, x_2]}}\right\}.$$ 
 Uočimo da je $f$ neprekidna na segmentu $[x_1, x_2]$ i na tom segmentu nije konstanta, pa postoji bar jedan $x_i\in [x_1, x_2]$ takav da je $f(x_i)=\max{f|_{[x_1, x_2]}}$. Dakle, postoji $\sup{S}$.
 
-Tvrdimo da je $\sup{S}\neq x_2$. Zaista, po a) dijelu zadatka postoji $\delta>0$ takav da za sve $x\in \langle x_2-\delta, x_2\rangle\cap I$ vrijedi $f(x)<f(x_2)$. S druge strane, po lemi \ref{14} imamo da za $\epsilon=\delta$ postoji $x_0\in [x_1, x_2]$ takav da je $f(x_0)=\max{f|_{[x_1, x_2]}}$ i vrijedi $x_2-\delta<x_0$. Pritom vrijedi $x_0<x_2$, jer kad bi bilo $x_0=x_2$, onda bi vrijedilo $f(x_2)=\max{f|_{[x_1, x_2]}}$, što je kontradikcija s činjenicom da je $f(x_2)<f(x_1)$. Sada iz činjenice da je $x_0\in \langle x_2-\delta, x_2\rangle\cap I$ slijedi da je $f(x_0)<f(x_2)$, što je kontradikcija s činjenicom da je $f(x_0)=\max{f|_{[x_1, x_2]}}$.
+Tvrdimo da je $\sup{S}\neq x_2$. Zaista, po zadatku \ref{localder} postoji $\delta>0$ takav da za sve $x\in \langle x_2-\delta, x_2\rangle\cap I$ vrijedi $f(x)<f(x_2)$. S druge strane, po lemi \ref{14} imamo da za $\epsilon=\delta$ postoji $x_0\in [x_1, x_2]$ takav da je $f(x_0)=\max{f|_{[x_1, x_2]}}$ i vrijedi $x_2-\delta<x_0$. Pritom vrijedi $x_0<x_2$, jer kad bi bilo $x_0=x_2$, onda bi vrijedilo $f(x_2)=\max{f|_{[x_1, x_2]}}$, što je kontradikcija s činjenicom da je $f(x_2)<f(x_1)$. Sada iz činjenice da je $x_0\in \langle x_2-\delta, x_2\rangle\cap I$ slijedi da je $f(x_0)<f(x_2)$, što je kontradikcija s činjenicom da je $f(x_0)=\max{f|_{[x_1, x_2]}}$.
 
 Kako je $S\subseteq [x_1, x_2]$, to je $\sup{S}\leq \sup{[x_1, x_2]}=x_2$, pa iz činjenice da je $\sup{S}\neq x_2$ imamo da je $\sup{S}<x_2$. Dokažimo i da je
 $\sup{S}=\max{S}.$
@@ -141,3 +183,34 @@ $$\max{S}+\delta'\leq \max{S}+x_2-\max{S}=x_2,$$
 pa za sve $\langle \max{S}, \max{S}+\delta'\rangle\cap I\subseteq \langle \max{S}, x_2\rangle$ vrijedi $f(x)>f(\max{S})$. No ovo znači da npr. vrijedi $$f\left(\max{S}+\dfrac{\delta'}{2}\right)>f(\max{S}).$$ S druge strane, kako je $\max{S}+\dfrac{\delta'}{2}\in [x_1, x_2]$ i $\max{S}+\dfrac{\delta'}{2}>\max{S}$, vrijedi $\max{S}+\dfrac{\delta'}{2}\notin S$,
 pa je $f\left(\max{S}+\dfrac{\delta'}{2}\right)<\max{f|_{[x_1, x_2]}}=f(\max{S})$, kontradikcija!
 \end{proof}
+\section{Osnovne operacije s diferencijabilnim funkcijama}
+\begin{remark}[Osnovne operacije s diferencijabilnim funkcijama]
+Neka je $I\subseteq \mathbb{R}$ otvoreni interval, te $f, g : I\to \mathbb{R}$ diferencijabilne u točki $c\in I$. Tada vrijede sljedeće tvrdnje.
+\begin{itemize}
+\item[a)] Funkcija $f+g$ je diferencijabilna u $c$ i vrijedi $(f+g)'(c)=f'(c)+g'(c)$,
+\item[b)] Funkcija $fg$ je diferencijabilna u $c$ i vrijedi $(fg)'(c)=f'(c)g(c)+f(c)g'(c)$,
+\item[c)] Ako je $g(c)\neq 0$, onda je $\left(\dfrac{f}{g}\right)$ diferencijabilna u $c$ i vrijedi $$\left(\dfrac{f}{g}\right)'(c)=\dfrac{f'(c)g(c)-f(c)g'(c)}{g(c)^2}.$$ 
+\end{itemize}
+\end{remark}
+\begin{remark}[Derivacije elementarnih funkcija] Sljedeće tvrdnje vrijede za sve $x$ iz prirodne domene pripadnih funkcija.
+\begin{AutoMultiColItemize}
+\item $(c)'=0$, gdje je $c\in \mathbb{R}$
+\item $(x^a)'=ax^{a-1}$, gdje je $a\in\mathbb{R}$,
+\item $(\sin{x})'=\cos{x}$,
+\item $(\cos{x})'=-\sin{x}$,
+\item $(\tg{x})'=\dfrac{1}{\cos^2{x}}$,
+\item $(\ctg{x})'=-\dfrac{1}{\sin^2{x}}$,
+\item $(a^x)'=a^x\ln{a}$, gdje je $a>0$
+\item $(e^x)'=e^x$,
+\item $(\arcsin{x})'=\dfrac{1}{\sqrt{1-x^2}}$,
+\item $(\arccos{x})'=-\dfrac{1}{\sqrt{1-x^2}}$,
+\item $(\arctg{x})'=\dfrac{1}{1+x^2}$,
+\item $(\arcctg{x})'=-\dfrac{1}{1+x^2}$,
+\item $(\log_a{x})'=\dfrac{1}{x\ln{a}}$, gdje je $a>0, a\neq 1$,
+\item $(\ln{x})'=\dfrac{1}{x}$,
+\item $(\sh{x})'=\ch{x}$,
+\item $(\ch{x})'=\sh{x}$,
+\item $(\th{x})'=\dfrac{1}{\ch^2{x}}$,
+\item $(\cth{x})'=-\dfrac{1}{\sh^2{x}}$
+\end{AutoMultiColItemize}
+\end{remark}

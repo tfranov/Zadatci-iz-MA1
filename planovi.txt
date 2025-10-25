@@ -33,3 +33,5 @@ Dodati međuzadatke
 Mozda promijeniti zadatke u prvom poglavlju?
 
 Probaj umjesto "bez smanjenja opcenitosti" actually raspisat stvari
+
+Kasnije u poglavlju o derivacijama dodati napomenu o tome zasto mozemo u desni limes uvrstiti desni dio po dijelovima zadane fje
