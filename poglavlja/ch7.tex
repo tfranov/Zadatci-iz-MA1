@@ -128,6 +128,25 @@ Nije teško provjeriti da je $F$ zaista diferencijabilna na $\mathbb{R}$.
 \end{figure}
 \end{proof}
 \newpage
+\begin{exercise}
+Odredite sve točke u kojima je funkcija $f : \mathbb{R}\to \mathbb{R}$,
+$$f(x)=\begin{cases}
+x^3,& x\in \mathbb{Q},\\
+x^4,& x\in \mathbb{I},
+\end{cases}$$
+diferencijabilna.
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdimo da je $f$ diferencijabilna samo u $0$. Zaista, za sve $x\in \mathbb{R}$ takve da je $|x|<1$ množenjem s $|x|^3$ dobivamo $x^4<|x|^3$, pa vrijedi
+$$0\leq \left|\dfrac{f(x)}{x}\right|=\dfrac{|f(x)|}{|x|}\leq \dfrac{x^4}{|x|}=|x|^3,$$
+pa kako $|x|^3\to 0$ kako $x\to 0$, iz kriterija sendviča za limese funkcija i iz činjenice da je pri promatranju limesa u $0$ dovoljno promatrati vrijednosti dovoljno "blizu" $0$, slijedi da postoji $\lim\limits_{x\to 0}{\left|\dfrac{f(x)}{x}\right|}=f'(0)$ i iz definicije limesa slijedi
+$$0=\lim\limits_{x\to 0}{\left|\dfrac{f(x)}{x}\right|}=\lim\limits_{x\to 0}{\dfrac{f(x)}{x}}=f'(0).$$
+Neka je sada $c=1$, te neka je $(a_n)$ niz racionalnih brojeva različitih od $1$ koji konvergira u $1$, te $(b_n)$ niz iracionalnih brojeva različitih od $1$ koji konvergira u $1$. Tada za sve $n\in \mathbb{N}$ vrijedi
+$$\lim\limits_{n\to \infty}{\dfrac{f(a_n)-1}{a_n-1}}=\lim\limits_{n\to \infty}{\dfrac{a_n^3-1}{a_n-1}}=\lim\limits_{n\to \infty}{\dfrac{(a_n-1)\left(1+a_n+a_n^2\right)}{a_n-1}}=\lim\limits_{n\to \infty}{\left(1+a_n+a_n^2\right)}=3,$$
+te se slično vidi i da je $\lim\limits_{n\to \infty}{\dfrac{f(b_n)-1}{b_n-1}}=4$, pa iz Heineove karakterizacije limesa slijedi da funkcija $x\mapsto \dfrac{f(x)-1}{x-1}$ nema limes u $1$, odnosno ne postoji $f'(1)$.
+
+Neka je sada $c\notin \{0, 1\}$. Tvrdimo da tada $f$ nije neprekidna u točki $c$. Zaista, lako se provjeri da je $x^4=x^3$ ako i samo ako je $x=0$ ili $x=1$. Uzmimo sada niz $(x_n)$ racionalnih brojeva koji konvergira u $c$, te niz $(y_n)$ iracionalnih brojeva koji konvergira u $c$. Tada vrijedi $\lim\limits_{n\to \infty}{x_n^3}=c^3$ i $\lim\limits_{n\to \infty}{x_n^4}=c^4$, pa kako je $c^3\neq c^4$, iz Heineove karakterizacije neprekidnosti slijedi da $f$ nije neprekidna, pa ni diferencijabilna u $c$.
+\end{proof}
 \begin{exercise} 
 \label{localder}
 Neka je $I\subseteq \mathbb{R}$ otvoreni interval i $f : I \to \mathbb{R}$ diferencijabilna u $c\in I$. Dokažite da ako je $f'(c)>0$, da tada postoji $\delta>0$ takav da vrijedi
@@ -189,13 +208,14 @@ Neka je $I\subseteq \mathbb{R}$ otvoreni interval, te $f, g : I\to \mathbb{R}$ d
 \begin{itemize}
 \item[a)] Funkcija $f+g$ je diferencijabilna u $c$ i vrijedi $(f+g)'(c)=f'(c)+g'(c)$,
 \item[b)] Funkcija $fg$ je diferencijabilna u $c$ i vrijedi $(fg)'(c)=f'(c)g(c)+f(c)g'(c)$,
-\item[c)] Ako je $g(c)\neq 0$, onda je $\left(\dfrac{f}{g}\right)$ diferencijabilna u $c$ i vrijedi $$\left(\dfrac{f}{g}\right)'(c)=\dfrac{f'(c)g(c)-f(c)g'(c)}{g(c)^2}.$$ 
+\item[c)] Ako je $a\in \mathbb{R}$, onda je $af$ diferencijabilna u $c$ i vrijedi $(af)'(c)=a\cdot f'(c)$.
+\item[d)] Ako je $g(c)\neq 0$, onda je $\left(\dfrac{f}{g}\right)$ diferencijabilna u $c$ i vrijedi $$\left(\dfrac{f}{g}\right)'(c)=\dfrac{f'(c)g(c)-f(c)g'(c)}{g(c)^2}.$$ 
 \end{itemize}
 \end{remark}
 \begin{remark}[Derivacije elementarnih funkcija] Sljedeće tvrdnje vrijede za sve $x$ iz prirodne domene pripadnih funkcija.
 \begin{AutoMultiColItemize}
 \item $(c)'=0$, gdje je $c\in \mathbb{R}$
-\item $(x^a)'=ax^{a-1}$, gdje je $a\in\mathbb{R}$,
+\item $(x^a)'=ax^{a-1}$, gdje je $a\in\mathbb{R}$ i $x\neq 0$ ako je $a<1$,
 \item $(\sin{x})'=\cos{x}$,
 \item $(\cos{x})'=-\sin{x}$,
 \item $(\tg{x})'=\dfrac{1}{\cos^2{x}}$,
@@ -211,6 +231,151 @@ Neka je $I\subseteq \mathbb{R}$ otvoreni interval, te $f, g : I\to \mathbb{R}$ d
 \item $(\sh{x})'=\ch{x}$,
 \item $(\ch{x})'=\sh{x}$,
 \item $(\th{x})'=\dfrac{1}{\ch^2{x}}$,
-\item $(\cth{x})'=-\dfrac{1}{\sh^2{x}}$
+\item $(\cth{x})'=-\dfrac{1}{\sh^2{x}}$,
+\item $(\arsinh{x})'=\dfrac{1}{\sqrt{1+x^2}}$,
+\item $(\arcosh{x})'=\dfrac{1}{\sqrt{x^2-1}}$,
+\item $(\artanh{x})'=\dfrac{1}{1-x^2}$,
+\item $(\arcoth{x})'=\dfrac{1}{1-x^2}$
 \end{AutoMultiColItemize}
 \end{remark}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da je funkcija $x\mapsto x^3\sin{x}+\sqrt{x}\ln{x}$ diferencijabilna na $\langle 0,\infty\rangle$ i odredite joj derivaciju.
+\item[b)] Dokažite da je funkcija $x\mapsto e^x\cdot\sh{x}\cdot\arctg{x}$ diferencijabilna na $\mathbb{R}$ i odredite joj derivaciju.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka je $c>0$ proizvoljan. Uočimo da je svaka od funkcija $x\mapsto \sin{x}$, $x\mapsto x^3$, $x\mapsto \sqrt{x}$, $x\mapsto \ln{x}$ diferencijabilna na $\langle 0,\infty\rangle$, pa i u $c$, pa slijedi i da su funkcije $x\mapsto x^3\sin{x}$ i $x\mapsto \sqrt{x}\ln{x}$ diferencijabilne u $c$, te posljedično je i funkcija iz iskaza zadatka diferencijabilna u $c$, odakle slijedi diferencijabilnost na $\langle 0,\infty\rangle$. Vrijedi
+\begin{align*}
+\left(x^3\sin{x}+\sqrt{x}\ln{x}\right)'&=\left(x^3\sin{x}\right)'+\left(\sqrt{x}\ln{x}\right)'\\
+&=3x^2\sin{x}+x^3\cos{x}+\dfrac{1}{2\sqrt{x}}\ln{x}+\dfrac{\sqrt{x}}{x},
+\end{align*}
+gdje $\left(\sqrt{x}\right)'=\dfrac{1}{2\sqrt{x}}$ slijedi iz činjenice da je $\left(\sqrt{x}\right)'=\left(x^\frac{1}{2}\right)'=\dfrac{1}{2}x^{\frac{1}{2}-1}=\dfrac{1}{2}x^{-\frac{1}{2}}=\dfrac{1}{2\sqrt{x}}$.
+
+b) $x\mapsto e^x\cdot \sh{x}$ i $x\mapsto \arctg{x}$ su diferencijabilne na $\mathbb{R}$, pa je i funkcija iz zadatka diferencijabilna na $\mathbb{R}$. Vrijedi
+\begin{align*}
+\left(e^x\cdot\sh{x}\cdot\arctg{x}\right)'&=\left(e^x\cdot\sh{x}\right)'\arctg{x}+\left(e^x\cdot\sh{x}\right)\cdot \dfrac{1}{1+x^2}\\
+&=\left(e^x\cdot \sh{x}+e^x\cdot \ch{x}\right)\arctg{x}+\left(e^x\cdot\sh{x}\right)\cdot \dfrac{1}{1+x^2}.\qedhere
+\end{align*}
+\end{proof}
+\begin{remark}[Derivacija kompozicije funkcija]
+Neka su $I, J\subseteq \mathbb{R}$ otvoreni intervali, $c\in I$, te $f : I\to \mathbb{R}$, $g : J\to \mathbb{R}$ funkcije takve da je $f(I)\subseteq J$. Ako je $f$ diferencijabilna u $c$ i $g$ diferencijabilna u $f(c)$, onda je i $g\circ f$ diferencijabilna u $c$ i vrijedi
+$$\left(g\circ f\right)'(c)=g'\left(f(c)\right)\cdot f'(c).$$
+\end{remark}
+\begin{remark}[Teorem o derivaciji inverzne funkcije]
+Neka je $I\subseteq \mathbb{R}$ otvoreni interval, $c\in I$, $f : I\to \mathbb{R}$ strogo monotona na $I$, te $J=f(I)$ otvoreni interval. Ako je $f$ diferencijabilna u $c$ i vrijedi $f'(c)\neq 0$, tada je $f^{-1}$ diferencijabilna u $d=f(c)$ i vrijedi
+$$\left(f^{-1}\right)\left(f(c)\right)=\dfrac{1}{f'(c)}=\dfrac{1}{f'\left(f^{-1}(d)\right)}.$$
+\end{remark}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da je funkcija $x\mapsto \sqrt{x^2+4x+5}$ diferencijabilna na $\mathbb{R}$ i odredite joj derivaciju.
+\item[b)] Odredite derivaciju funkcije $x\mapsto \sqrt{x^2+\sin(\ln{x})}$ na intervalu $\langle 1,\infty\rangle$.
+\item[c)] Zadana je $y : \left\langle -\dfrac{\pi}{4}, \dfrac{\pi}{4}\right\rangle\to \mathbb{R}$, $y(x)=2\tg{2x}$. Vrijedi li $y'(x)-y^2(x)=4$ za sve $x\in \left\langle -\dfrac{\pi}{4}, \dfrac{\pi}{4}\right\rangle$?
+\end{itemize}
+\end{exercise}
+\newpage
+\begin{proof}
+a) Prvo uočimo da je $x^2+4x+5>0$ za sve $x\in \mathbb{R}$, jer je vodeći koeficijent jednak $1$ i diskriminanta jednaka $16-20=-4<0$\footnote{Općenito, ako su $a, b, c\in \mathbb{R}$ takvi da je $a>0$ i $b^2-4ac<0$, onda je $ax^2+bx+c>0$ za sve $x\in \mathbb{R}$. Zaista, za sve $x\in \mathbb{R}$ vrijedi $ax^2+bx+c\geq \dfrac{4ac-b^2}{4a}>0$. Intuicija iza te činjenice je da je zbog $a>0$ parabola koja je graf funkcije $x\mapsto ax^2+bx+c$ okrenuta "prema gore" i zbog negativne diskriminante nema nultočki.}. Nadalje, neka je $c\in \mathbb{R}$. Tada je $x\mapsto x^2+4x+5$ diferencijabilna u $c$, $x\mapsto \sqrt{x}$ diferencijabilna u $c^2+4c+5$, pa je i funkcija iz zadatka diferencijabilna u $c$, dakle na $\mathbb{R}$. Vrijedi
+$$\left(\sqrt{x^2+4x+5}\right)'=\dfrac{1}{2\sqrt{x^2+4x+5}}\cdot\left(2x+4\right).$$
+
+b) U narednim zadatcima nećemo provjeravati diferencijabilnost, jer se to radi potpuno analogno kao u prethodnim zadatcima. Vrijedi
+\begin{align*}
+\left(\sqrt{x^2+\sin(\ln{x})}\right)'&=\dfrac{1}{2\sqrt{x^2+\sin(\ln{x})}}\cdot \left(x^2+\sin\left(\ln{x}\right)\right)'\\
+&=\dfrac{1}{2\sqrt{x^2+\sin(\ln{x})}}\cdot \left(2x+\cos\left(\ln{x}\right)\cdot\dfrac{1}{x}\right).
+\end{align*}
+
+c) Neka je $x\in \left\langle -\dfrac{\pi}{4}, \dfrac{\pi}{4}\right\rangle$. Vrijedi
+$$\left(2\tg{2x}\right)'-4\tg^2{2x}=2\cdot\dfrac{1}{\cos^2{2x}}\cdot 2-4\tg^2{2x}=4\cdot \left(\dfrac{1}{\cos^2{2x}}-\tg^2{2x}\right)=4,$$
+gdje posljednja jednakost iz činjenice da za sve $y\in \mathbb{R}$ takve da je $\cos^2{y}\neq 0$ vrijedi $$\tg^2{y}+1=\dfrac{1}{\cos^2{y}},$$
+što se dobiva iz identiteta $\sin^2{y}+\cos^2{y}=1$ dijeljenjem obje strane s $\cos^2{y}$.
+\end{proof}
+\begin{exercise}
+Dokažite da je funkcija $f : \mathbb{R}\to \mathbb{R}$,
+$$f(x)=\begin{cases}
+\arctg\left(3\sin{x}\right),& x\leq 0,\\
+\sin{x}+2x\cos{x},& x>0.
+\end{cases}$$
+Dokažite da je $f$ diferencijabilna u $0$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Ideja će biti promatrati funkcije $f_1, f_2 : \mathbb{R}\to \mathbb{R}$, $f_1(x)=\arctg\left(3\sin{x}\right)$, $f_2(x)=\sin{x}+2x\cos{x}$, te dovesti u vezu derivacije tih funkcija u $0$ s $f_l'(0)$ i $f_d'(0)$. Zaista, dovoljno je pokazati da je $f_1(0)=f_2(0)=0$ i da postoje $f_l'(0)$ i $f_d'(0)$ te da vrijedi $f_l'(0)=f_d'(0)$. Zaista, u tom slučaju postoji $f'(0)$, jer je
+$$f_1'(0)=\lim\limits_{x\to 0}{\dfrac{f_1(x)-f_1(0)}{x-0}}=\lim\limits_{x\to 0^-}{\dfrac{f_1(x)}{x}}=\lim\limits_{x\to 0^-}{\dfrac{f(x)}{x}}=f_l'(0)$$
+i analogno $f_2'(0)=f_d'(x)$. Odavde po karakterizaciji limesa funkcije pomoću jednostranih limesa slijedi egzistencija od $f'(0)$. 
+
+Očigledno je $f_1(0)=f_2(0)=0$. Uočimo da vrijedi
+\begin{align*}
+\left(\arctg\left(3\sin{x}\right)\right)'&=\dfrac{1}{1+\left(3\sin{x}\right)^2}\cdot \left(3\cos{x}\right),\\
+\left(\sin{x}+2x\cos{x}\right)'&=\cos{x}+2\cos{x}-2x\sin{x}=3\cos{x}-2x\sin{x},
+\end{align*}
+pa je $f_1'(0)=f_2'(0)=3$, što je i trebalo pokazati.
+\end{proof}
+\begin{exercise}
+Zadana je funkcija $f : \mathbb{R}\to \mathbb{R}$, $f(x)=2e^x+1$. Odredite derivaciju funkcije $f^{-1}$ koristeći teorem o derivaciji inverzne funkcije i direktno iz formule za inverznu funkciju.
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka su $f_1, f_2 : \mathbb{R}\to \mathbb{R}$ dane sa $f_1(x)=e^x$, $f_2(x)=2x+1$. Uočimo da je $f=f_2\circ f_1$, odakle slijedi da je $f$ strogo rastuća (jer su $f_1$ i $f_2$ strogo rastuće) i $f(\mathbb{R})=f_2\left(f_1\left(\mathbb{R}\right)\right)=f_2\left(\langle 0, \infty\rangle\right)=\langle 1,\infty\rangle$. Za sve $x\in \mathbb{R}$ vrijedi $\left(2e^x+1\right)'=2e^x>0$, tj. $f'(x)\neq 0$. Neka je $d\in \langle 1, \infty\rangle$. Tada postoji $c\in \mathbb{R}$ takav da je $f(c)=d$, odnosno $c=f^{-1}(d)$. Vrijedi
+\begin{align}
+\label{invderexercise1}
+\left(f^{-1}\right)'(d)=\dfrac{1}{f'\left(f^{-1}(d)\right)}=\dfrac{1}{2e^{f^{-1}(d)}}.
+\end{align}
+Ovime smo dobili formulu za $\left(f^{-1}\right)'$. Sada uočimo da za sve $y>1$ vrijedi
+$$f^{-1}(y)=f_1^{-1}\left(f_2^{-1}\left(y\right)\right)=\ln{\dfrac{y-1}{2}},$$
+te imamo
+$$\left(f^{-1}\right)'(y)=\left(\ln{\dfrac{y-1}{2}}\right)'=\dfrac{2}{y-1}\cdot \dfrac{1}{2}=\dfrac{1}{y-1}.$$
+Usporedimo sada ovo s (\ref{invderexercise1}). Za sve $y>1$ vrijedi
+$$\dfrac{1}{2e^{\ln{\frac{y-1}{2}}}}=\dfrac{1}{2\cdot \dfrac{y-1}{2}}=\dfrac{1}{y-1},$$
+odakle vidimo da dobivamo isto rješenje na oba načina.
+\end{proof}
+\begin{exercise}[Derivacija Lambertove W funkcije]
+Neka je zadana $f : \langle -1, \infty\rangle\to \mathbb{R}$, $f(x)=xe^x$. Odredite derivaciju funkcije $f^{-1}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Može se pokazati da vrijedi $\mathcal{R}(f)=\left\langle-\dfrac{1}{e}, \infty\right\rangle$ i da je $f$ strogo rastuća, pa je dobro definirana funkcija $f^{-1} : \left\langle-\dfrac{1}{e}, \infty\right\rangle\to \mathbb{R}$. Neka je sada $z>-1$ proizvoljan. Uočimo da je $f$ diferencijabilna u svakoj točki $x\in \mathbb{R}$ i vrijedi
+$$\left(xe^x\right)'=e^x+xe^x,$$
+pa kako je $x\mapsto e^x+xe^x$ strogo rastuća na $\langle -1, \infty\rangle$ (kao zbroj strogo rastućih funkcija na tom intervalu), za sve $x, y\in \langle -1, \infty\rangle$ takve da je $x<y<z$ vrijedi $f'(x)<f'(y)<f'(z)$. Funkcija $f'$ ima limes slijeva jednak $0$ u točki $-1$, te funkcija $x\mapsto f'(y)$ ima limes zdesna jednak $f'(y)$, pa vrijedi 
+$$0=\lim\limits_{x\to -1^+}{f'(x)}\leq f'(y),$$
+što znači da vrijedi $f'(z)>f'(y)\geq 0$, odnosno $f'(z)>0$, pa kako je $z$ bio proizvoljan, vrijedi $f'(z)\neq 0$ za sve $z\in \langle -1,\infty\rangle$.
+
+Neka je sada $d\in \left\langle-\dfrac{1}{e}, \infty\right\rangle$. Tada postoji $c\in \langle -1,\infty\rangle$ takav da je $d=f(c)$, tj. takav da je $f^{-1}(d)=c$. Očito je $f$ diferencijabilna u $c$ i vrijedi $f'(c)\neq 0$, pa imamo
+$$\left(f^{-1}\right)'(d)=\dfrac{1}{f'\left(f^{-1}(d)\right)}=\dfrac{1}{e^{f^{-1}(d)}+f^{-1}(d)\cdot e^{f^{-1}(d)}}=\dfrac{1}{d+e^{f^{-1}(d)}},$$
+gdje posljednja jednakost slijedi iz svojstava inverzne funkcije.
+\end{proof}
+\begin{exercise}
+Dokažite teorem o derivaciji inverzne funkcije.
+\end{exercise}
+\begin{proof}[Rješenje]
+Želimo se uvjeriti da vrijedi
+$$\lim\limits_{y\to d}{\dfrac{f^{-1}(y)-f^{-1}(d)}{y-d}}=\dfrac{1}{f'(c)},$$
+što možemo pokazati tako da dokažemo da je funkcija $i : J\to \mathbb{R}$ dana sa
+$$i(y)=\begin{cases}
+\dfrac{f^{-1}(y)-f^{-1}(d)}{y-d}, & y\neq f(c),\\
+\dfrac{1}{f'(c)}, & y=f(c).
+\end{cases}$$
+neprekidna u $f(c)$, što možemo pokazati na način da je u točki $f(c)$ prikažemo kao kompoziciju neprekidnih funkcija.
+Promotrimo funkciju $h : I\to \mathbb{R}$ danu sa
+$$h(x)=\begin{cases}
+\dfrac{f(x)-f(c)}{x-c}, & x\neq c,\\
+f'(c), & x=c.
+\end{cases}$$
+Kako je $f$ diferencijabilna u $c$, slijedi i da je $h$ neprekidna u $c$. No tada je i $\dfrac{1}{h}$ neprekidna u $c$ i vrijedi
+\begin{align}
+\label{invproof}
+\left(\dfrac{1}{h}\right)(x)=\dfrac{1}{h(x)}=\begin{cases}
+\dfrac{x-c}{f(x)-f(c)}, & x\neq c,\\
+\dfrac{1}{f'(c)}, & x=c.
+\end{cases}
+\end{align}
+Po teoremu o neprekidnosti inverzne funkcije je također i $f^{-1}$ neprekidna u $d=f(c)$, pa je stoga $\dfrac{1}{h}\circ f^{-1}$ neprekidna u $f(c)$ i za sve $y\in J$ vrijedi
+$$\left(\dfrac{1}{h}\circ f^{-1}\right)(y)=i(y)=\dfrac{1}{h\left(f^{-1}(y)\right)}=\begin{cases}
+\dfrac{f^{-1}(y)-f^{-1}(d)}{y-d}, & y\neq f(c),\\
+\dfrac{1}{f'(c)}, & y=f(c).
+\end{cases}$$
+Zaista, ako je $y=f(c)$, onda je $f^{-1}(y)=c$, pa tvrdnja slijedi iz (\ref{invproof}), a ako je $y\neq f(c)$, onda je i $f^{-1}(y)\neq c$ (kontrapozicija dane tvrdnje glasi da iz $f^{-1}(y)=c$ slijedi $y=f(c)$ što očito vrijedi jer je $f$ funkcija). Odavde slijedi tvrdnja teorema.
+\end{proof}
+U sljedećem zadatku dokazujemo da je tangenta u točki $c$ na graf diferencijabilne funkcije od svih pravaca "najbolja" aproksimacija te funkcije blizu točke $c$.
+\begin{exercise}
+Neka je $I$ otvoreni interval, $c\in I$, $a, b\in \mathbb{R}$, te $f : I \to \mathbb{R}$ diferencijabilna na $I$. Neka su $g, h : \mathbb{R}\to \mathbb{R}$ dane s $g(x)=f'(c)(x-c)+f(c)$, $h(x)=ax+b$\footnote{Obratite pozornost na to da ovdje može biti $a=0$.}. Tada postoji $\delta_h>0$ takav da za sve $x\in I$ vrijedi
+$$0<|x-c|<\delta_h\Rightarrow |f(x)-g(x)|<|f(x)-h(x)|.$$
+\end{exercise}
+
+% Dodati zadatak gdje se neka vrijednost aproksimira linearnom funkcijom
