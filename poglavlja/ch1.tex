@@ -248,71 +248,46 @@ Kažemo da je cijeli broj $a\in \mathbb{Z}$ \textbf{paran} ako postoji bar jedan
 
 Uočite da naš odabir ovih dvaju definicija možda i nije najprirodniji, ali prednost ovakve definicije je njezina jednostavnost, jer da smo npr. definirali parne brojeve kao one čija je zadnja znamenka $0$, $2$, $4$, $6$ ili $8$, tada se pozivamo na pojam dekadskog zapisa broja, a u definiciji \ref{15} se ne pozivamo na ništa osim na množenje cijelih brojeva, pojam koji je za naše svrhe elementaran i kojeg na ovom mjestu nećemo definirati. Nadalje, uočite da smo mogli definirati da je $a\in \mathbb{Z}$ paran ako postoji \textit{točno} jedan $k\in \mathbb{Z}$ takav da je $a=2k$, no kasnije ćemo pokazati da jedinstvenost broja $k$ zapravo slijedi iz same definicije. Napominjemo i da je česta praksa u matematici promotriti definicije s najmanje pretpostavki (pogledajte npr. točku 2.6. u \cite{2}).
 
+Nadalje, posljednje što nam treba je opservacija da, ako želimo dokazati da nešto vrijedi \textit{za svaki} element nekog skupa $A$, onda možemo uzeti \textit{proizvoljan} element skupa $A$ i dokazati da tvrdnja vrijedi za taj element. Preciznije, ako želimo dokazati $(\forall{a\in A})\; P(a)$, uzmemo proizvoljan $a\in A$ i dokažemo da za taj $a$ vrijedi $P(a)$. Na taj način smo zapravo dali "recept" kako možemo za svaki pojedini element skupa $A$ zaključiti tu tvrdnju.
 \begin{exercise}
 Riješite sljedeće zadatke. \begin{itemize}
 
 \item[a)] Dokažite da je zbroj dva parna broja ponovno paran broj.
-\item[b)] Dokažite da je umnožak dva neparna broja neparan broj.
-\item[c)] Odredite sve $n\in \mathbb{N}_0$ za koje je $n!$ paran (Sjetite se da se za $n\in \mathbb{N}_0$, broj $n!$ definira kao broj za kojeg je $0!=0$, te $n!=n\cdot (n-1)\cdot ...\cdot 2\cdot 1$ za $n\in \mathbb{N}$).
+\item[b)] Dokažite da za svaki $x\in \mathbb{R}$ vrijedi $x^2-4x\geq -4$.
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-a) Neka su $a$, $b\in \mathbb{Z}$ proizvoljni parni brojevi. To znači da postoje $k$, $l\in \mathbb{Z}$ takvi da je $a=2k$ i $b=2l$. No tada je $$a+b=2k+2l=2(k+l).$$ Budući da je $k+l\in \mathbb{Z}$, slijedi i da je $a+b$ paran. Time smo dokazali tvrdnju.
+a) Neka je $P$ skup svih parnih brojeva. Tvrdnja iz zadatka u terminima predikata, kvantifikatora i veznika glasi
+$$(\forall a, b\in P)\;\; a+b\in P.$$
+Neka su $a$, $b\in P$ proizvoljni. To znači da postoje $k$, $l\in \mathbb{Z}$ takvi da je $a=2k$ i $b=2l$. No tada je $$a+b=2k+2l=2(k+l).$$ Budući da je $k+l\in \mathbb{Z}$, slijedi i da je $a+b$ paran. Time smo dokazali tvrdnju.
 
-b) Dokaz ide analogno\footnote{Riječ \textit{analogno} ćete često vidjeti u matematičkim tekstovima i ona znači \textit{slično}, \textit{usporedivo}.} prethodnom. Zaista, neka su $a$, $b\in \mathbb{Z}$ proizvoljni neparni brojevi. Tada postoje $k, l\in \mathbb{Z}$ takvi da je $a=2k+1$ i $b=2l+1$. Tada je
-$$ab=(2k+1)(2l+1)=4kl+2k+2l+1=2(2kl+k+l)+1,$$
-pa tvrdnja očito vrijedi, kako je $2kl+k+l\in \mathbb{Z}$.
-
-c) Za $n=0$ i $n=1$ vrijedi $n!=1$, a $1$ očito nije paran broj, jer ne postoji $k\in \mathbb{Z}$ takav da je $1=2k$. Međutim, vrijedi $2!=2$, a $2$ je paran jer je $2=2\cdot 1$. Za $n>2$ vrijedi
-$$n!=1\cdot 2\cdot 3\cdot ...\cdot (n-1)\cdot n=2\cdot (1\cdot 3\cdot ...\cdot (n-1)\cdot n),$$
-pa je $n!$ očito paran i za $n>2$. Slijedi da je $n!$ paran ako i samo ako je $n\in \mathbb{N}_0\setminus \{0, 1\}$.
-\end{proof}
-\begin{exercise}
-Dokažite da za svaki $x\in \mathbb{R}$ vrijedi $x^2-4x\geq -4$.
-\end{exercise}
-\begin{proof}[Rješenje]
-Neka je $x\in \mathbb{R}$ proizvoljan. Vrijedi
+b) Neka je $x\in \mathbb{R}$ proizvoljan. Vrijedi
 $$x^2-4x\geq -4\Leftrightarrow x^2-4x+4\geq 0\Leftrightarrow (x-2)^2\geq 0,$$
 te kako smo dobili ekvivalenciju s istinitom tvrdnjom $(x-2)^2\geq 0$, tvrdnja mora vrijediti. Uočite da bi zapravo jedan direktan dokaz bio sljedeći: Znamo da za svaki $x\in \mathbb{R}$ vrijedi $(x-2)^2\geq 0$. Imamo
 $$(x-2)^2\geq 0\Rightarrow x^2-4x+4\geq 0\Rightarrow x^2-4x\geq -4,$$
 što smo i tvrdili. Međutim, u prethodnom dokazu je bilo puno intuitivnije ići "unazad", tj. od zaključka ka nekoj istinitoj tvrdnji, pa ako dobijemo da su te tvrdnje ekvivalentne, tvrdnja sigurno vrijedi i možemo konstruirati i direktan dokaz, analogno kako smo to napravili u ovom primjeru.
 \end{proof}
-\begin{exercise}
-Dokažite da za sve skupove $A$, $B$, $C$ vrijede sljedeća svojstva.
-\begin{AutoMultiColItemize}
-\item[a)] $A\cup B=B\cup A,$
-\item[b)] $A\subseteq B\Rightarrow \mathcal{P}(A)\subseteq \mathcal{P}(B),$
-\item[c)] $(A\cup B)\times C=(A\times C)\cup (B\times C),$
-\item[d)] $(A\cup B)^c=A^c\cap B^c \hspace{0.3cm} \mathrm{(De} \hspace{0.1cm}\mathrm{Morgan)}.$
-\end{AutoMultiColItemize}
+\begin{exercise} Riješite sljedeće zadatke.
+\begin{itemize}
+\item[a)] Dokažite da za sve skupove $A$ i $B$ vrijedi $A\cup B=B\cup A$.
+\item[b)] Dokažite da tvrdnja da za sve skupove $A$, $B$ vrijedi $A\cap B\supseteq A\cup B$ nije istinita.
+\end{itemize}
 \begin{proof}[Rješenje]
-a) Neka su $A$ i $B$ proizvoljni. Ako je barem jedan od njih prazan, onda tvrdnja vrijedi, pa pretpostavimo da su svi oni neprazni. Neka je zatim $x\in A\cup B$ proizvoljan. Tada vrijedi $x\in A\vee x\in B$, što povlači $x\in B\vee x\in A$, tj. $x\in B\cup A$. Obratno, ako je $x\in B\cup A$, to znači da je $x\in B\vee x\in A$, odnosno $x\in A\vee x\in B$, tj. $x\in A\cup B$.
+a) Neka su $A$ i $B$ proizvoljni, te neka je $x\in A\cup B$ proizvoljan. Tada vrijedi $x\in A\vee x\in B$, što povlači $x\in B\vee x\in A$, tj. $x\in B\cup A$. Obratno, ako je $x\in B\cup A$, to znači da je $x\in B\vee x\in A$, odnosno $x\in A\vee x\in B$, tj. $x\in A\cup B$.
 
-b) Neka su $A$ i $B$ proizvoljni i neka je $X\in \mathcal{P}(A)$ proizvoljan. Iz definicije slijedi $X\subseteq A$. Kako vrijedi $X\subseteq A$ i $A\subseteq B$, slijedi $X\subseteq B$, odnosno $X\in \mathcal{P}(B)$.
-
-c) Neka su $A$, $B$ i $C$ proizvoljni i neka je $(x, y)\in (A\cup B)\times C$ proizvoljan. Tada je $x\in A\cup B$ i $y\in C$, odnosno $(x\in A\vee x\in B)\wedge y\in C$. Dobivamo $$x\in A\wedge y\in C\vee x\in B\wedge y\in C,$$
-(v. napomenu \ref{taut}), tj. $(x, y)\in A\times C$ ili $(x, y)\in B\times C$, odakle dobivamo $(x, y)\in (A\times C)\cup (B\times C)$.
-
-d) Neka su $A$ i $B$ proizvoljni i neka je $x\in (A\cup B)^c$ proizvoljan. Tada vrijedi $x\notin A\cup B$, što je drukčiji zapis za $\neg(x\in A\cup B)$. Kako $x\in A\cup B$ povlači $x\in A \vee x\in B$, vrijedi $$\neg(x\in A\cup B)\Leftrightarrow\neg(x\in A \vee x\in B)\Leftrightarrow\neg (x\in A)\wedge \neg (x\in B),$$ odnosno $x\notin A \wedge x\notin B$, pa vrijedi $x\in A^c\wedge x\in B^c$, odnosno $x\in A^c\cap B^c$. Analogno se dokazuje drugi smjer.
+b) Dokažimo da je istinita njezina negacija, tj. da je istinita tvrdnja 
+$$\left(\exists A, B\in U\right)\; A\cap B\subset A\cup B.$$
+Ovo dokazujemo naprosto po definiciji unije i presjeka. Zaista, uzmimo $A=\left\{1, 2, 3\right\}$ i $B=\left\{3, 4, 5\right\}$. Vrijedi $A\cap B=\left\{3\right\}$ i $A\cup B=\left\{1, 2, 3, 4, 5\right\}$, te očito vrijedi $A\cap B\subset A\cup B$.
 \end{proof}
 \end{exercise}
 \begin{remark}
 \label{firstrem}
-Znamo da vrijedi $A=B$ ako i samo ako vrijedi $A\subseteq B$ i $B\subseteq A$. No to po definiciji vrijedi ako i samo ako da za svaki $x\in U$, gdje je $U$ univerzalni skup, vrijedi $x\in A\Rightarrow x\in B$ i $x\in B\Rightarrow x\in A$, tj. $x\in A\Leftrightarrow x\in B$. Prema tome, da bi vrijedilo $A=B$ nužno je i dovoljno za proizvoljan $x\in U$ vrijedi $x\in A\Leftrightarrow x\in B$ da bismo pokazali jednakost. To znači da zapravo u podzadatcima a), c) i d) zapravo i ne treba dokazivati drugi smjer, jer imamo niz ekvivalencija za koje znamo da vrijedi tranzitivnost.
+Znamo da vrijedi $A=B$ ako i samo ako vrijedi $A\subseteq B$ i $B\subseteq A$. No to po definiciji vrijedi ako i samo ako da za svaki $x\in U$, gdje je $U$ univerzalni skup, vrijedi $x\in A\Rightarrow x\in B$ i $x\in B\Rightarrow x\in A$, tj. $x\in A\Leftrightarrow x\in B$. Prema tome, da bi vrijedilo $A=B$ nužno je i dovoljno za proizvoljan $x\in U$ vrijedi $x\in A\Leftrightarrow x\in B$ da bismo pokazali jednakost. To znači da zapravo u a) zapravo i ne treba dokazivati drugi smjer, jer imamo niz ekvivalencija za koje znamo da vrijedi tranzitivnost.
 \end{remark}
-
 \begin{remark}
 Uočite da vrijedi $\{a, a\}=\{a\}$ i $\{a, b\}=\{b, a\}$. Zaista, zapis $\{a, a\}$ znači da promatrani skup sadrži samo elemente $a$ i $a$ i niti jedan drugi. Očito to vrijedi ako i samo ako skup sadrži samo element $a$ i niti jedan drugi, dakle on je jednak $\{a\}$. Slično se dokazuje i druga jednakost, te da gornja svojstva vrijede i za elemente skupova s više članova. Odavde slijedi da u skupu nije bitan poredak elemenata, te da duplikate možemo zanemariti. Međutim, postoje određeni slučajevi u kojima je bitno postojanje duplikata, odnosno u kojima je poredak bitan (tada se koristimo \textit{multiskupovima}, \textit{indeksiranim familijama skupova}, \textit{uređenim $n$-torkama}).
 \end{remark}
-\begin{exercise}
-Dokažite da tvrdnja da za sve skupove $A$, $B$ vrijedi $A\cap B\supseteq A\cup B$ nije istinita.
-\end{exercise}
-\begin{proof}[Rješenje]
-Dokažimo da je istinita njezina negacija, tj. da je istinita tvrdnja 
-$$\left(\exists A, B\in U\right)\; A\cap B\subset A\cup B.$$
-Ovo dokazujemo naprosto po definiciji unije i presjeka. Zaista, uzmimo $A=\left\{1, 2, 3\right\}$ i $B=\left\{3, 4, 5\right\}$. Vrijedi $A\cap B=\left\{3\right\}$ i $A\cup B=\left\{1, 2, 3, 4, 5\right\}$, te očito vrijedi $A\cap B\subset A\cup B$.
-\end{proof}
-Iz prethodnog primjera vidimo da, kako bi pokazali da tvrdnja oblika $\forall{x}\, P(x)$ nije istinita, dovoljno je naći samo jedan primjer $x_0$ takav da je $P(x_0)$ lažna. Takav primjer zove se \textit{kontraprimjer}. Ako neka tvrdnja s univerzalnim kvantifikatorom nije istinita, onda često kažemo da \textit{općenito nije istinita}, jer se može ipak dogoditi da postoji skup za kojeg je tvrdnja istinita. Npr. za $A=B=\emptyset$ vrijedi $A\cap B\supseteq A\cup B$.
+Iz prethodnog zadatka vidimo da, kako bi pokazali da tvrdnja oblika $\forall{x}\, P(x)$ nije istinita, dovoljno je naći samo jedan primjer $x_0$ takav da je $P(x_0)$ lažna. Takav primjer zove se \textit{kontraprimjer}. Ako neka tvrdnja s univerzalnim kvantifikatorom nije istinita, onda često kažemo da \textit{općenito nije istinita}, jer se može ipak dogoditi da postoji skup za kojeg je tvrdnja istinita. Npr. za $A=B=\emptyset$ vrijedi $A\cap B\supseteq A\cup B$.
 \begin{definition}
 Neka je $x\in \mathbb{R}$. Kažemo da je $x$ \textbf{racionalan} ako postoje cijeli brojevi $a$ i $b\neq 0$ takvi da je $x=\dfrac{a}{b}$. Ako $x$ nije racionalan, kažemo da je on \textbf{iracionalan}.
 \end{definition}
@@ -320,6 +295,8 @@ Neka je $x\in \mathbb{R}$. Kažemo da je $x$ \textbf{racionalan} ako postoje cij
 Dokažite da za svaki racionalan broj postoji racionalan broj koji je strogo veći od njega.
 \end{exercise}
 \begin{proof}[Rješenje]
+Tvrdnja u terminima predikata, kvantifikatora i veznika glasi
+$$(\forall q\in \mathbb{Q})(\exists b\in \mathbb{Q})\;\; b>q.$$
 Neka je $q\in \mathbb{Q}$ proizvoljan. Tada postoje brojevi $m\in \mathbb{Z}$ i $n\in \mathbb{Z}\setminus\{0\}$ takvi da je $q=\dfrac{m}{n}$. Promotrimo broj $q+1$. Očito je $q+1>q$, te vrijedi
 $$q+1=\dfrac{m}{n}+1=\dfrac{m+n}{n}.$$
 Kako je $m+n\in \mathbb{Z}$ i po definiciji $n\in \mathbb{Z}\setminus\{0\}$, imamo i da je $q+1$ racionalan broj.
@@ -327,15 +304,11 @@ Kako je $m+n\in \mathbb{Z}$ i po definiciji $n\in \mathbb{Z}\setminus\{0\}$, ima
 \section{Dokazi kontradikcijom}
 Ideja dokaza kontradikcijom je pretpostaviti da je tvrdnja koju želimo dokazati lažna, a zatim zdravim logičkim zaključivanjem doći do apsurdnog zaključka, odakle slijedi da je početna pretpostavka (da je tvrdnja koju želimo dokazati lažna) bila sama lažna, odakle dobivamo istinitost tvrdnje koju smo htjeli dokazati. Pokažimo to kroz nekoliko primjera.
 \begin{exercise}
-Dokažite da ako je $b$ paran, tj. ako postoji bar jedan $k\in \mathbb{Z}$ takav da je $b=2k$, onda je taj $k$ jedinstven.
-\end{exercise}
-\begin{proof}[Rješenje]
-Tvrdnju dokazujemo svođenjem na kontradikciju. Pretpostavimo da postoje $k, l\in \mathbb{Z}$, $k\neq l$, takvi da je $$b=2k\;\;\text{ i }\;\;b=2l.$$ No tada je $2k=2l$, odnosno $k=l$. Dakle, dobili smo da istovremeno vrijedi $k\neq l$ i $k=l$, što je apsurdno. Dakle, zaključujemo da je naša početna pretpostavka bila lažna, odnosno takav $k$ je zaista jedinstven.
-\end{proof}
-\begin{exercise}
 Dokažite: Niti jedan cijeli broj nema svojstvo da je istovremeno paran i neparan. (Iako se ova tvrdnja na prvi pogled čini očiglednom, zapravo nije odmah vidljiva iz naših definicija parnosti i neparnosti!)
 \end{exercise}
 \begin{proof}[Rješenje]
+Neka je $P$ skup svih parnih brojeva i $N$ skup svih neparnih brojeva. Tvrdnja u terminima predikata, kvantifikatora i veznika glasi
+$$\neg\left(\left(\exists a\in \mathbb{Z}\right)\;\; a\in P \wedge a\in N\right).$$
 Pretpostavimo da postoji takav broj, neka je to $a\in \mathbb{Z}$. Tada postoje cijeli brojevi $k, l\in \mathbb{Z}$ takvi da je $a=2k$ i $a=2l+1$. Odavde imamo $2k=2l+1$, odnosno 
 $$2(k-l)=1.$$
 Zapravo, dobili smo da je $1$ paran broj, što intuitivno znamo da ne vrijedi, ali to možemo i dokazati. Možda najprirodniji argument je iskoristiti činjenicu da, kad bi ove operacije proširili na skup $\mathbb{Q}$, onda bi imali $k-l=\dfrac{1}{2}$, što je kontradikcija s činjenicom da je $k-l$ cijeli broj. No ovo možemo i dokazati i bez pozivanja na skup racionalnih brojeva. Uočimo da je $$1=2(k-l)>0,$$ pa slijedi i da je $k-l>0$. S druge strane, kako je $k-l>0$, imamo $$k-l<2(k-l)=1.$$ Dakle $0<k-l<1$, kontradikcija s $k-l\in \mathbb{Z}$, jer nema cijelih brojeva između $0$ i $1$.\footnote{Ovu, na prvi pogled očiglednu činjenicu, dokazujemo u zadatku \ref{23}.}
@@ -344,6 +317,8 @@ Zapravo, dobili smo da je $1$ paran broj, što intuitivno znamo da ne vrijedi, a
 Dokažite da ne postoji broj $a\in \mathbb{R}$ sa svojstvom da za svaki $\epsilon>0$ vrijedi $a>\epsilon$.
 \end{exercise}
 \begin{proof}[Rješenje]
+Tvrdnja u terminima predikata, kvantifikatora i veznika glasi
+$$\neg\left(\left(\exists a\in \mathbb{R}\right)(\forall \epsilon>0) a>\epsilon\right).$$
 Pretpostavimo da postoji takav $a\in \mathbb{R}$. Za $\epsilon=a+1$ vrijedi $a>a+1$, što je očito nemoguće. Međutim, da bi ovakav izbor broja $\epsilon$ bio dobar, mora vrijediti $\epsilon=a+1>0$. Međutim, to lagano slijedi iz činjenice da uvrštavanjem $0$ umjesto $\epsilon$ u početnu pretpostavku imamo $a>0$, pa posljedično i $a+1>0$.
 \end{proof}
 Još jedan tip dokazivanja zove se \textit{dokaz kontrapozicijom}, a on se sastoji u sljedećem -- iz činjenice da za sudove $A$ i $B$ vrijedi 
@@ -352,19 +327,26 @@ slijedi da je dovoljno dokazati $\neg B\Rightarrow \neg A$. Uočimo da se dokaz 
 
 \begin{exercise}
 Dokažite: \begin{itemize}
-\item[a)] Neka je $a\in \mathbb{N}$ proizvoljan. Ako $4a$ nije kvadrat nekog prirodnog broja, onda to nije ni $a$.
-\item[b)] Neka je $a\in \mathbb{Z}$ proizvoljan. Vrijedi da je $a^2$ paran ako i samo ako je $a$ paran.
+\item[a)] Za svaki $a\in \mathbb{N}$ vrijedi sljedeće: Ako $4a$ nije kvadrat nekog prirodnog broja, onda to nije ni $a$.
+\item[b)] Za svaki $a\in \mathbb{Z}$ vrijedi da je $a^2$ paran ako i samo ako je $a$ paran.
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-a) Dokazat ćemo ovu tvrdnju kontrapozicijom. Dovoljno je pokazati sljedeće: Ako je $a$ kvadrat nekog prirodnog broja, onda je to i $4a$. Ako postoji $p$ takav da je $a=p^2$, onda je $$4a=4p^2=2^2p^2=(2p)^2,$$ 
+a) Neka je $K$ skup svih kvadrata nekog prirodnog broja. Tvrdnja u terminima predikata, kvantifikatora i veznika glasi
+$$(\forall a\in \mathbb{N})\;\; \neg\left(4a\in K\right)\Rightarrow \neg\left(a\in K\right).$$
+Dokazat ćemo ovu tvrdnju kontrapozicijom. Dovoljno je pokazati sljedeće: Ako je $a$ kvadrat nekog prirodnog broja, onda je to i $4a$. Ako postoji $p$ takav da je $a=p^2$, onda je $$4a=4p^2=2^2p^2=(2p)^2,$$ 
 pa tvrdnja vrijedi.
 
-b) Dokazat ćemo ovu tvrdnju tako da prvo pokažemo jednu implikaciju, a onda drugu. Pretpostavimo da je $a$ paran, tj. $a=2k$ za neki $k\in \mathbb{Z}$. Tada je $$a^2=4k^2=2(2k^2),$$ dakle i $a^2$ je paran. 
+b) Neka je $P$ skup svih parnih brojeva. Tvrdnja u terminima predikata, kvantifikatora i veznika glasi
+$$(\forall a\in \mathbb{Z})\;\; a^2\in P\Leftrightarrow a\in P.$$
+Dokazat ćemo ovu tvrdnju tako da prvo pokažemo jednu implikaciju, a onda drugu. Pretpostavimo da je $a$ paran, tj. $a=2k$ za neki $k\in \mathbb{Z}$. Tada je $$a^2=4k^2=2(2k^2),$$ dakle i $a^2$ je paran. 
 
 Dokažimo sada drugi smjer i to kontrapozicijom, tj. da ako je $a$ neparan, da je tada i $a^2$ neparan. Zaista, ako je $a$ neparan, onda postoji $k$ takav da je $a=2k+1$. Tada je $$a^2=4k^2+4k+1=2(2k^2+2k)+1,$$ 
 pa tvrdnja vrijedi.
 \end{proof}
+\begin{remark}
+U nastavku nećemo zapisivati tvrdnje iz zadatka u terminima predikata, kvantifikatora i veznika, jer ćemo smatrati takvu formulaciju tvrdnje iz zadatka jasnom. Takav zapis je naročito koristan ako tvrdnja koju želimo dokazati nije iskazana preciznim matematičkim jezikom, što je čest slučaj u literaturi, pa i kasnije u ovoj skripti.
+\end{remark}
 \begin{definition}
 Neka su $a, b\in \mathbb{Z}$ i $b\neq 0$. Kažemo da je $a$ \textbf{djeljiv} s $b$ ako postoji $q\in \mathbb{Z}$ takav da je $a=bq$. Ako za broj $c\in \mathbb{Z}\backslash \{0\}$ vrijedi da je $a$ djeljiv s $c$ i $b$ djeljiv s $c$, onda kažemo da je broj $c$ \textbf{zajednički djelitelj} tih dvaju brojeva. Najveći od tih zajedničkih djelitelja naprosto zovemo \textbf{najveći zajednički djelitelj} i označavamo taj broj s $M(a, b)$. Kažemo da su $a$ i $b$ \textbf{relativno prosti} ako je $M(a, b)=1$.
 \end{definition}
@@ -392,7 +374,14 @@ Kažemo da $a$ dijeli $b$ i pišemo $a\; \vert \;b$ ako je $b$ djeljiv s $a$.
 Odredite sve $a\in \mathbb{Z}\setminus \{0\}$ takve da je $\dfrac{4}{a}$ cijeli broj.
 \end{exercise}
 \begin{proof}[Rješenje]
-Tvrdnja očito vrijedi ako je $a\; \vert \;4$, tj. tvrdnja vrijedi za $a=1, -1, 2, -2, 4, -4$. Naime, da $a\; \vert \;4$ znači da postoji $k\in \mathbb{Z}$ takav da je $4=ak$, pa vrijedi $$\dfrac{4}{a}=\dfrac{ak}{a}=k\in \mathbb{Z}.$$ Dokažimo da su ovo jedine mogućnosti. Tvrdnja očito ne vrijedi za $3$ i $-3$, te pretpostavimo li da postoji neki $a>4$ takav da tvrdnja vrijedi, onda djeljenjem s $a$ dobivamo $\dfrac{4}{a}<1$, no tada očito vrijedi i $\dfrac{4}{a}>0$, jer to vrijedi ako i samo ako je $4>0$, što je istina. Znamo da ne postoji cijeli broj između $0$ i $1$, pa imamo kontradikciju. Tvrdnja se analogno pokazuje za $a<-4$.
+Tvrdnja očito vrijedi ako je $a\; \vert \;4$, tj. tvrdnja vrijedi za $a=1, -1, 2, -2, 4, -4$. Naime, da $a\; \vert \;4$ znači da postoji $k\in \mathbb{Z}$ takav da je $4=ak$, pa vrijedi $$\dfrac{4}{a}=\dfrac{ak}{a}=k\in \mathbb{Z}.$$
+Dokažimo da su ovo jedine mogućnosti, tj. dokažimo tvrdnju
+$$\left(\forall a\in \mathbb{Z}\setminus\{0\}\right)\;\; \dfrac{4}{a}\in \mathbb{Z}\Leftrightarrow a\; \vert \; 4.$$
+Prvi smjer smo već dokazali, pa ćemo dokazati drugi smjer kontrapozicijom. Neka je $a\in \mathbb{Z}\setminus \{0\}$ takav da $a$ nije djelitelj od $4$ proizvoljan. Ako je $a$ jednak $3$ ili $-3$ onda očito vrijedi $\dfrac{4}{a}\notin \mathbb{Z}$.
+
+Nadalje, tvrdimo da za svaki $a>4$ vrijedi $\dfrac{4}{a}\notin \mathbb{Z}$. Pretpostavimo suprotno, da postoji neki $a>4$ takav da vrijedi $\dfrac{4}{a}\in \mathbb{Z}$, onda djeljenjem nejednakosti $a>4$ s $a$ (što možemo jer je $a>0$) dobivamo $\dfrac{4}{a}<1$, no tada očito vrijedi i $\dfrac{4}{a}>0$, jer to vrijedi ako i samo ako je $4>0$, što je istina. Znamo da ne postoji cijeli broj između $0$ i $1$, pa imamo kontradikciju. 
+
+Analogno se pokazuje da za $a<-4$ vrijedi $\dfrac{4}{a}\notin \mathbb{Z}$. Time smo pokrili sve moguće vrijednosti od $a$, pa je tvrdnja dokazana.
 \end{proof}
 Analogno se pokazuje da je $\dfrac{b}{a}$ cijeli broj ako i samo ako je $a$ djelitelj od $b$.
 
@@ -523,14 +512,15 @@ kao kartezijev produkt dva skupa.
 \begin{itemize}
 \item[a)] Dokažite da je zbroj parnog broja i neparnog broja neparan broj.
 \item[b)] Dokažite da je umnožak dva kvadrata nekog prirodnog broja ponovno kvadrat nekog prirodnog broja.
+\item[c)] Neka su $A$ i $B$ proizvoljni skupovi koji nisu disjunktni. Dokažite da tada oni imaju zajednički neprazan podskup.
 \end{itemize}
 \end{exercise}
 \begin{exercise} \textbf{}
 \begin{itemize}
 \item[a)] Dokažite da za svaki prirodan broj postoji neparan broj veći od njega.
-\item[b)] Neka su $a, b\in \mathbb{Z}$ parni brojevi. Dokažite da postoji $n\in \mathbb{Z}$ takav da je $a<n<b$.
-\item[c)] Dokažite da ne postoje $p, q\in \mathbb{N}$ takvi da je $p$ paran, $q$ neparan, te $2p^2+q=500$.
-\item[d)] Neka je $a\in \mathbb{N}$, $a>1$. Dokažite da ne postoji $n\in \mathbb{N}$ sa svojstvom da $a \mid n$ i $a \mid n+1$.
+\item[b)] Neka su $a, b\in \mathbb{Z}$ parni brojevi takvi da je $a<b$. Dokažite da postoji $n\in \mathbb{Z}$ takav da je $a<n<b$.
+\item[c)] Neka je $a\in \mathbb{N}$, $a>1$. Dokažite da ne postoji $n\in \mathbb{N}$ sa svojstvom da $a \mid n$ i $a \mid n+1$.
+\item[d)] Neka je $a>0$ i $b\in \mathbb{R}$. Dokažite da vrijedi $b>a$ ako i samo ako postoji $\epsilon>0$ takav da je $b=(1+\epsilon)a$.
 \end{itemize}
 \end{exercise}
 \begin{exercise}
@@ -538,22 +528,13 @@ Dokažite da za skupove $A$, $B$, $C$ vrijedi
 \begin{itemize}
 \item[a)] $A\cap B\subseteq A\cup B$,
 \item[b)] $A\cap (B\setminus C)=(A\cap B)\setminus (A\cap C)$.
+\item[c)] Ako je $\mathcal{P}(A)$ jednočlan skup (skup koji sadrži jedan i samo jedan element), dokažite da je $A=\emptyset$.
 \end{itemize}
 \end{exercise}
 \begin{exercise} \textbf{} 
 \begin{itemize}
-\item[a)] Ako je $\mathcal{P}(A)$ jednočlan skup (skup koji sadrži jedan i samo jedan element), dokažite da je $A=\emptyset$.
-\item[b)] Dokažite: Ako je $A\cup B=\emptyset$, onda je $A=B=\emptyset$.
-\item[c)] Neka je $U$ univerzalni skup. Odredite sve skupove $A\subseteq U$ za koje vrijedi $A\subseteq A^c$.
-\item[d)] Dokažite: Ako dva skupa nisu disjunktna, tada oni imaju zajednički neprazan podskup.
-\end{itemize}
-\end{exercise}
-\begin{exercise}
-Dokažite:
-\begin{itemize}
-\item[a)] Simetrična razlika je komutativna, tj. vrijedi $A\triangle B=B\triangle A$,
-\item[b)] Simetrična razlika je asocijativna, tj. vrijedi $(A\triangle B)\triangle C=A\triangle (B\triangle C)$.
-\item[c)] Dokažite da za sve skupove $A$, $B$ vrijedi $A\cup (A^c\cap B)=A\cup B$.
+\item[a)] Neka je $U\neq \emptyset$ univerzalni skup. Odredite sve skupove $A\subseteq U$ za koje vrijedi $A\subseteq A^c$.
+\item[b)] Odredite sve $n\in \mathbb{N}_0$ za koje je $n!$ paran. (Sjetite se da se za $n\in \mathbb{N}_0$, broj $n!$ definira kao broj za kojeg je $0!=0$, te $n!=n\cdot (n-1)\cdot ...\cdot 2\cdot 1$ za $n\in \mathbb{N}$.)
 \end{itemize}
 \end{exercise}
 \begin{exercise}
@@ -575,8 +556,11 @@ Dokažite da je $\sqrt{27}$ iracionalan.
 \item[c)] Dokažite da ako pozitivan realan broj $x$ nije racionalna potencija broja $10$, onda je $\log{x}$ iracionalan broj.
 \item[d)] Dokažite da je $\log_2{3}$ iracionalan broj.
 \end{itemize}
-\begin{exercise} $(*)$
-Neka je $U$ univerzalni skup i $A\subseteq U$ proizvoljan. Odredite sve $X\subseteq U$ takve da je $X\cap A=X\cup A$.
 \end{exercise}
+\begin{exercise} $(*)$
+Neka je $U\neq \emptyset$ univerzalni skup i $A\subseteq U$ proizvoljan. Odredite sve $X\subseteq U$ takve da je $X\cap A=X\cup A$.
+\end{exercise}
+\begin{exercise} $(*)$
+Dokažite da za svaki $a\in \{1, 2, \dots, 81\}$ postoji deveteroznamenkasti broj čija je suma znamenki jednaka $a$.
 \end{exercise}
 \large

@@ -314,51 +314,13 @@ Sada uvodimo korisnu notaciju kojom ćemo se koristiti na više mjesta.
 \label{usefulnotation}
 Neka je $f(x)$ neki realan broj u ovisnosti o $x\in A\subseteq \mathbb{R}$. Oznaka $S=\left\{f(x) : x\in A\right\}$ je zapravo oznaka za skup $S=\left\{y\in \mathbb{R} : \exists x\in A \;\mathrm{t.d.}\; y=f(x)\right\}$.
 \end{definition}
-
-\begin{exercise}
-Zadan je skup $S=\left\{\dfrac{1}{x^2+1} : x\in \mathbb{R}\right\}$. Odredite $\min{S}$ i $\max{S}$, ako postoje.
-\end{exercise}
-\begin{proof}[Rješenje]
-Pokušamo li umjesto $x$ uvrstiti razne brojeve, naslućujemo da bi njegov maksimum mogao biti $1$. Zaista, za sve $x\in \mathbb{R}$ vrijedi $$\dfrac{1}{x^2+1}\leq 1,$$ jer je ta tvrdnja ekvivalentna tvrdnji $x^2\geq 0$. Vrijedi i $1\in S$, i to za $x=0$. Dakle, $\max{S}=1$. 
-
-Nadalje, tvrdimo da $\min{S}$ ne postoji. Zaista, pretpostavimo da postoji $\min{S}=m\in \mathbb{R}$. Kako je $m\in S$, po definiciji postoji $x_0\in \mathbb{R}$ takav da je $m=\dfrac{1}{x_0^2+1}$. Uzmimo $x_1:=|x_0|+1$. Vrijedi $$\dfrac{1}{x_0^2+1}> \dfrac{1}{(|x_0|+1)^2+1},$$
-jer je
-$$\dfrac{1}{x_0^2+1}> \dfrac{1}{(|x_0|+1)^2+1}\Leftrightarrow x_0^2+1<(|x_0|+1)^2+1\Leftrightarrow -1<2|x_0|,$$
-a tvrdnja $-1<2|x_0|$ je očito istinita. Nadalje, očito je $|x_0|+1\in \mathbb{R}$, pa vrijedi $$\dfrac{1}{(|x_0|+1)^2+1}\in S,$$ što je u kontradikciji s minimalnošću od $m$.
-\end{proof}
 \begin{exercise}
 Neka je $S=\{x^3-x : x\geq 1\}$. Odredite $\min{S}$.
 \end{exercise}
 \begin{proof}[Rješenje]
-Očito je $0\in S$. Dokažimo da je $x^3-x\geq 0$ za sve $x\geq 1$. Zaista, taj uvjet je ekvivalentan sa 
+Uvrštavanjem raznih brojeva možemo naslutiti da je $\min{S}=0$. Dokažimo to! Očito je $0\in S$. Dokažimo da je $x^3-x\geq 0$ za sve $x\geq 1$. Zaista, taj uvjet je ekvivalentan sa 
 $$x(x^2-1)\geq 0, \;\; \forall x\geq 1,$$
 što je ekvivalentno tvrdnji da je $x^2-1\geq 0$ za sve $x\geq 1$, što očito vrijedi. Prema tome tvrdnja vrijedi po definiciji minimuma.
-\end{proof}
-\begin{exercise}
-\label{tjeme}
-Neka su $a, b, c\in \mathbb{R}$ i $a> 0$. Neka je $S=\left\{ax^2+bx+c : x\in \mathbb{R}\right\}$. Odredimo $\min{S}$.
-\end{exercise}
-\begin{proof}[Rješenje]
-Za sve $x\in \mathbb{R}$ vrijedi
-\begin{align*}
-ax^2+bx+c&=a\left(x^2+\dfrac{b}{a}x+\dfrac{c}{a}\right)=a\left(x^2+\dfrac{b}{a}x+\dfrac{b^2}{4a^2}+\dfrac{c}{a}-\dfrac{b^2}{4a^2}\right)\\
-&=a\left(\left(x+\dfrac{b}{2a}\right)^2+\dfrac{4ac-b^2}{4a^2}\right)=a\left(x+\dfrac{b}{2a}\right)^2+\dfrac{4ac-b^2}{4a},
-\end{align*}
-pa zbog $a>0$ vrijedi $$a\left(x+\dfrac{b}{2a}\right)^2+\dfrac{4ac-b^2}{4a}\geq \dfrac{4ac-b^2}{4a}$$ 
-i $\dfrac{4ac-b^2}{4a}$ je ujedno i minimum jer se on postiže za $x=-\dfrac{b}{2a}$.
-\end{proof}
-\begin{remark}
-Analogno se pokazuje da, ukoliko je $a<0$, vrijedi da je $\max{S}=\dfrac{4ac-b^2}{4a}$ i on se, kao i u prethodnom slučaju, postiže za $x=-\dfrac{b}{2a}$. Ovo je vrlo koristan rezultat, za koji se nadamo da Vam je poznat iz srednje škole.
-\end{remark}
-
-\begin{exercise}
-Neka je $S=\left\{\dfrac{1}{\sqrt{x^2+3x+4}} : x\in \mathbb{R}\right\}$. Odredite $\max{S}$.
-\end{exercise}
-\begin{proof}[Rješenje]
-Neka je $x\in \mathbb{R}$ proizvoljan. Iz tvrdnje prethodnog zadatka imamo da vrijedi $$x^2+3x+4\geq \dfrac{7}{4},$$
-gdje jednakost vrijedi za $x=-\dfrac{3}{2}$. Odavde iz monotonog rasta funkcije funkcije korijen dobivamo $$\sqrt{x^2+3x+4}\geq \dfrac{\sqrt{7}}{2},$$
-odnosno
-$$\dfrac{1}{\sqrt{x^2+3x+4}}\leq \dfrac{2}{\sqrt{7}}.$$ Zaključujemo i da je ovo maksimum, jer jednakost vrijedi za $x=-\dfrac{3}{2}$.
 \end{proof}
 \begin{exercise}
 Neka je $S=\left\{\dfrac{\pi^2}{4x\sin{x}}+x\sin{x} : 0<x<\pi\right\}$. Odredite $\min{S}$.
@@ -421,13 +383,21 @@ Napomena \ref{den} je često korisna ako treba dokazati egzistenciju nekog racio
 \begin{itemize}
 \item[a)] Dokažite da između svaka dva realna broja $c<d$, $c, d\in \mathbb{R}$ postoji $x\in \mathbb{I}$ takav da je $c<x<d$.
 \item[b)] Dokažite da je skup $A'=\{x^2 : x\in \mathbb{I}\}$ odozgo neograničen.
+\item[c)] Dokažite tvrdnju iz b) dijela napomene \ref{den}. 
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
 a) Uvrstimo u napomenu \ref{den} $x=\dfrac{c+d}{2}$, $\epsilon=\dfrac{d-c}{2}$. Tada dobivamo da postoji bar jedan $x\in \mathbb{I}$ u intervalu $\langle c, d\rangle$, tj. bar jedan $x\in \mathbb{I}$ takav da je $c<x<d$, što smo i tvrdili.
 
 b) Analogno kao i u zadatku \ref{12}, dovoljno je dokazati da za svaki $M\in \mathbb{R}$ postoji $x\in \mathbb{I}$ takav da je $x^2>M$. Uzmimo bilo koji $x_0\in \mathbb{I}$ takav da je $x_0\in \langle M, M+1\rangle$. Očito je $x_0^2\geq x_0>M$, pa je $x_0$ upravo traženi broj.
+
+c) Neka su $x\in \mathbb{R}$ i $\epsilon>0$ proizvoljni. Uočimo da ako je jedan od brojeva $x-\epsilon$, $x+\epsilon$ racionalan, a drugi iracionalan, onda je traženi broj $\dfrac{x-\epsilon+x+\epsilon}{2}=x$, jer je aritmetička sredina racionalnog i iracionalnog broja opet iracionalan broj. Pretpostavimo sad da su oba broja iracionalna. Tada postoji $q\in \mathbb{Q}$ takav da je $x<q<x+\epsilon$, pa je $\dfrac{q+x+\epsilon}{2}$ traženi broj.
+
+Ako su pak oba broja racionalna, onda je i $x+\epsilon-(x-\epsilon)=2\epsilon$ racionalan broj, pa je i $\epsilon$ racionalan broj. Dakle, ako je $x\in \mathbb{Q}$, onda je $x+\dfrac{\epsilon}{\sqrt{2}}$ traženi broj (uočite da je $\dfrac{\epsilon}{\sqrt{2}}$ iracionalan), a ako je $x\in \mathbb{I}$, onda je $x$ traženi broj.
 \end{proof}
+\begin{remark}
+Za one upoznate s osnovnim konceptima teorije skupova, evo kako se još može riješiti c) dio prethodnog zadatka. Pretpostavimo suprotno, da postoje $x\in \mathbb{R}$ i $\epsilon>0$ takvi da je $\langle x-\epsilon, x+\epsilon\rangle\cap \mathbb{I}=\emptyset$. To znači da je $\langle x-\epsilon, x+\epsilon\rangle\subseteq \mathbb{Q}$, pa je $\langle x-\epsilon, x+\epsilon\rangle$ konačan ili prebrojiv, budući da je $\mathbb{Q}$ prebrojiv, te je podskup svakog prebrojivog skupa konačan ili prebrojiv. Međutim, znamo da su otvoreni skupovi neprebrojivi (jer su u bijekciji s $\mathbb{R}$), što daje kontradikciju.
+\end{remark}
 \section{Supremum i infimum}
 
 \begin{definition}
@@ -439,7 +409,10 @@ Neka je $S$ odozdo ograničen skup. \textbf{Infimum} skupa $S$ je najveća donja
 \end{definition}
 
 Kako su supremum i infimum jedinstveni ako postoje, ima smisla uvesti oznake $\sup{A}$ i $\inf{A}$.
-Napomenimo da infimum (supremum) odozdo (odozgo) ograničenog skupa može, ali i ne mora biti unutar tog skupa. Vrijedi sljedeće -- ako je $S\subseteq \mathbb{R}$ odozgo omeđen skup koji sadrži neku svoju gornju među $b$, onda je $\sup{S}=b$. Zaista, kad bi postojao $a\in S$ takav da je $a<b$ i da za sve $x\in S$ vrijedi $x\leq a$, onda $b\in S$ povlači $b\leq a$, što je u kontradikciji s $a<b$. Analogno se pokaže da ako je $S$ odozdo omeđen skup koji sadrži neku svoju donju među, onda je ona infimum tog skupa.
+Napomenimo da infimum (supremum) odozdo (odozgo) ograničenog skupa može, ali i ne mora biti unutar tog skupa. 
+\begin{remark}
+Vrijedi sljedeće -- ako je $S\subseteq \mathbb{R}$ odozgo omeđen skup koji ima maksimum, onda je $\sup{S}=\max{S}$. Zaista, kad bi postojao $a\in S$ takav da je $a<\max{S}$ i da za sve $x\in S$ vrijedi $x\leq a$, onda $\max{S}\in S$ povlači $\max{S}\leq a$, što je u kontradikciji s $a<\max{S}$. Analogno se pokaže da ako je $S$ odozdo omeđen skup koji ima minimum, onda je $\inf{S}=\min{S}$.
+\end{remark}
 \begin{exercise}
 Dokažite da je $\sup{[0, 1\rangle}=1$.
 \end{exercise}
@@ -447,11 +420,23 @@ Dokažite da je $\sup{[0, 1\rangle}=1$.
 Pretpostavimo da $1$ nije supremum, tj. da postoji neka gornja međa $M$ takva da je $M<1$, dakle vrijedi $a\leq M$ za svaki $a\in [0, 1\rangle$. Očito je $M\geq 0$. No dobivamo kontradikciju s činjenicom da je $$\dfrac{M+1}{2}>M\;\;\text{i}\;\;0\leq \dfrac{M+1}{2}<1,$$ što znači da je $\dfrac{M+1}{2}\in [0, 1\rangle$.
 \end{proof}
 \begin{exercise}
-Neka je $A=\left\{\dfrac{4}{4n^2-1} : n\in \mathbb{Z}\right\}$. Odredite $\inf{A}$.
+Zadan je skup $S=\left\{\dfrac{1}{x^2+1} : x\in \mathbb{R}\right\}$. Odredite $\inf{S}, \sup{S}, \min{S}, \max{S}$, ako postoje.
 \end{exercise}
 \begin{proof}[Rješenje]
-Neka je $n\in \mathbb{Z}$ proizvoljan. Kako za $n=0$ dobivamo da je $-4$ element ovog skupa, te uvrštavanjem ostalih brojeva dobivamo pozitine brojeve, naslućujemo da je $-4$ minimum, pa i infimum. Zapravo, moramo dokazati da za $n\neq 0$ vrijedi $$\dfrac{4}{4n^2-1}>0.$$ No da bismo to dokazali, potrebno je prvo pokazati da je $4n^2-1>0$ za $n\neq 0$. Kako je $4(-n)^2-1=4n^2-1$, slijedi da je nužan i dovoljan uvjet da tvrdnja vrijedi za sve $n\neq 0$ upravo taj da tvrdnja vrijedi za sve $n\in \mathbb{N}$. Za $n=1$ tvrdnja vrijedi. Pretpostavimo li da tvrdnja vrijedi za neki $n$, onda za $n+1$ imamo $$4(n+1)^2-1=4n^2+8n+4-1.$$ Znamo da vrijedi $8n+4>0$, jer je to ekvivalentno s istinitom tvrdnjom $n>-\dfrac{1}{2}$. Sada očigledno vrijedi $$4n^2-1+8n+4>0.$$ Zato je $-4$ nužno minimum, pa i infimum, te je $\inf{A}=-4$.
+Za sve $x\in \mathbb{R}$ vrijedi $$\dfrac{1}{x^2+1}\leq 1,$$ jer je ta tvrdnja ekvivalentna tvrdnji $x^2\geq 0$. Vrijedi i $1\in S$, i to za $x=0$. Dakle, $\max{S}=1$, te je $\max{S}=\sup{S}$.
+
+Uvrštavanjem velikih brojeva za $x$ naslućujemo da je $\inf{S}=0$. Pretpostavimo suprotno, da je $a=\inf{S}\neq 0$. Kako je $0$ jedna donja međa od $S$, slijedi $a>0$. Kako je $a$ jedna donja međa od $S$, vrijedi $\dfrac{1}{x^2+1}\geq a$ za sve $x\in \mathbb{R}$, odakle imamo
+$$\dfrac{1}{x^2+1}\geq a\Leftrightarrow x^2+1\leq \dfrac{1}{a}\Leftrightarrow x^2\leq \dfrac{1}{a}-1,$$
+no posljednje ne vrijedi za sve $x\in \mathbb{R}$, npr. za $x_0=\sqrt{\dfrac{1}{a}}$ tvrdnja ne vrijedi.
+
+Nadalje, tvrdimo da $\min{S}$ ne postoji. Pretpostavimo suprotno, da postoji $\min{S}$. Tada je $\min{S}=\inf{S}=0$. No ovo je nemoguće, jer vrijedi $0\notin S$. Zaista, pretpostavimo da je $0\in S$. Tada postoji $x\in \mathbb{R}$ takav da je $0=\dfrac{1}{x^2+1}$. Kako vrijedi $\dfrac{1}{x^2+1}>0$, dobivamo kontradikciju.
 \end{proof}
+\begin{remark}
+Evo još jednog, doduše malo dužeg, načina da pokažemo da $\min{S}$ u prethodnom zadatku ne postoji. Zaista, pretpostavimo da postoji $\min{S}=m\in \mathbb{R}$. Kako je $m\in S$, po definiciji postoji $x_0\in \mathbb{R}$ takav da je $m=\dfrac{1}{x_0^2+1}$. Uzmimo $x_1:=|x_0|+1$. Vrijedi $$\dfrac{1}{x_0^2+1}> \dfrac{1}{(|x_0|+1)^2+1},$$
+jer je
+$$\dfrac{1}{x_0^2+1}> \dfrac{1}{(|x_0|+1)^2+1}\Leftrightarrow x_0^2+1<(|x_0|+1)^2+1\Leftrightarrow -1<2|x_0|,$$
+a tvrdnja $-1<2|x_0|$ je očito istinita. Nadalje, očito je $|x_0|+1\in \mathbb{R}$, pa vrijedi $$\dfrac{1}{(|x_0|+1)^2+1}\in S,$$ što je u kontradikciji s minimalnošću od $m$.
+\end{remark}
 \begin{exercise}
 \label{13}
 Neka je $S=\left\{\dfrac{1}{x+1} : x>-1\right\}$. Odredite $\inf{S}$ i $\sup{S}$.
@@ -580,8 +565,9 @@ Lako se vidi da je maksimum ovog skupa $\dfrac{1}{2}$ i on se postiže za $m=n=1
 Neka je $A=\left\{\dfrac{n^2+4m^2}{mn} : n, m\in \mathbb{N}\right\}$. Odredite $\inf{A}$ i $\sup{A}$, ako postoje.
 \end{exercise}
 \begin{proof}[Rješenje]
-Neka su $m, n\in \mathbb{N}$ proizvoljni. Znamo da je $$(n-2m)^2=n^2-4mn+4m^2\geq 0,$$
-odakle slijedi $n^2+4m^2\geq 4mn$, odnosno $$\dfrac{n^2+4m^2}{mn}\geq 4.$$ Dakle $4$ je jedna donja međa, no ona je i minimum jer se postiže za $n=2$ i $m=1$. Stoga je $\inf{A}=4$. Tvrdimo da $A$ nema supremum. Uzmimo $m=1$. Pretpostavimo li da skup $$A'=\left\{\dfrac{n^2+4}{n} : n\in \mathbb{N}\right\}$$ ima gornju među $M$, onda dobivamo kontradikciju za $n=M$.
+Neka su $m, n\in \mathbb{N}$ proizvoljni. Tražimo neku donju među ovog skupa, tj. broj $M\in \mathbb{R}$ takav da je
+$$\dfrac{n^2+4m^2}{mn}\geq M\Leftrightarrow n^2+4m^2\geq Mmn\Leftrightarrow n^2-Mmn+4m^2\geq 0$$
+Lako se vidi da za $M=4$ dobivamo $(n-2m)^2\geq 0$, što je istinita tvrdnja, dakle $4$ je jedna donja međa. Primijetimo da je i $\min{A}=4$ jer se postiže za $n=2$ i $m=1$. Stoga je $\inf{A}=4$. Tvrdimo da $A$ nema supremum. Uzmimo $m=1$. Pretpostavimo li da skup $$A'=\left\{\dfrac{n^2+4}{n} : n\in \mathbb{N}\right\}$$ ima gornju među $M$, onda dobivamo kontradikciju za $n=M$.
 \end{proof}
 \begin{remark}
 Neka su $m, n\in \mathbb{N}$ proizvoljni. Iz A-G nejednakosti imamo
@@ -785,7 +771,7 @@ Ideja u rješavanju zadataka ovog tipa je pronaći nužne i dovoljne uvjete da j
 \end{proof}
 \begin{exercise}
 Prikažite u Gaussovoj ravnini skup 
-$$S=\left\{z : |z+1+8i|^2-|z+2+i|^2=100\right\}.$$
+$$S=\left\{z\in \mathbb{C} : |z+1+8i|^2-|z+2+i|^2=100\right\}.$$
 \end{exercise}
 \begin{proof}[Rješenje]
 Neka je $z\in \mathbb{C}$ proizvoljan. Vrijedi
@@ -793,25 +779,25 @@ Neka je $z\in \mathbb{C}$ proizvoljan. Vrijedi
 |z+1+8i|^2-|z+2+i|^2&=100\\
 \sqrt{(x+1)^2+(y+8)^2}^2-\sqrt{(x+2)^2+(y+1)^2}^2&=100\\
 (x+1)^2+(y+8)^2-(x+2)^2-(y+1)^2&=100\\
-14x-2y&=40\\
-y&=7x-20.
+14y-2x&=40\\
+y&=\dfrac{x}{7}+\dfrac{20}{7}.
 \end{align*}
 Pravac je prikazan na slici \ref{pravac}.
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}[domain=0:4]
-\begin{axis}[axis lines=middle,xlabel=Re,ylabel=Im,xmin=-2,xmax=7,ymin=-21,ymax=21, smooth]
+\begin{axis}[axis lines=middle,xlabel=Re,ylabel=Im,xmin=-2,xmax=7,ymin=-3,ymax=5]
 
-\addplot[thick,color=black,domain=-7:7] {7*x-20};
+\addplot[thick,color=black,domain=-7:7] {x/7+20/7};
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{Pravac $y=7x-20$}
+\caption{Pravac $y=\dfrac{x}{7}+\dfrac{20}{7}$}
 \label{pravac}
 \end{figure}
 \end{proof}
 \begin{exercise}
-Odredite skup $S=\left\{z : z+|z|=8-4i\right\}$.
+Odredite skup $S=\left\{z\in \mathbb{C} : z+|z|=8-4i\right\}$.
 \end{exercise}
 \begin{proof}[Rješenje]
 Neka je $z=x+yi$. Uvjet $z+|z|=8-4i$ je tada ekvivalentan uvjetu
@@ -822,7 +808,7 @@ y=-4.
 \end{cases}$$
 Supstitucijom $y=-4$ dobivamo $x+\sqrt{x^2+16}=8$. Rješavanjem jednadžbe dobivamo $x=3$. Dakle $S=\{3-4i\}$ i on je u Gaussovoj ravnini točka $(3, -4)$.
 \end{proof}
-Neka je $S\subseteq \mathbb{C}$ neprazan i neka su zadane $f, g : S\to \mathbb{C}$. Problem određivanja skupa $T=\left\{z : f(z)=g(z)\right\}$ zovemo \textit{rješavanje jednadžbe} $f(z)=g(z)$ u skupu $\mathbb{C}$.
+Neka je $S\subseteq \mathbb{C}$ neprazan i neka su zadane $f, g : S\to \mathbb{C}$. Problem određivanja skupa $T=\left\{z\in \mathbb{C} : f(z)=g(z)\right\}$ zovemo \textit{rješavanje jednadžbe} $f(z)=g(z)$ u skupu $\mathbb{C}$.
 \begin{exercise} Riješite sljedeće jednadžbe u $\mathbb{C}$.
 \begin{itemize}
 \item[a)] $|z-1|^2+2\overline{z}=6-2i$.
@@ -944,6 +930,16 @@ $$\left(x_1+\dfrac{x_2}{2}+\dots+\dfrac{x_n}{n}\right)\left(x_1+2x_2+\dots+nx_n\
 \item[d)] Postoji odozgo ograničen skup $A\subseteq \mathbb{R}$ takav da je $A^c$ odozgo ograničen.
 \end{itemize}
 \end{exercise}
+\begin{exercise} \textbf{}
+\label{tjeme}
+\begin{itemize}
+\item[a)] Neka su $a, b, c\in \mathbb{R}$ i $a> 0$. Neka je $S=\left\{ax^2+bx+c : x\in \mathbb{R}\right\}$. Odredite $\min{S}$.
+\item[b)] Neka je $S=\left\{\dfrac{1}{\sqrt{x^2+3x+4}} : x\in \mathbb{R}\right\}$. Odredite $\max{S}$. 
+\end{itemize}
+\end{exercise}
+\begin{remark}
+Analogno se pokazuje da, ukoliko je $a<0$, vrijedi da je $\max{S}=\dfrac{4ac-b^2}{4a}$ i on se, kao i u prethodnom slučaju, postiže za $x=-\dfrac{b}{2a}$. Ovo je vrlo koristan rezultat, za koji se nadamo da Vam je poznat iz srednje škole.
+\end{remark}
 \begin{exercise}
 Neka je $A=\left\{n^2-2^n : n\in \mathbb{N}\right\}$. Odredite $\min{A}$ i $\max{A}$, ako postoje.
 \end{exercise}
@@ -1075,9 +1071,6 @@ Neka je $n\in \mathbb{N}$ proizvoljan i neka je $S=\left\{z : z^n=1 \right\}$. D
 Općenito, skup svih $n$-tih korijena (gdje je $n\in \mathbb{N}$) nekog kompleksnog broja čini pravilni $n$-terokut sa središtem u ishodištu.
 \begin{exercise}
 Neka je $z=\dfrac{(2+3i)^{2024}}{(2-3i)^{2020}}$. Odredite $|z|$.
-\end{exercise}
-\begin{exercise}
-Neka je $S=\left\{\abs{z-\dfrac{1}{z}} : z\in \mathbb{C},\; |z|=2\right\}$. Odredite $\inf{S}$ i $\sup{S}$, ako postoje.
 \end{exercise}
 \begin{exercise}
 Odredite sve $z\in \mathbb{C}$ za koje vrijedi

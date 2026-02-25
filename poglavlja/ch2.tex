@@ -35,6 +35,13 @@ Za $n=1$ tvrdnja očito vrijedi. Pretpostavimo li da tvrdnja vrijedi za neki $n$
 $$1^3+...+n^3+(n+1)^3=\dfrac{n^2(n+1)^2}{4}+(n+1)^3=(n+1)^2\left(\dfrac{n^2}{4}+n+1\right)=\dfrac{(n+1)^2(n+2)^2}{4},$$
 čime je tvrdnja dokazana.
 \end{proof}
+\begin{exercise}
+Dokažite da za sve $n\in \mathbb{N}$ vrijedi $3^n>n$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdnja vrijedi za $n=1$. Pretpostavimo da tvrdnja vrijedi za neki $n$. Treba dokazati $3^{n+1}>n+1$. Konstruirat ćemo niz nejednakosti gdje ćemo "krenuti" od $3^{n+1}$ i "doći" do $n+1$. Uočimo da je $3^{n+1}=3\cdot 3^n$, pa primjenom pretpostavke indukcije imamo $$3\cdot 3^n>3n>n+1,$$
+gdje posljednje očigledno vrijedi, jer vrijedsi $3n>n+1\Leftrightarrow 2n>1\Leftrightarrow n>\dfrac{1}{2}$, što vrijedi za sve $n\in \mathbb{N}$.
+\end{proof}
 \begin{remark}
 \label{21}
 Možemo indukcijom dokazivati i tvrdnje koje ne vrijede nužno za sve prirodne brojeve, nego i tvrdnje koje vrijede za neki prirodan broj i za sve njegove sljedbenike. Preciznije, neka je $P(n)$ tvrdnja koja ovisi o prirodnom broju $n$. Ako vrijedi:
@@ -50,8 +57,10 @@ Dokažite da za sve $n\in \mathbb{N}$ takve da je $n\geq 3$ vrijedi $3^n>2^n+3n$
 \end{exercise}
 \begin{proof}[Rješenje]
 Tvrdnja vrijedi za $n=3$. Pretpostavimo da tvrdnja vrijedi za neki $n$. Treba dokazati $3^{n+1}>2^{n+1}+3(n+1)$. Iz činjenice da je $6k>3$ za sve $k\in \mathbb{N}$, imamo
-$$3^{n+1}>3\cdot (2^n+3n)=3\cdot 2^n+9n=3\cdot 2^n+3n+6n>2\cdot 2^n+3n+3=2^{n+1}+3(n+1),$$
-što smo i tvrdili.
+$$3^{n+1}>3\cdot (2^n+3n)=3\cdot 2^n+9n=2\cdot 2^n+9n=2^{n+1}+9n>2^{n+1}+3(n+1),$$
+pri čemu smo zadnji korak dobili iz činjenice da je $9n>3(n+1)$ za sve $n\in \mathbb{N}$. Zaista, imamo
+$$9n>3(n+1)\Leftrightarrow 9n>3n+3 \Leftrightarrow 6n>3 \Leftrightarrow n>\dfrac{1}{2},$$
+a posljednje očito vrijedi za sve $n\in \mathbb{N}$.
 \end{proof}
 \begin{exercise}
 Neka je $n\in \mathbb{N}$ proizvoljan. Odredite sumu
@@ -82,7 +91,6 @@ Za $n=1$ tvrdnja vrijedi, pa pretpostavimo da tvrdnja vrijedi za neki $n$. Tada 
 &=(2n+2)\cdot 2^{n+1}+1=(n+1)\cdot 2^{n+2}+1.\qedhere
 \end{align*}
 \end{proof}
-\newpage
 \begin{exercise}
 Dokažite da za svaki $n\in \mathbb{N}$ vrijedi $7 \; |\; 13^{2n}-1$.
 \end{exercise}
