@@ -390,12 +390,17 @@ odakle za $n_1=\max\{n_0, m_0\}$ slijedi da je $y\in \left[-\dfrac{\pi}{2}-2n_1\
 Neka je $I\subseteq \mathbb{R}$ otvoreni interval i neka je $f : I\to \mathbb{R}$ neprekidna i strogo monotona na $I$. Dokažite da je tada $\mathcal{R}(f)$ otvoreni interval.
 \end{exercise}
 \begin{proof}
-Uzmimo da $f$ strogo raste na $I$ (Analogno se tretira slučaj gdje $f$ strogo pada). Pretpostavimo da je $\inf{\mathcal{R}(f)}=\inf{f}\in \mathcal{R}(f)$. Tada postoji $a\in I$ takav da je $f(a)=\inf{f}$. Međutim, kako je $I$ otvoreni interval, postoji $a'\in I$ takav da je $a'<a$. Odavde je $f(a_1)\in \mathcal{R}(f)$ i vrijedi $f(a_1)<f(a)=\inf{f}$, kontradikcija! Analogno se pokazuje da $\sup{f}\notin \mathcal{R}(f)$. Odavde dobivamo $\mathcal{R}(f)\subseteq \langle \inf{f}, \sup{f} \rangle$.
+Uočimo da je $I\subseteq \mathbb{R}$ otvoreni interval ako i samo ako vrijedi bar jedno od sljedećeg:
+\begin{itemize}
+\item $I$ je odozdo ograničen, $\inf{I}\notin I$, te za svaki $z\in \langle \inf{I}, \sup{I}\rangle$ ($\sup{I}$ ovdje može biti $\infty$) vrijedi $z\in I$ (drugim riječima, $\langle \inf{I}, \sup{I}\rangle\subseteq I$),
+\item $I$ je odozgo ograničen, $\sup{I}\notin I$, te za svaki $z\in \langle \inf{I}, \sup{I}\rangle$ ($\inf{I}$ ovdje može biti $-\infty$) vrijedi $z\in I$ (drugim riječima, $\langle \inf{I}, \sup{I}\rangle\subseteq I$),
+\item $I=\mathbb{R}$.
+\end{itemize}
+Uzmimo da $f$ strogo raste na $I$ (Analogno se tretira slučaj gdje $f$ strogo pada). Pretpostavimo da je $\mathcal{R}(f)$ odozdo ograničen i $\inf{\mathcal{R}(f)}=\inf{f}\in \mathcal{R}(f)$. Tada postoji $a\in I$ takav da je $f(a)=\inf{f}$. Međutim, kako je $I$ otvoreni interval, postoji $a'\in I$ takav da je $a'<a$. Odavde je $f(a_1)\in \mathcal{R}(f)$ i vrijedi $f(a_1)<f(a)=\inf{f}$, kontradikcija! Analogno se pokazuje tvrdnja u slučaju da je $\mathcal{R}(f)$ odozgo ograničen $\sup{f}\notin \mathcal{R}(f)$. Odavde dobivamo $\mathcal{R}(f)\subseteq \langle \inf{f}, \sup{f} \rangle$.
 
-Neka je $z\in \langle \inf{f}, \sup{f} \rangle$. Tada postoje $x, y\in \langle \inf{f}, \sup{f} \rangle$ takvi da je $x<z<y$. Kako je $f$ strogo rastuća, ona ima inverznu funkciju $f^{-1}$ koja je također strogo rastuća, pa je $f^{-1}(x)<f^{-1}(z)<f^{-1}(y)$. No tada je $f\left(\left[f^{-1}(x), f^{-1}(y)\right]\right)$ segment, pa je $$z\in f\left(\left[f^{-1}(x), f^{-1}(y)\right]\right)\;\;\text{ i }\;\;f\left(\left[f^{-1}(x), f^{-1}(y)\right]\right)\subseteq f(I)=\mathcal{R}(f),$$
-što vrijedi zbog činjenice da za svaku funkciju $g : S\to \mathbb{R}$ i skupove $A\subseteq B\subseteq S$ vrijedi $f(A)\subseteq f(B)$ (Dokažite to!).
-Dobivamo $z\in \mathcal{R}(f)$, pa zaključujemo da je $\mathcal{R}(f)=\langle \inf{f}, \sup{f}\rangle$.
-\textbf{NADOPUNITI SLUCAJ KAD SLIKA NIJE OGRANICEN SKUP}
+Neka je $z\in \langle \inf{f}, \sup{f} \rangle$ (ovdje $\inf{f}$ i $\sup{f}$ mogu biti $-\infty$, odnosno $\infty$). Tada postoje $x, y\in \langle \inf{f}, \sup{f} \rangle$ takvi da je $x<z<y$. Kako je $f$ strogo rastuća, ona ima inverznu funkciju $f^{-1}$ koja je također strogo rastuća, pa je $f^{-1}(x)<f^{-1}(z)<f^{-1}(y)$. No tada je $f\left(\left[f^{-1}(x), f^{-1}(y)\right]\right)$ segment, pa je $$z\in f\left(\left[f^{-1}(x), f^{-1}(y)\right]\right)\;\;\text{ i }\;\;f\left(\left[f^{-1}(x), f^{-1}(y)\right]\right)\subseteq f(I)=\mathcal{R}(f),$$
+što vrijedi zbog činjenice da za svaku funkciju $g : S\to \mathbb{R}$ i skupove $A\subseteq B\subseteq S$ vrijedi $f(A)\subseteq f(B)$ (Dokažite to za vježbu!).
+Dobivamo $z\in \mathcal{R}(f)$, pa zaključujemo da je $\mathcal{R}(f)=\langle \inf{f}, \sup{f}\rangle$. Uočimo da u slučaju da je $\mathcal{R}(f)$ odozgo i odozdo neograničen, ovo dokazuje da je $\mathbb{R}\subseteq \mathcal{R}(f)$, odnosno $\mathcal{R}(f)=\mathbb{R}$.
 \end{proof}
 
 \newpage

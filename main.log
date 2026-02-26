@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.2.23)  25 FEB 2026 21:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.2.23)  26 FEB 2026 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1368,32 +1368,29 @@ Poglavlje 4.
 ] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100]
 [101] [102] [103] [104] [105] [106] [107] [108] [109] [110] [111] [112]
 [113] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123] [124]
-[125] [126] [127] [128] [129] [130] [131] [132]) [133]
+[125] [126] [127] [128]) [129]
 Poglavlje 5.
-(./poglavlja/ch5.tex [134
+(./poglavlja/ch5.tex [130
 
-] [135] [136] [137] [138] [139] [140] [141] [142]
-[143] [144] [145] [146] [147] [148] [149] [150] [151] [152] [153] [154]
-[155] [156] [157] [158] [159] [160] [161] [162] [163] [164] [165] [166])
-[167]
+] [131] [132] [133] [134] [135] [136] [137] [138]
+[139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150]
+[151] [152] [153] [154] [155] [156] [157] [158] [159] [160] [161] [162])
+[163]
 Poglavlje 6.
-(./poglavlja/ch6.tex [168
+(./poglavlja/ch6.tex [164
 
-] [169] [170] [171] [172] [173] [174] [175] [176]
-[177] [178] [179] [180] [181]) (./bibliografija.tex [182] [183
+] [165] [166] [167] [168] [169] [170] [171] [172]
+[173] [174] [175] [176] [177]) (./bibliografija.tex [178] [179
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}]) [18
-4] (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+0] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 951031C90F8413E23B6F4B8FE1EAC449;6528.
  ) 
 Here is how much of TeX's memory you used:
- 43459 strings out of 476034
- 948095 string characters out of 5792864
- 1896388 words of memory out of 6000000
+ 43455 strings out of 476034
+ 948063 string characters out of 5792864
+ 1900388 words of memory out of 6000000
  62510 multiletter control sequences out of 15000+600000
  529107 words of font info for 94 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
@@ -1494,10 +1491,10 @@ onts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (184 pages, 948816 bytes).
+Output written on main.pdf (180 pages, 948829 bytes).
 PDF statistics:
- 1951 PDF objects out of 2073 (max. 8388607)
- 1684 compressed objects within 17 object streams
- 741 named destinations out of 1000 (max. 500000)
+ 1932 PDF objects out of 2073 (max. 8388607)
+ 1669 compressed objects within 17 object streams
+ 737 named destinations out of 1000 (max. 500000)
  261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
