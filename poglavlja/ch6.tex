@@ -417,26 +417,98 @@ Može se pokazati sljedeće:
 \end{remark}
 \begin{exercise} Ispitajte uniformnu neprekidnost sljedećih funkcija.
 \begin{itemize}
-\item[a)] $f_1 : \mathbb{R}\to \mathbb{R}$, $f(x)=\sin{x}$,
-\item[b)] $f_2 : \langle 0, \infty\rangle\to \mathbb{R}$, $f(x)=\ln{x}$,
-\item[c)] $f_3 : [0,\infty\rangle\to \mathbb{R}$, $f(x)=\sqrt{x}$. 
+\item[a)] $f_1 : \mathbb{R}\to \mathbb{R}$, $f_1(x)=\sin{x}$,
+\item[b)] $f_2 : \langle 0, \infty\rangle\to \mathbb{R}$, $f_2(x)=\ln{x}$. 
 \end{itemize}
 \end{exercise}
-\begin{proof}[Rješenje]
+\begin{proof*}
 a) Tvrdimo da je $f_1$ uniformno neprekidna. Neka je $\epsilon>0$ proizvoljan. Uzmimo $\delta=\epsilon$. Tada za sve $x, y\in \mathbb{R}$ takve da je $|x-y|<\delta$, kao i u b) dijelu zadatka \ref{cont4}, dobivamo
 $$\left|\sin{x}-\sin{y}\right|\leq|x-y|<\delta=\epsilon.$$
 
 b) Pokažimo da $f_2$ nije uniformno neprekidna, tj. da postoji $\epsilon>0$ takav da za svaki $\delta>0$ postoje $x_\delta, y_\delta>0$ takvi da je $|x_\delta-y_\delta|<\delta$, ali $\left|\ln{x_\delta}-\ln{y_\delta}\right|=\left|\ln\left(\dfrac{x_\delta}{y_\delta}\right)\right|\geq\epsilon$. Uzmimo $\epsilon=1$ i $\delta>0$ proizvoljan, te $x_\delta:=\delta$, $y_\delta:=\dfrac{\delta}{3}$. Tada je $|x_\delta-y_\delta|=\dfrac{2\delta}{3}<\delta$ i
-$$\left|\ln\left(\dfrac{x_\delta}{y_\delta}\right)\right|=\left|\ln\left(\dfrac{\delta}{\frac{\delta}{3}}\right)\right|=\ln{3}\geq 1.$$
+\[
+\pushQED{\qed}
+\left|\ln\left(\dfrac{x_\delta}{y_\delta}\right)\right|=\left|\ln\left(\dfrac{\delta}{\frac{\delta}{3}}\right)\right|=\ln{3}\geq 1.\qedhere
+\popQED
+\]
+\end{proof*}
+\begin{exercise}
+\label{sqrtunif}
+Dokažite da je $f : [0,\infty\rangle\to \mathbb{R}$, $f(x)=\sqrt{x}$ uniformno neprekidna na svojoj domeni. 
+\end{exercise}
+\begin{proof}[Rješenje]
+\textit{Prvi način.} Neka je $\epsilon>0$ proizvoljan i neka je $\delta=\epsilon^2$. Tada za sve $x, y\geq 0$ takve da je $|x-c|<\delta$, analogno kao u a) dijelu zadatka \ref{cont4} zaključujemo
+$$\abs{\sqrt{x}-\sqrt{y}}<\dfrac{\epsilon^2}{\sqrt{y}}.$$
+Uočimo da, ako je $\sqrt{y}\geq \epsilon$, tj. $y\geq \epsilon^2$, onda je $\abs{\sqrt{x}-\sqrt{y}}<\epsilon$. S druge strane, ako je $y<\epsilon^2$, onda zamjenom uloga $x$ i $y$ zaključujemo
+$$\abs{\sqrt{x}-\sqrt{y}}<\dfrac{\epsilon^2}{\sqrt{x}}.$$
+Tvrdnja opet vrijedi ako je $x\geq \epsilon^2$, pa promotrimo tvrdnju za $x<\epsilon^2$. Sada iz $0\leq \sqrt{x}<\epsilon$ i $0\leq \sqrt{y}<\epsilon$ množenjem s $-1$ i zbrajanjem dobivamo
+$$-\epsilon<\sqrt{x}-\sqrt{y}<\epsilon,$$
+tj. $\abs{\sqrt{x}-\sqrt{y}}<\epsilon$, što smo i tvrdili.
 
-c) Tvrdimo da je $f_3$ uniformno neprekidna. Uočimo da je u dokazu neprekidnosti ove funkcije u a) dijelu zadatka \ref{cont4} naš izbor broja $\delta$ ovisio o $c$, pa ćemo umjesto "imitiranja" dokaza tvrdnje za neprekidnost postupiti drugačije -- uočimo da ako promotrimo $f_3|_{[1, \infty\rangle}$, onda ponavljanjem argumenta iz zadatka \ref{cont4} dobivamo da za proizvoljan $\epsilon>0$ i $\delta=\epsilon$ dobivamo da za sve $x, y\geq 1$ takve da je $|x-y|<\delta$ dobivamo
+\textit{Drugi način.} Uočimo da ako promotrimo $f|_{[1, \infty\rangle}$, onda ponavljanjem argumenta iz zadatka \ref{cont4} dobivamo da za proizvoljan $\epsilon>0$ i $\delta=\epsilon$ dobivamo da za sve $x, y\geq 1$ takve da je $|x-y|<\delta$ dobivamo
 $$\left|\sqrt{x}-\sqrt{y}\right|<\dfrac{|x-y|}{\sqrt{y}}\leq |x-y|<\delta=\epsilon,$$
-što znači da je $f_3|_{[1, \infty\rangle}$ uniformno neprekidna na $[1, \infty\rangle$. 
+što znači da je $f|_{[1, \infty\rangle}$ uniformno neprekidna na $[1, \infty\rangle$. 
 
-S druge strane, uniformna neprekidnost funkcije $f_3|_{[0, 1]}$ na svojoj domeni slijedi iz činjenice da je $f_3|_{[0, 1]}$ neprekidna na svojoj domeni (jer je $f_3$ neprekidna na svojoj domeni), pa je ona i uniformno neprekidna na svojoj domeni.
+S druge strane, uniformna neprekidnost funkcije $f|_{[0, 3]}$ na svojoj domeni slijedi iz činjenice da je $f|_{[0, 3]}$ neprekidna na svojoj domeni (jer je $f$ neprekidna na svojoj domeni), pa je ona i uniformno neprekidna na svojoj domeni.
 
-Sada će ideja sljedeća -- ako uzmemo "manju" od dvije "delte" koje dobivamo da su dobre za ove dvije funkcije, dobivamo da ćemo za bliske $x, y$ koji su oboje ili u $[0, 1]$ ili u $[1, \infty\rangle$ dobiti tvrdnju iz definicije uniformne neprekidnosti. Naravno, može se dogoditi da je npr.
+Sada je ideja sljedeća -- ako uzmemo "manju" od dvije "delte" koje dobivamo da su dobre za ove dvije funkcije, dobivamo da, ukoliko su $x, y\in [0, \infty\rangle$ dovoljno bliski, oboje će biti ili u $[0, 3]$ ili u $[1, \infty\rangle$, pa u oba slučaja dobivamo tvrdnju iz definicije uniformne neprekidnosti.
+
+Neka je $\epsilon>0$. Tada postoje $\delta_1, \delta_2>0$ takvi da za sve $x_1, x_2\geq 1$ i sve $x_3, x_4\in [0, 3]$ vrijedi
+\begin{gather}
+\label{unif1}
+\abs{x_1-x_2}<\delta_1\Rightarrow \abs{\sqrt{x_1}-\sqrt{x_2}}<\epsilon,\\
+\label{unif2}
+\abs{x_3-x_4}<\delta_2\Rightarrow \abs{\sqrt{x_3}-\sqrt{x_4}}<\epsilon.
+\end{gather}
+Uzmimo $\delta=\min\left\{\delta_1, \delta_2, 1\right\}$. Neka su zatim $x, y\geq 0$ takvi da je $|x-y|<\delta$. Uočimo da su tada ili $x, y\in [0, 3]$, ili $x, y\in [1,\infty\rangle$. Zaista, kad bi bilo npr. $x\in [0, 3]$ i $y\notin [0, 3]$, tj. $y>3$, onda iz činjenice da je $y-x<\delta<1$ slijedi $$x>y-1>3-1=2,$$ 
+što je kontradikcija s činjenicom da je $x\in [0, 3]$.
+
+Uočimo sada da ako su $x, y\in [0, 3]$, iz (\ref{unif2}) dobivamo $\abs{\sqrt{x}-\sqrt{y}}<\delta$, te isto dobivamo iz (\ref{unif1}) ako su $x, y\in [1, \infty\rangle$.
 \end{proof}
+\begin{remark}[Heineova karakterizacija uniformno neprekidnih funkcija]
+Neka je $I\subseteq \mathbb{R}$ otvoreni ili zatvoreni interval i $f : I\to \mathbb{R}$. Tada je $f$ uniformno neprekidna na $I$ akko za svaka dva niza $(x_n)$, $(y_n)$ u $I$ takva da je $\lim\limits_{n\to \infty}{|x_n-y_n|}=0$ vrijedi $\lim\limits_{n\to \infty}{\abs{f(x_n)-f(y_n)}}=0$.
+\end{remark}
+\begin{remark}[Osnovne operacije s uniformno neprekidnim funkcijama]
+Neka je $I\subseteq \mathbb{R}$ otvoreni ili zatvoreni interval i neka su $f, g : I\to \mathbb{R}$ uniformno neprekidne funkcije na $I$. Tada vrijedi:
+\begin{itemize}
+\item[a)] $f+g$ je uniformno neprekidna na $I$,
+\item[b)] $\alpha f$ je uniformno neprekidna na $I$, za svaki $\alpha\in \mathbb{R}$,
+\item[c)] Ako su $f$ i $g$ ograničene, onda je i $fg$ uniformno neprekidna na $I$. 
+\end{itemize}
+\end{remark}
+\begin{exercise}
+Koristeći Heineovu karakterizaciju uniformno neprekidnih funkcija, dokažite da je funkcija $f : \mathbb{R}\to \mathbb{R}$, $f(x)=x^2$ nije uniformno neprekidna na $\mathbb{R}$, ali je $f|_{[-a, a]}$ uniformno neprekidna na svojoj domeni za svaki $a>0$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Uzmimo nizove $(x_n)$, $(y_n)$ zadane formulama $x_n=n$, $y_n=n+\dfrac{1}{n}$. Tada je $\lim\limits_{n\to \infty}{|x_n-y_n|}=\lim\limits_{n\to \infty}{\dfrac{1}{n}}=0$, ali
+$$\lim\limits_{n\to \infty}{\abs{x_n^2-y_n^2}}=\lim\limits_{n\to \infty}{\left(n+\dfrac{1}{n}\right)^2-n^2}=\lim\limits_{n\to \infty}{2+\dfrac{1}{n^2}}=2.$$
+
+Uzmimo $a>0$, te nizove $(x_n)$ i $(y_n)$ u $[-a, a]$ takve da je $\lim\limits_{n\to \infty}{|x_n-y_n|}=0$. Kako je $\abs{x_n^2-y_n^2}=\abs{x_n-y_n}\abs{x_n+y_n}$, te vrijedi
+$$0\leq \abs{x_n-y_n}\abs{x_n+y_n}\leq \abs{x_n-y_n}\abs{x_n}+\abs{x_n-y_n}\abs{y_n}\leq \abs{x_n-y_n}\cdot 2a,$$
+iz kriterija sendviča slijedi da je $\lim\limits_{n\to \infty}{\abs{x_n^2-y_n^2}}=0$.
+\end{proof}
+\begin{exercise}
+Ispitajte uniformnu neprekidnost sljedećih funkcija.
+\begin{itemize}
+\item[a)] $f_1 : \langle 0,\infty\rangle\to \mathbb{R}$, $f_1(x)=\ln{x}+2\sqrt{x}-\sin{x}\cos^4{x}$,
+\item[b)] $f_2 : \langle 0, \infty\rangle\to \mathbb{R}$,
+$$f_2(x)=\begin{cases}
+\dfrac{\sin{x}}{x}, & x\neq 0,\\
+1, & x=0.
+\end{cases}$$ 
+\end{itemize}
+(\textbf{Uputa:} Funkcija $f_2$ je neprekidna na $\mathbb{R}$.)
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Tvrdimo da $f_1$ nije uniformno neprekidna. Zaista, uočimo da su restrikcije funkcija $x\mapsto \sin{x}$, $x\mapsto \cos{x}$ i $x\mapsto \sqrt{x}$ na $\langle 0, \infty\rangle$ uniformno neprekidne na tom skupu (pokažite uniformnu neprekidnost od $x\mapsto \cos{x}$ za vježbu!), pa je zbog ograničenosti funkcija $x\mapsto \sin{x}$ i $x\mapsto \cos{x}$ i restrikcija funkcije $x\mapsto 2\sqrt{x}-\sin{x}\cos^4{x}$ na $\langle 0, \infty\rangle$ uniformno neprekidna na tom skupu. Uzmimo sad nizove $(x_n)$ i $(y_n)$ definirane formulama $x_n=\dfrac{2}{n}$, $y_n=\dfrac{1}{n}$. Uočimo da je $\lim\limits_{n\to \infty}{|x_n-y_n|}=0$, ali vrijedi
+$$\abs{f_1(x_n)-f_1(y_n)}=\abs{\ln{2}+\left(2\sqrt{\dfrac{2}{n}}-\sin{\dfrac{2}{n}\cos^4{\dfrac{2}{n}}}\right)-\left(2\sqrt{\dfrac{1}{n}}-\sin{\dfrac{1}{n}}\cos^4{\dfrac{1}{n}}\right)},$$
+pa kako niz $n\mapsto \left(2\sqrt{\dfrac{2}{n}}-\sin{\dfrac{2}{n}\cos^4{\dfrac{2}{n}}}\right)-\left(2\sqrt{\dfrac{1}{n}}-\sin{\dfrac{1}{n}}\cos^4{\dfrac{1}{n}}\right)$ teži u $0$ zbog uniformne neprekidnosti, imamo $\lim\limits_{n\to \infty}{\abs{f_1(x_n)-f_1(y_n)}}=\ln{2}$.
+
+b) Uočimo da je restrikcija funkcije $x\mapsto \dfrac{1}{x}$ na $[1, \infty\rangle$ ograničena i uniformno neprekidna na tom skupu. Zaista, neka je $\epsilon>0$ proizvoljan. Tada za $\delta=\epsilon$ i za sve $x, y\geq 1$ takve da je $|x-y|<\delta$ imamo
+$$\abs{\dfrac{1}{x}-\dfrac{1}{y}}=\dfrac{\abs{x-y}}{xy}\leq |x-y|<\delta=\epsilon.$$
+Kako je i restrikcija funkcije $x\mapsto \sin{x}$ na $[1, \infty\rangle$ ograničena i uniformno neprekidna na tom skupu, to je $f_2|_{[1,\infty\rangle}$ ograničena i uniformno neprekidna na svojoj domeni. Analogno se vidi da je $f_2|_{\langle -\infty, -1]}$ uniformno neprekidna na svojoj domeni. Uočimo i da je $f_2|_{[-3, 3]}$ uniformno neprekidna na svojoj domeni, jer je ona i neprekidna na $[-3, 3]$. Sada analognim argumentom kao u drugom rješenju zadatka \ref{sqrtunif} dobivamo tvrdnju.
+\end{proof}
+(DODATI LIPSCHITZOVOST I ZADATKE NA KRAJU POGLAVLJA)
 \newpage
 \section*{Zadatci za vježbu}
 \subsection*{Definicija neprekidnosti funkcije}
@@ -502,4 +574,9 @@ je neprekidna u $0$.
 \end{exercise}
 \begin{exercise}
 Dokažite da je $\mathcal{R}(\sin)=\mathcal{R}(\cos)=[-1, 1]$ i da je $\mathcal{R}(\tg)=\mathbb{R}$.
+\end{exercise}
+\subsection*{Uniformna neprekidnost}
+\begin{exercise}
+Odredite
+$$\lim\limits_{n\to \infty}\frac{\left(n+\frac{2}{n}\right)\sin\left(\frac{1}{n+\frac{2}{n}}\right)\cos\left(n+\frac{2}{n}\right)^{4}}{1+\left(n+\frac{2}{n}\right)^{2}}-\frac{\left(n+\frac{1}{n}\right)\sin\left(\frac{1}{n+\frac{1}{n}}\right)\cos\left(n+\frac{1}{n}\right)^{4}}{1+\left(n+\frac{1}{n}\right)^{2}}.$$
 \end{exercise}
