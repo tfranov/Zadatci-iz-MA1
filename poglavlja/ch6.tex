@@ -185,7 +185,7 @@ Dokažite sljedeće tvrdnje koristeći definiciju neprekidnosti funkcije.
 \end{itemize}
 \end{exercise}
 \begin{proof*}
-a) Neka je $\epsilon, c>0$ proizvoljni. Uzmemo li $\delta=\sqrt{c}\epsilon$, za sve $x\geq 0$ za koje je $|x-c|<\delta$ imamo
+a) Neka je $\epsilon>0$ i $c\geq 0$ proizvoljni. Uzmemo li $\delta=\sqrt{c}\epsilon$, za sve $x\geq 0$ za koje je $|x-c|<\delta$ imamo
 $$|\sqrt{x}-\sqrt{c}|=\abs{\left(\sqrt{x}-\sqrt{c}\right)\dfrac{\sqrt{x}+\sqrt{c}}{\sqrt{x}+\sqrt{c}}}=\dfrac{|x-c|}{\sqrt{x}+\sqrt{c}}<\dfrac{|x-c|}{\sqrt{c}}<\epsilon$$
 
 b) Neka su $\epsilon>0$ i $c\in \mathbb{R}$ proizvoljni. Uzmemo li $\delta=\epsilon$, za sve $x\in \mathbb{R}$ za koje je $|x-c|<\delta$ vrijedi
@@ -402,7 +402,41 @@ Neka je $z\in \langle \inf{f}, \sup{f} \rangle$ (ovdje $\inf{f}$ i $\sup{f}$ mog
 što vrijedi zbog činjenice da za svaku funkciju $g : S\to \mathbb{R}$ i skupove $A\subseteq B\subseteq S$ vrijedi $f(A)\subseteq f(B)$ (Dokažite to za vježbu!).
 Dobivamo $z\in \mathcal{R}(f)$, pa zaključujemo da je $\mathcal{R}(f)=\langle \inf{f}, \sup{f}\rangle$. Uočimo da u slučaju da je $\mathcal{R}(f)$ odozgo i odozdo neograničen, ovo dokazuje da je $\mathbb{R}\subseteq \mathcal{R}(f)$, odnosno $\mathcal{R}(f)=\mathbb{R}$.
 \end{proof}
+\section{Uniformno neprekidne funkcije}
+\begin{definition}
+Neka je $I\subseteq \mathbb{R}$ otvoren ili zatvoren interval. Kažemo da je $f : I\to \mathbb{R}$ \textbf{uniformno neprekidna} na $I$ ako za svaki $\epsilon>0$ postoji $\delta>0$ takav da za sve $x, y\in I$,
+$$|x-y|<\delta \Rightarrow |f(x)-f(y)|<\epsilon.$$
+\end{definition}
+Prethodna definicija zapravo kaže da ne samo da je funkcija neprekidna, nego da možemo odabrati $\delta$ u ovisnosti o $\epsilon$ koji je "dobar" za sve točke intervala $I$.
+\begin{remark}
+Može se pokazati sljedeće: 
+\begin{itemize}
+\item[a)] Ako je $f$ uniformno neprekidna na $I$, onda je ona i neprekidna na $I$.
+\item[b)]Ako je $I$ segment, onda je $f$ uniformno neprekidna na $I$ akko je $f$ neprekidna na $I$.
+\end{itemize}
+\end{remark}
+\begin{exercise} Ispitajte uniformnu neprekidnost sljedećih funkcija.
+\begin{itemize}
+\item[a)] $f_1 : \mathbb{R}\to \mathbb{R}$, $f(x)=\sin{x}$,
+\item[b)] $f_2 : \langle 0, \infty\rangle\to \mathbb{R}$, $f(x)=\ln{x}$,
+\item[c)] $f_3 : [0,\infty\rangle\to \mathbb{R}$, $f(x)=\sqrt{x}$. 
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Tvrdimo da je $f_1$ uniformno neprekidna. Neka je $\epsilon>0$ proizvoljan. Uzmimo $\delta=\epsilon$. Tada za sve $x, y\in \mathbb{R}$ takve da je $|x-y|<\delta$, kao i u b) dijelu zadatka \ref{cont4}, dobivamo
+$$\left|\sin{x}-\sin{y}\right|\leq|x-y|<\delta=\epsilon.$$
 
+b) Pokažimo da $f_2$ nije uniformno neprekidna, tj. da postoji $\epsilon>0$ takav da za svaki $\delta>0$ postoje $x_\delta, y_\delta>0$ takvi da je $|x_\delta-y_\delta|<\delta$, ali $\left|\ln{x_\delta}-\ln{y_\delta}\right|=\left|\ln\left(\dfrac{x_\delta}{y_\delta}\right)\right|\geq\epsilon$. Uzmimo $\epsilon=1$ i $\delta>0$ proizvoljan, te $x_\delta:=\delta$, $y_\delta:=\dfrac{\delta}{3}$. Tada je $|x_\delta-y_\delta|=\dfrac{2\delta}{3}<\delta$ i
+$$\left|\ln\left(\dfrac{x_\delta}{y_\delta}\right)\right|=\left|\ln\left(\dfrac{\delta}{\frac{\delta}{3}}\right)\right|=\ln{3}\geq 1.$$
+
+c) Tvrdimo da je $f_3$ uniformno neprekidna. Uočimo da je u dokazu neprekidnosti ove funkcije u a) dijelu zadatka \ref{cont4} naš izbor broja $\delta$ ovisio o $c$, pa ćemo umjesto "imitiranja" dokaza tvrdnje za neprekidnost postupiti drugačije -- uočimo da ako promotrimo $f_3|_{[1, \infty\rangle}$, onda ponavljanjem argumenta iz zadatka \ref{cont4} dobivamo da za proizvoljan $\epsilon>0$ i $\delta=\epsilon$ dobivamo da za sve $x, y\geq 1$ takve da je $|x-y|<\delta$ dobivamo
+$$\left|\sqrt{x}-\sqrt{y}\right|<\dfrac{|x-y|}{\sqrt{y}}\leq |x-y|<\delta=\epsilon,$$
+što znači da je $f_3|_{[1, \infty\rangle}$ uniformno neprekidna na $[1, \infty\rangle$. 
+
+S druge strane, uniformna neprekidnost funkcije $f_3|_{[0, 1]}$ na svojoj domeni slijedi iz činjenice da je $f_3|_{[0, 1]}$ neprekidna na svojoj domeni (jer je $f_3$ neprekidna na svojoj domeni), pa je ona i uniformno neprekidna na svojoj domeni.
+
+Sada će ideja sljedeća -- ako uzmemo "manju" od dvije "delte" koje dobivamo da su dobre za ove dvije funkcije, dobivamo da ćemo za bliske $x, y$ koji su oboje ili u $[0, 1]$ ili u $[1, \infty\rangle$ dobiti tvrdnju iz definicije uniformne neprekidnosti. Naravno, može se dogoditi da je npr.
+\end{proof}
 \newpage
 \section*{Zadatci za vježbu}
 \subsection*{Definicija neprekidnosti funkcije}
