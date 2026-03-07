@@ -508,6 +508,21 @@ b) Uočimo da je restrikcija funkcije $x\mapsto \dfrac{1}{x}$ na $[1, \infty\ran
 $$\abs{\dfrac{1}{x}-\dfrac{1}{y}}=\dfrac{\abs{x-y}}{xy}\leq |x-y|<\delta=\epsilon.$$
 Kako je i restrikcija funkcije $x\mapsto \sin{x}$ na $[1, \infty\rangle$ ograničena i uniformno neprekidna na tom skupu, to je $f_2|_{[1,\infty\rangle}$ ograničena i uniformno neprekidna na svojoj domeni. Analogno se vidi da je $f_2|_{\langle -\infty, -1]}$ uniformno neprekidna na svojoj domeni. Uočimo i da je $f_2|_{[-3, 3]}$ uniformno neprekidna na svojoj domeni, jer je ona i neprekidna na $[-3, 3]$. Sada analognim argumentom kao u drugom rješenju zadatka \ref{sqrtunif} dobivamo tvrdnju.
 \end{proof}
+\begin{remark}
+Neka su $I, J\subseteq \mathbb{R}$ otvoreni ili zatvoreni intervali i neka su $f : I\to \mathbb{R}$, $g : J\to \mathbb{R}$ uniformno neprekidne na svojim domenama i neka je $f(I)\subseteq J$. Tada je $g\circ f$ uniformno neprekidna na $I$.
+\end{remark}
+\begin{exercise}
+Ispitajte je li $f : [1, \infty\rangle\to \mathbb{R}$, $f(x)=\dfrac{1}{\sqrt[2026]{x}}+\dfrac{1}{\sqrt{x^2+x}}$ uniformno neprekidna na svojoj domeni.
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdimo da je $f$ zaista uniformno neprekidna na svojoj domeni, a ideja za to pokazati biti će ta da ćemo pomoću kompozicije s funkcijom $x\mapsto \dfrac{1}{x}$ dobiti domenu koja je omeđen interval, gdje onda možemo dobiti uniformnu neprekidnost naprosto iz uniformne neprekidnosti na segmentu.
+
+Uočimo da "uvrštavanjem" $\dfrac{1}{x}$ u $f$ dobivamo
+$$\dfrac{1}{\sqrt[2026]{\dfrac{1}{x}}}+\dfrac{1}{\sqrt{\dfrac{1}{x^2}+\dfrac{1}{x}}}=\sqrt[2026]{x}+\dfrac{\abs{x}}{\sqrt{1+x}}.$$
+Ako ponovno "uvrstimo" $\dfrac{1}{x}$ u dobiveni izraz, dobit ćemo opet izraz iz $f$. To nas motivira da upravo promotrimo kompoziciju restrikcije funkcije $x\mapsto \dfrac{1}{x}$ na $[1, \infty\rangle$ i funkcije definirane dobivenim izrazom na $[0, 1]$.
+
+Neka je $f_1 : [1, \infty\rangle\to \mathbb{R}$, $f_1(x)=\dfrac{1}{x}$, te $f_2 : [0, 1]\to \mathbb{R}$, $f_2(x)=\sqrt[2026]{x}+\dfrac{x}{\sqrt{1+x}}$. Uočimo da je $\mathcal{R}(f_1)=\langle 0, 1]\subseteq [0, 1]$, te je $f=f_2\circ f_1$, te kako je $f_1$ uniformno neprekidna na svojoj domeni, te $f_2$ uniformno neprekidna na svojoj domeni, slijedi i da je $f$ uniformno neprekidna na svojoj domeni.
+\end{proof}
 (DODATI LIPSCHITZOVOST I ZADATKE NA KRAJU POGLAVLJA)
 \newpage
 \section*{Zadatci za vježbu}
