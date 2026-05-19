@@ -45,7 +45,7 @@ Neka je zadana $f : S\to \mathbb{R}$, gdje je $S\subseteq \mathbb{R}$ i neka je 
 Nacrtajte graf funkcije $f: \mathbb{R}\to \mathbb{R}$, gdje je
 \begin{itemize}
 \item[a)] $f(x)=3x^2+4x+1$, 
-\item[b)] $f(x)=\abs{|x|-4}$.
+\item[b)] $f(x)=\left\lvert \left\lvert x\right\rvert-4\right\rvert$.
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje] a) Nadamo se da je crtanje grafa kvadratne funkcije poznato otprije, ali za svaki slučaj ćemo to ovdje pokazati. Pri crtanju kvadratne funkcije korisno nam je znati njezino tjeme, nultočke, te eventualno još neke njezine točke. Možemo se koristiti činjenicom i da je ona simetrična s obzirom na njezinu os simetrije.\footnote{Os simetrije parabole definira se kao pravac koji prolazi kroz fokus parabole, a okomit je na njezinu direktrisu.} 
@@ -61,7 +61,7 @@ b) Primijenit ćemo napomenu \ref{graphrem}.
 \item Promotrimo graf funkcije $x\mapsto x$, čiji graf je prikazan točkasto-iscrtkanom linijom.
 \item Tada je graf funkcije $x\mapsto |x|$ dobiven zrcaljenjem cijelog dijela grafa funkcije $x\mapsto x$ ispod osi $x$ u odnosu na os $x$, a ostali dijelovi su nepromijenjeni. Njezin graf je na slici \ref{gr1} prikazan točkastom linijom.
 \item Graf funkcije $x\mapsto |x|-4$ je dobiven translacijom grafa funkcije $x\mapsto |x|$ četiri jedinične dužine prema dolje. Njezin graf je na slici $\ref{gr1}$ prikazan iscrtkanom linijom.
-\item Graf funkcije $x\mapsto \abs{|x|-4}$ je dobiven zrcaljenjem cijelog dijela grafa funkcije $x\mapsto |x|-4$ ispod osi $x$ u odnosu na os $x$, a ostali dijelovi su nepromijenjeni. Njezin graf je na slici \ref{gr1} prikazan punom linijom. \qedhere
+\item Graf funkcije $x\mapsto \left\lvert \left\lvert x\right\rvert-4\right\rvert$ je dobiven zrcaljenjem cijelog dijela grafa funkcije $x\mapsto |x|-4$ ispod osi $x$ u odnosu na os $x$, a ostali dijelovi su nepromijenjeni. Njezin graf je na slici \ref{gr1} prikazan punom linijom. \qedhere
 \end{itemize}
 \end{proof}
 \begin{figure}[ht]
@@ -97,7 +97,7 @@ b) Primijenit ćemo napomenu \ref{graphrem}.
 \addplot[very thick,color=black, dashed,domain=-15:0] {-x-4};
 \end{axis}
 \end{tikzpicture}
-\caption*{Graf funkcije $x\mapsto \abs{|x|-4}$}
+\caption*{Graf funkcije $x\mapsto \left\lvert \left\lvert x\right\rvert-4\right\rvert$}
 \end{subfigure}
 \caption{\label{gr1} Grafovi funkcija iz zadatka \ref{exgraph1}} 
 \end{figure}
@@ -1112,7 +1112,7 @@ Nacrtajte grafove sljedećih funkcija. (Kada je interval cijeli $\mathbb{R}$, pr
 \end{center}
 \end{figure}
 
-Ako je poznato da postoje $a, b, c\in \mathbb{R}$, $a\neq 0$ takvi da je graf na slici upravo graf funkcije $f(x)=\left|\left|ax^2+bx+c\right|-2\right|$, odredite neke takve $a, b, c$.
+Ako je poznato da postoje $a, b, c\in \mathbb{R}$, $a\neq 0$ takvi da je graf na slici upravo graf funkcije $f(x)=\left\lvert\left\lvert ax^2+bx+c\right\rvert-2\right\rvert$, odredite neke takve $a, b, c$.
 \end{exercise}
 \subsection*{Injekcija, surjekcija i bijekcija. Slika i praslika skupa}
 \begin{exercise}
@@ -1168,7 +1168,7 @@ Neka je $f : \mathbb{R} \to \mathbb{R}$ zadana formulom $f(x)=x^3-2x^2$.
 \begin{itemize}
 \item[a)] Dokažite da je $f : \left[0, \dfrac{\pi}{2}\right]\to [4, 8]$ za koju je $f(x)=\sin^4{x}+3\sin^2{x}+4$ bijekcija i odredite njezin inverz.
 \item[a)] Odredite skup $S$ (ako postoji) takav da $f : \mathbb{R}\to S$, $f(x)=\th^3{x}+1$ bude bijekcija.
-\item[b)] Neka je $f : \mathbb{R}\to [-2, \infty\rangle$ zadana formulom $f(x)=\abs{\abs{\abs{x}-2}-2}-2$. 
+\item[b)] Neka je $f : \mathbb{R}\to [-2, \infty\rangle$ zadana formulom $f(x)=\left\lvert \left\lvert \left\lvert x\right\rvert-2\right\rvert-2\right\rvert-2$. 
 Ispitajte injektivnost, surjektivnost i koristeći graf odredite $f^{-1}\left(\left[\dfrac{1}{2}, 4\right\rangle\right)$.
 \end{itemize}
 \end{exercise}
@@ -1224,22 +1224,26 @@ Dokažite (bez korištenja rezultata iz linearne algebre i bez rješavanja susta
 \subsection*{Prirodna domena}
 \begin{exercise}
 Odredite prirodnu domenu sljedećih funkcija.
-\begin{AutoMultiColItemize}
+\begin{multicols}{2}
+\begin{itemize}
 \item[a)] $x\mapsto \mathrm{arch}\left(\arccos{\dfrac{x-1}{x+2}}+1\right)$,
 \item[b)] $x\mapsto \dfrac{1}{\sqrt{\dfrac{1}{x^2}-\dfrac{3}{x}-4}}$
 \item[c)] $x\mapsto \arcsin\left(\sqrt{x+2}-\sqrt{x+1}\right)$,
 \item[d)] $x\mapsto \sqrt{1+\log\lfloor x^2-1\rfloor},$
 \item[e)] $x\mapsto \ln\left(\dfrac{1}{\sin{x}}-2\cos{x}\right).$
-\end{AutoMultiColItemize}
+\end{itemize}
+\end{multicols}
 \end{exercise}
 \begin{exercise} Navedite primjer elementarne funkcije čija je prirodna domena:
-\begin{AutoMultiColItemize}
+\begin{multicols}{2}
+\begin{itemize}
 \item[a)] $[1, \infty\rangle \setminus \{2\}$,
 \item[b)] $\langle 1, \infty\rangle \setminus{\mathbb{N}}$,
 \item[c)] $\langle -\infty, 2]\cup [3, \infty\rangle$,
 \item[d)] $\mathbb{N}$,
 \item[e)] $\langle 0, \infty\rangle\setminus\{2025^n : n\in \mathbb{N}\}$.
-\end{AutoMultiColItemize}
+\end{itemize}
+\end{multicols}
 (\textbf{Uputa:} Elementarne funkcije su sve one funkcije koje se mogu dobiti pomoću konačnog broja operacija zbrajanja, množenja, oduzimanja, dijeljenja i kompozicije iz potencija, eksponencijalnih, hiperbolnih, trigonometrijskih funkcija i njihovih inverznih funkcija -- korijena, logaritamskih, area i arkus funkcija).
 \end{exercise}
 \begin{exercise} \textbf{}

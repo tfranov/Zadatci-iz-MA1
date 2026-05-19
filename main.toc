@@ -28,7 +28,7 @@
 \contentsline {section}{\numberline {5.2}Osnovne operacije s konvergentnim nizovima. Kriteriji konvergencije niza}{134}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Podniz. Nizovi zadani rekurzivno. Limesi složenijih nizova}{141}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Limes superior i limes inferior}{151}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{161}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{161}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{167}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Uniformno neprekidne funkcije}{173}{section.6.3}%
+\contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{160}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{160}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{166}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Uniformno neprekidne funkcije}{172}{section.6.3}%

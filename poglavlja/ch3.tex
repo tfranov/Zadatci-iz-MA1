@@ -217,11 +217,11 @@ $$\left(\sum_{k=1}^n{a_kb_k}\right)^2\leq \left(\sum_{k=1}^n{a_k^2}\right)\cdot\
 Jednakost vrijedi ako i samo ako postoji $k\in \mathbb{R}$ takav da je $b_i=ka_i$, za sve $i=1, \dots, n$.
 \end{exercise}
 \begin{proof}[Rješenje]
-Promotrimo izraz $D=\left(\dsum_{k=1}^n{\,a_kb_k}\right)^2- \left(\dsum_{k=1}^n{\,a_k^2}\right)\cdot\left(\dsum_{k=1}^n{\,b_k^2}\right)$. Trebamo pokazati da je $D\leq 0$. No uočimo da je $D$ diskriminanta kvadratne funkcije $f : \mathbb{R}\to \mathbb{R}$,
-$$f(x)=\dfrac{1}{2}\cdot\left(\dsum_{k=1}^n{\,a_k^2}\right)x^2+\left(\dsum_{k=1}^n{\,a_kb_k}\right)x+\dfrac{1}{2}\left(\dsum_{k=1}^n{\,b_k^2}\right).$$
+Promotrimo izraz $D=\left(\sum\limits_{k=1}^n{\,a_kb_k}\right)^2- \left(\sum\limits_{k=1}^n{\,a_k^2}\right)\cdot\left(\sum\limits_{k=1}^n{\,b_k^2}\right)$. Trebamo pokazati da je $D\leq 0$. No uočimo da je $D$ diskriminanta kvadratne funkcije $f : \mathbb{R}\to \mathbb{R}$,
+$$f(x)=\dfrac{1}{2}\cdot\left(\sum\limits_{k=1}^n{\,a_k^2}\right)x^2+\left(\sum\limits_{k=1}^n{\,a_kb_k}\right)x+\dfrac{1}{2}\left(\sum\limits_{k=1}^n{\,b_k^2}\right).$$
 Očito je dovoljno pokazati da je $f(x)\geq 0$ za sve $x\in \mathbb{R}$, jer ćemo time dobiti da $f$ ima najviše jednu nultočku (Uvjerite se u to!), što povlači da za njezinu diskriminantu $D$ vrijedi $D\leq 0$, što i želimo pokazati. Uočimo da je
-$$f(x)=\dfrac{1}{2}\,\dsum_{k=1}^n{\,a_k^2x^2+2a_kb_kx+b_k^2}=\dfrac{1}{2}\,\dsum_{k=1}^n{\,(a_kx+b_k)^2}\geq 0,$$
-što smo i htjeli pokazati. Nadalje, znamo da je $D=0$ ako i samo ako $f$ ima jedinstvenu nultočku $x_0$. Tada je $$\dsum_{k=1}^n{\,(a_kx_0+b_k)^2}=0,$$ što vrijedi ako i samo ako je $a_kx_0+b_k=0$ za sve $k=1, \dots, n$.\footnote{Općenito, za sve $x_1, \dots, x_n\in \mathbb{R}$ vrijedi $x_1^2+\dots+x_n^2=0$ ako i samo ako vrijedi $x_1=\dots=x_n=0$. Dokažite to!} No to je ekvivalentno tvrdnji $b_k=(-x_0)a_k$ za sve $k=1, \dots, n$, što smo i htjeli dokazati.
+$$f(x)=\dfrac{1}{2}\,\sum\limits_{k=1}^n{\,a_k^2x^2+2a_kb_kx+b_k^2}=\dfrac{1}{2}\,\sum\limits_{k=1}^n{\,(a_kx+b_k)^2}\geq 0,$$
+što smo i htjeli pokazati. Nadalje, znamo da je $D=0$ ako i samo ako $f$ ima jedinstvenu nultočku $x_0$. Tada je $$\sum\limits_{k=1}^n{\,(a_kx_0+b_k)^2}=0,$$ što vrijedi ako i samo ako je $a_kx_0+b_k=0$ za sve $k=1, \dots, n$.\footnote{Općenito, za sve $x_1, \dots, x_n\in \mathbb{R}$ vrijedi $x_1^2+\dots+x_n^2=0$ ako i samo ako vrijedi $x_1=\dots=x_n=0$. Dokažite to!} No to je ekvivalentno tvrdnji $b_k=(-x_0)a_k$ za sve $k=1, \dots, n$, što smo i htjeli dokazati.
 \end{proof}
 Ova nejednakost, koju često u kraćem obliku zovemo \textit{CSB-nejednakost} ima i svoju teorijsku važnost (S generalizacijom upravo dokazane tvrdnje susrest ćete se na kolegiju \textit{Linearna algebra 2}), ali je korisna i za dokazivanje raznih nejednakosti.
 \begin{exercise} \textbf{}
@@ -266,7 +266,8 @@ $$\left((b+c)+(a+c)+(a+b)\right)\left(\dfrac{1}{b+c}+\dfrac{1}{a+c}+\dfrac{1}{a+
 Sigurno ste se prije u obrazovanju susreli s pojmovima otvorenih, zatvorenih, poluotvorenih i poluzatvorenih intervala, za koje sad dajemo preciznu definiciju.
 \begin{definition}
 Neka su zadani $a, b\in \mathbb{R}$, $a<b$. Definiramo sljedeće skupove:
-\begin{AutoMultiColItemize}
+\begin{multicols}{2}
+\begin{itemize}
 \item $\langle a, b\rangle:=\{x\in \mathbb{R} : a<x<b\}$,
 \item $[a, b]:=\{x\in \mathbb{R} : a\leq x\leq b\}$,
 \item $[a, b\rangle:=\{x\in \mathbb{R} : a\leq x< b\}$,
@@ -275,7 +276,8 @@ Neka su zadani $a, b\in \mathbb{R}$, $a<b$. Definiramo sljedeće skupove:
 \item $\langle -\infty, b\rangle:=\{x\in \mathbb{R} : x< b\}$,
 \item $[a, \infty\rangle:=\{x\in \mathbb{R} : a\leq x\}$,
 \item $\langle a, \infty\rangle:=\{x\in \mathbb{R} : a< x\}$.
-\end{AutoMultiColItemize}
+\end{itemize}
+\end{multicols}
 Skupovi $\langle a,b \rangle$, $\langle a,\infty \rangle$, $\langle -\infty,b \rangle$ su \textbf{otvoreni intervali}, skup $[a, b]$ je \textbf{zatvoreni interval}, a skupovi $[a, b\rangle$, $\langle a, b]$, $\langle -\infty, b]$, $[a, \infty\rangle$ su \textbf{poluotvoreni intervali}.
 \end{definition}
 \begin{exercise}
@@ -722,7 +724,7 @@ $$z=\dfrac{-7+22i}{6+7i}\cdot \dfrac{6-7i}{6-7i}=\dfrac{(-7+22i)(6-7i)}{85}=\dfr
 \label{18}
 \begin{itemize}
 \item Vrijedi $a+bi=c+di$ ako i samo ako vrijedi $a=c$ i $b=d$.
-\item \textbf{Modul} kompleksnog broja $z=a+bi$ je broj $\;\abs{z}=\sqrt{a^2+b^2}$.
+\item \textbf{Modul} kompleksnog broja $z=a+bi$ je broj $\left\lvert z\right\rvert=\sqrt{a^2+b^2}$.
 \item Neka je $z=x+yi$. Tada je \textbf{realni dio} od $z$ broj $\mathrm{Re}(z)=x$, a \textbf{imaginarni dio} od $z$ broj $\mathrm{Im}(z)=y$.
 \item \textbf{Kompleksno-konjugirani} broj od $z=x+yi$ je broj $\overline{z}=x-yi$.
 \end{itemize}
@@ -731,8 +733,8 @@ $$z=\dfrac{-7+22i}{6+7i}\cdot \dfrac{6-7i}{6-7i}=\dfrac{(-7+22i)(6-7i)}{85}=\dfr
 \begin{exercise}\textbf{}
 \begin{itemize}
 \item[a)] Odredite sve $a\in \mathbb{R}$ takve da je $(a+3i)^2=216+90i$.
-\item[b)] Dokažite da za sve $z_1$, $z_2\in \mathbb{C}$ vrijedi $\abs{z_1z_2}=\abs{z_1}\abs{z_2}$.
-\item[c)] Dokažite da za sve $z_1$, $z_2\in \mathbb{C}$ vrijedi $\abs{z_1+z_2}\leq \abs{z_1}+\abs{z_2}$.
+\item[b)] Dokažite da za sve $z_1$, $z_2\in \mathbb{C}$ vrijedi $\left\lvert z_1z_2 \right\rvert=\left\lvert z_1\right\rvert \left\lvert z_2\right\rvert$.
+\item[c)] Dokažite da za sve $z_1$, $z_2\in \mathbb{C}$ vrijedi $\left\lvert z_1+z_2\right\rvert\leq \left\lvert z_1\right\rvert+\left\lvert z_2\right\rvert$.
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -748,12 +750,12 @@ c) Stavimo li $z_1=a+bi$ i $z_2=c+di$, treba dokazati
 $$\sqrt{(a+c)^2+(b+d)^2}\leq \sqrt{a^2+b^2}+\sqrt{c^2+d^2}$$
 Kvadriranjem i pojednostavljivanjem dobivamo ekvivalentnu tvrdnju
 $$ac+bd\leq \sqrt{(a^2+b^2)(c^2+d^2)}.$$
-Primijetimo da općenito ne možemo kvadrirati ovu nejednakost jer $ac+bd$ može biti negativan. Međutim, vrijedi obrat -- ako vrijedi $x^2\geq y^2$, gdje je $x\geq 0$, a $y\in \mathbb{R}$, onda vrijedi $x\geq y$. Zaista, vrijedi $\sqrt{y^2}=\abs{y}$, pa vrijedi $x^2\geq y^2\Rightarrow x\geq |y|\geq y$, što povlači $x\geq y$. Zato je dovoljno dokazati da vrijedi
+Primijetimo da općenito ne možemo kvadrirati ovu nejednakost jer $ac+bd$ može biti negativan. Međutim, vrijedi obrat -- ako vrijedi $x^2\geq y^2$, gdje je $x\geq 0$, a $y\in \mathbb{R}$, onda vrijedi $x\geq y$. Zaista, vrijedi $\sqrt{y^2}=\left\lvert y\right\rvert$, pa vrijedi $x^2\geq y^2\Rightarrow x\geq |y|\geq y$, što povlači $x\geq y$. Zato je dovoljno dokazati da vrijedi
 $$(ac+bd)^2\leq (a^2+b^2)(c^2+d^2).$$
 Zaista, ova tvrdnja je ekvivalentna $(ad-bc)^2\geq 0$, što je istina.\footnote{Tvrdnja je i specijalan slučaj CSB-nejednakosti.}
 \end{proof}
 \begin{exercise}
-Prikažite u Gaussovoj ravnini skup $S=\left\{z :\; \abs{z-3}=4\right\}$.
+Prikažite u Gaussovoj ravnini skup $S=\left\{z : \left\lvert z-3\right\rvert=4\right\}$.
 \end{exercise}
 \begin{proof}[Rješenje]
 Ideja u rješavanju zadataka ovog tipa je pronaći nužne i dovoljne uvjete da je neki kompleksan broj u $S$ takve da pomoću njih lako možemo skicirati $S$ u Gaussovoj ravnini. Neka je $z=x+yi$. Tada vrijedi $|z-3|=|(x-3)+yi|=4$, odnosno $\sqrt{(x-3)^2+y^2}=4$, što vrijedi ako i samo ako vrijedi $(x-3)^2+y^2=16$. Prema tome, vrijedi $z\in S$ ako i samo ako vrijedi $(x-3)^2+y^2=16$, gdje je $z=x+yi$. No znamo da je ovaj skup kružnica radijusa $4$ sa središtem u točki $(3, 0)$.
@@ -883,9 +885,10 @@ Vrijedi $\sqrt[n]{z}=\sqrt[n]{r}\left(\cos{\dfrac{\phi+2k\pi}{n}}+\sin{\dfrac{\p
 Odredite $\sqrt[3]{1+i}$.
 \end{exercise}
 \begin{proof*}
+$\sqrt[3]{1+i}$ je jednak skupu
 \[
 \pushQED{\qed}
-\sqrt[3]{1+i}=\left\{\sqrt[6]{2}\left(\cos{\dfrac{\pi}{12}}+i\sin{\dfrac{\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{3\pi}{12}}+i\sin{\dfrac{3\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{17\pi}{12}}+i\sin{\dfrac{17\pi}{12}}\right)\right\}.
+\left\{\sqrt[6]{2}\left(\cos{\dfrac{\pi}{12}}+i\sin{\dfrac{\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{3\pi}{12}}+i\sin{\dfrac{3\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{17\pi}{12}}+i\sin{\dfrac{17\pi}{12}}\right)\right\}.
 \popQED
 \]
 \end{proof*}
@@ -902,7 +905,7 @@ Dokažite da za sve $x>1$ vrijedi
 \begin{exercise} \textbf{}
 \begin{itemize}
 \item[a)] Dokažite da za sve $x\in \mathbb{R}$ vrijedi $|x|\geq -x$.
-\item[b)] Koristeći tvrdnju a) dijela zadatka, dokažite da za sve $x\in \mathbb{R}$ vrijedi $$\left|x^{3}-2x\cos{x}+\sin^2{x}+1\right|+\left|x^{3}-2x\cos{x}-\cos^2{x}+6\right|\geq 4.$$ 
+\item[b)] Koristeći tvrdnju a) dijela zadatka, dokažite da za sve $x\in \mathbb{R}$ vrijedi $$\left\lvert x^{3}-2x\cos{x}+\sin^2{x}+1\right\rvert+\left\lvert x^{3}-2x\cos{x}-\cos^2{x}+6\right\rvert\geq 4.$$ 
 \end{itemize}
 \end{exercise}
 \begin{exercise} \textbf{}
@@ -972,7 +975,8 @@ Kako iz aksioma realnih brojeva možemo dokazati Arhimedov i Cantorov aksiom (Za
 \end{exercise}
 \begin{exercise}
 Odredite $\inf{A}$, $\sup{A}$, $\min{A}$, $\max{A}$ ako postoje, gdje je
-\begin{AutoMultiColItemize}
+\begin{multicols}{2}
+\begin{itemize}
 \item[a)] $A=\left\{\dfrac{18-2n}{2n+1} : n\in \mathbb{N}\right\}$,
 \item[b)] $A=\left\{\dfrac{x^2-10}{x^2+10} : x\in \mathbb{R}\right\}$,
 \item[c)] $A=\left\{\dfrac{1}{n+2} : n\in \mathbb{N},\, n\neq 4\right\}$,
@@ -985,7 +989,8 @@ Odredite $\inf{A}$, $\sup{A}$, $\min{A}$, $\max{A}$ ako postoje, gdje je
 \item[j)] $A=\left\{\dfrac{1}{3-\left(-1\right)^{n}\cdot n}+\left(-1\right)^{n} : n\in \mathbb{N}\right\}$,
 \item[k)] $A=\left\{\dfrac{1}{\sqrt{n}+1} : n\in \mathbb{N}\right\}$.
 \item[l)] $A=\left\{\dfrac{1}{p} : p\text{ prost}\right\}$.
-\end{AutoMultiColItemize}
+\end{itemize}
+\end{multicols}
 \end{exercise}
 \begin{exercise}
 Odredite $\inf{A}$, $\sup{A}$, $\min{A}$, $\max{A}$ ako postoje, gdje je
@@ -1030,7 +1035,7 @@ Prikažite $z=\dfrac{(3+i+i^{140})^2}{3-i}$ u standardnom obliku.
 \begin{exercise}\textbf{}
 \begin{itemize}
 \item[a)] Dokažite da za sve $z\in \mathbb{C}$ vrijedi $z\cdot \overline{z}=|z|^2$.
-\item[b)] Dokažite da za sve $z_1$, $z_2\in \mathbb{C}$ vrijedi $\abs{z_1+z_2}\leq \abs{z_1}+\abs{z_2}$ koristeći a). (\textbf{Uputa:} Promotrite izraz $|z_1+z_2|^2$).
+\item[b)] Dokažite da za sve $z_1$, $z_2\in \mathbb{C}$ vrijedi $\left\lvert z_1+z_2 \right\rvert\leq \left\lvert z_1\right\rvert+\left\lvert z_2\right\rvert$ koristeći a). (\textbf{Uputa:} Promotrite izraz $\left\lvert z_1+z_2\right\rvert^2$).
 \end{itemize}
 \end{exercise}
 \begin{exercise}
@@ -1039,8 +1044,8 @@ Za kompleksne brojeve $z$ i $w$ vrijedi $|z+w|=\sqrt{3}$ i $|z|=|w|=1$. Izračun
 \begin{exercise}
 Dokažite da za sve $z$, $w\in \mathbb{C}$ vrijedi
 \begin{itemize}
-\item[a)] $|z+w|^2+|z-w|^2=2\left(|z|^2+|w|^2\right)$.
-\item[b)] $\abs{|z|-|w|}\leq |z-w|$,
+\item[a)] $\left\lvert z+w\right\rvert^2+\left\lvert z-w\right\rvert^2=2\left(\left\lvert z\right\rvert^2+\left\lvert w\right\rvert^2\right)$.
+\item[b)] $\left\lvert \left\lvert z\right\rvert-\left\lvert w\right\rvert\right\rvert\leq \left\lvert z-w\right\rvert$,
 \end{itemize}
 Sada se lako vidi da se prethodni zadatak može riješiti i pomoću a).
 \end{exercise}
@@ -1056,14 +1061,16 @@ Riješite jednadžbu $|z|-\overline{z}=1+2i$.
 \end{exercise}
 \begin{exercise}
 Odredite skup $S$ i skicirajte ga u Gaussovoj ravnini, gdje je
-\begin{AutoMultiColItemize}
+\begin{multicols}{2}
+\begin{itemize}
 \item[a)] $S=\{z : \mathrm{Re}(z-3)=|z+2i|\}$.
 \item[b)] $S=\left\{z : |z+2|=|1-\overline{z}|\right\}$,
 \item[c)] $S=\{z : |z-2i|\leq 1 \; \mathrm{i} \; z^2\overline{z}^2=1\}$,
 \item[d)] $S=\left\{z : \mathrm{Re}\left(\dfrac{z+3+2i}{\overline{z}-3+2i}\right)=0\right\}$,
 \item[e)] $S=\left\{z : z^5=1\right\}$,
 \item[f)] $S=\left\{z : |z-4-4i|>\sqrt{2}\right\}$,
-\end{AutoMultiColItemize}
+\end{itemize}
+\end{multicols}
 \end{exercise}
 \begin{exercise}
 Neka je $n\in \mathbb{N}$ proizvoljan i neka je $S=\left\{z : z^n=1 \right\}$. Dokažite da je $S$ grupa u odnosu na množenje.

@@ -127,7 +127,7 @@ Tada za sve $x\in \mathbb{R}$ takve da je $|x-c|<\delta$ vrijedi
 Odavde slijedi
 $$|x^2-c^2|=|x-c||x+c|<\dfrac{\epsilon}{1+2|c|}\cdot(1+2|c|)=\epsilon.$$
 b) Neka su $c\in \mathbb{R}\setminus\{0\}$ i $\epsilon>0$ proizvoljni. Vrijedi
-$$\abs{\dfrac{1}{x^2}-\dfrac{1}{c^2}}=\dfrac{|x^2-c^2|}{|x|^2|c|^2}=\dfrac{|x-c||x+c|}{x^2c^2}$$
+$$\left\lvert \dfrac{1}{x^2}-\dfrac{1}{c^2}\right\rvert=\dfrac{|x^2-c^2|}{|x|^2|c|^2}=\dfrac{|x-c||x+c|}{x^2c^2}$$
 Uzmimo
 $$\delta=\min\left\{\dfrac{\epsilon\cdot c^4}{4\left(1+2|c|\right)}, 1, \dfrac{|c|}{2}\right\}.$$
 Iz (\ref{42}) imamo $$|x|>|c|-\dfrac{|c|}{2}=\dfrac{|c|}{2},\; \text{ tj. }\; x^2>\dfrac{c^2}{4}.$$
@@ -186,14 +186,14 @@ Dokažite sljedeće tvrdnje koristeći definiciju neprekidnosti funkcije.
 \end{exercise}
 \begin{proof*}
 a) Neka je $\epsilon>0$ i $c\geq 0$ proizvoljni. Uzmemo li $\delta=\sqrt{c}\epsilon$, za sve $x\geq 0$ za koje je $|x-c|<\delta$ imamo
-$$|\sqrt{x}-\sqrt{c}|=\abs{\left(\sqrt{x}-\sqrt{c}\right)\dfrac{\sqrt{x}+\sqrt{c}}{\sqrt{x}+\sqrt{c}}}=\dfrac{|x-c|}{\sqrt{x}+\sqrt{c}}<\dfrac{|x-c|}{\sqrt{c}}<\epsilon$$
+$$|\sqrt{x}-\sqrt{c}|=\left\lvert \left(\sqrt{x}-\sqrt{c}\right)\dfrac{\sqrt{x}+\sqrt{c}}{\sqrt{x}+\sqrt{c}}\right\rvert=\dfrac{|x-c|}{\sqrt{x}+\sqrt{c}}<\dfrac{|x-c|}{\sqrt{c}}<\epsilon$$
 
 b) Neka su $\epsilon>0$ i $c\in \mathbb{R}$ proizvoljni. Uzmemo li $\delta=\epsilon$, za sve $x\in \mathbb{R}$ za koje je $|x-c|<\delta$ vrijedi
-$$\abs{\sin{x}-\sin{c}}=\abs{2\cos{\dfrac{x+c}{2}}\sin{\dfrac{x-c}{2}}}\leq 2\abs{\sin{\dfrac{x-c}{2}}},$$
-gdje smo iskoristili činjenicu da je $\abs{\cos{\dfrac{x+c}{2}}}\leq 1$. Kako za sve $x\in \mathbb{R}$ vrijedi $\abs{\sin{\dfrac{x-c}{2}}}\leq \abs{\dfrac{x-c}{2}},$ imamo
+$$\left\lvert \sin{x}-\sin{c}\right\rvert=\left\lvert 2\cos{\dfrac{x+c}{2}}\sin{\dfrac{x-c}{2}}\right\rvert\leq 2\left\lvert \sin{\dfrac{x-c}{2}}\right\rvert,$$
+gdje smo iskoristili činjenicu da je $\left\lvert \cos{\dfrac{x+c}{2}}\right\rvert\leq 1$. Kako za sve $x\in \mathbb{R}$ vrijedi $\left\lvert \sin{\dfrac{x-c}{2}}\right\rvert\leq \left\lvert \dfrac{x-c}{2}\right\rvert,$ imamo
 \[
 \pushQED{\qed}
-2\abs{\sin{\dfrac{x-c}{2}}}\leq |x-c|<\epsilon.\qedhere
+2\left\lvert \sin{\dfrac{x-c}{2}}\right\rvert\leq |x-c|<\epsilon.\qedhere
 \popQED
 \]
 \end{proof*}
@@ -217,14 +217,14 @@ $$f(x)=\sqrt{2x-1}\;\;\text{ i }\;\;f(c)=\sqrt{2c-1}.$$
 
 Neka je $\epsilon>0$ proizvoljan. Slično kao u a) dijelu zadatka \ref{cont4}, za sve $x\in \mathbb{R}$ za koje je $|x-c|<\delta$ vrijedi
 \begin{align*}
-\abs{\left(\sqrt{2x-1}-\sqrt{2c-1}\right)\cdot\dfrac{\sqrt{2x-1}+\sqrt{2c-1}}{\sqrt{2x-1}+\sqrt{2c-1}}}&=\dfrac{\abs{(2x-1)-(2c-1)}}{\sqrt{2x-1}+\sqrt{2c-1}}\\
+\left\lvert \left(\sqrt{2x-1}-\sqrt{2c-1}\right)\cdot\dfrac{\sqrt{2x-1}+\sqrt{2c-1}}{\sqrt{2x-1}+\sqrt{2c-1}}\right\rvert&=\dfrac{\left\lvert (2x-1)-(2c-1)\right\rvert}{\sqrt{2x-1}+\sqrt{2c-1}}\\
 &=\dfrac{2|x-c|}{\sqrt{2x-1}+\sqrt{2c-1}}<\dfrac{2|x-c|}{\sqrt{2c-1}}<\epsilon.
 \end{align*}
 
 Neka je sada $c<1$ i
 $$\delta=\min\left\{\epsilon,\; 1-c\right\}.$$
 Dobivamo $|x-c|<1-c$, odakle slijedi $x<1$, pa je $$f(x)=\dfrac{1}{2}-x\;\;\text{ i }\;\;f(c)=\dfrac{1}{2}-c.$$ Neka je $\epsilon>0$ proizvoljan. Za sve $x\in \mathbb{R}$ takve da je $|x-c|<\delta$ vrijedi
-$$\abs{\left(\dfrac{1}{2}-x\right)-\left(\dfrac{1}{2}-c\right)}=|x-c|<\epsilon.$$
+$$\left\lvert \left(\dfrac{1}{2}-x\right)-\left(\dfrac{1}{2}-c\right)\right\rvert=|x-c|<\epsilon.$$
 \newpage
 Pokažimo sada da funkcija ima prekid za $c=1$. Uzmimo $\epsilon=\dfrac{1}{2}$ i neka je $\delta>0$ proizvoljan. Uzmimo sada $x_\delta=\max\left\{0,\; 1-\dfrac{\delta}{2}\right\}$. Uočimo da vrijedi 
 $$|x_\delta-1|\leq\dfrac{\delta}{2}<\delta.$$
@@ -278,7 +278,7 @@ a) Budući da su $f$ i $g$ neprekidne u $c$, za svaki $\epsilon>0$ postoje $\del
 $$|x-c|<\delta_1\Longrightarrow |f(x)-f(c)|<\dfrac{\epsilon}{2}\;\;\text{ i }\;\; |x-c|<\delta_2\Longrightarrow |g(x)-g(c)|<\dfrac{\epsilon}{2}$$
 Uzmimo $\delta=\min\{\delta_1, \delta_2\}$. Tada za sve $x\in I$ za koje je $|x-c|<\delta$ vrijedi
 \begin{align*}
-|(f+g)(x)-(f+g)(c)|&=\abs{\left(f(x)+g(x)\right)-\left(f(c)+g(c)\right)}=\abs{f(x)-f(c)+g(x)-g(c)}\\
+|(f+g)(x)-(f+g)(c)|&=\left\lvert \left(f(x)+g(x)\right)-\left(f(c)+g(c)\right)\right\rvert=\left\lvert f(x)-f(c)+g(x)-g(c)\right\rvert\\
 &\leq |f(x)-f(c)|+|g(x)-g(c)|<\dfrac{\epsilon}{2}+\dfrac{\epsilon}{2}=\epsilon.
 \end{align*}
 b) Prema napomeni \ref{localbound} postoje $\eta_1, \eta_2, M_1, M_2>0$ takvi da za sve $x\in I$ vrijedi
@@ -287,8 +287,8 @@ Sada za $\eta=\min\left\{\eta_1, \eta_2\right\}$ i $M=\max\left\{M_1, M_2\right\
 $$|x-c|<\delta_1\Longrightarrow |f(x)-f(c)|<\dfrac{\epsilon}{2M}\;\;\text{ i }\;\; |x-c|<\delta_2\Longrightarrow |g(x)-g(c)|<\dfrac{\epsilon}{2M}.$$
 Uzmimo $\delta=\min\{\delta_1, \delta_2, \eta\}$. Tada je
 \begin{align*}
-|(fg)(x)-(fg)(c)|&=\abs{f(x)g(x)-f(c)g(c)}\\
-&=\abs{f(x)g(x)-f(c)g(x)+f(c)g(x)-f(c)g(c)}\\
+|(fg)(x)-(fg)(c)|&=\left\lvert f(x)g(x)-f(c)g(c)\right\rvert\\
+&=\left\lvert f(x)g(x)-f(c)g(x)+f(c)g(x)-f(c)g(c)\right\rvert\\
 &\leq |f(x)-f(c)||g(x)|+|g(x)-g(c)||f(c)|<\dfrac{\epsilon}{2M}\cdot M+\dfrac{\epsilon}{2M}\cdot M=\epsilon.
 \end{align*}
 c) Nije teško pokazati da je funkcije $q : I\setminus\{0\}\to \mathbb{R}$, $q(x)=\dfrac{1}{x}$ neprekidna na svojoj domeni. Uočimo da je $\dfrac{1}{g}=q\circ g$. Za sve $c\in I\setminus\{0\}$ vrijedi $g(c)\neq 0$, pa je, po napomeni \ref{compcont} i $\dfrac{1}{g}=q\circ g$ neprekidna u $c$. No i $f$ je neprekidna u $c$, pa je prema b), $f\cdot \dfrac{1}{g}=\dfrac{f}{g}$ neprekidna u $c$, dakle i neprekidna na $I\setminus\{0\}$.
@@ -423,12 +423,12 @@ Može se pokazati sljedeće:
 \end{exercise}
 \begin{proof*}
 a) Tvrdimo da je $f_1$ uniformno neprekidna. Neka je $\epsilon>0$ proizvoljan. Uzmimo $\delta=\epsilon$. Tada za sve $x, y\in \mathbb{R}$ takve da je $|x-y|<\delta$, kao i u b) dijelu zadatka \ref{cont4}, dobivamo
-$$\left|\sin{x}-\sin{y}\right|\leq|x-y|<\delta=\epsilon.$$
+$$\left\lvert\sin{x}-\sin{y}\right\rvert\leq|x-y|<\delta=\epsilon.$$
 
-b) Pokažimo da $f_2$ nije uniformno neprekidna, tj. da postoji $\epsilon>0$ takav da za svaki $\delta>0$ postoje $x_\delta, y_\delta>0$ takvi da je $|x_\delta-y_\delta|<\delta$, ali $\left|\ln{x_\delta}-\ln{y_\delta}\right|=\left|\ln\left(\dfrac{x_\delta}{y_\delta}\right)\right|\geq\epsilon$. Uzmimo $\epsilon=1$ i $\delta>0$ proizvoljan, te $x_\delta:=\delta$, $y_\delta:=\dfrac{\delta}{3}$. Tada je $|x_\delta-y_\delta|=\dfrac{2\delta}{3}<\delta$ i
+b) Pokažimo da $f_2$ nije uniformno neprekidna, tj. da postoji $\epsilon>0$ takav da za svaki $\delta>0$ postoje $x_\delta, y_\delta>0$ takvi da je $|x_\delta-y_\delta|<\delta$, ali $\left\lvert\ln{x_\delta}-\ln{y_\delta}\right\rvert=\left\lvert\ln\left(\dfrac{x_\delta}{y_\delta}\right)\right\rvert\geq\epsilon$. Uzmimo $\epsilon=1$ i $\delta>0$ proizvoljan, te $x_\delta:=\delta$, $y_\delta:=\dfrac{\delta}{3}$. Tada je $|x_\delta-y_\delta|=\dfrac{2\delta}{3}<\delta$ i
 \[
 \pushQED{\qed}
-\left|\ln\left(\dfrac{x_\delta}{y_\delta}\right)\right|=\left|\ln\left(\dfrac{\delta}{\frac{\delta}{3}}\right)\right|=\ln{3}\geq 1.\qedhere
+\left\lvert\ln\left(\dfrac{x_\delta}{y_\delta}\right)\right\rvert=\left\lvert\ln\left(\dfrac{\delta}{\frac{\delta}{3}}\right)\right\rvert=\ln{3}\geq 1.\qedhere
 \popQED
 \]
 \end{proof*}
@@ -438,15 +438,15 @@ Dokažite da je $f : [0,\infty\rangle\to \mathbb{R}$, $f(x)=\sqrt{x}$ uniformno 
 \end{exercise}
 \begin{proof}[Rješenje]
 \textit{Prvi način.} Neka je $\epsilon>0$ proizvoljan i neka je $\delta=\epsilon^2$. Tada za sve $x, y\geq 0$ takve da je $|x-c|<\delta$, analogno kao u a) dijelu zadatka \ref{cont4} zaključujemo
-$$\abs{\sqrt{x}-\sqrt{y}}<\dfrac{\epsilon^2}{\sqrt{y}}.$$
-Uočimo da, ako je $\sqrt{y}\geq \epsilon$, tj. $y\geq \epsilon^2$, onda je $\abs{\sqrt{x}-\sqrt{y}}<\epsilon$. S druge strane, ako je $y<\epsilon^2$, onda zamjenom uloga $x$ i $y$ zaključujemo
-$$\abs{\sqrt{x}-\sqrt{y}}<\dfrac{\epsilon^2}{\sqrt{x}}.$$
+$$\left\lvert \sqrt{x}-\sqrt{y}\right\rvert<\dfrac{\epsilon^2}{\sqrt{y}}.$$
+Uočimo da, ako je $\sqrt{y}\geq \epsilon$, tj. $y\geq \epsilon^2$, onda je $\left\lvert \sqrt{x}-\sqrt{y}\right\rvert<\epsilon$. S druge strane, ako je $y<\epsilon^2$, onda zamjenom uloga $x$ i $y$ zaključujemo
+$$\left\lvert \sqrt{x}-\sqrt{y}\right\rvert<\dfrac{\epsilon^2}{\sqrt{x}}.$$
 Tvrdnja opet vrijedi ako je $x\geq \epsilon^2$, pa promotrimo tvrdnju za $x<\epsilon^2$. Sada iz $0\leq \sqrt{x}<\epsilon$ i $0\leq \sqrt{y}<\epsilon$ množenjem s $-1$ i zbrajanjem dobivamo
 $$-\epsilon<\sqrt{x}-\sqrt{y}<\epsilon,$$
-tj. $\abs{\sqrt{x}-\sqrt{y}}<\epsilon$, što smo i tvrdili.
+tj. $\left\lvert \sqrt{x}-\sqrt{y}\right\rvert<\epsilon$, što smo i tvrdili.
 
 \textit{Drugi način.} Uočimo da ako promotrimo $f|_{[1, \infty\rangle}$, onda ponavljanjem argumenta iz zadatka \ref{cont4} dobivamo da za proizvoljan $\epsilon>0$ i $\delta=\epsilon$ dobivamo da za sve $x, y\geq 1$ takve da je $|x-y|<\delta$ dobivamo
-$$\left|\sqrt{x}-\sqrt{y}\right|<\dfrac{|x-y|}{\sqrt{y}}\leq |x-y|<\delta=\epsilon,$$
+$$\left\lvert\sqrt{x}-\sqrt{y}\right\rvert<\dfrac{|x-y|}{\sqrt{y}}\leq |x-y|<\delta=\epsilon,$$
 što znači da je $f|_{[1, \infty\rangle}$ uniformno neprekidna na $[1, \infty\rangle$. 
 
 S druge strane, uniformna neprekidnost funkcije $f|_{[0, 3]}$ na svojoj domeni slijedi iz činjenice da je $f|_{[0, 3]}$ neprekidna na svojoj domeni (jer je $f$ neprekidna na svojoj domeni), pa je ona i uniformno neprekidna na svojoj domeni.
@@ -456,17 +456,17 @@ Sada je ideja sljedeća -- ako uzmemo "manju" od dvije "delte" koje dobivamo da 
 Neka je $\epsilon>0$. Tada postoje $\delta_1, \delta_2>0$ takvi da za sve $x_1, x_2\geq 1$ i sve $x_3, x_4\in [0, 3]$ vrijedi
 \begin{gather}
 \label{unif1}
-\abs{x_1-x_2}<\delta_1\Rightarrow \abs{\sqrt{x_1}-\sqrt{x_2}}<\epsilon,\\
+\left\lvert x_1-x_2\right\rvert<\delta_1\Rightarrow \left\lvert \sqrt{x_1}-\sqrt{x_2}\right\rvert<\epsilon,\\
 \label{unif2}
-\abs{x_3-x_4}<\delta_2\Rightarrow \abs{\sqrt{x_3}-\sqrt{x_4}}<\epsilon.
+\left\lvert x_3-x_4\right\rvert<\delta_2\Rightarrow \left\lvert \sqrt{x_3}-\sqrt{x_4}\right\rvert<\epsilon.
 \end{gather}
 Uzmimo $\delta=\min\left\{\delta_1, \delta_2, 1\right\}$. Neka su zatim $x, y\geq 0$ takvi da je $|x-y|<\delta$. Uočimo da su tada ili $x, y\in [0, 3]$, ili $x, y\in [1,\infty\rangle$. Zaista, kad bi bilo npr. $x\in [0, 3]$ i $y\notin [0, 3]$, tj. $y>3$, onda iz činjenice da je $y-x<\delta<1$ slijedi $$x>y-1>3-1=2,$$ 
 što je kontradikcija s činjenicom da je $x\in [0, 3]$.
 
-Uočimo sada da ako su $x, y\in [0, 3]$, iz (\ref{unif2}) dobivamo $\abs{\sqrt{x}-\sqrt{y}}<\delta$, te isto dobivamo iz (\ref{unif1}) ako su $x, y\in [1, \infty\rangle$.
+Uočimo sada da ako su $x, y\in [0, 3]$, iz (\ref{unif2}) dobivamo $\left\lvert \sqrt{x}-\sqrt{y}\right\rvert<\delta$, te isto dobivamo iz (\ref{unif1}) ako su $x, y\in [1, \infty\rangle$.
 \end{proof}
 \begin{remark}[Heineova karakterizacija uniformno neprekidnih funkcija]
-Neka je $I\subseteq \mathbb{R}$ otvoreni ili zatvoreni interval i $f : I\to \mathbb{R}$. Tada je $f$ uniformno neprekidna na $I$ akko za svaka dva niza $(x_n)$, $(y_n)$ u $I$ takva da je $\lim\limits_{n\to \infty}{|x_n-y_n|}=0$ vrijedi $\lim\limits_{n\to \infty}{\abs{f(x_n)-f(y_n)}}=0$.
+Neka je $I\subseteq \mathbb{R}$ otvoreni ili zatvoreni interval i $f : I\to \mathbb{R}$. Tada je $f$ uniformno neprekidna na $I$ akko za svaka dva niza $(x_n)$, $(y_n)$ u $I$ takva da je $\lim\limits_{n\to \infty}{|x_n-y_n|}=0$ vrijedi $\lim\limits_{n\to \infty}{\left\lvert f(x_n)-f(y_n)\right\rvert}=0$.
 \end{remark}
 \begin{remark}[Osnovne operacije s uniformno neprekidnim funkcijama]
 Neka je $I\subseteq \mathbb{R}$ otvoreni ili zatvoreni interval i neka su $f, g : I\to \mathbb{R}$ uniformno neprekidne funkcije na $I$. Tada vrijedi:
@@ -481,11 +481,11 @@ Koristeći Heineovu karakterizaciju uniformno neprekidnih funkcija, dokažite da
 \end{exercise}
 \begin{proof}[Rješenje]
 Uzmimo nizove $(x_n)$, $(y_n)$ zadane formulama $x_n=n$, $y_n=n+\dfrac{1}{n}$. Tada je $\lim\limits_{n\to \infty}{|x_n-y_n|}=\lim\limits_{n\to \infty}{\dfrac{1}{n}}=0$, ali
-$$\lim\limits_{n\to \infty}{\abs{x_n^2-y_n^2}}=\lim\limits_{n\to \infty}{\left(n+\dfrac{1}{n}\right)^2-n^2}=\lim\limits_{n\to \infty}{2+\dfrac{1}{n^2}}=2.$$
+$$\lim\limits_{n\to \infty}{\left\lvert x_n^2-y_n^2\right\rvert}=\lim\limits_{n\to \infty}{\left(n+\dfrac{1}{n}\right)^2-n^2}=\lim\limits_{n\to \infty}{2+\dfrac{1}{n^2}}=2.$$
 
-Uzmimo $a>0$, te nizove $(x_n)$ i $(y_n)$ u $[-a, a]$ takve da je $\lim\limits_{n\to \infty}{|x_n-y_n|}=0$. Kako je $\abs{x_n^2-y_n^2}=\abs{x_n-y_n}\abs{x_n+y_n}$, te vrijedi
-$$0\leq \abs{x_n-y_n}\abs{x_n+y_n}\leq \abs{x_n-y_n}\abs{x_n}+\abs{x_n-y_n}\abs{y_n}\leq \abs{x_n-y_n}\cdot 2a,$$
-iz kriterija sendviča slijedi da je $\lim\limits_{n\to \infty}{\abs{x_n^2-y_n^2}}=0$.
+Uzmimo $a>0$, te nizove $(x_n)$ i $(y_n)$ u $[-a, a]$ takve da je $\lim\limits_{n\to \infty}{|x_n-y_n|}=0$. Kako je $\left\lvert x_n^2-y_n^2\right\rvert=\left\lvert x_n-y_n\right\rvert\left\lvert x_n+y_n\right\rvert$, te vrijedi
+$$0\leq \left\lvert x_n-y_n\right\rvert\left\lvert x_n+y_n\right\rvert\leq \left\lvert x_n-y_n\right\rvert\left\lvert x_n\right\rvert+\left\lvert x_n-y_n\right\rvert\left\lvert y_n\right\rvert\leq \left\lvert x_n-y_n\right\rvert\cdot 2a,$$
+iz kriterija sendviča slijedi da je $\lim\limits_{n\to \infty}{\left\lvert x_n^2-y_n^2\right\rvert}=0$.
 \end{proof}
 \begin{exercise}
 Ispitajte uniformnu neprekidnost sljedećih funkcija.
@@ -501,11 +501,11 @@ $$f_2(x)=\begin{cases}
 \end{exercise}
 \begin{proof}[Rješenje]
 a) Tvrdimo da $f_1$ nije uniformno neprekidna. Zaista, uočimo da su restrikcije funkcija $x\mapsto \sin{x}$, $x\mapsto \cos{x}$ i $x\mapsto \sqrt{x}$ na $\langle 0, \infty\rangle$ uniformno neprekidne na tom skupu (pokažite uniformnu neprekidnost od $x\mapsto \cos{x}$ za vježbu!), pa je zbog ograničenosti funkcija $x\mapsto \sin{x}$ i $x\mapsto \cos{x}$ i restrikcija funkcije $x\mapsto 2\sqrt{x}-\sin{x}\cos^4{x}$ na $\langle 0, \infty\rangle$ uniformno neprekidna na tom skupu. Uzmimo sad nizove $(x_n)$ i $(y_n)$ definirane formulama $x_n=\dfrac{2}{n}$, $y_n=\dfrac{1}{n}$. Uočimo da je $\lim\limits_{n\to \infty}{|x_n-y_n|}=0$, ali vrijedi
-$$\abs{f_1(x_n)-f_1(y_n)}=\abs{\ln{2}+\left(2\sqrt{\dfrac{2}{n}}-\sin{\dfrac{2}{n}\cos^4{\dfrac{2}{n}}}\right)-\left(2\sqrt{\dfrac{1}{n}}-\sin{\dfrac{1}{n}}\cos^4{\dfrac{1}{n}}\right)},$$
-pa kako niz $n\mapsto \left(2\sqrt{\dfrac{2}{n}}-\sin{\dfrac{2}{n}\cos^4{\dfrac{2}{n}}}\right)-\left(2\sqrt{\dfrac{1}{n}}-\sin{\dfrac{1}{n}}\cos^4{\dfrac{1}{n}}\right)$ teži u $0$ zbog uniformne neprekidnosti, imamo $\lim\limits_{n\to \infty}{\abs{f_1(x_n)-f_1(y_n)}}=\ln{2}$.
+$$\left\lvert f_1(x_n)-f_1(y_n)\right\rvert=\left\lvert \ln{2}+\left(2\sqrt{\dfrac{2}{n}}-\sin{\dfrac{2}{n}\cos^4{\dfrac{2}{n}}}\right)-\left(2\sqrt{\dfrac{1}{n}}-\sin{\dfrac{1}{n}}\cos^4{\dfrac{1}{n}}\right)\right\rvert,$$
+pa kako niz $n\mapsto \left(2\sqrt{\dfrac{2}{n}}-\sin{\dfrac{2}{n}\cos^4{\dfrac{2}{n}}}\right)-\left(2\sqrt{\dfrac{1}{n}}-\sin{\dfrac{1}{n}}\cos^4{\dfrac{1}{n}}\right)$ teži u $0$ zbog uniformne neprekidnosti, imamo $\lim\limits_{n\to \infty}{\left\lvert f_1(x_n)-f_1(y_n)\right\rvert}=\ln{2}$.
 
 b) Uočimo da je restrikcija funkcije $x\mapsto \dfrac{1}{x}$ na $[1, \infty\rangle$ ograničena i uniformno neprekidna na tom skupu. Zaista, neka je $\epsilon>0$ proizvoljan. Tada za $\delta=\epsilon$ i za sve $x, y\geq 1$ takve da je $|x-y|<\delta$ imamo
-$$\abs{\dfrac{1}{x}-\dfrac{1}{y}}=\dfrac{\abs{x-y}}{xy}\leq |x-y|<\delta=\epsilon.$$
+$$\left\lvert \dfrac{1}{x}-\dfrac{1}{y}\right\rvert=\dfrac{\left\lvert x-y\right\rvert}{xy}\leq |x-y|<\delta=\epsilon.$$
 Kako je i restrikcija funkcije $x\mapsto \sin{x}$ na $[1, \infty\rangle$ ograničena i uniformno neprekidna na tom skupu, to je $f_2|_{[1,\infty\rangle}$ ograničena i uniformno neprekidna na svojoj domeni. Analogno se vidi da je $f_2|_{\langle -\infty, -1]}$ uniformno neprekidna na svojoj domeni. Uočimo i da je $f_2|_{[-3, 3]}$ uniformno neprekidna na svojoj domeni, jer je ona i neprekidna na $[-3, 3]$. Sada analognim argumentom kao u drugom rješenju zadatka \ref{sqrtunif} dobivamo tvrdnju.
 \end{proof}
 \begin{remark}
@@ -518,7 +518,7 @@ Ispitajte je li $f : [1, \infty\rangle\to \mathbb{R}$, $f(x)=\dfrac{1}{\sqrt[202
 Tvrdimo da je $f$ zaista uniformno neprekidna na svojoj domeni, a ideja za to pokazati biti će ta da ćemo pomoću kompozicije s funkcijom $x\mapsto \dfrac{1}{x}$ dobiti domenu koja je omeđen interval, gdje onda možemo dobiti uniformnu neprekidnost naprosto iz uniformne neprekidnosti na segmentu.
 
 Uočimo da "uvrštavanjem" $\dfrac{1}{x}$ u $f$ dobivamo
-$$\dfrac{1}{\sqrt[2026]{\dfrac{1}{x}}}+\dfrac{1}{\sqrt{\dfrac{1}{x^2}+\dfrac{1}{x}}}=\sqrt[2026]{x}+\dfrac{\abs{x}}{\sqrt{1+x}}.$$
+$$\dfrac{1}{\sqrt[2026]{\dfrac{1}{x}}}+\dfrac{1}{\sqrt{\dfrac{1}{x^2}+\dfrac{1}{x}}}=\sqrt[2026]{x}+\dfrac{\left\lvert x\right\rvert}{\sqrt{1+x}}.$$
 Ako ponovno "uvrstimo" $\dfrac{1}{x}$ u dobiveni izraz, dobit ćemo opet izraz iz $f$. To nas motivira da upravo promotrimo kompoziciju restrikcije funkcije $x\mapsto \dfrac{1}{x}$ na $[1, \infty\rangle$ i funkcije definirane dobivenim izrazom na $[0, 1]$.
 
 Neka je $f_1 : [1, \infty\rangle\to \mathbb{R}$, $f_1(x)=\dfrac{1}{x}$, te $f_2 : [0, 1]\to \mathbb{R}$, $f_2(x)=\sqrt[2026]{x}+\dfrac{x}{\sqrt{1+x}}$. Uočimo da je $\mathcal{R}(f_1)=\langle 0, 1]\subseteq [0, 1]$, te je $f=f_2\circ f_1$, te kako je $f_1$ uniformno neprekidna na svojoj domeni, te $f_2$ uniformno neprekidna na svojoj domeni, slijedi i da je $f$ uniformno neprekidna na svojoj domeni.
