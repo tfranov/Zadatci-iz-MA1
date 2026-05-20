@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.17)  20 MAY 2026 17:48
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.17)  20 MAY 2026 19:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -774,16 +774,16 @@ Poglavlje 4.
 Poglavlje 5.
 (./poglavlja/ch5.tex [127
 
-] [128] [129] [130] [131] [132] [133] [134] [135] [136] [137] [138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150] [151] [152] [153] [154] [155] [156] [157] [158]) [159]
+] [128] [129] [130] [131] [132] [133] [134] [135] [136] [137] [138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150] [151] [152] [153] [154] [155] [156] [157] [158] [159]) [160]
 Poglavlje 6.
-(./poglavlja/ch6.tex [160
+(./poglavlja/ch6.tex [161
 
-] [161] [162] [163] [164] [165] [166] [167] [168] [169] [170] [171] [172] [173] [174] [175] [176] [177] [178]) (./bibliografija.tex [179]
+] [162] [163] [164] [165] [166] [167] [168] [169] [170] [171] [172] [173] [174] [175] [176] [177] [178] [179]) (./bibliografija.tex [180]
 Package babel Info: 'russian' activates 'russian' shorthands.
 (babel)             Reported on input line 23.
- [180
+ [181
 
-]) [181] (./main.aux)
+]) [182] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
@@ -800,4 +800,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  99i,15n,118p,1340b,2374s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (181 pages, 2704444 bytes).
+Output written on main.xdv (182 pages, 2707820 bytes).
