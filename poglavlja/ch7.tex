@@ -138,9 +138,9 @@ diferencijabilna.
 \end{exercise}
 \begin{proof}[Rješenje]
 Tvrdimo da je $f$ diferencijabilna samo u $0$. Zaista, za sve $x\in \mathbb{R}$ takve da je $|x|<1$ množenjem s $|x|^3$ dobivamo $x^4<|x|^3$, pa vrijedi
-$$0\leq \left|\dfrac{f(x)}{x}\right|=\dfrac{|f(x)|}{|x|}\leq \dfrac{x^4}{|x|}=|x|^3,$$
-pa kako $|x|^3\to 0$ kako $x\to 0$, iz kriterija sendviča za limese funkcija i iz činjenice da je pri promatranju limesa u $0$ dovoljno promatrati vrijednosti dovoljno "blizu" $0$, slijedi da postoji $\lim\limits_{x\to 0}{\left|\dfrac{f(x)}{x}\right|}=f'(0)$ i iz definicije limesa slijedi
-$$0=\lim\limits_{x\to 0}{\left|\dfrac{f(x)}{x}\right|}=\lim\limits_{x\to 0}{\dfrac{f(x)}{x}}=f'(0).$$
+$$0\leq \left\lvert\dfrac{f(x)}{x}\right\rvert=\dfrac{|f(x)|}{|x|}\leq \dfrac{x^4}{|x|}=|x|^3,$$
+pa kako $|x|^3\to 0$ kako $x\to 0$, iz kriterija sendviča za limese funkcija i iz činjenice da je pri promatranju limesa u $0$ dovoljno promatrati vrijednosti dovoljno "blizu" $0$, slijedi da postoji $\lim\limits_{x\to 0}{\left\lvert\dfrac{f(x)}{x}\right\rvert}=f'(0)$ i iz definicije limesa slijedi
+$$0=\lim\limits_{x\to 0}{\left\lvert\dfrac{f(x)}{x}\right\rvert}=\lim\limits_{x\to 0}{\dfrac{f(x)}{x}}=f'(0).$$
 Neka je sada $c=1$, te neka je $(a_n)$ niz racionalnih brojeva različitih od $1$ koji konvergira u $1$, te $(b_n)$ niz iracionalnih brojeva različitih od $1$ koji konvergira u $1$. Tada za sve $n\in \mathbb{N}$ vrijedi
 $$\lim\limits_{n\to \infty}{\dfrac{f(a_n)-1}{a_n-1}}=\lim\limits_{n\to \infty}{\dfrac{a_n^3-1}{a_n-1}}=\lim\limits_{n\to \infty}{\dfrac{(a_n-1)\left(1+a_n+a_n^2\right)}{a_n-1}}=\lim\limits_{n\to \infty}{\left(1+a_n+a_n^2\right)}=3,$$
 te se slično vidi i da je $\lim\limits_{n\to \infty}{\dfrac{f(b_n)-1}{b_n-1}}=4$, pa iz Heineove karakterizacije limesa slijedi da funkcija $x\mapsto \dfrac{f(x)-1}{x-1}$ nema limes u $1$, odnosno ne postoji $f'(1)$.
@@ -213,7 +213,8 @@ Neka je $I\subseteq \mathbb{R}$ otvoreni interval, te $f, g : I\to \mathbb{R}$ d
 \end{itemize}
 \end{remark}
 \begin{remark}[Derivacije elementarnih funkcija] Sljedeće tvrdnje vrijede za sve $x$ iz prirodne domene pripadnih funkcija.
-\begin{AutoMultiColItemize}
+\begin{multicols}{2}
+\begin{itemize}
 \item $(c)'=0$, gdje je $c\in \mathbb{R}$
 \item $(x^a)'=ax^{a-1}$, gdje je $a\in\mathbb{R}$ i $x\neq 0$ ako je $a<1$,
 \item $(\sin{x})'=\cos{x}$,
@@ -236,7 +237,8 @@ Neka je $I\subseteq \mathbb{R}$ otvoreni interval, te $f, g : I\to \mathbb{R}$ d
 \item $(\arcosh{x})'=\dfrac{1}{\sqrt{x^2-1}}$,
 \item $(\artanh{x})'=\dfrac{1}{1-x^2}$,
 \item $(\arcoth{x})'=\dfrac{1}{1-x^2}$
-\end{AutoMultiColItemize}
+\end{itemize}
+\end{multicols}
 \end{remark}
 \begin{exercise} \textbf{}
 \begin{itemize}
