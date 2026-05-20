@@ -1,17 +1,17 @@
 # Fdb version 4
-["makeindex main.idx"] 1779208912.53063 "main.idx" "main.ind" "main" 1779209004.8091 0
-  "main.idx" 1779208996.66372 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+["makeindex main.idx"] 1779208912.53063 "main.idx" "main.ind" "main" 1779292098.73135 0
+  "main.idx" 1779292094.6851 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["xdvipdfmx"] 1779209004.28854 "main.xdv" "main.pdf" "main" 1779209004.81246 0
-  "main.xdv" 1779209004.18166 2708884 bc56543088fff32e86a70b34e5a17524 "xelatex"
+["xdvipdfmx"] 1779292098.47616 "main.xdv" "main.pdf" "main" 1779292098.73286 0
+  "main.xdv" 1779292098.42606 2704444 e00622396eebad6da3c28cd922e8c6ce "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1779208995.6851 "/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex" "main.xdv" "main" 1779209004.80924 0
-  "/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex" 1779207083.6038 4889 2439c075cdc12814476a5dcc0479d647 ""
+["xelatex"] 1779292094.21702 "/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex" "main.xdv" "main" 1779292098.7314 0
+  "/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex" 1779276347.19995 4822 fc099a4ebd469bffdeb1de23b608dd35 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -153,14 +153,8 @@
   "/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex" 1755807260 88958 d1c10d9003595d2dbfdbbb48a3af878f ""
   "/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex" 1755807260 71792 5ccb3da6fae1ab597e321b15e8375f9c ""
   "/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex" 1312159636 3286 c17079ba50483e1ac1721268ea016041 ""
-  "/usr/share/texlive/texmf-dist/tex/generic/simplekv/simplekv.sty" 1750018100 161 152f324da2b622f44c0a5893a1487a30 ""
-  "/usr/share/texlive/texmf-dist/tex/generic/simplekv/simplekv.tex" 1750018100 12655 98a60ab1aba53f6df786274bea038854 ""
   "/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty" 1575152242 21514 b7557edcee22835ef6b03ede1802dad4 ""
-  "/usr/share/texlive/texmf-dist/tex/generic/systeme/systeme.sty" 1747166528 1250 d18e8941f4fcde2dd005883d6b7662a2 ""
-  "/usr/share/texlive/texmf-dist/tex/generic/systeme/systeme.tex" 1766182604 55120 905b6f4bc6812bf09ede9ba7b5e79093 ""
   "/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty" 1576624663 7008 f92eaa0a3872ed622bbf538217cd2ab7 ""
-  "/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty" 1544223003 123 a302f2c651a95033260db60e51527ae8 ""
-  "/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex" 1692744296 49397 a8071cbd06dd0bb15ae8acf876c73f20 ""
   "/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty" 1591045760 12594 0d51ac3a545aaaa555021326ff22a6cc ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd" 1359763108 961 6518c6525a34feb5e8250ffa91731cff ""
@@ -195,8 +189,6 @@
   "/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty" 1655478651 22555 6d8e155cfef6d82c3d5c742fea7c992e ""
   "/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty" 1665067230 13815 760b0c02f691ea230f5359c4e1de23a7 ""
   "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def" 1774899586 32929 8929da7784ca1ec53648274ffd1aaee1 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty" 1728349409 62711 3b0ed1d68b598a75677c10d16646d5e5 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty" 1616101747 5582 a43dedf8e5ec418356f1e9dfe5d29fc3 ""
   "/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty" 1615762720 4288 94714aa7f535440f33181fec52a31963 ""
   "/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty" 1601326656 1090 bae35ef70b3168089ef166db3e66f5b2 ""
   "/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty" 1673816307 373 00b204b1d7d095b892ad31a7494b0373 ""
@@ -214,25 +206,24 @@
   "/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1750533675 9684 a33a14b82ce60d6e77cb9be689d79ee6 ""
   "/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty" 1670275497 22490 8cac309b79a4c53a4ffce4b1b07aead0 ""
   "/usr/share/texlive/texmf-dist/tex/latex/theoremref/theoremref.sty" 1369264355 8987 0681aef301a54317610d6c432b179725 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty" 1777334400 10374 6789dee941e798d7dec57bf0589f67f6 ""
   "/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty" 1777334400 33142 9bb42b20c3b9f997e4af4ea629c919b6 ""
   "/usr/share/texlive/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1727642399 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1777593600 43785 66587115382950aca692b5f6e3c2fb74 ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1779033861 6668375 fb7855c78e0070160bd6bfcc912ad672 ""
   "bibliografija.tex" 1778087616.65069 2159 3d3d8098cd0ef99f38ae2c8a5ba5d241 ""
-  "main.aux" 1779209004.17766 15646 f7eb84ee6da375333f9184fd0f3d8eae "xelatex"
+  "main.aux" 1779292098.42406 15646 f7eb84ee6da375333f9184fd0f3d8eae "xelatex"
   "main.ind" 1779208912.71233 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1779209004.18067 6734 6d50be34302a68d0059c6d51d4928d72 "xelatex"
-  "main.tex" 1779207083.6038 4889 2439c075cdc12814476a5dcc0479d647 ""
-  "main.toc" 1779209004.18166 2950 e7a758c8ec67b284dd5c60e1e79ffcc8 "xelatex"
-  "poglavlja/ch1.tex" 1778087616.68468 51372 18f57e1fc1c40476026e507a6dae233d ""
+  "main.out" 1779292098.42606 6734 6d50be34302a68d0059c6d51d4928d72 "xelatex"
+  "main.tex" 1779276347.19995 4822 fc099a4ebd469bffdeb1de23b608dd35 ""
+  "main.toc" 1779292098.42606 2950 e7a758c8ec67b284dd5c60e1e79ffcc8 "xelatex"
+  "poglavlja/ch1.tex" 1779275812.10025 51373 ab3f2213609ba4fb850ac0ac26c7b800 ""
   "poglavlja/ch2.tex" 1778087616.68468 26765 41e83eeb39e9f1d374fef40c17a163c2 ""
   "poglavlja/ch3.tex" 1779208702.98385 83442 0bd93faff43905bfc5c4dee92eafab2f ""
   "poglavlja/ch4.tex" 1779208806.2591 85315 4d64cf736bc7454170cc83daba62e0d6 ""
-  "poglavlja/ch5.tex" 1779208911.14589 65576 f8ec1e69a8abe8330f3d9067f952f035 ""
+  "poglavlja/ch5.tex" 1779292093.27319 65977 cadc15569359c73cf0f7196511a8d832 ""
   "poglavlja/ch6.tex" 1779207152.80908 41072 ef498b3d01c463f8e3ccc23d96a11ae4 ""
-  "preamble.sty" 1779208988.89933 1760 d581bfca0bd0e6b328a51bc437f58690 ""
+  "preamble.sty" 1779276055.74891 1729 c2302ca1b1449b3677b4c38d42fb4da1 ""
   (generated)
   "main.aux"
   "main.idx"

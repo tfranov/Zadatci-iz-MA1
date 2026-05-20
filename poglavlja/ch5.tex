@@ -235,9 +235,9 @@ Dokažite da za sve $a>1$ vrijedi $\lim\limits_{n\to \infty}{\sqrt[n]{a}}=1$.
 \begin{proof}[Rješenje]
 Treba dokazati da za sve $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve prirodne $n\geq n_0$ vrijedi
 $$|\sqrt[n]{a}-1|=\sqrt[n]{a}-1<\epsilon.$$
-Ideja će biti primijeniti binomni teorem tako da dobijemo izraz veći od $\sqrt[n]{a}-1$, ali i dalje takav da možemo naći $n_0$ takav da je za sve $n\geq n_0$ manji od $\epsilon$.
+Ideja će biti pokušati pronaći "što jednostavniji" izraz veći od $\sqrt[n]{a}-1$, ali i dalje takav da možemo naći $n_0$ takav da je za sve $n\geq n_0$ manji od $\epsilon$. Eksperimentiranjem s različitim nizovima možemo naslutiti da možemo uzeti $\dfrac{a}{n}$, za kojeg se lako vidi da konvergira u $0$. Dakle, zapravo se želimo uvjeriti da vrijedi $\sqrt[n]{a}-1<\dfrac{a}{n}$, odnosno $n\left(\sqrt[n]{a}-1\right)<a$ za sve $n\in \mathbb{N}$. Kako treba doći od $a=\left(\sqrt[n]{a}\right)^n$ do $\sqrt[n]{a}$, ovdje je prirodna ideja primijeniti binomni teorem na $a$.
 
-Uzmimo $n_0\in \mathbb{N}$ takav da je $n\epsilon>a$. Ako je $a>1$, onda je i $\sqrt[n]{a}>1$. Sada slično kao u rješenju zadatka \ref{liman} imamo da za sve prirodne $n\geq n_0$ vrijedi
+Uzmimo $n_0\in \mathbb{N}$ takav da je $n_0\epsilon>a$, te neka je $n\geq n_0$ proizvoljan. Ako je $a>1$, onda je i $\sqrt[n]{a}>1$. Sada slično kao u rješenju zadatka \ref{liman} imamo
 $$a=\left(1+(\sqrt[n]{a}-1)\right)^n\geq 1+n(\sqrt[n]{a}-1)>n(\sqrt[n]{a}-1).$$
 Dijeljenjem s $n$ dobivamo da vrijedi $\sqrt[n]{a}-1<\dfrac{a}{n}<\epsilon$, što smo i tvrdili.
 \end{proof}
