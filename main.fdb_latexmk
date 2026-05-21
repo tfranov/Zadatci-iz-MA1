@@ -1,17 +1,17 @@
 # Fdb version 4
-["makeindex main.idx"] 1779301198.95497 "main.idx" "main.ind" "main" 1779301300.61891 0
-  "main.idx" 1779301290.9585 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+["makeindex main.idx"] 1779365843.82745 "main.idx" "main.ind" "main" 1779365897.37199 0
+  "main.idx" 1779365881.10138 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["xdvipdfmx"] 1779301299.94406 "main.xdv" "main.pdf" "main" 1779301300.62195 0
-  "main.xdv" 1779301299.8301 2993560 01ecc5434d340cd86db1c3f2d845ddff "xelatex"
+["xdvipdfmx"] 1779365896.36717 "main.xdv" "main.pdf" "main" 1779365897.37713 0
+  "main.xdv" 1779365896.19317 2993560 da795c7dcec2decfc8f0604417e6f6de "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1779301290.03209 "/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex" "main.xdv" "main" 1779301300.619 0
-  "/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex" 1779300716.79045 4985 5cde556090a30d93809ce76e7347b20a ""
+["xelatex"] 1779365879.56708 "/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex" "main.xdv" "main" 1779365897.37214 0
+  "/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex" 1779365676.68805 4997 6c703a74fc2077f161d75cd65a28efd2 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -211,19 +211,19 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1727642399 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1777593600 43785 66587115382950aca692b5f6e3c2fb74 ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1779033861 6668375 fb7855c78e0070160bd6bfcc912ad672 ""
-  "bibliografija.tex" 1778087616.65069 2159 3d3d8098cd0ef99f38ae2c8a5ba5d241 ""
-  "main.aux" 1779301299.82542 16674 291cebedea8a3599a87a291f11cbbc75 "xelatex"
-  "main.ind" 1779301199.11037 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1779301299.82842 7298 5513fa4e6b8ec8c9a293fd81871cc637 "xelatex"
-  "main.tex" 1779300716.79045 4985 5cde556090a30d93809ce76e7347b20a ""
-  "main.toc" 1779301299.8301 3211 fa666feb5b9b1f3b96fdb04619a279fe "xelatex"
-  "poglavlja/ch1.tex" 1779300642.43644 51373 ab3f2213609ba4fb850ac0ac26c7b800 ""
-  "poglavlja/ch2.tex" 1779300642.43742 26765 41e83eeb39e9f1d374fef40c17a163c2 ""
-  "poglavlja/ch3.tex" 1779300642.43974 83442 0bd93faff43905bfc5c4dee92eafab2f ""
-  "poglavlja/ch4.tex" 1779300642.44073 85315 4d64cf736bc7454170cc83daba62e0d6 ""
-  "poglavlja/ch5.tex" 1779300642.44138 66408 c60778b23af57bdbd7f4aadbcb96893c ""
-  "poglavlja/ch6.tex" 1779300642.44187 41072 ef498b3d01c463f8e3ccc23d96a11ae4 ""
-  "poglavlja/ch7.tex" 1779301289.19352 29507 3a9adc30c84b9846a887c050dfb2ac95 ""
+  "bibliografija.tex" 1779365676.65494 2161 26976cdd2f8f00f56f8fb4b822d2af6a ""
+  "main.aux" 1779365896.18717 16714 c0f9f259b47824f0be0b6d5ccd227996 "xelatex"
+  "main.ind" 1779365844.10889 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
+  "main.out" 1779365896.19217 7298 5513fa4e6b8ec8c9a293fd81871cc637 "xelatex"
+  "main.tex" 1779365676.68805 4997 6c703a74fc2077f161d75cd65a28efd2 ""
+  "main.toc" 1779365896.19317 3215 81fb87e96a8aeb8bcb26468bd45b3edd "xelatex"
+  "poglavlja/ch1.tex" 1779365704.58989 52901 4ebd25c6c29b13791bcc34b6a1fd6fd7 ""
+  "poglavlja/ch2.tex" 1779365676.70512 27547 0d3ac4b0533ca11a1ae074cd009124e1 ""
+  "poglavlja/ch3.tex" 1779365676.70612 85974 aded8b5c667bfdd087f402252e6afb28 ""
+  "poglavlja/ch4.tex" 1779365824.36614 87861 1469f2a2724e916eb06a6717af7e6316 ""
+  "poglavlja/ch5.tex" 1779365860.54078 68406 033a3c0f72b71c5ce4df68d8e6009dcb ""
+  "poglavlja/ch6.tex" 1779365676.70512 42432 8e2b06147583085bdf52dbc4551ca16b ""
+  "poglavlja/ch7.tex" 1779365676.68912 30523 1cf1bc116ab89a8e6b19ed928467d22b ""
   "preamble.sty" 1779300716.79081 1802 077f70e6603e73df6dc02f5842fad4fa ""
   (generated)
   "main.aux"
