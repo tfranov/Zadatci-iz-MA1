@@ -208,6 +208,7 @@ Promotrimo niz \((a_n)\), \(a_n=-1+\dfrac{n}{2}\). Kako je \(-1+\dfrac{n}{2}\leq
 što smo i htjeli dokazati.
 \end{proof}
 \begin{exercise}
+\label{Thisisobviousriiiiiiight}
 Neka je \((a_n)\) konvergentan niz. Dokažite da on tada ne divergira u \(\infty\). (Ovo se možda na prvi pogled čini očiglednim, ali je ipak nešto što je potrebno dokazati!)
 \end{exercise}
 \begin{proof}
@@ -340,6 +341,10 @@ Neka su \((a_n)\) i \((b_n)\) konvergentni nizovi realnih brojeva, te \(n_0\in \
 \begin{remark}[Kriterij sendviča] 
 Neka su \((a_n)\) i \((b_n)\) konvergentni nizovi realnih brojeva, te \(n_0\in \mathbb{N}\). Neka je \((c_n)\) niz realnih brojeva takav da vrijedi \(a_n\leq c_n\leq b_n\) za sve prirodne \(n\geq n_0\) i \(\lim\limits_{n\to \infty}{a_n}=\lim\limits_{n\to \infty}{c_n}=c\). Tada je \((c_n)\) konvergentan niz i vrijedi \(\lim\limits_{n\to \infty}{c_n}=b\).
 \end{remark}
+\begin{remark}[O opisu supremuma i infimuma skupa koristeći konvergentne nizove]
+\label{supinflimitpoint}
+Neka je $A\subseteq \mathbb{R}$ neprazan i ograničen odozgo (odozdo). Tada postoji niz $(a_n)$ u $A$ takav da je $\sup{A}=\lim\limits_{n\to \infty}{a_n}$ $\left(\inf{A}=\lim\limits_{n\to \infty}{a_n}\right)$.
+\end{remark}
 \begin{exercise} Odredite sljedeće limese, ako postoje.
 \begin{itemize}
 \item[a)] \(\lim\limits_{n\to \infty}{\dfrac{1}{n2^n}}\),
@@ -448,6 +453,16 @@ Tvrdimo da je \((a_n)\) divergentan. Zaista, pretpostavimo da je on konvergentan
 \[a_{2n}=1+\dfrac{1}{2n},\;\;
 a_{2n-1}=-1+\dfrac{1}{2n-1}.\]
 Odavde slijedi \(\lim\limits_{n\to \infty}{a_{2n}}=1\) i \(\lim\limits_{n\to \infty}{a_{2n-1}}=-1\), kontradikcija s činjenicom da je \(\lim\limits_{n\to \infty}{a_{2n-1}}=\lim\limits_{n\to \infty}{a_{2n}}=\lim\limits_{n\to \infty}{a_{n}}\).
+\end{proof}
+\begin{exercise}
+\label{generalizedsubsequences}
+Neka je $(a_n)$ niz. Kažemo da je niz $(b_n)$ \textit{generalizirani podniz} niza $(b_n)$ ako postoji rastući niz $(p_n)$ prirodnih brojeva takav da za svaki $n\in \mathbb{N}$ postoji $m\in \mathbb{N}$, $m>n$ takav da je $p_m>p_n$, sa svojstvom da za sve $n\in \mathbb{N}$ vrijedi $b_n=a_{p_n}$. Dokažite da je generalizirani podniz konvergentnog niza konvergentan s istim limesom kao i početni niz.
+\end{exercise}
+\begin{remark}
+Intuitivno, generalizirani podnizovi se ponašaju analogno kao i podnizovi do na to što dopuštamo ponavljanje bilo kojeg elementa konačno mnogo puta.
+\end{remark}
+\begin{proof}[Rješenje]
+Modificirat ćemo dokaz napomene \ref{onsubsequences} tako da uvjet $p_n\geq n$ koji se koristio u toj napomeni zamijenimo s analognim uvjetom koji će ovdje vrijediti. Uzmimo proizvoljan $\epsilon>0$, te proizvoljan $n\in \mathbb{N}$ takav da je $n\geq n_0$. Tvrdimo da postoji $m_0\in \mathbb{N}$ takav da je $p_{m_0}\geq n$. Ako je $p_1\geq n$, nemamo što dokazivati. Inače, postoji $b\in \mathbb{N}$ takav da je $p_{b}>p_1$. Ako je $p_{b}\geq n$, tvrdnja je dokazana, a inače u konačno mnogo koraka dolazimo do traženog $m_0$. Neka je sada $m\geq m_0$ proizvoljan. Specijalno je $p_m\geq p_{m_0}\geq n$, pa je $\lvert a_{p_m}-a\rvert<\epsilon$, što je i trebalo pokazati.
 \end{proof}
 \begin{exercise}
 Neka je \((a_n)\) konvergentan niz takav da je \(a_n\neq 0\) za sve \(n\in \mathbb{N}\). Konvergira li općenito niz \(\left(\dfrac{a_{n+1}}{a_n}\right)\)? Za one \((a_n)\) za koje konvergira, što sve može biti limes tog niza?

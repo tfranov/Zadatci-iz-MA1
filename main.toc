@@ -31,7 +31,7 @@
 \contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{161}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{161}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{167}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Uniformno neprekidne funkcije}{173}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Derivacija}{181}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Definicija derivacije}{181}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Osnovne operacije s diferencijabilnim funkcijama}{188}{section.7.2}%
+\contentsline {section}{\numberline {6.3}Uniformno neprekidne funkcije}{177}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Derivacija}{186}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Definicija derivacije}{186}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Osnovne operacije s diferencijabilnim funkcijama}{193}{section.7.2}%

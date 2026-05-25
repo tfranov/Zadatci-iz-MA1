@@ -402,6 +402,116 @@ Neka je \(z\in \langle \inf{f}, \sup{f} \rangle\) (ovdje \(\inf{f}\) i \(\sup{f}
 što vrijedi zbog činjenice da za svaku funkciju \(g : S\to \mathbb{R}\) i skupove \(A\subseteq B\subseteq S\) vrijedi \(f(A)\subseteq f(B)\) (Dokažite to za vježbu!).
 Dobivamo \(z\in \mathcal{R}(f)\), pa zaključujemo da je \(\mathcal{R}(f)=\langle \inf{f}, \sup{f}\rangle\). Uočimo da u slučaju da je \(\mathcal{R}(f)\) odozgo i odozdo neograničen, ovo dokazuje da je \(\mathbb{R}\subseteq \mathcal{R}(f)\), odnosno \(\mathcal{R}(f)=\mathbb{R}\).
 \end{proof}
+\begin{definition}
+Neka je $I\subseteq \mathbb{R}$ otvoreni interval. Kažemo da je $f : I \to \mathbb{R}$ \textbf{neprekidna slijeva} u točki $c\in I$ ako za svaki $\epsilon>0$ postoji $\delta>0$ takav da za sve $x\in I$ vrijedi
+$$\left(x\leq c \wedge |x-c|<\delta \right)\Rightarrow \left\lvert f(x)-f(c)\right\rvert<\epsilon.$$
+Analogno, funkcija $f$ je \textbf{neprekidna zdesna} u točki $c$ ako za svaki $\epsilon>0$ postoji $\delta>0$ takav da za sve $x\in I$ vrijedi
+$$\left(x\geq c \wedge |x-c|<\delta \right)\Rightarrow \left\lvert f(x)-f(c)\right\rvert<\epsilon.$$
+\end{definition}
+\begin{remark}
+Neka je $I$ otvoreni interval. Funkcija $f : I\to \mathbb{R}$ je neprekidna u $c\in I$ ako i samo ako je neprekidna slijeva i zdesna u $c$.
+\end{remark}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Navedite primjer funkcije $f : \mathbb{R}\to \mathbb{R}$ koja je neprekidna slijeva u točki $2$ ali nije neprekidna u toj točki. Dajte primjer i funkcije $g : \mathbb{R}\to \mathbb{R}$ koja je neprekidna zdesna u točki $2$ takve da u njoj nije neprekidna.
+\item[b)] Neka je $I=\langle a, b\rangle$ otvoreni interval. Dokažite da je $f : I\to \mathbb{R}$ neprekidna slijeva u točki $c\in I$ ako i samo ako postoji funkcija $\tilde{f} : I\to \mathbb{R}$ koja je neprekidna u $c$ takva da je $\tilde{f}(x)=f(x)$ za sve $x\in I$ takve da je $x\leq c$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Promotrimo funkciju $f : \mathbb{R}\to \mathbb{R}$,
+$$f(x)=\begin{cases}
+-1 ,& x\leq 2,\\
+1, & x>2.
+\end{cases}$$
+Uočimo da za sve $\epsilon>0$, $\delta>0$ i $x\in \mathbb{R}$ takve da je $x\leq 2$ i $|x-2|<\delta$ vrijedi $\left\lvert f(x)-f(c)\right\rvert=0<\epsilon$. S druge strane, uzmemo li niz $n\mapsto 2+\dfrac{1}{n}$, niz $n\mapsto f\left(2+\dfrac{1}{n}\right)$ je konstantan niz $n\mapsto 1$, no njegov limes nije $f(2)=-1$, što znači da u toj točki $f$ ima prekid.
+
+Za $g$ se može uzeti
+$$g(x)=\begin{cases}
+-1 ,& x< 2,\\
+1, & x\geq 2.
+\end{cases}$$
+Analogno se pokaže da je ona neprekidna zdesna u točki $2$ i da nije neprekidna u toj točki.
+
+b) Pretpostavimo prvo da postoji takva funkcija $\tilde{f}$. Tada za svaki $\epsilon>0$ postoji $\delta>0$ takav da za sve $x\in I$ takve da je $\left\lvert x-c\right\rvert<\delta$ vrijedi $\left\lvert \tilde{f}(x)-\tilde{f}(c)\right\rvert<\epsilon$. Specijalno, za one $x\in I$ takve da je $x\leq c$ dobivamo da $\left\lvert x-c\right\rvert<\delta$ povlači $\left\lvert \tilde{f}(x)-\tilde{f}(c)\right\rvert=\left\lvert f(x)-f(c)\right\rvert<\epsilon$, što je i trebalo pokazati.
+
+Obratno, definirajmo
+$$\tilde{f}(x)=\begin{cases}
+f(x), & a<x\leq c,\\
+f(c), & c<x<b.
+\end{cases}$$
+Iz neprekidnosti slijeva funkcije $f$ sličnim argumentiranjem kao i u prethodnom smjeru dokaza slijedi i neprekidnost slijeva funkcije $\tilde{f}$. S druge strane, $\tilde{f}$ je očito neprekidna zdesna jer (slično kao u a) dijelu zadatka) možemo uzeti bilo koje $\epsilon, \delta>0$ i tada će tvrdnja neprekidnosti zdesna vrijediti za sve $x\in I$ takve da je $x\geq c$.
+\end{proof}
+\begin{remark}[Heineova karakterizacija jednostrano neprekidnih funkcija]
+\label{Heineonesided} \textbf{}
+\begin{itemize}
+\item Neka je $I$ otvoreni interval. Funkcija $f : I\to \mathbb{R}$ je neprekidna slijeva u $c\in I$ ako i samo ako za svaki niz $(a_n)$ u $I\cap \langle -\infty, c]$ takav da je $\lim\limits_{n\to \infty}{a_n}=c$ vrijedi $\lim\limits_{n\to\infty}{f(a_n)}=f(c)$.
+
+\item Funkcija $f : I\to \mathbb{R}$ je neprekidna zdesna u $c\in I$ ako i samo ako za svaki niz $(a_n)$ u $I\cap [c, \infty\rangle$ takav da je $\lim\limits_{n\to \infty}{a_n}=c$ vrijedi $\lim\limits_{n\to\infty}{f(a_n)}=f(c)$.
+\end{itemize}
+\end{remark}
+\begin{exercise}
+Za funkciju $g : \mathbb{R}\to \mathbb{R}\rangle$ i $a\in \mathbb{R}$ definiramo funkciju $f : \mathbb{R}\to \mathbb{R}$ sa
+$$f(x)=\begin{cases}
+g(x),& x\leq 0,\\
+g(x)+a, & x>0.
+\end{cases}$$
+Dajte primjer funkcije $g$ takve da...
+\begin{itemize}
+\item[a)] Postoji točno jedan $a\in \mathbb{R}$ takav da je $f$ neprekidna zdesna u $0$,
+\item[b)] Ne postoji $a\in \mathbb{R}$ takav da je $f$ neprekidna zdesna u $0$. 
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+
+a) Uzmimo $g(x)=x$ i uočimo da za niz $n\mapsto \dfrac{1}{n}$ imamo da niz $n\mapsto f(n)=\dfrac{1}{n}+a$ konvergira u $a$. Po napomeni \ref{Heineonesided} imamo da mora vrijediti $f(0)=2$, tj. $a=2$. U svim ostalim slučajevima ne vrijedi uvjet iz napomene \ref{Heineonesided}.
+
+b) Uzmimo
+$$g(x)=\begin{cases}
+\dfrac{1}{x},& x\neq 0,\\
+0, & x=0.
+\end{cases}$$
+Uočimo da npr. niz $n\mapsto \dfrac{1}{n}$ konvergira u $0$, ali niz $n\mapsto f(n)=\dfrac{1}{\frac{1}{n}}+a=n+a$ divergira u $\infty$, dakle po zadatku \ref{Thisisobviousriiiiiiight} ne konvergira u $f(0)$, dakle ne postoji $a$ koji zadovoljava tvrdnju iz napomene \ref{Heineonesided}
+\end{proof}
+\begin{exercise}
+\label{Heinemodification}
+Neka je $I$ otvoreni interval. Dokažite da je funkcija $f : I\to \mathbb{R}$ neprekidna slijeva u $c\in I$ ako i samo ako za svaki niz $(a_n)$ u $I\cap \langle -\infty, c\rangle$ (ovdje je bitno da $c$ ne može biti element niza) takav da je $\lim\limits_{n\to \infty}{a_n}=c$ vrijedi $\lim\limits_{n\to\infty}{f(a_n)}=f(c)$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Ako je $f$ nerekidna slijeva u $c$, za svaki niz u $I\cap \langle -\infty, c]$  takav da je $\lim\limits_{n\to \infty}{a_n}=c$ vrijedi $\lim\limits_{n\to\infty}{f(a_n)}=f(c)$, pa specijalno tvrdnja vrijedi i za svaki niz u $I\cap \langle -\infty, c\rangle$.
+
+Obratno, pretpostavimo da je $(a_n)$ proizvoljan niz u $I\cap \langle -\infty, c]$ koji konvergira u $c$. Ako je beskonačno mnogo članova niza $(a_n)$ jednako $c$, onda je $c$ gomilište, postoji podniz niza $(a_n)$ koji konvergira u $c$, pa očito i $(a_n)$ konvergira u $c$. Inače, postoji $n_0\in \mathbb{N}$ takav da za sve $n\geq n_0$ vrijedi $a_n\neq c$. Dakle, niz $(f\left(a_{n+n_0}\right))$ konvergira u $f(c)$, pa i niz $\left( f(a_n)\right)$ konvergira u $f(c)$.
+\end{proof}
+\begin{remark}
+Analogna tvrdnja vrijedi i za neprekidnost zdesna.
+\end{remark}
+\begin{exercise}
+Neka je $I=\langle a, b\rangle\subseteq \mathbb{R}$ otvoreni interval i $f : I\to \mathbb{R}$ ograničena i neprekidna na $I$. Definiramo funkciju $g : I\to \mathbb{R}$ sa
+$$g(x)=\sup\left\{f(t) : a<t\leq x\right\}.$$
+Riješite sljedeće zadatke.
+\begin{itemize}
+\item[a)] Dokažite da ako je $A, B\in [a, b\rangle$, $A<B$ i vrijedi $f(t)< g(t)$ za sve $t\in \langle A, B]$, da je tada $g$ konstanta na $\langle A, B]$.
+\item[b)] Koriteći a), dokažite da je $g$ neprekidna na $I$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Treba dokazati da za $x, y\in \langle A, B]$ (bez smanjenja općenitosti uzmimo $x<y$) vrijedi $g(x)=g(y)$. Uočimo da je $\left\{f(t) : A<t\leq x\right\}\subseteq \left\{f(t) : A<t\leq y\right\}$, pa vrijedi $g(x)\leq g(y)$. Obratno, ako je $t\in \langle A, y]$, onda ako je $t\leq x$ vrijedi $f(t)\in \left\{f(t) : A<t\leq x\right\}$, a ako je $t>x$ vrijedi $f(t)\leq g(x)$. Zaista, pretpostavimo da je $f(t)>g(x)$. Tada bi skup 
+$$U:=\left\{u\in [x, t] : g(x)<f(u)\right\}$$
+bio neprazan, pa on ima infimum. Ako vrijedi $g(x)<f(\inf{U})$, onda uzmemo li niz $(a_n)$ u $\langle A, \inf{U}\rangle$ koji teži u $\inf{U}$, dobivamo da je $f(a_n)\leq g(x)$, pa je $\lim\limits_{n\to \infty}{f(a_n)}=f(\inf{U})\leq g(x)$. Ako je $g(x)\geq f(\inf{U})$, onda uzmemo li niz $(b_n)$ u $U$ koji teži u $\inf{U}$ (koji postoji po napomeni \ref{supinflimitpoint}), imamo da je $f(b_n)>g(x)$, pa je $f(\inf{U})\geq g(x)$. Dakle, bez obzira je li $t\leq x$ ili $t>x$ vrijedi $f(t)\leq g(x)$, pa je po definiciji supremuma $g(y)\leq g(x)$. Slijedi $g(x)=g(y)$, što smo i tvrdili.
+
+b) Neka je $c\in I$. Dokažimo prvo neprekidnost slijeva. Pretpostavimo prvo da je $f(c)=g(c)$. Tada za svaki niz $(a_n)$ u $I\cap \langle -\infty, c]$ takav da je $\lim\limits_{n\to \infty}{a_n}=c$ vrijedi
+$$f(a_n)\leq g(a_n)\leq g(c),$$
+pa kako je $\lim\limits_{n\to \infty}{f(a_n)}=f(c)=g(c)$, imamo da je $\lim\limits_{n\to \infty}{g(a_n)}=g(c)$, što je i trebalo pokazati.
+Ako je pak $f(c)<g(c)$, pokušajmo pronaći $x\in \langle a, c\rangle$ takav da je $f(x)=g(x)$. Ako takav $x$ ne postoji, tj. ako je $f(t)<g(t)$ za sve $t\in \langle a, c]$, onda je $g$ konstanta na $\langle a, c]$, pa je očito neprekidna slijeva u $c$, a ako postoji $x\in \langle a, c\rangle$ takav da je $f(x)=g(x)$, onda promotrimo 
+$$L:=\sup\left\{f(x)=g(x) : x\in \langle a, c\rangle\right\}.$$
+Ako je $L=c$, onda postoji niz $(c_n)$ u $\langle a, c\rangle$ koji konvergira u $c$ takav da je $f(c_n)=g(c_n)$, pa promotrimo proizvoljan niz $(d_n)$ u $\langle c_1, c\rangle$ koji konvergira u $c$. Tada za svaki $n\in \mathbb{N}$ vrijedi
+$$f(c_{l(n)})=g(c_{l(n)})\leq g(d_n)\leq g(c_{u(n)})=f(c_{u(n)}),$$
+gdje je $u(n)$ najmanji indeks takav da je $c_{u(n)}>d_n$, a $l(n)$ najveći indeks takav da je $d_n<c_{l(n)}$. Kako $(c_{u(n)})$ i $(c_{l(n)})$ zadovoljavaju uvjete zadatka \ref{generalizedsubsequences}, po kriteriju sendviča vrijedi da je $\lim\limits_{n\to \infty}{g(d_n)}=g(c)$, dakle pokazali smo da je $g|_{\langle c_1, b\rangle}$ neprekidna slijeva u $c$, pa je specijalno i $g$ neprekidna slijeva u $c$ (ograničimo $\delta$ tako da uključimo samo brojeve veće od $c_1$). S druge strane, ako je $L<c$, onda za sve $x\in \langle L, c]$ vrijedi $f(x)<g(x)$, pa dobivamo da je $g$ konstanta na $\langle L, c]$. Dakle, $g$ je u svakom slučaju neprekidna slijeva u $c$.
+
+Dokažimo sad neprekidnost zdesna. Uočimo da ako postoji $\delta>0$ takav da je $g$ konstanta na $\langle c, c+\delta\rangle$, onda je svakako neprekidna zdesna. U suprotnome, postoji niz $(b_n)$ u $\langle c, a_1\rangle$ koji konvergira u $c$ takav da je $f(b_n)=g(b_n)$, neka je $(a_n)$ proizvoljan niz u $[c, b\rangle$. Vrijedi
+$$f(a_n)\leq g(a_n)\leq g(b_{l(n)})=f(b_{l(n)}),$$
+gdje je $l(n)$ najveći indeks takav da je $a_n<b_{l(n)}$.
+Po kriteriju sendviča slijedi da $g(a_n)$ konvergira u $f(c)$, pa kako je $g\left(c-\dfrac{1}{n}\right)\leq g(a_n)$, slijedi $g(c)\leq f(c)$, no po definiciji je i $f(c)\leq g(c)$, stoga je $f(c)=g(c)$, dakle vrijedi neprekidnost zdesna.
+\end{proof}
 \section{Uniformno neprekidne funkcije}
 \begin{definition}
 Neka je \(I\subseteq \mathbb{R}\) otvoren ili zatvoren interval. Kažemo da je \(f : I\to \mathbb{R}\) \textbf{uniformno neprekidna} na \(I\) ako za svaki \(\epsilon>0\) postoji \(\delta>0\) takav da za sve \(x, y\in I\),
@@ -523,7 +633,6 @@ Ako ponovno "uvrstimo" \(\dfrac{1}{x}\) u dobiveni izraz, dobit ćemo opet izraz
 
 Neka je \(f_1 : [1, \infty\rangle\to \mathbb{R}\), \(f_1(x)=\dfrac{1}{x}\), te \(f_2 : [0, 1]\to \mathbb{R}\), \(f_2(x)=\sqrt[2026]{x}+\dfrac{x}{\sqrt{1+x}}\). Uočimo da je \(\mathcal{R}(f_1)=\langle 0, 1]\subseteq [0, 1]\), te je \(f=f_2\circ f_1\), te kako je \(f_1\) uniformno neprekidna na svojoj domeni, te \(f_2\) uniformno neprekidna na svojoj domeni, slijedi i da je \(f\) uniformno neprekidna na svojoj domeni.
 \end{proof}
-(DODATI LIPSCHITZOVOST I ZADATKE NA KRAJU POGLAVLJA)
 \newpage
 \section*{Zadatci za vježbu}
 \subsection*{Definicija neprekidnosti funkcije}
@@ -553,9 +662,6 @@ Zadan je otvoreni interval \(I\subseteq \mathbb{R}\) i funkcija \(f : I\to \math
 \end{itemize}
 \end{exercise}
 \begin{exercise}
-Neka je \(I\subseteq \mathbb{R}\) otvoreni interval i \(c\in I\). Zadana je funkcija \(f : I\to \mathbb{R}\) sa sljedećim svojstvom: Za svaki \(k\in \mathbb{N}\) postoji \(\delta>0\) tako da za sve \(x\in I\) vrijedi \(|x-c|<\delta\Rightarrow |f(x)-f(c)|<\dfrac{1}{2^k}\). Dokažite ili opovrgnite: \(f\) je neprekidna u \(c\).
-\end{exercise}
-\begin{exercise}
 Koristeći definiciju neprekidnosti funkcije, odredite skup svih točaka u kojim je funkcija \(f : \mathbb{R}\to \mathbb{R}\),
 \[f(x)=\begin{cases}
 x^2,& x\leq 3,\\
@@ -565,6 +671,11 @@ neprekidna.
 \end{exercise}
 \begin{exercise} \((*)\)
 Koristeći definiciju neprekidnosti funkcije, dokažite da je \(\sqrt[3]{x}\) neprekidna na svojoj domeni.
+\end{exercise}
+\begin{exercise} \((**)\)
+Neka je \(I\subseteq \mathbb{R}\) otvoreni interval. Kažemo da je \(f : I\to \mathbb{R}\) \textbf{konveksna} na $I$ ako za sve $x, y\in I$ i $\lambda \in \left[0, 1\right]$ vrijedi
+$$f\left(\lambda x+\left(1-\lambda\right)y\right)\leq \lambda f(x)+\left(1-\lambda\right)f(y).$$
+Dokažite da je svaka konveksna funkcija neprekidna na svojoj domeni.
 \end{exercise}
 \subsection*{Svojstva neprekidnih funkcija}
 \begin{exercise}
@@ -588,7 +699,18 @@ je neprekidna u \(0\).
 \end{itemize}
 \end{exercise}
 \begin{exercise}
+Odredite skup svih točaka u kojim je funkcija \(f : \mathbb{R}\to \mathbb{R}\),
+\[f(x)=\begin{cases}
+\sin{x},& x\in \mathbb{Q},\\
+1,& x\in \mathbb{I}.
+\end{cases}\]
+neprekidna.
+\end{exercise}
+\begin{exercise}
 Dokažite da je \(\mathcal{R}(\sin)=\mathcal{R}(\cos)=[-1, 1]\) i da je \(\mathcal{R}(\tg)=\mathbb{R}\).
+\end{exercise}
+\begin{exercise}
+Prikladnom modifikacijom dokaza Heineove karakterizacije neprekidnosti dokažite prvu tvrdnju napomene \ref{Heineonesided}.
 \end{exercise}
 \subsection*{Uniformna neprekidnost}
 \begin{exercise}

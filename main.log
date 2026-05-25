@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.17)  21 MAY 2026 14:18
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.17)  25 MAY 2026 15:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -778,16 +778,16 @@ Poglavlje 5.
 Poglavlje 6.
 (./poglavlja/ch6.tex [161
 
-] [162] [163] [164] [165] [166] [167] [168] [169] [170] [171] [172] [173] [174] [175] [176] [177] [178] [179]) [180]
+] [162] [163] [164] [165] [166] [167] [168] [169] [170] [171] [172] [173] [174] [175] [176] [177] [178] [179] [180] [181] [182] [183] [184]) [185]
 Poglavlje 7.
-(./poglavlja/ch7.tex [181
+(./poglavlja/ch7.tex [186
 
-] [182] [183] [184] [185] [186] [187] [188] [189] [190] [191] [192] [193]) (./bibliografija.tex [194]
+] [187] [188] [189] [190] [191] [192] [193] [194] [195] [196] [197] [198]) (./bibliografija.tex [199]
 Package babel Info: 'russian' activates 'russian' shorthands.
 (babel)             Reported on input line 23.
- [195
+ [200
 
-]) [196] (./main.aux)
+]) [201] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
@@ -796,12 +796,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 5513FA4E6B8EC8C9A293FD81871CC637;7298.
  ) 
 Here is how much of TeX's memory you used:
- 34843 strings out of 468006
- 809553 string characters out of 5432520
- 1592714 words of memory out of 6000000
- 63173 multiletter control sequences out of 15000+600000
+ 34848 strings out of 468006
+ 809656 string characters out of 5432520
+ 1592977 words of memory out of 6000000
+ 63178 multiletter control sequences out of 15000+600000
  640744 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,16n,118p,1376b,2376s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (196 pages, 2993560 bytes).
+Output written on main.xdv (201 pages, 3069984 bytes).
