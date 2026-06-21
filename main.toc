@@ -13,25 +13,26 @@
 \contentsline {chapter}{\numberline {3}Skup \(\mathbb {R}\). Uvod u nejednakosti. Supremum i infimum. Kompleksni brojevi}{44}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Uvod u nejednakosti}{45}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Minimum i maksimum. Arhimedov aksiom}{54}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Supremum i infimum}{59}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Kompleksni brojevi}{75}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Funkcije}{88}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Pojam funkcije. Crtanje grafa funkcije}{88}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Injekcija, surjekcija i bijekcija. Slika i praslika skupa}{93}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Kompozicija funkcija. Inverzna funkcija}{103}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Rastav na parcijalne razlomke}{113}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Prirodna domena}{116}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Periodične funkcije}{119}{section.4.6}%
+\contentsline {section}{\numberline {3.3}Supremum i infimum}{60}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Kompleksni brojevi}{78}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Funkcije}{90}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Pojam funkcije. Crtanje grafa funkcije}{90}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Injekcija, surjekcija i bijekcija. Slika i praslika skupa}{95}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Kompozicija funkcija. Inverzna funkcija}{105}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Rastav na parcijalne razlomke}{115}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Prirodna domena}{118}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Periodične funkcije}{121}{section.4.6}%
 \pagebreak [4]
-\contentsline {chapter}{\numberline {5}Nizovi}{127}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Pojam niza. Limes niza}{127}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Osnovne operacije s konvergentnim nizovima. Kriteriji konvergencije niza}{134}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Podniz. Nizovi zadani rekurzivno. Limesi složenijih nizova}{141}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Limes superior i limes inferior}{151}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{161}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{161}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{167}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Uniformno neprekidne funkcije}{177}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Derivacija}{186}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Definicija derivacije}{186}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Osnovne operacije s diferencijabilnim funkcijama}{193}{section.7.2}%
+\contentsline {chapter}{\numberline {5}Nizovi}{129}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Pojam niza. Limes niza}{129}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Osnovne operacije s konvergentnim nizovima. Kriteriji konvergencije niza}{136}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Podniz. Nizovi zadani rekurzivno. Limesi složenijih nizova}{143}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Cauchyjevi nizovi}{153}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Limes superior i limes inferior}{154}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{168}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{168}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{174}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Uniformno neprekidne funkcije}{184}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Derivacija}{193}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Definicija derivacije}{193}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Osnovne operacije s diferencijabilnim funkcijama}{200}{section.7.2}%

@@ -380,6 +380,19 @@ Uzmimo prvo da je \(a>0\). Tada prema Arhimedovu aksiomu postoji \(n\in \mathbb{
 \Longleftrightarrow -n\leq -a\leq -n+1.\] 
 No sada je \(-a>0\), pa prema dokazanom upravo postoji \(l\in \mathbb{Z}\) takav da je \(l-1\leq -a\leq l\), pa za \(-n=l-1\), tj. \(n=1-l\) tvrdnja vrijedi.
 \end{proof}
+\begin{exercise}
+\label{lemmaforalimitpointexercise}
+Neka je $a\in \langle 0, 1\rangle$. Dokažite da postoji $m\in \mathbb{N}$ takav da za svaki $x\in \left\langle 0, \dfrac{1}{m}\right\rangle$ postoji $n\in \mathbb{N}$ takav da je $nx\in \langle a, 1\rangle$.
+\end{exercise}
+\begin{proof*}
+Pretpostavimo suprotno, da za svaki $m\in \mathbb{N}$ postoji $x\in \left\langle 0, \dfrac{1}{m}\right\rangle$ takav da za svaki $n\in \mathbb{N}$ vrijedi $nx\notin \langle a, 1\rangle$. Po Arhimedovu aksiomu postoje $m_0, m_1\in \mathbb{N}$ takav da je $\dfrac{1}{m_0}<a$ i $\dfrac{1}{m_1}<1-a$. Uzmimo $m_2:=\max{\{m_0, m_1\}}$. Tada postoji $x_0\in \left\langle 0, \dfrac{1}{m_2}\right\rangle$ takav da za svaki $n\in \mathbb{N}$ vrijedi $nx_0\notin \langle a, 1\rangle$, te vrijedi
+$$x_0<\dfrac{1}{m_2}\leq \dfrac{1}{m_0}<a.$$
+Uzmimo najveći $n_0\in \mathbb{N}$ takav da je $n_0x_0\leq a$ (takvi $n$-ovi postoje, npr. $n=1$). Tada je $(n_0+1)x_0>1$, pa je $$(n_0+1)x_0-n_0x_0\geq 1-a,$$ tj. $x_0\geq 1-a$, što daje kontradikciju s činjenicom da je
+\[\pushQED{\qed}
+x_0<\dfrac{1}{m_2}\leq\dfrac{1}{m_1}<1-a. \qedhere
+\popQED
+\]
+\end{proof*}
 Napomena \ref{den} je često korisna ako treba dokazati egzistenciju nekog racionalnog ili iracionalnog broja u nekom intervalu bez da ga eksplicitno konstruiramo. Pokažimo to u sljedećem zadatku.
 \begin{exercise} \textbf{}
 \begin{itemize}
@@ -644,7 +657,7 @@ i to je maksimum, jer se postiže za \(n=1\). Slično, iz \((-1)^n\leq 1\) slije
 \[A'=\left\{\dfrac{n-1}{n} : n \;\mathrm{paran}\right\}\;\;\text{i}\;\;A''=\left\{\dfrac{n+1}{n} : n \;\mathrm{neparan}\right\}.\] Lako je pokazati da je \(A'\cup A''=A\). Nadalje realan broj \(a\) je element skupa \(A'\) ako i samo ako postoji paran \(n\) takav da je \(a=\dfrac{n-1}{n}\). No prirodan broj \(n\) je paran ako postoji \(k\in \mathbb{N}\) takav da je \(n=2k\), što povlači prema napomeni \(1\) da je \[A'=\left\{\dfrac{2k-1}{2k} : k\in \mathbb{N}\right\}.\] Sada analogno kao i u prethodnim zadatcima možemo pokazati da je \(\sup{A'}=2\), \(\inf{A'}=\dfrac{1}{2}\) (Dokažite to!). Analogno vidimo da vrijedi \[A''=\left\{\dfrac{2k}{2k-1} : k\in \mathbb{N}\right\},\] iz činjenice da je \(a\in \mathbb{N}\) neparan ako i samo ako postoji \(k\in \mathbb{N}\) takav da je \(a=2k-1\). Provjerite da je \(\sup{A''}=2\), te \(\inf{A''}=1\). Dakle, sveukupno imamo \(\sup{A}=2\) i \(\inf{A}=\dfrac{1}{2}\).
 \end{proof}
 \begin{exercise}
-Neka je \(A\subseteq \mathbb{R}\) odozgo ograničen skup koji ima dva ili više elemenata. Dokažite da je \(A':=A\setminus \{\min{A}\}\) također odozgo ograničen i vrijedi \(\sup{A}=\sup{A'}\).
+Neka je \(A\subseteq \mathbb{R}\) odozgo ograničen skup koji ima dva ili više elemenata i koji ima minimum. Dokažite da je \(A':=A\setminus \{\min{A}\}\) također odozgo ograničen i vrijedi \(\sup{A}=\sup{A'}\).
 \end{exercise}
 \begin{proof}[Rješenje]
 Skup \(A'\) je neprazan, pa tvrdnja zadatka ima smisla. Nadalje, očito \(\sup{A'}\) postoji, jer je npr. \(\sup{A}\) jedna gornja međa skupa \(A'\). Prema pretpostavci znamo da za svaki \(\epsilon>0\) postoji \(a\in A\) takav da je \(L-\epsilon<a\). Naš je cilj dokazati da za svaki \(\epsilon>0\) postoji \(a'\in A'\) takav da je \(L-\epsilon<a\). Imamo dva slučaja.
@@ -707,6 +720,43 @@ Uzmimo \(x=\dfrac{\sqrt{\epsilon}}{2}\) i \(y=-\dfrac{2}{\sqrt{\epsilon}}\). Tad
 \[x^2+(xy+1)^2=\dfrac{\epsilon}{4}<\epsilon.\]
 Dakle, \(p : \mathbb{R}^2\to \mathbb{R}\), \(p(x, y)=x^2+(xy+1)^2\) je jedan polinom koji zadovoljava uvjete zadatka.
 \end{proof}
+U idućem zadatku zanimat će nas problem egzistencije $n$-tog korijena. Naime, iz aksioma realnih brojeva nije apriori jasno da je $n$-ti korijen nešto što je dobro definirano.
+\begin{exercise}
+Dokažite da za svaki $x>0$ i svaki $n\in \mathbb{N}$ postoji točno jedan $y>0$ takav da je $y^n=x$.
+\end{exercise}
+\begin{proof}[Rješenje]
+\textit{Jedinstvenost.} Kad bi postojali $0<y_1<y_2$ takvi da je $y_1^n=y_2^n=x$, imali bi ujedno i $y_1^n<y_2^n$, što je nemoguće.
+
+\textit{Egzistencija.} Ideja će biti dobiti traženi $y$ tako da ga prikažemo kao supremum nekog skupa. Zaista, neka su $x>0$ i $n\in \mathbb{N}$, $n\geq 2$ proizvoljni (za $n=1$ tvrdnja je trivijalna), te promotrimo skup
+$$E:=\left\{ t>0 : t^n<x\right\}.$$
+Najprije uočimo da je ovaj skup neprazan. Zaista, ako je $x\in \langle 0, 1\rangle$, onda je $x^n<x$, pa je $x\in E$, a ako je $x\geq 1$, možemo uzeti $t=\dfrac{1}{2}$, pa je $t^n<t< 1\leq x$. Nadalje, $E$ je odozgo ograničen i to s $M=\max\left\{1, x\right\}$. Zaista, neka je $t\in E$. Ako je $t\leq 1$ onda je očito $t\leq M$, a ako je $t>1$, onda je $t< t^n<x\leq M$. Stoga $E$ ima supremum, nazovimo ga s $y$. Tvrdimo da je $y^n=x$.
+
+Pretpostavimo da je $y^n<x$. Tada tvrdimo da postoji neki "dovoljno mali" $h>0$ takav da je $y+h\in E$, tj. $(y+h)^n<x$. Uočimo da ukoliko je $0<h<1$ vrijedi
+\begin{align*}
+(y+h)^n&=y^n+\dbinom{n}{1}y^{n-1}h+\dbinom{n}{2}y^{n-2}h^2+...+h^n\\
+&=y^n+h\left(\dbinom{n}{1}y^{n-1}+\dbinom{n}{2}y^{n-2}h+...+h^{n-1}\right)\\
+&\leq y^n+h\left(\dbinom{n}{1}y^{n-1}+\dbinom{n}{2}y^{n-2}+...+1\right).
+\end{align*}
+Sada ako uzmemo
+$h:=\min\left\{1, \dfrac{x-y^n}{\dbinom{n}{1}y^{n-1}+\dbinom{n}{2}y^{n-2}+...+1}\right\}$,
+dobivamo da je $(y+h)^n<x$, što je i trebalo pokazati.
+
+Pretpostavimo sada da je $y^n>x$. Tvrdimo da tada postoji "dovoljno mali" $h>0$ takav da je $y-h$ gornja međa skupa $E$. Drugim riječima, tvrdimo da vrijedi $t\leq y-h$ za sve $t\in E$. Za to je dovoljno pokazati da je $x<(y-h)^n$ za "dovoljno mali" $h$, jer odatle slijedi $t^n<x<(y-h)^n$, tj. $t<y-h$. Vrijedi
+\begin{align*}
+(y-h)^n&=y^n-\dbinom{n}{1}y^{n-1}h+\dbinom{n}{2}y^{n-2}h^2+...+(-1)^{n+1}h^n\\
+&>y^n-\dbinom{n}{1}y^{n-1}h-\dbinom{n}{3}y^{n-3}h^3-...,
+\end{align*}
+gdje smo u posljednjoj nejednakosti iz $-\dbinom{n}{1}y^{n-1}h+\dbinom{n}{2}y^{n-2}h^2+...+(-1)^{n+1}h^n$ "izbacili" sve pozitivne članove. Dakle, za
+$h:=\min\left\{1, \dfrac{y^n-x}{\dbinom{n}{1}y^{n-1}+\dbinom{n}{3}y^{n-3}+...}\right\}$,
+vrijedi
+\begin{align*}
+y^n-\dbinom{n}{1}y^{n-1}h-\dbinom{n}{3}y^{n-3}h^3-...&=y^n-h\left(\dbinom{n}{1}y^{n-1}+\dbinom{n}{3}y^{n-3}h^2+...\right)\\
+&>y^n-h\left(\dbinom{n}{1}y^{n-1}+\dbinom{n}{3}y^{n-3}+...\right)\\
+&>y^n-\left(y^n-x\right)=x,
+\end{align*}
+što je i trebalo pokazati. Dakle $y-h$ je gornja međa, što je u suprotnosti s definicijom supremuma.
+\end{proof}
+
 \section{Kompleksni brojevi}
 
 \begin{definition}

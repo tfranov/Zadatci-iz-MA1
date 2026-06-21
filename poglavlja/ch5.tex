@@ -694,6 +694,28 @@ Promotrimo nizove \((a_n)\), \((b_n)\), \(a_n=\sum\limits_{k=n}^{2n}{k^4}\), \(b
 &=\dfrac{31n^4+92n^3+114n^2+68n+16}{5n^4+10n^3+10n^2+5n+1}=\dfrac{31}{5}.\qedhere
 \end{align*}
 \end{proof}
+\section{Cauchyjevi nizovi}
+\begin{definition}
+Neka je $(a_n)$ niz realnih brojeva. Kažemo da je $(a_n)$ \textbf{Cauchyjev niz} ako za svaki $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da za sve $n, m\geq n_0$ vrijedi $\lvert a_n-a_m\rvert<\epsilon$.
+\end{definition}
+\begin{remark}
+Niz realnih brojeva je Cauchyjev ako i samo ako je konvergentan.
+\end{remark}
+Pojam Cauchyjevih nizova je posebno bitan u drugim scenarijima (npr. nizovi u $\mathbb{Q}$) gdje Cauchyjevost niza ne mora biti isto što i njegova konvergencija. No, ovaj pojam je koristan i za naše svrhe jer može poslužiti u rješavanju raznih problema koji možda ne bi bili toliko lako rješivi inače.
+\begin{exercise}
+Dokažite po definiciji da je niz $(a_n)$ zadan s $a_n=\dfrac{1}{n^2}$ Cauchyjev.
+\end{exercise}
+\begin{proof*}
+Neka je $\epsilon>0$. Uzmimo $n_0\in \mathbb{N}$ takav da je $n_0\epsilon>2$. Tada za svaki $l\geq n_0$ vrijedi
+$$l^2\epsilon\geq l\epsilon\geq n_0\epsilon>2.$$
+Neka su sada $m, n\in \mathbb{N}$ takvi da vrijedi $m, n\geq n_0$. Bez smanjenja općenitosti možemo uzeti $m\geq n$. Vrijedi
+\[
+\pushQED{\qed}
+\dfrac{1}{n^2}-\dfrac{1}{m^2}=\dfrac{m^2-n^2}{n^2m^2}=\dfrac{m^2-n^2}{n^2m^2}=\dfrac{(m-n)(m+n)}{n^2m^2}\leq \dfrac{m\cdot 2m}{n^2m^2}=\dfrac{2}{n^2}<\epsilon.\qedhere
+\popQED
+\]
+\end{proof*}
+NASTAVITI!!!
 \section{Limes superior i limes inferior}
 \begin{definition}
 Kažemo da je \(\alpha\in \mathbb{R}\) \textbf{gomilište} niza \((a_n)\) realnih brojeva ako postoji podniz \((a_{p_n})\) od \((a_n)\) takav da je \(\lim\limits_{n\to \infty}{a_{p_n}}=\alpha\).
@@ -734,6 +756,10 @@ Ovaj postupak možemo nastaviti i time doći do niza \((a_{p_n})\) međusobno ra
 \[a_{p_i}\in\left\langle \alpha-\epsilon, \alpha+\epsilon\right\rangle\setminus\{\alpha\},\]
 no tada je i \(a_{p_i}\in\left\langle \alpha-\epsilon, \alpha+\epsilon\right\rangle\), pa je \(\alpha\) gomilište niza \((a_n)\).
 \end{proof}  
+\begin{remark}
+\label{bwlemma}
+Svaki niz realnih brojeva ima monoton podniz.
+\end{remark}
 \begin{remark}[Bolzano-Weierstrassov teorem za nizove]
 Neka je \((a_n)\) ograničen niz realnih brojeva. Tada on ima konvergentan podniz.
 \end{remark}
@@ -794,13 +820,15 @@ Time smo dokazali da su jedina gomilišta \(0\) i \(2\), pa je \(\liminf{a_n}=0\
 \end{figure}
 \end{proof}
 \begin{remark}
-Vidjeli smo da je računanje limesa inferiora i superiora u zadatku \ref{limitpoints2} bio poprilično dugotrajan posao. Srećom, postoji rezultat koji znatno olakšava traženje limesa inferiora, koji ovdje nećemo dokazati i to sljedeći -- Neka su \((a_n)\) i \((b_n)\) ograničeni nizovi i neka je \((a_n)\) konvergentan. Tada su nizovi \((a_n+b_n)\) i \((a_nb_n)\) ograničeni i vrijedi
-\begin{gather*}
+Vidjeli smo da je računanje limesa inferiora i superiora u zadatku \ref{limitpoints2} bio poprilično dugotrajan posao. Srećom, postoji rezultat koji znatno olakšava traženje limesa inferiora, i to sljedeći -- Neka su \((a_n)\) i \((b_n)\) ograničeni nizovi i neka je \((a_n)\) konvergentan. Tada su nizovi \((a_n+b_n)\) i \((a_nb_n)\) ograničeni i vrijedi
+\begin{gather}
+\label{limsupformulas}
 \limsup(a_n+b_n)=\lim\limits_{n\to \infty}(a_n)+\limsup(b_n),\\
 \limsup(a_nb_n)=\lim\limits_{n\to \infty}(a_n)\limsup(b_n),\\
 \liminf(a_n+b_n)=\lim\limits_{n\to \infty}(a_n)+\liminf(b_n),\\
 \liminf(a_nb_n)=\lim\limits_{n\to \infty}(a_n)\liminf(b_n).
-\end{gather*}
+\end{gather}
+Dokaz formule (\ref{limsupformulas}) dan je kao rješenje zadatka \ref{limsupofsum}. Ostale formule ovdje navedene mogu se dokazati sličnim postupkom kao u rješenju tog zadatka.
 \end{remark}
 \begin{remark}
 Ograničen niz realnih brojeva \((a_n)\) je konvergentan ako i samo ako vrijedi \(\liminf{a_n}=\limsup{a_n}\).
@@ -816,6 +844,125 @@ Neka je \(a\in \mathbb{R}\) gomilište niza \((a_n)\). Tada postoji podniz \((a_
 
 Odavde zaključujemo da ako je \(a\) gomilište, da je onda i \(3a\) gomilište. No i \(3a\) je gomilište, pa je i \(9a\) gomilište, i tako dalje. Općenito, ako je \(a\) gomilište, imamo da je za sve \(n\in \mathbb{N}\) i \(3^na\) gomilište. Kad bi bilo \(a>0\), ovo vodi na to da bi postojalo neko gomilište koje je veće od \(\limsup{a_n}\) (prema Arhimedovu aksiomu postoji \(n_0\in \mathbb{N}\) takav da je \(n_0a>\limsup{a_n}\), te iz \(3^{n_0}a\geq n_0a>\limsup{a_n}\) slijedi tvrdnja). Analogno za \(a<0\) dobivamo da postoji neko gomilište koje je manje od \(\liminf{a_n}\). Zato mora nužno biti \(a=0\), i time je tvrdnja dokazana.
 \end{proof}
+\begin{exercise}
+\label{limsupisalimitpoint}
+Neka je $(a_n)$ ograničen niz. Dokažite da je tada $\limsup{a_n}$ gomilište niza $(a_n)$ (isto vrijedi i za $\liminf{a_n}$).
+\end{exercise}
+\begin{proof}[Rješenje]
+Označimo sa $S$ skup svih gomilišta niza $(a_n)$, te uzmimo $a:=\limsup{a_n}$. Pretpostavimo da $a\notin S$. Tada po napomeni \ref{supinflimitpoint} postoji niz $(b_n)$ u $S$ koji konvergira k $a$. Neka je sada $\epsilon>0$. Tada postoji $n_0\in \mathbb{N}$ takav da je $|b_{n_0}-a|<\epsilon$, tj. $b_{n_0}\in \langle a-\epsilon, a+\epsilon\rangle\setminus{\left\{a\right\}}$. Kako je $b_{n_0}$ gomilište niza $(a_n)$, za $r:=\min\left\{ b_{n_0}-(a-\epsilon), a-b_{n_0}\right\}$ postoji bar jedan član niza $(a_n)$ u skupu $\langle b_{n_0}-r, b_{n_0}+r\rangle\setminus{\left\{b_{n_0}\right\}}$. Sada uočimo da je
+$$\langle b_{n_0}-r, b_{n_0}+r\rangle\setminus{\left\{b_{n_0}\right\}}\subseteq \langle a-\epsilon, a+\epsilon\rangle\setminus{\left\{a\right\}}.$$
+Zaista, vrijedi $b_{n_0}<a$ po definiciji od $a$ i iz pretpostavke da $a\notin S$. Odavde slijedi da je $b_{n_0}+r\leq b_{n_0}+a-b_{n_0}=a$, te $b_{n_0}-r\geq b_{n_0}-b_{n_0}+a-\epsilon=a-\epsilon$. Dakle, svaki element skupa $\langle b_{n_0}-r, b_{n_0}+r\rangle\setminus{\left\{b_{n_0}\right\}}$ je element skupa $\langle a-\epsilon, a\rangle$, što dokazuje tvrdnju.
+\end{proof}
+\begin{exercise} \textbf{}
+\label{limsupofsum}
+\begin{itemize}
+\item[a)] Dokažite da za ograničene nizove $(a_n)$ i $(b_n)$ vrijedi
+$$\liminf{a_n}+\limsup{b_n}\leq \limsup{(a_n+b_n)}\leq \limsup{a_n}+\limsup{b_n}.$$
+\item[b)] Dokažite da ako je $(a_n)$ uz to i konvergentan, da vrijedi
+$$\limsup{(a_n+b_n)}=\lim\limits_{n\to\infty}{a_n}+\limsup{b_n}.$$
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Dokažimo prvo drugu nejednakost. Ideja će biti Kako je $\limsup{(a_n+b_n)}$ i sam gomilište niza $(a_n+b_n)$, postoji podniz $(a_{p_n}+b_{p_n})$ takav da je $\lim\limits_{n\to \infty}{\left(a_{p_n}+b_{p_n}\right)}=\limsup{(a_n+b_n)}$. Uočimo da je $\limsup{a_n}\geq \limsup{a_{p_n}}$ i $\limsup{b_n}\geq \limsup{b_{p_n}}$ (u suprotnome bi imali kontradikciju s definicijom limesa superiora). No niz $\left(a_{p_n}\right)$ ima podniz $\left(a_{p_{q_n}}\right)$ takav da je $\lim\limits_{n\to \infty}{a_{p_{q_n}}}=\limsup{a_{p_n}}$. Sada iz konvergencije niza $\left(a_{p_{q_n}}+b_{p_{q_n}}\right)$ i konvergencije niza $\left(a_{p_{q_n}}\right)$ slijedi konvergencija niza $\left(a_{p_{q_n}}+b_{p_{q_n}}-a_{p_{q_n}}\right)=\left(b_{p_{q_n}}\right)$ k $\limsup{(a_n+b_n)}-\liminf{a_{p_n}}$. Imamo
+\begin{align*}
+\limsup{a_n}+\limsup{b_n}&\geq \limsup{a_{p_n}}+\limsup{b_{p_n}}=\lim\limits_{n\to \infty}{a_{p_{q_n}}}+\limsup{b_{p_n}}\\
+&\geq \lim\limits_{n\to \infty}{a_{p_{q_n}}}+\lim\limits_{n\to \infty}{b_{p_{q_n}}}=\lim\limits_{n\to \infty}{\left(a_{p_{q_n}}+b_{p_{q_n}}\right)}=\limsup{(a_n+b_n)}.
+\end{align*}
+Dokažimo sada prvu nejednakost, i to koristeći već dokazanu drugu nejednakost. Uočimo da je
+\begin{align*}
+\limsup{(a_n+b_n)}-\liminf{a_n}&=\limsup{(a_n+b_n)}+\limsup{-a_n}\geq \limsup{(a_n+b_n-a_n)}\\
+&=\limsup{b_n},
+\end{align*}
+odakle direktno slijedi prva nejednakost.
+
+b) Ako je $(a_n)$ konvergentan, onda je $\liminf{a_n}=\limsup{a_n}$, pa tvrdnja slijedi direktno iz a).
+\end{proof}
+U idućim zadatcima ćemo dati primjer jednog niza čiji je skup gomilišta jednak $[0, 1]$. Za $x\in \mathbb{R}$ uvedimo oznaku $\{x\}:=x-\lfloor x\rfloor$. Niz $(a_n)$ koji ćemo mi promatrati je zadan sa $a_n=\{\alpha n\}$, gdje je $\alpha\in \mathbb{I}$. Zapravo promatramo "decimalni dio" svakog broja $\alpha n$. Promotrimo npr niz $(a_n)$ zadan sa $a_n=\left\{\sqrt{2}n\right\}$, koji je prikazan na slici \ref{fig:6.2}.
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,xlabel=\(x\),ylabel=\(y\),xmin=-0.1,xmax=15.1,ymin=-0.1,ymax=1.1, width=17cm, height=8cm]
+
+\addplot [only marks] table {
+1 0.41421356
+2 0.82842712
+3 0.24264069
+4 0.65685425
+5 0.071067812
+6 0.48528137
+7 0.89949494
+8 0.3137085
+9 0.72792206
+10 0.14213562
+11 0.55634919
+12 0.97056275
+13 0.38477631
+14 0.79898987
+15 0.21320344
+};
+\end{axis}
+\end{tikzpicture}
+\caption{Niz \((a_n)\) zadan s $a_n=\left\{\sqrt{2}n\right\}$}
+\label{fig:6.2}
+\end{center}
+\end{figure}
+
+Uočimo da je razlika između npr. $a_3$ i $a_8$, $a_{13}-a_8$, $a_{18}-a_{13}$ itd. u pravilu relativno mala. To vrijedi i općenito za članove ovog niza koji se razlikuju za $8-3=5$. Stoga, želimo pronaći podniz ovog niza čiji se svi članovi razlikuju za $5$, čime ćemo "usitniti" razmake između susjednih članova. Lako se vidi da je taj podniz npr. $(a_{5n})$. Ne samo to, nego je $a_8-a_3=a_5$, odakle vidimo da je $a_5$ blizak $0$. No treba paziti jer ovo ne vrijedi npr. za $a_2$ i $a_9$ (u tom redoslijedu), jer je $a_2-a_9=1-a_7$.
+
+Općenito, ako je $k<l$ i $a_k<a_l$, onda je $a_l-a_k=a_{l-k}$, a ako je $a_k>a_l$ (pokazat ćemo da su svi članovi niza međusobno različiti pa ne može vrijediti $a_k=a_l$), onda je $a_k-a_l=1-a_{l-k}$. Kao što ćemo vidjeti, ovo nije slučajno, već ovo slijedi direktno iz svojstava funkcija $\lfloor \cdot\rfloor$ i $\left\{\cdot\right\}$. Mi ćemo pokazati da je moguće pronaći "po volji mali" element niza $(a_n)$ (odakle direktno slijedi da je $\liminf{a_n}=0$) pomoću čijih višekratnika ćemo se moći po volji blizu približiti bilo kojem broju iz skupa $[0, 1]$.
+\begin{exercise}
+\label{Dirichletapprox}
+Neka je $(a_n)$ niz zadan sa $a_n=\{\alpha n\}$, gdje je $\alpha\in \mathbb{I}$. Odredite $\liminf{a_n}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+Tvrdimo da je $\liminf{a_n}=0$. Neka je $\epsilon>0$. Uočimo da su svi članovi niza međusobno različiti. Zaista, kada bi postojali $k, l\in \mathbb{N}$, $k\neq l$ takvi da je $a_k=a_l$, vrijedilo bi $\{\alpha k\}=\{\alpha l\}$, tj. 
+$$\alpha=\dfrac{\lfloor \alpha k\rfloor-\lfloor \alpha l\rfloor}{k-l}\notin \mathbb{Q}.$$
+Uočimo da odavde i iz napomene \ref{bwlemma} slijedi da niz $(a_n)$ ima strogo monoton podniz (koji je ujedno i konvergentan), nazovimo ga $(a_{p_n})$. Tada je on i Cauchyjev, pa postoje $k, l\in \mathbb{N}$, $l<k$, takvi da je $0<\lvert\left\{\alpha p_k\right\}-\left\{\alpha p_l\right\}\rvert<\epsilon$.
+
+Pretpostavimo da je $(a_{p_n})$ strogo rastući. Tada iz $a_{p_l}<a_{p_k}$ slijedi $\lfloor \alpha p_k\rfloor-\lfloor \alpha p_l\rfloor\leq \lfloor \alpha (p_k-p_l)\rfloor$ (v. napomenu \ref{floorrem}). Sada imamo
+$$\left\{\alpha(p_k-p_l)\right\}=\alpha p_k-\alpha p_l-\lfloor \alpha(p_k-p_l)\rfloor= \alpha p_k-\alpha p_l-\left(\lfloor \alpha p_k\rfloor-\lfloor \alpha p_l\rfloor\right)=\left\{\alpha p_k\right\}-\left\{\alpha p_l\right\}<\epsilon.$$
+Nadalje, kako niti jedan član niza $(a_n)$ očito nije jednak niti $0$ niti $1$ (u protivnom bi $\alpha$ bio iracionalan), vrijedi $\left\{\alpha(p_k-p_l)\right\}>0$ pa po zadatku \ref{limitpoints3} imamo da je $0$ gomilište niza $(a_n)$. 
+
+Pretpostavimo da je $(a_{p_n})$ strogo padajući. Tada iz $a_{p_k}<a_{p_l}$ slijedi $\lfloor \alpha p_k\rfloor-\lfloor \alpha p_l\rfloor=1-\lfloor \alpha (p_k-p_l)\rfloor$, odakle direktno slijedi $\{\alpha p_l\}-\{\alpha p_k\}=1-\{\alpha (p_k-p_l)\}$ (v. napomenu \ref{floorrem}).
+Imamo
+$$0<1-\left\{\alpha(p_k-p_l)\right\}=\{\alpha p_l\}-\{\alpha p_k\}<\epsilon.$$
+Dobivamo da je $1$ gomilište niza $(a_n)$, pa postoji podniz $(a_{q_n})$ koji konvergira u $1$. No taj podniz ima rastući podniz. Zaista, $a_{q_1}<1$, pa postoji $w\in \mathbb{N}$ takav da je $1-a_{q_w}<1-a_{q_1}$, tj. $a_{q_1}<a_{q_w}$. Sada ponavljanjem ovog postupka dolazimo do traženog podniza, nazovimo ga $\left(a_{q_{r_n}}\right)$. Sada dobivamo da je $0$ gomilište niza $(a_n)$ tako da primijenimo argument s prethodnog paragrafa na $\left(a_{q_{r_n}}\right)$ umjesto na $(a_{p_n})$.
+
+Konačno, uočimo da je $0$ očigledno i najmanje gomilište niza jer bi u protivnom on sadržavao negativne elemente, što nije istina.
+\end{proof}
+\begin{remark}
+\label{floorrem}
+U rješenju prethodnog zadatka smo iskoristili činjenice da za sve $a, b\in \mathbb{R}$ takve da je $\{a\}<\{b\}$ vrijedi $\lfloor b\rfloor-\lfloor a\rfloor= \lfloor b-a\rfloor$ i $\lfloor a\rfloor-\lfloor b\rfloor= 1-\lfloor a-b\rfloor$. Dokažimo prvu tvrdnju, druga se dokazuje analogno. Zaista, vrijedi $a=\lfloor a\rfloor+\{a\}$ i $b=\lfloor b\rfloor+\{b\}$
+pa imamo $b-a=\lfloor b\rfloor-\lfloor a\rfloor+\{b\}-\{a\}$. Uočimo da su $\{a\}, \{b\}\in [0, 1\rangle$, pa je $\{b\}-\{a\}<1$ i po pretpostavci $\{b\}-\{a\}>0$. Stoga je
+$$\lfloor b\rfloor-\lfloor a\rfloor< b-a< \lfloor b\rfloor-\lfloor a\rfloor,$$
+pa je $\lfloor b\rfloor-\lfloor a\rfloor= \lfloor b-a\rfloor$.
+\end{remark}
+\begin{exercise}
+Dokažite da je skup gomilišta niza $(a_n)$ iz zadatka \ref{Dirichletapprox} jednak $[0, 1]$.
+\end{exercise}
+\begin{proof}[Rješenje]
+U dokazu ćemo se koristiti činjenicom da za $n\in \mathbb{N}$ i $x\in \mathbb{R}$ takve da je $n\{x\}<1$ vrijedi $n\{x\}=\{nx\}$, što će izravno slijediti iz činjenice da je u tom slučaju $n\lfloor x\rfloor= \lfloor nx\rfloor$ (v. napomenu \ref{floorrem2}).
+
+U rješenju zadatka \ref{Dirichletapprox} smo pokazali da je $0$ najmanje gomilište. Lako se vidi da nema gomilišta strogo većih od $1$ jer u protivnom bi postojali elementi niza $(a_n)$ strogo veći od $1$. Pokazat ćemo da je da je svaki $a\in \langle 0, 1\rangle$ gomilište niza $(a_n)$, pa će iz zadatka \ref{limsupisalimitpoint} slijediti i da je $1$ gomilište. 
+
+Pretpostavimo da postoji $a\in \langle 0, 1\rangle$ koji nije gomilište niza $(a_n)$. Tada po zadatku \ref{limitpoints3} postoji $\epsilon>0$ takav da skup $\langle a-\epsilon, a+\epsilon\rangle\setminus\left\{a\right\}$ ne sadrži niti jedan član niza $(a_n)$. Kako ista tvrdnja vrijedi i za svaki $\epsilon'<\epsilon$, bez smanjenja općenitosti možemo uzeti da je $\epsilon<\min{\left\{a, 1-a\right\}}$. Uočimo i da je $a+\epsilon<a+1-a=1.$ 
+
+Uzmimo $m\in \mathbb{N}$ takav da je $\dfrac{1}{m}<\epsilon$ i da za svaki $x\in \left\langle 0, \dfrac{1}{m}\right\rangle$ postoji $k\in \mathbb{N}$ takav da je $kx\in \left\langle a, 1\right\rangle$ (egzistencija takvog $m$ slijedi iz zadatka \ref{lemmaforalimitpointexercise}) i $a_n$ takav da je $0<\{a_n\}<\dfrac{1}{m}$ (čija egzistencija je dokazana u rješenju zadatka \ref{Dirichletapprox}). Promotrimo $n_0\in \mathbb{N}$ sa svojstvom da je on najveći prirodan broj takav da je $n_0\{a_n\}<a$. Uočimo da je $$n_0\{a_n\}=\{n_0 a_n\}\leq a-\epsilon,$$
+jer u protivnom bi to bio član skupa $\langle a-\epsilon, a+\epsilon\rangle\setminus\left\{a\right\}$. Uočimo i da je po definiciji $(n_0+1)\{a_n\}\geq a$. Vrijedi i da je $(n_0+1)\{a_n\}<1$, jer u suprotnom ne bi postojao višekratnik od $\{a_n\}$ koji je element skupa $\left\langle a, 1\right\rangle$. Stoga je i 
+$$(n_0+1)\{a_n\}=\{(n_0+1)a_n\}\geq a+\epsilon\;\;\vee\;\; (n_0+1)\{a_n\}=a.$$
+Ako je $(n_0+1)\{a_n\}=a$, dobivamo
+$$\{a_n\}=(n_0+1)\{a_n\}-n_0\{a_n\}\geq a-a+\epsilon=\epsilon,$$
+što je kontradikcija s činjenicom da je $\{a_n\}<\dfrac{1}{m}<\epsilon$. Analogno dobivamo kontradikciju i u drugom slučaju.
+\end{proof}
+\begin{remark}
+\label{floorrem2}
+Dokažimo da za sve $n\in \mathbb{N}$ i $x\in \mathbb{R}$ takve da je $n\{x\}<1$ vrijedi $n\lfloor x\rfloor= \lfloor nx\rfloor$, čime smo se koristili u rješenju prethodnog zadatka. Uočimo da je po pretpostavci
+$$n\{x\}=nx-n\lfloor x\rfloor<1\Rightarrow nx<1+n\lfloor x\rfloor,$$
+pa kada bi bilo $\lfloor nx\rfloor>n\lfloor x\rfloor$, vrijedilo bi
+$$1+n\lfloor x\rfloor\leq \lfloor nx\rfloor\leq nx<1+n\lfloor x\rfloor.$$
+pa mora vrijediti $\lfloor nx\rfloor\leq n\lfloor x\rfloor$. Obratna nejednakost slijedi lagano iz činjenice da je $n\lfloor x\rfloor\leq nx$, pa je $n\lfloor x\rfloor\leq \lfloor nx\rfloor$.
+\end{remark}
+DODATI CAUCHYJEVE NIZOVE RANIJE!! ZAMIJENI LVERT SA LEFT LVERT!!
 \newpage
 \section*{Zadatci za vježbu}
 \subsection*{Pojam niza. Limes niza}
