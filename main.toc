@@ -27,12 +27,11 @@
 \contentsline {section}{\numberline {5.1}Pojam niza. Limes niza}{129}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Osnovne operacije s konvergentnim nizovima. Kriteriji konvergencije niza}{136}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Podniz. Nizovi zadani rekurzivno. Limesi složenijih nizova}{143}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Cauchyjevi nizovi}{153}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Limes superior i limes inferior}{154}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{168}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{168}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{174}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Uniformno neprekidne funkcije}{184}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Derivacija}{193}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Definicija derivacije}{193}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Osnovne operacije s diferencijabilnim funkcijama}{200}{section.7.2}%
+\contentsline {section}{\numberline {5.4}Limes superior i limes inferior}{155}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{170}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{170}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{176}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Uniformno neprekidne funkcije}{186}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Derivacija}{195}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Definicija derivacije}{195}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Osnovne operacije s diferencijabilnim funkcijama}{202}{section.7.2}%

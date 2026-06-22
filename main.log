@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.28)  21 JUN 2026 20:10
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.28)  22 JUN 2026 16:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -774,34 +774,34 @@ Poglavlje 4.
 Poglavlje 5.
 (./poglavlja/ch5.tex [129
 
-] [130] [131] [132] [133] [134] [135] [136] [137] [138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150] [151] [152] [153] [154] [155] [156] [157] [158] [159] [160] [161] [162] [163] [164] [165] [166]) [167]
+] [130] [131] [132] [133] [134] [135] [136] [137] [138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150] [151] [152] [153] [154] [155] [156] [157] [158] [159] [160] [161] [162] [163] [164] [165] [166] [167] [168]) [169]
 Poglavlje 6.
-(./poglavlja/ch6.tex [168
+(./poglavlja/ch6.tex [170
 
-] [169] [170] [171] [172] [173] [174] [175] [176] [177] [178] [179] [180] [181] [182] [183] [184] [185] [186] [187] [188] [189] [190] [191]) [192]
+] [171] [172] [173] [174] [175] [176] [177] [178] [179] [180] [181] [182] [183] [184] [185] [186] [187] [188] [189] [190] [191] [192] [193]) [194]
 Poglavlje 7.
-(./poglavlja/ch7.tex [193
+(./poglavlja/ch7.tex [195
 
-] [194] [195] [196] [197] [198] [199] [200] [201] [202] [203] [204] [205]) (./bibliografija.tex [206]
+] [196] [197] [198] [199] [200] [201] [202] [203] [204] [205] [206] [207]) (./bibliografija.tex [208]
 Package babel Info: 'russian' activates 'russian' shorthands.
 (babel)             Reported on input line 23.
- [207
+ [209
 
-]) [208] (./main.aux)
+]) [210] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DCA197A4235B8AF2582E3CC94EE57610;7441.
+(rerunfilecheck)             Checksum: 5513FA4E6B8EC8C9A293FD81871CC637;7298.
  ) 
 Here is how much of TeX's memory you used:
  34864 strings out of 468006
  809908 string characters out of 5432520
- 1594307 words of memory out of 6000000
+ 1592307 words of memory out of 6000000
  63194 multiletter control sequences out of 15000+600000
  640744 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,16n,118p,1376b,2376s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (208 pages, 3195280 bytes).
+Output written on main.xdv (210 pages, 3217836 bytes).
