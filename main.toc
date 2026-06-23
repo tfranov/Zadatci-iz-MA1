@@ -26,12 +26,13 @@
 \contentsline {chapter}{\numberline {5}Nizovi}{129}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Pojam niza. Limes niza}{129}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Osnovne operacije s konvergentnim nizovima. Kriteriji konvergencije niza}{136}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Podniz. Nizovi zadani rekurzivno. Limesi složenijih nizova}{143}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Limes superior i limes inferior}{155}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{170}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{170}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{176}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Uniformno neprekidne funkcije}{186}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Derivacija}{195}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Definicija derivacije}{195}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Osnovne operacije s diferencijabilnim funkcijama}{202}{section.7.2}%
+\contentsline {section}{\numberline {5.3}Podniz. Nizovi zadani rekurzivno}{143}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Limesi složenijih nizova. Cauchyjevi nizovi}{150}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Limes superior i limes inferior}{156}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Neprekidnost funkcije}{171}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Definicija neprekidnosti funkcije}{171}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Svojstva neprekidnih funkcija}{177}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Uniformno neprekidne funkcije}{187}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Derivacija}{196}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Definicija derivacije}{196}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Osnovne operacije s diferencijabilnim funkcijama}{203}{section.7.2}%

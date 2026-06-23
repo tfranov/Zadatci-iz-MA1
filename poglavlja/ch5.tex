@@ -437,7 +437,7 @@ Neka je \((a_n)\) rastući niz. Dokažite: Ako \((a_n)\) ne divergira u \(\infty
 \begin{proof}
 Po definiciji, postoji \(M>0\) takav da za svaki \(n_0\in \mathbb{N}\) postoji \(n\in \mathbb{N}\), \(n\geq n_0\) takav da je \(a_n\leq M\). Neka je \(m\in \mathbb{N}\) proizvoljan. Tada postoji \(m'\geq m\) takav da je \(a_{m'}\leq M\), no tada vrijedi i \(a_m\leq M\), jer je niz rastući (v. a) dio zadatka \ref{seqfunex}). Time smo dokazali da je niz odozgo omeđen, pa kako je rastući, on je i konvergentan.
 \end{proof}
-\section{Podniz. Nizovi zadani rekurzivno. Limesi složenijih nizova}
+\section{Podniz. Nizovi zadani rekurzivno}
 \begin{definition}
 Za niz \(b : \mathbb{N}\to S\) kažemo da je \textbf{podniz} niza \(a :\mathbb{N}\to S\) ako postoji strogo rastući niz prirodnih brojeva \(p : \mathbb{N}\to \mathbb{N}\) takav da je \(b=a\circ p\). Za podniz \((b_n)\) niza \((a_n)\) pišemo \(b_n=b(n)=a\left(p(n)\right)=a_{p_n}\), pa podniz označavamo i sa \((a_{p_n})\).
 \end{definition}
@@ -465,7 +465,8 @@ Intuitivno, generalizirani podnizovi se ponašaju analogno kao i podnizovi do na
 Modificirat ćemo dokaz napomene \ref{onsubsequences} tako da uvjet $p_n\geq n$ koji se koristio u toj napomeni zamijenimo s analognim uvjetom koji će ovdje vrijediti. Uzmimo proizvoljan $\epsilon>0$, te proizvoljan $n\in \mathbb{N}$ takav da je $n\geq n_0$. Tvrdimo da postoji $m_0\in \mathbb{N}$ takav da je $p_{m_0}\geq n$. Ako je $p_1\geq n$, nemamo što dokazivati. Inače, postoji $b\in \mathbb{N}$ takav da je $p_{b}>p_1$. Ako je $p_{b}\geq n$, tvrdnja je dokazana, a inače u konačno mnogo koraka dolazimo do traženog $m_0$. Neka je sada $m\geq m_0$ proizvoljan. Specijalno je $p_m\geq p_{m_0}\geq n$, pa je $\lvert a_{p_m}-a\rvert<\epsilon$, što je i trebalo pokazati.
 \end{proof}
 \begin{exercise}
-Neka je \((a_n)\) konvergentan niz takav da je \(a_n\neq 0\) za sve \(n\in \mathbb{N}\). Konvergira li općenito niz \(\left(\dfrac{a_{n+1}}{a_n}\right)\)? Za one \((a_n)\) za koje konvergira, što sve može biti limes tog niza?
+\label{setoflimits}
+Neka je \((a_n)\) konvergentan niz takav da je \(a_n\neq 0\) za sve \(n\in \mathbb{N}\). Konvergira li općenito niz \(\left(\dfrac{a_{n+1}}{a_n}\right)\)? Za one $(a_n)$ za koje on konvergira, što sve može biti njegov limes?
 \end{exercise}
 \begin{proof}[Rješenje]
 Neka je \(\lim\limits_{n\to \infty}{a_n}\neq 0\). Kako je \((a_{n+1})\) podniz od \((a_n)\), vrijedi \(\lim\limits_{n\to \infty}{a_{n+1}}=\lim\limits_{n\to \infty}{a_{n}}\), pa je
@@ -605,6 +606,7 @@ Vrlo slično se dokazuje da je \((a_{2n-1})\) rastući i odozgo ograničen s \(L
 \[L'=-3-\dfrac{1}{L'}\]
 dobivamo \(L'_1=L_1\) i \(L'_2=L_2\). No \(L_1\) ne može biti limes, jer je \(L_1>-\dfrac{7}{3}\), a \(\dfrac{7}{3}\) je gornja međa oba niza. Zato je \(\lim\limits_{n\to \infty}{a_{2n}}=\lim\limits_{n\to \infty}{a_{2n-1}}=L_2\), pa je po zadatku \ref{subsequencelemma} \((a_n)\) konvergentan i vrijedi \(\lim\limits_{n\to \infty}{a_{n}}=L_2\).
 \end{proof}
+\section{Limesi složenijih nizova. Cauchyjevi nizovi}
 U zadatku \ref{38} vidjeli smo da možemo upotrijebiti napomenu \ref{onsubsequences} i u slučajevima kad nismo još dokazali da je niz konvergentan. Pokažimo još jednu takvu situaciju.
 \begin{exercise}
 \label{iteration}
@@ -1102,17 +1104,19 @@ Koristeći činjenicu da je niz \(n\mapsto \left(1+\dfrac{1}{n}\right)^n\) konve
 \item[b)] \(\lim\limits_{n\to \infty}\left(1+\dfrac{1}{-n}\right)^{-n}\)
 \end{itemize}
 \end{exercise}
-\begin{exercise}
-Koliko ima prirodnih brojeva \(n\in \mathbb{N}\) za koje vrijedi
-\[\dfrac{2n}{n+1}-\dfrac{3}{2^n}-\dfrac{1}{n}-\dfrac{2}{n^4}>1?\]
-Dokažite svoje tvrdnje! (\textbf{Uputa:} Iskoristite definiciju limesa niza.)
-\end{exercise}
 \begin{exercise} \textbf{}
 \begin{itemize}
-\item[a)] Neka je \((a_n)\) niz takav da je niz \((b_n)\) zadan formulom \(b_n=a_1+a_2+\dots+a_n\) konvergentan. Dokažite da je tada i \((a_n)\) konvergentan i vrijedi \(\lim\limits_{n\to \infty}{a_n}=0\).
-\item[b)] Odredite sve polinome \(P : \mathbb{R}\to \mathbb{R}\) takve da je
+\item[a)] Odredite sve polinome \(P : \mathbb{R}\to \mathbb{R}\) takve da je
 \[\lim\limits_{n\to\infty}{\dfrac{P(n)}{n^2+2n+5}}=2025.\]
-\item[c)] Neka su \((a_n)\) i \((b_n)\) dva niza takva da je \(a_n\leq b_n\), \((a_n)\) raste i \((b_n)\) pada. Dokažite da tada oba niza konvergiraju. Jesu li njihovi limesi općenito jednaki?
+\item[b)] Neka su \((a_n)\) i \((b_n)\) dva niza takva da je \(a_n\leq b_n\), \((a_n)\) raste i \((b_n)\) pada. Dokažite da tada oba niza konvergiraju. Jesu li njihovi limesi općenito jednaki?
+\end{itemize}
+\end{exercise}
+\begin{exercise} (Ovaj zadatak je malo neobičan...)
+\begin{itemize}
+\item[a)] Koliko ima prirodnih brojeva \(n\in \mathbb{N}\) za koje vrijedi
+\[\dfrac{2n}{n+1}-\dfrac{3}{2^n}-\dfrac{1}{n}-\dfrac{2}{n^4}>1?\]
+Dokažite svoje tvrdnje! (\textbf{Uputa:} Iskoristite definiciju limesa niza.)
+\item[b)] Dokažite da $x\mapsto 2^x$ nije polinom. (\textbf{Uputa:} Pretpostavite suprotno i promatrajte niz $n\mapsto \dfrac{P(n)}{2^n}$, gdje je $P$ polinom. Kako je ovo kvocijent dva polinoma, možemo li nešto zaključiti o njihovim stupnjevima?)
 \end{itemize}
 \end{exercise}
 \begin{exercise} \((**)\)
@@ -1123,7 +1127,7 @@ Neka je \((a_n)\) ograničen niz realnih brojeva takav da za sve \(n\geq 2\) vri
 \[a_n\leq \dfrac{a_{n-1}+a_{n+1}}{2}.\]
 Pokažite da je \((a_n)\) konvergentan.
 \end{exercise}
-\subsection*{Podniz. Nizovi zadani rekurzivno. Limesi složenijih nizova}
+\subsection*{Podniz. Nizovi zadani rekurzivno}
 \begin{exercise} Neka su \((a_n),\,(b_n)\, (c_n)\) nizovi zadani formulama 
 \[a_n=2n+1,\;b_n=8n^2+8n+3, \; c_n=8n^2-9\]
 \begin{itemize}
@@ -1139,6 +1143,10 @@ Ispitajte konvergenciju niza \((a_n)\) i ako je konvergentan odredite mu limes, 
 \item[c)] \(a_1=1\), \(a_{n+1}=\dfrac{a_n+3}{2a_n}\), \(n\geq 1\). (Ovaj niz neće biti monoton -- pokušajte se snaći drukčije!)
 \end{itemize}
 \end{exercise}
+\begin{exercise}
+Neka je \((a_n)\) konvergentan niz takav da je \(a_n\neq 0\) za sve \(n\in \mathbb{N}\). Konvergira li općenito niz \(\left(\dfrac{a_{2n}}{a_n}\right)\)? Za one $(a_n)$ za koje on konvergira, što sve može biti njegov limes? (\textbf{Uputa:} Iskoristite tvrdnju zadatka \ref{setoflimits}.)
+\end{exercise}
+\subsection*{Limesi složenijih nizova. Cauchyjevi nizovi}
 \begin{exercise} \textbf{}
 \begin{itemize}
 \item[a)] Neka je \((a_n)\) monoton niz koji ima konvergentan podniz. Dokažite da je tada \((a_n)\) konvergentan.
@@ -1167,7 +1175,7 @@ Dokažite tvrdnje zadatka \ref{iteraaaate} koristeći definiciju limesa niza.
 \end{exercise}
 \subsection*{Limes superior i limes inferior}
 \begin{exercise}
-Neka je \((a_n)\) niz zadan formulom \(a_n=(-1)^n\left(1-\dfrac{1}{3^n}\right)\). Odredite \(\liminf{a_n}\) i \(\limsup{a_n}\). (Dokažite sve svoje tvrdnje.)
+Neka je \((a_n)\) niz zadan formulom \(a_n=(-1)^n\left(1-\dfrac{1}{3^n}\right)\). Odredite skup svih gomilišta niza $(a_n)$. (Dokažite sve svoje tvrdnje.)
 \end{exercise}
 \begin{exercise} \textbf{}
 \begin{itemize}
@@ -1180,9 +1188,26 @@ $$\liminf{a_nb_n}=\liminf{a_n}\cdot\lim\limits_{n\to \infty}{b_n}.$$
 \begin{exercise}
 Neka je \((a_n)\) konvergentan niz s limesom u \(a\in \mathbb{R}\) i neka je \((b_n)\) niz takav da je \(b_{2n-1}=a_{2n-1}\) i \(b_{2n}=a_{2n}+1\), za sve \(n\in \mathbb{N}\). Odredite skup svih gomilišta niza \((b_n)\).
 \end{exercise}
+\begin{exercise}
+Neka je $(a_n)$ ograničen i $(b_n)$ niz sa svojstvom da za svaki $m\in \mathbb{N}$ postoji $n_0\in \mathbb{N}$ takav da za svaki $n\in \mathbb{N}$ takav da je $n\geq n_0$ vrijedi $b_n\in \{a_{m}, a_{m+1}, a_{m+2}, \dots\}$. Dokažite da je skup gomilišta od $(b_n)$ sadržan u skupu gomilišta od $(a_n)$.
+\end{exercise}
 \begin{exercise} \((*)\)
 Neka su \(p, q\in \mathbb{N}\), \(1<p<q\). Dokažite da svaki niz s točno \(q\) gomilišta ima podniz s točno \(p\) gomilišta.
 \end{exercise}
 \begin{exercise} \((*)\)
 Dokažite da svaki konvergentan niz postiže ili svoj infimum, ili svoj supremum, ili oboje. Dajte primjer sva tri tipa niza.
+\end{exercise}
+\begin{exercise} \((**)\)
+Kroz ovaj zadatak dat ćemo smjernice za dokaz Osnovnog teorema algebre -- klasičnog teorema koji kaže da ako su $a_0, a_1, \dots, a_n$ kompleksni brojevi, $a_n\neq 0$ i $P : \mathbb{C}\to \mathbb{C}$,
+$$P(z)=a_nz^n+a_{n-1}z^{n-1}+\dots+ a_1z+a_0,$$
+tada za svaki polinom koji nije konstanta postoji barem jedan $z_0\in \mathbb{C}$ takav da je $P(z_0)=0$, tj. svaki polinom u $\mathbb{C}$ koji nije konstanta ima nultočku.
+\begin{itemize}
+\item[a)] Promotrite skup $B=\left\{ \left\lvert P(z)\right\rvert : z\in \mathbb{C}\right\}$, te dokažite da je $\inf{B}\in B$. To možete napraviti tako da pretpostavite da je $\inf{B}\notin B$, te tada imamo da postoji niz $(b_n)$ u $B$ koji konvergira u $\inf{B}$. Koristeći niz $(b_n)$, konstruirajte niz $(a_n)$ koji konvergira u $\inf{B}$ i čiji je limes element skupa $B$.
+\item[b)] Kako je $\inf{B}\in B$, postoji $z_0\in \mathbb{C}$ takav da je $\inf{B}=\left\lvert P(z_0)\right\rvert$. Tvrdimo da je $P(z_0)=0$. U suprotnome, kad bi bilo $P(z_0)\neq 0$, dođite do kontradikcije tako što ćete dokazati da za svaki $a\in \mathbb{C}$, $a\neq 0$, postoji $h\in \mathbb{C}$ takav da je $\left\lvert P(a+h)\right\rvert<\left\lvert P(a)\right\rvert$. To možete dokazati tako da primijetite da je
+$$P(a+h)=P(a)+Ah^m+Ah^m\left(A_1h+\dots+ A_{n-m}h^{n-m}\right),$$
+gdje je $n$ stupanj od $P$, $m$ stupanj od $h$, te $A, A_1, A_2, \dots A_{n-m}$ neki kompleksni brojevi i $A\neq 0$. Ovo pak možete pokazati tako da iskoristite činjenicu da postoji $h_0\in \mathbb{C}$ takav da je
+$$h_0^m=-\dfrac{1}{2}\dfrac{P(a)}{A}$$
+i da se izraz $\left(A_1h+\dots+ A_{n-m}h^{n-m}\right)$ može napraviti "po volji malim po modulu".
+\end{itemize}
+(Rješenje ovog zadatka možete vidjeti u \cite{14}, u Dodatku.)
 \end{exercise}
