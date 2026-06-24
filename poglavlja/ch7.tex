@@ -202,6 +202,38 @@ Konačno, kako je \(f'(\max{S})>0\), postoji \(\delta>0\) takav da za sve \(x\in
 pa za sve \(\langle \max{S}, \max{S}+\delta'\rangle\cap I\subseteq \langle \max{S}, x_2\rangle\) vrijedi \(f(x)>f(\max{S})\). No ovo znači da npr. vrijedi \[f\left(\max{S}+\dfrac{\delta'}{2}\right)>f(\max{S}).\] S druge strane, kako je \(\max{S}+\dfrac{\delta'}{2}\in [x_1, x_2]\) i \(\max{S}+\dfrac{\delta'}{2}>\max{S}\), vrijedi \(\max{S}+\dfrac{\delta'}{2}\notin S\),
 pa je \(f\left(\max{S}+\dfrac{\delta'}{2}\right)<\max{f|_{[x_1, x_2]}}=f(\max{S})\), kontradikcija!
 \end{proof}
+U sljedećem zadatku dokazujemo da je tangenta u točki \(c\) na graf diferencijabilne funkcije od svih pravaca najbolja aproksimacija te funkcije blizu točke \(c\).
+\begin{exercise}
+Neka je \(I\) otvoreni interval, \(c\in I\), \(a, b\in \mathbb{R}\), te \(f : I \to \mathbb{R}\) diferencijabilna na \(I\). Neka su \(g, h : \mathbb{R}\to \mathbb{R}\) dane s \(g(x)=f'(c)(x-c)+f(c)\), \(h(x)=a(x-c)+b\)\footnote{Obratite pozornost na to da ovdje može biti \(a=0\).}. Tada postoji \(\delta_h>0\) takav da za sve \(x\in I\) vrijedi
+\[0<|x-c|<\delta_h\Rightarrow |f(x)-g(x)|<|f(x)-h(x)|.\]
+\end{exercise}
+\begin{proof}[Rješenje]
+Pretpostavimo prvo da je $b> f(c)$ (slučaj $b<f(c)$ se dokazuje analogno), tj. da pravac $h$ niti ne prolazi kroz $\left(c, f(c)\right)$. Kako je $h$ neprekidna u $c$, postoji $\delta_1>0$ takav da za sve $x\in I$ takve da je $\lvert x-c\rvert<\delta_1$ vrijedi $\lvert h(x)-b\rvert<\dfrac{b-f(c)}{4}$. Kako je i $f$ neprekidna u $c$, postoji $\delta_2>0$ takav da za sve $x\in I$ takve da je $\lvert x-c\rvert<\delta_2$ vrijedi $\lvert f(x)-f(c)\rvert<\dfrac{b-f(c)}{8}$. Uzmimo 
+$$\delta_h:=\min{\left\{\delta_1, \delta_2, \dfrac{b-f(c)}{8\lvert f'(c)\rvert}\right\}}.$$
+Tada za sve $x\in I$ takve da je $0<\lvert x-c\rvert<\delta_h$ vrijedi
+\begin{align*}
+\left\lvert f(x)-g(x)\right\rvert&=\left\lvert f(x)-f(c)-f'(c)(x-c)\right\rvert\leq \left\lvert f(x)-f(c)\right\rvert+\left\lvert f'(c)\right\rvert\left\lvert(x-c)\right\rvert\\
+&<\dfrac{b-f(c)}{8}+\dfrac{b-f(c)}{8}=\dfrac{b-f(c)}{4}<\dfrac{b-f(c)}{2}.
+\end{align*}
+S druge strane, za te iste $x$ vrijedi i
+$$h(x)-b>\dfrac{f(c)-b}{4}, \text{ tj. } h(x)>b+\dfrac{f(c)-b}{4}$$
+i analogno $f(x)<f(c)+\dfrac{b-f(c)}{8}$. Stoga je
+$$h(x)-f(x)>b+\dfrac{f(c)-b}{4}-f(c)-\dfrac{b-f(c)}{8}=\dfrac{b-f(c)}{2},$$
+pa je $\left\lvert f(x)-g(x)\right\rvert<h(x)-f(x)=\lvert f(x)-h(x)\rvert$.
+
+Pretpostavimo sada da je $b=f(c)$ i $a> f'(c)$ (analogno se pokazuje tvrdnja u slučaju $a<f'(c)$). Uočimo da "raspisivanjem" formule $|f(x)-g(x)|<|f(x)-h(x)|$ dobivamo
+$$\left\lvert f(x)-f(c)-f'(c)(x-c)\right\rvert\leq \left\lvert f(x)-f(c)-a(x-c)\right\rvert,$$
+pa dijeljenjem obje strane s $\lvert x-c\rvert$ dobivamo
+\begin{gather}
+\label{derivativecomparison}
+\left\lvert \dfrac{f(x)-f(c)}{x-c}-f'(c)\right\rvert<\left\lvert \dfrac{f(x)-f(c)}{x-c}-a\right\rvert,
+\end{gather}
+što je ekvivalentno uvjetu $|f(x)-g(x)|<|f(x)-h(x)|$.
+Kako je $f$ diferencijabilna u $c$, postoji $\delta_h>0$ takav da za sve $x\in I$ takve da je $0<\lvert x-c\rvert<\delta_h$ vrijedi $$\left\lvert \dfrac{f(x)-f(c)}{x-c}-f'(c)\right\rvert<\dfrac{a-f'(c)}{2},$$
+pa je
+$$a-\dfrac{f(x)-f(c)}{x-c}>a-f'(c)-\dfrac{a-f'(c)}{2}=\dfrac{a-f'(c)}{2},$$
+dakle vrijedi (\ref{derivativecomparison}), što smo i htjeli dokazati. DODATI GRAF!!!
+\end{proof}
 \section{Osnovne operacije s diferencijabilnim funkcijama}
 \begin{remark}[Osnovne operacije s diferencijabilnim funkcijama]
 Neka je \(I\subseteq \mathbb{R}\) otvoreni interval, te \(f, g : I\to \mathbb{R}\) diferencijabilne u točki \(c\in I\). Tada vrijede sljedeće tvrdnje.
@@ -374,10 +406,3 @@ Po teoremu o neprekidnosti inverzne funkcije je također i \(f^{-1}\) neprekidna
 \end{cases}\]
 Zaista, ako je \(y=f(c)\), onda je \(f^{-1}(y)=c\), pa tvrdnja slijedi iz (\ref{invproof}), a ako je \(y\neq f(c)\), onda je i \(f^{-1}(y)\neq c\) (kontrapozicija dane tvrdnje glasi da iz \(f^{-1}(y)=c\) slijedi \(y=f(c)\) što očito vrijedi jer je \(f\) funkcija). Odavde slijedi tvrdnja teorema.
 \end{proof}
-U sljedećem zadatku dokazujemo da je tangenta u točki \(c\) na graf diferencijabilne funkcije od svih pravaca "najbolja" aproksimacija te funkcije blizu točke \(c\).
-\begin{exercise}
-Neka je \(I\) otvoreni interval, \(c\in I\), \(a, b\in \mathbb{R}\), te \(f : I \to \mathbb{R}\) diferencijabilna na \(I\). Neka su \(g, h : \mathbb{R}\to \mathbb{R}\) dane s \(g(x)=f'(c)(x-c)+f(c)\), \(h(x)=ax+b\)\footnote{Obratite pozornost na to da ovdje može biti \(a=0\).}. Tada postoji \(\delta_h>0\) takav da za sve \(x\in I\) vrijedi
-\[0<|x-c|<\delta_h\Rightarrow |f(x)-g(x)|<|f(x)-h(x)|.\]
-\end{exercise}
-
-% Dodati zadatak gdje se neka vrijednost aproksimira linearnom funkcijom

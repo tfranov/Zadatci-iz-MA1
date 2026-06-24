@@ -35,4 +35,4 @@
 \contentsline {section}{\numberline {6.3}Uniformno neprekidne funkcije}{187}{section.6.3}%
 \contentsline {chapter}{\numberline {7}Derivacija}{197}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Definicija derivacije}{197}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Osnovne operacije s diferencijabilnim funkcijama}{204}{section.7.2}%
+\contentsline {section}{\numberline {7.2}Osnovne operacije s diferencijabilnim funkcijama}{206}{section.7.2}%
