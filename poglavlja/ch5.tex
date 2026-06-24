@@ -1086,37 +1086,37 @@ Ispitajte konvergenciju niza \((a_n)\) i ako je konvergentan odredite mu limes, 
 \item[d)] \(a_n=\dfrac{n^2+1}{n+2\sqrt{n^4+1}}\),
 \item[e)] \(a_n=\dfrac{7+11+15+\dots+(3+4n)}{4n^2}\),
 \item[f)] \(a_n=\dfrac{2^n+3^n}{4^n+5^n}\),
-\item[g)] \(a_n=\sqrt{n+2}-\sqrt{n}\)
+\item[g)] \(a_n=\sqrt{n+2}-\sqrt{n}\).
 \end{itemize}
 \end{multicols}
 \end{exercise}
 \begin{exercise} Ispitajte konvergenciju niza \((a_n)\) i ako je konvergentan odredite mu limes, ako je:
+\begin{multicols}{2}
 \begin{itemize}
 \item[a)] \(a_n=\sqrt[n]{n2^n+1}\),
-\item[b)] \(a_n=\dfrac{1}{n^2+1}+\dfrac{1}{n^2+2}+\dots+\dfrac{1}{n^2+n}\).
-\item[c)] \(a_n=1+\dfrac{2}{(-1)^n+3^n}\)
+\item[b)] \(a_n=\dfrac{1}{n^2+1}+\dfrac{1}{n^2+2}+\dots+\dfrac{1}{n^2+n}\),
+\item[c)] \(a_n=1+\dfrac{2}{(-1)^n+3^n}\),
+\item[d)] \(a_n=\dfrac{\ln{n}}{n^2+1}\),
+\item[e)] \(a_n=\dfrac{n!}{n^n}\),
+\item[f)] \(a_n=\dfrac{\lfloor n+1\rfloor+1}{\lfloor 2n+3\rfloor}\).
 \end{itemize}
-\end{exercise}
-\begin{exercise}
-Koristeći činjenicu da je niz \(n\mapsto \left(1+\dfrac{1}{n}\right)^n\) konvergentan s limesom u \(e\), odredite sljedeće limese.
-\begin{itemize}
-\item[a)] \(\lim\limits_{n\to \infty}\left(\dfrac{n+\frac{1}{2}}{n}\right)^n\)
-\item[b)] \(\lim\limits_{n\to \infty}\left(1+\dfrac{1}{-n}\right)^{-n}\)
-\end{itemize}
+\end{multicols}
 \end{exercise}
 \begin{exercise} \textbf{}
 \begin{itemize}
-\item[a)] Odredite sve polinome \(P : \mathbb{R}\to \mathbb{R}\) takve da je
-\[\lim\limits_{n\to\infty}{\dfrac{P(n)}{n^2+2n+5}}=2025.\]
+\item[a)] Ispitajte konvergenciju niza $(a_n)$, gdje je
+$$a_n=\left(1-\dfrac{1}{2}\right)\left(1-\dfrac{1}{4}\right)\dots \left(1-\dfrac{1}{2(n-1)!}\right)\left(1-\dfrac{1}{2n!}\right).$$
 \item[b)] Neka su \((a_n)\) i \((b_n)\) dva niza takva da je \(a_n\leq b_n\), \((a_n)\) raste i \((b_n)\) pada. Dokažite da tada oba niza konvergiraju. Jesu li njihovi limesi općenito jednaki?
 \end{itemize}
 \end{exercise}
 \begin{exercise} (Ovaj zadatak je malo neobičan...)
 \begin{itemize}
-\item[a)] Koliko ima prirodnih brojeva \(n\in \mathbb{N}\) za koje vrijedi
+\item[a)] Odredite sve polinome \(P : \mathbb{R}\to \mathbb{R}\) takve da je
+\[\lim\limits_{n\to\infty}{\dfrac{P(n)}{n^2+2n+5}}=2025.\]
+\item[b)] Koliko ima prirodnih brojeva \(n\in \mathbb{N}\) za koje vrijedi
 \[\dfrac{2n}{n+1}-\dfrac{3}{2^n}-\dfrac{1}{n}-\dfrac{2}{n^4}>1?\]
 Dokažite svoje tvrdnje! (\textbf{Uputa:} Iskoristite definiciju limesa niza.)
-\item[b)] Dokažite da $x\mapsto 2^x$ nije polinom. (\textbf{Uputa:} Pretpostavite suprotno i promatrajte niz $n\mapsto \dfrac{P(n)}{2^n}$, gdje je $P$ polinom. Kako je ovo kvocijent dva polinoma, možemo li nešto zaključiti o njihovim stupnjevima?)
+\item[c)] Dokažite da $x\mapsto 2^x$ nije polinom. (\textbf{Uputa:} Pretpostavite suprotno i promatrajte niz $n\mapsto \dfrac{P(n)}{2^n}$, gdje je $P$ polinom. Kako je ovo kvocijent dva polinoma, možemo li nešto zaključiti o njihovim stupnjevima?)
 \end{itemize}
 \end{exercise}
 \begin{exercise} \((**)\)
@@ -1143,7 +1143,7 @@ Ispitajte konvergenciju niza \((a_n)\) i ako je konvergentan odredite mu limes, 
 \item[c)] \(a_1=1\), \(a_{n+1}=\dfrac{a_n+3}{2a_n}\), \(n\geq 1\). (Ovaj niz neće biti monoton -- pokušajte se snaći drukčije!)
 \end{itemize}
 \end{exercise}
-\begin{exercise}
+\begin{exercise} $(*)$
 Neka je \((a_n)\) konvergentan niz takav da je \(a_n\neq 0\) za sve \(n\in \mathbb{N}\). Konvergira li općenito niz \(\left(\dfrac{a_{2n}}{a_n}\right)\)? Za one $(a_n)$ za koje on konvergira, što sve može biti njegov limes? (\textbf{Uputa:} Iskoristite tvrdnju zadatka \ref{setoflimits}.)
 \end{exercise}
 \subsection*{Limesi složenijih nizova. Cauchyjevi nizovi}
@@ -1184,9 +1184,6 @@ $$\liminf{a_n}\liminf{b_n}\leq \liminf{a_nb_n}\leq \liminf{a_n}\limsup{b_n}.$$
 \item[b)] Dokažite da ako je $(b_n)$ konvergentan, da vrijedi
 $$\liminf{a_nb_n}=\liminf{a_n}\cdot\lim\limits_{n\to \infty}{b_n}.$$
 \end{itemize}
-\end{exercise}
-\begin{exercise}
-Neka je \((a_n)\) konvergentan niz s limesom u \(a\in \mathbb{R}\) i neka je \((b_n)\) niz takav da je \(b_{2n-1}=a_{2n-1}\) i \(b_{2n}=a_{2n}+1\), za sve \(n\in \mathbb{N}\). Odredite skup svih gomilišta niza \((b_n)\).
 \end{exercise}
 \begin{exercise}
 Neka je $(a_n)$ ograničen i $(b_n)$ niz sa svojstvom da za svaki $m\in \mathbb{N}$ postoji $n_0\in \mathbb{N}$ takav da za svaki $n\in \mathbb{N}$ takav da je $n\geq n_0$ vrijedi $b_n\in \{a_{m}, a_{m+1}, a_{m+2}, \dots\}$. Dokažite da je skup gomilišta od $(b_n)$ sadržan u skupu gomilišta od $(a_n)$.

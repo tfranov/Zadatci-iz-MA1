@@ -633,7 +633,7 @@ Ako ponovno "uvrstimo" \(\dfrac{1}{x}\) u dobiveni izraz, dobit ćemo opet izraz
 
 Neka je \(f_1 : [1, \infty\rangle\to \mathbb{R}\), \(f_1(x)=\dfrac{1}{x}\), te \(f_2 : [0, 1]\to \mathbb{R}\), \(f_2(x)=\sqrt[2026]{x}+\dfrac{x}{\sqrt{1+x}}\). Uočimo da je \(\mathcal{R}(f_1)=\langle 0, 1]\subseteq [0, 1]\), te je \(f=f_2\circ f_1\), te kako je \(f_1\) uniformno neprekidna na svojoj domeni, te \(f_2\) uniformno neprekidna na svojoj domeni, slijedi i da je \(f\) uniformno neprekidna na svojoj domeni.
 \end{proof}
-DODATI ZADATKE IZ UNIFORMNE NEPREKIDNOSTI!! DODATI SUPREMUM I INFIMUM S NEPREKIDNIM FJAMA!!
+DODATI SUPREMUM I INFIMUM S NEPREKIDNIM FJAMA!!
 \newpage
 \section*{Zadatci za vježbu}
 \subsection*{Definicija neprekidnosti funkcije}
@@ -714,7 +714,30 @@ Dokažite da je \(\mathcal{R}(\sin)=\mathcal{R}(\cos)=[-1, 1]\) i da je \(\mathc
 Prikladnom modifikacijom dokaza Heineove karakterizacije neprekidnosti dokažite prvu tvrdnju napomene \ref{Heineonesided}.
 \end{exercise}
 \subsection*{Uniformna neprekidnost}
-\begin{exercise}
-Odredite
-\[\lim\limits_{n\to \infty}\frac{\left(n+\frac{2}{n}\right)\sin\left(\frac{1}{n+\frac{2}{n}}\right)\cos\left(n+\frac{2}{n}\right)^{4}}{1+\left(n+\frac{2}{n}\right)^{2}}-\frac{\left(n+\frac{1}{n}\right)\sin\left(\frac{1}{n+\frac{1}{n}}\right)\cos\left(n+\frac{1}{n}\right)^{4}}{1+\left(n+\frac{1}{n}\right)^{2}}.\]
+\begin{exercise} Ispitajte uniformnu neprekidnost sljedećih funkcija i tvrdnju dokažite koristeći definiciju uniformne neprekidnosti (ili koristeći njezinu negaciju ako tvrdnja ne vrijedi).
+\begin{itemize}
+\item[a)] $f : \mathbb{R}\to \mathbb{R}$, $f(x)=e^x$,
+\item[b)] $f : \mathbb{R}\to \mathbb{R}$, $f(x)=\sqrt{x^2+1}$,
+\item[c)] $f : \langle 1, \infty\rangle\to \mathbb{R}$, $f(x)=\dfrac{1}{\sqrt{x}}$.
+\item[d)] $f : \mathbb{R}\to \mathbb{R}$, $f(x)=\sin{\left(x^2\right)}$
+\end{itemize}
+\end{exercise}
+\begin{exercise} Ispitajte uniformnu neprekidnost sljedećih funkcija.
+\begin{itemize}
+\item[a)] $f : \mathbb{R}\to \mathbb{R}$,
+$$f(x)=\begin{cases}
+\cos{x} & x\geq 0,\\
+3-2\cos{x}+\sin{\dfrac{x}{2}} & x<0.
+\end{cases}$$
+\item[b)] $f : \langle 0, \infty\rangle\to \mathbb{R}$, $f(x)=\dfrac{1}{x^2}+x$,
+\item[c)] $f : \mathbb{R}\to \mathbb{R}$,
+$$f(x)=\begin{cases}
+\dfrac{1}{1+x^2} & x\geq 0,\\
+\dfrac{1}{1+x^4} & x<0.
+\end{cases}$$
+(\textbf{Uputa:} Uvrstite $\dfrac{1}{x^2}$ umjesto $x$ u $\dfrac{1}{1+x^2}$.)
+\end{itemize}
+\end{exercise}
+\begin{exercise} $(*)$
+Dokažite da je funkcija $f : [1, \infty\rangle\to \mathbb{R}, f(x)=\dfrac{\sin\left(x^{2}+\dfrac{\ln{x}}{x}\right)}{2^{x}}$ uniformno neprekidna.
 \end{exercise}
