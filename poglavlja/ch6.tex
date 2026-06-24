@@ -347,9 +347,10 @@ Neka je \(x_0\in S_\epsilon\) točka takva da za sve \(y\in S_\epsilon\) vrijedi
 Dokažimo sada da funkcija ima prekid u svakoj racionalnoj točki. Zaista, ako je \(q\in \mathbb{Q}\), onda je \(f(q)\neq 0\), a kako za svaki broj \(q\) postoji niz \((a_n)\) iracionalnih brojeva koji konvergira prema \(q\) (Dokažite to!), za taj niz je \(\lim\limits_{x\to \infty}{f(a_n)}=0\neq f(q)\), čime smo dokazali tvrdnju.
 \end{proof}
 \begin{remark}[Bolzano-Weierstrassov teorem]
-Neka je \(f : [a, b]\to \mathbb{R}\) neprekidna funkcija na segmentu \([a, b]\). Tada je \(f([a, b])\) također segment.
+Neka je \(f : [a, b]\to \mathbb{R}\) neprekidna funkcija na segmentu \([a, b]\) koja nije konstanta na $[a, b]$. Tada je \(f([a, b])\) također segment.
 \end{remark}
 \begin{remark}
+\label{bwremark}
 Neka je \(f : [a, b]\to \mathbb{R}\) neprekidna funkcija na segmentu \([a, b]\). Prethodni teorem je ekvivalentan s konjunkcijom sljedeće tri tvrdnje.
 \begin{itemize}
 \item \(f\) je ograničena na \([a, b]\), tj. postoji \(M\in \mathbb{R}\) takav da je \(|f(x)|\leq M\) za sve \(x\in [a, b]\).
@@ -672,6 +673,15 @@ neprekidna.
 \end{exercise}
 \begin{exercise} \((*)\)
 Koristeći definiciju neprekidnosti funkcije, dokažite da je \(\sqrt[3]{x}\) neprekidna na svojoj domeni.
+\end{exercise}
+\begin{exercise} \((*)\)
+Dokažite Bolzano-Weierstrassov teorem (tj. napomenu \ref{bwremark}) koristeći sljedeće smjernice!
+\begin{itemize}
+\item[a)] Dokažite da je $f$ ograničena na $[a, b]$.
+\item[b)] Dokažite da $f$ postiže svoj minimum i maksimum na $[a, b]$. To možete tako da pretpostavite da je npr. $\sup{\mathcal{R}(f)}\notin \mathcal{R}(f)$, odakle slijedi da postoji niz u $\mathcal{R}(f)$ koji konvergira k $\sup{\mathcal{R}(f)}$. Pomoću ovog niza dođite do kontradikcije!
+\item[c)] Dokažite teorem o međuvrijednostima, i to na način da za proizvoljan $C\in \langle m, M\rangle$ i $x_m$, $x_M$ takve da je $f(x_m)=\min{\mathcal{R}(f)}$ i $f(x_M)=\max{\mathcal{R}(f)}$ promatrate $\sup{S}$, gdje je
+$$S=\left\{ x\in [x_m, x_M] : f(x)<C\right\}.$$
+\end{itemize}
 \end{exercise}
 \begin{exercise} \((**)\)
 Neka je \(I\subseteq \mathbb{R}\) otvoreni interval. Kažemo da je \(f : I\to \mathbb{R}\) \textbf{konveksna} na $I$ ako za sve $x, y\in I$ i $\lambda \in \left[0, 1\right]$ vrijedi
