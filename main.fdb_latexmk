@@ -1,16 +1,16 @@
 # Fdb version 4
-["makeindex main.idx"] 1782284346.75809 "main.idx" "main.ind" "main" 1782330367.2507 0
-  "main.idx" 1782330357.15592 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+["makeindex main.idx"] 1782399368.24282 "main.idx" "main.ind" "main" 1782399984.19266 0
+  "main.idx" 1782399973.76863 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["xdvipdfmx"] 1782330366.53659 "main.xdv" "main.pdf" "main" 1782330367.25387 0
-  "main.xdv" 1782330366.43484 3256640 9c6b6c1e24b280d77b6d2a7aa878ca65 "xelatex"
+["xdvipdfmx"] 1782399983.5366 "main.xdv" "main.pdf" "main" 1782399984.19585 0
+  "main.xdv" 1782399983.41954 3295340 d89a32d5c45165602412a8d830ed71de "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1782330356.22319 "/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex" "main.xdv" "main" 1782330367.25079 0
+["xelatex"] 1782399972.76816 "/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex" "main.xdv" "main" 1782399984.19275 0
   "/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex" 1779365676.68805 4997 6c703a74fc2077f161d75cd65a28efd2 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -212,18 +212,18 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1777593600 43785 66587115382950aca692b5f6e3c2fb74 ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1779968218 6668377 f4ca74631647fa8961795be332091b75 ""
   "bibliografija.tex" 1779720297.30006 2250 d9cce243ee59cf5fd6f4309810bed3f8 ""
-  "main.aux" 1782330366.43184 18120 d9d24b8e7753b004f9e73f1db832e07c "xelatex"
-  "main.ind" 1782284346.94009 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1782330366.43384 7441 28d746ca247d1aa8705b916d27541c76 "xelatex"
+  "main.aux" 1782399983.41254 18372 c0027ebbb35bde00d8b245af7fd39562 "xelatex"
+  "main.ind" 1782399368.44306 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
+  "main.out" 1782399983.41854 7441 28d746ca247d1aa8705b916d27541c76 "xelatex"
   "main.tex" 1779365676.68805 4997 6c703a74fc2077f161d75cd65a28efd2 ""
-  "main.toc" 1782330366.43484 3294 ba07a7e0c24c919fe7aa760286d6084c "xelatex"
+  "main.toc" 1782399983.41954 3294 ba07a7e0c24c919fe7aa760286d6084c "xelatex"
   "poglavlja/ch1.tex" 1782226179.74803 52819 e9386bfb2f528f8feb7f64b07dc32f75 ""
   "poglavlja/ch2.tex" 1779365676.70512 27547 0d3ac4b0533ca11a1ae074cd009124e1 ""
   "poglavlja/ch3.tex" 1781949040.77782 89970 49e857691640caf805171c30d9000e98 ""
   "poglavlja/ch4.tex" 1782042351.36519 87956 96bd62f14a57a2f9e4f1cee30cb7e91e ""
   "poglavlja/ch5.tex" 1782287535.16962 91368 66d9f5f8b30ca723953747feaa87076a ""
   "poglavlja/ch6.tex" 1782299977.1886 54734 5c695150ab72234074ff784447a10e06 ""
-  "poglavlja/ch7.tex" 1782330355.44364 32652 6eea3b1317e43978e60532536e7d918a ""
+  "poglavlja/ch7.tex" 1782399971.55975 39350 087d0d3c6c7f5179b81ad07fda4b7d40 ""
   "preamble.sty" 1779300716.79081 1802 077f70e6603e73df6dc02f5842fad4fa ""
   (generated)
   "main.aux"

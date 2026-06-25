@@ -307,8 +307,7 @@ Neka je \(I\subseteq \mathbb{R}\) otvoreni interval, \(c\in I\), \(f : I\to \mat
 \item[c)] Zadana je \(y : \left\langle -\dfrac{\pi}{4}, \dfrac{\pi}{4}\right\rangle\to \mathbb{R}\), \(y(x)=2\tg{2x}\). Vrijedi li \(y'(x)-y^2(x)=4\) za sve \(x\in \left\langle -\dfrac{\pi}{4}, \dfrac{\pi}{4}\right\rangle\)?
 \end{itemize}
 \end{exercise}
-\newpage
-\begin{proof}
+\begin{proof}[Rješenje]
 a) Prvo uočimo da je \(x^2+4x+5>0\) za sve \(x\in \mathbb{R}\), jer je vodeći koeficijent jednak \(1\) i diskriminanta jednaka \(16-20=-4<0\)\footnote{Općenito, ako su \(a, b, c\in \mathbb{R}\) takvi da je \(a>0\) i \(b^2-4ac<0\), onda je \(ax^2+bx+c>0\) za sve \(x\in \mathbb{R}\). Zaista, za sve \(x\in \mathbb{R}\) vrijedi \(ax^2+bx+c\geq \dfrac{4ac-b^2}{4a}>0\). Intuicija iza te činjenice je da je zbog \(a>0\) parabola koja je graf funkcije \(x\mapsto ax^2+bx+c\) okrenuta "prema gore" i zbog negativne diskriminante nema nultočki.}. Nadalje, neka je \(c\in \mathbb{R}\). Tada je \(x\mapsto x^2+4x+5\) diferencijabilna u \(c\), \(x\mapsto \sqrt{x}\) diferencijabilna u \(c^2+4c+5\), pa je i funkcija iz zadatka diferencijabilna u \(c\), dakle na \(\mathbb{R}\). Vrijedi
 \[\left(\sqrt{x^2+4x+5}\right)'=\dfrac{1}{2\sqrt{x^2+4x+5}}\cdot\left(2x+4\right).\]
 
@@ -406,3 +405,81 @@ Po teoremu o neprekidnosti inverzne funkcije je također i \(f^{-1}\) neprekidna
 \end{cases}\]
 Zaista, ako je \(y=f(c)\), onda je \(f^{-1}(y)=c\), pa tvrdnja slijedi iz (\ref{invproof}), a ako je \(y\neq f(c)\), onda je i \(f^{-1}(y)\neq c\) (kontrapozicija dane tvrdnje glasi da iz \(f^{-1}(y)=c\) slijedi \(y=f(c)\) što očito vrijedi jer je \(f\) funkcija). Odavde slijedi tvrdnja teorema.
 \end{proof}
+\begin{remark}[Logaritamsko deriviranje]
+Neka je $I\subseteq \mathbb{R}$ otvoreni interval, te neka su $f : I\to \langle 0, \infty\rangle$, $g : I\to \mathbb{R}$ diferencijabilne. Tada za funkciju $h : I\to \mathbb{R}$, $h(x)=\left(f(x)\right)^{g(x)}$ vrijedi
+\begin{gather}
+\label{logdiffexpression}
+\ln{h(x)}=g(x)\ln{f(x)},
+\end{gather}
+odakle se vidi da je $\ln{h}$ očito diferencijabilna, pa je i $e^{\ln{h}}=h$ diferencijabilna. Deriviranjem obje strane u (\ref{logdiffexpression}) dobivamo
+$$\dfrac{1}{h(x)}\cdot h'(x)=g'(x)\cdot \ln{f(x)}+g(x)\cdot \dfrac{1}{f(x)}\cdot f'(x),$$
+tj.
+$$h'(x)=h(x)\left(g'(x)\cdot \ln{f(x)}+g(x)\cdot \dfrac{1}{f(x)}\cdot f'(x)\right).$$
+\end{remark}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Odredite derivaciju funkcije $x\mapsto (x^2+1)^{x+1}$.
+\item[b)] Odredite derivaciju funkcije $x\mapsto (4x^2+1)(x^4+2x^2)(\sin^2{x}+1)e^x$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Prvo uočimo da logaritamsko deriviranje ovdje ima smisla, jer je $x^2+1>0$ za sve $x\in \mathbb{R}$. Vrijedi
+\begin{gather*}
+\ln{(x^2+1)^{x+1}}=(x+1)\ln{\left( x^2+1\right)},\\
+\dfrac{1}{(x^2+1)^{x+1}}\cdot \left((x^2+1)^{x+1}\right)'=1\cdot \ln{\left(x^2+1\right)}+(x+1)\cdot \dfrac{1}{x^2+1}\cdot 2x,\\
+\left((x^2+1)^{x+1}\right)'=(x^2+1)^{x+1}\left(1\cdot \ln{\left(x^2+1\right)}+(x+1)\cdot \dfrac{1}{x^2+1}\cdot 2x\right).
+\end{gather*}
+
+b) Uvedimo oznaku $f(x):=(4x^2+1)(x^4+2x^2)(\sin^2{x}+1)e^x$. Očito je $f(x)>0$ za sve $x\in \mathbb{R}$. Imamo
+\begin{gather*}
+\ln{f(x)}=\ln{\left(4x^2+1\right)}+\ln{\left(x^4+2x^2\right)}+\ln{\left(\sin^2{x}+1\right)}+\ln{e^x},\\
+\dfrac{1}{f(x)}\cdot f'(x)=\dfrac{8x}{4x^2+1}+\dfrac{4x^3+4x}{x^4+2x^2}+\dfrac{\sin{2x}}{\sin^2{x}+1}+1,\\
+f'(x)=8x(x^4+2x^2)(\sin^2{x}+1)e^x+(4x^2+1)(4x^3+4x)(\sin^2{x}+1)e^x\\
++(4x^2+1)(x^4+2x^2)\sin{2x}e^x+(4x^2+1)(x^4+2x^2)(\sin^2{x}+1)e^x. \qedhere
+\end{gather*}
+\end{proof}
+U nastavku ćemo obraditi nekoliko zadataka vezanih uz deriviranje funkcija zadanih implicitno i parametarski. Pod "funkcijama zadanima implicitno" podrazumijevamo funkcije $y : I\to \mathbb{R}$, gdje je $I\subseteq \mathbb{R}$ otvoren interval, takve da je $g\left(x, y(x)\right)=c$ za sve $x\in J$, gdje je $J\subseteq I$ otvoren interval i $g : J\times I\to \mathbb{R}$. Odrediti derivaciju funkcije zadane implicitno znači izraziti $y'(x)$ u ovisnosti o $x$ i $y(x)$.
+
+Nadalje, kako bi bili dosljedni s notacijom u literaturi, u ovim zadatcima ćemo na mnogim mjestima umjesto $y(x)$ ćemo pisati $y$.
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka je $y : \langle 0, \infty\rangle\to \mathbb{R}$ diferencijabilna funkcija sa svojstvima da je $x+y^2=1$ i $y(x)>0$ za sve $x\in \langle 0, 1\rangle$. Derivirajte $y$ kao funkciju zadanu implicitno i odredite $y'\left(\dfrac{1}{2}\right)$. Provjerite dobiveni rezultat pomoću "običnog" deriviranja!
+\item[b)] Derivirajte implicitno zadanu funkciju $y : \langle 2,\infty\rangle\to \mathbb{R}$ zadanu s $y^2=\dfrac{\sin{y}}{x}+\dfrac{1}{y}$.
+\item[c)] Neka je $y : \langle -1, 1\rangle\to \mathbb{R}$ diferencijabilna funkcija sa svojstvom da je $xy^2+x^2=3y^2$ za sve $x\in \langle -1, 1\rangle$ i $y(-2)>0$ ($y$ je jednoznačno određena ovim svojstvima, v. napomenu \ref{uniquenessofimplicitfunction}). Odredite $y'(0)$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Deriviranjem obje strane dobivamo $1+2y\cdot y'=0$, tj. $y'=-\dfrac{1}{2y}$. Uočimo da je $\dfrac{1}{2}+y^2\left(\dfrac{1}{2}\right)=1$ skupa s $y\left(\dfrac{1}{2}\right)>0$ povlači $y\left(\dfrac{1}{2}\right)=\dfrac{1}{\sqrt{2}}$, odakle imamo $y'\left(\dfrac{1}{2}\right)=-\dfrac{1}{2\cdot \dfrac{1}{\sqrt{2}}}=-\dfrac{\sqrt{2}}{2}$.
+
+Provjerimo dobiveni rezultat! Naime, sređivanjem i korištenjem da je $y(x)>0$ za sve $x\in \langle 0, 1\rangle$ dobivamo da je $y(x)=\sqrt{1-x}$. Vrijedi $y'=-\dfrac{1}{2\sqrt{1-x}}$, tj. $$y'\left(\dfrac{1}{2}\right)=-\dfrac{1}{\frac{2}{\sqrt{2}}}=-\dfrac{\sqrt{2}}{2}.$$
+
+b) Uočimo da ovdje ne možemo na jednostavan način izraziti $y$ u ovisnosti o $x$, pa se deriviranje funkcija zadanih implicitno pokazuje korisnim u ovakvim slučajevima. Vrijedi
+\begin{gather*}
+2y\cdot y'=\dfrac{\cos{y}\cdot y'\cdot x-\sin{y}}{x^2}-\dfrac{y'}{y^2}\Leftrightarrow 2y\cdot y'+\dfrac{y'}{y^2}-y'\dfrac{\cos{y}}{x}=-\dfrac{\sin{y}}{x^2}\\
+\Leftrightarrow y'\left(2y+\dfrac{1}{y^2}-\dfrac{\cos{y}}{x}\right)=-\dfrac{\sin{y}}{x^2}\Leftrightarrow y'=\dfrac{-\dfrac{\sin{y}}{x^2}}{2y+\dfrac{1}{y^2}-\dfrac{\cos{y}}{x}}.
+\end{gather*}
+
+c) Deriviranjem funkcije zadane implicitno dobivamo
+\begin{gather}
+\label{implicitdiff1}
+y^2+x\cdot 2y\cdot y'+2x=6y\cdot y',
+\end{gather}
+te uvrštavanjem $x=0$ u početni uvjet dobivamo $3y^2=0$, tj. $y=0$, odakle uvrštavanjem toga u (\ref{implicitdiff1}) dobivamo $0=0$. Odavde slijedi da ovom metodom ne dobivamo nikakav zaključak o $y'(0)$. Uočimo da vrijedi $3y^2-xy^2=x^2$, tj. $y^2=\dfrac{x^2}{3-x}$, pa je (jedina) funkcija koja zadovoljava uvjete zadatka dana s $y(x)=\dfrac{-x}{\sqrt{3-x}}$, jer je ona diferencijabilna i vrijedi $y(-2)>0$. Imamo
+$$\left(\dfrac{-x}{\sqrt{3-x}}\right)'=\dfrac{-\sqrt{3-x}-x\cdot \dfrac{1}{\sqrt{3-x}}}{3-x},$$
+odakle dobivamo da je $y'(0)=-\dfrac{\sqrt{3}}{3}$.
+\end{proof}
+\begin{remark}
+\label{uniquenessofimplicitfunction}
+Dokažimo da je funkcija zadana implicitno iz c) dijela prethodnog zadatka jedinstvena. Kako vrijedi $y^2=\dfrac{x^2}{3-x}$, to za $x\in \langle -1, 1\rangle\setminus\{0\}$ vrijedi $y(x)\neq 0$. Kad bi postojao $x_0\in \langle -1, 0\rangle$ takav da je $y(x_0)<0$, zbog neprekidnosti funkcije $y$ bi postojao $x_1\in \langle -1, 0\rangle$ takav da je $y(x_1)=0$, što je nemoguće, pa je $y(x)>0$ za sve $x\in \langle -1, 0\rangle$. Analogno se pokaže da ako je npr. $y(x')>0$ za neki $x'\in \langle 0, 1\rangle$, onda je $y(x)>0$ za sve $x\in \langle 0, 1\rangle$, što ima za posljedicu da ili za sve $x\in \langle 0, 1\rangle$ vrijedi $y(x)>0$, ili za sve te $x$ vrijedi $y(x)<0$.
+
+Pretpostavimo da je $y(x)>0$ za sve $x\in \langle 0, 1\rangle$. Slijedi da je
+$$y(x)=\begin{cases}
+\dfrac{-x}{\sqrt{3-x}}, & x<0,\\
+\dfrac{x}{\sqrt{3-x}}, & x\geq 0.
+\end{cases}$$
+Međutim, ovako definirana $y$ nije diferencijabilna u $0$, jer je $f_l'(0)=-\dfrac{\sqrt{3}}{3}$ i $f_d'(0)=\dfrac{\sqrt{3}}{3}$. Stoga je nužno $y(x)<0$ za sve $x\in \langle 0, 1\rangle$, što onda povlači da je $y(x)=\dfrac{-x}{\sqrt{3-x}}$ za sve $x\in \langle -1, 1\rangle$.
+\end{remark}
+ZADATCI U PLANU ZA STAVIT KASNIJE U ZADATKE ZA VJEŽBU:
+\begin{exercise}
+Neka je $I\subseteq \mathbb{R}$, te $f_1, f_2, \dots, f_n$ diferencijabilne u točki $c\in I$. Naslutite formulu za izračunavanje $\left(f_1f_2\dots f_n\right)'$ i dokažite je.
+\end{exercise}
