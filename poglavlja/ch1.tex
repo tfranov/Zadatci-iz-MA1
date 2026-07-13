@@ -53,6 +53,47 @@ c) Ako je \(A\) sud "\(369\) je djeljiv s \(3\).", a \(B\) sud "Suma znamenaka b
 
 d) Ako je \(A\) sud "Vrijedi \(1+1=2\).", \(B\) sud "Vrijedi \(1+2=3\)", a \(C\) sud "Zemlja je okrugla." Tada je sud iz zadatka \(A\Rightarrow(B\Rightarrow C)\).
 \end{proof}
+\begin{remark}
+\label{taut}
+Neka su \(A, B, C\) sudovi. Bez obzira na to je li bilo koji od sudova \(A, B, C\) istinit ili lažan, istiniti su sljedeći sudovi.
+\begin{center}
+\begin{tabular}{c c c}
+\label{tabl}
+\(A\wedge \neg A \Leftrightarrow 0\) & \(A\wedge 0\Leftrightarrow 0\) & \((A\vee B)\vee C\Leftrightarrow A\vee (B\vee C)\)\\
+\(A\vee \neg A \Leftrightarrow 1\) & \(A\vee B\Leftrightarrow B\vee A\) & \((A\wedge B)\wedge C\Leftrightarrow A\wedge (B\wedge C)\)\\
+\(A\wedge B \Leftrightarrow B\wedge A\) & \(\neg \neg A\Leftrightarrow A\) & \(A\wedge(B\vee C)\Leftrightarrow (A\wedge B)\vee (A\wedge C)\)\\
+\(\neg(A\wedge B)\Leftrightarrow \neg A \vee \neg B\) & \(\neg (A\vee B)\Leftrightarrow \neg A\wedge \neg B\) & \(A\vee (B\wedge C)\Leftrightarrow (A\vee B)\wedge (A\vee C)\)\\
+\(A\wedge A\Leftrightarrow A\) & \(A\Rightarrow A\) & \(A\Rightarrow B \Leftrightarrow \neg B\Rightarrow \neg A\)\\
+\(\neg (A\Rightarrow B)\Leftrightarrow A\wedge \neg B\) & \(A\vee 1\Leftrightarrow A\) & \(A\wedge 1\Leftrightarrow 1\)
+\end{tabular}
+\end{center}
+Navedeni sudovi su primjeri \textit{tautologija}, sudova koji su istiniti bez obzira na istinitost sudova koji se u njima javljaju. Pritom je u gornjim pravilima \(1\) proizvoljna tautologija, a \(0\) proizvoljna \textit{antitautologija} (tj. sud koji je uvijek lažan bez obzira na istinitost propozicionalnih varijabli. Ove ekvivalencije se često pojavljuju u matematici, a i koristit ćemo neke od njih u narednim zadatcima.
+\end{remark}
+\begin{exercise} Odredite negacije sljedećih sudova.
+\begin{itemize}
+\item[a)] Ako je $2$ prirodan broj, onda je nebo plavo i ruža je cvijet.
+\item[b)] Ili ruža nije cvijet, ili je $2$ prirodan broj (ili oboje).
+\item[c)] $2$ je prirodan broj ako i samo ako je ruža cvijet. 
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+Označimo s $A$ sud "$2$ je prirodan broj.", s $B$ sud "Nebo je plavo." i $C$ sud "Ruža je cvijet."
+
+a) Sud u terminima propozicionalnih varijabli i veznika glasi $A\Rightarrow (B\wedge C)$, a negacija je
+$$\neg\left( A\Rightarrow (B\wedge C)\right)\Leftrightarrow A\wedge \neg (B\wedge C)\Leftrightarrow A\wedge (\neg B\vee \neg C).$$
+U prirodnom jeziku, "$2$ je prirodan broj i vrijedi da ili nebo nije plavo, ili ruža nije cvijet (ili oboje).".
+
+b) Sud u terminima propozicionalnih varijabli i veznika glasi $\neg C\wedge A$, a negacija je
+$$\neg\left(\neg C\wedge A\right)\Leftrightarrow \neg\neg C\vee \neg A\Leftrightarrow C\vee \neg A.$$
+U prirodnom jeziku, "Ili je ruža cvijet, ili $2$ nije prirodan broj (ili oboje).".
+
+c) Sud u terminima propozicionalnih varijabli i veznika glasi $A\Leftrightarrow C$, a negacija je
+$$\neg\left(A\Leftrightarrow C\right)\Leftrightarrow \neg\left(A\Rightarrow C \wedge C\Rightarrow A\right) \Leftrightarrow (A\wedge \neg C)\vee (C\wedge \neg A).$$
+U prirodnom jeziku, "Ili je $2$ prirodan broj i ruža nije cvijet, ili je ruža cvijet i $2$ nije prirodan broj (ili oboje).".
+\end{proof}
+\begin{remark}
+Ako je $A$ sud, onda je njegova negacija zapravo $\neg A$, dakle mi smo u prethodnom zadatku zapravo promatrali neke toj negaciji ekvivalentne tvrdnje, što se često pokazuje korisnim, stoga ćemo to raditi i u narednim zadatcima.
+\end{remark}
 Pokazuje se da je korištenje samo propozicionalnih varijabli i veznika previše restriktivno za velik dio matematike, pa se u nastavku bavimo sudovima koji uključuju \textit{svojstva} (predikate) nekih objekata \(x_1, x_2,\dots x_n\), označimo ih sa \(p(x_1, \dots, x_n)\). I tu za svaki izbor objekata \(x_i\) (gdje je \(i\) prirodan broj takav da je \(1\leq i\leq n\)) koji dolazi u obzir moramo biti u stanju odrediti je li \(p(x_1, \dots, x_n)\) istinit ili lažan. 
 \begin{exmp}
 Neka je \(P(x, y)\) sud "\(x\) je veći od \(y\).". Tada je \(P(1, 2)\) lažan, a \(P(2, 1)\) istinit. S druge strane, \(P(x, 1)\) nećemo smatrati sudom, jer ne možemo na nedvosmislen način odrediti je li on istinit, njegova istinitost ovisi o vrijednosti broja \(x\). 
@@ -78,7 +119,7 @@ c) Neka je \(P(x, y)\) sud "Za prirodne brojeve \(x\) i \(y\) vrijedi \(x+y=y+x\
 d) Neka je \(P(x, y)\) sud "Za prirodne brojeve \(x\) i \(y\) vrijedi \(x<y\).". Tada je traženi sud \(\forall{x}\,\exists{y}\, P(x, y)\).
 \end{proof}
 \begin{exercise}
-Odredite negaciju sljedećih sudova (i neke njoj ekvivalentne sudove).
+Odredite negacije sljedećih sudova.
 \begin{itemize}
 \item[a)] Svi trokuti su jednakostranični.
 \item[b)] Postoji prirodan broj koji je istovremeno paran i neparan.
@@ -86,14 +127,10 @@ Odredite negaciju sljedećih sudova (i neke njoj ekvivalentne sudove).
 \end{itemize}
 \end{exercise}
 \begin{proof}
-a) Prvo zapišimo dani sud u jeziku predikata, kvantifikatora i veznika. Ako je \(P(x)\) sud "Trokut \(x\) je jednakostraničan.", tada početni sud glasi \(\forall{x}\, P(x)\). Pripadna negacija je \(\neg \forall{x}\, P(x)\), koja vrijedi ako i samo ako vrijedi 
-\begin{align}
-\label{quantifier}
-\exists{x}\,\neg P(x).
-\end{align}
-Dakle, u prirodnom jeziku negacija je "Nije istina da su svi trokuti jednakostranični.", te možemo promatrati njoj ekvivalentan sud (\ref{quantifier}), "Postoji trokut koji nije jednakostraničan.". (Pokazuje se da je promatranje ovakvih sudova ekvivalentnih negaciji vrlo bitno u dokazivanju tvrdnji i u matematici općenito, što ćete ubrzo vidjeti i na konkretnim primjerima.)
+a) Prvo zapišimo dani sud u jeziku predikata, kvantifikatora i veznika. Ako je \(P(x)\) sud "Trokut \(x\) je jednakostraničan.", tada početni sud glasi \(\forall{x}\, P(x)\). Pripadna negacija je \(\neg \forall{x}\, P(x)\), koja vrijedi ako i samo ako vrijedi $\exists{x}\,\neg P(x)$.
+Dakle, u prirodnom jeziku negacija je "Postoji trokut koji nije jednakostraničan.".
 
-b) Neka je \(P_1(x)\) sud "Prirodan broj \(x\) je paran.", te \(P_2(x)\) sud "Prirodan broj \(x\) je neparan.". Početni sud je \(\exists{x}\, \left(P_1(x)\wedge P_2(x)\right)\), njegova negacija je \(\neg\exists{x}\, \left(P_1(x)\wedge P_2(x)\right)\), a jedna njoj ekvivalentna tvrdnja \(\forall{x}\, \left(\neg P_1(x)\vee \neg P_2(x)\right)\). Dakle, u prirodnom jeziku, pripadna negacija je "Ne postoji prirodan broj koji je istovremeno paran i neparan.", a pripadna ekvivalentna tvrdnja je 
+b) Neka je \(P_1(x)\) sud "Prirodan broj \(x\) je paran.", te \(P_2(x)\) sud "Prirodan broj \(x\) je neparan.". Početni sud je \(\exists{x}\, \left(P_1(x)\wedge P_2(x)\right)\), njegova negacija je \(\forall{x}\, \left(\neg P_1(x)\vee \neg P_2(x)\right)\). Dakle, u prirodnom jeziku, pripadna negacija je
 \begin{align}
 \label{centeredtext}
 \text{"Svaki prirodan broj ili nije paran, ili nije neparan (ili oboje).".}
@@ -122,7 +159,7 @@ Skup koji nema niti jedan element zovemo \textbf{prazan skup} i označavamo sa \
 
 Elemente skupova često nabrajamo u vitičastim zagradama, npr. skup koji sadrži brojeve \(1, 2, 3\) i niti jedan drugi element označavamo s \(\{1, 2, 3\}\). Često je nabrajanje svih elemenata nepraktično pa tada koristimo tri točkice \((\,\dots)\), npr skup svih elemenata od \(1\) do \(100\) označavamo s \(\{1, 2,\dots, 100\}\).
 
-Važno je naglasiti i da kod skupova često koristimo \((\forall x\in S)\, P(x)\), odnosno \((\exists x\in S)\, P(x)\), što znači "Za svaki \(x\) iz \(S\) vrijed \(P(x)\)", odnosno "Postoji \(x\) iz \(S\) za kojeg vrijedi \(P(x)\)". Nadalje, \((\forall x\in S)\, P(x)\) se u logici promatra kao pokrata za sud \(\forall x\; \left(x\in S\Rightarrow P(x)\right)\), a \((\exists x\in S)\, P(x)\) kao pokrata za sud \(\exists x\; \left(x\in S\wedge P(x)\right)\). Nadalje, koristit ćemo i notaciju \(\{x\in S : P(x)\}\) ("skup svih elemenata \(x\) iz \(S\) za koje vrijedi \(P(x)\)"), i to se promatra kao pokrata za skup \(\{x : x\in S\wedge P(x)\}\)
+Važno je naglasiti i da kod skupova često koristimo \((\forall x\in S)\, P(x)\), odnosno \((\exists x\in S)\, P(x)\), što znači "Za svaki \(x\) iz \(S\) vrijedi \(P(x)\)", odnosno "Postoji \(x\) iz \(S\) za kojeg vrijedi \(P(x)\)". Nadalje, \((\forall x\in S)\, P(x)\) se u logici promatra kao pokrata za sud \(\forall x\; \left(x\in S\Rightarrow P(x)\right)\), a \((\exists x\in S)\, P(x)\) kao pokrata za sud \(\exists x\; \left(x\in S\wedge P(x)\right)\). Nadalje, koristit ćemo i notaciju \(\{x\in S : P(x)\}\) ("skup svih elemenata \(x\) iz \(S\) za koje vrijedi \(P(x)\)"), i to se promatra kao pokrata za skup \(\{x : x\in S\wedge P(x)\}\)
 
 \begin{definition} Neka je \(U\) univerzalni skup.
 \label{aboutsets}
