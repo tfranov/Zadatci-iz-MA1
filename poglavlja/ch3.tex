@@ -19,8 +19,8 @@ Svojstva uređaja \(\leq\) i \(<\) na \(\mathbb{R}\):
 
 Svojstva iz napomene \ref{ordrem} imaju teorijsku važnost (Zapravo, ova svojstva dio su aksioma realnih brojeva vezanih uz uređaj), ali ovdje ih navodimo da bi se lakše vidjelo kako primjenjujemo ova vrlo jednostavna pravila u rješavanju zadataka.
 
-\section{Uvod u nejednakosti}
-U ovoj točki pokazujemo kako dokazivati razne nejednakosti, što će biti korisno u narednim zadatcima, ali i na drugim mjestima u analizi.
+\section{Minimum i maksimum. Arhimedov aksiom}
+U ovoj točki postupno uvodimo pojmove i rezultate koji su neophodni za daljnje razumijevanje sadržaja koji slijede. U nastavku navodimo nekoliko zadataka koji uključuju dokazivanje elementarnih nejednakosti, jer se time često koristimo u narednim zadatcima.
 \begin{exercise}
 \label{25}
 Neka su \(x, y\in \mathbb{R}\) proizvoljni. Dokažite da vrijedi
@@ -61,59 +61,6 @@ x^2-2x\sqrt{y}+y^2>x^2-2xy+y^2=(x-y)^2\geq 0.\qedhere
 \popQED
 \]
 \end{proof*}
-\begin{exercise}
-Neka su \(a, b\in \mathbb{R}\) takvi da je \(a+b\geq 1\). Dokažite da je \(a^4+b^4\geq \dfrac{1}{8}\).
-\end{exercise}
-\begin{proof}[Rješenje]
-Uzmimo proizvoljne \(a, b\in \mathbb{R}\) takve da je \(a+b\geq 1\). Kvadriranjem jednakosti dobivamo \(a^2+2ab+b^2\geq 1\), no kako je \((a-b)^2\geq 0\) imamo i \(a^2-2ab+b^2\geq 0\). Zbrajanjem te dvije nejednakosti dobivamo \(2a^2+2b^2\geq 1\), odnosno \[a^2+b^2\geq \dfrac{1}{2}.\] Sad kvadriranjem dobivamo \[a^4+2a^2b^2+b^4\geq \dfrac{1}{4}.\] Sada iz \(a^4-2a^2b^2+b^4=(a^2-b^2)^2\geq 0\) zbrajanjem nejednakosti dobivamo \[2a^4+2b^4\geq \dfrac{1}{4},\] odnosno \(a^4+b^4\geq \dfrac{1}{8}\), što smo i tvrdili.
-\end{proof}
-\begin{exercise}[Županijsko natjecanje, 4. razred, A varijanta, 2021.]
-Neka su \(x, y, z\in \mathbb{R}\setminus\{0\}\) realni brojevi takvi da je \(xy+zy+xz=1\), te neka je
-\[S=\dfrac{x^2}{1+x^2}+\dfrac{y^2}{1+y^2}+\dfrac{z^2}{1+z^2}.\]
-Dokažite da vrijedi \(S<1\) ako i samo ako su brojevi \(x, y, z\) istog predznaka.
-\end{exercise}
-\begin{proof}[Rješenje]
-Za početak ćemo pojednostaviti izraz \(S\) kako bi bilo manje "raspisivanja". Vrijedi
-\[S=\dfrac{x^2+1-1}{1+x^2}+\dfrac{y^2+1-1}{1+y^2}+\dfrac{z^2+1-1}{1+z^2}=3-\dfrac{1}{1+x^2}-\dfrac{1}{1+y^2}-\dfrac{1}{1+z^2},\]
-pa očito vrijedi \(S<1\) ako i samo ako vrijedi
-\[\dfrac{1}{1+x^2}+\dfrac{1}{1+y^2}+\dfrac{1}{1+z^2}=\dfrac{3+2x^2+2y^2+2z^2+x^2y^2+y^2z^2+x^2z^2}{(1+x^2)(1+y^2)(1+z^2)}>2,\]
-pa, kako je nazivnik pozitivan, množenjem s nazivnikom dobivamo da je prethodna nejednakost ekvivalentna s
-\[3+2x^2+2y^2+2z^2+x^2y^2+y^2z^2+x^2z^2>2+2x^2+2y^2+2z^2+2x^2y^2+2y^2z^2+2x^2z^2+2x^2y^2z^2,\]
-što je ekvivalentno nejednakosti
-\begin{gather}
-\label{3.1}
-x^2y^2+y^2z^2+x^2z^2+2x^2y^2z^2<1.
-\end{gather}
-S druge strane, iz početnog uvjeta \(xy+zy+xz=1\) kvadriranjem dobivamo uvjet
-\begin{gather}
-\label{3.2}
-x^2y^2+z^2y^2+x^2z^2+2xy^2z+2x^2yz+2xyz^2=1
-\end{gather}
-Sada uvrštavanjem (\ref{3.2}) u (\ref{3.1}) umjesto \(1\) i poništavanjem dobivamo
-\begin{align*}
-x^2yz+xy^2z+xyz^2-x^2y^2z^2&>0 \Leftrightarrow\\
-xyz(x+y+z-xyz)&>0.
-\end{align*}
-Sada iz početnog uvjeta \(xy+zy+xz=1\) imamo 
-\begin{align*}
-x+y+z-xyz&=x(1-yz)+y+z=x(xy+xz)+y+z\\
-&=x^2(y+z)+y+z=(x^2+1)(y+z).
-\end{align*}
-Iz svega zaključujemo da je tvrdnja \(S<1\) ekvivalentna tvrdnji \(xyz(x^2+1)(y+z)>0\), odnosno tvrdnji 
-\begin{align}
-\label{27}
-xyz(y+z)>0,
-\end{align}
-budući da je \(x^2+1>0\) za sve \(x\in \mathbb{R}\). Sada vidimo da ako su \(x, y, z\) svi istog predznaka, (\ref{27}) vrijedi. Zaista, ako su \(x, y, z>0\), onda je \(xyz>0\) i \(y+z>0\), pa (\ref{27}) vrijedi, a ako su \(x, y, z<0\), onda je \(xyz<0\) i \(y+z<0\), pa (\ref{27}) i u ovom slučaju vrijedi. Time je prva implikacija tvrdnje zadatka dokazana. 
-
-S druge strane, tvrdimo da ako je \(S<1\), onda su svi brojevi \(x, y, z\) istog predznaka. Da bismo to vidjeli, dokažimo kontrapoziciju -- Za sve \(x, y, z\) iz uvjeta zadatka vrijedi: Ako brojevi \(x, y, z\) nisu svi istog predznaka, onda je \(S\geq 1\). Možemo bez smanjenja općenitosti pretpostaviti da je \(x\leq y\leq z\), jer je izraz simetričan u odnosu na te tri varijable, odnosno zamjenom uloga tih varijabli izraz se neće promijeniti. Imamo dva slučaja:
-\begin{itemize}
-\item \(x<0\), \(y>0\), \(z>0\),
-\item \(x<0\), \(y<0\), \(z>0\).
-\end{itemize}
-U prvom slučaju imamo \(xyz<0\) i \(y+z>0\), pa je \(xyz(y+z)<0\), pa vrijedi \(S\geq 1\). Da bismo pokazali drugi slučaj, primijetimo i da je tvrdnja \(S<1\) ekvivalentna s \(xyz(x+y)>0\) -- ovo se dokazuje potpuno analogno kao i uvjet (\ref{27}). Sada je \(xyz>0\) i \(x+y<0\), pa analogno dobivamo da vrijedi \(S\geq 1\).
-\end{proof}
-\section{Minimum i maksimum. Arhimedov aksiom}
 Sigurno ste se prije u obrazovanju susreli s pojmovima otvorenih, zatvorenih, poluotvorenih i poluzatvorenih intervala, za koje sad dajemo preciznu definiciju.
 \begin{definition}
 Neka su zadani \(a, b\in \mathbb{R}\), \(a<b\). Definiramo sljedeće skupove:
@@ -131,12 +78,6 @@ Neka su zadani \(a, b\in \mathbb{R}\), \(a<b\). Definiramo sljedeće skupove:
 \end{multicols}
 Skupovi \(\langle a,b \rangle\), \(\langle a,\infty \rangle\), \(\langle -\infty,b \rangle\) su \textbf{otvoreni intervali}, skup \([a, b]\) je \textbf{zatvoreni interval}, a skupovi \([a, b\rangle\), \(\langle a, b]\), \(\langle -\infty, b]\), \([a, \infty\rangle\) su \textbf{poluotvoreni intervali}.
 \end{definition}
-\begin{exercise}
-Dokažite da je \([0, 1\rangle \subseteq \langle -1, 2\rangle\).
-\end{exercise}
-\begin{proof}[Rješenje]
-Neka je \(x\in [0, 1\rangle\) proizvoljan. Po definiciji vrijedi \(0\leq x<1\). No tada vrijedi i \(-1<x<2\), odnosno \(x\in \langle -1, 2\rangle\).
-\end{proof}
 \begin{definition}
 \label{minimax}
 Kažemo da je \(a\in \mathbb{R}\) \textbf{gornja međa} skupa \(S\subseteq{\mathbb{R}}\) ako za svaki \(x\in S\) vrijedi \(x\leq a\), odnosno \textbf{donja međa} skupa \(S\) ako za svaki \(x\in S\) vrijedi \(a\leq x\). Ako je pritom \(a\in S\), onda je \(a\) \textbf{maksimum} (ako je on gornja međa), odnosno \textbf{minimum} (ako je on donja međa) skupa \(S\). Maksimum skupa \(S\) označavamo sa \(\max{S}\), a minimum s \(\min{S}\). Ako skup ima gornju (donju među), onda kažemo da je odozgo (odozdo) ograničen/omeđen. Ako ima obje, onda samo kažemo da je ograničen/omeđen.
@@ -144,9 +85,23 @@ Kažemo da je \(a\in \mathbb{R}\) \textbf{gornja međa} skupa \(S\subseteq{\math
 
 \begin{exmp}
 Skup \(T=\{1, 2, 3, 4, 5.5, 8\}\) je odozgo ograničen, jer je \(8\) jedna njegova gornja međa. Uočite da su njegove gornje međe npr. \(9\), \(12\) te \(2000\) (Općenito, svi brojevi iz skupa \([8,\infty\rangle\)). S druge strane, skup \(\mathbb{N}\) nije odozgo ograničen. 
-
-Analogno imamo da ako skup sadrži neku svoju donju među, onda je ona najveća od svih donjih međa.
 \end{exmp}
+\begin{exercise}
+Neka je \(S=\{x^3-x : x\geq 1\}\). Odredite \(\min{S}\). Postoji li \(\max{S}\)?
+\end{exercise}
+\begin{proof}[Rješenje]
+Uvrštavanjem raznih brojeva možemo naslutiti da je \(\min{S}=0\). Dokažimo to! Očito je \(0\in S\). Dokažimo da je \(x^3-x\geq 0\) za sve \(x\geq 1\). Zaista, taj uvjet je ekvivalentan sa 
+\[x(x^2-1)\geq 0, \;\; \forall x\geq 1,\]
+što je ekvivalentno tvrdnji da je \(x^2-1\geq 0\) za sve \(x\geq 1\), što očito vrijedi. Prema tome tvrdnja vrijedi po definiciji minimuma.
+
+Tvrdimo da $S$ nema maksimum. Zaista, pretpostavimo da on ima maksimum, tj. da postoji $x_0\geq 1$ takav da je $x_0^3-x_0\geq y$, za sve $y\in S$. Tada je
+$$(x_0+1)^3-(x_0+1)=x_0^3+3x_0^2+2x_0> x_0^3-x_0,$$
+pa dobivamo kontradikciju s činjenicom da je $(x_0+1)^3-(x_0+1)\in S$.
+\end{proof}
+\begin{remark}
+\label{usefulnotation}
+Općenito, ako je \(f(x)\) neki realan broj u ovisnosti o \(x\in A\subseteq \mathbb{R}\), oznaka \(S=\left\{f(x) : x\in A\right\}\) je, precizno govoreći, zapravo oznaka za skup \[S=\left\{y\in \mathbb{R} : \exists x\in A \;\mathrm{t.d.}\; y=f(x)\right\}.\]
+\end{remark}
 \begin{exercise} Navedite primjer...
 \begin{itemize}
 \item[a)] ...skupa \(A\subseteq \mathbb{R}\) koji je odozgo ograničen, odozdo neograničen, te nema maksimum.
@@ -159,77 +114,41 @@ a) Jedan takav skup je npr. \(A:=\langle -\infty, 3\rangle\). Zaista, očito je 
 
 b) Uzmimo npr. \(A:=\left[0,\dfrac{1}{2}\right]\cup \left[4, 5\right]\). Uvjerimo se npr. da je \(\min{A}=0\). Neka je \(x\in A\) proizvoljan. Vrijedi \(x\in A\) ako i samo ako vrijedi \(x\in \left[0,\dfrac{1}{2}\right]\) ili \(x\in [4, 5]\). Ako je \(x\in \left[0,\dfrac{1}{2}\right]\), tj. \(0\leq x\leq \dfrac{1}{2}\), onda je očito i \(x\geq 0\), isto vrijedi i ako je \(x\in [4, 5]\). Dakle, \(0\leq x\) za sve \(x\in A\). Kako je \(0\in A\), zaključujemo da je \(\min{A}=0\). Analogno se zaključuje da je \(\max{A}=5\). Očito vrijedi \(1\notin A\), jer bi inače trebalo vrijediti \(0\leq 1\leq \dfrac{1}{2}\) ili \(4\leq 1\leq 5\), a nikoja od te dvije tvrdnje nije istinita. Slično vidimo i da vrijedi \(3\notin A\).
 
-c) Uzmimo \(A:=\left(\langle 0, 1\rangle\cap \mathbb{I}\right)\cup \left\{\dfrac{1}{2}, 1\right\}\). Lako se vidi da \(A\) sadrži točno dva racionalna broja (\(\dfrac{1}{2}\) i \(1\), ostali su svi iracionalni po definiciji) i slično kao i u b) se pokaže da je \(\max{A}=1\). Pretpostavimo da skup \(A\) ima minimum, neka je to \(a\). Očito je \(a>0\) (jer za sve \(x\in A\) vrijedi \(a>0\)), pa uzmemo li bilo koji iracionalan broj u intervalu \(\langle 0, a\rangle\)\footnote{To možemo po napomeni \ref{den}, za \(\epsilon=x=\dfrac{a}{2}\). Pokušajte za vježbu dokazati da je to moguće i bez pozivanja na taj teorem.}, neka je to \(b\), dobivamo \(b<a\) i \(b\in A\), što je kontradikcija s minimalnošću od \(A\).
-\end{proof}
-Sada uvodimo korisnu notaciju kojom ćemo se koristiti na više mjesta.
-
-\begin{definition}
-\label{usefulnotation}
-Neka je \(f(x)\) neki realan broj u ovisnosti o \(x\in A\subseteq \mathbb{R}\). Oznaka \(S=\left\{f(x) : x\in A\right\}\) je zapravo oznaka za skup \(S=\left\{y\in \mathbb{R} : \exists x\in A \;\mathrm{t.d.}\; y=f(x)\right\}\).
-\end{definition}
-\begin{exercise}
-Neka je \(S=\{x^3-x : x\geq 1\}\). Odredite \(\min{S}\).
-\end{exercise}
-\begin{proof}[Rješenje]
-Uvrštavanjem raznih brojeva možemo naslutiti da je \(\min{S}=0\). Dokažimo to! Očito je \(0\in S\). Dokažimo da je \(x^3-x\geq 0\) za sve \(x\geq 1\). Zaista, taj uvjet je ekvivalentan sa 
-\[x(x^2-1)\geq 0, \;\; \forall x\geq 1,\]
-što je ekvivalentno tvrdnji da je \(x^2-1\geq 0\) za sve \(x\geq 1\), što očito vrijedi. Prema tome tvrdnja vrijedi po definiciji minimuma.
-\end{proof}
-\begin{exercise}
-Neka je \(S=\left\{\dfrac{\pi^2}{4x\sin{x}}+x\sin{x} : 0<x<\pi\right\}\). Odredite \(\min{S}\).
-\end{exercise}
-\begin{proof}[Rješenje]
-Neka je \(x>0\) proizvoljan. Kako vrijedi \(\sin{x}>0\) za sve \(x\in \langle 0, \pi\rangle\), možemo primijeniti A-G nejednakost. Vrijedi
-\[\dfrac{\pi^2}{4x\sin{x}}+x\sin{x}\geq 2\cdot \sqrt{\dfrac{\pi^2}{4x\sin{x}}\cdot x\sin{x}}=\pi.\]
-Dakle, \(\pi\) je jedna donja međa. Pokažimo i da je \(\pi\in S\). Naime, jednakost se postiže ako i samo ako je \[\dfrac{\pi^2}{4x\sin{x}}=x\sin{x},\] što je ekvivalentno tvrdnji \[x\sin{x}=\dfrac{\pi}{2}.\] Očito je jednadžba zadovoljena npr. za \(x=\dfrac{\pi}{2}\), pa zaključujemo da u tom slučaju vrijedi \[\dfrac{\pi^2}{4x\sin{x}}+x\sin{x}=\pi.\] Dakle \(\pi\in S\), pa je on i minimum.
-\end{proof}
-\begin{exercise}
-Neka je \(S=\left\{(1+x)^2(1-x) : x>0\right\}\). Odredite \(\max{S}\).
-\end{exercise}
-\begin{proof}[Rješenje]
-Neka je \(x>0\) proizvoljan. Direktnom primjenom A-G nejednakosti dobivamo \[(1+x)(1+x)(1-x)\geq \left(\dfrac{1+x+1+x+1-x}{3}\right)^3=\dfrac{3+x}{3}.\] Kako želimo pri korištenju A-G nejednakosti doći do konstante, ova nejednakost nam nije korisna. Međutim, uočite da, kad bi umjesto \(1-x\) imali \(2-2x\), onda bi se varijable \(x\) u brojniku poništile i u tom slučaju bi došli do konstante. No to možemo i postići. Zaista,
-\[(1+x)^2(1-x)=\dfrac{1}{2}(1+x)(1+x)(2-2x)\geq \dfrac{1}{2}\left(\dfrac{1+x+1+x+2-2x}{3}\right)^3=\dfrac{1}{2}\left(\dfrac{4}{3}\right)^3=\dfrac{32}{27}.\]
-Jednakost se postiže ako i samo ako je \(1+x=2-2x\), odnosno \(x=\dfrac{1}{3}\). Dakle, \(\max{S}=\dfrac{32}{27}\) i on se postiže za \(x=\dfrac{1}{3}\).
+c) Uzmimo \(A:=\left(\langle 0, 1\rangle\cap \mathbb{I}\right)\cup \left\{\dfrac{1}{2}, 1\right\}\). Lako se vidi da \(A\) sadrži točno dva racionalna broja (\(\dfrac{1}{2}\) i \(1\), ostali su svi iracionalni po definiciji) i slično kao i u b) se pokaže da je \(\max{A}=1\). Pretpostavimo da skup \(A\) ima minimum, neka je to \(a\). Očito je \(a>0\) (jer za sve \(x\in A\) vrijedi \(a>0\)), pa uzmemo li bilo koji iracionalan broj u intervalu \(\langle 0, a\rangle\), neka je to \(b\)\footnote{To možemo po napomeni \ref{den}, za \(\epsilon=x=\dfrac{a}{2}\). To je moguće i bez pozivanja na taj teorem, naime mogli smo uzeti $b:=\dfrac{a}{2}$ ako je $a\in \mathbb{I}$ i $b:=\dfrac{a}{\sqrt{2}}$ ako je $a\in \mathbb{Q}$.}, dobivamo \(b<a\) i \(b\in A\), što je kontradikcija s minimalnošću od \(A\).
 \end{proof}
 \begin{remark}[Arhimedov aksiom]
 Neka su \(a>0\) i \(b>0\) proizvoljni. Tada postoji \(n\in \mathbb{N}\) takav da je \(na>b\).
 \end{remark}
-\begin{remark}[Gustoća \(\mathbb{Q}\) i \(\mathbb{I}\) u \(\mathbb{R}\)] Vrijedi sljedeće.
-\label{den}
-\textbf{}
+\begin{exercise} Dokažite da za svaki realan \(r>0\)...
 \begin{itemize}
-\item[a)] Za svaki \(\epsilon>0\) i za sve \(x\in \mathbb{R}\), \(\langle x-\epsilon, x+\epsilon\rangle\cap \mathbb{Q}\neq \emptyset\),
-\item[b)] Za svaki \(\epsilon>0\) i za sve \(x\in \mathbb{R}\), \(\langle x-\epsilon, x+\epsilon\rangle\cap \mathbb{I}\neq \emptyset\).
+\item[a)] ...postoji bar jedan \(a\in \mathbb{N}\) takav da je \(\dfrac{1}{a}<r\). Postoji li i beskonačno mnogo prirodnih brojeva koji zadovoljavaju tvrdnju?
+\item[b)] ...postoji bar jedan \(a\in \mathbb{N}\) takav da je \(\dfrac{2}{a^2+1}<r\).
+\item[c)] ...postoji bar jedan \(a\in \mathbb{N}\) takav da je \(\dfrac{1}{5^a+1}<r\).
 \end{itemize}
-\end{remark}
-\begin{exercise}
-Dokažite da za svaki realan \(r>0\) postoji bar jedan \(a\in \mathbb{N}\) takav da je \(\dfrac{1}{a}<r\). Postoji li i beskonačno mnogo prirodnih brojeva koji zadovoljavaju tvrdnju?
 \end{exercise}
 \begin{proof}[Rješenje]
-Prema Arhimedovu aksiomu za svaki \(r>0\) postoji \(a\in \mathbb{N}\) takav da je \(ra>1\), odnosno \(\dfrac{1}{a}<r\). Nadalje, za svaki \(b\in \mathbb{N}\) takav da je \(b>a\) vrijedi \[\dfrac{1}{b}<\dfrac{1}{a}<r,\] pa očito ako tvrdnja vrijedi za \(a\), onda vrijedi i za svaki \(b>a\). Dakle, postoji beskonačno mnogo takvih prirodnih brojeva.
-\end{proof}
-\begin{exercise}
-\label{12}
-Dokažite koristeći Arhimedov aksiom da je skup \(A=\{x^2 : x\in \mathbb{N}\}\) odozgo neograničen.
-\end{exercise}
-\begin{proof}[Rješenje]
-Da skup \(S\) ima gornju među znači da postoji bar jedan \(M\in \mathbb{R}\) tako da za svaki \(x\in S\) vrijedi \(x\leq M\). Mi moramo dokazati negaciju ove tvrdnje, tj. moramo dokazati da za svaki \(M\in \mathbb{R}\) postoji \(x_0\in A\) takav da je \(x_0>M\). Da je \(x_0\in S\) znači da je on oblika \(x^2\), gdje je \(x\in \mathbb{N}\), pa zapravo trebamo dokazati da za svaki \(M\in \mathbb{R}\) postoji \(x\in \mathbb{N}\) takav da je \(x^2>M\). 
+a) Prema Arhimedovu aksiomu, za svaki \(r>0\) postoji \(a\in \mathbb{N}\) takav da je \(ra>1\), odnosno \(\dfrac{1}{a}<r\). Nadalje, za svaki \(b\in \mathbb{N}\) takav da je \(b>a\) vrijedi \[\dfrac{1}{b}<\dfrac{1}{a}<r.\]
+Dakle, postoji beskonačno mnogo brojeva $b$ za koje vrijedi tvrdnja.
 
-Prema Arhimedovu aksiomu za svaki \(M\in \mathbb{R}\) postoji \(x\in \mathbb{N}\) takav da je \(x>M\). Znamo da je \(n^2\geq n\) za sve \(n\in \mathbb{N}\), pa vrijedi \[x^2\geq x>M,\] 
-čime smo pokazali da za tako odabrani \(x\) vrijedi i \(x^2>M\). Time je tvrdnja dokazana.
-\end{proof}
-\begin{remark}
-Prethodni zadatak mogli smo riješiti i pomoću dokaza kontradikcijom. Zaista, pretpostavimo da je \(M\) jedna gornja međa za \(A\), tj. da postoji \(M\in \mathbb{N}\) takav da za svaki \(x\in \mathbb{N}\) vrijedi \(x^2\leq M\). Dobivamo kontradikciju s činjenicom da tvrdnja očito ne vrijedi npr. za \(x=M+1\).
-\end{remark}
+b) Prema Arhimedovu aksiomu, za svaki \(r>0\) postoji \(a\in \mathbb{N}\) takav da je \(ra>2\). Odavde imamo
+$$r(a^2+1)>ra>2\Rightarrow \dfrac{2}{a^2+1}<r.$$
 
+c) Prema Arhimedovu aksiomu, za svaki \(r>0\) postoji \(a\in \mathbb{N}\) takav da je \(ra>1\). Dokažimo matematičkom indukcijom da je $5^n+1>n$ za sve $n\in \mathbb{N}$. Za $n=1$ tvrdnja vrijedi, a pretpostavimo li da tvrdnja vrijedi za neki $n$, imamo
+$$5^{n+1}+1=5^n+1+4\cdot 5^n>n+4\cdot 5^n\geq n+1,$$
+što daje tvrdnju. Dobivamo
+$$r(5^a+1)>ra>1\Rightarrow \dfrac{1}{5^a+1}<r.$$
+\end{proof}
+DODATI U ZADATKE ZA VJEŽBU VARIJANTU GDJE NE VRIJEDI ZA SVE n!!!
 \begin{exercise}
-Dokažite da za svaki \(a\in \mathbb{R}\) postoji \(n\in \mathbb{Z}\) takav da je \(n-1\leq a\leq n\).
+Dokažite da za svaki $\epsilon>0$ postoji $r_0\in \mathbb{Q}$ takav da je $0<1-r_0^2<\epsilon$.
 \end{exercise}
 \begin{proof}[Rješenje]
-Uzmimo prvo da je \(a>0\). Tada prema Arhimedovu aksiomu postoji \(n\in \mathbb{N}\) takav da je \(n>a\). Uzmimo od svih prirodnih brojeva takvih da je \(n>a\) najmanji takav broj, nazovimo ga \(n_0\). Tada je \(n_0>a\), pa i \(n_0\geq a\) i \(n_0-1\leq a\), No \(n_0\) je upravo broj koji smo tražili. Za \(a=0\) tvrdnja vrijedi za \(n=0\), a ako je \(a<0\), onda je zahtjev 
-\[n-1\leq a\leq n
-\Longleftrightarrow -n\leq -a\leq -n+1.\] 
-No sada je \(-a>0\), pa prema dokazanom upravo postoji \(l\in \mathbb{Z}\) takav da je \(l-1\leq -a\leq l\), pa za \(-n=l-1\), tj. \(n=1-l\) tvrdnja vrijedi.
+Zapravo se traži racionalan broj $r_0$ takav da je $r_0^2<1$ i da je $r_0^2$ "dovoljno blizu" broju $1$. Ovdje je smisleno promatrati brojeve oblika $\dfrac{n-1}{n}$, jer je od svih racionalnih brojeva između $0$ i $1$ čiji je nazivnik $n$ kvadrat brojeva tog oblika "najbliži" broju $1$. Općenito, ako je $q=\dfrac{n-1}{n}$, gdje je $n\in \mathbb{N}$, onda je 
+$$1-\dfrac{(n-1)^2}{n^2}=\dfrac{n^2-(n-1)^2}{n^2}=\dfrac{2n-1}{n^2}.$$
+Vrijedi $$\dfrac{2n-1}{n^2}<\epsilon\Leftrightarrow \dfrac{n^2}{2n-1}\epsilon>1\Leftrightarrow \dfrac{n^2-\dfrac{1}{2}n+\dfrac{1}{2}n}{2n-1}\epsilon>1\Leftrightarrow \left(\dfrac{1}{2}n+\dfrac{n}{2(2n-1)}\right)\epsilon>1.$$
+U tu svrhu, uzmimo $n_0\in \mathbb{N}$ takav da je $n_0\cdot\dfrac{\epsilon}{2}>1$ i definirajmo $r_0:=\dfrac{n_0-1}{n_0}$. Tada je
+$$1<n_0\dfrac{\epsilon}{2}<\left(\dfrac{1}{2}n_0+\dfrac{n_0}{2(2n_0-1)}\right)\epsilon,$$
+što skupa s činjenicom da je $r_0<1$, odakle slijedi $1-r_0^2>0$ daje traženu tvrdnju.
 \end{proof}
 \begin{exercise}
 \label{lemmaforalimitpointexercise}
@@ -244,20 +163,27 @@ x_0<\dfrac{1}{m_2}\leq\dfrac{1}{m_1}<1-a. \qedhere
 \popQED
 \]
 \end{proof*}
-Napomena \ref{den} je često korisna ako treba dokazati egzistenciju nekog racionalnog ili iracionalnog broja u nekom intervalu bez da ga eksplicitno konstruiramo. Pokažimo to u sljedećem zadatku.
+\begin{remark}[Gustoća \(\mathbb{Q}\) i \(\mathbb{I}\) u \(\mathbb{R}\)] Vrijedi sljedeće.
+\label{den}
+\textbf{}
+\begin{itemize}
+\item[a)] Za svaki \(\epsilon>0\) i za sve \(x\in \mathbb{R}\), \(\langle x-\epsilon, x+\epsilon\rangle\cap \mathbb{Q}\neq \emptyset\),
+\item[b)] Za svaki \(\epsilon>0\) i za sve \(x\in \mathbb{R}\), \(\langle x-\epsilon, x+\epsilon\rangle\cap \mathbb{I}\neq \emptyset\).
+\end{itemize}
+\end{remark}
+Uočimo da je napomena \ref{den} ekvivalentna tvrdnji da za sve \(c<d\), \(c, d\in \mathbb{R}\) postoji \(x\in \mathbb{Q}\) (odnosno $x\in I$) takav da je \(c<x<d\). Zaista, uvrstimo li u napomenu \ref{den} \(x:=\dfrac{c+d}{2}\), \(\epsilon:=\dfrac{d-c}{2}\), dobivamo da postoji bar jedan \(x\in \mathbb{I}\) u intervalu \(\langle c, d\rangle\), tj. bar jedan \(x\in \mathbb{I}\) takav da je \(c<x<d\), što smo i tvrdili. Obratna implikacija se vidi za $c:=x-\epsilon$ i $d:=x+\epsilon$.
+
+Napomena \ref{den} je često korisna ako treba dokazati egzistenciju nekog racionalnog ili iracionalnog broja u nekom intervalu bez da ga eksplicitno konstruiramo.
 \begin{exercise} \textbf{}
 \begin{itemize}
-\item[a)] Dokažite da između svaka dva realna broja \(c<d\), \(c, d\in \mathbb{R}\) postoji \(x\in \mathbb{I}\) takav da je \(c<x<d\).
-\item[b)] Dokažite da je skup \(A'=\{x^2 : x\in \mathbb{I}\}\) odozgo neograničen.
-\item[c)] Dokažite tvrdnju iz b) dijela napomene \ref{den}. 
+\item[a)] Dokažite da je skup \(A'=\{x^2 : x\in \mathbb{I}\}\) odozgo neograničen.
+\item[b)] Dokažite tvrdnju iz b) dijela napomene \ref{den}. 
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-a) Uvrstimo u napomenu \ref{den} \(x=\dfrac{c+d}{2}\), \(\epsilon=\dfrac{d-c}{2}\). Tada dobivamo da postoji bar jedan \(x\in \mathbb{I}\) u intervalu \(\langle c, d\rangle\), tj. bar jedan \(x\in \mathbb{I}\) takav da je \(c<x<d\), što smo i tvrdili.
+a) Pretpostavimo da postoji \(M\in \mathbb{R}\) takav da za svaki \(x\in \mathbb{I}\) vrijedi \(x^2\leq M\). Uzmimo bilo koji \(x_0\in \mathbb{I}\) takav da je \(x_0\in \langle M, M+1\rangle\). Očito je \(x_0^2\geq x_0>M\), pa je \(x_0\) upravo traženi broj. OVDJE SAM STAO!!!
 
-b) Analogno kao i u zadatku \ref{12}, dovoljno je dokazati da za svaki \(M\in \mathbb{R}\) postoji \(x\in \mathbb{I}\) takav da je \(x^2>M\). Uzmimo bilo koji \(x_0\in \mathbb{I}\) takav da je \(x_0\in \langle M, M+1\rangle\). Očito je \(x_0^2\geq x_0>M\), pa je \(x_0\) upravo traženi broj.
-
-c) Neka su \(x\in \mathbb{R}\) i \(\epsilon>0\) proizvoljni. Uočimo da ako je jedan od brojeva \(x-\epsilon\), \(x+\epsilon\) racionalan, a drugi iracionalan, onda je traženi broj \(\dfrac{x-\epsilon+x+\epsilon}{2}=x\), jer je aritmetička sredina racionalnog i iracionalnog broja opet iracionalan broj. Pretpostavimo sad da su oba broja iracionalna. Tada postoji \(q\in \mathbb{Q}\) takav da je \(x<q<x+\epsilon\), pa je \(\dfrac{q+x+\epsilon}{2}\) traženi broj.
+b) Neka su \(x\in \mathbb{R}\) i \(\epsilon>0\) proizvoljni. Uočimo da ako je jedan od brojeva \(x-\epsilon\), \(x+\epsilon\) racionalan, a drugi iracionalan, onda je traženi broj \(\dfrac{x-\epsilon+x+\epsilon}{2}=x\), jer je aritmetička sredina racionalnog i iracionalnog broja opet iracionalan broj. Pretpostavimo sad da su oba broja iracionalna. Tada postoji \(q\in \mathbb{Q}\) takav da je \(x<q<x+\epsilon\), pa je \(\dfrac{q+x+\epsilon}{2}\) traženi broj.
 
 Ako su pak oba broja racionalna, onda je i \(x+\epsilon-(x-\epsilon)=2\epsilon\) racionalan broj, pa je i \(\epsilon\) racionalan broj. Dakle, ako je \(x\in \mathbb{Q}\), onda je \(x+\dfrac{\epsilon}{\sqrt{2}}\) traženi broj (uočite da je \(\dfrac{\epsilon}{\sqrt{2}}\) iracionalan), a ako je \(x\in \mathbb{I}\), onda je \(x\) traženi broj.
 \end{proof}
@@ -291,7 +217,7 @@ Zadan je skup \(S=\left\{\dfrac{1}{x^2+1} : x\in \mathbb{R}\right\}\). Odredite 
 \begin{proof}[Rješenje]
 Za sve \(x\in \mathbb{R}\) vrijedi \[\dfrac{1}{x^2+1}\leq 1,\] jer je ta tvrdnja ekvivalentna tvrdnji \(x^2\geq 0\). Vrijedi i \(1\in S\), i to za \(x=0\). Dakle, \(\max{S}=1\), te je \(\max{S}=\sup{S}\).
 
-Uvrštavanjem velikih brojeva za \(x\) naslućujemo da je \(\inf{S}=0\). Pretpostavimo suprotno, da je \(a=\inf{S}\neq 0\). Kako je \(0\) jedna donja međa od \(S\), slijedi \(a>0\). Kako je \(a\) jedna donja međa od \(S\), vrijedi \(\dfrac{1}{x^2+1}\geq a\) za sve \(x\in \mathbb{R}\), odakle imamo
+Uvrštavanjem velikih brojeva umjesto \(x\) naslućujemo da je \(\inf{S}=0\). Pretpostavimo suprotno, da je \(a=\inf{S}\neq 0\). Kako je \(0\) jedna donja međa od \(S\), slijedi \(a>0\). Kako je \(a\) jedna donja međa od \(S\), vrijedi \(\dfrac{1}{x^2+1}\geq a\) za sve \(x\in \mathbb{R}\), odakle imamo
 \[\dfrac{1}{x^2+1}\geq a\Leftrightarrow x^2+1\leq \dfrac{1}{a}\Leftrightarrow x^2\leq \dfrac{1}{a}-1,\]
 no posljednje ne vrijedi za sve \(x\in \mathbb{R}\), npr. za \(x_0=\sqrt{\dfrac{1}{a}}\) tvrdnja ne vrijedi.
 
