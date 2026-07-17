@@ -1,66 +1,4 @@
-\begin{remark}
-\label{ordrem}
-Svojstva uređaja \(\leq\) i \(<\) na \(\mathbb{R}\):
-\begin{itemize}
-\item Trihotomija: Za sve \(x\), \(y\in \mathbb{R}\) vrijedi točno jedna od sljedećih tvrdnji
-\[(x<y),\; (x=y),\; (x>y),\]
-\item Linearnost: Za sve \(x\), \(y\in \mathbb{R}\) vrijedi
-\[(x\leq y) \vee (y\leq x),\]
-\item Antisimetričnost: Za sve \(x\), \(y\in \mathbb{R}\) vrijedi
-\[x\leq y\; \wedge\; y\leq x\Rightarrow x=y,\]
-\item Tranzitivnost: Za sve \(x\), \(y\), \(z\in \mathbb{R}\) vrijedi
-\[x\leq y\; \wedge\; y\leq z\Rightarrow x\leq z,\hspace{0.3cm}x< y\; \wedge\; y< z\Rightarrow x< z,\]
-\item Kompatibilnost s \(+\) : Za sve \(x\), \(y\), \(z\in \mathbb{R}\) vrijedi
-\[x\leq y\Leftrightarrow x+z\leq y+z,\hspace{0.3cm}x< y\Leftrightarrow x+z< y+z,\]
-\item Kompatibilnost s \(\cdot\) : Za sve \(x\), \(y\), \(z\in \mathbb{R}\) vrijedi
-\[x\leq y\wedge z>0\Leftrightarrow xz\leq yz,\hspace{0.3cm}x< y\wedge z>0\Leftrightarrow xz< yz.\]
-\end{itemize}
-\end{remark}
-
-Svojstva iz napomene \ref{ordrem} imaju teorijsku važnost (Zapravo, ova svojstva dio su aksioma realnih brojeva vezanih uz uređaj), ali ovdje ih navodimo da bi se lakše vidjelo kako primjenjujemo ova vrlo jednostavna pravila u rješavanju zadataka.
-
-\section{Minimum i maksimum. Arhimedov aksiom}
-U ovoj točki postupno uvodimo pojmove i rezultate koji su neophodni za daljnje razumijevanje sadržaja koji slijede. U nastavku navodimo nekoliko zadataka koji uključuju dokazivanje elementarnih nejednakosti, jer se time često koristimo u narednim zadatcima.
-\begin{exercise}
-\label{25}
-Neka su \(x, y\in \mathbb{R}\) proizvoljni. Dokažite da vrijedi
-\begin{itemize}
-\item[a)] \(\dfrac{1}{1+x^2}>0\),
-\item[b)] Ako je \(x-5y^2>0\), onda je \(x+5y^2>0\),
-\item[c)] Ako su \(x, y\geq 0\), onda vrijedi \(\dfrac{x+y}{2}\geq \sqrt{xy}\).
-\end{itemize}
-\end{exercise}
-\begin{proof}[Rješenje]
-a) Znamo da za svaki \(x\in \mathbb{R}\) vrijedi \(x^2\geq 0\), što povlači \(1+x^2\geq 1>0\), što povlači \(1+x^2>0\). Odavde slijedi da vrijedi \(\dfrac{1}{1+x^2}>0\) ako i samo ako vrijedi \(1>0\), dakle tvrdnja je dokazana.
-
-b) Iz \(x-5y^2>0\) slijedi \(x-5y^2+10y^2>10y^2\). Kako vrijedi \(y^2\geq 0\), pa i \(10y^2\geq 0\), pa smo time dokazali da je \(x-5y^2+10y^2\geq 0\), odnosno \(x+5y^2>0\).
-
-c) Uočimo da vrijedi
-\[\dfrac{x+y}{2}\geq \sqrt{xy}\Leftrightarrow x+y\geq 2\sqrt{xy}\Leftrightarrow \sqrt{x}^2-2\sqrt{xy}+\sqrt{y}^2\geq 0\Leftrightarrow \left(\sqrt{x}-\sqrt{y}\right)^2\geq 0,\]
-čime je tvrdnja dokazana.
-\end{proof}
-\begin{remark}
-\label{10}
-Neka su \(a, b, c, d\in \mathbb{R}\). Ako je \(a\leq c\) i \(b\leq d\), onda je \(a+b\leq c+d\), te ako su pritom i \(a\), \(c\geq 0\), onda je \(ab\leq cd\). Vrijedi i varijanta za \(<\), tj. \(a<c\) i \(b<d\) povlači \(a+b<c+d\), a ako vrijedi i \(a,\;c> 0\) onda vrijedi i \(ac<bd\).
-\end{remark}
-
-\begin{exercise}
-Dokažite:
-\begin{itemize}
-\item[a)] Za sve \(x\in \mathbb{R}\) vrijedi \(\dfrac{1}{(1+x^2)(2+x^2)}\leq \dfrac{1}{2}\).
-\item[b)] Za sve realne \(x\), \(y\) takve da je \(x>0\) i \(y>1\) vrijedi \(x^2-2x\sqrt{y}+y^2> 0\).
-\end{itemize}
-\end{exercise}
-\begin{proof*}
-a) Neka je \(x\in \mathbb{R}\) proizvoljan. Tada je \(x^2+1\geq 1\) i \(x^2+2\geq 2\) slijedi \[\dfrac{1}{1+x^2}\leq 1 \;\; \text{ i }\;\;\dfrac{1}{2+x^2}\leq \dfrac{1}{2}.\] Kako vrijedi \(\dfrac{1}{1+x^2},\) \(\dfrac{1}{2+x^2}>0\), te su očito \(1\) i \(\dfrac{1}{2}\) pozitivni, korištenjem napomene \(\ref{10}\) dobivamo tvrdnju.
-
-b) Neka su \(x>0\) i \(y>1\) proizvoljni. Tvrdimo da vrijedi \(\sqrt{y}< y\). Zaista, zbog \(y\geq 0\) to vrijedi ako i samo ako vrijedi \(y<y^2\) (a da bi to tvrdili treba nam da za sve \(a\), \(b\geq 0\) vrijedi da \(a<b\Rightarrow \sqrt{a}<\sqrt{b}\), što se lako dokazuje kontrapozicijom), tj. ako i samo ako vrijedi \(y>1\), što je istinito prema pretpostavci. Sada iz \(x>0\) slijedi \(2xy>2x\sqrt{y}\), odakle slijedi i \(-2xy<-2x\sqrt{y}\), te konačno imamo
-\[
-\pushQED{\qed}
-x^2-2x\sqrt{y}+y^2>x^2-2xy+y^2=(x-y)^2\geq 0.\qedhere
-\popQED
-\]
-\end{proof*}
+\section{Apsolutna vrijednost realnog broja. Arhimedov aksiom}
 Sigurno ste se prije u obrazovanju susreli s pojmovima otvorenih, zatvorenih, poluotvorenih i poluzatvorenih intervala, za koje sad dajemo preciznu definiciju.
 \begin{definition}
 Neka su zadani \(a, b\in \mathbb{R}\), \(a<b\). Definiramo sljedeće skupove:
@@ -78,47 +16,95 @@ Neka su zadani \(a, b\in \mathbb{R}\), \(a<b\). Definiramo sljedeće skupove:
 \end{multicols}
 Skupovi \(\langle a,b \rangle\), \(\langle a,\infty \rangle\), \(\langle -\infty,b \rangle\) su \textbf{otvoreni intervali}, skup \([a, b]\) je \textbf{zatvoreni interval}, a skupovi \([a, b\rangle\), \(\langle a, b]\), \(\langle -\infty, b]\), \([a, \infty\rangle\) su \textbf{poluotvoreni intervali}.
 \end{definition}
+Još jedan već otprije poznat pojam je apsolutna vrijednost realnog broja.
 \begin{definition}
-\label{minimax}
-Kažemo da je \(a\in \mathbb{R}\) \textbf{gornja međa} skupa \(S\subseteq{\mathbb{R}}\) ako za svaki \(x\in S\) vrijedi \(x\leq a\), odnosno \textbf{donja međa} skupa \(S\) ako za svaki \(x\in S\) vrijedi \(a\leq x\). Ako je pritom \(a\in S\), onda je \(a\) \textbf{maksimum} (ako je on gornja međa), odnosno \textbf{minimum} (ako je on donja međa) skupa \(S\). Maksimum skupa \(S\) označavamo sa \(\max{S}\), a minimum s \(\min{S}\). Ako skup ima gornju (donju među), onda kažemo da je odozgo (odozdo) ograničen/omeđen. Ako ima obje, onda samo kažemo da je ograničen/omeđen.
+\textbf{Apsolutna vrijednost} broja $x\in \mathbb{R}$ je broj
+$$\left\lvert x\right\rvert:=\begin{cases}
+x, & x\geq 0,\\
+-x & x<0.
+\end{cases}$$
 \end{definition}
-
-\begin{exmp}
-Skup \(T=\{1, 2, 3, 4, 5.5, 8\}\) je odozgo ograničen, jer je \(8\) jedna njegova gornja međa. Uočite da su njegove gornje međe npr. \(9\), \(12\) te \(2000\) (Općenito, svi brojevi iz skupa \([8,\infty\rangle\)). S druge strane, skup \(\mathbb{N}\) nije odozgo ograničen. 
-\end{exmp}
-\begin{exercise}
-Neka je \(S=\{x^3-x : x\geq 1\}\). Odredite \(\min{S}\). Postoji li \(\max{S}\)?
-\end{exercise}
-\begin{proof}[Rješenje]
-Uvrštavanjem raznih brojeva možemo naslutiti da je \(\min{S}=0\). Dokažimo to! Očito je \(0\in S\). Dokažimo da je \(x^3-x\geq 0\) za sve \(x\geq 1\). Zaista, taj uvjet je ekvivalentan sa 
-\[x(x^2-1)\geq 0, \;\; \forall x\geq 1,\]
-što je ekvivalentno tvrdnji da je \(x^2-1\geq 0\) za sve \(x\geq 1\), što očito vrijedi. Prema tome tvrdnja vrijedi po definiciji minimuma.
-
-Tvrdimo da $S$ nema maksimum. Zaista, pretpostavimo da on ima maksimum, tj. da postoji $x_0\geq 1$ takav da je $x_0^3-x_0\geq y$, za sve $y\in S$. Tada je
-$$(x_0+1)^3-(x_0+1)=x_0^3+3x_0^2+2x_0> x_0^3-x_0,$$
-pa dobivamo kontradikciju s činjenicom da je $(x_0+1)^3-(x_0+1)\in S$.
-\end{proof}
-\begin{remark}
-\label{usefulnotation}
-Općenito, ako je \(f(x)\) neki realan broj u ovisnosti o \(x\in A\subseteq \mathbb{R}\), oznaka \(S=\left\{f(x) : x\in A\right\}\) je, precizno govoreći, zapravo oznaka za skup \[S=\left\{y\in \mathbb{R} : \exists x\in A \;\mathrm{t.d.}\; y=f(x)\right\}.\]
+\begin{remark}[Nejednakost trokuta]
+\label{triangleineq}
+Za sve $x, y\in \mathbb{R}$ vrijedi $\lvert x+y\rvert\leq \lvert x\rvert + \lvert y\rvert$.
 \end{remark}
-\begin{exercise} Navedite primjer...
+\begin{remark}[O apsolutnoj vrijednosti razlike]
+\label{invtriangleineq}
+Za sve $x, y\in \mathbb{R}$ vrijedi $\lvert\lvert x\rvert-\lvert y\rvert\rvert\leq \lvert x-y\rvert$.
+\end{remark}
+\begin{remark}[Apsolutna vrijednost produkta i kvocijenta] \textbf{}
 \begin{itemize}
-\item[a)] ...skupa \(A\subseteq \mathbb{R}\) koji je odozgo ograničen, odozdo neograničen, te nema maksimum.
-\item[b)] ...beskonačnog skupa \(A\subseteq \mathbb{R}\) takvog da je \(\min{A}=0\), \(\max{A}=5\), te vrijedi \(1\notin A\) i \(3\notin A\).
-\item[c)] Ograničenog skupa \(A\subseteq \mathbb{R}\) takvog da je \(\max{A}=1\), nema minimum i sadrži točno dva racionalna broja.
+\item[a)] Za sve $x, y\in \mathbb{R}$ vrijedi $\lvert xy\rvert=\lvert x\rvert\lvert y\rvert$. 
+\item[b)] Za sve $x\in \mathbb{R}$ i $y\in \mathbb{R}\setminus\{0\}$ vrijedi $\left\lvert \dfrac{x}{y}\right\rvert=\dfrac{\lvert x\rvert}{\lvert y\rvert}$.
+\end{itemize}
+\end{remark}
+\begin{remark}
+\label{absolutevaluelemma}
+Za sve $x\in \mathbb{R}$ i za sve $\epsilon\geq 0$ vrijedi
+$$\lvert x\rvert\leq \epsilon\Leftrightarrow -\epsilon\leq x\leq \epsilon.$$
+Ako je $\epsilon>0$, analogna tvrdnja vrijedi u slučaju stroge nejednakosti.
+\end{remark}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Odredite sve $x\in \mathbb{R}$ takve da je $\left\lvert x+2\right\rvert+\left\lvert x+3\right\rvert=3$.
+\item[b)] Odredite sve $x\in \mathbb{R}$ takve da je $\lvert x+3\rvert\leq 7$ i $\lvert x-2\rvert< 3-x$.
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-a) Jedan takav skup je npr. \(A:=\langle -\infty, 3\rangle\). Zaista, očito je odozgo ograničen (vrijedi \(x\in A\) ako i samo ako je \(x<3\), dakle jedna gornja međa je npr. \(4\)), odozdo neograničen (za svaki \(a\in \mathbb{R}\) postoji \(x\in A\) takav da je \(x<a\), npr. bilo koji član skupa \(A\) ako je \(a\geq 3\) i \(a-1\) ako je \(a<3\)), te nema maksimum (kad bi postojao maksimum \(b\), po definiciji je \(b<3\), no \(b<\dfrac{b+3}{2}<3\), što je kontradikcija s činjenicom da je \(b\) maksimum). Još nekoliko primjera skupova s danim svojstvom: \(\mathbb{N}^-\cup [3, 4\rangle\), \(\langle -\infty, 2]\cap \mathbb{I}\).
+a) Neka je $x\in \mathbb{R}$ proizvoljan. Ako je $x+2\geq 0$, onda je i $x+3\geq 0$. pa je početna jednadžba ekvivalentna s $$x+2+x+3=3,$$ tj. dobivamo rješenje $x_1=-1$, i zaista vrijedi $x_1+2\geq 0$. Ako je pak $x+3\geq 0$ i $x+2<0$ onda imamo $$-x-2+x+3=3,$$ tj. $1=3$, što je nemoguće. Ako je $x+3< 0$, onda je i $x+2< 0$, pa imamo $$-x-3-x-3=3,$$ tj. $x_2=-4$, te i ovo rješenje zadovoljava $x_2+3<0$. Stoga su jedini brojevi koji zadovoljavaju početnu jednadžbu $-1$ i $-4$.
 
-b) Uzmimo npr. \(A:=\left[0,\dfrac{1}{2}\right]\cup \left[4, 5\right]\). Uvjerimo se npr. da je \(\min{A}=0\). Neka je \(x\in A\) proizvoljan. Vrijedi \(x\in A\) ako i samo ako vrijedi \(x\in \left[0,\dfrac{1}{2}\right]\) ili \(x\in [4, 5]\). Ako je \(x\in \left[0,\dfrac{1}{2}\right]\), tj. \(0\leq x\leq \dfrac{1}{2}\), onda je očito i \(x\geq 0\), isto vrijedi i ako je \(x\in [4, 5]\). Dakle, \(0\leq x\) za sve \(x\in A\). Kako je \(0\in A\), zaključujemo da je \(\min{A}=0\). Analogno se zaključuje da je \(\max{A}=5\). Očito vrijedi \(1\notin A\), jer bi inače trebalo vrijediti \(0\leq 1\leq \dfrac{1}{2}\) ili \(4\leq 1\leq 5\), a nikoja od te dvije tvrdnje nije istinita. Slično vidimo i da vrijedi \(3\notin A\).
-
-c) Uzmimo \(A:=\left(\langle 0, 1\rangle\cap \mathbb{I}\right)\cup \left\{\dfrac{1}{2}, 1\right\}\). Lako se vidi da \(A\) sadrži točno dva racionalna broja (\(\dfrac{1}{2}\) i \(1\), ostali su svi iracionalni po definiciji) i slično kao i u b) se pokaže da je \(\max{A}=1\). Pretpostavimo da skup \(A\) ima minimum, neka je to \(a\). Očito je \(a>0\) (jer za sve \(x\in A\) vrijedi \(a>0\)), pa uzmemo li bilo koji iracionalan broj u intervalu \(\langle 0, a\rangle\), neka je to \(b\)\footnote{To možemo po napomeni \ref{den}, za \(\epsilon=x=\dfrac{a}{2}\). To je moguće i bez pozivanja na taj teorem, naime mogli smo uzeti $b:=\dfrac{a}{2}$ ako je $a\in \mathbb{I}$ i $b:=\dfrac{a}{\sqrt{2}}$ ako je $a\in \mathbb{Q}$.}, dobivamo \(b<a\) i \(b\in A\), što je kontradikcija s minimalnošću od \(A\).
+b) Neka je $x\in \mathbb{R}$ proizvoljan. Tvrdnja $\lvert x+3\rvert\leq 7$ je ekvivalentna s $-7\leq x+3\leq 7$, tj. $-10\leq x\leq 4$. Ako je $x> 3$, $\lvert x-2\rvert< 3-x$ očigledno ne vrijedi jer je $\lvert x-2\rvert\geq 0$ i $3-x<0$. Ako je $x=3$ imamo $1<0$, što također ne vrijedi, a ako je $x<3$, onda je $3-x>0$ i tvrdnja je ekvivalentna s $$-3+x<x-2<3-x,$$ pa dobivamo $-3<-2$ i $x< \dfrac{5}{2}$ i očito je $x<3$. Dakle, tvrdnje iz zadatka vrijede ako i samo ako je $-10\leq x<\dfrac{5}{2}$, odnosno $x\in \left[ -10, \dfrac{5}{2}\right\rangle$.
 \end{proof}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka su $a_1, a_2\in \mathbb{R}$ takvi da je $\left\lvert a_1-a_2\right\rvert\leq 1$. Dokažite da je $\left\lvert a_1\right\rvert\leq 1+\left\lvert a_2\right\rvert$.
+\item[b)] Neka su $a, a', b, b'\in \mathbb{R}$ takvi da je $\lvert a-a'\rvert\leq 1$ i $\lvert b-b'\rvert\leq 1$. Dokažite da je $\lvert ab'- a'b\rvert\leq \lvert a'\rvert+\lvert b'\rvert$.
+\end{itemize}
+\end{exercise}
+\begin{proof}
+a) Vrijedi
+$$\left\lvert a_1\right\rvert=\left\lvert \left(a_1-a_2\right)+a_2\right\rvert\leq \left\lvert a_1-a_2\right\rvert + \left\lvert a_2\right\rvert\leq 1+ \left\lvert a_2\right\rvert.$$
+
+b) Želimo da se "pojave" izrazi $\lvert a-a'\rvert$ i $\lvert b-b'\rvert$, pa je ideja ovdje dodati i oduzeti $a'b'$. Vrijedi
+\begin{align*}
+\lvert ab'-a'b\rvert&=\lvert \left(ab'-a'b'\right)+\left(a'b'-a'b\right)\rvert\leq \lvert ab'-a'b'\rvert+\lvert a'b'-a'b\rvert\\
+&\leq \lvert b'\left(a-a'\right)\rvert+\lvert a'\left(b'-b\right)\rvert=\lvert b'\rvert\lvert a-a'\rvert+\lvert a'\rvert\lvert b-b'\rvert\leq \lvert a'\rvert+\lvert b'\rvert.
+\end{align*}
+Ovdje smo iskoristili i činjenicu da je $\lvert -x\rvert=\lvert x\rvert$, za svaki $x\in \mathbb{R}$. Naime, neka je $x\in \mathbb{R}$. Ako je $x\geq 0$ imamo $-x\leq 0$, pa je $\lvert -x\rvert=-(-x)=x=\lvert x\rvert$, a ako je $x\leq 0$, onda je $-x\geq 0$, pa je $\lvert -x\rvert=-x=\lvert x\rvert$.
+\end{proof}
+\begin{remark}[Aksiomi realnih brojeva]
+\label{axioms}
+Aksiomi realnih brojeva su sljedeća svojstva skupa $\mathbb{R}$.
+\begin{itemize}
+\item Asocijativnost zbrajanja -- Za sve $x, y, z\in \mathbb{R}$ vrijedi $(x+y)+z=x+(y+z)$.
+\item Postojanje neutralnog elementa (nule) za "$+$" -- Postoji jedinstveni element $0\in \mathbb{R}$ takav da vrijedi $x+0=x$ za sve $x\in \mathbb{R}$.
+\item Postojanje inverznog (suprotnog) elementa za "$+$" -- Za svaki $x\in \mathbb{R}$ postoji jedinstveni element $-x\in \mathbb{R}$ takav da je $x+(-x)=(-x)+x=0$.
+\item Komutativnost za "$+$" -- Za sve $x, y\in \mathbb{R}$ vrijedi $x+y=y+x$.
+\item Asocijativnost za "$\cdot$" -- Za sve $x, y, z\in \mathbb{R}$ vrijedi $(x\cdot y)\cdot z=x\cdot (y\cdot z)$.
+\item Postojanje neutralnog elementa (jedinice) za "$\cdot$" -- Postoji jedinstveni element $1\neq 0$ takav da vrijedi $x\cdot 1=x$ za sve $x\in \mathbb{R}$.
+\item Postojanje inverznog (recipročnog) elementa za "$\cdot$" -- Za svaki $x\in \mathbb{R}\setminus \{0\}$ postoji jedinstveni element $x^{-1}=\dfrac{1}{x}$ takav da je $x\cdot \dfrac{1}{x}=\dfrac{1}{x}\cdot x=1$. 
+\item Komutativnost za "$\cdot$" -- Za sve $x, y\in \mathbb{R}$ vrijedi $x\cdot y=y\cdot x$.
+\item Distributivnost $\cdot$ nad "$+$" -- Za sve $x, y, z\in \mathbb{R}$ vrijedi $x\cdot (y+z)=x\cdot y+x\cdot z$.
+\item Trihotomija -- Za sve \(x, y\in \mathbb{R}\) vrijedi $x\leq y$ ili $y\leq x$.
+\item Antisimetričnost -- Za sve \(x, y\in \mathbb{R}\) vrijedi
+$x\leq y\; \wedge\; y\leq x\Rightarrow x=y$.
+\item Tranzitivnost -- Za sve \(x, y, z\in \mathbb{R}\) vrijedi
+\[x\leq y\; \wedge\; y\leq z\Rightarrow x\leq z,\hspace{0.3cm}x< y\; \wedge\; y< z\Rightarrow x< z,\]
+\item Kompatibilnost s "\(+\)" -- Za sve \(x, y, z\in \mathbb{R}\) vrijedi
+\[x\leq y\Leftrightarrow x+z\leq y+z,\hspace{0.3cm}x< y\Leftrightarrow x+z< y+z,\]
+\item Kompatibilnost s "\(\cdot\)" -- Za sve \(x, y, z\in \mathbb{R}\) vrijedi
+\[x\leq y\wedge z>0\Leftrightarrow xz\leq yz,\hspace{0.3cm}x< y\wedge z>0\Leftrightarrow xz< yz.\]
+\item Aksiom potpunosti -- Svaki odozgo ograničen skup ima supremum.
+\end{itemize}
+\end{remark}
+
+Ovi aksiomi se možda čine očiglednima (i jesu), ali njihova teorijska važnost u tome je da oni, intuitivno govoreći, potpuno opisuju skup $\mathbb{R}$ do na "promjenu oznaka", tj. ako neki drugi skup ima gornja svojstva, onda je taj skup u određenom smislu zapravo samo skup $\mathbb{R}$ s eventualno možda drugačijim oznakama za brojeve. Aksiom potpunosti ćemo još prokomentirati kasnije kada budemo uveli pojam supremuma.
+
+Još jedna bitna činjenica je da se (gotovo) svaki teorem o realnim brojevima može dokazati iz aksioma realnih brojeva. Tako se npr. sljedeći važan teorem može primjenom tih aksioma relativno lako dokazati. 
 \begin{remark}[Arhimedov aksiom]
 Neka su \(a>0\) i \(b>0\) proizvoljni. Tada postoji \(n\in \mathbb{N}\) takav da je \(na>b\).
 \end{remark}
+Ovaj teorem, koji intuitivno govori da se za dužinu bilo koje duljine može konstruirati od nje dulja dužina uzastopnim nanošenjem dužine bilo koje duljine, je neophodan u analizi, pa u nastavku dajemo zadatke vezane uz primjenu ovog teorema.
 \begin{exercise} Dokažite da za svaki realan \(r>0\)...
 \begin{itemize}
 \item[a)] ...postoji bar jedan \(a\in \mathbb{N}\) takav da je \(\dfrac{1}{a}<r\). Postoji li i beskonačno mnogo prirodnih brojeva koji zadovoljavaju tvrdnju?
@@ -126,7 +112,7 @@ Neka su \(a>0\) i \(b>0\) proizvoljni. Tada postoji \(n\in \mathbb{N}\) takav da
 \item[c)] ...postoji bar jedan \(a\in \mathbb{N}\) takav da je \(\dfrac{1}{5^a+1}<r\).
 \end{itemize}
 \end{exercise}
-\begin{proof}[Rješenje]
+\begin{proof*}
 a) Prema Arhimedovu aksiomu, za svaki \(r>0\) postoji \(a\in \mathbb{N}\) takav da je \(ra>1\), odnosno \(\dfrac{1}{a}<r\). Nadalje, za svaki \(b\in \mathbb{N}\) takav da je \(b>a\) vrijedi \[\dfrac{1}{b}<\dfrac{1}{a}<r.\]
 Dakle, postoji beskonačno mnogo brojeva $b$ za koje vrijedi tvrdnja.
 
@@ -136,10 +122,13 @@ $$r(a^2+1)>ra>2\Rightarrow \dfrac{2}{a^2+1}<r.$$
 c) Prema Arhimedovu aksiomu, za svaki \(r>0\) postoji \(a\in \mathbb{N}\) takav da je \(ra>1\). Dokažimo matematičkom indukcijom da je $5^n+1>n$ za sve $n\in \mathbb{N}$. Za $n=1$ tvrdnja vrijedi, a pretpostavimo li da tvrdnja vrijedi za neki $n$, imamo
 $$5^{n+1}+1=5^n+1+4\cdot 5^n>n+4\cdot 5^n\geq n+1,$$
 što daje tvrdnju. Dobivamo
-$$r(5^a+1)>ra>1\Rightarrow \dfrac{1}{5^a+1}<r.$$
-\end{proof}
-DODATI U ZADATKE ZA VJEŽBU VARIJANTU GDJE NE VRIJEDI ZA SVE n!!!
+\[\pushQED{\qed}
+r(5^a+1)>ra>1\Rightarrow \dfrac{1}{5^a+1}<r. \qedhere
+\popQED
+\]
+\end{proof*}
 \begin{exercise}
+\label{archimedes2}
 Dokažite da za svaki $\epsilon>0$ postoji $r_0\in \mathbb{Q}$ takav da je $0<1-r_0^2<\epsilon$.
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -171,17 +160,19 @@ x_0<\dfrac{1}{m_2}\leq\dfrac{1}{m_1}<1-a. \qedhere
 \item[b)] Za svaki \(\epsilon>0\) i za sve \(x\in \mathbb{R}\), \(\langle x-\epsilon, x+\epsilon\rangle\cap \mathbb{I}\neq \emptyset\).
 \end{itemize}
 \end{remark}
-Uočimo da je napomena \ref{den} ekvivalentna tvrdnji da za sve \(c<d\), \(c, d\in \mathbb{R}\) postoji \(x\in \mathbb{Q}\) (odnosno $x\in I$) takav da je \(c<x<d\). Zaista, uvrstimo li u napomenu \ref{den} \(x:=\dfrac{c+d}{2}\), \(\epsilon:=\dfrac{d-c}{2}\), dobivamo da postoji bar jedan \(x\in \mathbb{I}\) u intervalu \(\langle c, d\rangle\), tj. bar jedan \(x\in \mathbb{I}\) takav da je \(c<x<d\), što smo i tvrdili. Obratna implikacija se vidi za $c:=x-\epsilon$ i $d:=x+\epsilon$.
+Uočimo da je napomena \ref{den} ekvivalentna tvrdnji da za sve \(c<d\), \(c, d\in \mathbb{R}\) postoji \(x\in \mathbb{Q}\) (odnosno $x\in \mathbb{I}$) takav da je \(c<x<d\). Zaista, uvrstimo li u napomenu \ref{den} \(x:=\dfrac{c+d}{2}\), \(\epsilon:=\dfrac{d-c}{2}\), dobivamo da postoji bar jedan \(x\in \mathbb{Q}\) (odnosno \(x\in \mathbb{I}\)) u intervalu \(\langle c, d\rangle\), tj. bar jedan \(x\in \mathbb{Q}\) (odnosno \(x\in \mathbb{I}\)) takav da je \(c<x<d\), što smo i tvrdili. Obratna implikacija se vidi za $c:=x-\epsilon$ i $d:=x+\epsilon$. Drugim riječima, između svaka dva realna broja postoji bar jedan racionalan broj i bar jedan iracionalan broj. Ovo svojstvo se također naziva \textit{gustoća skupova} $\mathbb{Q}$ \textit{i} $\mathbb{I}$ \textit{u} $\mathbb{R}$.
 
 Napomena \ref{den} je često korisna ako treba dokazati egzistenciju nekog racionalnog ili iracionalnog broja u nekom intervalu bez da ga eksplicitno konstruiramo.
 \begin{exercise} \textbf{}
 \begin{itemize}
-\item[a)] Dokažite da je skup \(A'=\{x^2 : x\in \mathbb{I}\}\) odozgo neograničen.
+\item[a)] Riješite zadatak \ref{archimedes2} koristeći gustoću skupa $\mathbb{Q}$ u $\mathbb{R}$.
 \item[b)] Dokažite tvrdnju iz b) dijela napomene \ref{den}. 
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-a) Pretpostavimo da postoji \(M\in \mathbb{R}\) takav da za svaki \(x\in \mathbb{I}\) vrijedi \(x^2\leq M\). Uzmimo bilo koji \(x_0\in \mathbb{I}\) takav da je \(x_0\in \langle M, M+1\rangle\). Očito je \(x_0^2\geq x_0>M\), pa je \(x_0\) upravo traženi broj. OVDJE SAM STAO!!!
+a) Neka je $\epsilon>0$ proizvoljan. Ako je $\epsilon\geq 1$, onda za $r_0:=\dfrac{1}{2}$ vrijedi 
+$$0<1-r_0^2=\dfrac{3}{4}<1\leq \epsilon.$$
+Ako je $\epsilon<1$, onda po gustoći skupa $\mathbb{Q}$ u $\mathbb{R}$ postoji $r_0\in \left\langle \sqrt{1-\epsilon}, 1\right\rangle$. Tada je $r_0^2<1$, odnosno $0<1-r_0^2$ i vrijedi $r_0^2>1-\epsilon$, odnosno $1-r_0^2<\epsilon$.
 
 b) Neka su \(x\in \mathbb{R}\) i \(\epsilon>0\) proizvoljni. Uočimo da ako je jedan od brojeva \(x-\epsilon\), \(x+\epsilon\) racionalan, a drugi iracionalan, onda je traženi broj \(\dfrac{x-\epsilon+x+\epsilon}{2}=x\), jer je aritmetička sredina racionalnog i iracionalnog broja opet iracionalan broj. Pretpostavimo sad da su oba broja iracionalna. Tada postoji \(q\in \mathbb{Q}\) takav da je \(x<q<x+\epsilon\), pa je \(\dfrac{q+x+\epsilon}{2}\) traženi broj.
 
@@ -191,7 +182,29 @@ Ako su pak oba broja racionalna, onda je i \(x+\epsilon-(x-\epsilon)=2\epsilon\)
 Za one upoznate s osnovnim konceptima teorije skupova, evo kako se još može riješiti c) dio prethodnog zadatka. Pretpostavimo suprotno, da postoje \(x\in \mathbb{R}\) i \(\epsilon>0\) takvi da je \(\langle x-\epsilon, x+\epsilon\rangle\cap \mathbb{I}=\emptyset\). To znači da je \(\langle x-\epsilon, x+\epsilon\rangle\subseteq \mathbb{Q}\), pa je \(\langle x-\epsilon, x+\epsilon\rangle\) konačan ili prebrojiv, budući da je \(\mathbb{Q}\) prebrojiv, te je podskup svakog prebrojivog skupa konačan ili prebrojiv. Međutim, znamo da su otvoreni skupovi neprebrojivi (jer su u bijekciji s \(\mathbb{R}\)), što daje kontradikciju.
 \end{remark}
 \section{Supremum i infimum}
+\begin{definition}
+\label{minimax}
+Kažemo da je \(a\in \mathbb{R}\) \textbf{gornja međa} skupa \(S\subseteq{\mathbb{R}}\) ako za svaki \(x\in S\) vrijedi \(x\leq a\), odnosno \textbf{donja međa} skupa \(S\) ako za svaki \(x\in S\) vrijedi \(a\leq x\). Ako je pritom \(a\in S\), onda je \(a\) \textbf{maksimum} (ako je on gornja međa), odnosno \textbf{minimum} (ako je on donja međa) skupa \(S\). Maksimum skupa \(S\) označavamo sa \(\max{S}\), a minimum s \(\min{S}\). 
 
+Ako skup ima gornju (donju među), onda kažemo da je odozgo (odozdo) ograničen/omeđen, u suprotnome je odozgo (odozdo) ograničen/omeđen. Ako ima obje, onda samo kažemo da je ograničen/omeđen, u suprotnome je neograničen/neomeđen.
+\end{definition}
+
+\begin{exmp}
+Skup \(T=\{1, 2, 3, 4, 5.5, 8\}\) je odozgo ograničen, jer je \(8\) jedna njegova gornja međa, a \(8\) je i maksimum jer je \(8\in T\). Uočite da su njegove gornje međe npr. \(9\), \(12\) te \(2000\) (Općenito, svi brojevi iz skupa \([8,\infty\rangle\)). S druge strane, skup \(\mathbb{N}\) nije odozgo ograničen.
+\end{exmp}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] ...skupa \(A\subseteq \mathbb{R}\) koji je odozgo ograničen, odozdo neograničen, te nema maksimum.
+\item[b)] ...beskonačnog skupa \(A\subseteq \mathbb{R}\) takvog da je \(\min{A}=0\), \(\max{A}=5\), te vrijedi \(1\notin A\) i \(3\notin A\).
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Jedan takav skup je npr. \(A:=\langle -\infty, 3\rangle\). Zaista, očito je odozgo ograničen (vrijedi \(x\in A\) ako i samo ako je \(x<3\), dakle jedna gornja međa je npr. \(4\)), odozdo neograničen (za svaki \(a\in \mathbb{R}\) postoji \(x\in A\) takav da je \(x<a\), npr. bilo koji član skupa \(A\) ako je \(a\geq 3\) i \(a-1\) ako je \(a<3\)), te nema maksimum (kad bi postojao maksimum \(b\), po definiciji je \(b<3\), no \(b<\dfrac{b+3}{2}<3\), što je kontradikcija s činjenicom da je \(b\) maksimum).
+
+Još nekoliko primjera skupova s danim svojstvom: \(\mathbb{N}^-\cup [3, 4\rangle\), \(\langle -\infty, 2]\cap \mathbb{I}\).
+
+b) Uzmimo npr. \(A:=\left[0,\dfrac{1}{2}\right]\cup \left[4, 5\right]\). Uvjerimo se npr. da je \(\min{A}=0\). Neka je \(x\in A\) proizvoljan. Vrijedi \(x\in A\) ako i samo ako vrijedi \(x\in \left[0,\dfrac{1}{2}\right]\) ili \(x\in [4, 5]\). Ako je \(x\in \left[0,\dfrac{1}{2}\right]\), tj. \(0\leq x\leq \dfrac{1}{2}\), onda je očito i \(x\geq 0\), isto vrijedi i ako je \(x\in [4, 5]\). Dakle, \(0\leq x\) za sve \(x\in A\). Kako je \(0\in A\), zaključujemo da je \(\min{A}=0\). Analogno se zaključuje da je \(\max{A}=5\). Očito vrijedi \(1\notin A\), jer bi inače trebalo vrijediti \(0\leq 1\leq \dfrac{1}{2}\) ili \(4\leq 1\leq 5\), a nikoja od te dvije tvrdnje nije istinita. Slično vidimo i da vrijedi \(3\notin A\).
+\end{proof}
 \begin{definition}
 Neka je \(S\) odozgo ograničen skup. \textbf{Supremum} skupa \(S\) je najmanja gornja međa od \(S\).
 \end{definition}
@@ -203,14 +216,41 @@ Neka je \(S\) odozdo ograničen skup. \textbf{Infimum} skupa \(S\) je najveća d
 Kako su supremum i infimum jedinstveni ako postoje, ima smisla uvesti oznake \(\sup{A}\) i \(\inf{A}\).
 Napomenimo da infimum (supremum) odozdo (odozgo) ograničenog skupa može, ali i ne mora biti unutar tog skupa. 
 \begin{remark}
+\label{supmax}
 Vrijedi sljedeće -- ako je \(S\subseteq \mathbb{R}\) odozgo omeđen skup koji ima maksimum, onda je \(\sup{S}=\max{S}\). Zaista, kad bi postojao \(a\in S\) takav da je \(a<\max{S}\) i da za sve \(x\in S\) vrijedi \(x\leq a\), onda \(\max{S}\in S\) povlači \(\max{S}\leq a\), što je u kontradikciji s \(a<\max{S}\). Analogno se pokaže da ako je \(S\) odozdo omeđen skup koji ima minimum, onda je \(\inf{S}=\min{S}\).
 \end{remark}
-\begin{exercise}
-Dokažite da je \(\sup{[0, 1\rangle}=1\).
+\begin{exercise} Navedite primjer...
+\begin{itemize}
+\item[a)] ...odozgo ograničenog skupa $S$ takvog da je $\sup{S}\notin S$.
+\item[b)] ...ograničenih skupova $S$ i $S'$ takvih da je $S'\not\subseteq S$, $\sup{\left(S\setminus S'\right)}=\sup{S}$ i $\inf{\left(S\setminus S'\right)}=\inf{S}$.
+\item[c)] ...neograničenih skupova $S$ i $S'$ takvih da je $\sup{\left(S\cap S'\right)}=4$, $\inf{\left(S\cap S'\right)}=2$ i da vrijedi $S\cup S'=\mathbb{Q}$. Pokušajte navesti barem dva primjera!
+\end{itemize}
 \end{exercise}
-\begin{proof}[Rješenje]
-Pretpostavimo da \(1\) nije supremum, tj. da postoji neka gornja međa \(M\) takva da je \(M<1\), dakle vrijedi \(a\leq M\) za svaki \(a\in [0, 1\rangle\). Očito je \(M\geq 0\). No dobivamo kontradikciju s činjenicom da je \[\dfrac{M+1}{2}>M\;\;\text{i}\;\;0\leq \dfrac{M+1}{2}<1,\] što znači da je \(\dfrac{M+1}{2}\in [0, 1\rangle\).
-\end{proof}
+\begin{proof*}
+a) Takav skup je npr. $[0, 1\rangle$. Zaista, pretpostavimo li da \(1\) nije supremum, onda kako je $1$ jedna gornja međa, postoji neka gornja međa \(M\) takva da je \(M<1\), dakle vrijedi \(a\leq M\) za svaki \(a\in [0, 1\rangle\). Očito je \(M\geq 0\), što dobivamo uvrštavanjem $a=0$. Sada dobivamo kontradikciju s činjenicom da je \[\dfrac{M+1}{2}>M\;\;\text{i}\;\;0\leq \dfrac{M+1}{2}<1,\] što znači da je \(\dfrac{M+1}{2}\in [0, 1\rangle\).
+
+Još nekoliko primjera skupova s danim svojstvom: $\langle -1, 3\rangle\cup [5, 6\rangle$, $\langle 0, 1\rangle\cap \mathbb{Q}$.
+
+b) Uzmimo npr. $S=[-2, 2]$ i $S'=[-1, 1]\cup [-6, -5]$. Tada je $S\setminus S'=[-2, -1\rangle \cup \langle 1, 2]$. Zaista, vrijedi $x\in S\setminus S'$ ako i samo ako je $-2\leq x\leq 2$ i ne vrijedi $x\in S'$, tj. vrijedi
+$$\left(-2\leq x\leq 2\right)\;\;\wedge\;\;\left(x<-6\vee x>-5\right)\;\;\wedge\;\;\left(x<-1\vee x>-1\right).$$
+Primijenimo tvrdnju $A\vee 1\Leftrightarrow A$ iz napomene \ref{taut} -- kako je $-2\leq x$, očito vrijedi $x<-6$ ne vrijedi, a uvjet $x>-5$ je očigledno zadovoljen. Dakle, imamo da je prethodno ekvivalentno tvrdnji 
+$$\left(-2\leq x\leq 2\right)\;\;\wedge\;\;\left(x<-1\vee x>-1\right).$$
+Ovo je zbog tvrdnje $A\wedge (B\vee C)\Leftrightarrow (A\wedge B)\vee (A\wedge C)$ pak ekvivalentno činjenici da je $$\left(-2\leq x<-1\right)\;\; \vee \;\;\left(-1<x\leq 2\right),$$
+odnosno $x\in S'$.
+
+Očito je $\max{S}=\max{\left(S\setminus S'\right)}=\sup{S}=\sup{\left(S\setminus S'\right)}=2$ i $\min{S}=\max{\left(S\setminus S'\right)}=\sup{S}=\sup{\left(S\setminus S'\right)}=2$.
+
+Još nekoliko primjera skupova s danim svojstvima: $S=[-1, 1]\cup [4, 6]$ i $S'=[0, 5]$, $S=[0, 1]$ i $S'=[0, 2]\cap \mathbb{Q}$.
+
+c) Uzmimo npr. $S=[2, \infty\rangle \cap \mathbb{Q}$ i $S'=\langle -\infty, 4]\cap \mathbb{Q}$. Tada očito vrijedi $S\cap S'=[2, 4]\cap \mathbb{Q}$ i $$S\cup S'=\left([2, \infty\rangle \cap \mathbb{Q}\right)\cup\left(\langle -\infty, 4]\cap \mathbb{Q}\right)=\left(\langle -\infty, 4]\cup [2, \infty\rangle\right)\cap \mathbb{Q}=\mathbb{Q},$$
+te vrijedi $\min{\left(S\cap S'\right)}=\inf{\left(S\cap S'\right)}=2$ i $\max{\left(S\cap S'\right)}=\sup{\left(S\cap S'\right)}=2$.
+
+Analogno se vidi da tvrdnja vrijedi npr. i za sljedeće skupove
+\[\pushQED{\qed}
+S=\left([2, 5\rangle \cup [6, \infty\rangle\right) \cap \mathbb{Q}\;\;\text{ i }\;\; S'=\left(\langle -\infty, 4]\cup [5, 6\rangle\right)\cap \mathbb{Q}.\qedhere
+\popQED
+\]
+\end{proof*}
 \begin{exercise}
 Zadan je skup \(S=\left\{\dfrac{1}{x^2+1} : x\in \mathbb{R}\right\}\). Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
 \end{exercise}
@@ -219,48 +259,21 @@ Za sve \(x\in \mathbb{R}\) vrijedi \[\dfrac{1}{x^2+1}\leq 1,\] jer je ta tvrdnja
 
 Uvrštavanjem velikih brojeva umjesto \(x\) naslućujemo da je \(\inf{S}=0\). Pretpostavimo suprotno, da je \(a=\inf{S}\neq 0\). Kako je \(0\) jedna donja međa od \(S\), slijedi \(a>0\). Kako je \(a\) jedna donja međa od \(S\), vrijedi \(\dfrac{1}{x^2+1}\geq a\) za sve \(x\in \mathbb{R}\), odakle imamo
 \[\dfrac{1}{x^2+1}\geq a\Leftrightarrow x^2+1\leq \dfrac{1}{a}\Leftrightarrow x^2\leq \dfrac{1}{a}-1,\]
-no posljednje ne vrijedi za sve \(x\in \mathbb{R}\), npr. za \(x_0=\sqrt{\dfrac{1}{a}}\) tvrdnja ne vrijedi.
+što je u kontradikciji s činjenicom da je skup \(\{x^2 : x\in \mathbb{R}\}\) odozgo neograničen. Zaista, kad bi postojao $M>0$ takav da je $x^2\leq M$ za sve $x\in \mathbb{R}$, onda posebno za $x=M+1$ dobivamo $(M+1)^2\leq M$, no vrijedi $(M+1)^2=M^2+2M+1>2M\geq M$, što daje kontradikciju.
 
 Nadalje, tvrdimo da \(\min{S}\) ne postoji. Pretpostavimo suprotno, da postoji \(\min{S}\). Tada je \(\min{S}=\inf{S}=0\). No ovo je nemoguće, jer vrijedi \(0\notin S\). Zaista, pretpostavimo da je \(0\in S\). Tada postoji \(x\in \mathbb{R}\) takav da je \(0=\dfrac{1}{x^2+1}\). Kako vrijedi \(\dfrac{1}{x^2+1}>0\), dobivamo kontradikciju.
 \end{proof}
+\begin{remark}
+\label{usefulnotation}
+Općenito, ako je \(f(x)\) neki realan broj u ovisnosti o \(x\in A\subseteq \mathbb{R}\), oznaka \(S=\left\{f(x) : x\in A\right\}\) je, precizno govoreći, zapravo oznaka za skup \[S=\left\{y\in \mathbb{R} : \exists x\in A \;\mathrm{t.d.}\; y=f(x)\right\}.\]
+\end{remark}
 \begin{remark}
 Evo još jednog, doduše malo dužeg, načina da pokažemo da \(\min{S}\) u prethodnom zadatku ne postoji. Zaista, pretpostavimo da postoji \(\min{S}=m\in \mathbb{R}\). Kako je \(m\in S\), po definiciji postoji \(x_0\in \mathbb{R}\) takav da je \(m=\dfrac{1}{x_0^2+1}\). Uzmimo \(x_1:=|x_0|+1\). Vrijedi \[\dfrac{1}{x_0^2+1}> \dfrac{1}{(|x_0|+1)^2+1},\]
 jer je
 \[\dfrac{1}{x_0^2+1}> \dfrac{1}{(|x_0|+1)^2+1}\Leftrightarrow x_0^2+1<(|x_0|+1)^2+1\Leftrightarrow -1<2|x_0|,\]
 a tvrdnja \(-1<2|x_0|\) je očito istinita. Nadalje, očito je \(|x_0|+1\in \mathbb{R}\), pa vrijedi \[\dfrac{1}{(|x_0|+1)^2+1}\in S,\] što je u kontradikciji s minimalnošću od \(m\).
 \end{remark}
-\begin{exercise}
-\label{13}
-Neka je \(S=\left\{\dfrac{1}{x+1} : x>-1\right\}\). Odredite \(\inf{S}\) i \(\sup{S}\).
-\end{exercise}
-\begin{proof}[Rješenje]
-Neka je \(x>-1\) proizvoljan. Tvrdimo da je \(\inf{S}=0\). Zaista, \(0\) je očito jedna donja međa, kako je \(x+1>0\), vrijedi \(\dfrac{1}{x+1}>0\) (dijelili smo s \((x+1)^2\)), pa je onda i \(\dfrac{1}{x+1}\geq 0.\) 
-
-Pretpostavimo da \(0\) nije infimum. Tada postoji neka donja međa skupa \(S\), nazovimo ju \(a\), takva da je \(a>0\). Po definiciji, za sve \(x>-1\) vrijedi \[\dfrac{1}{x+1}\geq a.\] Odavde iz \(a>0\) slijedi \[x\leq \dfrac{1}{a}-1.\] 
-Dobili smo gornju među skupa \(\langle-1, \infty\rangle\), što je kontradikcija jer znamo da je taj skup neograničen.
-
-Tvrdimo da ovaj skup nema supremum, tj. \(\sup{S}=\infty\). Moramo, dakle, pokazati da je ovaj skup odozgo neograničen. Pretpostavimo da je odozgo ograničen, tj. da postoji \(M\in \mathbb{R}\) takav da vrijedi 
-\[\dfrac{1}{x+1}\leq M.\]
-Očito je \(M>0\), jer za npr. \(x=0\) imamo \(\dfrac{1}{0+1}=1\leq M\). Sada trebamo dobiti kontradikciju i to tako da pronađemo neki \(x_0\) takav da je \(\dfrac{1}{x_0+1}>M\). Rješavanjem jednadžbe \(\dfrac{1}{x_0+1}=M\) dobivamo \[x_0=\dfrac{1}{M}-1,\] pa kako bi "naštimali" kontradikciju, uzmimo 
-\[x_0=\dfrac{1}{M+1}-1.\] 
-Tada je \(x_0>-1\) i
-\[\dfrac{1}{\dfrac{1}{M+1}-1+1}=M+1>M,\] i time zaista dobivamo kontradikciju s činjenicom da za svaki \(x> -1\) vrijedi \(\dfrac{1}{x+1}\leq M\)! Time smo dokazali da je \(S\) odozgo neograničen.
-\end{proof}
-\begin{exercise}
-\label{11}
-Neka je \(S=\left\{\dfrac{x^2-5}{x^2+5} : x\in \mathbb{R}\right\}\). Odredite \(\sup{S}\).
-\end{exercise}
-\begin{proof}[Rješenje]
-Neka je \(x\in \mathbb{R}\) proizvoljan. Vrijedi
-\begin{gather}
-\label{2}
-\dfrac{x^2-5}{x^2+5}=\dfrac{x^2+5-10}{x^2+5}=1-\dfrac{10}{x^2+5}.
-\end{gather}
-Odavde vidimo da je očito \(1\) jedna gornja međa. Naslućujemo da je \(1\) supremum. Zaista, pretpostavimo da postoji \(a\in \mathbb{R}\) takav da je \[\dfrac{x^2-5}{x^2+5}\leq a\] za svaki \(x\in \mathbb{R}\), gdje je \(a<1\). Množenjem s \(x^2+5\) dobivamo \[x^2-5\leq ax^2+5a,\] odnosno \[(1-a)x^2\leq 5(a+1).\] Kako je \(a<1\), možemo podijeliti s \(1-a\), pa dobivamo \[x^2\leq \dfrac{5(a+1)}{1-a},\]
-što je u kontradikciji s činjenicom da je skup \(\{x^2 : x\in \mathbb{R}\}\) odozgo neograničen (što smo pokazali u zadatku \ref{12}).
-\end{proof}
-U rješenju prethodnog zadatka smo naslutili da je \(1\) supremum koristeći (\ref{2}). Intuitivno, promotrimo li graf funkcije \(x\mapsto \dfrac{10}{x^2+5}\) vidimo da ona poprima sve pozitivne vrijednosti, dakle i one jako bliske nuli, što znači da će \(1-\dfrac{10}{x^2+5}\) biti po volji blizu broju \(1\), pa ne može postojati gornja međa manja od \(1\) jer ćemo uvijek moći odabrati takav \(x\) koji će "premašiti" tako odabranu "gornju među".
-Ova razmatranja vode na sljedeće zaključke, koji nisu teški za dokazati.
+U rješenju prethodnog zadatka smo naslutili da je \(0\) infimum. Intuitivno, vidimo da \(\dfrac{1}{x^2+1}\) poprima sve pozitivne vrijednosti, dakle i one jako bliske nuli, pa ne može postojati donja međa veća od $0$ jer ćemo uvijek moći odabrati takav \(x_0\) za kojeg je \(\dfrac{1}{x_0^2+1}\) manji od tako odabrane "gornje međe". Ova razmatranja vode na sljedeće zaključke, koji nisu teški za dokazati.
 \begin{lemma}
 \label{14}
 Neka je \(S\) odozgo ograničen skup. Tada je \(L\in \mathbb{R}\) supremum skupa \(S\) ako i samo ako je on gornja međa od \(S\), tj. za svaki \(x\in S\) vrijedi \(x\leq L\), te za svaki \(\epsilon >0\) postoji \(a\in S\) takav da je \(L-\epsilon<a\).
@@ -270,18 +283,41 @@ Neka je \(S\) odozgo ograničen skup. Tada je \(L\in \mathbb{R}\) supremum skupa
 Neka je \(S\) odozdo ograničen skup. Tada je \(L\in \mathbb{R}\) infimum skupa \(S\) ako i samo ako je on donja međa od \(S\), tj. za svaki \(x\in S\) vrijedi \(x\geq L\), te za svaki \(\epsilon >0\) postoji \(a\in S\) takav da je \(L+\epsilon>a\).
 \end{lemma}
 Ovi rezultati pokazuju se zgodnima za dokazivanje tvrdnji o supremumima i infimumima u mnogo slučajeva. Navedimo nekoliko primjera.
+OVDJE SAM STAO!!! ZAMIJENITI X SA X0!
 \begin{exercise}
-Odredite infimum skupa iz zadatka \ref{13} koristeći lemu \ref{26}.
+Neka je $S=\left\{\dfrac{1}{x+1} : x\geq 0\right\}$. Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
 \end{exercise}
 \begin{proof}[Rješenje]
-U rješenju zadatka \ref{13} smo već pokazali da je \(0\) jedna donja međa. Dokažimo sada da za proizvoljan \(\epsilon>0\) postoji \(a\in S\) takav da je \(\epsilon>a\). To je ekvivalentno tvrdnji da za proizvoljan \(\epsilon>0\) postoji \(x>-1\) takav da je \[\dfrac{1}{x+1}<\epsilon.\] Da bismo dobili ideju kako bi \(x\) trebao izgledati, riješimo jednadžbu \(\dfrac{1}{x+1}=\epsilon\) po \(x\). Imamo
+Vrijedi $\sup{S}=\max{S}=1$, jer za sve $x\geq 0$ vrijedi $\dfrac{1}{x+1}\leq 1$ i $1\in S$, za $x=0$.
+
+Tvrdimo da je $\inf{S}=0$. Očito je $\dfrac{1}{x+1}\geq 0$ za sve $x\geq 0$. Ovo se kao i prije može dokazati kontradikcijom, ali primijenimo ovaj put lemu \ref{26}, tj. dokažimo da za proizvoljan \(\epsilon>0\) postoji \(a\in S\) takav da je \(\epsilon>a\). To je ekvivalentno tvrdnji da za proizvoljan \(\epsilon>0\) postoji \(x\geq 0\) takav da je \[\dfrac{1}{x+1}<\epsilon.\] Da bismo dobili ideju kako bi \(x\) trebao izgledati, riješimo jednadžbu \(\dfrac{1}{x+1}=\epsilon\) po \(x\). Imamo
 \[\dfrac{1}{x+1}=\epsilon \Leftrightarrow (x+1)\epsilon=1\Leftrightarrow x\epsilon=1-\epsilon\Leftrightarrow x=\dfrac{1-\epsilon}{\epsilon}=\dfrac{1}{\epsilon}-1.\]
 Kako je \(\dfrac{1}{\epsilon}-1\) rješenje jednadžbe \(\dfrac{1}{x+1}=\epsilon\), slijedi da je \[\dfrac{1}{\left(\dfrac{1}{\epsilon}-1\right)+1}=\epsilon.\] Sada trebamo taj izbor \(x\)-a "popraviti" tako da za novi izbor \(x\)-a vrijedi \(\dfrac{1}{x+1}<\epsilon\). Kako je \[\dfrac{1}{\left(\dfrac{1}{\epsilon}-1\right)+1}=\epsilon>0,\] očito ako mu "povećamo" nazivnik, broj kojim time dobivamo bit će sigurno manji od \(\epsilon\). Zato ima smisla uzeti da je \[x=\dfrac{1}{\epsilon}+1.\] Tada vrijedi
 \[x>\dfrac{1}{\epsilon}-1\Rightarrow x+1>\dfrac{1}{\epsilon}\Rightarrow \dfrac{1}{x+1}<\dfrac{1}{\dfrac{1}{\epsilon}}=\epsilon,\]
 čime smo dokazali tvrdnju.
+
+Nadalje, $\min{S}$ ne postoji, jer jednadžba $\dfrac{1}{x+1}=0$ nema rješenja.
 \end{proof}
 \begin{exercise}
-Neka je \(A=\left\{\dfrac{n}{n+1} : n\in \mathbb{N}\right\}\). Odredite \(\sup{A}\), ako postoji.
+Neka je \(S=\left\{\dfrac{x^2-5}{x^2+5} : x\in \mathbb{R}\right\}\) (skup iz zadatka \ref{11}). Već je dokazano da je supremum ovog skupa \(1\), ali dokažite da je \(\sup{S}=1\) koristeći karakterizaciju danu lemom \ref{14}.
+\end{exercise}
+\begin{proof}[Rješenje]
+U rješenju zadatka \ref{11} smo već vidjeli da je \(1\) jedna gornja međa. Treba pokazati da za sve \(\epsilon>0\) postoji \(x\in \mathbb{R}\) takav da je 
+\[1-\dfrac{10}{x^2+5}>1-\epsilon,\] 
+što je ekvivalentno uvjetu \[\dfrac{10}{x^2+5}<\epsilon.\]
+Ovdje ćemo primijeniti sljedeći "trik" -- pronaći ćemo neki izraz koji je veći od $\dfrac{10}{x^2+5}$, ali koji i dalje možemo napraviti "po volji malim" i to na jednostavniji način. Primijetimo da je \[\dfrac{10}{x^2+5}<\dfrac{10}{x}\] za sve \(x>0\). Zaista vrijedi
+$$\dfrac{10}{x^2+5}<\dfrac{10}{x}\Leftrightarrow x<x^2+5\Leftrightarrow x^2-x+5>0,$$
+a posljednje vrijedi ne samo za sve $x>0$, nego i za sve $x\in \mathbb{R}$, budući da je vodeći koeficijent pozitivan i diskriminanta negativna.
+Rješavanjem jednadžbe \(\dfrac{10}{x}=\epsilon\) dobivamo \(x=\dfrac{10}{\epsilon}>0\), pa nam se isplati upravo uzeti \(x:=\dfrac{10}{\epsilon}\). Dobivamo \[\epsilon=\dfrac{10}{x}>\dfrac{10}{x^2+5},\] pa smo time dokazali tvrdnju.
+\end{proof}
+\begin{remark}
+Prethodni zadatak se mogao rješiti i na sljedeći način. Kroz rješavanje prethodnih zadataka pokazalo se je da je rješavanje jednadžbe po \(x\) često od pomoći, pa rješavanjem jednadžbe \(\dfrac{10}{x^2+5}=\epsilon\) dobivamo \[x=\sqrt{\dfrac{10}{\epsilon}-5}=\sqrt{\dfrac{10-5\epsilon}{\epsilon}}.\] No primijetimo da ovaj izraz nije definiran ako je \(10-5\epsilon<0\), tj. ako je \(\epsilon>2\). No uočimo da ako je \(\epsilon>2\), onda tvrdnja koju želimo dokazati vrijedi i to za \(x=0\). Zato možemo pretpostaviti da je \(\epsilon\leq 2\). Sličnom intuicijom kao i prije, uzmemo li \(x=\sqrt{\dfrac{10}{\epsilon}}\),
+vrijedi
+\[x>\sqrt{\dfrac{10}{\epsilon}-5}\Rightarrow x^2>\dfrac{10}{\epsilon}-5\Rightarrow x^2+5>\dfrac{10}{\epsilon}\Rightarrow \dfrac{1}{x^2+5}<\dfrac{\epsilon}{10}\Rightarrow \dfrac{10}{x^2+5}<\epsilon,\]
+čime smo dokazali tvrdnju.
+\end{remark}
+\begin{exercise}
+Neka je \(A=\left\{\dfrac{n}{n+1} : n\in \mathbb{N}\right\}\). Odredite \(\sup{A}\), ako postoji. PREPRAVITI!!!
 \end{exercise}
 \begin{proof}[Rješenje]
 Za svaki \(n\in \mathbb{N}\) vrijedi
@@ -292,81 +328,141 @@ Za svaki \(n\in \mathbb{N}\) vrijedi
 \[(n+1)\epsilon>1.\]
 Prema Arhimedovu aksiomu postoji \(n\in \mathbb{N}\) takav da je \(n\epsilon>1\). No za taj \(n\) očito vrijedi \[(n+1)\epsilon>n\epsilon>1.\] Time smo dokazali tvrdnju.
 \end{proof}
-\begin{exercise}
-Neka je \(A=\left\{\dfrac{2}{x^2-1} : |x|>3\right\}\). Odredite \(\inf{A}\), ako postoji.
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka je \(S=\left\{x+\dfrac{1}{x} : x>0\right\}\). Odredite \(\min{S}\). Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
+\item[b)] Neka je \(S=\{x^3-x : x\geq 1\}\). Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
+\end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-Uzmimo proizvoljan  \(x\in \mathbb{R}\) takav da je \(|x|>3\). Naslućujemo da je \(\inf{A}=0\), jer broj \(\dfrac{2}{x^2-1}\) teži ka \(0\) za po apsolutnoj vrijednosti velike \(x\). Zaista, pokažimo da je \(0\) jedna donja međa. Zapravo je dovoljno pokazati da je \(x^2-1>0\), jer onda je očito \(\dfrac{2}{x^2-1}\geq 0\). Zaista, iz \(|x|>3\) slijedi \(x^2>9\), odakle slijedi \(x^2-1>8>0\), pa tvrdnja vrijedi. 
+a) Uvrštavanjem raznih brojeva možemo naslutiti da je $\inf{S}=\min{S}=2$. Zaista, $2\in S$ i to za $x=1$. S druge strane, vrijedi $x+\dfrac{1}{x}\geq 2$ za sve $x\geq 0$, jer vrijedi
+$$x+\dfrac{1}{x}\geq 2\Leftrightarrow x^2-2x+1\geq 0\Leftrightarrow (x-1)^2\geq 0.$$
+S druge strane, naslućujemo da je $S$ odozgo neograničen budući da za velike $x$ članovi skupa $S$ teže u beskonačnost. Zaista, pretpostavimo suprotno, da postoji $M\in \mathbb{R}$ takav da je $x+\dfrac{1}{x}\leq M$ za sve $x>0$. Specijalno je $M\geq 0$ i $M+\dfrac{1}{M}\leq M$, što je kontradikcija s činjenicom da je $M+\dfrac{1}{M}>M$.
 
-Pokažimo sada da za svaki \(\epsilon >0\) postoji \(x\in \mathbb{R}\) takav da je \[0+\epsilon=\epsilon>\dfrac{2}{x^2-1}\;\;\text{i}\;\; |x|>3.\] Rješavanjem jednadžbe \(\epsilon=\dfrac{2}{x^2-1}\) po \(x\) dobivamo da je jedno od rješenja \[x=\sqrt{\dfrac{2}{\epsilon}+1},\] pa sličnom intuicijom kao i prije pokušajmo "povećati" nazivnik, s time da treba imati na umu i da treba vrijediti \(|x|>3\). Naslućujemo da će tvrdnja vrijediti za \[x=\sqrt{\dfrac{2}{\epsilon}+9}.\] Zaista, vrijedi \[|x|=x=\sqrt{\dfrac{2}{\epsilon}+9}>\sqrt{9}=3,\] te vrijedi
-\[x>\sqrt{\dfrac{2}{\epsilon}+1}\Rightarrow x^2>\dfrac{2}{\epsilon}+1\Rightarrow x^2-1>\dfrac{2}{\epsilon}\Rightarrow \dfrac{1}{x^2-1}<\dfrac{\epsilon}{2}\Rightarrow \dfrac{2}{x^2-1}<\epsilon.\]
-Time smo pokazali da je \(\inf{A}=0\).
+
+Dakle, kako je $S$ odozgo neograničen, ne postoje $\sup{S}$ i $\max{S}$.
+
+b) Uvrštavanjem raznih brojeva možemo naslutiti da je \(\inf{S}=\min{S}=0\). Dokažimo to! Očito je \(0\in S\). Dokažimo da je \(x^3-x\geq 0\) za sve \(x\geq 1\). Zaista, taj uvjet je ekvivalentan sa 
+\[x(x^2-1)\geq 0, \;\; \forall x\geq 1,\]
+što je ekvivalentno tvrdnji da je \(x^2-1\geq 0\) za sve \(x\geq 1\), što očito vrijedi. Prema tome tvrdnja vrijedi po definiciji minimuma.
+
+Tvrdimo da je $S$ odozgo neograničen. Zaista, u suprotnome bi postojao $M\in \mathbb{R}$ takav da je $x^3-x\leq M$ za sve $x\geq 1$. Primijetimo da uvrštavanjem npr. $x=2$ dobivamo da je $M\geq 2^3-2=6$. Slično kao i u a) dijelu zadatka, pokušajmo se uvjeriti da $M^3-M\leq M$ vodi do kontradikcije, tj. da vrijedi $M^3-M>M$. Vrijedi
+$$M^3-M>M\Leftrightarrow M^3>2M\leftrightarrow M^2>2\Leftrightarrow M>\sqrt{2},$$
+a $M>\sqrt{2}$ očito vrijedi zbog $M\geq 6$.
 \end{proof}
 \begin{exercise}
-Neka je \(S=\left\{\dfrac{x^2-5}{x^2+5} : x\in \mathbb{R}\right\}\) (skup iz zadatka \ref{11}). Već je dokazano da je supremum ovog skupa \(1\), ali dokažite da je \(\sup{A}=1\) koristeći karakterizaciju danu lemom \ref{14}.
+\label{unbounded}
+\item[a)] Neka je \(S=\left\{\dfrac{5}{x+2} : x\in \langle -2,0]\right\}\). Odredite \(\min{S}\). Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
+\item[b)] Neka je \(A=\left\{\dfrac{4x}{4x^2-1} : x>\dfrac{1}{2}\right\}\). Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
 \end{exercise}
 \begin{proof}[Rješenje]
-U rješenju zadatka \ref{11} smo već vidjeli da je \(1\) jedna gornja međa. Treba pokazati da za sve \(\epsilon>0\) postoji \(x\in \mathbb{R}\) takav da je 
-\[1-\dfrac{10}{x^2+5}>1-\epsilon,\] 
-što je ekvivalentno uvjetu \[\dfrac{10}{x^2+5}<\epsilon.\] Kroz rješavanje prethodnih zadataka pokazalo se je da je rješavanje jednadžbe po \(x\) često od pomoći, pa rješavanjem jednadžbe \(\dfrac{10}{x^2+5}=\epsilon\) dobivamo \[x=\sqrt{\dfrac{10}{\epsilon}-5}=\sqrt{\dfrac{10-5\epsilon}{\epsilon}}.\] No primijetimo da ovaj izraz nije definiran ako je \(10-5\epsilon<0\), tj. ako je \(\epsilon>2\). No uočimo da ako je \(\epsilon>2\), onda tvrdnja koju želimo dokazati vrijedi i to za \(x=0\). Zato možemo pretpostaviti da je \(\epsilon\leq 2\). Sličnom intuicijom kao i prije, uzmemo li \(x=\sqrt{\dfrac{10}{\epsilon}}\),
-vrijedi
-\[x>\sqrt{\dfrac{10}{\epsilon}-5}\Rightarrow x^2>\dfrac{10}{\epsilon}-5\Rightarrow x^2+5>\dfrac{10}{\epsilon}\Rightarrow \dfrac{1}{x^2+5}<\dfrac{\epsilon}{10}\Rightarrow \dfrac{10}{x^2+5}<\epsilon,\]
-čime smo dokazali tvrdnju.
-\end{proof}
-\begin{remark}
-Prethodni zadatak mogao se riješiti i kraće. Primijetimo da je \[\dfrac{10}{x^2+5}<\dfrac{10}{x}\] za sve \(x>0\). Rješavanjem jednadžbe \(\dfrac{10}{x}=\epsilon\) dobivamo \(x=\dfrac{10}{\epsilon}>0\), pa nam se isplati upravo uzeti taj \(x\). Dobivamo \[\epsilon=\dfrac{10}{x}>\dfrac{10}{x^2+5},\] pa smo time dokazali tvrdnju.
-\end{remark}
+a) Za sve $x\in \langle -2, 0]$ vrijedi $\dfrac{5}{x+2}\geq \dfrac{5}{2}$ i ta vrijednost se postiže za $x=0$, pa je $\inf{S}=\min{S}=\dfrac{5}{2}$.
 
-\begin{exercise}
-Neka je \(A=\left\{\dfrac{m^2}{n^2} : m, n\in \mathbb{N}\right\}\). Postoji li \(\sup{A}\)?
+Tvrdimo da je $S$ odozgo neograničen. Zaista, pretpostavimo da postoji $M\in \mathbb{R}$ takav da za svaki $x\in \langle -2, 0]$ vrijedi $\dfrac{5}{x+2}\leq M$. Uočimo da rješavanjem jednadžbe $\dfrac{5}{x+2}=M$ dobivamo $x=\dfrac{5}{M}-2$, pa bi trebali dobiti kontradikciju ako "smanjimo" $x$, stoga ima smisla promatrati npr. $$x_0=\dfrac{5}{M+1}-2.$$ Uočimo da je $-2<x_0\leq 0$. Zaista, vrijedi $\dfrac{5}{M}-2\leq 0$ ako i samo ako je $M\geq \dfrac{5}{2}$, a to dobivamo iz pretpostavke za $x=0$, te vrijedi $-2<\dfrac{5}{M}-2$ budući da je očito $M>0$. Nadalje,
+$$\dfrac{5}{x_0+2}=\dfrac{5}{\dfrac{5}{M+1}}=M+1>M,$$
+što daje kontradikciju.
+
+b) Tvrdimo da je $S$ odozgo neograničen. Ideja će biti pronaći neki izraz koji je manji od $\dfrac{4x}{4x^2-1}$, ali da i dalje teži u beskonačnost kako se približavamo $\dfrac{1}{2}$. Zaista, za sve $x\in \left\langle \dfrac{1}{2}, \infty\right\rangle$ vrijedi
+$$\dfrac{4x}{4x^2-1}=\dfrac{4x}{(2x-1)(2x+1)}> \dfrac{4x}{(2x-1)\cdot 4x}=\dfrac{1}{2x+1},$$
+jer je
+$$\dfrac{4x}{(2x-1)(2x+1)}>\dfrac{4x}{(2x-1)4x}\Leftrightarrow 4x>2x+1\Leftrightarrow x>\dfrac{1}{2}.$$
+Pretpostavimo sada da postoji $M\in \mathbb{R}$ takav da je $\dfrac{4x}{4x^2-1}\leq M$ za sve $x>\dfrac{1}{2}$. Očito je $M>0$, pa uzmemo li $x_0:=\dfrac{M+1}{2}$, vrijedi $x_0>\dfrac{1}{2}$ i $\dfrac{4x_0}{4x_0^2-1}>\dfrac{1}{2x_0-1}=M$, što daje kontradikciju.
+
+Tvrdimo da je $\inf{S}=0$.
+
+\textit{Prvi način.} Pretpostavimo da $a=\inf{S}\neq 0$. Kako je $0$ donja međa, slijedi da je $a>0$, te za sve $x>\dfrac{1}{2}$ vrijedi $\dfrac{4x}{4x^2-1}\geq a$, te
+$$\dfrac{4x}{4x^2-1}\geq a \Leftrightarrow \dfrac{4x^2-1}{4x}\leq \dfrac{1}{a}\Leftrightarrow x-\dfrac{1}{4x}\leq \dfrac{1}{a}.$$
+Preostaje dokazati da je skup
+$$A:\left\{x-\dfrac{1}{4x} : x>\dfrac{1}{2}\right\}$$
+odozgo neograničen. Uočimo da za sve $x>\dfrac{1}{2}$ vrijedi $x-\dfrac{1}{4x}>x-\dfrac{1}{2}$, jer je
+$$x-\dfrac{1}{4x}>x-\dfrac{1}{2}\Leftrightarrow \dfrac{1}{4x}<\dfrac{1}{2}\Leftrightarrow x>\dfrac{1}{2}.$$
+Kao i prije, pretpostavimo li da postoji $M\in \mathbb{R}$ takav da je $x-\dfrac{1}{4x}\leq M$ za sve $x>\dfrac{1}{2}$. Kako je $M>0$, možemo uzeti $x_0:=M+\dfrac{1}{2}$. Vrijedi $x_0-\dfrac{1}{4x_0}>x_0-\dfrac{1}{2}=M$, čime dobivamo kontradikciju.
+
+\textit{Drugi način.} Treba pokazati da za sve $\epsilon>0$ postoji $x_0>\dfrac{1}{2}$ takav da je $\dfrac{4x_0}{4x_0^2-1}<\epsilon.$ Uočimo da za sve $x\geq \dfrac{1}{2}$ vrijedi
+$$\dfrac{4x}{4x^2-1}=\dfrac{4x}{(2x-1)(2x+1)}\leq \dfrac{4x}{(2x-1)2x}=\dfrac{2}{2x-1},$$
+pa rješavanjem jednadžbe $\dfrac{2}{2x_0-1}=\epsilon$ dobivamo $x_0=\dfrac{1}{\epsilon}+\dfrac{1}{2}$, što je upravo traženi $x_0$.
+POPRAVITI CONFLATING OD X I X0!!!
+\end{proof}
+Uočimo da možemo pokazati da je neki skup odozgo (odozdo) ograničen na način da pronađemo neki njegov odozgo (odozdo) neograničen podskup. Zaista, kontrapozicijom dobivamo da ako je skup odozgo (odozdo) ograničen, onda je i svaki njegov podskup odozgo (odozdo) ograničen, a to je očigledna tvrdnja.
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka je $S=\left\{\dfrac{m^2+n}{n^2+m} : m, n\in \mathbb{N}\right\}$. Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
+\item[b)] Neka je \(S=\left\{\dfrac{n^2+4m^2}{mn} : n, m\in \mathbb{N}\right\}\). Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
+\end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-Tvrdimo da ne postoji \(\sup{A}\), tj. da je ovaj skup odozgo neograničen i to tako što ćemo pronaći neki njegov odozgo neograničen podskup. Zaista, to je dovoljno da bismo dokazali tvrdnju jer kontrapozicijom dobivamo da ako je skup odozgo ograničen, onda je i svaki njegov podskup odozgo ograničen, a to je očigledna tvrdnja. Neka je \[A':=\left\{m^2 : m\in \mathbb{N}\right\}.\] Očito je \(A'\subseteq A\) i on je odozgo neograničen, pa je i \(A\) odozgo neograničen.
+a) Uočimo da je $S'=\left\{\dfrac{m^2+1}{1+m} : m\in \mathbb{N}\right\}\subseteq S$ i dobivamo ga za $n=1$. No, $S'$ je odozgo neograničen. Zaista, za sve $m\in \mathbb{N}$ vrijedi
+$$\dfrac{m^2+1}{1+m}=\dfrac{m^2-1+2}{1+m}=\dfrac{(m-1)(m+1)+2}{1+m}=m-1+\dfrac{2}{1+m}\geq m-1,$$
+pa pretpostavimo li da je $S'$ odozgo ograničen s gornjom međom $M$, dobivamo kontradikciju za $m=M+1$. Dakle, $S$ je odozgo neograničen.
+
+Tvrdimo da je $\inf{S}=0$. Zaista, pretpostavimo li da je $a=\inf{S}\neq 0$, kako je $0$ jedna donja međa, imamo $a>0$ i za sve $m, n\in \mathbb{N}$ vrijedi
+$$\dfrac{m^2+n}{n^2+m}\leq a\Leftrightarrow \dfrac{n^2+m}{m^2+n}\leq \dfrac{1}{a}.$$
+Kako možemo zamijeniti uloge $m$ i $n$, zapravo smo dobili gornju među od $S$, što daje kontradikciju.
+
+Konačno, lako se vidi da je svaki element iz $S$ pozitivan, pa $S$ nema minimum.
+
+b) Neka su \(m, n\in \mathbb{N}\) proizvoljni. Da bi pronašli minimum, tražimo broj \(M\in \mathbb{R}\) takav da je $\dfrac{n^2+4m^2}{mn}\geq M$ za sve $m, n\in \mathbb{N}$ i takav da postoje $n_0, m_0\in \mathbb{N}$ takvi da je $\dfrac{n_0^2+4m_0^2}{m_0n_0}=M$. Uočimo da za sve $m, n\in \mathbb{N}$ vrijedi
+\[\dfrac{n^2+4m^2}{mn}\geq M\Leftrightarrow n^2+4m^2\geq Mmn\Leftrightarrow n^2-Mmn+4m^2\geq 0\]
+Lako se vidi da za \(M=4\) dobivamo \((n-2m)^2\geq 0\), što je istinita tvrdnja, dakle \(4\) je jedna donja međa. Primijetimo da je i \(\min{A}=4\) jer se postiže za \(n=2\) i \(m=1\). Stoga je \(\inf{A}=4\). Tvrdimo da \(A\) nema supremum. Uzmimo \(m=1\). Pretpostavimo li da skup \[A'=\left\{\dfrac{n^2+4}{n} : n\in \mathbb{N}\right\}\] ima gornju među \(M\), onda dobivamo kontradikciju za \(n=M\).
+\end{proof}
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka je \(S=\left\{x+\dfrac{3}{x} : x>0\right\}\). Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
+\item[b)] Neka je \(S=\left\{ \dfrac{4x}{5x^2+1}: x\geq \dfrac{1}{2}\right\}\). Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Da je $S$ odozgo neograničen pokazuje se potpuno analogno kao u prethodnom zadatku POPRAVITI!!!. Međutim, u ovom zadatku nije toliko jednostavno naslutiti čemu je jednak infimum samo uvrštavanjem raznih brojeva. Ipak, ovdje se možemo izvući.
+
+Uočimo da je $a\in \mathbb{R}=\min{S}$ ako i samo ako je $x+\dfrac{3}{x}\geq a$ za sve $x>0$ i postoji $x>0$ takav da je $x+\dfrac{3}{x}=a$. Vrijedi
+$$x+\dfrac{3}{x}=a\Leftrightarrow x^2-ax+3=0,$$
+te kako bi oba uvjeta bila zadovoljena, ima smisla pitati koji je "najmanji" $a\in \mathbb{R}$ (uočimo i da je $a>0$) za kojeg jednadžba $x^2-ax+3=0$ ima pozitivno rješenje. Uočimo da ova jednadžba ima rješenja ako i samo ako je diskriminanta nenegativna, tj. ako je $a^2-12\geq 0$, odakle dobivamo $a\geq 2\sqrt{3}$, dakle za $a=2\sqrt{3}$ imamo jedinstveno rješenje $x=\sqrt{3}$.
+
+Dakle, tvrdimo da je $\inf{S}=\min{S}=2\sqrt{3}$. Zaista, on se postiže za $x=\sqrt{3}$ i vrijedi
+$$x+\dfrac{3}{x}=2\sqrt{3}\Leftrightarrow x^2-2\sqrt{3}x+3=0\Leftrightarrow (x-\sqrt{3})^2\geq 0,$$
+što je i trebalo dokazati.
+
+b) Analogno kao u a) dijelu zadatka, kako bi naslutili čemu je jednak $\max{S}$, pitamo se koji je "najveći" $a\in \mathbb{R}$ takav da je $\dfrac{4x}{5x^2+1}=a$, tj. $5ax^2-4x+a=0$. Iz uvjeta za diskriminantu dobivamo $a\in \left[-\dfrac{2}{\sqrt{5}}, \dfrac{2}{\sqrt{5}}\right]$, te za $a=\dfrac{2}{\sqrt{5}}$ se rješenje postiže za $x=\dfrac{1}{\sqrt{5}}$. Sada se slično kao i u a) dijelu zadatka pokaže da je $\sup{S}=\max{S}=\dfrac{2}{\sqrt{5}}$.
+
+Naslućujemo da je $\inf{S}=0$. Zaista, to se može dokazati analogno kao b) dijelu zadatka \ref{unbounded}. Ilustrirajmo dokaz koristeći lemu \ref{26}. Treba dokazati da za sve $\epsilon>0$ postoji $x\geq \dfrac{1}{2}$ takav da je $\dfrac{4x}{5x^2+1}<\epsilon$. Uočimo da za sve $x\geq \dfrac{1}{2}$ vrijedi
+$$\dfrac{4x}{5x^2+1}\leq \dfrac{4x}{5x^2}=\dfrac{4}{5x},$$
+te rješavanjem jednadžbe $\dfrac{4}{5x}=\epsilon$ dobivamo $x=\dfrac{4}{5\epsilon}$, što je upravo traženi $x$.
 \end{proof}
 Istaknimo sljedeću korisnu lemu.
 \begin{lemma}
 Neka su \(A, B\subseteq \mathbb{R}\) neprazni, \(A\subseteq B\) i neka je \(B\) odozgo (odozdo) ograničen skup. Tada je i \(A\) odozgo (odozdo) ograničen skup, te vrijedi \(\sup{A}\leq \sup{B}\) (\(\inf{A}\geq \inf{B}\)).
 \end{lemma}
-\begin{exercise}
-Neka je \(A=\left\{\dfrac{n}{1+nx^2} : n\in \mathbb{N},\; x\in \mathbb{R}\right\}\). Odredite \(\inf{A}\), ako postoji.
+Uočimo za prethodna lema povlači sljedeću tvrdnju -- Neka je \(A\subseteq \mathbb{R}\) neprazan i odozdo ograničen, te neka je \(a\in \mathbb{R}\) donja međa skupa \(A\). Ako postoji \(B\subseteq A\) sa svojstvom da je \(\inf{B}=a\), onda je \(a=\inf{A}\). Zaista, iz prethodne leme slijedi da je \(B\) odozdo ograničen, te \(a=\inf{B}\geq \inf{A}\). S druge strane, po definiciji infimuma vrijedi \(a\leq \inf{A}\), pa je zaista \(a=\inf{A}\). Analogna tvrdnja vrijedi za odozgo ograničene skupove i supremum.
+\begin{exercise} \textbf{}
+\begin{itemize}
+\item[a)] Neka je \(S=\left\{\dfrac{n}{1+nx^2} : n\in \mathbb{N},\; x\in \mathbb{R}\right\}\). Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
+\item[b)] Neka je \(S=\left\{\dfrac{n+k^2}{2^n+k^2+1} : n, k\in \mathbb{N}\right\}\). Odredite \(\inf{S}, \sup{S}, \min{S}, \max{S}\), ako postoje.
+\end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-Prvo dokažimo sljedeću jednostavnu tvrdnju: Neka je \(A\subseteq \mathbb{R}\) neprazan i odozdo ograničen, te neka je \(a\in \mathbb{R}\) donja međa skupa \(A\). Ako postoji \(B\subseteq A\) sa svojstvom da je \(\inf{B}=a\), onda je \(a=\inf{A}\). Zaista, iz prethodne leme slijedi da je \(B\) odozdo ograničen, te \(a=\inf{B}\geq \inf{A}\). S druge strane, po definiciji infimuma vrijedi \(a\leq \inf{A}\), pa je zaista \(a=\inf{A}\).
+a) Promotrimo skup
+\[S'=\left\{\dfrac{1}{1+x^2} : x\in \mathbb{R}\right\}.\]
+Uočimo da je \(S'\subseteq S\) (dobiven za \(n=1\)) i \(\inf{S'}=0\) (ovo se pokazuje slično kao u prethodnim zadatcima). Kako za sve \(x\in \mathbb{R}\) i \(n\in \mathbb{N}\) vrijedi \(\dfrac{n}{1+nx^2}\geq 0\), vrijedi \(\inf{A}=0\). Uočimo da zbog $\dfrac{n}{1+nx^2}>0$ za sve $n\in \mathbb{N}$ i $x\in \mathbb{R}$, $S$ nema minimum.
 
-Promotrimo skup
-\[A'=\left\{\dfrac{1}{1+x^2} : x\in \mathbb{R}\right\}.\]
-Uočimo da je \(A'\subseteq A\) (dobiven za \(n=1\)) i \(\inf{A'}=0\) (ovo se pokazuje slično kao u prethodnim zadatcima). Kako za sve \(x\in \mathbb{R}\) i \(n\in \mathbb{N}\) vrijedi \(\dfrac{n}{1+nx^2}\geq 0\), vrijedi \(\inf{A}=0\).
-\end{proof}
-\begin{exercise}
-Neka je \(A=\left\{\dfrac{4x}{4x^2-1} : x>\dfrac{1}{2}\right\}\). Odredite \(\sup{A}\) i \(\inf{A}\), ako postoje.
-\end{exercise}
-\begin{proof}[Rješenje]
-Neka je \[A'=\left\{\dfrac{4x}{4x^2-1} : \dfrac{1}{2}<x<1\right\}.\] Tvrdimo da je \(A'\) odozgo neograničen. Pretpostavimo da postoji \(M\in \mathbb{R}\) takav da za proizvoljan \(x\in \left\langle \dfrac{1}{2}, 1\right\rangle\) vrijedi \[\dfrac{4x}{4x^2-1}\leq M.\] Očito je \(M> 1\). Kako je tada \[\dfrac{4}{4x^2-1}<\dfrac{4x}{4x^2-1},\] očito je \(M\) gornja međa i za skup \[A''=\left\{\dfrac{4}{4x^2-1} : \dfrac{1}{2}<x<1\right\}.\] Pokažimo sada da postoji element skupa \(A''\) koji je veći od \(M\), čime dobivamo kontradikciju. Zaista, jedno od rješenja jednadžbe \(\dfrac{4}{4x^2-1}=M\) je \(x=\dfrac{\sqrt{4+M}}{2\sqrt{M}},\) pa ima smisla uzeti \[x=\dfrac{\sqrt{3+M}}{2\sqrt{M}}\] da bismo dobili kontradikciju, jer je očito \(x<\dfrac{\sqrt{4+M}}{2\sqrt{M}},\) što iz pozitivnosti oba izraza povlači \[\dfrac{4}{4x^2-1}>\dfrac{4}{4\left(\dfrac{(\sqrt{4+M}}{2\sqrt{M}}\right)^2-1}=M.\] Još samo treba pokazati da je ovakav izbor \(x\)-a smislen, tj. da vrijedi \(x> \dfrac{1}{2}\) i \(x<1\). Zaista, prvi uvjet je ekvivalentan s \(M\geq 0\), a drugi s \(M>1\), a obje tvrdnje su očito istinite. Time smo dobili kontradikciju s činjenicom da je \(M\) gornja međa od \(A''\), pa zaključujemo da \(A\) nema supremum. 
+Nadalje, $S$ je odozgo neograničen, jer je $\mathbb{N}\subseteq S$ (dobiven za $x=0$).
 
-Odredimo sada infimum. Kako vidimo da ovaj izraz teži ka \(0\) za sve veće i veće \(x\), intuitivno možemo pretpostaviti da je \(0\) infimum. Zaista, \(0\) je donja međa, jer vrijedi \(\dfrac{4x}{4x^2-1}\geq 0\) za sve \(x>\dfrac{1}{2}\), što se lako provjeri. Sada još treba provjeriti da za svaki \(\epsilon>0\) postoji \(x>\dfrac{1}{2}\) takav da je \[0+\epsilon=\epsilon>\dfrac{4x}{4x^2-1}.\] Vrijedi
-\[x>\dfrac{1}{2}\Rightarrow \dfrac{1}{x}<2\Rightarrow 4x-\dfrac{1}{x}>4x-2\Rightarrow \dfrac{1}{4x-\dfrac{1}{x}}<\dfrac{4}{4x-2}\Rightarrow \dfrac{4x}{4x^2-1}<\dfrac{4}{4x-2}.\]
-Rješenje jednadžbe \(\dfrac{4}{4x-2}=\epsilon\) je \[x=\dfrac{\epsilon+2}{2\epsilon}=\dfrac{1}{\epsilon}+\dfrac{1}{2}>\dfrac{1}{2}\] i uzmemo li upravo taj \(x\), tvrdnja je dokazana.
-\end{proof}
-\begin{exercise}
-Neka je \(A=\left\{\dfrac{1}{m+n} : n\in \mathbb{N},\; m\in \mathbb{N}\right\}\). Odredite \(\inf{A}\) i \(\sup{A}\), ako postoje.
-\end{exercise}
-\begin{proof}[Rješenje]
-Lako se vidi da je maksimum ovog skupa \(\dfrac{1}{2}\) i on se postiže za \(m=n=1\). Tvrdimo da je \(0\) infimum. Zaista, treba dokazati da za sve \(\epsilon>0\) postoje \(m\), \(n\in \mathbb{N}\) takvi da je \[\epsilon>\dfrac{1}{m+n}.\] što je ekvivalentno sa \[(m+n)\epsilon>1.\] Zaista, prema Arhimedovu aksiomu postoje prirodni brojevi \(m\) i \(n\) takvi da je \(m\epsilon>\dfrac{1}{2}\) i \(n\epsilon>\dfrac{1}{2}\). Zbrajanjem ovih nejednakosti dobivamo tvrdnju.
-\end{proof}
-\begin{exercise}
-Neka je \(A=\left\{\dfrac{n^2+4m^2}{mn} : n, m\in \mathbb{N}\right\}\). Odredite \(\inf{A}\) i \(\sup{A}\), ako postoje.
-\end{exercise}
-\begin{proof}[Rješenje]
-Neka su \(m, n\in \mathbb{N}\) proizvoljni. Tražimo neku donju među ovog skupa, tj. broj \(M\in \mathbb{R}\) takav da je
-\[\dfrac{n^2+4m^2}{mn}\geq M\Leftrightarrow n^2+4m^2\geq Mmn\Leftrightarrow n^2-Mmn+4m^2\geq 0\]
-Lako se vidi da za \(M=4\) dobivamo \((n-2m)^2\geq 0\), što je istinita tvrdnja, dakle \(4\) je jedna donja međa. Primijetimo da je i \(\min{A}=4\) jer se postiže za \(n=2\) i \(m=1\). Stoga je \(\inf{A}=4\). Tvrdimo da \(A\) nema supremum. Uzmimo \(m=1\). Pretpostavimo li da skup \[A'=\left\{\dfrac{n^2+4}{n} : n\in \mathbb{N}\right\}\] ima gornju među \(M\), onda dobivamo kontradikciju za \(n=M\).
-\end{proof}
-\begin{remark}
-Neka su \(m, n\in \mathbb{N}\) proizvoljni. Iz A-G nejednakosti imamo
-\[\dfrac{n^2+4m^2}{mn}=\dfrac{n}{m}+\dfrac{4m}{n}\geq 2\sqrt{\dfrac{n}{m}\cdot \dfrac{4m}{n}}=4,\]
-pa smo i tako mogli dobiti da je \(4\) donja međa, ali i minimum jer jednakost vrijedi ako i samo ako je \(\dfrac{n}{m}=\dfrac{4m}{n}\), odnosno \(\dfrac{n}{m}=2\) i to vrijedi za \(n=2\) i \(m=1\), ali mogli smo uzeti i neke druge brojeve, npr. \(n=50\) i \(m=25\).
-\end{remark}
+b) Uočimo da je $\dfrac{n+k^2}{2^n+k^2+1}\geq 0$ za sve $n, k\in \mathbb{N}$. Promotrimo skup
+\[S'=\left\{\dfrac{n+1}{2^n+2} : x\in \mathbb{R}\right\}.\]
+Tvrdimo da je $\inf{S'}=0$, tj. da za svaki $\epsilon>0$ postoji $n_0\in \mathbb{N}$ takav da je $\dfrac{n_0+1}{2^{n_0}+2}<\epsilon$. Tvrdimo da za sve $n\in \mathbb{N}\setminus\{1, 2, 3, 4\}$ vrijedi
+$$\dfrac{n+1}{2^n+2}< \dfrac{1}{n}.$$
+Zaista, ovo je ekvivalentno tvrdnji da za sve $n\in \mathbb{N}\setminus\{1, 2, 3, 4\}$ vrijedi $2^n>n^2+n-2$, koju možemo dokazati matematičkom indukcijom. Zaista, za $n=5$ tvrdnja vrijedi, a pretpostavimo li da tvrdnja vrijedi za neki $n$, onda imamo
+$$2^{n+1}+2=2\cdot 2^n>2n^2+2n-4\geq (n+1)^2+(n+1)-2=n^2+3n,$$
+gdje posljednja nejednakost vrijedi, što se vidi npr. rješavanjem kvadratne nejednadžbe $2x^2+2x-4\geq x^2+2x+x$ za $x\in \mathbb{R}$.
 
+Po Arhimedovu aksiomu imamo da postoji $n_0\in \mathbb{N}$ takav da $n_0\epsilon>1$, te vrijedi
+$$\dfrac{n_0+1}{2^{n_0}+2}< \dfrac{1}{n_0}<\epsilon.$$
+Zbog pozitivnosti izraza $\dfrac{n+1}{2^n+2}$, minimum ne postoji.
+
+Nadalje, tvrdimo da je $\sup{S}=1$. Uočimo da za sve $n, k\in \mathbb{N}$ vrijedi $\dfrac{n+k^2}{2^n+k^2+1}< 1$, jer je
+$$\dfrac{n+k^2}{2^n+k^2+1}< 1\Leftrightarrow n+k^2< 2^n+k^2+1\Leftrightarrow n< 2^n+1,$$
+a da bi dokazali posljednju nejednakost, dovoljno je matematičkom indukcijom dokazati da za sve $n\in \mathbb{N}$ vrijedi $n< 2^n$. Zaista, za $n=1$ tvrdnja vrijedi, a pretpostavimo li da tvrdnja vrijedi za neki $n$, imamo $$2^{n+1}=2\cdot 2^n> 2n\geq n+1.$$
+Dakle, $1$ je jedna gornja međa. Sada promotrimo skup $S''=\left\{\dfrac{1+k^2}{3+k^2} : k\in \mathbb{N}\right\}$. Vrijedi $S''\subseteq S$, jer je $S''$ dobiven za $n=1$. Sada se analogno kao u prethodnim zadatcima može pokazati da je $\sup{S''}=1$, što daje tvrdnju. $S$ ujedno i nema maksimum jer za sve $n, k\in \mathbb{N}$ vrijedi $\dfrac{n+k^2}{2^n+k^2+1}< 1$.
+\end{proof}
 \begin{remark}
 \label{prodsumsupinf}
 Vrijedi:
@@ -849,10 +945,8 @@ Dokažite da je tada \(\dfrac{1}{A}\) odozgo ograničen i da vrijedi
 Odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je
 \begin{itemize}
 \item[a)] (Županijsko natjecanje, 3. razred, A varijanta, 2020.) \[A=\left\{\dfrac{1}{\sin^4{x}+\cos^2{x}}+\dfrac{1}{\sin^2{x}+\cos^4{x}} : x\in \mathbb{R}\right\},\]
-\item[b)]
-\(A=\left\{\dfrac{n+k^2}{2^n+k^2+1} : n, k\in \mathbb{N}\right\},\)
 \item[c)] \(A=\left\{\cos{\sqrt{\dfrac{\pi}{2}-x^2}} : 0<x\leq \dfrac{\pi}{2}\right\}\),
-\item[d)] \(A=\left\{\dfrac{mn}{1+m+n} : m, n\in \mathbb{N}\right\}\)
+\item[d)] \(A=\left\{\dfrac{mn}{1+m+n} : m, n\in \mathbb{N}\right\}\). 
 \item[e)] \(A=\left\{\sqrt{n}-\lfloor \sqrt{n}\rfloor : n\in \mathbb{N}\right\}\).
 \end{itemize}
 \subsection*{Kompleksni brojevi}
