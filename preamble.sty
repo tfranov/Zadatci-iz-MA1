@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amsthm}
+\usepackage{stackengine}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{pgfplots}
@@ -67,10 +68,16 @@
 \newtheorem{definition}{Definicija}
 \newtheorem{exmp}{Primjer}
 \newtheorem{notation}{Notacija}
-\newtheorem{exercise}{Zadatak}
 \theoremstyle{newrem}
 \newtheorem*{proof*}{Rješenje}
 \newtheorem{remark}{Napomena}
+
+\theoremstyle{newthm}
+\newtheorem{inner}{\innerheader}
+\newcommand{\innerheader}{}
+\newenvironment{exercise}[1]
+ {\renewcommand\innerheader{#1}\begin{inner}}
+ {\end{inner}}
 \usetikzlibrary{arrows.meta}
 \usepackage{ragged2e}
 

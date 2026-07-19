@@ -17,7 +17,7 @@ Ako smo primijenili princip matematičke indukcije na tvrdnju \(P(n)\) da bi dok
 Alternativna formulacija principa matematičke indukcije je sljedeća:
 \[\text{Neka je }S\subseteq \mathbb{N}. \text{ Ako je }1\in S\text{ i za svaki }n\in \mathbb{N}\text{ vrijedi } n\in S\Rightarrow n+1\in S,\text{ onda je }S=\mathbb{N}.\]
 Ova formulacija je često zgodnija zbog teorijskih razloga (primijetite da je ovo peti Peanov aksiom, v. \cite{3}), ali mi ćemo se na većini mjesta koristiti formulacijom navedenom u napomeni \ref{20}.
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da za svaki \(n\in \mathbb{N}\) vrijedi
 \[1+2+...+n=\dfrac{n(n+1)}{2}.\]
 \end{exercise}
@@ -26,7 +26,7 @@ Za \(n=1\) tvrdimo da je \(1=\dfrac{1\cdot 2}{2}\), što očigledno vrijedi -- t
 \[1+2+...+n+(n+1)=\dfrac{n(n+1)}{2}+(n+1)=\dfrac{(n+1)(n+2)}{2},\]
 čime smo dokazali korak indukcije, pa time i početnu tvrdnju.
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da za svaki \(n\in \mathbb{N}\) vrijedi
 \[1^3+2^3+...+n^3=\dfrac{n^2(n+1)^2}{4}.\]
 \end{exercise}
@@ -35,7 +35,7 @@ Za \(n=1\) tvrdnja očito vrijedi. Pretpostavimo li da tvrdnja vrijedi za neki \
 \[1^3+...+n^3+(n+1)^3=\dfrac{n^2(n+1)^2}{4}+(n+1)^3=(n+1)^2\left(\dfrac{n^2}{4}+n+1\right)=\dfrac{(n+1)^2(n+2)^2}{4},\]
 čime je tvrdnja dokazana.
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da za sve \(n\in \mathbb{N}\) vrijedi \(3^n>n\).
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -52,7 +52,7 @@ Možemo indukcijom dokazivati i tvrdnje koje ne vrijede nužno za sve prirodne b
 tada je \(P(n)\) istinita za sve \(n\in \{n_0, n_0+1,\dots\}\).
 \end{remark}
 
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da za sve \(n\in \mathbb{N}\) takve da je \(n\geq 3\) vrijedi \(3^n>2^n+3n\).
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -62,7 +62,7 @@ pri čemu smo zadnji korak dobili iz činjenice da je \(9n>3(n+1)\) za sve \(n\i
 \[9n>3(n+1)\Leftrightarrow 9n>3n+3 \Leftrightarrow 6n>3 \Leftrightarrow n>\dfrac{1}{2},\]
 a posljednje očito vrijedi za sve \(n\in \mathbb{N}\).
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da za sve $n\in \mathbb{N}$, $n\geq 2$ vrijedi
 $$\dfrac{1}{n+2}+\dfrac{1}{n+3}+\dots+\dfrac{1}{2n+1}>\dfrac{1}{3}.$$
 \end{exercise}
@@ -76,7 +76,7 @@ Uočimo da vrijedi
 $$\dfrac{1}{2n+2}+\dfrac{1}{2n+3}-\dfrac{1}{n+2}=\dfrac{3n+4}{(2n+2)(2n+3)(n+2)}>0,$$
 pa tvrdnja slijedi iz pretpostavke indukcije.
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da za svaki \(n\in \mathbb{N}\) vrijedi \(7 \; |\; 13^{2n}-1\).
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -84,7 +84,7 @@ Dokaz provodimo indukcijom. Za \(n=1\) imamo tvrdnju \(7 \; |\; 168\), što je i
 \[13^{2(n+1)}-1=169\cdot 13^{2n}-1=168\cdot 13^{2n}+13^{2n}-1=7\cdot (24\cdot 13^{2n})+7k=7(24\cdot 13^{2n}+k),\]
 što je i trebalo pokazati.
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da za svaki \(n\in \mathbb{N}\) vrijedi \(33\; |\; 6^{2n}+3^{n+2}+3^n\).
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -94,7 +94,7 @@ Za \(n=1\) tvrdnja vrijedi. Pretpostavimo da tvrdnja vrijedi za neki \(n\in \mat
 &=3\cdot 6^{2n}+3\cdot 3^{n+2}+3\cdot 3^n+33\cdot 6^{2n}=33\cdot 3k+33\cdot 6^{2n}=33(3k+6^{2n}).\qedhere
 \end{align*}
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da za svaki \(n\in \mathbb{N}\) vrijedi \(84\; |\; 4^{2n}-3^{2n}-7\).
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -105,7 +105,7 @@ Za \(n=1\) tvrdnja vrijedi. Pretpostavimo da postoji \(k\in \mathbb{Z}\) takav d
 \end{align*}
 Kako je \(84\div 7=12\), preostaje pokazati da vrijedi \(12 \; |\; 15+3^{2n}\), što se lako pokazuje indukcijom.
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da je
 \[1+2\cdot 2+3\cdot 2^2+4\cdot 2^3+\dots+2024\cdot 2^{2023}=2023\cdot 2^{2024}+1.\]
 \end{exercise}
@@ -118,7 +118,7 @@ Za \(n=1\) tvrdnja vrijedi, pa pretpostavimo da tvrdnja vrijedi za neki \(n\). T
 &=(2n+2)\cdot 2^{n+1}+1=(n+1)\cdot 2^{n+2}+1.\qedhere
 \end{align*}
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Neka je \(n\in \mathbb{N}\) proizvoljan. Odredite sumu
 \[\dfrac{1}{1\cdot 2}+\dfrac{1}{2\cdot 3}+\dots+\dfrac{1}{n(n+1)}.\]
 \end{exercise}
@@ -134,7 +134,7 @@ S(n+1)&=\dfrac{1}{1\cdot 2}+\dfrac{1}{2\cdot 3}+\dots+\dfrac{1}{n(n+1)}+\dfrac{1
 \qedhere
 \end{align*}
 \end{proof}
-\begin{exercise}[Županijsko natjecanje, 3. razred, A varijanta, 2013.] Dokažite da je \(\cos{\dfrac{\pi}{2\cdot 3^n}}\) iracionalan za sve \(n\in \mathbb{N}\).
+\begin{exercise}{Zadatak}[Županijsko natjecanje, 3. razred, A varijanta, 2013.] Dokažite da je \(\cos{\dfrac{\pi}{2\cdot 3^n}}\) iracionalan za sve \(n\in \mathbb{N}\).
 \end{exercise}
 \begin{proof}
 Za \(n=1\) vrijedi \(\cos{\dfrac{\pi}{6}}=\dfrac{\sqrt{3}}{2}\). Pretpostavimo da tvrdnja vrijedi za neki \(n\). Ideja je "povezati" izraze \(\cos{\dfrac{\pi}{2\cdot 3^{n+1}}}\) i \(\cos{\dfrac{\pi}{2\cdot 3^{n}}}\) pomoću činjenice da za sve \(x\in \mathbb{R}\) vrijedi
@@ -155,7 +155,7 @@ Direktno iz (\ref{tripleangle}) slijedi
 \end{align}
 Kad bi \(\cos{\dfrac{\pi}{2\cdot 3^{n+1}}}\) bio racionalan, onda iz činjenice da je umnožak ili zbroj racionalnih brojeva racionalan broj slijedi da je desna strana jednakosti (\ref{tripleangle2}) racionalan broj, tj. \(\cos{\dfrac{\pi}{2\cdot 3^{n}}}\) je racionalan broj, što je u kontradikciji s pretpostavkom indukcije.
 \end{proof}
-\begin{exercise}[Županijsko natjecanje, 4. razred, A varijanta, 2015.]
+\begin{exercise}{Zadatak}[Županijsko natjecanje, 4. razred, A varijanta, 2015.]
 Neka je \(a=\sqrt[2024]{2024}\) i neka je \((a_n)\) niz takav da je \(a_1=a\) i \(a_{n+1}=a^{a_n}\) za \(n\geq 1\). Postoji li \(n\in \mathbb{N}\) takav da je \(a_n\geq 2024\)?
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -165,14 +165,14 @@ te kako je \(\dfrac{a_n}{2024}<1\) prema pretpostavci, te vrijedi \(x^k<x^1\) za
 \newpage
 \section*{Zadatci za vježbu}
 \subsection*{Osnove matematičke logike}
-\begin{exercise} Zapišite sljedeće sudove u terminima predikata, kvantifikatora i veznika.
+\begin{exercise}{\input{easy.tex}\unskip} Zapišite sljedeće sudove u terminima predikata, kvantifikatora i veznika.
 \begin{itemize}
 \item[a)] Svaki prirodan broj je manji od svog sljedbenika.
 \item[b)] Postoji realan broj koji je veći od svakog prirodnog broja većeg od $10$.
 \item[c)] Postoji realan broj koji je veći od $1$ i manji od svakog realnog broja većeg od $2$.
 \end{itemize}
 \end{exercise}
-\begin{exercise}
+\begin{exercise}{\input{easy.tex}\unskip}
 Odredite negacije sljedećih sudova.
 \begin{itemize}
 \item[a)] Svaki prirodan broj je ili različit od nule, ili veći od $-1$ (ili oboje).
@@ -181,7 +181,7 @@ Odredite negacije sljedećih sudova.
 \end{itemize}
 \end{exercise}
 \subsection*{Skupovi}
-\begin{exercise} Zapišite sljedeće skupove matematičkim simbolima. Po potrebi koristite i skupovne operacije (unija, presjek, razlika skupova, simetrična razlika).
+\begin{exercise}{\input{easy.tex}\unskip} Zapišite sljedeće skupove matematičkim simbolima. Po potrebi koristite i skupovne operacije (unija, presjek, razlika skupova, simetrična razlika).
 \begin{itemize}
 \item[a)] Skup svih realnih brojeva koji su strogo manji od \(100\) i nisu prirodni brojevi,
 \item[b)] Skup svih prirodnih brojeva koji su manji ili jednaki od svih prirodnih brojeva,
@@ -189,7 +189,7 @@ Odredite negacije sljedećih sudova.
 \item[d)] Skup svih podskupova skupa \(\{1, 2, 3, \dots, 100\}\) koji nisu dvočlani skupovi.
 \end{itemize}
 \end{exercise}
-\begin{exercise} \textbf{}
+\begin{exercise}{\input{easy.tex}\unskip} \textbf{}
 \begin{itemize}
 \item[a)] Izračunajte \(\{1, 2, 3\}\triangle\{4, 5, 6\}\).
 \item[b)] Navedite primjer univerzalnog skupa \(U\) takvog da \(\{1, 2, 3\}^c\) ima \(5\) elemenata.
@@ -200,32 +200,32 @@ kao kartezijev produkt dva skupa.
 \end{itemize}
 \end{exercise}
 \subsection*{Direktni dokazi, Dokazi kontradikcijom}
-\begin{exercise} Dokažite sljedeće tvrdnje ako su istinite ili dajte kontraprimjer ako nisu.
+\begin{exercise}{\input{easy.tex}\unskip} Dokažite sljedeće tvrdnje ako su istinite ili dajte kontraprimjer ako nisu.
 \begin{itemize}
 \item[a)] Umnožak dva neparna broja je ponovno neparan broj.
 \item[b)] Zbroj dva kvadrata nekog prirodnog broja je ponovno kvadrat nekog prirodnog broja. Vrijedi li tvrdnja za umnožak?
 \item[c)] Razlika kvadrata dva neparna prirodna broja je uvijek paran broj. Vrijedi li tvrdnja za bilo koja dva prirodna broja?
 \end{itemize}
 \end{exercise}
-\begin{exercise} Dokažite sljedeće tvrdnje \textit{direktno}.
+\begin{exercise}{\input{easy.tex}\unskip} Dokažite sljedeće tvrdnje \textit{direktno}.
 \begin{itemize}
 \item[a)] Dokažite da za svaki prirodan broj veći ili jednak $10$ vrijedi da je umnožak njegovih znamenaka strogo manji od njega samog.
 \item[b)] Neka je \(a>0\) i \(b\in \mathbb{R}\). Dokažite da vrijedi \(b>a\) ako i samo ako postoji \(\epsilon>0\) takav da je \(b=(1+\epsilon)a\).
 \end{itemize}
 \end{exercise}
-\begin{exercise} Dokažite sljedeće tvrdnje \textit{kontrapozicijom}.
+\begin{exercise}{\input{easy.tex}\unskip} Dokažite sljedeće tvrdnje \textit{kontrapozicijom}.
 \begin{itemize}
 \item[a)] Dokažite da ako je razlika kvadrata dva prirodna broja neparan broj, da su tada oni različite parnosti.
 \item[b)] Ako je \(\mathcal{P}(A)\) jednočlan skup (skup koji sadrži jedan i samo jedan element), dokažite da je \(A=\emptyset\).
 \end{itemize}
 \end{exercise}
-\begin{exercise} Dokažite sljedeće tvrdnje \textit{kontradikcijom}.
+\begin{exercise}{\input{easy.tex}\unskip} Dokažite sljedeće tvrdnje \textit{kontradikcijom}.
 \begin{itemize}
 \item[a)] Dokažite da ne postoje $a\in \mathbb{N}$, $a\geq 2$ i $n\in \mathbb{N}$ takvi da je $a \mid n$ i $a \mid n+1$.
 \item[b)] Dokažite da ne postoji $11$-člani podskup od $\{1, 2, \dots, 19, 20\}$ takav da je umnožak svih elemenata tog podskupa neparan.
 \end{itemize}
 \end{exercise}
-\begin{exercise} Dokažite sljedeće tvrdnje.
+\begin{exercise}{\input{medium.tex}\unskip} Dokažite sljedeće tvrdnje.
 \begin{itemize}
 \item[a)] Dokažite da za svaki \(a>0\) postoje tri točke \(A(x_1, y_1)\), \(B(x_2, y_2)\), \(C(x_3, y_3)\) u pravokutnom koordinatnom sustavu (tj. tri elementa iz \(\mathbb{R}^2=\mathbb{R}\times\mathbb{R}\)) takve da je trokut \(\triangle ABC\) jednakostraničan i ima površinu \(a\).
 \item[b)] Dokažite da za svaki \((x_1, x_2)\in \mathbb{R}^2\) postoji \((y_1, y_2)\in \mathbb{Z}^2\) takav da je \[d\left(\left(0, 0\right), \left(y_1, y_2\right)\right)>d\left(\left(0, 0\right), \left(x_1, x_2\right)\right).\]
@@ -236,19 +236,20 @@ kao kartezijev produkt dva skupa.
 \item[g)] Dokažite da je \(\log_2{3}\) iracionalan broj.
 \end{itemize}
 \end{exercise}
-\begin{exercise} \((*)\)
+\begin{exercise}{\input{medium.tex}\unskip}
 Neka je \(U\neq \emptyset\) univerzalni skup i \(A\subseteq U\) proizvoljan. Odredite sve \(X\subseteq U\) takve da je \(X\cap A=X\cup A\).
 \end{exercise}
+
 \large
 \subsection*{Princip matematičke indukcije}
-\begin{exercise}
+\begin{exercise}{\input{easy.tex}\unskip}
 Dokažite da za svaki \(n\in \mathbb{N}\) vrijede sljedeće tvrdnje.
 \begin{itemize}
 \item[a)] \(\dfrac{1}{1\cdot 3}+\dfrac{1}{3\cdot 5}+...+\dfrac{1}{(2n-1)(2n+1)}=\dfrac{n}{2n+1},\)
 \item[b)] \(\dfrac{1^2}{1\cdot 3}+\dfrac{2^2}{3\cdot 5}+... +\dfrac{n^2}{(2n-1)(2n+1)}=\dfrac{n(n+1)}{2(2n+1)}.\)
 \end{itemize}
 \end{exercise}
-\begin{exercise}
+\begin{exercise}{\input{medium.tex}\unskip}
 \label{nejedn}
 Dokažite sljedeće tvrdnje.
 \begin{itemize}
@@ -259,23 +260,23 @@ $2^n+n^2\leq 3^n+n, \; \; \forall n\in \mathbb{N},$
 \item[c)] (Županijsko natjecanje, 4. razred, A varijanta, 2018.)
 \[\dfrac{1}{n+1}+\dfrac{1}{n+2}+...+\dfrac{1}{3n+1}>1, \; \; \forall n\in \mathbb{N},\]
 \item[d)]
-$\dfrac{1}{n+1}+\dfrac{1}{n+2}+\dots+\dfrac{1}{n^2+1}>1. \; \; \forall n\in \mathbb{N}\setminus\{1, 2\}.$
+$\dfrac{1}{n+1}+\dfrac{1}{n+2}+\dots+\dfrac{1}{n^2+1}>1. \; \; \forall n\in \mathbb{N}\setminus\{1, 2\},$
 \item[e)] \(1+\dfrac{1}{\sqrt{2}}+\dfrac{1}{\sqrt{3}}+...+\dfrac{1}{\sqrt{n}}<2\sqrt{n}-1, \; \; \forall n\in \mathbb{N}\setminus\{1\},\)
 \item[f)]
-$1-\dfrac{1}{2}+\dfrac{1}{3}-\dots+(-1)^{n+1}\dfrac{1}{n}<\sqrt{n}, \; \; \forall n\in \mathbb{N}\setminus\{1, 2, 3\},$
+$1-\dfrac{1}{2}+\dfrac{1}{3}-\dots+(-1)^{n+1}\dfrac{1}{n}<\sqrt{n}, \; \; \forall n\in \mathbb{N}\setminus\{1, 2, 3\}.$
 \end{itemize}
 \end{exercise}
-\begin{exercise} \textbf{}
+\begin{exercise}{\input{easy.tex}\unskip} \textbf{}
 \begin{itemize}
 \item[a)] Dokažite da za sve \(n\in \mathbb{N}\) vrijedi \(3 \mid 5^{2n}-1\).
 \item[b)] Dokažite da za sve \(n\in \mathbb{N}\) vrijedi \(50 \mid 7^{2n+1}+2\cdot 13^{2n+1}+17^{2n+1}\).
 \item[c)] Dokažite da za svaki \(n\in \mathbb{N}\) vrijedi \(7 \; |\; 2^{4n+1}-3\cdot 7^n+5^{n+1}\cdot 6^n\). (\textbf{Uputa:} Ovaj zadatak možete si pojednostaviti na sljedeći način -- dokažite da vrijedi \(7 \; |\; 2^{4n+1}-3\cdot 7^n+5^{n+1}\cdot 6^n\) ako i samo ako vrijedi \(7 \; |\; 2^{4n+1}+5^{n+1}\cdot 6^n\)).
-\item[d)] Dokažite da za sve \(n\in \mathbb{N}\) vrijedi \(8 \mid 3^n-2n^2-1\).
+\item[d)] Dokažite da za sve \(n\in \mathbb{N}\) vrijedi \(8 \mid 3^n-2n^2-1\). (\textbf{Uputa:} Provedite matematičku indukciju više puta.)
 \item[e)] Odredite najmanji prirodan broj \(a>1\) takav da vrijedi
 \[a \mid 2^{6n-1}+5\cdot 9^n,\; \forall n\in \mathbb{N}.\]
 \end{itemize}
 \end{exercise}
-\begin{exercise} Naslutite odgovore na iduće zadatke i dokažite svoje slutnje matematičkom indukcijom.
+\begin{exercise}{\input{medium.tex}\unskip} Naslutite odgovore na iduće zadatke i dokažite svoje slutnje matematičkom indukcijom.
 \begin{itemize}
 \item[a)] Izračunajte \(\sum\limits_{k=1}^n{\dfrac{k(3k-1)}{n+1}}.\)
 \item[b)] Koliko ima podskupova $n$-članog skupa koji imaju paran broj elemenata? (\textbf{Uputa:} U koraku indukcije uzmite fiksni element i promatrajte podskupove koji sadrže taj element i one koji ga ne sadrže.)
@@ -283,35 +284,16 @@ $1-\dfrac{1}{2}+\dfrac{1}{3}-\dots+(-1)^{n+1}\dfrac{1}{n}<\sqrt{n}, \; \; \foral
 \end{itemize}
 \end{exercise}
 OVDJE BI BILO DOBRO DODATI JOŠ ZADATAKA!!!
-\begin{exercise} U ravnini je zadano \(n\) pravaca tako da se nikoja tri ne sijeku u jednoj točki i nikoja dva nisu međusobno paralelna.
+\begin{exercise}{\input{medium.tex}\unskip} U ravnini je zadano \(n\) pravaca tako da se nikoja tri ne sijeku u jednoj točki i nikoja dva nisu međusobno paralelna.
 \begin{itemize}
 \item[a)] Na koliko dijelova je ravnina podijeljena s tim pravcima?
 \item[b)] Mogu li se svi dijelovi obojiti s dvije boje tako da susjedna područja budu obojena različitim bojama (Sva područja su jednobojna).
 \end{itemize}
 \end{exercise}
-\begin{remark}
-Neka je \((G, \circ)\) polugrupa i \(a_i\in G\), gdje je \(i\in \{1, 2, \dots, m\}\). Tada produkt od \(n\geq 1\) elemenata definiramo induktivno
-\begin{gather*}
-\prod_{k=1}^{1}{a_k}=a_1,\hspace{0.5cm}
-\prod_{k=1}^{n+1}{a_k}=\left(\prod_{k=1}^{n}{a_k}\right)\circ a_{n+1}.
-\end{gather*}
-Lako se vidi da je svaki skup polugrupa u odnosu na uniju, odnosno presjek. Također uvodimo oznaku
-\[a_1\circ a_2\circ \dots\circ a_n:=\prod_{k=1}^{n}{a_k}.\]
-U svezi s time riješite sljedeći zadatak.
-\end{remark}
-\begin{exercise}
-\label{genasoc}
-Neka je \((G,\circ)\) polugrupa. Dokažite da tada za bilo kojih \(m+n\) elemenata \(a_1\), \(a_2\), \(\dots\), \(a_{m+n-1}\), \(a_{m+n}\in G\) vrijedi
-\[a_1\circ\dots\circ a_{m+n}=(a_1\circ\dots\circ a_m)\circ(a_{m+1}\circ\dots\circ a_{m+n})\]
-\end{exercise}
-Uvjerite se da se iz prethodnog zadatka lako može dokazati \textit{generalizirana asocijativnost}, tj. ako su \(n\), \(m\), \(...\), \(p\) prirodni brojevi, onda vrijedi
-\[(a_1\circ\dots \circ a_n)\circ (b_1\circ \dots \circ b_m)\circ\dots\circ (d_1\circ\dots\circ d_p)=a_1\circ\dots\circ a_n\circ b_1\circ\dots\circ b_m\circ\dots\circ d_1\circ\dots\circ d_p,\]
-gdje su \(a_1\), \(a_2\), \(...\), \(d_p\in G\). Ovime smo zapravo dokazali da kad imamo produkt od konačno mnogo elemenata, onda možemo po volji dodavati i brisati zagrade gdje god to ima smisla.
-
-\begin{exercise}
+\begin{exercise}{\input{medium.tex}\unskip}
 Dokažite da se ploča dimenzija \(2^n\times 2^n\) s jednim izbačenim kvadratićem iz jednog od uglova dimenzija \(1\times 1\), može pokriti pločicama dimenzija \(4\times 4\) s jednim izbačenim kvadratićem dimenzija \(1\times 1\).
 \end{exercise}
-\begin{exercise}[Županijsko natjecanje, 4. razred, A varijanta, 2017.] \((*)\)
+\begin{exercise}{\input{hard.tex}\unskip}[Županijsko natjecanje, 4. razred, A varijanta, 2017.]
 Dan je niz pozitivnih realnih brojeva \(a_0\), \(a_1\), \(a_2\), \(\dots\) takvih da vrijedi
 \[a_1=1-a_0,\; a_{n+1}=1-a_n(1-a_n) \; \mathrm{za} \; n\geq 1.\]
 Dokažite da za sve \(n\in \mathbb{N}\) vrijedi
@@ -322,9 +304,9 @@ Neka su $a_i\in \{0, 1, \dots, 9\}$ za $i=1,\dots, n$ i $a_1\neq 0$. Kažemo da 
 $$L=10^{n-1}a_1+10^{n-2}a_2+\dots+10a_{n-1}+a_n.$$
 Npr. dekadski broj broja sto devetnaest je $\overline{119}$. Često potez na vrhu izostavljamo kad je iz konteksta jasno da se radi o dekadskom zapisu broja.
 \end{definition}
-\begin{exercise}[Županijsko natjecanje, 4. razred, A varijanta, 2013.] \((*)\)
+\begin{exercise}{\input{hard.tex}\unskip}[Županijsko natjecanje, 4. razred, A varijanta, 2013.] \((*)\)
 Dokažite da je broj čiji se dekadski zapis sastoji od 2187 znamenki 1 djeljiv s 2187.
 \end{exercise}
-\begin{exercise}[Županijsko natjecanje, 4. razred, A varijanta, 2016.] \((*)\)
+\begin{exercise}{\input{hard.tex}\unskip}[Županijsko natjecanje, 4. razred, A varijanta, 2016.] \((*)\)
 Dokažite da za svaki prirodni broj \(n\geq 3\) postoji \(n\) različitih prirodnih brojeva čiji je zbroj recipročnih vrijednosti jednak 1.
 \end{exercise}

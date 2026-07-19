@@ -11,7 +11,7 @@ Neka je \(I\subseteq \mathbb{R}\) otvoreni interval. Tada je \(f : I\to \mathbb{
 \end{remark}
 \begin{definition} Neka je \(I\subseteq \mathbb{R}\) otvoreni interval i \(c\in I\). Ako postoji limes \(\lim\limits_ {x\to c+}{\dfrac{f(x)-f(c)}{x-c}}\in \mathbb{R}\), taj broj zovemo \textbf{desna derivacija} funkcije \(f\) u točki \(c\) i označavamo ga s \(f_d'(c)\). Analogno, ako postoji limes \(\lim\limits_ {x\to c-}{\dfrac{f(x)-f(c)}{x-c}}\in \mathbb{R}\), zovemo ga \textbf{lijeva derivacija} funkcije \(f\) u točki \(c\) i označavamo ga s \(f_l'(c)\).
 \end{definition}
-\begin{exercise} \textbf{}
+\begin{exercise}{Zadatak} \textbf{}
 \label{firstder}
 \begin{itemize}
 \item[a)] Dokažite da je \(x\mapsto x^3\) diferencijabilna na \(\mathbb{R}\) i odredite joj derivaciju.
@@ -34,7 +34,7 @@ a s druge strane imamo
 dakle \(f\) nije diferencijabilna na \(\mathbb{R}\).
 \end{proof}
 
-\begin{exercise} \textbf{}
+\begin{exercise}{Zadatak} \textbf{}
 \begin{itemize}
 \item[a)] Navedite primjer funkcije \(f : \mathbb{R}\to \mathbb{R}\) takve da je \(f'(1)=1\) i \(f'(5)=2\).
 \item[b)] Navedite primjer funkcije \(f : \mathbb{R}\to \mathbb{R}\) koja je neprekidna na \(\mathbb{R}\), te diferencijabilna svugdje osim u točkama \(1\) i \(2\).
@@ -57,7 +57,7 @@ Primijetimo da je \(f'(1)=1\). Zaista, očito vrijedi
 Neka je \(I\subseteq \mathbb{R}\) otvoreni interval i \(f : I \to \mathbb{R}\) diferencijabilna u točki \(c\in I\). Tada je \(f\) i neprekidna u \(c\).
 \end{remark}
 Obrat gornje napomene općenito ne vrijedi, i to npr. za funkciju \(x\mapsto |x|\). Intuitivno, klasični primjeri funkcija koje su neprekidne ali ne i diferencijabilne u nekoj točki su one čiji grafovi imaju "šiljak" u toj točki.
-\begin{exercise} \textbf{}
+\begin{exercise}{Zadatak} \textbf{}
 \label{idkhowtonamethis}
 \begin{itemize}
 \item[a)] Postoji li \(c>0\) takav da je \(f : \mathbb{R}\to \mathbb{R}\),
@@ -128,7 +128,7 @@ Nije teško provjeriti da je \(F\) zaista diferencijabilna na \(\mathbb{R}\).
 \end{figure}
 \end{proof}
 \newpage
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Odredite sve točke u kojima je funkcija \(f : \mathbb{R}\to \mathbb{R}\),
 \[f(x)=\begin{cases}
 x^3,& x\in \mathbb{Q},\\
@@ -147,7 +147,7 @@ te se slično vidi i da je \(\lim\limits_{n\to \infty}{\dfrac{f(b_n)-1}{b_n-1}}=
 
 Neka je sada \(c\notin \{0, 1\}\). Tvrdimo da tada \(f\) nije neprekidna u točki \(c\). Zaista, lako se provjeri da je \(x^4=x^3\) ako i samo ako je \(x=0\) ili \(x=1\). Uzmimo sada niz \((x_n)\) racionalnih brojeva koji konvergira u \(c\), te niz \((y_n)\) iracionalnih brojeva koji konvergira u \(c\). Tada vrijedi \(\lim\limits_{n\to \infty}{x_n^3}=c^3\) i \(\lim\limits_{n\to \infty}{x_n^4}=c^4\), pa kako je \(c^3\neq c^4\), iz Heineove karakterizacije neprekidnosti slijedi da \(f\) nije neprekidna, pa ni diferencijabilna u \(c\).
 \end{proof}
-\begin{exercise} 
+\begin{exercise}{Zadatak} 
 \label{localder}
 Neka je \(I\subseteq \mathbb{R}\) otvoreni interval i \(f : I \to \mathbb{R}\) diferencijabilna u \(c\in I\). Dokažite da ako je \(f'(c)>0\), da tada postoji \(\delta>0\) takav da vrijedi
 \[
@@ -163,7 +163,7 @@ Po definiciji, za \(\epsilon=f'(c)\) postoji \(\delta>0\) takav da za sve \(x\in
 Ako je \(x>c\), tj. \(x\in \langle c,c+\delta\rangle\cap I\), tada množenjem nejednakosti \(0<\dfrac{f(x)-f(c)}{x-c}\) s \(x-c\) dobivamo \(f(x)>f(c)\). Analogno za \(x<c\), odnosno \(x\in \langle c-\delta, c\rangle\cap I\) dobivamo \(f(x)<f(c)\).
 \end{proof}
 
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da je \(x\mapsto \ln{x}\) diferencijabilna na \(\langle 0,\infty\rangle\) i odredite joj derivaciju.
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -179,7 +179,7 @@ Odavde i iz činjenice da je \(\ln\) neprekidna u \(c\) \(\left(\text{pa ima lim
 \[\lim\limits_{x\to c}{\ln\left(\left(\dfrac{x}{c}\right)^\frac{1}{x-c}\right)}=\ln{e^\frac{1}{c}}=\dfrac{1}{c}.\]
 Stoga je \(\ln\) diferencijabilna na \(\langle 0, \infty\rangle\) i njezina derivacija je \(x\mapsto \dfrac{1}{x}\).
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Neka je \(I\subseteq \mathbb{R}\) otvoreni interval i \(f : I \to \mathbb{R}\) diferencijabilna na \(I\). Koristeći do sada poznate rezultate, dokažite da ako za sve \(x\in I\) vrijedi \(f'(x)\geq 0\), da je tada \(f\) rastuća.
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -203,7 +203,7 @@ pa za sve \(\langle \max{S}, \max{S}+\delta'\rangle\cap I\subseteq \langle \max{
 pa je \(f\left(\max{S}+\dfrac{\delta'}{2}\right)<\max{f|_{[x_1, x_2]}}=f(\max{S})\), kontradikcija!
 \end{proof}
 U sljedećem zadatku dokazujemo da je tangenta u točki \(c\) na graf diferencijabilne funkcije od svih pravaca najbolja aproksimacija te funkcije blizu točke \(c\).
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Neka je \(I\) otvoreni interval, \(c\in I\), \(a, b\in \mathbb{R}\), te \(f : I \to \mathbb{R}\) diferencijabilna na \(I\). Neka su \(g, h : \mathbb{R}\to \mathbb{R}\) dane s \(g(x)=f'(c)(x-c)+f(c)\), \(h(x)=a(x-c)+b\)\footnote{Obratite pozornost na to da ovdje može biti \(a=0\).}. Tada postoji \(\delta_h>0\) takav da za sve \(x\in I\) vrijedi
 \[0<|x-c|<\delta_h\Rightarrow |f(x)-g(x)|<|f(x)-h(x)|.\]
 \end{exercise}
@@ -272,7 +272,7 @@ Neka je \(I\subseteq \mathbb{R}\) otvoreni interval, te \(f, g : I\to \mathbb{R}
 \end{itemize}
 \end{multicols}
 \end{remark}
-\begin{exercise} \textbf{}
+\begin{exercise}{Zadatak} \textbf{}
 \begin{itemize}
 \item[a)] Dokažite da je funkcija \(x\mapsto x^3\sin{x}+\sqrt{x}\ln{x}\) diferencijabilna na \(\langle 0,\infty\rangle\) i odredite joj derivaciju.
 \item[b)] Dokažite da je funkcija \(x\mapsto e^x\cdot\sh{x}\cdot\arctg{x}\) diferencijabilna na \(\mathbb{R}\) i odredite joj derivaciju.
@@ -300,7 +300,7 @@ Neka su \(I, J\subseteq \mathbb{R}\) otvoreni intervali, \(c\in I\), te \(f : I\
 Neka je \(I\subseteq \mathbb{R}\) otvoreni interval, \(c\in I\), \(f : I\to \mathbb{R}\) strogo monotona na \(I\), te \(J=f(I)\) otvoreni interval. Ako je \(f\) diferencijabilna u \(c\) i vrijedi \(f'(c)\neq 0\), tada je \(f^{-1}\) diferencijabilna u \(d=f(c)\) i vrijedi
 \[\left(f^{-1}\right)\left(f(c)\right)=\dfrac{1}{f'(c)}=\dfrac{1}{f'\left(f^{-1}(d)\right)}.\]
 \end{remark}
-\begin{exercise} \textbf{}
+\begin{exercise}{Zadatak} \textbf{}
 \begin{itemize}
 \item[a)] Dokažite da je funkcija \(x\mapsto \sqrt{x^2+4x+5}\) diferencijabilna na \(\mathbb{R}\) i odredite joj derivaciju.
 \item[b)] Odredite derivaciju funkcije \(x\mapsto \sqrt{x^2+\sin(\ln{x})}\) na intervalu \(\langle 1,\infty\rangle\).
@@ -308,7 +308,7 @@ Neka je \(I\subseteq \mathbb{R}\) otvoreni interval, \(c\in I\), \(f : I\to \mat
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-a) Prvo uočimo da je \(x^2+4x+5>0\) za sve \(x\in \mathbb{R}\), jer je vodeći koeficijent jednak \(1\) i diskriminanta jednaka \(16-20=-4<0\)\footnote{Općenito, ako su \(a, b, c\in \mathbb{R}\) takvi da je \(a>0\) i \(b^2-4ac<0\), onda je \(ax^2+bx+c>0\) za sve \(x\in \mathbb{R}\). Zaista, za sve \(x\in \mathbb{R}\) vrijedi \(ax^2+bx+c\geq \dfrac{4ac-b^2}{4a}>0\). Intuicija iza te činjenice je da je zbog \(a>0\) parabola koja je graf funkcije \(x\mapsto ax^2+bx+c\) okrenuta "prema gore" i zbog negativne diskriminante nema nultočki.}. Nadalje, neka je \(c\in \mathbb{R}\). Tada je \(x\mapsto x^2+4x+5\) diferencijabilna u \(c\), \(x\mapsto \sqrt{x}\) diferencijabilna u \(c^2+4c+5\), pa je i funkcija iz zadatka diferencijabilna u \(c\), dakle na \(\mathbb{R}\). Vrijedi
+a) Prvo uočimo da je \(x^2+4x+5>0\) za sve \(x\in \mathbb{R}\), jer je vodeći koeficijent jednak \(1\) i diskriminanta jednaka \(16-20=-4<0\). Nadalje, neka je \(c\in \mathbb{R}\). Tada je \(x\mapsto x^2+4x+5\) diferencijabilna u \(c\), \(x\mapsto \sqrt{x}\) diferencijabilna u \(c^2+4c+5\), pa je i funkcija iz zadatka diferencijabilna u \(c\), dakle na \(\mathbb{R}\). Vrijedi
 \[\left(\sqrt{x^2+4x+5}\right)'=\dfrac{1}{2\sqrt{x^2+4x+5}}\cdot\left(2x+4\right).\]
 
 b) U narednim zadatcima nećemo provjeravati diferencijabilnost, jer se to radi potpuno analogno kao u prethodnim zadatcima. Vrijedi
@@ -322,7 +322,7 @@ c) Neka je \(x\in \left\langle -\dfrac{\pi}{4}, \dfrac{\pi}{4}\right\rangle\). V
 gdje posljednja jednakost iz činjenice da za sve \(y\in \mathbb{R}\) takve da je \(\cos^2{y}\neq 0\) vrijedi \[\tg^2{y}+1=\dfrac{1}{\cos^2{y}},\]
 što se dobiva iz identiteta \(\sin^2{y}+\cos^2{y}=1\) dijeljenjem obje strane s \(\cos^2{y}\).
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da je funkcija \(f : \mathbb{R}\to \mathbb{R}\),
 \[f(x)=\begin{cases}
 \arctg\left(3\sin{x}\right),& x\leq 0,\\
@@ -342,7 +342,7 @@ Očigledno je \(f_1(0)=f_2(0)=0\). Uočimo da vrijedi
 \end{align*}
 pa je \(f_1'(0)=f_2'(0)=3\), što je i trebalo pokazati.
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Zadana je funkcija \(f : \mathbb{R}\to \mathbb{R}\), \(f(x)=2e^x+1\). Odredite derivaciju funkcije \(f^{-1}\) koristeći teorem o derivaciji inverzne funkcije i direktno iz formule za inverznu funkciju.
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -359,7 +359,7 @@ Usporedimo sada ovo s (\ref{invderexercise1}). Za sve \(y>1\) vrijedi
 \[\dfrac{1}{2e^{\ln{\frac{y-1}{2}}}}=\dfrac{1}{2\cdot \dfrac{y-1}{2}}=\dfrac{1}{y-1},\]
 odakle vidimo da dobivamo isto rješenje na oba načina.
 \end{proof}
-\begin{exercise}[Derivacija Lambertove W funkcije]
+\begin{exercise}{Zadatak}[Derivacija Lambertove W funkcije]
 Neka je zadana \(f : \langle -1, \infty\rangle\to \mathbb{R}\), \(f(x)=xe^x\). Odredite derivaciju funkcije \(f^{-1}\).
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -373,7 +373,7 @@ Neka je sada \(d\in \left\langle-\dfrac{1}{e}, \infty\right\rangle\). Tada posto
 \[\left(f^{-1}\right)'(d)=\dfrac{1}{f'\left(f^{-1}(d)\right)}=\dfrac{1}{e^{f^{-1}(d)}+f^{-1}(d)\cdot e^{f^{-1}(d)}}=\dfrac{1}{d+e^{f^{-1}(d)}},\]
 gdje posljednja jednakost slijedi iz svojstava inverzne funkcije.
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite teorem o derivaciji inverzne funkcije.
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -416,7 +416,7 @@ $$\dfrac{1}{h(x)}\cdot h'(x)=g'(x)\cdot \ln{f(x)}+g(x)\cdot \dfrac{1}{f(x)}\cdot
 tj.
 $$h'(x)=h(x)\left(g'(x)\cdot \ln{f(x)}+g(x)\cdot \dfrac{1}{f(x)}\cdot f'(x)\right).$$
 \end{remark}
-\begin{exercise} \textbf{}
+\begin{exercise}{Zadatak} \textbf{}
 \begin{itemize}
 \item[a)] Odredite derivaciju funkcije $x\mapsto (x^2+1)^{x+1}$.
 \item[b)] Odredite derivaciju funkcije $x\mapsto (4x^2+1)(x^4+2x^2)(\sin^2{x}+1)e^x$.
@@ -441,7 +441,7 @@ f'(x)=8x(x^4+2x^2)(\sin^2{x}+1)e^x+(4x^2+1)(4x^3+4x)(\sin^2{x}+1)e^x\\
 U nastavku ćemo obraditi nekoliko zadataka vezanih uz deriviranje funkcija zadanih implicitno i parametarski. Pod "funkcijama zadanima implicitno" podrazumijevamo funkcije $y : I\to \mathbb{R}$, gdje je $I\subseteq \mathbb{R}$ otvoren interval, takve da je $g\left(x, y(x)\right)=c$ za sve $x\in J$, gdje je $J\subseteq I$ otvoren interval i $g : J\times I\to \mathbb{R}$. Odrediti derivaciju funkcije zadane implicitno znači izraziti $y'(x)$ u ovisnosti o $x$ i $y(x)$.
 
 Nadalje, kako bi bili dosljedni s notacijom u literaturi, u ovim zadatcima ćemo na mnogim mjestima umjesto $y(x)$ ćemo pisati $y$.
-\begin{exercise} \textbf{}
+\begin{exercise}{Zadatak} \textbf{}
 \begin{itemize}
 \item[a)] Neka je $y : \langle 0, \infty\rangle\to \mathbb{R}$ diferencijabilna funkcija sa svojstvima da je $x+y^2=1$ i $y(x)>0$ za sve $x\in \langle 0, 1\rangle$. Derivirajte $y$ kao funkciju zadanu implicitno i odredite $y'\left(\dfrac{1}{2}\right)$. Provjerite dobiveni rezultat pomoću "običnog" deriviranja!
 \item[b)] Derivirajte implicitno zadanu funkciju $y : \langle 2,\infty\rangle\to \mathbb{R}$ zadanu s $y^2=\dfrac{\sin{y}}{x}+\dfrac{1}{y}$.
@@ -481,6 +481,6 @@ Međutim, ovako definirana $y$ nije diferencijabilna u $0$, jer je $f_l'(0)=-\df
 \end{remark}
 KOD NIZOVA DODATI ZADATAK O NIZU KOJI KONVERGIRA PREMA SUPREMUMU!!! DODATI I ZADATAK KOJI KAZE DA POLINOM KONVERGIRA U BESKONACNO!!!
 ZADATCI U PLANU ZA STAVIT KASNIJE U ZADATKE ZA VJEŽBU:
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Neka je $I\subseteq \mathbb{R}$, te $f_1, f_2, \dots, f_n$ diferencijabilne u točki $c\in I$. Naslutite formulu za izračunavanje $\left(f_1f_2\dots f_n\right)'$ i dokažite je.
 \end{exercise}

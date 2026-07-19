@@ -35,7 +35,7 @@ Označimo li istinitost neke tvrdnje s \(1\), a lažnost s \(0\), onda definicij
 \end{tabular}
 \end{center}
 U navedenoj tablici, jedan redak korespondira jednome od četiri moguća izbora istinitosti od \(A\) i \(B\) -- tako prvi redak predstavlja situaciju gdje su \(A\) i \(B\) oba lažni, drugi redak predstavlja situaciju gdje je \(A\) lažan i \(B\) istinit, treći redak predstavlja situaciju gdje je \(A\) istinit i \(B\) lažan, a četvrti redak predstavlja situaciju gdje su \(A\) i \(B\) oba istiniti. Izborom jedne od te četiri mogućnosti je jednoznačno određena vrijednost istinitosti svih ostalih formula, koje su prikazane u nastavku u istome retku.
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Zapišite sljedeće sudove koristeći propozicionalne varijable i veznike.
 \begin{itemize}
 \item[a)] Broj \(2\) je veći od broja \(1\) i \(3\) nije prirodan broj.
@@ -69,7 +69,7 @@ Neka su \(A, B, C\) sudovi. Bez obzira na to je li bilo koji od sudova \(A, B, C
 \end{center}
 Navedeni sudovi su primjeri \textit{tautologija}, sudova koji su istiniti bez obzira na istinitost sudova koji se u njima javljaju. Pritom je u gornjim pravilima \(1\) proizvoljna tautologija, a \(0\) proizvoljna \textit{antitautologija} (tj. sud koji je uvijek lažan bez obzira na istinitost propozicionalnih varijabli. Ove ekvivalencije se često pojavljuju u matematici, a i koristit ćemo neke od njih u narednim zadatcima.
 \end{remark}
-\begin{exercise} Odredite negacije sljedećih sudova.
+\begin{exercise}{Zadatak} Odredite negacije sljedećih sudova.
 \begin{itemize}
 \item[a)] Ako je $2$ prirodan broj, onda je nebo plavo i ruža je cvijet.
 \item[b)] Ili ruža nije cvijet, ili je $2$ prirodan broj (ili oboje).
@@ -100,7 +100,7 @@ Neka je \(P(x, y)\) sud "\(x\) je veći od \(y\).". Tada je \(P(1, 2)\) lažan, 
 \end{exmp}
 Sada uvodimo još i \textit{kvantifikatore}. Ove pojmove, kao ni one prethodne, nećemo strogo uvoditi, ali ćemo ih objasniti na primjeru. Kvantifikatori su oznake \(\forall\) (\textit{za svaki}) i \(\exists\) (\textit{postoji}), tj. ako je \(p(x)\) neko svojstvo od \(x\), onda će \(\forall{x}\, p(x)\) značiti "Za svaki \(x\) vrijedi \(p(x)\)", a \(\exists{x}\, p(x)\) "Postoji bar jedan \(x\) takav da vrijedi \(p(x)\)". Pritom vrijedi
 \[\neg \left(\forall{x}\, p(x)\right)\Leftrightarrow \exists{x}\, \neg p(x), \, \neg \left(\exists{x}\, p(x)\right)\Leftrightarrow \forall{x}\, \neg p(x).\]
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Zapišite sljedeće sudove koristeći predikate, kvantifikatore i veznike.
 \begin{itemize}
 \item[a)] Svaki čovjek je smrtan.
@@ -118,7 +118,7 @@ c) Neka je \(P(x, y)\) sud "Za prirodne brojeve \(x\) i \(y\) vrijedi \(x+y=y+x\
 
 d) Neka je \(P(x, y)\) sud "Za prirodne brojeve \(x\) i \(y\) vrijedi \(x<y\).". Tada je traženi sud \(\forall{x}\,\exists{y}\, P(x, y)\).
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Odredite negacije sljedećih sudova.
 \begin{itemize}
 \item[a)] Svi trokuti su jednakostranični.
@@ -176,7 +176,7 @@ Važno je naglasiti i da kod skupova često koristimo \((\forall x\in S)\, P(x)\
 \end{itemize}
 Pritom je \((a, b)\) oznaka za \textbf{uređeni par}, što je zapravo kolekcija dva elementa u kojoj je \textit{bitan poredak}, dakle ako su \(a\) i \(b\) različiti elementi onda je \((a, b)\neq (b, a)\). Nadalje, kažemo da su \(A\) i \(B\) \textbf{disjunktni} ako vrijedi \(A\cap B=\emptyset\).
 \end{definition}
-\begin{exercise} \textbf{}
+\begin{exercise}{Zadatak} \textbf{}
 \begin{itemize}
 \item[a)] Neka je \[A=\{1, 2, \dots, 30\},\; B=\{x\in \mathbb{R} : x+1<x\},\; C=\{n\in \mathbb{Z} : n<9\}\setminus\{n \in \mathbb{Z} : n<-7\}.\] 
 Odredite \((A\cap C)\cup B\).
@@ -218,7 +218,7 @@ Kažemo da je cijeli broj \(a\in \mathbb{Z}\) \textbf{paran} ako postoji bar jed
 Uočite da naš odabir ovih dvaju definicija možda i nije najprirodniji ako tražimo neko intuitivno, "laičko" objašnjenje pojma parnosti ili neparnosti, ali prednost ovakve definicije je njezina jednostavnost, jer da smo npr. definirali parne brojeve kao one čija je zadnja znamenka \(0\), \(2\), \(4\), \(6\) ili \(8\), tada se pozivamo na pojam dekadskog zapisa broja, a u definiciji \ref{15} se ne pozivamo na ništa osim na množenje cijelih brojeva, pojam koji je elementaran. Nadalje, uočite da smo mogli definirati da je \(a\in \mathbb{Z}\) paran ako postoji \textit{točno} jedan \(k\in \mathbb{Z}\) takav da je \(a=2k\), no kasnije ćemo pokazati da jedinstvenost broja \(k\) zapravo slijedi iz same definicije. Napominjemo i da je česta praksa u matematici promotriti definicije s najmanje pretpostavki (pogledajte npr. točku 2.6. u \cite{2}).
 
 Nadalje, posljednje što nam treba je opservacija da, ako želimo dokazati da nešto vrijedi \textit{za svaki} element nekog skupa \(A\), onda možemo uzeti \textit{proizvoljan} element skupa \(A\) i dokazati da tvrdnja vrijedi za taj element. Preciznije, ako želimo dokazati \((\forall{a\in A})\; P(a)\), uzmemo proizvoljan \(a\in A\) i dokažemo da za taj \(a\) vrijedi \(P(a)\). Na taj način smo zapravo dali "recept" kako možemo za svaki pojedini element skupa \(A\) zaključiti tu tvrdnju.
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Riješite sljedeće zadatke. \begin{itemize}
 
 \item[a)] Dokažite da je zbroj dva parna broja ponovno paran broj.
@@ -238,13 +238,13 @@ Neka je $n\in \mathbb{N}$ proizvoljan. Ako je $n$ neparan, onda je $m:=n+2$ tra�
 Alternativno, mogli smo za proizvoljan $n\in \mathbb{N}$ promatrati broj $2n+1$ -- on je očito neparan i vrijedi $2n+1>n$, jer rješavanjem nejednadžbe dobivamo ekvivalentnu tvrdnju $n>-1$, što očito vrijedi.
 \end{proof}
 Općenito, kako bi pokazali da tvrdnja oblika \(\forall{x}\, P(x)\) nije istinita, dovoljno je pokazati da je \(\exists{x}\, \neg P(x)\) istinita, tj. dovoljno je naći neki \(x_0\) takav da je \(P(x_0)\) lažna. Takav \(x_0\) zove se \textit{kontraprimjer}. Ako neka tvrdnja s univerzalnim kvantifikatorom nije istinita, onda često kažemo da \textit{općenito nije istinita}, jer se može ipak dogoditi da postoji neki $x_1$ za kojeg je $P(x_1)$ istinita. Ilustrirajmo sve ovo na jednom jednostavnom primjeru.
-\begin{exercise} \textbf{}
+\begin{exercise}{Zadatak} \textbf{}
 Vrijedi li $n^3-3n^2-n+3\geq 0$ za sve $n\in \mathbb{N}$?
 \end{exercise}
 \begin{proof}[Rješenje]
 Ova tvrdnja ne vrijedi za sve $n\in \mathbb{N}$, kontraprimjer je $n=2$, jer je $2^3-3\cdot 2^2-2+3=-3<0$. S druge strane, za $n=1$ tvrdnja vrijedi, jer je $1^3-3\cdot 1^2-1+3=0\geq 0$, pa ima smisla reći da tvrdnja \textit{općenito nije istinita}.
 \end{proof}
-\begin{exercise} Riješite sljedeće zadatke.
+\begin{exercise}{Zadatak} Riješite sljedeće zadatke.
 \begin{itemize}
 \item[a)] Dokažite da za sve skupove \(A\) i \(B\) vrijedi \(A\cap B\subseteq A\). Vrijedi li za sve \(A\) i \(B\) druga podskupovnost, tj. \(A\subseteq A\cap B\)?
 \item[b)] Dokažite da za sve skupove \(A\) i \(B\) vrijedi \(A\cup B=B\cup A\).
@@ -265,7 +265,7 @@ Uočite da vrijedi \(\{a, a\}=\{a\}\) i \(\{a, b\}=\{b, a\}\). Zaista, zapis \(\
 \begin{definition}
 Neka je \(x\in \mathbb{R}\). Kažemo da je \(x\) \textbf{racionalan} ako postoje cijeli brojevi \(a\) i \(b\neq 0\) takvi da je \(x=\dfrac{a}{b}\). Ako \(x\) nije racionalan, kažemo da je on \textbf{iracionalan}.
 \end{definition}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da za svaki racionalan broj postoji racionalan broj koji je strogo veći od njega.
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -277,7 +277,7 @@ Kako je \(m+n\in \mathbb{Z}\) i po definiciji \(n\in \mathbb{Z}\setminus\{0\}\),
 \end{proof}
 \section{Dokazi kontradikcijom}
 Ideja dokaza kontradikcijom je pretpostaviti da je tvrdnja koju želimo dokazati lažna, a zatim zdravim logičkim zaključivanjem doći do apsurdnog zaključka, odakle slijedi da je početna pretpostavka (da je tvrdnja koju želimo dokazati lažna) bila sama lažna, odakle dobivamo istinitost tvrdnje koju smo htjeli dokazati. Pokažimo to kroz nekoliko primjera.
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite: Niti jedan cijeli broj nema svojstvo da je istovremeno paran i neparan. (Iako se ova tvrdnja na prvi pogled čini očiglednom, zapravo nije odmah vidljiva iz naših definicija parnosti i neparnosti!)
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -287,7 +287,7 @@ Pretpostavimo da postoji takav broj, neka je to \(a\in \mathbb{Z}\). Tada postoj
 \[2(k-l)=1.\]
 Zapravo, dobili smo da je \(1\) paran broj, što intuitivno znamo da ne vrijedi, ali to možemo i dokazati. Možda najprirodniji argument je iskoristiti činjenicu da, kad bi ove operacije proširili na skup \(\mathbb{Q}\), onda bi imali \(k-l=\dfrac{1}{2}\), što je kontradikcija s činjenicom da je \(k-l\) cijeli broj. No ovo možemo i dokazati i bez pozivanja na skup racionalnih brojeva. Uočimo da je \[1=2(k-l)>0,\] pa slijedi i da je \(k-l>0\). S druge strane, kako je \(k-l>0\), imamo \[k-l<2(k-l)=1.\] Dakle \(0<k-l<1\), kontradikcija s \(k-l\in \mathbb{Z}\), jer nema cijelih brojeva između \(0\) i \(1\).
 \end{proof}
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da ne postoji broj \(a\in \mathbb{R}\) sa svojstvom da za svaki \(\epsilon>0\) vrijedi \(a>\epsilon\).
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -299,7 +299,7 @@ Još jedan tip dokazivanja zove se \textit{dokaz kontrapozicijom}, a on se sasto
 \[A\Rightarrow B\Leftrightarrow \neg B\Rightarrow \neg A\]
 slijedi da je dovoljno dokazati \(\neg B\Rightarrow \neg A\). Uočimo da se dokaz kontrapozicijom može gledati kao specijalan slučaj dokaza kontradikcijom i to onaj slučaj gdje, ako pretpostavimo da je tvrdnja koju želimo dokazati lažna, dobivamo negaciju pretpostavke.
 
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite: \begin{itemize}
 \item[a)] Za svaki \(a\in \mathbb{N}\) vrijedi sljedeće: Ako \(4a\) nije kvadrat nekog prirodnog broja, onda to nije ni \(a\).
 \item[b)] Za svaki \(a\in \mathbb{Z}\) vrijedi da je \(a^2\) paran ako i samo ako je \(a\) paran.
@@ -327,7 +327,7 @@ Neka su \(a, b\in \mathbb{Z}\) i \(b\neq 0\). Kažemo da je \(a\) \textbf{djelji
 
 Relativno prosti brojevi su npr. \(3\) i \(7\), \(14\) i \(25\) itd. Može se intuitivno gledati na relativno proste brojeve kao one za koje vrijedi da ako od njih napravimo razlomak, da se taj razlomak ne može dalje kratiti, a da brojnik i nazivnik i dalje budu cijeli brojevi.
 
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Dokažite da je \(\sqrt{2}\) iracionalan.
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -344,7 +344,7 @@ Iz definicije parnosti slijedi da je \(b^2\) paran, pa je i \(b\) paran. No tada
 Kažemo da \(a\) dijeli \(b\) i pišemo \(a\; \vert \;b\) ako je \(b\) djeljiv s \(a\).
 \end{definition}
 
-\begin{exercise}
+\begin{exercise}{Zadatak}
 Odredite sve \(a\in \mathbb{Z}\setminus \{0\}\) takve da je \(\dfrac{4}{a}\) cijeli broj.
 \end{exercise}
 \begin{proof}[Rješenje]
