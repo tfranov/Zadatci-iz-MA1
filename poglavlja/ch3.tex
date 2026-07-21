@@ -56,6 +56,7 @@ a) Neka je $x\in \mathbb{R}$ proizvoljan. Ako je $x+2\geq 0$, onda je i $x+3\geq
 b) Neka je $x\in \mathbb{R}$ proizvoljan. Tvrdnja $\lvert x+3\rvert\leq 7$ je ekvivalentna s $-7\leq x+3\leq 7$, tj. $-10\leq x\leq 4$. Ako je $x> 3$, $\lvert x-2\rvert< 3-x$ očigledno ne vrijedi jer je $\lvert x-2\rvert\geq 0$ i $3-x<0$. Ako je $x=3$ imamo $1<0$, što također ne vrijedi, a ako je $x<3$, onda je $3-x>0$ i tvrdnja je ekvivalentna s $$-3+x<x-2<3-x,$$ pa dobivamo $-3<-2$ i $x< \dfrac{5}{2}$ i očito je $x<3$. Dakle, tvrdnje iz zadatka vrijede ako i samo ako je $-10\leq x<\dfrac{5}{2}$, odnosno $x\in \left[ -10, \dfrac{5}{2}\right\rangle$.
 \end{proof}
 \begin{exercise}{Zadatak} \textbf{}
+\label{absvaluetricks}
 \begin{itemize}
 \item[a)] Neka su $a_1, a_2\in \mathbb{R}$ takvi da je $\left\lvert a_1-a_2\right\rvert\leq 1$. Dokažite da je $\left\lvert a_1\right\rvert\leq 1+\left\lvert a_2\right\rvert$.
 \item[b)] Neka su $a, a', b, b'\in \mathbb{R}$ takvi da je $\lvert a-a'\rvert\leq 1$ i $\lvert b-b'\rvert\leq 1$. Dokažite da je $\lvert ab'- a'b\rvert\leq \lvert a'\rvert+\lvert b'\rvert$.
@@ -132,7 +133,11 @@ r(5^a+1)>ra>1\Rightarrow \dfrac{1}{5^a+1}<r. \qedhere
 Dokažite da za svaki $\epsilon>0$ postoji $r_0\in \mathbb{Q}$ takav da je $0<1-r_0^2<\epsilon$.
 \end{exercise}
 \begin{proof}[Rješenje]
-Zapravo se traži racionalan broj $r_0$ takav da je $r_0^2<1$ i da je $r_0^2$ "dovoljno blizu" broju $1$. Ovdje je smisleno promatrati brojeve oblika $\dfrac{n-1}{n}$, jer je od svih racionalnih brojeva između $0$ i $1$ čiji je nazivnik $n$ kvadrat brojeva tog oblika "najbliži" broju $1$. Općenito, ako je $q=\dfrac{n-1}{n}$, gdje je $n\in \mathbb{N}$, onda je 
+Zapravo se traži racionalan broj $r_0$ takav da je $r_0^2<1$ i da je $r_0^2$ "dovoljno blizu" broju $1$. Ovdje je smisleno promatrati brojeve oblika $\dfrac{n-1}{n}$, jer je od svih racionalnih brojeva između $0$ i $1$ čiji je nazivnik $n$ kvadrat brojeva tog oblika "najbliži" broju $1$. Evo još jednog razloga za promatranje baš ovakvih brojeva -- za sve $m, n\in \mathbb{N}$ vrijedi
+$$1-\dfrac{m^2}{n^2}=\dfrac{n^2-m^2}{n^2},$$
+pa kako nam je cilj $\dfrac{n^2-m^2}{n^2}$ moći napraviti "po volji blizu $0$", ima smisla odabrati neki $m$ u ovisnosti o $n$ takav da se $n^2$ "poništi" s $-n^2$, a to možemo ako odaberemo npr. $m=n-1$.
+
+Općenito, ako je $q=\dfrac{n-1}{n}$, gdje je $n\in \mathbb{N}$, onda je 
 $$1-\dfrac{(n-1)^2}{n^2}=\dfrac{n^2-(n-1)^2}{n^2}=\dfrac{2n-1}{n^2}.$$
 Vrijedi $$\dfrac{2n-1}{n^2}<\epsilon\Leftrightarrow \dfrac{n^2}{2n-1}\epsilon>1\Leftrightarrow \dfrac{n^2-\dfrac{1}{2}n+\dfrac{1}{2}n}{2n-1}\epsilon>1\Leftrightarrow \left(\dfrac{1}{2}n+\dfrac{n}{2(2n-1)}\right)\epsilon>1.$$
 U tu svrhu, uzmimo $n_0\in \mathbb{N}$ takav da je $n_0\cdot\dfrac{\epsilon}{2}>1$ i definirajmo $r_0:=\dfrac{n_0-1}{n_0}$. Tada je
@@ -788,38 +793,50 @@ Odredite \(\sqrt[3]{1+i}\).
 \end{proof*}
 \newpage
 \section*{Zadatci za vježbu}
-\subsection*{Uvod u nejednakosti}
-\begin{exercise}{Zadatak}
-Dokažite da za sve \(x>1\) vrijedi 
+\subsection*{Apsolutna vrijednost realnog broja. Arhimedov aksiom}
+\begin{exercise}{\input{easy.tex}\unskip} Riješite sljedeće zadatke koristeći definiciju apsolutne vrijednosti realnog broja.
 \begin{itemize}
-\item[a)] \(x^3-x^2+\dfrac{1}{x}>0\),
-\item[b)] \(x^2\geq x\sin{x}\).
+\item[a)] Odredite sve $x\in \mathbb{R}$ takve da je $x^2+2\lvert x+3\rvert-6=0$.
+\item[b)] Neka je $a\in \mathbb{R}$. Dokažite da za sve $x\in \mathbb{R}$ vrijedi
+$$\lvert x\rvert\geq a \Leftrightarrow x\geq a \vee x\leq -a.$$
 \end{itemize}
 \end{exercise}
-\begin{exercise}{Zadatak} \textbf{}
+\begin{exercise}{\input{medium.tex}\unskip} Riješite sljedeće zadatke koristeći nejednakost trokuta. (\textbf{Uputa:} Ako niste sigurni kako postupiti u ovom zadatku, pogledajte rješenje zadatka \ref{absvaluetricks}.)
 \begin{itemize}
-\item[a)] Dokažite da za sve \(x\in \mathbb{R}\) vrijedi \(|x|\geq -x\).
-\item[b)] Koristeći tvrdnju a) dijela zadatka, dokažite da za sve \(x\in \mathbb{R}\) vrijedi \[\left\lvert x^{3}-2x\cos{x}+\sin^2{x}+1\right\rvert+\left\lvert x^{3}-2x\cos{x}-\cos^2{x}+6\right\rvert\geq 4.\] 
+\item[a)] Dokažite da za sve $x, y, z\in \mathbb{R}$ takve da je $\lvert x-y\rvert\leq 1$, $\lvert y-z\rvert\leq 1$ vrijedi $$\lvert x\rvert-\lvert y\rvert+\lvert z\rvert\leq 1.$$
+\item[b)] Dokažite da za sve $a, a', b, b'\in \mathbb{R}$ takve da je $\lvert a-a'\rvert\leq 1$ i $\lvert b-b'\rvert\leq 1$ vrijedi
+$$\left\lvert ab-a'b'\right\rvert\leq \left\lvert a'\right\rvert+\left\lvert b'\right\rvert+1$$
 \end{itemize}
 \end{exercise}
-\begin{exercise}{Zadatak} \textbf{}
+\begin{exercise}{\input{medium.tex}\unskip}
+Koristeći Arhimedov aksiom, dokažite da za sve $\epsilon>0$ postoji $n\in \mathbb{N}$ takav da je
+\begin{multicols}{2}
 \begin{itemize}
-\item[a)] (Državno natjecanje, 4. razred, A varijanta, 2018.) Neka je \(n\in \mathbb{N}\). Dokažite da za sve \(x_1, \dots, x_n\in [0, 1]\) vrijedi
-\[(x_1+x_2+\dots+x_n+1)^2\geq 4(x_1+x_2+\dots+x_n).\]
-\item[b)] (Državno natjecanje, 1. razred, A varijanta, 2019.) Neka su \(a, b, c>0\) takvi da je \(a+b+c=1\). Dokažite:
-\[\dfrac{1+9a^2}{1+2a+2b^2+2c^2}+\dfrac{1+9b^2}{1+2b+2c^2+2a^2}+\dfrac{1+9c^2}{1+2c+2a^2+2b^2}<4\]
-\item[c)] Neka su \(x, y, z>0\). Dokažite:
-\[\sqrt{x(3x+y)}+\sqrt{y(3y+z)}+\sqrt{z(3z+x)} \leq 2(x+y+z).\]
-\item[d)] Neka je \(n\in \mathbb{N}\), \(p : \{1, \dots, n\}\to \{1,\dots, n\}\) permutacija skupa \(\{1, \dots, n\}\) i \(a_1, \dots a_n>0\). Dokažite:
-\[\dfrac{a_1}{a_{p(1)}}+\dfrac{a_2}{a_{p(2)}}+\dots+\dfrac{a_n}{a_{p(n)}}\geq n\]
+\item[a)] $0<\dfrac{(-1)^n}{n^3+n}<\epsilon$,
+\item[b)] $\dfrac{n}{n^2-2}<\epsilon$,
+\item[c)] $\dfrac{1}{2^n-3}<\epsilon$.
+\item[d)] $\dfrac{1}{3n^2+2}+\dfrac{1}{2^n}<\epsilon.$ 
+\end{itemize}
+\end{multicols}
+\end{exercise}
+\begin{exercise}{\input{medium.tex}\unskip} \textbf{}
+\begin{itemize}
+\item[a)] Koristeći gustoću $\mathbb{Q}$ u $\mathbb{R}$, dokažite da između svaka dva realna broja postoji barem jedan racionalan broj $\dfrac{a}{b}$ takav da je $a-b\geq 100$.
+\item[b)] Koristeći gustoću $\mathbb{Q}$ u $\mathbb{R}$, dokažite da za svaki $\epsilon>0$ postoje $m, n\in \mathbb{N}$ takvi da je $\left\lvert\dfrac{n^2}{m^2+mn}-3\right\rvert<\epsilon$. (\textbf{Uputa:} Podijelite brojnik i nazivnik s $n^2$.)
 \end{itemize}
 \end{exercise}
-\begin{exercise}{Zadatak}(HMO 2016.) \((**)\)
-Dokažite da za sve \(n\in \mathbb{N}\) i sve \(x_1, x_2, \dots, x_n\geq 0\) vrijedi
-\[\left(x_1+\dfrac{x_2}{2}+\dots+\dfrac{x_n}{n}\right)\left(x_1+2x_2+\dots+nx_n\right)\leq \dfrac{(n+1)^2}{4n}(x_1+x_2+\dots+x_n)^2.\]
+\begin{exercise}{\input{hard.tex}\unskip}
+Dokažite da za svaki $\epsilon>0$ postoje $m, n\in \mathbb{N}$ takvi da je
+\begin{multicols}{2}
+\begin{itemize} 
+\item[a)] $\dfrac{m}{1+n^2}-\dfrac{3}{4}<\epsilon$. 
+\item[b)] $\left\lvert\dfrac{3^m}{n^3+n^2+1}-\dfrac{1}{8}\right\rvert<\epsilon$.
+\end{itemize}
+\end{multicols}
+(\textbf{Uputa:} Pokušajte u oba podzadatka napraviti nešto slično kao u rješenju zadatka \ref{archimedes2}.)
 \end{exercise}
-\subsection*{Minimum i maksimum. Arhimedov aksiom}
-\begin{exercise}{Zadatak} Dokažite ili opovrgnite (Univerzalni skup je \(\mathbb{R}\)):
+\subsection*{Supremum i infimum}
+\begin{exercise}{\input{easy.tex}\unskip} Dokažite ili opovrgnite (Univerzalni skup je \(\mathbb{R}\)):
 \begin{itemize}
 \item[a)] Postoji odozgo neograničen skup \(A\subseteq \mathbb{R}\) takav da je \(A^c\) odozgo ograničen.
 \item[b)] Postoji odozgo ograničen skup \(A\subseteq \mathbb{R}\) takav da je \(A^c\) odozgo neograničen.
@@ -827,65 +844,46 @@ Dokažite da za sve \(n\in \mathbb{N}\) i sve \(x_1, x_2, \dots, x_n\geq 0\) vri
 \item[d)] Postoji odozgo ograničen skup \(A\subseteq \mathbb{R}\) takav da je \(A^c\) odozgo ograničen.
 \end{itemize}
 \end{exercise}
-\begin{exercise}{Zadatak} \textbf{}
-\label{tjeme}
+\begin{exercise}{\input{easy.tex}\unskip}\textbf{}
 \begin{itemize}
-\item[a)] Neka su \(a, b, c\in \mathbb{R}\) i \(a> 0\). Neka je \(S=\left\{ax^2+bx+c : x\in \mathbb{R}\right\}\). Odredite \(\min{S}\).
-\item[b)] Neka je \(S=\left\{\dfrac{1}{\sqrt{x^2+3x+4}} : x\in \mathbb{R}\right\}\). Odredite \(\max{S}\). 
+\item[a)] Navedite primjer skupa \(S\subseteq \mathbb{R}\) takvog da je \(\sup{A^c}=1\).
+\item[b)] Navedite primjer dva skupa \(A, B\subseteq \mathbb{R}\), \(A\neq B\) takva da je \(\sup{\left(A\cap B\right)}=3\) i da \(A\cap B\) nema infimum.
+\item[c)] Navedite primjer beskonačnog skupa \(A\subseteq \mathbb{Q}\) čiji je infimum \(2\), a supremum \(3\).
+\item[d)] Navedite primjer beskonačnih skupova $A, B\subseteq \mathbb{R}$ takvih da je $\inf{A}=\sup{\left(A\cap B\right)}$.
 \end{itemize}
 \end{exercise}
-\begin{remark}
-Analogno se pokazuje da, ukoliko je \(a<0\), vrijedi da je \(\max{S}=\dfrac{4ac-b^2}{4a}\) i on se, kao i u prethodnom slučaju, postiže za \(x=-\dfrac{b}{2a}\). Ovo je vrlo koristan rezultat, za koji se nadamo da Vam je poznat iz srednje škole.
-\end{remark}
-\begin{exercise}{Zadatak}
-Neka je \(A=\left\{n^2-2^n : n\in \mathbb{N}\right\}\). Odredite \(\min{A}\) i \(\max{A}\), ako postoje.
-\end{exercise}
-\begin{exercise}{Zadatak}
-Neka je \(S=\left\{\sin^2{x}\cos{2x} : 0\leq x\leq \dfrac{\pi}{2}\right\}\). Odredite \(\max{S}\) i \(\min{S}\), ako postoje.
-\end{exercise}
-\begin{exercise}{Zadatak}
-Dokažite koristeći Arhimedov aksiom da je skup \(A=\{x^2-x : x\in \mathbb{N}\}\) odozgo neograničen.
-\end{exercise}
-\begin{exercise}{Zadatak} \textbf{}
-\begin{itemize}
-\item[a)] Dokažite da svaki \(a\in \mathbb{R}\) ima najmanji prirodan broj veći ili jednak \(a\).
-\item[b)] Dokažite: Neka je \(a\geq 0\) i \(b>0\). Ako za sve \(n\in \mathbb{N}\) vrijedi \(a\leq \dfrac{b}{2^n}\), onda je \(a=0\).
-\end{itemize}
-\end{exercise}
-\begin{exercise}{Zadatak} \((*)\)
-Dokažite da Arhimedov aksiom i Cantorov aksiom (v. zadatak \ref{Cantor}) povlače aksiom potpunosti.
-\end{exercise}
-\begin{remark}
-Kako iz aksioma realnih brojeva možemo dokazati Arhimedov i Cantorov aksiom (Za dokaz Arhimedova aksioma v. \cite{3}), iz ovog zadatka slijedi da se u aksiomima realnih brojeva aksiom potpunosti može zamijeniti konjunkcijom Arhimedova i Cantorova aksioma.
-\end{remark}
-\subsection*{Supremum i infimum}
-\begin{exercise}{Zadatak}\textbf{}
-\begin{itemize}
-\item[a)] Odredite primjer skupa \(S\subseteq \mathbb{R}\) takvog da je \(\sup{A^c}=1\).
-\item[b)] Odredite primjer dva skupa \(A, B\subseteq \mathbb{R}\), \(A\neq B\) takva da je \(\sup{A\cap B}=3\) i da \(A\cap B\) nema infimum.
-\item[c)] Odredite primjer beskonačnog skupa \(A\subseteq \mathbb{Q}\) čiji je infimum \(2\), a supremum \(3\).
-\item[d)] Odredite primjer skupa \(A\subseteq \mathbb{R}\) takvog da je \(\inf{A}=2\), \(\sup{A}=3\), nema minimum ni maksimum, te se ne može prikazati kao unija konačno mnogo otvorenih intervala. (Dokažite da skup koji ste naveli zaista zadovoljava navedene tvrdnje.)
-\end{itemize}
-\end{exercise}
-\begin{exercise}{Zadatak}
-Odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je
+\begin{exercise}{\input{easy.tex}\unskip} Odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je
 \begin{multicols}{2}
 \begin{itemize}
 \item[a)] \(A=\left\{\dfrac{18-2n}{2n+1} : n\in \mathbb{N}\right\}\),
-\item[b)] \(A=\left\{\dfrac{x^2-10}{x^2+10} : x\in \mathbb{R}\right\}\),
+\item[b)] \(A=\left\{\dfrac{-12-14x^2}{7x^2+5} : x\in \mathbb{R}\right\}\),
 \item[c)] \(A=\left\{\dfrac{1}{n+2} : n\in \mathbb{N},\, n\neq 4\right\}\),
 \item[d)] \(A=\left\{\dfrac{n}{(n+1)!} : n\in \mathbb{N}\right\}\),
-\item[e)] \(A=\left\{(2+(-1)^m)\cdot \dfrac{3}{n} : m, n\in \mathbb{N}\right\}\), 
-\item[f)] \(A=\left\{\dfrac{n^2}{m^2+2mn+5n^2} : m, n\in \mathbb{N}\right\}\),
-\item[g)] \(A=\left\{\dfrac{n+1}{2m+1} : m, n\in \mathbb{N}\right\}\)
-\item[h)] \(A=\left\{\dfrac{n^2}{m^2+m+7n^2} : m, n\in \mathbb{N}\right\}\),
-\item[i)] \(A=\left\{1+\dfrac{n}{n+1}\cos\left(\dfrac{n\pi}{2}\right) : n\in \mathbb{N}\right\}\),
-\item[j)] \(A=\left\{\dfrac{1}{3-\left(-1\right)^{n}\cdot n}+\left(-1\right)^{n} : n\in \mathbb{N}\right\}\),
-\item[k)] \(A=\left\{\dfrac{1}{\sqrt{n}+1} : n\in \mathbb{N}\right\}\).
-\item[l)] \(A=\left\{\dfrac{1}{p} : p\text{ prost}\right\}\).
+\item[e)] \(A=\left\{\dfrac{1}{\sqrt{n}+1} : n\in \mathbb{N}\right\}\).
 \end{itemize}
 \end{multicols}
 \end{exercise}
+\begin{exercise}{\input{medium.tex}\unskip} Odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je 
+\begin{multicols}{2}
+\begin{itemize}
+\item[a)] \(A=\left\{\dfrac{5}{x+2} : x\in \langle -2,0]\right\}\),
+\item[b)] \(A=\left\{\dfrac{4x}{4x^2-1} : x>\dfrac{1}{2}\right\}\),
+\item[c)] \(A=\left\{\dfrac{mn}{1+m+n} : m, n\in \mathbb{N}\right\}\),
+\item[d)] \(A=\left\{\dfrac{n}{n+\sqrt{n^2+1}} : n\in \mathbb{N}\right\}\).
+\end{itemize}
+\end{multicols}
+\end{exercise}
+\begin{exercise}{\input{medium.tex}\unskip} Odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je
+\begin{itemize}
+\item[a)] \(A=\left\{\dfrac{n+1}{2m+1} : m, n\in \mathbb{N}\right\}\),
+\item[b)] \(A=\left\{\dfrac{n^2}{m^2+2mn+5n^2} : m, n\in \mathbb{N}\right\}\),
+\end{itemize}
+\end{exercise}
+ZA KASNIJE!!!
+\item[e)] \(A=\left\{(2+(-1)^m)\cdot \dfrac{3}{n} : m, n\in \mathbb{N}\right\}\), 
+\item[h)] \(A=\left\{\dfrac{n^2}{m^2+m+7n^2} : m, n\in \mathbb{N}\right\}\),
+\item[i)] \(A=\left\{1+\dfrac{n}{n+1}\cos\left(\dfrac{n\pi}{2}\right) : n\in \mathbb{N}\right\}\),
+\(S=\left\{ \dfrac{4x}{5x^2+1}: x\geq \dfrac{1}{4}\right\}\)
 \begin{exercise}{Zadatak}
 Odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je
 \begin{itemize}
@@ -917,9 +915,14 @@ Odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je
 \begin{itemize}
 \item[a)] (Županijsko natjecanje, 3. razred, A varijanta, 2020.) \[A=\left\{\dfrac{1}{\sin^4{x}+\cos^2{x}}+\dfrac{1}{\sin^2{x}+\cos^4{x}} : x\in \mathbb{R}\right\},\]
 \item[c)] \(A=\left\{\cos{\sqrt{\dfrac{\pi}{2}-x^2}} : 0<x\leq \dfrac{\pi}{2}\right\}\),
-\item[d)] \(A=\left\{\dfrac{mn}{1+m+n} : m, n\in \mathbb{N}\right\}\). 
 \item[e)] \(A=\left\{\sqrt{n}-\lfloor \sqrt{n}\rfloor : n\in \mathbb{N}\right\}\).
 \end{itemize}
+\begin{exercise}{\input{hard.tex}\unskip}
+Dokažite da Arhimedov aksiom i Cantorov aksiom (v. zadatak \ref{Cantor}) povlače aksiom potpunosti.
+\end{exercise}
+\begin{remark}
+Kako iz aksioma realnih brojeva možemo dokazati Arhimedov i Cantorov aksiom (Za dokaz Arhimedova aksioma v. \cite{3}), iz ovog zadatka slijedi da se u aksiomima realnih brojeva aksiom potpunosti može zamijeniti konjunkcijom Arhimedova i Cantorova aksioma.
+\end{remark}
 \subsection*{Kompleksni brojevi}
 \begin{exercise}{Zadatak}
 Prikažite \(z=\dfrac{(3+i+i^{140})^2}{3-i}\) u standardnom obliku.

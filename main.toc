@@ -8,8 +8,8 @@
 \contentsline {section}{\numberline {1.5}Princip matematičke indukcije}{21}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Skup \(\mathbb {R}\). Supremum i infimum. Kompleksni brojevi}{32}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Apsolutna vrijednost realnog broja. Arhimedov aksiom}{32}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Supremum i infimum}{38}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Kompleksni brojevi}{57}{section.2.3}%
+\contentsline {section}{\numberline {2.2}Supremum i infimum}{39}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Kompleksni brojevi}{58}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Funkcije}{70}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Pojam funkcije. Crtanje grafa funkcije}{70}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Injekcija, surjekcija i bijekcija. Slika i praslika skupa}{75}{section.3.2}%
