@@ -279,16 +279,22 @@ jer je
 \[\dfrac{1}{x_0^2+1}> \dfrac{1}{(|x_0|+1)^2+1}\Leftrightarrow x_0^2+1<(|x_0|+1)^2+1\Leftrightarrow -1<2|x_0|,\]
 a tvrdnja \(-1<2|x_0|\) je očito istinita. Nadalje, očito je \(|x_0|+1\in \mathbb{R}\), pa vrijedi \[\dfrac{1}{(|x_0|+1)^2+1}\in S,\] što je u kontradikciji s minimalnošću od \(m\).
 \end{remark}
-U rješenju prethodnog zadatka smo naslutili da je \(0\) infimum. Intuitivno, vidimo da \(\dfrac{1}{x^2+1}\) poprima sve pozitivne vrijednosti, dakle i one jako bliske nuli, pa ne može postojati donja međa veća od $0$ jer ćemo uvijek moći odabrati takav \(x_0\) za kojeg je \(\dfrac{1}{x_0^2+1}\) manji od tako odabrane "gornje međe". Ova razmatranja vode na sljedeće zaključke, koji nisu teški za dokazati.
+Promotrimo postupak koji smo koristili u prethodnom zadatku u općenitijem slučaju -- da bismo dokazali da za odozdo ograničen skup $S$ i neku njegovu donju među $l\in \mathbb{R}$ vrijedi $l=\inf{S}$, pretpostavljamo da je $l\neq \inf{S}$, te označimo $\inf{S}$ s $b$. Kako je $l$ donja međa od $S$, mora vrijediti $l<b$, odnosno $b-l>0$. Kako je i $b$ donja međa od $S$, za svaki $x\in S$ vrijedi $x\geq b$, odakle slijedi $x-l\geq b-l$, odnosno $\dfrac{1}{x-l}\leq \dfrac{1}{b-l}$. Da bi sada dobili kontradikciju, dovoljno je pokazati da je skup
+$$A=\left\{\dfrac{1}{x-l} : x\in S\right\}$$
+odozgo neomeđen, a za to je pak dovoljno pokazati da $x-l$ može biti "po volji blizu nuli", tj. da za svaki $\epsilon>0$ postoji $a\in S$ takav da je $a-l<\epsilon$, odnosno $l+\epsilon>a$.
+
+Obratno, ako je $S$ odozdo ograničen skup, onda je $\inf{S}$ očito donja međa, te budući da je ona najveća takva, očito nema većih donjih međa, tj. za svaki $\epsilon>0$ vrijedi da $l+\epsilon$ nije donja međa, što znači da postoji $a\in S$ takav da je $l+\epsilon>a$.
+
+Ove opservacije se mogu ponoviti za supremum, čime dobivamo sljedeće leme.
 \begin{lemma}
 \label{14}
 Neka je \(S\) odozgo ograničen skup. Tada je \(L\in \mathbb{R}\) supremum skupa \(S\) ako i samo ako je on gornja međa od \(S\), tj. za svaki \(x\in S\) vrijedi \(x\leq L\), te za svaki \(\epsilon >0\) postoji \(a\in S\) takav da je \(L-\epsilon<a\).
 \end{lemma}
 \begin{lemma}
 \label{26}
-Neka je \(S\) odozdo ograničen skup. Tada je \(L\in \mathbb{R}\) infimum skupa \(S\) ako i samo ako je on donja međa od \(S\), tj. za svaki \(x\in S\) vrijedi \(x\geq L\), te za svaki \(\epsilon >0\) postoji \(a\in S\) takav da je \(L+\epsilon>a\).
+Neka je \(S\) odozdo ograničen skup. Tada je \(l\in \mathbb{R}\) infimum skupa \(S\) ako i samo ako je on donja međa od \(S\), tj. za svaki \(x\in S\) vrijedi \(x\geq l\), te za svaki \(\epsilon >0\) postoji \(a\in S\) takav da je \(l+\epsilon>a\).
 \end{lemma}
-Ovi rezultati pokazuju se zgodnima za dokazivanje tvrdnji o supremumima i infimumima u mnogo slučajeva. Navedimo nekoliko primjera.
+Ove leme imaju i još jednu interpretaciju, tako npr. lema \ref{14} zapravo kaže da je $L\in \mathbb{R}$ supremum skupa ako i samo ako je $L$ gornja međa sa svojstvom da "koliko god malo" se pomaknuli ulijevo od $L$, uvijek ćemo naći neki element skupa $L$ koji je veći pokazuju se zgodnima za dokazivanje tvrdnji o supremumima i infimumima u mnogo slučajeva. Navedimo nekoliko primjera.
 \begin{exercise}{Zadatak}
 Neka je $S=\left\{\dfrac{1}{x+1} : x\geq 0\right\}$. Odredite $\inf{S}$, $\sup{S}$, $\min{S}$, $\max{S}$, ako postoje.
 \end{exercise}
@@ -369,6 +375,7 @@ a $M>\sqrt{2}$ očito vrijedi zbog $M\geq 6$.
 \end{proof}
 Uočimo da možemo pokazati da je neki skup odozgo (odozdo) ograničen na način da pronađemo neki njegov odozgo (odozdo) neograničen podskup. Zaista, kontrapozicijom dobivamo da ako je skup odozgo (odozdo) ograničen, onda je i svaki njegov podskup odozgo (odozdo) ograničen, a to je očigledna tvrdnja.
 \begin{exercise}{Zadatak} \textbf{}
+\label{pluginvalues}
 \begin{itemize}
 \item[a)] Neka je $S=\left\{\dfrac{m^2+n}{n^2+m} : m, n\in \mathbb{N}\right\}$. Odredite $\inf{S}$, $\sup{S}$, $\min{S}$, $\max{S}$, ako postoje.
 \item[b)] Neka je \(S=\left\{\dfrac{n^2+4m^2}{mn} : n, m\in \mathbb{N}\right\}\). Odredite $\inf{S}$, $\sup{S}$, $\min{S}$, $\max{S}$, ako postoje.
@@ -432,17 +439,17 @@ Vrijedi:
 \item[a)] Ako su \(A, B\subseteq \mathbb{R}\) odozgo (odozdo) ograničeni skupovi, onda je skup
 \[A+B=\{a+b : a\in A, b\in B\}\]
 odozgo (odozdo) ograničen i vrijedi
-\[\sup(A+B)=\sup{A}+\sup{B}\hspace{0.5cm}\left(\inf(A+B)=\inf{A}+\inf{B}\right).\]
+\[\sup{(A+B)}=\sup{A}+\sup{B}\hspace{0.5cm}\left(\inf(A+B)=\inf{A}+\inf{B}\right).\]
 \item[b)] Ako su \(A, B\in \mathbb{R}\) odozgo ograničeni skupovi, takvi da je \(a\geq 0\) za svaki \(a\in A\), te \(b\geq 0\) za svaki \(b\in B\) (kraće: \(A\geq 0\) i \(B\geq 0\), dakle oni su i odozdo ograničeni), tada je skup
 \[A\cdot B=\{a\cdot b : a\in A, b\in B\}\]
 ograničen i vrijedi
-\[\sup(A\cdot B)=\sup{A}\cdot \sup{B} \; \wedge \; \inf(A\cdot B)=\inf{A}\cdot \inf{B}.\]
+\[\sup{(A\cdot B)}=\sup{A}\cdot \sup{B} \; \wedge \; \inf{(A\cdot B)}=\inf{A}\cdot \inf{B}.\]
 \item[c)] Ako je \(A\subseteq \mathbb{R}\) odozdo (odozgo) ograničen skup, tada je skup
 \[-A=\{-a : a\in A\}\]
 odozgo (odozdo) ograničen i vrijedi
-\[\sup(-A)=-\inf{A}, \hspace{0.5cm} \left(\inf(-A)=-\sup{A}\right).\]
+\[\sup{(-A)}=-\inf{A}, \hspace{0.5cm} \left(\inf{(-A)}=-\sup{A}\right).\]
 \item[d)] Ako su \(A, B\in \mathbb{R}\) odozgo (odozdo) ograničeni skupovi, tada je skup \(A\cup B\) odozgo (odozdo) ograničen i vrijedi
-\[\sup(A\cup B)=\max\{\sup{A},\sup{B}\},\hspace{0.5cm} \left(\inf(A\cup B)=\min\{\inf{A}, \inf{B}\}\right).\]
+\[\sup{(A\cup B)}=\max\{\sup{A},\sup{B}\},\hspace{0.5cm} \left(\inf(A\cup B)=\min\{\inf{A}, \inf{B}\}\right).\]
 \end{itemize}
 \end{remark}
 
@@ -451,9 +458,9 @@ Neka je \(S=\left\{\dfrac{n}{n+1}+\dfrac{1}{m^2} : m, n\in \mathbb{N}\right\}\).
 \end{exercise}
 \begin{proof}
 Neka je \[S':=\left\{\dfrac{n}{n+1} : n\in \mathbb{N}\right\}\;\;\text{i}\;\;S'':=\left\{\dfrac{1}{m^2} : m\in \mathbb{N}\right\}.\] Prije smo pokazali da je \(\sup{S'}=1\) i \(\inf{S'}=\dfrac{1}{2}\). Nadalje, vrijedi \(\sup{A''}=1\), jer je to i maksimum koji se postiže za \(m=1\), te \(\inf{S''}=0\), jer prema Arhimedovu aksiomu, za svaki \(\epsilon>0\) postoji \(m_0\in \mathbb{N}\) takav da je \(m_0>\dfrac{1}{\epsilon}\), te kako je \(y^2\geq y\) za sve \(y\in \mathbb{N}\), vrijedi \(\epsilon>\dfrac{1}{m_0^2}\). Dakle vrijedi 
-\[\sup{S}=\sup(S'+S'')=\sup{S'}+\sup{S''}=2,\] 
+\[\sup{S}=\sup{(S'+S'')}=\sup{S'}+\sup{S''}=2,\] 
 te analogno \[
-\inf{S}=\inf(S'+S'')=\inf{S'}+\inf{S''}=\dfrac{1}{2}.
+\inf{S}=\inf{(S'+S'')}=\inf{S'}+\inf{S''}=\dfrac{1}{2}.
 \]
 Sada uočimo da za sve $m, n\in \mathbb{N}$ vrijedi
 $$\dfrac{1}{2}\leq \dfrac{n}{n+1}<\dfrac{n}{n+1}+\dfrac{1}{m^2}\leq \dfrac{n}{n+1}+1<2,$$
@@ -607,13 +614,19 @@ y^n-\dbinom{n}{1}y^{n-1}h-\dbinom{n}{3}y^{n-3}h^3-...&=y^n-h\left(\dbinom{n}{1}y
 \end{proof}
 
 \section{Kompleksni brojevi}
-OVDJE SAM STAO!!!
+Skup kompleksnih brojeva je već otprije poznat kao skup \(\mathbb{C}=\left\{a+bi : a,\; b\in \mathbb{R},\, i=\sqrt{-1}\right\}\). Ovakav opis skupa $\mathbb{C}$ nije skroz matematički precizan, stoga u nastavku dajemo preciznu definiciju.
 \begin{definition}
-Skup kompleksnih brojeva je skup \(\mathbb{C}=\left\{a+bi : a,\; b\in \mathbb{R},\, i=\sqrt{-1}\right\}\).
-(Ova definicija nije stroga, strogu definiciju obradili ste na predavanjima.)
+\label{defcomplex}
+Na skupu $\mathbb{R}^2=\mathbb{R}\times\mathbb{R}$ definiramo operacija $\oplus : \mathbb{R}^2\times \mathbb{R}^2\to \mathbb{R}^2$ i $\odot : \mathbb{R}^2\times \mathbb{R}^2\to \mathbb{R}^2$, tako da za sve $a, b, c, d\in \mathbb{R}$ definiramo
+\begin{gather}
+(a, b)\oplus (c, d) := (a+c, b+d),\\
+(a, b)\odot (c, d) := (ac-bd, ad+bc).
+\end{gather}
+Skup $\mathbb{C}$ je skup $\mathbb{R}^2$, skupa s gore navedenim operacijama. Pritom za $a, b\in \mathbb{R}$ imamo oznaku $a+bi:=(a, b)$ i radi jednostavnosti notacije, $\oplus$ označavamo s $+$, kao i $\odot$ s $\cdot$ (iako npr. $+$ kao operacija nad realnim brojevima i $+$ kao oznaka za $\oplus$ nisu isti pojam).
 \end{definition}
-
-\noindent Kompleksne brojeve zbrajamo i oduzimamo "po komponentama", tj. \[(a+bi)\pm (c+di)=(a+c)\pm (b+d)i,\] te ih množimo poput polinoma, tj. \[(a+bi)(c+di)=ac+adi+bci-bd=(ac-bd)+(ad+bc)i.\] Vrijedi i \[\dfrac{1}{a+bi}=\dfrac{a-bi}{a^2+b^2},\] što se lako pamti kao "racionalizacija nazivnika", tj. množimo brojnik i nazivnik s \(a-bi\), pa u nazivniku dobivamo \[(a+bi)(a-bi)=a^2-abi+abi+b^2=a^2+b^2.\]
+Može se pokazati da $\mathbb{C}$ s ove dvije operacije čini \textit{polje}\footnote{Definiciju polja možete vidjeti u \cite{2}.}. Pritom, za $z\in \mathbb{C}$, inverz u odnosu na $+$ označavamo s $-z$, a ako je $z\neq 0$, inverz u odnosu na $\cdot$ označavamo s $\dfrac{1}{z}$.
+Uočimo da iz gornje definicije slijedi da kompleksne brojeve zbrajamo i oduzimamo "po komponentama", tj. \[(a+bi)\pm (c+di)=(a+c)\pm (b+d)i,\] te ih množimo poput polinoma, tj. \[(a+bi)(c+di)=ac+adi+bci-bd=(ac-bd)+(ad+bc)i.\] Vrijedi i \[\dfrac{1}{a+bi}=\dfrac{a-bi}{a^2+b^2},\] što se lako pamti kao "racionalizacija nazivnika", tj. množimo brojnik i nazivnik s \(a-bi\), pa u nazivniku dobivamo \[(a+bi)(a-bi)=a^2-abi+abi+b^2=a^2+b^2.\]
+Napomenimo da smo definiciju \ref{defcomplex} naveli radi potpunosti i na nju nećemo stavljati naglasak, nego ćemo u ovom poglavlju ponoviti neke važne osnovne činjenice o kompleksnim brojevima. 
 \begin{exercise}{Zadatak}
 Neka je \(z=\dfrac{(2+3i)(4+5i)}{6+7i}\). Napišite \(z\) u standardnom obliku.\\
 \textit{Rješenje.} Vrijedi \((2+3i)(4+5i)=8+10i+12i-15=-7+22i\). Imamo
@@ -624,7 +637,7 @@ Neka je \(z=\dfrac{(2+3i)(4+5i)}{6+7i}\). Napišite \(z\) u standardnom obliku.\
 \begin{itemize}
 \item Vrijedi \(a+bi=c+di\) ako i samo ako vrijedi \(a=c\) i \(b=d\).
 \item \textbf{Modul} kompleksnog broja \(z=a+bi\) je broj \(\left\lvert z\right\rvert=\sqrt{a^2+b^2}\).
-\item Neka je \(z=x+yi\). Tada je \textbf{realni dio} od \(z\) broj \(\mathrm{Re}(z)=x\), a \textbf{imaginarni dio} od \(z\) broj \(\mathrm{Im}(z)=y\).
+\item Neka je \(z=x+yi\). Tada je \textbf{realni dio} od \(z\) broj \(\re{z}=x\), a \textbf{imaginarni dio} od \(z\) broj \(\im{z}=y\).
 \item \textbf{Kompleksno-konjugirani} broj od \(z=x+yi\) je broj \(\overline{z}=x-yi\).
 \end{itemize}
 \end{remark}
@@ -654,7 +667,7 @@ Primijetimo da općenito ne možemo kvadrirati ovu nejednakost jer \(ac+bd\) mo�
 Zaista, ova tvrdnja je ekvivalentna \((ad-bc)^2\geq 0\), što je istina.\footnote{Tvrdnja je i specijalan slučaj CSB-nejednakosti.}
 \end{proof}
 \begin{exercise}{Zadatak}
-Prikažite u Gaussovoj ravnini skup \(S=\left\{z : \left\lvert z-3\right\rvert=4\right\}\).
+Prikažite u Gaussovoj ravnini skup \(S=\left\{z\in \mathbb{C} : \left\lvert z-3\right\rvert=4\right\}\).
 \end{exercise}
 \begin{proof}[Rješenje]
 Ideja u rješavanju zadataka ovog tipa je pronaći nužne i dovoljne uvjete da je neki kompleksan broj u \(S\) takve da pomoću njih lako možemo skicirati \(S\) u Gaussovoj ravnini. Neka je \(z=x+yi\). Tada vrijedi \(|z-3|=|(x-3)+yi|=4\), odnosno \(\sqrt{(x-3)^2+y^2}=4\), što vrijedi ako i samo ako vrijedi \((x-3)^2+y^2=16\). Prema tome, vrijedi \(z\in S\) ako i samo ako vrijedi \((x-3)^2+y^2=16\), gdje je \(z=x+yi\). No znamo da je ovaj skup kružnica radijusa \(4\) sa središtem u točki \((3, 0)\).
@@ -743,7 +756,7 @@ Ako je \(y\geq 0\), onda je \(|y|=y\), pa imamo jednadžbu \[y^2+2y+1=0,\] čije
 Ako je \(y<0\), imamo jednadžbu \[-y^2+2y+1=0,\] čija rješenja su \(y=1-\sqrt{2}\) i \(y=1+\sqrt{2}\), ali jedino uzimamo u obzir rješenje \(y=1-\sqrt{2}\), jer je \(1+\sqrt{2}\geq 0\). Dakle, jedino rješenje početne jednadžbe je \(z=(1-\sqrt{2})i\).
 \end{proof}
 \begin{remark}
-Kompleksan broj \(z\) je napisan u \textbf{trigonometrijskom obliku} ako je \(z=r(\cos{\theta}+i\sin{\theta})\), gdje je \(r=|z|\) i \(\theta\in [0, 2\pi \rangle\) kut koji taj broj zatvara s osi \(x\). Vrijedi:
+Kompleksan broj \(z\) je napisan u \textbf{trigonometrijskom obliku} ako je \(z=r(\cos{\theta}+i\sin{\theta})\), gdje je \(r=|z|\) i \(\theta\in [0, 2\pi \rangle\) kut koji taj broj zatvara s pozitivnim dijelom osi \(x\). Vrijedi:
 \begin{itemize}
 \item \(\tg{\theta}=\dfrac{y}{x}\), s time da pri određivanju broja \(\theta\) treba uzeti u obzir i kvadrant u kojem se \(z\) nalazi.
 \item Neka je \(z_1=r_1(\cos{\theta_1}+i\sin{\theta_1})\), \(z_2=r_2(\cos{\theta_2}+i\sin{\theta_2})\). Tada je
@@ -757,13 +770,17 @@ z_1z_2=r_1r_2\left(\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)\right),\\
 
 \begin{exercise}{Zadatak} \textbf{}
 \begin{itemize}
-\item[a)] Zapišite \(z=1-\sqrt{3}i\) u trigonometrijskom obliku. Odredite \(z^5\).
+\item[a)] Zapišite \(z=1-\sqrt{3}i\) u trigonometrijskom obliku. Odredite \(z^5\) i zapišite ga u trigonometrijskom obliku.
 \item[b)] Odredite najmanji \(\alpha\in \mathbb{N}\) takav da je \(z=\left(1+i\right)^{\alpha}\left(-\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i\right)^{\alpha}\in \mathbb{R}\).
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-a) \(z=2\left(\cos\left(-\dfrac{\pi}{3}\right)+i\sin\left(-\dfrac{\pi}{3}\right)\right)\), \(z^5=32\left(\cos{\dfrac{\pi}{3}}+i\sin{\dfrac{\pi}{3}}\right)\).
-
+a) Vrijedi $\lvert z\rvert=2$ i $\tg{\theta}=-\sqrt{3}$, odakle dobivamo da je $\theta=-\dfrac{\pi}{3}+k\pi$, $k\in \mathbb{Z}$. Budući da je $z$ u IV. kvadrantu (jer je $\re{z}>0$ i $\im{z}<0$), vrijedi $\theta\in \left[\dfrac{3\pi}{2}, 2\pi\right\rangle$, stoga je $\theta=\dfrac{5\pi}{3}$ i imamo 
+\[z=2\left(\cos{\dfrac{5\pi}{3}}+i\sin{\dfrac{5\pi}{3}}\right),\;\; z^5=32\left(\cos{\dfrac{25\pi}{3}}+i\sin{\dfrac{25\pi}{3}}\right).\]
+Sada uočimo da kako bi $z^5$ bio zaista zapisan u trigonometrijskom obliku, moramo pronaći kut $\phi\in [0, 2\pi\rangle$ sa svojstvom da je $\cos{\phi}=\cos{\dfrac{25\pi}{3}}$ i $\sin{\phi}=\sin{\dfrac{25\pi}{3}}$. Uočimo da je
+$$\dfrac{25\pi}{3}=\dfrac{24\pi}{3}+\dfrac{\pi}{3}=8\pi+\dfrac{\pi}{3},$$
+pa zbog periodičnosti funkcija $\sin$ i $\cos$, možemo uzeti $\phi=\dfrac{\pi}{3}$. Slijedi da je 
+\[z^5=32\left(\cos{\dfrac{\pi}{3}}+i\sin{\dfrac{\pi}{3}}\right).\]
 b) Vrijedi 
 \begin{align*}
 \left(1+i\right)^{\alpha}\left(-\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i\right)^{\alpha}&=\sqrt{2}^{\alpha}\left(\cos{\dfrac{\alpha \pi}{4}}+i\sin{\dfrac{\alpha \pi}{4}}\right)\left(\cos{\dfrac{2\alpha \pi}{3}}+i\sin{\dfrac{2\alpha \pi}{3}}\right)\\
@@ -777,19 +794,43 @@ Neka je \(z\in \mathbb{C}\). Kažemo da je \textbf{\(n\)-ti korijen} iz \(z\), u
 \end{definition}
 
 \begin{remark}
-Vrijedi \(\sqrt[n]{z}=\sqrt[n]{r}\left(\cos{\dfrac{\phi+2k\pi}{n}}+\sin{\dfrac{\phi+2k\pi}{n}}\right), \; k\in\{0, 1, 2, \dots, n-1\}\).
+\label{sqrtofcomplex}
+Neka je $z\in \mathbb{C}$. Vrijedi 
+\[\sqrt[n]{z}=\left\{\sqrt[n]{r}\left(\cos{\dfrac{\phi+2k\pi}{n}}+\sin{\dfrac{\phi+2k\pi}{n}}i\right) : k\in\{0, 1, 2, \dots, n-1\}\right\}.\]
 \end{remark}
 
 \begin{exercise}{Zadatak}
 Odredite \(\sqrt[3]{1+i}\).
 \end{exercise}
 \begin{proof*}
-\(\sqrt[3]{1+i}\) je jednak skupu
+\textit{Prvi način.} Broj $1+i$ u Gaussovoj ravnini zatvara s pozitivnim dijelom $x$-osi kut od $45^{\circ}$, stoga je $\phi=\dfrac{\pi}{4}$, te je očito $n=3$. Sada primjenom napomene \ref{sqrtofcomplex} dobivamo da je \(\sqrt[3]{1+i}\) jednak skupu
 \[
 \pushQED{\qed}
-\left\{\sqrt[6]{2}\left(\cos{\dfrac{\pi}{12}}+i\sin{\dfrac{\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{3\pi}{12}}+i\sin{\dfrac{3\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{17\pi}{12}}+i\sin{\dfrac{17\pi}{12}}\right)\right\}.
+\left\{\sqrt[6]{2}\left(\cos{\dfrac{\pi}{12}}+i\sin{\dfrac{\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{9\pi}{12}}+i\sin{\dfrac{9\pi}{12}}\right), \sqrt[6]{2}\left(\cos{\dfrac{17\pi}{12}}+i\sin{\dfrac{17\pi}{12}}\right)\right\}.
 \popQED
 \]
+\textit{Drugi način.} Riješit ćemo ovaj zadatak bez pozivanja na napomenu \ref{sqrtofcomplex}. Po definiciji, tražimo sve $w\in \mathbb{C}$ takve da je $w^3=1+i$. Označimo li $w=x+yi$, imamo
+$$(x+yi)^3=1+i\Leftrightarrow x^3+3x^2yi-3xy^2-y^3i=1+i,$$
+odakle dobivamo sustav
+\[\begin{cases}
+x^3-3xy^2=1,\\
+3x^2y-y^3=1.
+\end{cases}\]
+Izjednačavanjem jednadžbi imamo
+$$
+x^3-3xy^2=3x^2y-y^3\Leftrightarrow x^3+y^3=3x^2y+3xy^2\Leftrightarrow (x+y)(x^2-xy+y^2)=3xy(x+y).
+$$
+Ako je $x=-y$, onda uvrštavanjem u početni sustav dobivamo jednadžbu $-y^3+3y^3=1$, tj. $y=\dfrac{1}{\sqrt[3]{2}}$, te $x=-\dfrac{1}{\sqrt[3]{2}}$. Dakle, $z_1=-\dfrac{1}{\sqrt[3]{2}}+\dfrac{1}{\sqrt[3]{2}}i$ je prvo rješenje, te se lako provjeri da je i $z_1=\sqrt[6]{2}\left(\cos{\dfrac{9\pi}{12}}+i\sin{\dfrac{9\pi}{12}}\right)$, tj. drugo rješenje iz prvog načina u rješenju zadatka.
+
+Ako je $x\neq -y$, onda djeljenjem s $x+y$ dobivamo
+$$x^2-xy+y^2=3xy\Leftrightarrow x^2+y^2=4xy\Leftrightarrow x^4+2x^2y^2+y^4=16x^2y^2\Leftrightarrow x^4+y^4=14x^2y^2.$$
+Pritom smo mogli kvadrirati obje strane jednadžbe, jer je $x^2+y^2\geq 0$, pa je i $4xy\geq 0$. Razlog zašto smo to napravili je sljedeći -- uočimo da je $y\neq 0$ (jer za $y=0$ sustav očito nema rješenja), pa imamo
+$$3x^2y-y^3=1\Leftrightarrow 3x^2y=1+y^3\Leftrightarrow x^2=\dfrac{1+y^3}{3y},$$
+pa uvrštavanjem dobivamo
+$$\left(\dfrac{1+y^3}{3y}\right)^2+y^4=14\left(\dfrac{1+y^3}{3y}\right)y^2.$$
+Uočimo da kad bi uvrstili izraz za $x^2$ u $x^2+y^2=4xy$ bi dobili korijen, što smo radi jednostavnosti zapisa htjeli izbjeći. Posljednje je ekvivalentno bikvadratnoj jednadžbi $-32y^6-40y^3+1=0$, čija su rješenja
+$$y_2=-\dfrac{\sqrt[3]{5+3\sqrt{3}}}{2},\;\; y_3=\dfrac{\sqrt[3]{-5+3\sqrt{3}}}{2}.$$
+Sada za npr. $y_2$ dobivamo da su pripadna rješenja $x_{21, 22}=\pm \sqrt{\dfrac{1+y_2^3}{3y_2}}$, ali pozitivno rješenje (neka je to npr. $x_{21}$) odbacujemo zbog uvjeta $4xy\geq 0$, budući da je $y_2<0$, a $x_{21}>0$. Analogno ćemo za $y_3$ odbaciti negativno rješenje, budući da je $y_3>0$. Zaključujemo da su $z_2=-\sqrt{\dfrac{1+y_2^3}{3y_2}}+y_2i$ i $z_3=\sqrt{\dfrac{1+y_3^3}{3y_3}}+y_3i$ (gdje $y_2$ i $y_3$ nismo uvrštavali radi kratkoće zapisa). Lako se provjeri da je $z_3=\sqrt[6]{2}\left(\cos{\dfrac{\pi}{12}}+i\sin{\dfrac{\pi}{12}}\right)$ i $z_2=\sqrt[6]{2}\left(\cos{\dfrac{17\pi}{12}}+i\sin{\dfrac{17\pi}{12}}\right)$.
 \end{proof*}
 \newpage
 \section*{Zadatci za vježbu}
@@ -822,7 +863,7 @@ Koristeći Arhimedov aksiom, dokažite da za sve $\epsilon>0$ postoji $n\in \mat
 \begin{exercise}{\input{medium.tex}\unskip} \textbf{}
 \begin{itemize}
 \item[a)] Koristeći gustoću $\mathbb{Q}$ u $\mathbb{R}$, dokažite da između svaka dva realna broja postoji barem jedan racionalan broj $\dfrac{a}{b}$ takav da je $a-b\geq 100$.
-\item[b)] Koristeći gustoću $\mathbb{Q}$ u $\mathbb{R}$, dokažite da za svaki $\epsilon>0$ postoje $m, n\in \mathbb{N}$ takvi da je $\left\lvert\dfrac{n^2}{m^2+mn}-3\right\rvert<\epsilon$. (\textbf{Uputa:} Podijelite brojnik i nazivnik s $n^2$.)
+\item[b)] Koristeći gustoću $\mathbb{Q}$ u $\mathbb{R}$, dokažite da za svaki $\epsilon>0$ postoje $m, n\in \mathbb{N}$ takvi da je $\left\lvert\dfrac{n^2}{m^2+mn}-3\right\rvert<\epsilon$. (\textbf{Uputa:} Podijelite brojnik i nazivnik s $n^2$.) PROVJERITI!!!
 \end{itemize}
 \end{exercise}
 \begin{exercise}{\input{hard.tex}\unskip}
@@ -851,6 +892,7 @@ Dokažite da za svaki $\epsilon>0$ postoje $m, n\in \mathbb{N}$ takvi da je
 \item[c)] Navedite primjer beskonačnog skupa \(A\subseteq \mathbb{Q}\) čiji je infimum \(2\), a supremum \(3\).
 \item[d)] Navedite primjer beskonačnih skupova $A, B\subseteq \mathbb{R}$ takvih da je $\inf{A}=\sup{\left(A\cap B\right)}$.
 \end{itemize}
+(\textbf{Uputa:} U ovom zadatku se samo traže primjeri, ali ako želite dodatni izazov, možete dokazati da vaši primjeri zaista zadovoljavaju tražena svojstva.)
 \end{exercise}
 \begin{exercise}{\input{easy.tex}\unskip} Odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je
 \begin{multicols}{2}
@@ -868,62 +910,74 @@ Dokažite da za svaki $\epsilon>0$ postoje $m, n\in \mathbb{N}$ takvi da je
 \begin{itemize}
 \item[a)] \(A=\left\{\dfrac{5}{x+2} : x\in \langle -2,0]\right\}\),
 \item[b)] \(A=\left\{\dfrac{4x}{4x^2-1} : x>\dfrac{1}{2}\right\}\),
-\item[c)] \(A=\left\{\dfrac{mn}{1+m+n} : m, n\in \mathbb{N}\right\}\),
+\item[c)] \(A=\left\{ \dfrac{4x}{5x^2+1}: x\geq \dfrac{1}{4}\right\}\),
 \item[d)] \(A=\left\{\dfrac{n}{n+\sqrt{n^2+1}} : n\in \mathbb{N}\right\}\).
 \end{itemize}
 \end{multicols}
+(\textbf{Uputa:} U c) dijelu zadatka pronađite maksimum kao i u b) dijelu zadatka \ref{pluginvalues}.)
 \end{exercise}
 \begin{exercise}{\input{medium.tex}\unskip} Odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je
+\begin{multicols}{2}
 \begin{itemize}
 \item[a)] \(A=\left\{\dfrac{n+1}{2m+1} : m, n\in \mathbb{N}\right\}\),
 \item[b)] \(A=\left\{\dfrac{n^2}{m^2+2mn+5n^2} : m, n\in \mathbb{N}\right\}\),
+\item[c)] \(A=\left\{\dfrac{mn}{1+m+n} : m, n\in \mathbb{N}\right\}\),
+\item[d)] \(A=\left\{\dfrac{m^2+2n}{1+m!+n} : m, n\in \mathbb{N}\right\}\),
+\item[e)] \(A=\left\{\dfrac{1+n^2m}{2m+nm^2} : m, n\in \mathbb{N}\right\}\).
 \end{itemize}
+\end{multicols}
 \end{exercise}
-ZA KASNIJE!!!
-\item[e)] \(A=\left\{(2+(-1)^m)\cdot \dfrac{3}{n} : m, n\in \mathbb{N}\right\}\), 
-\item[h)] \(A=\left\{\dfrac{n^2}{m^2+m+7n^2} : m, n\in \mathbb{N}\right\}\),
-\item[i)] \(A=\left\{1+\dfrac{n}{n+1}\cos\left(\dfrac{n\pi}{2}\right) : n\in \mathbb{N}\right\}\),
-\(S=\left\{ \dfrac{4x}{5x^2+1}: x\geq \dfrac{1}{4}\right\}\)
-\begin{exercise}{Zadatak}
-Odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je
+\begin{exercise}{\input{easy.tex}\unskip} Koristeći napomenu \ref{prodsumsupinf}, odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je 
 \begin{itemize}
-\item[a)] \(A=\left\{\dfrac{12m-n-3mn+7}{5n-2n-2mn+5} : n\in \mathbb{N},\; m\in \mathbb{N},\; n>4\right\}\),
-\item[b)] \(A=\left\{\dfrac{1}{3n+4}\cdot \dfrac{1}{3m-4} : m, n\in \mathbb{N}\right\}\) (Budite pažljivi ovdje!),
-\item[c)] \(A=\left\{\dfrac{m^2+4mn\cos{\dfrac{x}{2}}+5n^2}{mn} : m, n\in \mathbb{N},\; x\in [\pi, 3\pi]\right\}\),
-\item[d)] \(A=\left\{\dfrac{3}{x+4} : x\in \mathbb{I},\, x>-4\right\}\).
+\item[a)] \(A=\left\{(2+(-1)^m)\cdot \dfrac{3}{n} : m, n\in \mathbb{N}\right\}\),
+\item[b)] \(A=\left\{1+\dfrac{n}{n+1}\cos\left(\dfrac{n\pi}{2}\right) : n\in \mathbb{N}\right\}\),
+\item[c)] \(A=\left\{\dfrac{12m-n-3mn+7}{5n-2n-2mn+5} : m, n\in \mathbb{N}, n>4\right\}\),
+\item[d)] \(A=\left\{\dfrac{5}{4+3n^{(-1)^n}} : n\in \mathbb{N}\right\}\),
+\item[e)] \(A=\left\{\dfrac{1}{3n+4}\cdot \dfrac{1}{3m-4} : m, n\in \mathbb{N}\right\}\). (\textbf{Uputa:} Budite pažljivi ovdje, jer $3m-4$ može biti negativan.)
 \end{itemize}
 \end{exercise}
-\begin{exercise}{Zadatak}
-Neka je \(A\subseteq \mathbb{R}\) skup koji nema maksimum, takav da \(A\setminus\langle 1, 2\rangle\) ima maksimum. Dokažite da je \(A\) odozgo ograničen i da je \(\sup{A}\leq 2\). Postoji li \(a\in \mathbb{R}\), \(a<2\) takav da za svaki \(A\subseteq \mathbb{R}\) s gornjim svojstvima vrijedi \(\sup{A}=a\)?
+\begin{exercise}{\input{medium.tex}\unskip} Odredite sve \(a\in \mathbb{R}\setminus\{0\}\) takve da...
+\begin{itemize}
+\item[a)] ...za skup \(S=\left\{a-\dfrac{2}{an} : n\in \mathbb{N}\right\}\) vrijedi \(\sup{S}=1\),
+\item[b)] ...za skup \(S=\left\{\dfrac{ax^2}{x^2+1} : x\in \mathbb{R}\right\}\) vrijedi \(\sup{S}=2\),
+\item[c)] ...za skup \(S=\left\{\dfrac{a^2n^2}{a^2n-1} : n\in \mathbb{N}, n\neq \dfrac{1}{a^2}\right\}\) vrijedi \(\inf{S}=10\).
+\end{itemize}
 \end{exercise}
-\begin{exercise}{Zadatak}
-Neka su \(a, b\in \mathbb{R}\), \(a<b\). Odredite supremum skupa \(\langle a, b\rangle\cap \mathbb{Q}\), ako postoji.
+\begin{exercise}{\input{medium.tex}\unskip}
+Neka je \(A\subseteq \mathbb{R}\) skup koji nema maksimum, takav da \(A\setminus\langle 1, 2\rangle\) ima maksimum. Dokažite da je \(A\) odozgo ograničen i da je \(\sup{A}\leq 2\). Postoji li \(a\in \mathbb{R}\), \(a<2\) takav da za svaki \(A\subseteq \mathbb{R}\) s gornjim svojstvima vrijedi \(\sup{A}\leq a\)?
 \end{exercise}
-\begin{exercise}{Zadatak}
-Odredite sve \(a\in \mathbb{R}\setminus\{0\}\) takve da za skup
-\[S=\left\{a-\dfrac{2}{an} : n\in \mathbb{N}\right\}\]
-vrijedi \(\sup{S}=1\).
+\begin{exercise}{\input{medium.tex}\unskip}
+Dokažite a), c) i d) dio napomene \ref{prodsumsupinf}.
 \end{exercise}
-\begin{exercise}{Zadatak}
+\begin{exercise}{\input{hard.tex}\unskip} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite b) dio napomene \ref{prodsumsupinf}.
+\item[b)] Neka su $A$ i $B$ ograničeni skupovi. Dokažite da je i $A\cdot B$ ograničen, te odredite čemu sve mogu biti jednaki $\sup{\left(A\cdot B\right)}$ i $\inf{\left(A\cdot B\right)}$.
+\end{itemize}
+\end{exercise}
+\begin{exercise}{\input{hard.tex}\unskip}
 Neka je \(A\subseteq \langle 0,\infty\rangle\) i neka je \(\inf{A}>0\). Definiramo
 \[\dfrac{1}{A}=\left\{\dfrac{1}{a} : a\in A\right\}.\]
 Dokažite da je tada \(\dfrac{1}{A}\) odozgo ograničen i da vrijedi
 \(\sup{\dfrac{1}{A}}=\dfrac{1}{\inf{A}}\).
 \end{exercise}
-\begin{exercise}{Zadatak} \((*)\)
-Odredite \(\inf{A}\), \(\sup{A}\), \(\min{A}\), \(\max{A}\) ako postoje, gdje je
-\begin{itemize}
-\item[a)] (Županijsko natjecanje, 3. razred, A varijanta, 2020.) \[A=\left\{\dfrac{1}{\sin^4{x}+\cos^2{x}}+\dfrac{1}{\sin^2{x}+\cos^4{x}} : x\in \mathbb{R}\right\},\]
-\item[c)] \(A=\left\{\cos{\sqrt{\dfrac{\pi}{2}-x^2}} : 0<x\leq \dfrac{\pi}{2}\right\}\),
-\item[e)] \(A=\left\{\sqrt{n}-\lfloor \sqrt{n}\rfloor : n\in \mathbb{N}\right\}\).
-\end{itemize}
 \begin{exercise}{\input{hard.tex}\unskip}
 Dokažite da Arhimedov aksiom i Cantorov aksiom (v. zadatak \ref{Cantor}) povlače aksiom potpunosti.
 \end{exercise}
 \begin{remark}
 Kako iz aksioma realnih brojeva možemo dokazati Arhimedov i Cantorov aksiom (Za dokaz Arhimedova aksioma v. \cite{3}), iz ovog zadatka slijedi da se u aksiomima realnih brojeva aksiom potpunosti može zamijeniti konjunkcijom Arhimedova i Cantorova aksioma.
 \end{remark}
+\begin{exercise}{\input{hard.tex}\unskip}
+Odredite sve $a\in \mathbb{R}$ takve da je \(S=\left\{\dfrac{a}{an^2+1} : n\in \mathbb{N}\right\}\) vrijedi \(\sup{S}=2\) koristeći sljedeće smjernice. PROVJERITI!!!
+\begin{itemize}
+\item[a)] Dokažite da tvrdnja \textit{ne} vrijedi za $a<-2$ i $a\geq 0$.
+\item[b)] Odredite sve $a\in \mathbb{R}$ za koje postoji $n_0\in \mathbb{N}$ takav da je $\dfrac{a}{an_0^2+1}=2$.
+\item[c)] Koristeći svoj omiljeni grafički kalkulator, vizualizirajte skup $S$ i naslutite za koje $a\in [-2, 0\rangle$ će $2$ biti gornja međa, te za koje neće biti gornja međa, a potom svoje slutnje dokažite. (\textbf{Uputa:} Iskoristite činjenicu da za $a, b, x\in \mathbb{R}$ vrijedi $a<x<b$ ako i samo ako postoji $t\in \langle 0, 1\rangle$ takav da je $x=ta+(1-t)b$.)
+\item[d)] Za one $a\in [-2, 0\rangle$ za koje ste dobili da je $2$ gornja međa, dokažite da postoji $n_0\in \mathbb{N}$ takav da za svaki $n\in \mathbb{N}$ takav da je $n\geq n_0$ vrijedi $\dfrac{a}{an^2+1}<1$, te iskoristite tu činjenicu da dođete do kontradikcije.
+\end{itemize}
+\end{exercise}
 \subsection*{Kompleksni brojevi}
+OVDJE SAM STAO!!!
 \begin{exercise}{Zadatak}
 Prikažite \(z=\dfrac{(3+i+i^{140})^2}{3-i}\) u standardnom obliku.
 \end{exercise}
@@ -958,10 +1012,10 @@ Riješite jednadžbu \(|z|-\overline{z}=1+2i\).
 Odredite skup \(S\) i skicirajte ga u Gaussovoj ravnini, gdje je
 \begin{multicols}{2}
 \begin{itemize}
-\item[a)] \(S=\{z : \mathrm{Re}(z-3)=|z+2i|\}\).
+\item[a)] \(S=\{z : \re{(z-3)}=|z+2i|\}\).
 \item[b)] \(S=\left\{z : |z+2|=|1-\overline{z}|\right\}\),
 \item[c)] \(S=\{z : |z-2i|\leq 1 \; \mathrm{i} \; z^2\overline{z}^2=1\}\),
-\item[d)] \(S=\left\{z : \mathrm{Re}\left(\dfrac{z+3+2i}{\overline{z}-3+2i}\right)=0\right\}\),
+\item[d)] \(S=\left\{z : \re{\left(\dfrac{z+3+2i}{\overline{z}-3+2i}\right)}=0\right\}\),
 \item[e)] \(S=\left\{z : z^5=1\right\}\),
 \item[f)] \(S=\left\{z : |z-4-4i|>\sqrt{2}\right\}\),
 \end{itemize}
@@ -977,8 +1031,8 @@ Neka je \(z=\dfrac{(2+3i)^{2024}}{(2-3i)^{2020}}\). Odredite \(|z|\).
 \begin{exercise}{Zadatak}
 Odredite sve \(z\in \mathbb{C}\) za koje vrijedi
 \[\begin{cases}
-\mathrm{Re}(z)=9, \\
-\mathrm{Im}(z^2)=\mathrm{Im}(z^3).
+\re{z}=9, \\
+\im{z^2}=\im{z^3}.
    \end{cases}\]
 \end{exercise}
 \begin{exercise}{Zadatak}
@@ -1003,5 +1057,4 @@ poprima istu vrijednost za sve \(n\in \mathbb{N}\) i odredite tu vrijednost.
 \begin{exercise}{Zadatak} \((**)\)
 Neka je \(n\in \mathbb{N}\) proizvoljan. Odredite sve \(z\in \mathbb{C}\) takve da vrijedi
 \[\left(1-z+z^2\right)\left(1-z^2+z^4\right)\left(1-z^4+z^8\right)\dots\left(1-z^{2^{n-1}}+z^{2^n}\right)=\dfrac{3z^{2^n}}{1+z+z^2}\]
-\end{exercise}
 \end{exercise}

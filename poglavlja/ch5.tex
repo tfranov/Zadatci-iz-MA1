@@ -721,12 +721,12 @@ $$\lvert a_{2n_0}-a_{n_0}\rvert=\dfrac{1}{n_0+1}+\dfrac{1}{n_0+2}+\dots+\dfrac{1
 Stoga vrijedi negacija definicije Cauchyjevog niza, što smo i tvrdili.
 \end{proof}
 \begin{exercise}{Zadatak}
-Neka je $(a_n)$ niz takav da postoji $c>0$ takvi da za sve $n\in \mathbb{N}$ vrijedi
+Neka je $(a_n)$ niz takav da postoji $c>0$ takav da za sve $n\in \mathbb{N}\setminus\{1\}$ vrijedi
 $$\lvert x_2-x_1\rvert+\lvert x_3-x_2\rvert+\dots+\lvert x_n-x_{n-1}\rvert<c.$$
 Dokažite da niz $(a_n)$ konvergira.
 \end{exercise}
 \begin{proof}[Rješenje]
-Iz uvjeta zadatka naslućujemo da je niz Cauchyjev. Zaista, neka je $\epsilon>0$, te neka je $(y_n)$ niz zadan s
+Iz uvjeta zadatka naslućujemo da je niz Cauchyjev ("dovoljno daleki članovi niza su međusobno po volji bliski"). Zaista, neka je $\epsilon>0$, te neka je $(y_n)$ niz zadan s
 $$y_n=\lvert x_2-x_1\rvert+\lvert x_3-x_2\rvert+\dots+\lvert x_n-x_{n-1}\rvert.$$
 Kako je $(y_n)$ rastući i odozgo ograničen, on je konvergentan, pa i Cauchyjev, pa postoji $n_0\in \mathbb{N}$ takav da za sve $m\geq n_0$ i $q\in \mathbb{N}$ vrijedi $\lvert y_{m+q}-y_{m}\rvert=y_{m+q}-y_{m}<\epsilon$. Neka je sada $n\geq n_0$ i $p\in \mathbb{N}$. vrijedi
 \begin{align*}

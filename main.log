@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.6.28)  21 JUL 2026 21:40
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.6.28)  27 JUL 2026 13:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -794,40 +794,40 @@ Poglavlje 1.
 Poglavlje 2.
 (./poglavlja/ch3.tex [32
 
-] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] (./easy.tex) (./medium.tex) (./medium.tex) (./medium.tex) (./hard.tex) [64] (./easy.tex) (./easy.tex) (./easy.tex) (./medium.tex) [65] (./medium.tex) [66] (./hard.tex) [67] [68]) [69]
+] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] (./easy.tex) (./medium.tex) (./medium.tex) (./medium.tex) (./hard.tex) [68] (./easy.tex) (./easy.tex) (./easy.tex) (./medium.tex) [69] (./medium.tex) (./easy.tex) (./medium.tex) (./medium.tex) [70] (./medium.tex) (./hard.tex) (./hard.tex) (./hard.tex) (./hard.tex) [71] [72]) [73]
 Poglavlje 3.
-(./poglavlja/ch4.tex [70
+(./poglavlja/ch4.tex [74
 
-] [71]
+] [75]
 
-LaTeX Warning: Reference `tjeme' on page 72 undefined on input line 53.
+LaTeX Warning: Reference `tjeme' on page 76 undefined on input line 53.
 
-[72] [73] [74] [75] [76] [77] [78]
+[76] [77] [78] [79] [80] [81] [82]
 
-LaTeX Warning: Reference `10' on page 79 undefined on input line 358.
+LaTeX Warning: Reference `10' on page 83 undefined on input line 358.
 
-[79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90]
+[83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94]
 
-LaTeX Warning: Reference `genasoc' on page 91 undefined on input line 770.
+LaTeX Warning: Reference `genasoc' on page 95 undefined on input line 770.
 
-[91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106] [107]) [108]
+[95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106] [107] [108] [109] [110] [111]) [112]
 Poglavlje 4.
-(./poglavlja/ch5.tex [109
+(./poglavlja/ch5.tex [113
 
-] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123] [124] [125] [126] [127] [128] [129] [130] [131] [132] [133] [134] [135] [136] [137] [138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149]) [150]
+] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123] [124] [125] [126] [127] [128] [129] [130] [131] [132] [133] [134] [135] [136] [137] [138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150] [151] [152] [153]) [154]
 Poglavlje 5.
-(./poglavlja/ch6.tex [151
+(./poglavlja/ch6.tex [155
 
-] [152] [153] [154] [155] [156] [157] [158] [159] [160] [161] [162] [163] [164] [165] [166] [167] [168] [169] [170] [171] [172] [173] [174] [175]) [176]
+] [156] [157] [158] [159] [160] [161] [162] [163] [164] [165] [166] [167] [168] [169] [170] [171] [172] [173] [174] [175] [176] [177] [178] [179]) [180]
 Poglavlje 6.
-(./poglavlja/ch7.tex [177
+(./poglavlja/ch7.tex [181
 
-] [178] [179] [180] [181] [182] [183] [184] [185] [186] [187] [188] [189] [190] [191] [192] [193] [194]) (./bibliografija.tex [195]
+] [182] [183] [184] [185] [186] [187] [188] [189] [190] [191] [192] [193] [194] [195] [196] [197] [198]) (./bibliografija.tex [199]
 Package babel Info: 'russian' activates 'russian' shorthands.
 (babel)             Reported on input line 23.
- [196
+ [200
 
-]) [197] (./main.aux)
+]) [201] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
@@ -840,12 +840,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C8B1407A4F9662099A93F3443AEAEC7D;6375.
  ) 
 Here is how much of TeX's memory you used:
- 35334 strings out of 468006
- 817133 string characters out of 5432520
- 1598328 words of memory out of 6000000
- 63588 multiletter control sequences out of 15000+600000
+ 35355 strings out of 468006
+ 817322 string characters out of 5432520
+ 1600437 words of memory out of 6000000
+ 63595 multiletter control sequences out of 15000+600000
  640744 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,16n,118p,1291b,2401s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (197 pages, 3082536 bytes).
+Output written on main.xdv (201 pages, 3148708 bytes).
