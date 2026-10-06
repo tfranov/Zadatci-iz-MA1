@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.6.28)  27 JUL 2026 13:10
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.8.29)  29 AUG 2026 17:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex
-(/home/tomi/Documents/repozitoriji/Zadatci-iz-MA1/main.tex
+**/var/home/tomi/Downloads/repozitoriji/Zadatci-iz-MA1/main.tex
+(/var/home/tomi/Downloads/repozitoriji/Zadatci-iz-MA1/main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
@@ -794,7 +794,7 @@ Poglavlje 1.
 Poglavlje 2.
 (./poglavlja/ch3.tex [32
 
-] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] (./easy.tex) (./medium.tex) (./medium.tex) (./medium.tex) (./hard.tex) [68] (./easy.tex) (./easy.tex) (./easy.tex) (./medium.tex) [69] (./medium.tex) (./easy.tex) (./medium.tex) (./medium.tex) [70] (./medium.tex) (./hard.tex) (./hard.tex) (./hard.tex) (./hard.tex) [71] [72]) [73]
+] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] (./easy.tex) (./medium.tex) (./medium.tex) (./medium.tex) (./hard.tex) [68] (./easy.tex) (./easy.tex) (./easy.tex) (./medium.tex) [69] (./medium.tex) (./easy.tex) (./medium.tex) (./easy.tex) (./medium.tex) [70] (./medium.tex) (./medium.tex) (./hard.tex) (./hard.tex) (./hard.tex) [71] [72]) [73]
 Poglavlje 3.
 (./poglavlja/ch4.tex [74
 
@@ -840,12 +840,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C8B1407A4F9662099A93F3443AEAEC7D;6375.
  ) 
 Here is how much of TeX's memory you used:
- 35355 strings out of 468006
- 817322 string characters out of 5432520
+ 35357 strings out of 468006
+ 817356 string characters out of 5432520
  1600437 words of memory out of 6000000
  63595 multiletter control sequences out of 15000+600000
  640744 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,16n,118p,1291b,2401s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,16n,118p,1295b,2401s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (201 pages, 3148708 bytes).
+Output written on main.xdv (201 pages, 3153568 bytes).

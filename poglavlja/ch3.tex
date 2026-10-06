@@ -576,7 +576,7 @@ Uzmimo \(x=\dfrac{\sqrt{\epsilon}}{2}\) i \(y=-\dfrac{2}{\sqrt{\epsilon}}\). Tad
 \[x^2+(xy+1)^2=\dfrac{\epsilon}{4}<\epsilon.\]
 Dakle, \(p : \mathbb{R}^2\to \mathbb{R}\), \(p(x, y)=x^2+(xy+1)^2\) je jedan polinom koji zadovoljava uvjete zadatka.
 \end{proof}
-U idućem zadatku zanimat će nas problem egzistencije $n$-tog korijena. Naime, iz aksioma realnih brojeva nije apriori jasno da je $n$-ti korijen nešto što je dobro definirano.
+U idućem zadatku zanimat će nas problem egzistencije $n$-tog korijena. Naime, iz aksioma realnih brojeva nije apriori jasno da je $n$-ti korijen nešto što je dobro definirano. UVESTI BINOMNI TEOREM!!!
 \begin{exercise}{Zadatak}
 Dokažite da za svaki $x>0$ i svaki $n\in \mathbb{N}$ postoji točno jedan $y>0$ takav da je $y^n=x$.
 \end{exercise}
@@ -874,7 +874,6 @@ Dokažite da za svaki $\epsilon>0$ postoje $m, n\in \mathbb{N}$ takvi da je
 \item[b)] $\left\lvert\dfrac{3^m}{n^3+n^2+1}-\dfrac{1}{8}\right\rvert<\epsilon$.
 \end{itemize}
 \end{multicols}
-(\textbf{Uputa:} Pokušajte u oba podzadatka napraviti nešto slično kao u rješenju zadatka \ref{archimedes2}.)
 \end{exercise}
 \subsection*{Supremum i infimum}
 \begin{exercise}{\input{easy.tex}\unskip} Dokažite ili opovrgnite (Univerzalni skup je \(\mathbb{R}\)):
@@ -943,23 +942,34 @@ Dokažite da za svaki $\epsilon>0$ postoje $m, n\in \mathbb{N}$ takvi da je
 \item[c)] ...za skup \(S=\left\{\dfrac{a^2n^2}{a^2n-1} : n\in \mathbb{N}, n\neq \dfrac{1}{a^2}\right\}\) vrijedi \(\inf{S}=10\).
 \end{itemize}
 \end{exercise}
-\begin{exercise}{\input{medium.tex}\unskip}
-Neka je \(A\subseteq \mathbb{R}\) skup koji nema maksimum, takav da \(A\setminus\langle 1, 2\rangle\) ima maksimum. Dokažite da je \(A\) odozgo ograničen i da je \(\sup{A}\leq 2\). Postoji li \(a\in \mathbb{R}\), \(a<2\) takav da za svaki \(A\subseteq \mathbb{R}\) s gornjim svojstvima vrijedi \(\sup{A}\leq a\)?
+\begin{exercise}{\input{easy.tex}\unskip}
+Neka je $A\subseteq \mathbb{R}$ odozgo ograničen skup koji nema maksimum. Dokažite da je $\sup{\left(A\setminus \mathbb{Z}\right)}=\sup{A}$.
+\end{exercise}
+\begin{exercise}{\input{medium.tex}\unskip} \textbf{}
+\begin{itemize}
+\item[a)] Neka je \(A\subseteq \mathbb{R}\) skup koji nema maksimum, takav da \(A\setminus\langle 1, 2\rangle\) ima maksimum. Dokažite da je \(A\) odozgo ograničen i da je \(\sup{A}\leq 2\). Postoji li \(a\in \mathbb{R}\), \(a<2\) takav da za svaki \(A\subseteq \mathbb{R}\) s gornjim svojstvima vrijedi \(\sup{A}\leq a\)?
+
+\item[b)] Neka je $A\subseteq \mathbb{R}$ ograničen skup, $a, b\in A$ takvi da je $a<b$, te $$B=\left(A\setminus [a, b]\right)\cup \{ a+b-x : x\in [a, b]\}.$$ Dokažite da je $B$ ograničen i odredite $\sup{B}$ i $\inf{B}$.
+\end{itemize}
 \end{exercise}
 \begin{exercise}{\input{medium.tex}\unskip}
-Dokažite a), c) i d) dio napomene \ref{prodsumsupinf}.
+Dokažite a) i c) dio napomene \ref{prodsumsupinf}.
+\end{exercise}
+\begin{exercise}{\input{medium.tex}\unskip}
+Neka je $n\in \mathbb{N}$ i $\{A_n : n\in \mathbb{N}\}$ familija odozgo ograničenih skupova.
+\begin{itemize}
+\item[a)] Dokažite da je $\bigcup\limits_{n\in \mathbb{N}}A_n$ odozgo ograničen, naslutite čemu je jednak $\sup{\bigcup\limits_{n\in \mathbb{N}}A_n}$, te dokažite tu tvrdnju.
+\item[b)] Koristeći svoje zaključke iz a) dijela ovog zadatka, dokažite d) dio napomene \ref{prodsumsupinf}.
+\end{itemize}
 \end{exercise}
 \begin{exercise}{\input{hard.tex}\unskip} \textbf{}
 \begin{itemize}
 \item[a)] Dokažite b) dio napomene \ref{prodsumsupinf}.
-\item[b)] Neka su $A$ i $B$ ograničeni skupovi. Dokažite da je i $A\cdot B$ ograničen, te odredite čemu sve mogu biti jednaki $\sup{\left(A\cdot B\right)}$ i $\inf{\left(A\cdot B\right)}$.
-\end{itemize}
-\end{exercise}
-\begin{exercise}{\input{hard.tex}\unskip}
-Neka je \(A\subseteq \langle 0,\infty\rangle\) i neka je \(\inf{A}>0\). Definiramo
+\item[b)] Neka je \(A\subseteq \langle 0,\infty\rangle\) i neka je \(\inf{A}>0\). Definiramo
 \[\dfrac{1}{A}=\left\{\dfrac{1}{a} : a\in A\right\}.\]
 Dokažite da je tada \(\dfrac{1}{A}\) odozgo ograničen i da vrijedi
 \(\sup{\dfrac{1}{A}}=\dfrac{1}{\inf{A}}\).
+\end{itemize}
 \end{exercise}
 \begin{exercise}{\input{hard.tex}\unskip}
 Dokažite da Arhimedov aksiom i Cantorov aksiom (v. zadatak \ref{Cantor}) povlače aksiom potpunosti.
@@ -972,7 +982,7 @@ Odredite sve $a\in \mathbb{R}$ takve da je \(S=\left\{\dfrac{a}{an^2+1} : n\in \
 \begin{itemize}
 \item[a)] Dokažite da tvrdnja \textit{ne} vrijedi za $a<-2$ i $a\geq 0$.
 \item[b)] Odredite sve $a\in \mathbb{R}$ za koje postoji $n_0\in \mathbb{N}$ takav da je $\dfrac{a}{an_0^2+1}=2$.
-\item[c)] Koristeći svoj omiljeni grafički kalkulator, vizualizirajte skup $S$ i naslutite za koje $a\in [-2, 0\rangle$ će $2$ biti gornja međa, te za koje neće biti gornja međa, a potom svoje slutnje dokažite. (\textbf{Uputa:} Iskoristite činjenicu da za $a, b, x\in \mathbb{R}$ vrijedi $a<x<b$ ako i samo ako postoji $t\in \langle 0, 1\rangle$ takav da je $x=ta+(1-t)b$.)
+\item[c)] Koristeći svoj omiljeni grafički kalkulator, vizualizirajte skup $S$ za razne $a$ i naslutite za koje $a\in [-2, 0\rangle$ će $2$ biti gornja međa, te za koje neće biti gornja međa, a potom svoje slutnje dokažite. (\textbf{Uputa:} Iskoristite činjenicu da za $a, b, x\in \mathbb{R}$ vrijedi $a<x<b$ ako i samo ako postoji $t\in \langle 0, 1\rangle$ takav da je $x=ta+(1-t)b$.)
 \item[d)] Za one $a\in [-2, 0\rangle$ za koje ste dobili da je $2$ gornja međa, dokažite da postoji $n_0\in \mathbb{N}$ takav da za svaki $n\in \mathbb{N}$ takav da je $n\geq n_0$ vrijedi $\dfrac{a}{an^2+1}<1$, te iskoristite tu činjenicu da dođete do kontradikcije.
 \end{itemize}
 \end{exercise}
