@@ -405,6 +405,9 @@ INPUT medium.tex
 INPUT ./medium.tex
 INPUT ./medium.tex
 INPUT medium.tex
+INPUT ./medium.tex
+INPUT ./medium.tex
+INPUT medium.tex
 INPUT ./hard.tex
 INPUT ./hard.tex
 INPUT hard.tex
@@ -497,6 +500,12 @@ INPUT hard.tex
 INPUT ./hard.tex
 INPUT ./hard.tex
 INPUT hard.tex
+INPUT ./easy.tex
+INPUT ./easy.tex
+INPUT easy.tex
+INPUT ./easy.tex
+INPUT ./easy.tex
+INPUT easy.tex
 INPUT ./poglavlja/ch4.tex
 INPUT ./poglavlja/ch4.tex
 INPUT poglavlja/ch4.tex

@@ -614,7 +614,7 @@ y^n-\dbinom{n}{1}y^{n-1}h-\dbinom{n}{3}y^{n-3}h^3-...&=y^n-h\left(\dbinom{n}{1}y
 \end{proof}
 
 \section{Kompleksni brojevi}
-Skup kompleksnih brojeva je već otprije poznat kao skup \(\mathbb{C}=\left\{a+bi : a,\; b\in \mathbb{R},\, i=\sqrt{-1}\right\}\). Ovakav opis skupa $\mathbb{C}$ nije skroz matematički precizan, stoga u nastavku dajemo preciznu definiciju.
+Skup kompleksnih brojeva je već otprije poznat kao skup \(\mathbb{C}=\left\{a+bi : a, b\in \mathbb{R},\, i=\sqrt{-1}\right\}\). Ovakav opis skupa $\mathbb{C}$ nije skroz matematički precizan, stoga u nastavku dajemo preciznu definiciju.
 \begin{definition}
 \label{defcomplex}
 Na skupu $\mathbb{R}^2=\mathbb{R}\times\mathbb{R}$ definiramo operacija $\oplus : \mathbb{R}^2\times \mathbb{R}^2\to \mathbb{R}^2$ i $\odot : \mathbb{R}^2\times \mathbb{R}^2\to \mathbb{R}^2$, tako da za sve $a, b, c, d\in \mathbb{R}$ definiramo
@@ -635,42 +635,61 @@ Neka je \(z=\dfrac{(2+3i)(4+5i)}{6+7i}\). Napišite \(z\) u standardnom obliku.\
 \begin{remark} \textbf{}
 \label{18}
 \begin{itemize}
-\item Vrijedi \(a+bi=c+di\) ako i samo ako vrijedi \(a=c\) i \(b=d\).
-\item \textbf{Modul} kompleksnog broja \(z=a+bi\) je broj \(\left\lvert z\right\rvert=\sqrt{a^2+b^2}\).
-\item Neka je \(z=x+yi\). Tada je \textbf{realni dio} od \(z\) broj \(\re{z}=x\), a \textbf{imaginarni dio} od \(z\) broj \(\im{z}=y\).
-\item \textbf{Kompleksno-konjugirani} broj od \(z=x+yi\) je broj \(\overline{z}=x-yi\).
+\item[a)] Vrijedi \(a+bi=c+di\) ako i samo ako vrijedi \(a=c\) i \(b=d\).
+\item[b)] \textbf{Modul} kompleksnog broja \(z=a+bi\) je broj \(\left\lvert z\right\rvert=\sqrt{a^2+b^2}\).
+\item[c)] Neka je \(z=x+yi\). Tada je \textbf{realni dio} od \(z\) broj \(\re{z}=x\), a \textbf{imaginarni dio} od \(z\) broj \(\im{z}=y\).
+\item[d)] \textbf{Kompleksno-konjugirani} broj od \(z=x+yi\) je broj \(\overline{z}=x-yi\).
 \end{itemize}
 \end{remark}
 
 \begin{exercise}{Zadatak}\textbf{}
 \begin{itemize}
 \item[a)] Odredite sve \(a\in \mathbb{R}\) takve da je \((a+3i)^2=216+90i\).
-\item[b)] Dokažite da za sve \(z_1\), \(z_2\in \mathbb{C}\) vrijedi \(\left\lvert z_1z_2 \right\rvert=\left\lvert z_1\right\rvert \left\lvert z_2\right\rvert\).
-\item[c)] Dokažite da za sve \(z_1\), \(z_2\in \mathbb{C}\) vrijedi \(\left\lvert z_1+z_2\right\rvert\leq \left\lvert z_1\right\rvert+\left\lvert z_2\right\rvert\).
+\item[b)] Odredite sve uređene parove \((a, b)\), gdje su $a, b\in \mathbb{R}$, takve da je \((2a+i)^2=b+a+2bi\).
 \end{itemize}
 \end{exercise}
 \begin{proof}[Rješenje]
-a) Neka je \(a\in \mathbb{R}\) proizvoljan. Tvrdnja vrijedi ako i samo ako vrijedi \(a^2+6ai-9=216+90i\), što vrijedi ako i samo ako vrijedi \(a^2-9=216\) i \(6a=90\). Sada lako vidimo da obje tvrdnje vrijede za \(a=15\) i to je jedini takav \(a\).
+a) Neka je \(a\in \mathbb{R}\) proizvoljan. Pojednostavljivanjem imamo \(a^2+6ai-9=216+90i\), odnosno \((a^2-9)+6ai=216+90i\), pa iz a) dijela napomene \ref{18} imamo da je posljednje ekvivalentno sustavu
+\[\begin{cases}
+a^2-9=216,\\
+6a=90.
+\end{cases}\]
+Sada lako vidimo da je jedino rješenje obje jednadžbe \(a=15\).
 
-b) Neka su \(z_1=a+bi\) i \(z_2=c+di\) proizvoljni. Sjetimo se da je \[(a+bi)(c+di)=ac+adi+bci-bd=(ac-bd)+(ad+bc)i.\] Stoga tvrdimo da vrijedi
+b) Slično kao u prethodnom zadatku, dobivamo sustav
+\[\begin{cases}
+4a^2-1=b+a,\\
+4a=2b.
+\end{cases}\]
+Dobivamo rješenja $(a, b)=(1, 2)$ ili $(a, b)=\left(-\dfrac{1}{4},-\dfrac{1}{2}\right)$.
+\end{proof}
+\begin{exercise}{Zadatak} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da za sve \(z_1\), \(z_2\in \mathbb{C}\) vrijedi \(\left\lvert z_1z_2 \right\rvert=\left\lvert z_1\right\rvert \left\lvert z_2\right\rvert\).
+\item[b)] Dokažite da za sve \(z_1\), \(z_2\in \mathbb{C}\) vrijedi \(\left\lvert z_1+z_2\right\rvert\leq \left\lvert z_1\right\rvert+\left\lvert z_2\right\rvert\).
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka su \(z_1=a+bi\) i \(z_2=c+di\) proizvoljni. Sjetimo se da je \[(a+bi)(c+di)=ac+adi+bci-bd=(ac-bd)+(ad+bc)i.\] Stoga tvrdimo da vrijedi
 \[\sqrt{(ac-bd)^2+(ad+bc)^2}=\sqrt{a^2+b^2}\sqrt{c^2+d^2}=\sqrt{(a^2+b^2)(c^2+d^2)}.\]
 No vrijedi \[(ac-bd)^2+(ad+bc)^2=a^2c^2+b^2d^2+a^2d^2+b^2c^2\] 
 i 
 \[(a^2+b^2)(c^2+d^2)=a^2c^2+a^2d^2+b^2c^2+b^2d^2,\] pa zaključujemo da su ta dva broja jednaka, odakle slijedi tvrdnja.
 
-c) Stavimo li \(z_1=a+bi\) i \(z_2=c+di\), treba dokazati
+b) Stavimo li \(z_1=a+bi\) i \(z_2=c+di\), treba dokazati
 \[\sqrt{(a+c)^2+(b+d)^2}\leq \sqrt{a^2+b^2}+\sqrt{c^2+d^2}\]
 Kvadriranjem i pojednostavljivanjem dobivamo ekvivalentnu tvrdnju
 \[ac+bd\leq \sqrt{(a^2+b^2)(c^2+d^2)}.\]
 Primijetimo da općenito ne možemo kvadrirati ovu nejednakost jer \(ac+bd\) može biti negativan. Međutim, vrijedi obrat -- ako vrijedi \(x^2\geq y^2\), gdje je \(x\geq 0\), a \(y\in \mathbb{R}\), onda vrijedi \(x\geq y\). Zaista, vrijedi \(\sqrt{y^2}=\left\lvert y\right\rvert\), pa vrijedi \(x^2\geq y^2\Rightarrow x\geq |y|\geq y\), što povlači \(x\geq y\). Zato je dovoljno dokazati da vrijedi
 \[(ac+bd)^2\leq (a^2+b^2)(c^2+d^2).\]
-Zaista, ova tvrdnja je ekvivalentna \((ad-bc)^2\geq 0\), što je istina.\footnote{Tvrdnja je i specijalan slučaj CSB-nejednakosti.}
+Zaista, ova tvrdnja je ekvivalentna \((ad-bc)^2\geq 0\), što je istina.
 \end{proof}
 \begin{exercise}{Zadatak}
 Prikažite u Gaussovoj ravnini skup \(S=\left\{z\in \mathbb{C} : \left\lvert z-3\right\rvert=4\right\}\).
 \end{exercise}
 \begin{proof}[Rješenje]
 Ideja u rješavanju zadataka ovog tipa je pronaći nužne i dovoljne uvjete da je neki kompleksan broj u \(S\) takve da pomoću njih lako možemo skicirati \(S\) u Gaussovoj ravnini. Neka je \(z=x+yi\). Tada vrijedi \(|z-3|=|(x-3)+yi|=4\), odnosno \(\sqrt{(x-3)^2+y^2}=4\), što vrijedi ako i samo ako vrijedi \((x-3)^2+y^2=16\). Prema tome, vrijedi \(z\in S\) ako i samo ako vrijedi \((x-3)^2+y^2=16\), gdje je \(z=x+yi\). No znamo da je ovaj skup kružnica radijusa \(4\) sa središtem u točki \((3, 0)\).
+\newpage
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}
@@ -697,6 +716,7 @@ Neka je \(z\in \mathbb{C}\) proizvoljan. Vrijedi
 y&=\dfrac{x}{7}+\dfrac{20}{7}.
 \end{align*}
 Pravac je prikazan na slici \ref{pravac}.
+\newpage
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}[domain=0:4]
@@ -756,15 +776,18 @@ Ako je \(y\geq 0\), onda je \(|y|=y\), pa imamo jednadžbu \[y^2+2y+1=0,\] čije
 Ako je \(y<0\), imamo jednadžbu \[-y^2+2y+1=0,\] čija rješenja su \(y=1-\sqrt{2}\) i \(y=1+\sqrt{2}\), ali jedino uzimamo u obzir rješenje \(y=1-\sqrt{2}\), jer je \(1+\sqrt{2}\geq 0\). Dakle, jedino rješenje početne jednadžbe je \(z=(1-\sqrt{2})i\).
 \end{proof}
 \begin{remark}
+\label{cmplxproperties}
 Kompleksan broj \(z\) je napisan u \textbf{trigonometrijskom obliku} ako je \(z=r(\cos{\theta}+i\sin{\theta})\), gdje je \(r=|z|\) i \(\theta\in [0, 2\pi \rangle\) kut koji taj broj zatvara s pozitivnim dijelom osi \(x\). Vrijedi:
 \begin{itemize}
-\item \(\tg{\theta}=\dfrac{y}{x}\), s time da pri određivanju broja \(\theta\) treba uzeti u obzir i kvadrant u kojem se \(z\) nalazi.
-\item Neka je \(z_1=r_1(\cos{\theta_1}+i\sin{\theta_1})\), \(z_2=r_2(\cos{\theta_2}+i\sin{\theta_2})\). Tada je
+\item[a)] \(\tg{\theta}=\dfrac{y}{x}\), s time da pri određivanju broja \(\theta\) treba uzeti u obzir i kvadrant u kojem se \(z\) nalazi.
+\item[b)] Neka su $z_1, z_2\in \mathbb{C}$ i \(z_1=r_1(\cos{\theta_1}+i\sin{\theta_1})\), \(z_2=r_2(\cos{\theta_2}+i\sin{\theta_2})\) njihovi zapisi u trigonometrijskom obliku. Tada je
 \begin{gather*}
 z_1z_2=r_1r_2\left(\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)\right),\\
 \dfrac{z_1}{z_2}=\dfrac{r_1}{r_2}\left(\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2)\right), \;\mathrm{gdje}\;\mathrm{je}\; z_2\neq 0.
 \end{gather*}
-\item Za sve \(z\in \mathbb{C}\) i \(n\in \mathbb{N}\) vrijedi \(z^n=r^n(\cos{n\theta}+i\sin{n\theta})\).
+\item[c)] Neka su $z_1, z_2\in \mathbb{C}$ i \(z_1=r_1(\cos{\theta_1}+i\sin{\theta_1})\), \(z_2=r_2(\cos{\theta_2}+i\sin{\theta_2})\) njihovi zapisi u trigonometrijskom obliku. Tada je $z_1=z_2$ ako i samo ako je $r_1=r_2$ i $\theta_1=\theta_2$ (Ovdje je ključna činjenica da su $\theta_1, \theta_2 \in [0, 2\pi\rangle$).
+\item[d)] Ako u c) nemamo uvjet $\theta_1, \theta_2 \in [0, 2\pi\rangle$, onda je $z_1=z_2$ ako i samo ako je $r_1=r_2$ i postoji $k\in \mathbb{Z}$ takav da je $\theta_1=\theta_2+2k\pi$.
+\item[e)] Za sve \(z\in \mathbb{C}\) i \(n\in \mathbb{N}\) vrijedi \(z^n=r^n(\cos{n\theta}+i\sin{n\theta})\).
 \end{itemize}
 \end{remark}
 
@@ -788,7 +811,6 @@ b) Vrijedi
 \end{align*}
 Kompleksan broj \(z\) je realan ako i samo ako je \(\mathrm{Im}(z)=0\). Zato je najmanji takav \(\alpha\in \mathbb{N}\) upravo najmanji \(\alpha\) koji zadovoljava \(\sin{\dfrac{11\alpha \pi}{12}}=0\), a to je \(\alpha=12\).
 \end{proof}
-
 \begin{definition}
 Neka je \(z\in \mathbb{C}\). Kažemo da je \textbf{\(n\)-ti korijen} iz \(z\), u oznaci \(\sqrt[n]{z}\), skup svih \(w\in \mathbb{C}\) takvih da je \(w^n=z\).
 \end{definition}
@@ -832,6 +854,26 @@ Uočimo da kad bi uvrstili izraz za $x^2$ u $x^2+y^2=4xy$ bi dobili korijen, št
 $$y_2=-\dfrac{\sqrt[3]{5+3\sqrt{3}}}{2},\;\; y_3=\dfrac{\sqrt[3]{-5+3\sqrt{3}}}{2}.$$
 Sada za npr. $y_2$ dobivamo da su pripadna rješenja $x_{21, 22}=\pm \sqrt{\dfrac{1+y_2^3}{3y_2}}$, ali pozitivno rješenje (neka je to npr. $x_{21}$) odbacujemo zbog uvjeta $4xy\geq 0$, budući da je $y_2<0$, a $x_{21}>0$. Analogno ćemo za $y_3$ odbaciti negativno rješenje, budući da je $y_3>0$. Zaključujemo da su $z_2=-\sqrt{\dfrac{1+y_2^3}{3y_2}}+y_2i$ i $z_3=\sqrt{\dfrac{1+y_3^3}{3y_3}}+y_3i$ (gdje $y_2$ i $y_3$ nismo uvrštavali radi kratkoće zapisa). Lako se provjeri da je $z_3=\sqrt[6]{2}\left(\cos{\dfrac{\pi}{12}}+i\sin{\dfrac{\pi}{12}}\right)$ i $z_2=\sqrt[6]{2}\left(\cos{\dfrac{17\pi}{12}}+i\sin{\dfrac{17\pi}{12}}\right)$.
 \end{proof*}
+Prije smo vidjeli da trigonometrijski zapis kompleksnog broja može biti koristan pri promatranju potencija kompleksnog broja. Pokažimo još jednu takvu situaciju.
+\begin{exercise}{Zadatak}
+Neka je $n\in \mathbb{N}\setminus\{1, 2\}$. Odredite sve $z\in \mathbb{C}$ takve da je $\overline{z}=z^{n-1}$.
+\end{exercise}
+\begin{proof}[Rješenje]
+\textit{Prvi način.} Neka je $z=r(\cos{\theta}+i\sin{\theta})$ zapis broja sa zadanim svojstvom u trigonometrijskom obliku. Tada vrijedi
+$$
+\overline{z}=r\left(\cos{-\theta}+i\sin{-\theta}\right)=r^{n-1}\left(\cos{(n-1)\theta}+i\sin{(n-1)\theta}\right).
+$$
+Kako ovo nisu trigonometrijski zapisi, budući da je npr. $-\theta \leq 0$ i zbog mogućnosti da je $(n-1)\theta\geq 2\pi$, koristimo d) dio napomene \ref{cmplxproperties}.
+\[\begin{cases}
+r^{n-1}=r,\\
+(n-1)\theta=-\theta+2k\pi.
+\end{cases}\]
+Ako je $r=0$, onda je i $z=0$, dakle to je jedan broj koji zadovoljava početan uvjet. Ako je $r>0$, onda djeljenjem s $r$ imamo $r^{n-2}=1$, gdje zbog $n-2>0$ i $r>0$ možemo uzeti $(n-2)$-gi korijen i imamo $r=1$.
+
+Iz druge jednadžbe sustava dobivamo $\theta=\dfrac{2k\pi}{n}$. Drugim riječima, tvrdnja zadatka vrijedi samo za $z=0$ i brojeve oblika $\cos{\dfrac{2k\pi}{n}}+i\sin{\dfrac{2k\pi}{n}}$, za koje se uspoređivanjem s formulom \ref{sqrtofcomplex} može uočiti da su to upravo oni $z\in \mathbb{C}$ za koje je $z^n=1$.
+
+\textit{Drugi način.} Naravno, nismo uopće morali koristiti trigonometrijski zapis kompleksnog broja. Uočimo da uzimanjem modula i korišenjem činjenice da je $\left\lvert \overline{z}\right\rvert=\left\lvert z\right\rvert$ i $\left\lvert z^{n-1}\right\rvert=\left\lvert z\right\rvert^{n-1}$, imamo $\left\lvert z\right\rvert=\left\lvert z\right\rvert^{n-1}$, odakle kao i u prethodnom rješenju dobivamo $z=0$ ili $|z|=1$. Sada uočimo da ako je $z\neq 0$, iz $\overline{z}=z^{n-1}$ množenjem sa $z$ dobivamo ekvivalentnu tvrdnju $z\cdot \overline{z}=z^n$, gdje iz $z\cdot \overline{z}=\left\lvert z\right\rvert=1$ dobivamo $z^{n}=1$. Prema tome, traženi $z\in \mathbb{C}$ su $z=0$ ili oni za koje je $z^n=1$.
+\end{proof}
 \newpage
 \section*{Zadatci za vježbu}
 \subsection*{Apsolutna vrijednost realnog broja. Arhimedov aksiom}
@@ -978,7 +1020,7 @@ Dokažite da Arhimedov aksiom i Cantorov aksiom (v. zadatak \ref{Cantor}) povla�
 Kako iz aksioma realnih brojeva možemo dokazati Arhimedov i Cantorov aksiom (Za dokaz Arhimedova aksioma v. \cite{3}), iz ovog zadatka slijedi da se u aksiomima realnih brojeva aksiom potpunosti može zamijeniti konjunkcijom Arhimedova i Cantorova aksioma.
 \end{remark}
 \begin{exercise}{\input{hard.tex}\unskip}
-Odredite sve $a\in \mathbb{R}$ takve da je \(S=\left\{\dfrac{a}{an^2+1} : n\in \mathbb{N}\right\}\) vrijedi \(\sup{S}=2\) koristeći sljedeće smjernice. PROVJERITI!!!
+Odredite sve $a\in \mathbb{R}$ takve da je \(S=\left\{\dfrac{a}{an^2+1} : n\in \mathbb{N}\right\}\) vrijedi \(\sup{S}=2\) koristeći sljedeće smjernice. PROVJERITI JE LI ZADATAK DOBRO ZADAN!!!
 \begin{itemize}
 \item[a)] Dokažite da tvrdnja \textit{ne} vrijedi za $a<-2$ i $a\geq 0$.
 \item[b)] Odredite sve $a\in \mathbb{R}$ za koje postoji $n_0\in \mathbb{N}$ takav da je $\dfrac{a}{an_0^2+1}=2$.
@@ -987,14 +1029,13 @@ Odredite sve $a\in \mathbb{R}$ takve da je \(S=\left\{\dfrac{a}{an^2+1} : n\in \
 \end{itemize}
 \end{exercise}
 \subsection*{Kompleksni brojevi}
-OVDJE SAM STAO!!!
-\begin{exercise}{Zadatak}
+\begin{exercise}{\input{easy.tex}\unskip}
 Prikažite \(z=\dfrac{(3+i+i^{140})^2}{3-i}\) u standardnom obliku.
 \end{exercise}
-\begin{exercise}{Zadatak}\textbf{}
+\begin{exercise}{\input{easy.tex}\unskip} \textbf{}
 \begin{itemize}
 \item[a)] Dokažite da za sve \(z\in \mathbb{C}\) vrijedi \(z\cdot \overline{z}=|z|^2\).
-\item[b)] Dokažite da za sve \(z_1\), \(z_2\in \mathbb{C}\) vrijedi \(\left\lvert z_1+z_2 \right\rvert\leq \left\lvert z_1\right\rvert+\left\lvert z_2\right\rvert\) koristeći a). (\textbf{Uputa:} Promotrite izraz \(\left\lvert z_1+z_2\right\rvert^2\)).
+\item[b)] Dokažite da za sve \(z_1, z_2\in \mathbb{C}\) vrijedi \(\left\lvert z_1+z_2 \right\rvert\leq \left\lvert z_1\right\rvert+\left\lvert z_2\right\rvert\) koristeći a). (\textbf{Uputa:} Promotrite izraz \(\left\lvert z_1+z_2\right\rvert^2\).)
 \end{itemize}
 \end{exercise}
 \begin{exercise}{Zadatak}
