@@ -576,7 +576,12 @@ Uzmimo \(x=\dfrac{\sqrt{\epsilon}}{2}\) i \(y=-\dfrac{2}{\sqrt{\epsilon}}\). Tad
 \[x^2+(xy+1)^2=\dfrac{\epsilon}{4}<\epsilon.\]
 Dakle, \(p : \mathbb{R}^2\to \mathbb{R}\), \(p(x, y)=x^2+(xy+1)^2\) je jedan polinom koji zadovoljava uvjete zadatka.
 \end{proof}
-U idućem zadatku zanimat će nas problem egzistencije $n$-tog korijena. Naime, iz aksioma realnih brojeva nije apriori jasno da je $n$-ti korijen nešto što je dobro definirano. UVESTI BINOMNI TEOREM!!!
+U idućem zadatku zanimat će nas problem egzistencije $n$-tog korijena. Naime, iz aksioma realnih brojeva nije apriori jasno da je $n$-ti korijen nešto što je dobro definirano.
+\begin{remark}[Binomni teorem]
+\label{bintm}
+Za sve \(a, b\in \mathbb{R}\) i \(n\in \mathbb{N}\) vrijedi
+\[(a+b)^n=\sum\limits_{k=0}^n{\binom{n}{k}a^kb^{n-k}}.\]
+\end{remark}
 \begin{exercise}{Zadatak}
 Dokažite da za svaki $x>0$ i svaki $n\in \mathbb{N}$ postoji točno jedan $y>0$ takav da je $y^n=x$.
 \end{exercise}
@@ -818,7 +823,7 @@ Neka je \(z\in \mathbb{C}\). Kažemo da je \textbf{\(n\)-ti korijen} iz \(z\), u
 \begin{remark}
 \label{sqrtofcomplex}
 Neka je $z\in \mathbb{C}$. Vrijedi 
-\[\sqrt[n]{z}=\left\{\sqrt[n]{r}\left(\cos{\dfrac{\phi+2k\pi}{n}}+\sin{\dfrac{\phi+2k\pi}{n}}i\right) : k\in\{0, 1, 2, \dots, n-1\}\right\}.\]
+\[\sqrt[n]{z}=\left\{\sqrt[n]{r}\left(\cos{\dfrac{\theta+2k\pi}{n}}+\sin{\dfrac{\theta+2k\pi}{n}}i\right) : k\in\{0, 1, 2, \dots, n-1\}\right\}.\]
 \end{remark}
 
 \begin{exercise}{Zadatak}
@@ -856,6 +861,7 @@ Sada za npr. $y_2$ dobivamo da su pripadna rješenja $x_{21, 22}=\pm \sqrt{\dfra
 \end{proof*}
 Prije smo vidjeli da trigonometrijski zapis kompleksnog broja može biti koristan pri promatranju potencija kompleksnog broja. Pokažimo još jednu takvu situaciju.
 \begin{exercise}{Zadatak}
+\label{trigcmplx}
 Neka je $n\in \mathbb{N}\setminus\{1, 2\}$. Odredite sve $z\in \mathbb{C}$ takve da je $\overline{z}=z^{n-1}$.
 \end{exercise}
 \begin{proof}[Rješenje]
@@ -863,7 +869,7 @@ Neka je $n\in \mathbb{N}\setminus\{1, 2\}$. Odredite sve $z\in \mathbb{C}$ takve
 $$
 \overline{z}=r\left(\cos{-\theta}+i\sin{-\theta}\right)=r^{n-1}\left(\cos{(n-1)\theta}+i\sin{(n-1)\theta}\right).
 $$
-Kako ovo nisu trigonometrijski zapisi, budući da je npr. $-\theta \leq 0$ i zbog mogućnosti da je $(n-1)\theta\geq 2\pi$, koristimo d) dio napomene \ref{cmplxproperties}.
+Kako ovo nisu trigonometrijski zapisi, budući da je npr. $-\theta \leq 0$ i zbog mogućnosti da je $(n-1)\theta\geq 2\pi$, koristimo d) dio napomene \ref{cmplxproperties}, po kojoj gornje vrijedi ako i samo ako vrijedi sustav
 \[\begin{cases}
 r^{n-1}=r,\\
 (n-1)\theta=-\theta+2k\pi.
@@ -1034,32 +1040,29 @@ Prikažite \(z=\dfrac{(3+i+i^{140})^2}{3-i}\) u standardnom obliku.
 \end{exercise}
 \begin{exercise}{\input{easy.tex}\unskip} \textbf{}
 \begin{itemize}
-\item[a)] Dokažite da za sve \(z\in \mathbb{C}\) vrijedi \(z\cdot \overline{z}=|z|^2\).
-\item[b)] Dokažite da za sve \(z_1, z_2\in \mathbb{C}\) vrijedi \(\left\lvert z_1+z_2 \right\rvert\leq \left\lvert z_1\right\rvert+\left\lvert z_2\right\rvert\) koristeći a). (\textbf{Uputa:} Promotrite izraz \(\left\lvert z_1+z_2\right\rvert^2\).)
+\item[a)] Odredite sve uređene parove $(a, b)$ realnih brojeva takve da je $(b+ai)(1+ai)=3+a+2bi$.
+\item[b)] Odredite sve $c\in \mathbb{R}$ takve da postoji bar jedan uređen par $(a, b)$ realnih brojeva takav da je $(c+ai)^2=2(b^2+1)i$. (\textbf{Uputa:} Tretirajte $c$ kao parametar i $a$ i $b$ kao nepoznanice i pokušajte riješiti sustav.)
 \end{itemize}
 \end{exercise}
-\begin{exercise}{Zadatak}
-Za kompleksne brojeve \(z\) i \(w\) vrijedi \(|z+w|=\sqrt{3}\) i \(|z|=|w|=1\). Izračunajte \(|z-w|\).
+\begin{exercise}{\input{easy.tex}\unskip} \textbf{}
+\begin{itemize}
+\item[a)] Riješite jednadžbu \(z+2\overline{z}=\dfrac{3+5i}{4+i}\).
+\item[b)] Riješite jednadžbu \(|z|-\overline{z}=1+2i\).
+\item[c)] Odredite sve \(z\in \mathbb{C}\) za koje vrijedi
+\[\begin{cases}
+\re{z}=9, \\
+\im{z^2}=\im{z^3}.
+   \end{cases}\]
+\end{itemize}
 \end{exercise}
-\begin{exercise}{Zadatak}
+\begin{exercise}{\input{easy.tex}\unskip}
 Dokažite da za sve \(z\), \(w\in \mathbb{C}\) vrijedi
 \begin{itemize}
 \item[a)] \(\left\lvert z+w\right\rvert^2+\left\lvert z-w\right\rvert^2=2\left(\left\lvert z\right\rvert^2+\left\lvert w\right\rvert^2\right)\).
 \item[b)] \(\left\lvert \left\lvert z\right\rvert-\left\lvert w\right\rvert\right\rvert\leq \left\lvert z-w\right\rvert\),
 \end{itemize}
-Sada se lako vidi da se prethodni zadatak može riješiti i pomoću a).
 \end{exercise}
-\begin{exercise}{Zadatak}
-Riješite jednadžbu \(|z|-\overline{z}=1+2i\).
-\end{exercise}
-\begin{exercise}{Zadatak}\textbf{}
-\begin{itemize}
-\item[a)] Dokažite: Ako je \(|z|=0\), onda je \(z=0\).
-\item[b)] Riješite jednadžbu \(\left(\mathrm{Im}(z)-2z-2\overline{z}\right)^2+\left(|z|-4\right)^2=0\).
-\item[c)] Riješite jednadžbu \(z^3+z^2+z+1=0\).
-\end{itemize}
-\end{exercise}
-\begin{exercise}{Zadatak}
+\begin{exercise}{\input{easy.tex}\unskip}
 Odredite skup \(S\) i skicirajte ga u Gaussovoj ravnini, gdje je
 \begin{multicols}{2}
 \begin{itemize}
@@ -1072,40 +1075,44 @@ Odredite skup \(S\) i skicirajte ga u Gaussovoj ravnini, gdje je
 \end{itemize}
 \end{multicols}
 \end{exercise}
-\begin{exercise}{Zadatak}
-Neka je \(n\in \mathbb{N}\) proizvoljan i neka je \(S=\left\{z : z^n=1 \right\}\). Dokažite da je \(S\) grupa u odnosu na množenje.
+\begin{exercise}{\input{easy.tex}\unskip} Riješite sljedeće zadatke koristeći formulu za korijen kompleksnog broja.
+\begin{itemize}
+\item[a)] Odredite sve $z\in \mathbb{C}$ za koje postoji $n\in \mathbb{N}$ takav da je $z^n=1+i$.
+\item[b)] Riješite jednadžbu $z^{18}+z^{12}+z^6+1=0$. 
+\end{itemize}
 \end{exercise}
-Općenito, skup svih \(n\)-tih korijena (gdje je \(n\in \mathbb{N}\)) nekog kompleksnog broja čini pravilni \(n\)-terokut sa središtem u ishodištu.
-\begin{exercise}{Zadatak}
-Neka je \(z=\dfrac{(2+3i)^{2024}}{(2-3i)^{2020}}\). Odredite \(|z|\).
+\begin{exercise}{\input{medium.tex}\unskip}
+\begin{itemize}
+\item[a)] Koristeći trigonometrijski zapis kompleksnog broja, izvedite formulu za $\sin{6x}$ u terminima $\sin{x}$ i $\cos{x}$.
+\item[b)] Neka je $n\in \mathbb{N}$. Koristeći trigonometrijski zapis kompleksnog broja, odredite sve $z\in \mathbb{C}$ takve da je $8\overline{z}=z^{n-1}$. (\textbf{Uputa:} Za inspiraciju možete pogledati zadatak \ref{trigcmplx}.)
+\end{itemize}
 \end{exercise}
-\begin{exercise}{Zadatak}
-Odredite sve \(z\in \mathbb{C}\) za koje vrijedi
-\[\begin{cases}
-\re{z}=9, \\
-\im{z^2}=\im{z^3}.
-   \end{cases}\]
-\end{exercise}
-\begin{exercise}{Zadatak}
+\begin{exercise}{\input{medium.tex}\unskip}[Županijsko natjecanje, 4. razred, A varijanta, 2020.]
 Za \(n\in \mathbb{N}\) definiramo kompleksan broj
 \[a_n=(1+i)\left(1+\dfrac{i}{\sqrt{2}}\right)\left(1+\dfrac{i}{\sqrt{3}}\right)\dots \left(1+\dfrac{i}{\sqrt{n}}\right).\]
 Izračunajte \(|a_1-a_2|+|a_2-a_3|+\dots+|a_{2019}-a_{2020}|\).
 \end{exercise}
-\begin{exercise}{Zadatak}
+\begin{exercise}{\input{medium.tex}\unskip}
 Odredite sve \(z\in \mathbb{C}\) za koje vrijedi \(|z-5|=|z-1|+4\).
 \end{exercise}
-\begin{exercise}{Zadatak}
-Neka je \(S=\left\{z : \exists{n}\in \mathbb{N}\;\mathrm{t. d.}\; z^n=1 \right\}\). Dokažite ili opovrgnite: Vrijedi \(S=\left\{z : |z|=1 \right\}\).
-\end{exercise}
-\begin{exercise}{Zadatak}
+\begin{exercise}{\input{medium.tex}\unskip}
 Neka je \(d\in \mathbb{R}\) i \(P, Q\in \mathbb{R}^2\). Skup \(A\subseteq \mathbb{R}^2\) ima svojstvo da za sve \(T\in A\) vrijedi \(|PT|^2+|QT|^2=d^2\). Koju krivulju u koordinatnom sustavu čini taj skup? Dokažite.
 \end{exercise}
-\begin{exercise}{Zadatak} \((*)\)
+\begin{exercise}{\input{medium.tex}\unskip}[Županijsko natjecanje, 4. razred, A varijanta, 2023.]
 Neka je \(n\in \mathbb{N}\) i neka su \(a_n\) i \(b_n\) realni brojevi takvi da je \((\sqrt{3}+i)^n=a_n+ib_n\). Dokažite da izraz
 \[\dfrac{a_nb_{n+1}-a_{n+1}b_n}{a_{n+1}a_n+b_{n+1}b_n}\]
 poprima istu vrijednost za sve \(n\in \mathbb{N}\) i odredite tu vrijednost.
 \end{exercise}
-\begin{exercise}{Zadatak} \((**)\)
+\begin{exercise}{\input{medium.tex}\unskip}
+Riješite sustav
+\[\begin{cases}
+x^{16}-120x^{14}y^2+1820x^{12}y^4-8008x^{10}y^6+12870x^8y^8-8008x^6y^{10}\\
++1820x^4y^{12}-120x^2y^{14}+y^{16}=2026,\\
+16x^{15}y-560x^{13}y^3+4368x^{11}y^5-11440x^9y^7+11440x^7y^9\\
+-4368x^5y^{11}+560x^3y^{13}-16xy^{15}=2026.
+\end{cases}\]
+\end{exercise}
+\begin{exercise}{\input{hard.tex}\unskip}[Državno natjecanje, 4. razred, A varijanta, 2020.]
 Neka je \(n\in \mathbb{N}\) proizvoljan. Odredite sve \(z\in \mathbb{C}\) takve da vrijedi
 \[\left(1-z+z^2\right)\left(1-z^2+z^4\right)\left(1-z^4+z^8\right)\dots\left(1-z^{2^{n-1}}+z^{2^n}\right)=\dfrac{3z^{2^n}}{1+z+z^2}\]
 \end{exercise}
