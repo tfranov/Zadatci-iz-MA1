@@ -16,63 +16,6 @@ Neka su zadani \(a, b\in \mathbb{R}\), \(a<b\). Definiramo sljedeće skupove:
 \end{multicols}
 Skupovi \(\langle a,b \rangle\), \(\langle a,\infty \rangle\), \(\langle -\infty,b \rangle\) su \textbf{otvoreni intervali}, skup \([a, b]\) je \textbf{zatvoreni interval}, a skupovi \([a, b\rangle\), \(\langle a, b]\), \(\langle -\infty, b]\), \([a, \infty\rangle\) su \textbf{poluotvoreni intervali}.
 \end{definition}
-Još jedan već otprije poznat pojam je apsolutna vrijednost realnog broja.
-\begin{definition}
-\textbf{Apsolutna vrijednost} broja $x\in \mathbb{R}$ je broj
-$$\left\lvert x\right\rvert:=\begin{cases}
-x, & x\geq 0,\\
--x & x<0.
-\end{cases}$$
-\end{definition}
-\begin{remark}[Nejednakost trokuta]
-\label{triangleineq}
-Za sve $x, y\in \mathbb{R}$ vrijedi $\lvert x+y\rvert\leq \lvert x\rvert + \lvert y\rvert$.
-\end{remark}
-\begin{remark}[O apsolutnoj vrijednosti razlike]
-\label{invtriangleineq}
-Za sve $x, y\in \mathbb{R}$ vrijedi $\lvert\lvert x\rvert-\lvert y\rvert\rvert\leq \lvert x-y\rvert$.
-\end{remark}
-\begin{remark}[Apsolutna vrijednost produkta i kvocijenta] \textbf{}
-\begin{itemize}
-\item[a)] Za sve $x, y\in \mathbb{R}$ vrijedi $\lvert xy\rvert=\lvert x\rvert\lvert y\rvert$. 
-\item[b)] Za sve $x\in \mathbb{R}$ i $y\in \mathbb{R}\setminus\{0\}$ vrijedi $\left\lvert \dfrac{x}{y}\right\rvert=\dfrac{\lvert x\rvert}{\lvert y\rvert}$.
-\end{itemize}
-\end{remark}
-\begin{remark}
-\label{absolutevaluelemma}
-Za sve $x\in \mathbb{R}$ i za sve $\epsilon\geq 0$ vrijedi
-$$\lvert x\rvert\leq \epsilon\Leftrightarrow -\epsilon\leq x\leq \epsilon.$$
-Ako je $\epsilon>0$, analogna tvrdnja vrijedi u slučaju stroge nejednakosti.
-\end{remark}
-\begin{exercise}{Zadatak} \textbf{}
-\begin{itemize}
-\item[a)] Odredite sve $x\in \mathbb{R}$ takve da je $\left\lvert x+2\right\rvert+\left\lvert x+3\right\rvert=3$.
-\item[b)] Odredite sve $x\in \mathbb{R}$ takve da je $\lvert x+3\rvert\leq 7$ i $\lvert x-2\rvert< 3-x$.
-\end{itemize}
-\end{exercise}
-\begin{proof}[Rješenje]
-a) Neka je $x\in \mathbb{R}$ proizvoljan. Ako je $x+2\geq 0$, onda je i $x+3\geq 0$. pa je početna jednadžba ekvivalentna s $$x+2+x+3=3,$$ tj. dobivamo rješenje $x_1=-1$, i zaista vrijedi $x_1+2\geq 0$. Ako je pak $x+3\geq 0$ i $x+2<0$ onda imamo $$-x-2+x+3=3,$$ tj. $1=3$, što je nemoguće. Ako je $x+3< 0$, onda je i $x+2< 0$, pa imamo $$-x-3-x-3=3,$$ tj. $x_2=-4$, te i ovo rješenje zadovoljava $x_2+3<0$. Stoga su jedini brojevi koji zadovoljavaju početnu jednadžbu $-1$ i $-4$.
-
-b) Neka je $x\in \mathbb{R}$ proizvoljan. Tvrdnja $\lvert x+3\rvert\leq 7$ je ekvivalentna s $-7\leq x+3\leq 7$, tj. $-10\leq x\leq 4$. Ako je $x> 3$, $\lvert x-2\rvert< 3-x$ očigledno ne vrijedi jer je $\lvert x-2\rvert\geq 0$ i $3-x<0$. Ako je $x=3$ imamo $1<0$, što također ne vrijedi, a ako je $x<3$, onda je $3-x>0$ i tvrdnja je ekvivalentna s $$-3+x<x-2<3-x,$$ pa dobivamo $-3<-2$ i $x< \dfrac{5}{2}$ i očito je $x<3$. Dakle, tvrdnje iz zadatka vrijede ako i samo ako je $-10\leq x<\dfrac{5}{2}$, odnosno $x\in \left[ -10, \dfrac{5}{2}\right\rangle$.
-\end{proof}
-\begin{exercise}{Zadatak} \textbf{}
-\label{absvaluetricks}
-\begin{itemize}
-\item[a)] Neka su $a_1, a_2\in \mathbb{R}$ takvi da je $\left\lvert a_1-a_2\right\rvert\leq 1$. Dokažite da je $\left\lvert a_1\right\rvert\leq 1+\left\lvert a_2\right\rvert$.
-\item[b)] Neka su $a, a', b, b'\in \mathbb{R}$ takvi da je $\lvert a-a'\rvert\leq 1$ i $\lvert b-b'\rvert\leq 1$. Dokažite da je $\lvert ab'- a'b\rvert\leq \lvert a'\rvert+\lvert b'\rvert$.
-\end{itemize}
-\end{exercise}
-\begin{proof}
-a) Vrijedi
-$$\left\lvert a_1\right\rvert=\left\lvert \left(a_1-a_2\right)+a_2\right\rvert\leq \left\lvert a_1-a_2\right\rvert + \left\lvert a_2\right\rvert\leq 1+ \left\lvert a_2\right\rvert.$$
-
-b) Želimo da se "pojave" izrazi $\lvert a-a'\rvert$ i $\lvert b-b'\rvert$, pa je ideja ovdje dodati i oduzeti $a'b'$. Vrijedi
-\begin{align*}
-\lvert ab'-a'b\rvert&=\lvert \left(ab'-a'b'\right)+\left(a'b'-a'b\right)\rvert\leq \lvert ab'-a'b'\rvert+\lvert a'b'-a'b\rvert\\
-&\leq \lvert b'\left(a-a'\right)\rvert+\lvert a'\left(b'-b\right)\rvert=\lvert b'\rvert\lvert a-a'\rvert+\lvert a'\rvert\lvert b-b'\rvert\leq \lvert a'\rvert+\lvert b'\rvert.
-\end{align*}
-Ovdje smo iskoristili i činjenicu da je $\lvert -x\rvert=\lvert x\rvert$, za svaki $x\in \mathbb{R}$. Naime, neka je $x\in \mathbb{R}$. Ako je $x\geq 0$ imamo $-x\leq 0$, pa je $\lvert -x\rvert=-(-x)=x=\lvert x\rvert$, a ako je $x\leq 0$, onda je $-x\geq 0$, pa je $\lvert -x\rvert=-x=\lvert x\rvert$.
-\end{proof}
 \begin{remark}[Aksiomi realnih brojeva]
 \label{axioms}
 Aksiomi realnih brojeva su sljedeća svojstva skupa $\mathbb{R}$.
@@ -327,7 +270,7 @@ Tvrdimo da je $\sup{S}=1$. Zaista, treba pokazati da za sve \(\epsilon>0\) posto
 što je ekvivalentno uvjetu \[\dfrac{10}{x_0^2+5}<\epsilon.\]
 Ovdje ćemo primijeniti sljedeći "trik" -- pronaći ćemo neki izraz koji je veći od $\dfrac{10}{x^2+5}$, ali koji i dalje možemo napraviti "po volji malim" i to na jednostavniji način. Primijetimo da je \[\dfrac{10}{x^2+5}<\dfrac{10}{x}\] za sve \(x>0\). Zaista vrijedi
 $$\dfrac{10}{x^2+5}<\dfrac{10}{x}\Leftrightarrow x<x^2+5\Leftrightarrow x^2-x+5>0,$$
-a posljednje vrijedi ne samo za sve $x>0$, nego i za sve $x\in \mathbb{R}$, budući da je vodeći koeficijent pozitivan i diskriminanta negativna\footnote{Općenito, ako su \(a, b, c\in \mathbb{R}\) takvi da je \(a>0\) i \(b^2-4ac<0\), onda je \(ax^2+bx+c>0\) za sve \(x\in \mathbb{R}\). Zaista, za sve \(x\in \mathbb{R}\) vrijedi \(ax^2+bx+c\geq \dfrac{4ac-b^2}{4a}>0\). Intuicija iza te činjenice je da je zbog \(a>0\) parabola koja je graf funkcije \(x\mapsto ax^2+bx+c\) okrenuta "prema gore" i zbog negativne diskriminante nema nultočki.}.
+a posljednje vrijedi ne samo za sve $x>0$, nego i za sve $x\in \mathbb{R}$, budući da je vodeći koeficijent pozitivan i diskriminanta negativna (v. napomenu \ref{discrimrem}).
 Rješavanjem jednadžbe \(\dfrac{10}{x}=\epsilon\) dobivamo \(x=\dfrac{10}{\epsilon}>0\), pa nam se isplati upravo uzeti \(x_0:=\dfrac{10}{\epsilon}\). Dobivamo \[\epsilon=\dfrac{10}{x_0}>\dfrac{10}{x_0^2+5},\] pa smo time dokazali tvrdnju. Nadalje, $1$ očito nije maksimum, jer je $1-\dfrac{10}{x^2+5}<1$ za sve $x\in \mathbb{R}$.
 \end{proof}
 \begin{remark}
@@ -849,7 +792,7 @@ x^3-3xy^2=3x^2y-y^3\Leftrightarrow x^3+y^3=3x^2y+3xy^2\Leftrightarrow (x+y)(x^2-
 $$
 Ako je $x=-y$, onda uvrštavanjem u početni sustav dobivamo jednadžbu $-y^3+3y^3=1$, tj. $y=\dfrac{1}{\sqrt[3]{2}}$, te $x=-\dfrac{1}{\sqrt[3]{2}}$. Dakle, $z_1=-\dfrac{1}{\sqrt[3]{2}}+\dfrac{1}{\sqrt[3]{2}}i$ je prvo rješenje, te se lako provjeri da je i $z_1=\sqrt[6]{2}\left(\cos{\dfrac{9\pi}{12}}+i\sin{\dfrac{9\pi}{12}}\right)$, tj. drugo rješenje iz prvog načina u rješenju zadatka.
 
-Ako je $x\neq -y$, onda djeljenjem s $x+y$ dobivamo
+Ako je $x\neq -y$, onda dijeljenjem s $x+y$ dobivamo
 $$x^2-xy+y^2=3xy\Leftrightarrow x^2+y^2=4xy\Leftrightarrow x^4+2x^2y^2+y^4=16x^2y^2\Leftrightarrow x^4+y^4=14x^2y^2.$$
 Pritom smo mogli kvadrirati obje strane jednadžbe, jer je $x^2+y^2\geq 0$, pa je i $4xy\geq 0$. Razlog zašto smo to napravili je sljedeći -- uočimo da je $y\neq 0$ (jer za $y=0$ sustav očito nema rješenja), pa imamo
 $$3x^2y-y^3=1\Leftrightarrow 3x^2y=1+y^3\Leftrightarrow x^2=\dfrac{1+y^3}{3y},$$
@@ -874,7 +817,7 @@ Kako ovo nisu trigonometrijski zapisi, budući da je npr. $-\theta \leq 0$ i zbo
 r^{n-1}=r,\\
 (n-1)\theta=-\theta+2k\pi.
 \end{cases}\]
-Ako je $r=0$, onda je i $z=0$, dakle to je jedan broj koji zadovoljava početan uvjet. Ako je $r>0$, onda djeljenjem s $r$ imamo $r^{n-2}=1$, gdje zbog $n-2>0$ i $r>0$ možemo uzeti $(n-2)$-gi korijen i imamo $r=1$.
+Ako je $r=0$, onda je i $z=0$, dakle to je jedan broj koji zadovoljava početan uvjet. Ako je $r>0$, onda dijeljenjem s $r$ imamo $r^{n-2}=1$, gdje zbog $n-2>0$ i $r>0$ možemo uzeti $(n-2)$-gi korijen i imamo $r=1$.
 
 Iz druge jednadžbe sustava dobivamo $\theta=\dfrac{2k\pi}{n}$. Drugim riječima, tvrdnja zadatka vrijedi samo za $z=0$ i brojeve oblika $\cos{\dfrac{2k\pi}{n}}+i\sin{\dfrac{2k\pi}{n}}$, za koje se uspoređivanjem s formulom \ref{sqrtofcomplex} može uočiti da su to upravo oni $z\in \mathbb{C}$ za koje je $z^n=1$.
 

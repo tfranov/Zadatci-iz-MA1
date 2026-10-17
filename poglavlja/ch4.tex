@@ -13,7 +13,437 @@ Neka su \(A, A_0\) i \(B\) neprazni skupovi i neka su zadane \(f : A\to B\) i \(
 \begin{remark}
 Na nekim mjestima ćemo funkciju \(f : S\to \mathbb{R}\), gdje je \(\emptyset\neq S\subseteq \mathbb{R}\) samo navesti u kraćem obliku \(x\mapsto f(x)\), u nadi da su domena i kodomena jasne iz konteksta (ili ako je kodomena nebitna). U tom slučaju govorimo o \textit{funkcijama zadanima formulom}. Tako npr. \(x\mapsto 2x+1\) predstavlja funkciju \(f : \mathbb{R}\to \mathbb{R}\), \(f(x)=2x+1\). (Uočite da je ovdje jedina kodomena koja ima smisla upravo \(\mathbb{R}\), jer je \(\mathcal{R}(f)=\mathbb{R}\) i \(\mathcal{R}(f)\) je podskup kodomene).
 \end{remark}
+Navedimo neke važne primjere funkcija oblika $f : S\to \mathbb{R}$, gdje je $S\subseteq \mathbb{R}$. Za većinu ovih funkcija očekujemo da su Vam poznate otprije, tako da nećemo stavljati naglasak na proučavanje njihovih svojstava, već samo na određena svojstva koja su posebno bitna za daljnja razmatranja.
+\begin{definition}
+Neka su $a, b\in \mathbb{R}$. Funkcije oblika $f : \mathbb{R}\to \mathbb{R}$, $f(x)=ax+b$, gdje je $a\neq 0$, zovemo \textit{linearne funkcije}. Pritom $a$ nazivamo \textit{koeficijent smjera}, a $b$ \textit{odsječak na osi $y$}. Ako je pak $a=0$, takve funkcije nazivamo \textit{konstante}.
+\end{definition}
+Još jedan već otprije poznat pojam je apsolutna vrijednost realnog broja.
+\begin{definition}
+\textbf{Apsolutna vrijednost} broja $x\in \mathbb{R}$ je broj
+$$\left\lvert x\right\rvert:=\begin{cases}
+x, & x\geq 0,\\
+-x & x<0.
+\end{cases}$$
+Funkciju $f : \mathbb{R}\to \mathbb{R}$, $f(x)=\left\lvert x\right\rvert$ zovemo \textit{funkcija apsolutne vrijednosti}.
+\end{definition}
+\begin{figure}[ht]
+\begin{subfigure}[t]{.5\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[height=8cm, width=8cm, axis lines=middle,xlabel=\(x\),ylabel=\(y\),xmin=-5,xmax=5,ymin=-5,ymax=5]
 
+\addplot[thick,color=black,domain=-5:5] {2*x+1};
+\end{axis}
+\end{tikzpicture}
+\caption*{Graf funkcije \(x\mapsto 2x+1\)}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[height=8cm, width=8cm, axis lines=middle,xlabel=\(x\),ylabel=\(y\),xmin=-5,xmax=5,ymin=-2,ymax=8]
+
+\addplot[thick,color=black,domain=-5:0] {-x};
+\addplot[thick,color=black,domain=0:5] {x};
+\end{axis}
+\end{tikzpicture}
+\caption*{Graf funkcije \(x\mapsto \left\lvert x\right\rvert\)}
+\end{subfigure}
+\end{figure}
+
+Funkcija apsolutne vrijednosti ima neka bitna svojstva na koja se obično ne stavlja velik naglasak ranije u obrazovanju, a koja su neophodna za daljnja razmatranja, pa ih navodimo kroz sljedeće napomene.
+\begin{remark}[Nejednakost trokuta]
+\label{triangleineq}
+Za sve $x, y\in \mathbb{R}$ vrijedi $\lvert x+y\rvert\leq \lvert x\rvert + \lvert y\rvert$.
+\end{remark}
+\begin{remark}[O apsolutnoj vrijednosti razlike]
+\label{invtriangleineq}
+Za sve $x, y\in \mathbb{R}$ vrijedi $\lvert\lvert x\rvert-\lvert y\rvert\rvert\leq \lvert x-y\rvert$.
+\end{remark}
+\begin{remark}[Apsolutna vrijednost produkta i kvocijenta] \textbf{}
+\begin{itemize}
+\item[a)] Za sve $x, y\in \mathbb{R}$ vrijedi $\lvert xy\rvert=\lvert x\rvert\lvert y\rvert$. 
+\item[b)] Za sve $x\in \mathbb{R}$ i $y\in \mathbb{R}\setminus\{0\}$ vrijedi $\left\lvert \dfrac{x}{y}\right\rvert=\dfrac{\lvert x\rvert}{\lvert y\rvert}$.
+\end{itemize}
+\end{remark}
+\begin{remark}
+\label{absolutevaluelemma}
+Za sve $x\in \mathbb{R}$ i za sve $\epsilon\geq 0$ vrijedi
+$$\lvert x\rvert\leq \epsilon\Leftrightarrow -\epsilon\leq x\leq \epsilon.$$
+Ako je $\epsilon>0$, analogna tvrdnja vrijedi u slučaju stroge nejednakosti.
+\end{remark}
+\begin{exercise}{Zadatak} \textbf{}
+\begin{itemize}
+\item[a)] Odredite sve $x\in \mathbb{R}$ takve da je $\left\lvert x+2\right\rvert+\left\lvert x+3\right\rvert=3$.
+\item[b)] Odredite sve $x\in \mathbb{R}$ takve da je $\lvert x+3\rvert\leq 7$ i $\lvert x-2\rvert< 3-x$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka je $x\in \mathbb{R}$ proizvoljan. Ako je $x+2\geq 0$, onda je i $x+3\geq 0$. pa je početna jednadžba ekvivalentna s $$x+2+x+3=3,$$ tj. dobivamo rješenje $x_1=-1$, i zaista vrijedi $x_1+2\geq 0$. Ako je pak $x+3\geq 0$ i $x+2<0$ onda imamo $$-x-2+x+3=3,$$ tj. $1=3$, što je nemoguće. Ako je $x+3< 0$, onda je i $x+2< 0$, pa imamo $$-x-3-x-3=3,$$ tj. $x_2=-4$, te i ovo rješenje zadovoljava $x_2+3<0$. Stoga su jedini brojevi koji zadovoljavaju početnu jednadžbu $-1$ i $-4$.
+
+b) Neka je $x\in \mathbb{R}$ proizvoljan. Tvrdnja $\lvert x+3\rvert\leq 7$ je ekvivalentna s $-7\leq x+3\leq 7$, tj. $-10\leq x\leq 4$. Ako je $x> 3$, $\lvert x-2\rvert< 3-x$ očigledno ne vrijedi jer je $\lvert x-2\rvert\geq 0$ i $3-x<0$. Ako je $x=3$ imamo $1<0$, što također ne vrijedi, a ako je $x<3$, onda je $3-x>0$ i tvrdnja je ekvivalentna s $$-3+x<x-2<3-x,$$ pa dobivamo $-3<-2$ i $x< \dfrac{5}{2}$ i očito je $x<3$. Dakle, tvrdnje iz zadatka vrijede ako i samo ako je $-10\leq x<\dfrac{5}{2}$, odnosno $x\in \left[ -10, \dfrac{5}{2}\right\rangle$.
+\end{proof}
+\begin{exercise}{Zadatak} \textbf{}
+\label{absvaluetricks}
+\begin{itemize}
+\item[a)] Neka su $a_1, a_2\in \mathbb{R}$ takvi da je $\left\lvert a_1-a_2\right\rvert\leq 1$. Dokažite da je $\left\lvert a_1\right\rvert\leq 1+\left\lvert a_2\right\rvert$.
+\item[b)] Neka su $a, a', b, b'\in \mathbb{R}$ takvi da je $\lvert a-a'\rvert\leq 1$ i $\lvert b-b'\rvert\leq 1$. Dokažite da je $\lvert ab'- a'b\rvert\leq \lvert a'\rvert+\lvert b'\rvert$.
+\end{itemize}
+\end{exercise}
+\begin{proof}
+a) Vrijedi
+$$\left\lvert a_1\right\rvert=\left\lvert \left(a_1-a_2\right)+a_2\right\rvert\leq \left\lvert a_1-a_2\right\rvert + \left\lvert a_2\right\rvert\leq 1+ \left\lvert a_2\right\rvert.$$
+
+b) Želimo da se "pojave" izrazi $\lvert a-a'\rvert$ i $\lvert b-b'\rvert$, pa je ideja ovdje dodati i oduzeti $a'b'$. Vrijedi
+\begin{align*}
+\lvert ab'-a'b\rvert&=\lvert \left(ab'-a'b'\right)+\left(a'b'-a'b\right)\rvert\leq \lvert ab'-a'b'\rvert+\lvert a'b'-a'b\rvert\\
+&\leq \lvert b'\left(a-a'\right)\rvert+\lvert a'\left(b'-b\right)\rvert=\lvert b'\rvert\lvert a-a'\rvert+\lvert a'\rvert\lvert b-b'\rvert\leq \lvert a'\rvert+\lvert b'\rvert.
+\end{align*}
+Ovdje smo iskoristili i činjenicu da je $\lvert -x\rvert=\lvert x\rvert$, za svaki $x\in \mathbb{R}$. Naime, neka je $x\in \mathbb{R}$. Ako je $x\geq 0$ imamo $-x\leq 0$, pa je $\lvert -x\rvert=-(-x)=x=\lvert x\rvert$, a ako je $x\leq 0$, onda je $-x\geq 0$, pa je $\lvert -x\rvert=-x=\lvert x\rvert$.
+\end{proof}
+\begin{definition}
+Neka su $a, b, c\in \mathbb{R}$ i $a\neq 0$. Funkciju $f : \mathbb{R}\to \mathbb{R}$, $f(x)=ax^2+bx+c$ zovemo \textit{kvadratna funkcija}. Pritom je $a$ \textit{vodeći koeficijent}, $b$ \textit{linearni koeficijent}, a $c$ \textit{slobodni koeficijent}.
+\end{definition}
+Vrijedi sljedeće.
+\begin{itemize}
+\item Graf kvadratne funkcije je \textit{parabola}. Ako je $a>0$, onda je ona okrenuta "prema gore", a ako je $a<0$ je okrenuta "prema dolje".
+\item Za sve $x\in \mathbb{R}$ vrijedi $f(x)=a\left(x+\dfrac{b}{2a}\right)^2+\dfrac{4ac-b^2}{4a}$. Ova formula zove se \textit{tjemeni oblik} kvadratne funkcije.
+\item \textit{Tjeme} kvadratne funkcije je točka $(x_0, y_0)=\left(-\dfrac{b}{2a}, \dfrac{4ac-b^2}{4a}\right)$. Ako je $a>0$, onda je $y_0=\min\{ax^2+bx+c : x\in \mathbb{R}\}$ i taj minimum se postiže za $x=x_0$. Ako je pak $a<0$, onda je $y_0=\max\{ax^2+bx+c : x\in \mathbb{R}\}$, i maksimum se postiže za $x=x_0$. Ove tvrdnje slijede direktno iz tjemenog oblika kvadratne funkcije.
+\item Broj $D=b^2-4ac$ zove se \textit{diskriminanta} kvadratne funkcije. Ako je $D>0$, $f$ ima točno dvije nultočke, ako je $D=0$, ona ima točno jednu nultočku, a ako je $D<0$, onda ona nema nultočki.
+\end{itemize}
+\begin{figure}[ht]
+\begin{subfigure}[t]{.5\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,xlabel=\(x\),ylabel=\(y\),xmin=-6,xmax=6,ymin=-1,ymax=6, smooth, samples=200, ticks=none]
+
+\addplot[thick,color=black,domain=-4:4] {x^2+2*x+0.2};
+\end{axis}
+\end{tikzpicture}
+\caption*{Primjer grafa kvadratne funkcije za koju je $a>0$}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,xlabel=\(x\),ylabel=\(y\),xmin=-6,xmax=6,ymin=-1,ymax=6, samples=200, smooth, ticks=none]
+
+\addplot[thick,color=black,domain=-4:4] {-x^2+3*x+2};
+\end{axis}
+\end{tikzpicture}
+\caption*{Primjer grafa kvadratne funkcije za koju je $a<0$}
+\end{subfigure}
+\end{figure}
+\newpage
+\begin{remark}
+Naša definicija nultočke je sljedeća -- Neka je $S\subseteq \mathbb{R}$ i $f : S\to \mathbb{R}$. Kažemo da je $x_0\in S$ \textit{nultočka} funkcije $S$ ako vrijedi $f(x_0)=0$.
+
+U vrijeme pisanja ove skripte, u srednjim školama se često pojam koji smo mi nazvali nultočkom naziva \textit{nulište} funkcije $f$, a \textit{nultočka} je onda točka $(x_0, 0)$. Unatoč tome, mi ćemo se ipak držati definicije nultočke koju smo mi naveli.
+\end{remark}
+\begin{remark}
+\label{discrimrem}
+Uočimo sljedeće -- ako su \(a, b, c\in \mathbb{R}\) takvi da je \(a>0\) i \(D=b^2-4ac<0\), onda je \(ax^2+bx+c>0\) za sve \(x\in \mathbb{R}\). Zaista, iz tjemenog oblika slijedi da za sve \(x\in \mathbb{R}\) vrijedi 
+\[ax^2+bx+c\geq \dfrac{4ac-b^2}{4a}>0.\]
+Intuicija iza te činjenice je da je zbog \(a>0\) parabola koja je graf funkcije \(x\mapsto ax^2+bx+c\) okrenuta "prema gore" i zbog negativne diskriminante nema nultočki. Analogno vrijedi i da ako je $a<0$ i $D<0$, onda je $ax^2+bx+c<0$ za sve $x\in \mathbb{R}$.
+\end{remark}
+\begin{definition}
+Neka je $n\in \mathbb{N}$, $a_0, a_1, \dots, a_n\in \mathbb{R}$ i $a_n\neq 0$. Funkcija $f : \mathbb{R}\to \mathbb{R}$, $f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0$ zove se \textit{polinom}. Broj $n$ zovemo \textit{stupanj} polinoma (u oznaci $\st{f}$), $a_n$ \textit{vodeći koeficijent}, a $a_0$ \textit{slobodni koeficijent}.
+\end{definition}
+Polinome definirati na analogan način kao funkcije čija su domena i kodomena skup $\mathbb{C}$. Navedimo neke nama važne rezultate.
+\begin{remark}[Jednakost polinoma]
+Neka su $n, m\in \mathbb{N}$, $a_0, a_1, \dots, a_n, b_0, b_1, \dots, b_m\in \mathbb{C}$ i $a_n, b_m\neq 0$, te $f, g : \mathbb{R}\to \mathbb{R}$, $f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0$ i $g(x)=b_mx^m+b_{m-1}x^{m-1}+\dots+b_1x+b_0$. Vrijedi $f(x)=g(x)$ za sve $x\in \mathbb{R}$ ako i samo ako je $m=n$ i $a_i=b_i$ za sve $i=0, 1, \dots, n$.
+\end{remark}
+\begin{remark}[Osnovni teorem algebre]
+Neka je $n\in \mathbb{N}$, $a_0, a_1, \dots, a_n\in \mathbb{C}$ i $a_n\neq 0$, te $f : \mathbb{C}\to \mathbb{C}$, $f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0$ polinom u $\mathbb{C}$. Tada postoji bar jedan $z_0\in \mathbb{C}$ takav da je $f(z_0)=0$.
+\end{remark}
+Za nas će biti bitan i sljedeći korolar osnovnog teorema algebre.
+\begin{remark}
+\label{atmostn}
+Neka je $n\in \mathbb{N}$ i $f : \mathbb{R}\to \mathbb{R}$ polinom (u $\mathbb{R}$) stupnja $n$ i $f\neq 0$. Tada taj polinom ima najviše $n$ nultočaka.
+\end{remark}
+Još jedan važan postupak je \textit{dijeljenje} polinoma. Zaista, imamo sljedeći teorem.
+\begin{remark}
+Neka su $f$ i $g\neq 0$ polinomi. Tada postoje jedinstveni polinomi $q, r$ takvi da za sve $x\in \mathbb{R}$ vrijedi $f(x)=q(x)g(x)+r(x)$. Ako je $r\neq 0$, onda je $\st{r}<\st{g}$. Polinom $r$ nazivamo \textit{ostatak} pri dijeljenju $f$ s $g$.
+\end{remark}
+\begin{exercise}{Zadatak} \textbf{}
+\begin{itemize}
+\item[a)] Pojednostavite izraz $\dfrac{x^4+x^3-23x^2+3x+90}{x^2+7x+10}$.
+\item[b)] Pojednostavite izraz $\dfrac{x^4+x^3-23x^2+3x+90}{x^2+7x+10}$.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Za sve $x$ za koje je izraz zadatka definiran vrijedi
+\begin{gather*}
+\dfrac{x^4+x^3-23x^2+3x+90}{x^2+7x+10}=\dfrac{x^4+7x^3+10x^2-6x^3-33x^2+3x+90}{x^2+7x+10}\\
+=x^2+\dfrac{-6x^3-33x^2+3x+90}{x^2+7x+10}
+=x^2+\dfrac{-6x^3-6\cdot 7x^2-6\cdot 10x+9x^2+63x+90}{x^2+7x+10}\\
+=x^2-6x+\dfrac{9x^2+63x+90}{x^2+7x+10}=x^2-6x+9.
+\end{gather*}
+Simbolički se gornji postupak može prikazati na sljedeći način.
+\begin{center}
+\polylongdiv[style=C]{x^4+x^3-23x^2+3x+90}{x^2+7x+10}
+\end{center}
+Zapravo na početku dijelimo vodeći koeficijent djeljenika s vodećim koeficijentom djelitelja, a potom dobiveni monom množimo s djeljenikom, te tako dobiveni polinom oduzmemo od početnog. Postupak nastavljamo dok ne dobijemo nul-polinom ili polinom nižeg stupnja od djeljenika. Savjetujemo da koristite upravo navedeni simbolički postupak (ili neki njemu sličan koji možete naći drugdje u literaturi) umjesto algebarskih manipulacija zbog čitkosti.
+
+b) Vrijedi
+\begin{center}
+\polylongdiv[style=C]{x^4+5x^3+6x^2+8x+12}{x+2}
+\end{center}
+Pokušajte za vježbu ovaj postupak provesti algebarskim manipulacijama kao u rješenju a) dijela zadatka.
+\end{proof}
+\begin{definition}
+\textbf{Racionalna funkcija} je funkcija oblika
+\[x\mapsto \dfrac{f(x)}{g(x)},\]
+gdje su \(f\) i \(g\) polinomi i \(g(x)\neq 0\) za bar jedan \(x\in \mathbb{R}\). Ako je \(\st{f}<\st{g}\), onda kažemo da je ona \textbf{prava} racionalna funkcija, a ako je \(\st{f}\geq \st{g}\), kažemo da je ona \textbf{neprava}.
+\end{definition}
+U analizi, ali i na drugim mjestima, je vrlo bitan tip algebarske manipulacije pravih racionalnih funkcija koji se zove \textit{rastav na parcijalne razlomke}.
+\begin{remark}[O rastavu prave racionalne funkcije na parcijalne razlomke]
+\label{partfrac}
+Neka su \(f\) i \(g\) polinomi, te neka je $g(x)\neq 0$ za bar jedan $x\in \mathbb{R}$. Svaka prava racionalna funkcija \(x\mapsto R(x)=\dfrac{f(x)}{g(x)}\) može se na jedinstven način prikazati kao zbroj parcijalnih razlomaka. Preciznije, može se pokazati da je \(g\) moguće zapisati u obliku
+\[g(x)=(x-x_1)^{k_1}\dots (x-x_s)^{k_s}(x^2+a_1x+b_1)^{l_1}\dots (x^2+a_rx+b_r)^{l_r},\]
+gdje su $s, r\in \mathbb{N}$, $x_1, \dots, x_s, a_1, b_1, \dots, a_r, b_r\in \mathbb{R}$ i $k_1, \dots, k_s, l_1, \dots, l_r\in \mathbb{N}$ i svi kvadratni faktori nemaju realnih nultočaka. Tada postoje jedinstveni realni brojevi \(A_1, \dots, A_{k_1}, D_1,\) \(\dots, D_{k_s}, M_1, N_1,\) \( \dots, M_{l_1},\) \( N_{l_1},\) \( \dots R_1,\) \( S_1,\) \(\dots, R_{l_r}, S_{l_r}\in \mathbb{R}\) takvi da za sve \(x\) iz domene funkcije \(x\mapsto R(x)\) vrijedi
+\begin{align*}
+R(x)&=\dfrac{A_1}{x-x_1}+\dots+\dfrac{A_{k_1}}{(x-x_1)^{k_1}}+\dots+\dfrac{D_1}{x-x_s}+\dots+\dfrac{D_{k_s}}{(x-x_s)^{k_s}} \\
+&+\dfrac{M_1x+N_1}{x^2+a_1x+b_1}+\dots+\dfrac{M_{l_1}x+N_{l_1}}{(x^2+a_1x+b_1)^{l_1}}+\dots \\
+&+\dfrac{R_1x+S_1}{x^2+a_rx+b_r}+\dots+\dfrac{R_{l_r}x+S_{l_r}}{(x^2+a_rx+b_r)^{l_r}}.
+\end{align*}
+\end{remark}
+Pri rješavanju zadataka trebat će nam još i sljedeći rezultat.
+\begin{remark}
+\label{poleq}
+Neka je \(S\) podskup od \(\mathbb{R}\) koji se sastoji od svih realnih brojeva, osim možda njih konačno mnogo.
+Neka su $n, m\in \mathbb{N}$, $a_0, a_1, \dots, a_n, b_0, b_1, \dots, b_m\in \mathbb{C}$ i $a_n, b_m\neq 0$, te $f, g : S\to \mathbb{R}$, $f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0$ i $g(x)=b_mx^m+b_{m-1}x^{m-1}+\dots+b_1x+b_0$. Vrijedi $f(x)=g(x)$ za sve $x\in S$ ako i samo ako je $m=n$ i $a_i=b_i$ za sve $i=0, 1, \dots, n$.
+\end{remark}
+Prethodna tvrdnja je zapravo generalizacija teorema o jednakosti polinoma i na one polinome koji nisu definirani na cijelom \(\mathbb{R}\)\footnote{U strogom smislu, takve funkcije nisu polinomi, jer smo polinome definirali kao funkcije čija je domena $\mathbb{R}$.}. Međutim, dokaz je potpuno analogan\footnote{v. \cite{12}, str. 58, 59. Za vježbu pokušajte uočiti što bi trebalo promijeniti u dokazu teorema 1 i 2.}.
+\begin{exercise}{Zadatak}
+Rastavite funkciju \(x\mapsto \dfrac{1}{(x+2)(x+3)^2}\) na parcijalne razlomke.
+\end{exercise}
+\begin{proof*}
+Prema napomeni \ref{partfrac} znamo da postoje i jedinstveni su brojevi \(A, B, C\in \mathbb{R}\) takvi da za sve \(x\in \mathbb{R}\setminus\{-2, -3\}\) vrijedi
+\[\dfrac{1}{(x+2)(x+3)^2}=\dfrac{A}{x+2}+\dfrac{B}{x+3}+\dfrac{C}{(x+3)^2}.\]
+Želimo odrediti \(A\), \(B\) i \(C\). Pomnožimo li obje strane s \((x+2)(x+3)^2\), proširivanjem dobivamo da za sve \(x\in \mathbb{R}\setminus\{-2, -3\}\) vrijedi
+\[1=Ax^2+6Ax+9A+Bx^2+5Bx+6B+Cx+2C,\]
+odnosno
+\[1=(A+B)x^2+(6A+5B+C)x+(9A+6B+2C).\]
+Iz prethodnog imamo da su \[P_1, P_2 : \mathbb{R}\setminus\{-2, -3\}\to \mathbb{R},\;P_1(x)=1,\; P_2(x)= (A+B)x^2+(6A+5B+C)x+(9A+6B+2C)\] jednaki, pa iz napomene \ref{poleq} slijedi
+\[\begin{cases}
+A+B=0, \\
+6A+5B+C=0, \\
+9A+6B+2C=1.
+   \end{cases}\]
+Rješavanjem prethodnog sustava dobivamo \(A=1\), \(B=-1\) i \(C=-1\), pa zaključujemo da je
+\[
+\pushQED{\qed}
+\dfrac{1}{(x+2)(x+3)^2}=\dfrac{1}{x+2}-\dfrac{1}{x+3}-\dfrac{1}{(x+3)^2}.\qedhere
+\popQED
+\]
+\end{proof*}
+\begin{exercise}{Zadatak}
+Rastavite funkciju \(x\mapsto \dfrac{x^3+6x^2+9x+1}{x^2+5x+6}\) na sumu polinoma i parcijalnih razlomaka.
+\end{exercise}
+\begin{proof}[Rješenje]
+Dijeljenjem polinoma imamo
+\begin{center}
+\polylongdiv[style=C]{x^3+6x^2+9x+1}{x^2+5x+6}
+\end{center}
+Rastavimo \(x\mapsto \dfrac{-2x-5}{x^2+5x+6}\) na parcijalne razlomke. Faktorizacijom nazivnika dobivamo \(x^2+5x+6=(x+3)(x+2)\). Slijedi da postoje jedinstveni \(A\), \(B\in \mathbb{R}\) takvi da za sve \(x\in \mathbb{R}\setminus\{-2, -3\}\) vrijedi
+\[\dfrac{-2x-5}{(x+2)(x+3)}=\dfrac{A}{x+2}+\dfrac{B}{x+3},\]
+te množenjem s \((x+2)(x+3)\) dobivamo 
+\begin{gather}
+\label{partfrac2}
+-2x-5=A(x+3)+B(x+2),\;\;\; \forall x\in \mathbb{R}\setminus\{2, 3\}.
+\end{gather}
+Analogno kao u prethodnom zadatku dobivamo \(A, B=-1\). To znači da vrijedi
+\[\dfrac{x^3+6x^2+9x+1}{x^2+5x+6}=x+1-\dfrac{1}{x+2}-\dfrac{1}{x+3}\]
+za sve \(x\in \mathbb{R}\setminus\{-2, -3\}\), pa specijalno i za sve \(x\in\langle -2,\infty \rangle\).
+\end{proof}
+\begin{remark}
+Na ovome mjestu bi bilo dobro spomenuti jedan trik koji bi u situacijama poput ove mogao uštedjeti vrijeme. Naime, da bi odredili \(A\) i \(B\) dovoljno je u (\ref{partfrac2}) uvrstiti \(x=-2\) i \(x=-3\), respektivno. Međutim, nije odmah očigledno da to možemo, jer u (\ref{partfrac2}) nemamo jednakost polinoma i u točkama \(x=2\), \(x=3\). 
+
+Tvrdimo da su polinomi jednaki i u tim točkama. Zaista, kontrapozicijom napomene \ref{atmostn} dobivamo da ako proizvoljan polinom ima beskonačno mnogo nultočaka, onda je on nužno nul-polinom. Odavde slijedi da, ako su dva polinoma jednaka u beskonačno mnogo točaka, onda su oni jednaki za sve realne brojeve. Zaista, neka su \(f\) i \(g\) polinomi koji su jednaki u beskonačno mnogo točaka. No tada \(f-g\) ima beskonačno mnogo nultočaka, a to znači da je \(f(x)-g(x)=0\) za sve $x\in \mathbb{R}$, odnosno \(f(x)=g(x)\) za sve $x\in \mathbb{R}$. Time smo dokazali tvrdnju. 
+
+Kako su u našem slučaju polinomi \(x\mapsto -2x-5\) i \(x\mapsto A(x+3)+B(x+2)\) očito jednaki u beskonačno mnogo točaka, oni su sigurno jednaki i u \(x=-2\) i \(x=-3\), što smo i tvrdili.
+\end{remark}
+\section{Injekcija, surjekcija i bijekcija. Slika i praslika skupa}
+
+\begin{definition}
+Neka su \(S\) i \(S'\) neprazni skupovi. Funkcija \(f : S\to S'\) je
+\begin{itemize}
+\item \textbf{injekcija} ako za sve \(x\), \(y\in S\) vrijedi \[f(x)=f(y)\Rightarrow x=y.\]
+\item \textbf{surjekcija} ako za sve \(y\in S'\) postoji bar jedan \(x\in S\) takav da je \(f(x)=y\) (tj. vrijedi \(S'=\mathcal{R}(f)\)).
+\item \textbf{bijekcija} ako je injekcija i surjekcija.
+\end{itemize}
+\end{definition}
+
+\begin{exercise}{Zadatak}
+Neka je \(f : \mathbb{R}^+\to \langle 1, \infty\rangle \) zadana formulom \(f(x)=1+\dfrac{1}{x}\). Dokažite da je \(f\) bijekcija.
+\end{exercise}
+\begin{proof}[Rješenje]
+Dokažimo da je \(f\) injekcija. Neka su \(x, y\in \langle 1, \infty\rangle\) takvi da vrijedi \[1+\dfrac{1}{x}=1+\dfrac{1}{y}.\] Zbog \(x\), \(y\neq 0\) pojednostavljivanjem i množenjem dobivamo \(x=y\). 
+
+Dokažimo da je \(f\) surjekcija. Neka je \(y\in \langle 1, \infty\rangle\) proizvoljan. Treba dokazati da tada postoji bar jedan \(x\) takav da je \[y=1+\dfrac{1}{x}.\] No ovo je zbog \(x\neq 0\) i \(y-1\neq 0\) ekvivalentno s \[x=\dfrac{1}{y-1}.\] Zaista, \(\dfrac{1}{y-1}\) je upravo jedan (i jedini) takav \(x\).
+\end{proof}
+\begin{remark}
+Lako se vidi sljedeća formulacija definicije bijekcije: \(f : S\to S'\) je bijekcija ako i samo ako za svaki \(y\in S'\) postoji i jedinstven je \(x\in S\) takav da je \(y=f(x)\). Prema tome, u prethodnom zadatku prvi dio rješenja je zapravo suvišan.
+\end{remark}
+
+\begin{exercise}{Zadatak}
+Dokažite da je \(f : \mathbb{R}\to \langle 0, 1]\) zadana formulom \(f(x)=\dfrac{1}{x^2+1}\) surjekcija. Je li i injekcija?
+\end{exercise}
+\begin{proof}[Rješenje]
+Neka je \(y\in \langle 0, 1]\). Treba dokazati da postoji bar jedan \(x\in \mathbb{R}\) takav da je \[y=\dfrac{1}{1+x^2}.\] No to je ekvivalentno s \[x^2=\dfrac{1}{y}-1.\] 
+Očito je \(x=\sqrt{\dfrac{1}{y}-1}\) jedan \(x\) koji zadovoljava tvrdnju. Nadalje, \(f\) nije injekcija, jer je \(-1\neq 1\) i \(f(1)=f(-1)\).
+\end{proof}
+\begin{exercise}{Zadatak} \textbf{}
+\label{bijexmp}
+\begin{itemize}
+\item[a)] Odredite neku bijekciju (ako postoji) s \(\mathbb{N}\) u \(\mathbb{N}\setminus\{1, 2\}\).
+\item[b)] Odredite neku bijekciju (ako postoji) s \(\mathbb{N}\) s \([0, 1]\) u \([1, 3]\).
+\item[c)] Odredite neku bijekciju (ako postoji) s \(\mathbb{N}\) s \([0, 1]\) u \([0, 1\rangle\).
+\item[d)] Odredite neku bijekciju (ako postoji) s \(\mathbb{R}\) u skup svih funkcija s \(\mathbb{R}\) u \(\mathbb{R}\) (Taj skup nazivamo \(\mathbb{R}^\mathbb{R}\)).
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka je zadana \(f : \mathbb{N}\to \mathbb{N}\setminus \{1, 2\}\), \(f(n)=n+2\) (ideja je "pomaknuti" svaki broj za \(2\) udesno). Uvjerite se da je ova funkcija zaista bijekcija.
+
+b) Ideja će biti uzeti linearnu funkciju čiji graf prolazi kroz točke \((0, 1)\) i \((1, 3)\) i promotriti njezinu restrikciju na segment \([0, 1]\). Uzmimo \(f :[0, 1]\to [1, 3]\), \(f(x)=2x+1\). Nije teško pokazati da je ova funkcija zaista bijekcija.
+
+c) Promotrimo funkciju \(f : [0, 1]\to [0, 1]\), \(f(x)=x\). Ona je očito bijekcija s \([0, 1]\) na \([0, 1]\). Ideja će sada biti nju izmijeniti tako da \(f(1)\) bude neki broj iz skupa \([0, 1\rangle\). Doduše, ako to napravimo, funkcija više neće biti injekcija. Zaista, znamo da je \(f(f(1))=f(1)\), pa kad bi ona bila injekcija bilo bi \(f(1)=1\), što nije točno. Dakle, da bi izbjegli situaciju gdje funkcija poprima dvije jednake vrijednosti, moramo je izmijeniti i za \(x=f(1)\). Injektivnost će se opet "pokvariti", ali ćemo tada funkciju moći opet izmijeniti u točki koja "kvari" injektivnost. Ovaj postupak ponavljamo u beskonačnost. Zato ima smisla promotriti npr. funkciju \(g : [0, 1]\to [0, 1\rangle\),
+
+\[g(x)=\begin{cases}
+x, &\;x\notin S,\\[2pt]
+\dfrac{x}{2}, &\; x\in S,
+\end{cases}\]
+gdje je \(S=\left\{\dfrac{1}{2^n} : n\in \mathbb{N}_0\right\}\).
+
+Tvrdimo da je \(g\) injekcija. Zaista, neka su \(x, y\in [0, 1\rangle\) takvi da je \(f(x)=f(y)\). Uočimo da ako je \(x\in S\) ako i samo ako je \(f(x)\in S\), pa ako je \(f(x)=f(y)\), onda su ili \(x, y\) oboje u \(S\), ili oboje nisu u \(S\). U oba slučaja je očigledno \(x=y\).
+
+Tvrdimo da je \(g\) i surjekcija. Zaista, neka je \(y\in [0, 1\rangle\) proizvoljan. Ako je \(y\notin S\), onda je \(f(y)=y\), ako je \(y\in S\), onda postoji \(p\in \mathbb{N}\) takav da je \(y=\dfrac{1}{2^p}\). No tada je \[g\left(\dfrac{1}{2^{p-1}}\right)=\dfrac{1}{2^p},\]
+gdje je \(\dfrac{1}{2^{p-1}}\in S\), budući da je \(y\neq 1\).
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle,   xlabel=\(x\),ylabel=\(y\),xmin=-0.2,xmax=1.2,ymin=-0.2,ymax=1.2]
+
+\addplot[thick,color=black,domain=0:1] {x};
+
+\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1, 1) {};
+\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (0.5, 0.5) {};
+\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (0.25, 0.25) {};
+\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/8, 1/8) {};
+\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/16, 1/16) {};
+\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/32, 1/32) {};
+\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/64, 1/64) {};
+
+\node[circle,fill,inner sep=2pt] at (axis cs:1, 0.5) {};
+\node[circle,fill,inner sep=2pt] at (axis cs:0.5, 0.25) {};
+\node[circle,fill,inner sep=2pt] at (axis cs:0.25, 1/8) {};
+\node[circle,fill,inner sep=2pt] at (axis cs:1/8, 1/16) {};
+\node[circle,fill,inner sep=2pt] at (axis cs:1/16, 1/32) {};
+\node[circle,fill,inner sep=2pt] at (axis cs:1/32, 1/64) {};
+\node[circle,fill,inner sep=2pt] at (axis cs:1/64, 1/128) {};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{\label{exbij} Graf funkcije iz zadatka \ref{bijexmp} c)}
+\end{figure}
+
+d) Tvrdimo da takva bijekcija ne postoji. Zaista, pretpostavimo da postoji bijekcija \(f : \mathbb{R}\to \mathbb{R}^{\mathbb{R}}\). Tada je ona surjekcija, što znači da za svaki \(y\in \mathbb{R}^{\mathbb{R}}\) postoji \(x_0\in \mathbb{R}\) takav da je \(f(x_0)=y\), što povlači da je \(f(x_0)(x_0)=y(x_0)\). No to očito ne vrijedi ako promotrimo funkciju \(y : \mathbb{R}\to \mathbb{R}\) definiranu formulom \(y(x)=f(x)(x)+1\), za svaki \(x\in \mathbb{R}\).
+\end{proof}
+\begin{definition}
+\label{monotonic}
+Neka je \(S\subseteq \mathbb{R}\) neprazan, te \(x, y\in S\). Kažemo da je funkcija \(f : S\to \mathbb{R}\) \textbf{monotono rastuća} (kraće: rastuća) ako vrijedi \(x<y\Rightarrow f(x)\leq f(y)\), \textbf{strogo rastuća} ako vrijedi \(x<y\Rightarrow f(x)<f(y)\), \textbf{monotono padajuća} (kraće: padajuća) ako vrijedi \(x<y\Rightarrow f(x)\geq f(y)\), \textbf{strogo padajuća} ako vrijedi \(x<y\Rightarrow f(x)>f(y)\).
+\end{definition}
+\begin{remark}
+Neka su \(S, S'\subseteq \mathbb{R}\) neprazni i neka je zadana \(f : S\to S'\). Ako je \(f\) strogo monotona (tj. strogo rastuća ili strogo padajuća), ona je injekcija.
+\end{remark}
+\begin{exercise}{Zadatak} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da je funkcija $f : \mathbb{R}\to \mathbb{R}$, $f(x)=x^3$ strogo rastuća.
+\item[b)] Neka je $a=\dfrac{-3+\sqrt{21}}{6}$ i $f : \left[a, \infty\right\rangle\to \mathbb{R}$, $f(x)=\dfrac{2x+1}{3x^2+1}$. Dokažite da je $f$ padajuća.
+\end{itemize}
+\end{exercise}
+ZADATAK ZA VJEŽBU!!!: Dokažite ili opovrgnite: Za svaku rastuću funkciju $f : \mathbb{R}\to \mathbb{R}$ postoji padajuća funkcija $g : \mathbb{R}\to \mathbb{R}$ takva da je $g(x)>f(x)$ za sve $x\in \mathbb{R}$.
+\begin{proof}[Rješenje]
+a) Neka su $x, y\in \mathbb{R}$ takvi da je $x<y$. Ako su $x, y\geq 0$, onda množenjem obje strane s $x$ dobivamo $x^2<yx<y^2$ i $x^3<xy^2<y^3$. Ako je $x<0$ i $y\geq 0$ onda je trivijalno $x^3<y^3$ jer je $x^3<0$ i $y^3\geq 0$, a ako su $x, y<0$, onda su $-x, -y>0$ i vrijedi $-y<-x$, pa i $(-y)^3<(-x)^3$, tj. $-y^3<-x^3$, odakle imamo $x^3<y^3$.
+
+b) Neka su $x, y\in [a, \infty\rangle$ i $x<y$. Imamo
+\begin{gather*}
+\frac{2x+1}{3x^{2}+1}<\frac{2y+1}{3y^{2}+1}\Leftrightarrow \left(2x+1\right)\left(3y^{2}+1\right)<\left(2y+1\right)\left(3x^{2}+1\right)\\\Leftrightarrow 6xy^{2}+2x+3y^{2}-6x^{2}y-2y-3x^{2}<0
+\Leftrightarrow 6xy\left(y-x\right)-2\left(y-x\right)+3\left(y-x\right)\left(y+x\right)<0\\ \Leftrightarrow 6xy-2+3\left(y+x\right)>0\Leftrightarrow
+\left(6xy+\frac{3}{2}+3y+3x\right)-\frac{3}{2}-2>0 \\
+\Leftrightarrow 3y\left(2x+1\right)+\frac{3}{2}\left(2x+1\right)>\frac{3}{2}+2
+\Leftrightarrow \left(2x+1\right)\left(3y+\frac{3}{2}\right)>\frac{7}{2}.
+\end{gather*}
+Uočimo da je $\left(2x+1\right)\left(3y+\dfrac{3}{2}\right)>\left(2x+1\right)\left(3x+\dfrac{3}{2}\right)$, a rješavanjem nejednadžbe $$\left(2x+1\right)\left(3x+\dfrac{3}{2}\right)\geq \dfrac{7}{2}$$ vidimo da se nejednakost sigurno postiže za sve $x\in [a, \infty\rangle$.
+\end{proof}
+\begin{definition}
+Neka je \(S\subseteq \mathbb{R}\) neprazan. Kažemo da je \(f : S\to \mathbb{R}\) injekcija, odnosno surjekcija na nekom podskupu od \(S'\subseteq S\) ako je \(f|_{S'}\) injekcija, odnosno surjekcija. Također, kažemo da je \(f\) strogo rastuća (padajuća) na \(S'\) ako je \(f|_{S'}\) strogo rastuća (padajuća) na \(S\).
+\end{definition}
+\begin{exercise}{Zadatak}
+Dokažite da je funkcija \(f : \mathbb{R}\to \mathbb{R}\), \(f(x)=x\sqrt{1+x^2}\) injekcija.
+\end{exercise}
+\begin{proof}[Rješenje]
+Iz grafa funkcije \(f\) vidi se da je ona strogo rastuća.
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=\(x\),ylabel=\(y\),xmin=-6.2,xmax=6.2,ymin=-8.2,ymax=8.2, samples=150]
+
+
+\addplot[thick,color=black,domain=-4.3:4.3] {x*sqrt(1+x^2)};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{\label{gr4} Graf funkcije \(x\mapsto x\sqrt{1+x^2}\)}
+\end{figure}
+
+Dokažimo to! Uočimo da je \(x\mapsto \sqrt{1+x^2}\) strogo rastuća na \([0, \infty\rangle\) i strogo padajuća na \(\langle-\infty, 0]\). Zaista, za sve \(x, y\geq 0\) vrijedi
+\[x<y\Rightarrow x^2<y^2\Rightarrow 1+x^2<1+y^2\Rightarrow \sqrt{1+x^2}<\sqrt{1+y^2}.\]
+Analogno dobivamo i da \(f\) strogo pada na \(\langle-\infty, 0]\). Neka su sada \(x, y\in \mathbb{R}\) takvi da je \(x<y\). Razlikujemo tri slučaja:
+\[\text{a)}\quad x\leq 0,\; y>0, \quad \text{b)}\quad x, y>0, \quad \text{c)}\quad x<0,\; y\leq 0.\]
+
+U slučaju a), \(f(x)<f(y)\) je trivijalno, jer je \(f(x)\leq 0\) i \(f(y)>0\). 
+
+U slučaju b) imamo \(\sqrt{1+x^2}<\sqrt{1+y^2}\), pa množenjem s $x$ dobivamo \[x\sqrt{1+x^2}<x\sqrt{1+y^2}<y\sqrt{1+y^2}.\]
+U slučaju c), ako je $y=0$ onda tvrdnja vrijedi trivijalno, a u suprotnome imamo \(-y<-x\) i \(-y, -x>0\), pa iz b) slijedi \[-y\sqrt{1+(-y)^2}<-x\sqrt{1+(-x)^2}.\] Tvrdnja sada slijedi množenjem s \(-1\) i korištenjem svojstva parnosti funkcije \(x\mapsto x^2\), tj. činjenice da je \((-x)^2=x^2\) za sve \(x\in \mathbb{R}\).
+\end{proof}
+\begin{definition}
+Neka su \(S, S'\subseteq \mathbb{R}\) neprazni i neka je zadana injekcija \(f : S\to S'\). Tada svakom \(y\in \mathcal{R}(f)\) odgovara jedinstveni \(x\in S\) takav da je \(y=f(x)\). Funkcija \(f^{-1} : \mathcal{R}(f)\to S\), \(f^{-1}(y)=x\) zove se \textbf{inverzna funkcija} od \(f\).
+\end{definition}
+\begin{remark}[Teorem o inverznoj funkciji strogo monotone funkcije]
+\label{invmon}
+Neka su \(S, S'\subseteq \mathbb{R}\) neprazni i \(f : S\to S'\) strogo rastuća (padajuća). Tada \(f\) ima inverznu funkciju koja strogo raste (strogo pada).
+\end{remark}
+\begin{definition}
+Ako je $n\in \mathbb{N}$ paran, definiramo $n$-ti korijen kao inverznu funkciju od $f : \langle 0,\infty\rangle\to \mathbb{R}$, $f(x)=x^n$, a ako je $n$ neparan, definiramo $n$-ti korijen kao inverznu funkciju od $f : \mathbb{R}\to \mathbb{R}$, $f(x)=x^n$. U oba slučaja koristimo oznaku $\sqrt[n]{x}:=f^{-1}(x)$.
+\end{definition}
+Uočimo da iz napomene \ref{invmon} slijedi da je $n$-ti korijen rastuća funkcija.
+\begin{figure}[ht]
+\begin{subfigure}[t]{.5\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[height=8cm, width=8cm, axis lines=middle,xlabel=\(x\),ylabel=\(y\),xmin=-10,xmax=10,ymin=-4,ymax=4, samples=200]
+
+\addplot[thick,color=black,domain=0:10] {sqrt(x)};
+\end{axis}
+\end{tikzpicture}
+\caption*{Graf funkcije \(x\mapsto \sqrt{x}\)}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[height=8cm, width=8cm, axis lines=middle,xlabel=\(x\),ylabel=\(y\),xmin=-10,xmax=10,ymin=-4,ymax=4, samples=200]
+
+\addplot[thick,color=black,domain=0:10] {x^(1/3)};
+\addplot[thick,color=black,domain=-10:0] {-(-x)^(1/3)};
+\end{axis}
+\end{tikzpicture}
+\caption*{Graf funkcije \(x\mapsto \sqrt[3]{x}\)}
+\end{subfigure}
+\end{figure}
+DODATI EKSPONENCIJALNU!!!
+Slijede zadatci gdje određujemo sliku \(\mathcal{R}(f)\) zadane funkcije \(f\). OVO PREBACITI POSLIJE!!!
 \begin{definition}[Operacije s funkcijama]
 Neka je \(S\) neprazan skup i neka su zadane \(f, g : S\to \mathbb{R}\). Tada definiramo \(f+g, fg, \alpha f : S\to \mathbb{R}\) formulama
 \begin{gather*}
@@ -50,7 +480,7 @@ Nacrtajte graf funkcije \(f: \mathbb{R}\to \mathbb{R}\), gdje je
 \end{exercise}
 \begin{proof}[Rješenje] a) Nadamo se da je crtanje grafa kvadratne funkcije poznato otprije, ali za svaki slučaj ćemo to ovdje pokazati. Pri crtanju kvadratne funkcije korisno nam je znati njezino tjeme, nultočke, te eventualno još neke njezine točke. Možemo se koristiti činjenicom i da je ona simetrična s obzirom na njezinu os simetrije.\footnote{Os simetrije parabole definira se kao pravac koji prolazi kroz fokus parabole, a okomit je na njezinu direktrisu.} 
 
-Već smo pokazali (v. zadatak \ref{tjeme}) da je tjeme kvadratne funkcije \(x\mapsto ax^2+bx+c\) (gdje je \(a\neq 0\)) točka
+Može se pokazati da je tjeme kvadratne funkcije \(x\mapsto ax^2+bx+c\) (gdje je \(a\neq 0\)) točka
 \[T(x_0, y_0)=\left(-\dfrac{b}{2a}, \dfrac{4ac-b^2}{4a}\right),\]
 i to minimum ako je \(a>0\), a maksimum ako je \(a<0\). Dakle, uvrštavanjem ovih podataka dobivamo da je tjeme parabole u točki \(\left(-\dfrac{2}{3}, -\dfrac{1}{3}\right)\), gdje je \(-\dfrac{1}{3}\) najmanja vrijednost koju funkcija postiže.
 
@@ -197,170 +627,6 @@ c) Na slici \ref{gr3} prikazan je točkastom linijom graf funkcije \(x\mapsto x\
 \begin{proof}[Rješenje]
 Zrcaljenjem dobivamo \(x\mapsto -\sin{x}\), pomakom za dvije jedinične dužine udesno dobivamo \(x\mapsto -\sin(x-2)\), dilatacijom po \(x\) dobivamo \(x\mapsto -\sin\left(2x-2\right)\), a dilatacijom po \(y\) imamo \(x\mapsto \dfrac{1}{2}\sin(2x-2)\). Prema tome novodobiveni skup je graf funkcije \(x\mapsto \dfrac{1}{2}\sin(2x-2)\).
 \end{proof}
-
-\section{Injekcija, surjekcija i bijekcija. Slika i praslika skupa}
-
-\begin{definition}
-Neka su \(S\) i \(S'\) neprazni skupovi. Funkcija \(f : S\to S'\) je
-\begin{itemize}
-\item \textbf{injekcija} ako za sve \(x\), \(y\in S\) vrijedi \[f(x)=f(y)\Rightarrow x=y.\]
-\item \textbf{surjekcija} ako za sve \(y\in S'\) postoji bar jedan \(x\in S\) takav da je \(f(x)=y\) (tj. vrijedi \(S'=\mathcal{R}(f)\)).
-\item \textbf{bijekcija} ako je injekcija i surjekcija.
-\end{itemize}
-\end{definition}
-
-\begin{exercise}{Zadatak}
-Neka je \(f : \mathbb{R}^+\to \langle 1, \infty\rangle \) zadana formulom \(f(x)=1+\dfrac{1}{x}\). Dokažite da je \(f\) bijekcija.
-\end{exercise}
-\begin{proof}[Rješenje]
-Dokažimo da je \(f\) injekcija. Neka su \(x, y\in \langle 1, \infty\rangle\) takvi da vrijedi \[1+\dfrac{1}{x}=1+\dfrac{1}{y}.\] Zbog \(x\), \(y\neq 0\) pojednostavljivanjem i množenjem dobivamo \(x=y\). 
-
-Dokažimo da je \(f\) surjekcija. Neka je \(y\in \langle 1, \infty\rangle\) proizvoljan. Treba dokazati da tada postoji bar jedan \(x\) takav da je \[y=1+\dfrac{1}{x}.\] No ovo je zbog \(x\neq 0\) i \(y-1\neq 0\) ekvivalentno s \[x=\dfrac{1}{y-1}.\] Zaista, \(\dfrac{1}{y-1}\) je upravo jedan (i jedini) takav \(x\).
-\end{proof}
-\begin{remark}
-Lako se vidi sljedeća formulacija definicije bijekcije: \(f : S\to S'\) je bijekcija ako i samo ako za svaki \(y\in S'\) postoji i jedinstven je \(x\in S\) takav da je \(y=f(x)\). Prema tome, u prethodnom zadatku prvi dio rješenja je zapravo suvišan.
-\end{remark}
-
-\begin{exercise}{Zadatak}
-Dokažite da je \(f : \mathbb{R}\to \langle 0, 1]\) zadana formulom \(f(x)=\dfrac{1}{x^2+1}\) surjekcija. Je li i injekcija?
-\end{exercise}
-\begin{proof}[Rješenje]
-Neka je \(y\in \langle 0, 1]\). Treba dokazati da postoji bar jedan \(x\in \mathbb{R}\) takav da je \[y=\dfrac{1}{1+x^2}.\] No to je ekvivalentno s \[x^2=\dfrac{1}{y}-1.\] 
-Očito je \(x=\sqrt{\dfrac{1}{y}-1}\) jedan \(x\) koji zadovoljava tvrdnju. Nadalje, \(f\) nije injekcija, jer je \(-1\neq 1\) i \(f(1)=f(-1)\).
-\end{proof}
-\begin{exercise}{Zadatak} \textbf{}
-\label{bijexmp}
-\begin{itemize}
-\item[a)] Odredite neku bijekciju (ako postoji) s \(\mathbb{N}\) u \(\mathbb{N}\setminus\{1, 2\}\).
-\item[b)] Odredite neku bijekciju (ako postoji) s \(\mathbb{N}\) s \([0, 1]\) u \([1, 3]\).
-\item[c)] Odredite neku bijekciju (ako postoji) s \(\mathbb{N}\) s \([0, 1]\) u \([0, 1\rangle\).
-\item[d)] Odredite neku bijekciju (ako postoji) s \(\mathbb{R}\) u skup svih funkcija s \(\mathbb{R}\) u \(\mathbb{R}\) (Taj skup nazivamo \(\mathbb{R}^\mathbb{R}\)).
-\end{itemize}
-\end{exercise}
-\begin{proof}[Rješenje]
-a) Neka je zadana \(f : \mathbb{N}\to \mathbb{N}\setminus \{1, 2\}\), \(f(n)=n+2\) (ideja je "pomaknuti" svaki broj za \(2\) udesno). Uvjerite se da je ova funkcija zaista bijekcija.
-
-b) Ideja će biti uzeti linearnu funkciju čiji graf prolazi kroz točke \((0, 1)\) i \((1, 3)\) i promotriti njezinu restrikciju na segment \([0, 1]\). Uzmimo \(f :[0, 1]\to [1, 3]\), \(f(x)=2x+1\). Nije teško pokazati da je ova funkcija zaista bijekcija.
-
-c) Promotrimo funkciju \(f : [0, 1]\to [0, 1]\), \(f(x)=x\). Ona je očito bijekcija s \([0, 1]\) na \([0, 1]\). Ideja će sada biti nju izmijeniti tako da \(f(1)\) bude neki broj iz skupa \([0, 1\rangle\). Doduše, ako to napravimo, funkcija više neće biti injekcija. Zaista, znamo da je \(f(f(1))=f(1)\), pa kad bi ona bila injekcija bilo bi \(f(1)=1\), što nije točno. Dakle, da bi izbjegli situaciju gdje funkcija poprima dvije jednake vrijednosti, moramo je izmijeniti i za \(x=f(1)\). Injektivnost će se opet "pokvariti", ali ćemo tada funkciju moći opet izmijeniti u točki koja "kvari" injektivnost. Ovaj postupak ponavljamo u beskonačnost. Zato ima smisla promotriti npr. funkciju \(g : [0, 1]\to [0, 1\rangle\),
-
-\[g(x)=\begin{cases}
-x, &\;x\notin S,\\[2pt]
-\dfrac{x}{2}, &\; x\in S,
-\end{cases}\]
-gdje je \(S=\left\{\dfrac{1}{2^n} : n\in \mathbb{N}_0\right\}\).
-
-Tvrdimo da je \(g\) injekcija. Zaista, neka su \(x, y\in [0, 1\rangle\) takvi da je \(f(x)=f(y)\). Uočimo da ako je \(x\in S\) ako i samo ako je \(f(x)\in S\), pa ako je \(f(x)=f(y)\), onda su ili \(x, y\) oboje u \(S\), ili oboje nisu u \(S\). U oba slučaja je očigledno \(x=y\).
-
-Tvrdimo da je \(g\) i surjekcija. Zaista, neka je \(y\in [0, 1\rangle\) proizvoljan. Ako je \(y\notin S\), onda je \(f(y)=y\), ako je \(y\in S\), onda postoji \(p\in \mathbb{N}\) takav da je \(y=\dfrac{1}{2^p}\). No tada je \[g\left(\dfrac{1}{2^{p-1}}\right)=\dfrac{1}{2^p},\]
-gdje je \(\dfrac{1}{2^{p-1}}\in S\), budući da je \(y\neq 1\).
-
-\begin{figure}[ht]
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[axis lines=middle,   xlabel=\(x\),ylabel=\(y\),xmin=-0.2,xmax=1.2,ymin=-0.2,ymax=1.2]
-
-\addplot[thick,color=black,domain=0:1] {x};
-
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1, 1) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (0.5, 0.5) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (0.25, 0.25) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/8, 1/8) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/16, 1/16) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/32, 1/32) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/64, 1/64) {};
-
-\node[circle,fill,inner sep=2pt] at (axis cs:1, 0.5) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:0.5, 0.25) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:0.25, 1/8) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:1/8, 1/16) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:1/16, 1/32) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:1/32, 1/64) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:1/64, 1/128) {};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\caption{\label{exbij} Graf funkcije iz zadatka \ref{bijexmp} c)}
-\end{figure}
-
-d) Tvrdimo da takva bijekcija ne postoji. Zaista, pretpostavimo da postoji bijekcija \(f : \mathbb{R}\to \mathbb{R}^{\mathbb{R}}\). Tada je ona surjekcija, što znači da za svaki \(y\in \mathbb{R}^{\mathbb{R}}\) postoji \(x_0\in \mathbb{R}\) takav da je \(f(x_0)=y\), što povlači da je \(f(x_0)(x_0)=y(x_0)\). No to očito ne vrijedi ako promotrimo funkciju \(y : \mathbb{R}\to \mathbb{R}\) definiranu formulom \(y(x)=f(x)(x)+1\), za svaki \(x\in \mathbb{R}\).
-\end{proof}
-\begin{definition}
-\label{monotonic}
-Neka je \(S\subseteq \mathbb{R}\) neprazan, te \(x, y\in S\). Kažemo da je funkcija \(f : S\to \mathbb{R}\) \textbf{monotono rastuća} (kraće: rastuća) ako vrijedi \(x<y\Rightarrow f(x)\leq f(y)\), \textbf{strogo rastuća} ako vrijedi \(x<y\Rightarrow f(x)<f(y)\), \textbf{monotono padajuća} (kraće: padajuća) ako vrijedi \(x<y\Rightarrow f(x)\geq f(y)\), \textbf{strogo padajuća} ako vrijedi \(x<y\Rightarrow f(x)>f(y)\).
-\end{definition}
-\begin{remark}
-Neka su \(S, S'\subseteq \mathbb{R}\) neprazni i neka je zadana \(f : S\to S'\). Ako je \(f\) strogo monotona (tj. strogo rastuća ili strogo padajuća), ona je injekcija.
-\end{remark}
-\begin{exercise}{Zadatak}
-Zadana je \(f : \mathbb{R}\to \mathbb{R}\), \(f(x)=e^{-2x}\). Dokažite da je \(f\) injekcija koristeći se činjenicom da je strogo monotona.
-\end{exercise}
-\begin{proof}[Rješenje]
-Iz grafa se vidi da je \(f\) strogo padajuća. 
-\begin{figure}[ht]
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[axis lines=middle, xlabel=\(x\),ylabel=\(y\),xmin=-1.8,xmax=3.2,ymin=-0.5,ymax=3.8, samples=150]
-
-
-\addplot[thick,color=black,domain=-1:3.3] {e^(-2*x)};
-
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\caption{\label{grexp} Graf funkcije \(x\mapsto e^{-2x}\)}
-\end{figure}
-
-Zaista, treba pokazati da za sve \(x, y\in \mathbb{R}\) vrijedi
-\begin{gather}
-\label{ineq1}
-x<y\Rightarrow e^{-2y}<e^{-2x}.
-\end{gather}
-Uočimo da, kako je \(e^x\geq 0\) za sve \(x\in \mathbb{R}\) i \(x\mapsto x^2\) i \(x\mapsto \sqrt{x}\) strogo rastuće funkcije, vrijedi
-\[e^{-2y}<e^{-2x}\Leftrightarrow \dfrac{1}{\left(e^{y}\right)^2}<\dfrac{1}{\left(e^{x}\right)^2}\Leftrightarrow \left(e^{x}\right)^2<\left(e^{y}\right)^2\Leftrightarrow e^x<e^y.\]
-Dakle (\ref{ineq1}) je ekvivalentno tvrdnji da za sve \(x,y\in \mathbb{R}\) vrijedi \[x<y\Rightarrow e^x<e^y,\]
-što vrijedi, jer je funkcija \(x\mapsto e^x\) strogo rastuća.
-\end{proof}
-\begin{definition}
-Neka je \(S\subseteq \mathbb{R}\) neprazan. Kažemo da je \(f : S\to \mathbb{R}\) injekcija, odnosno surjekcija na nekom podskupu od \(S'\subseteq S\) ako je \(f|_{S'}\) injekcija, odnosno surjekcija. Također, kažemo da je \(f\) strogo rastuća (padajuća) na \(S'\) ako je \(f|_{S'}\) strogo rastuća (padajuća) na \(S\).
-\end{definition}
-\begin{exercise}{Zadatak}
-Dokažite da je funkcija \(f : \mathbb{R}\to \mathbb{R}\), \(f(x)=x\sqrt{1+x^2}\) injekcija.
-\end{exercise}
-\begin{proof}[Rješenje]
-Iz grafa funkcije \(f\) vidi se da je ona strogo rastuća.
-\begin{figure}[ht]
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[axis lines=middle, xlabel=\(x\),ylabel=\(y\),xmin=-6.2,xmax=6.2,ymin=-8.2,ymax=8.2, samples=150]
-
-
-\addplot[thick,color=black,domain=-4.3:4.3] {x*sqrt(1+x^2)};
-
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\caption{\label{gr4} Graf funkcije \(x\mapsto x\sqrt{1+x^2}\)}
-\end{figure}
-
-Dokažimo to! Uočimo da je \(x\mapsto \sqrt{1+x^2}\) strogo rastuća na \([0, \infty\rangle\) i strogo padajuća na \(\langle-\infty, 0]\). Zaista, za sve \(x, y\geq 0\) vrijedi
-\[x<y\Rightarrow x^2<y^2\Rightarrow 1+x^2<1+y^2\Rightarrow \sqrt{1+x^2}<\sqrt{1+y^2}.\]
-Analogno dobivamo i da \(f\) strogo pada na \(\langle-\infty, 0]\). Neka su sada \(x, y\in \mathbb{R}\) takvi da je \(x<y\). Razlikujemo tri slučaja.
-
-\begin{itemize}
-\item[a)] \(x\leq 0\), \(y>0\),
-\item[b)] \(x, y\geq 0\),
-\item[c)] \(x, y\leq 0\).
-\end{itemize}
-
-U slučaju a), \(f(x)<f(y)\) je trivijalno, jer je \(f(x)\leq 0\) i \(f(y)>0\). 
-
-U slučaju b) imamo \(\sqrt{1+x^2}<\sqrt{1+y^2}\), pa množenjem s nejednakosti \(x<y\) dobivamo \(x\sqrt{1+x^2}<y\sqrt{1+y^2}\) (Uočimo da ovo smijemo zaključiti, jer su ili \(x, y>0\), pa primjenjujemo napomenu \ref{10}, ili je \(x=0\) i \(y>0\), pa je tvrdnja očigledna).
-
-U slučaju c) imamo \(-y<-x\) i \(-y, -x\geq 0\), pa iz \(b)\) slijedi \[-y\sqrt{1+(-y)^2}<-x\sqrt{1+(-x)^2}.\] Tvrdnja sada slijedi množenjem s \(-1\) i korištenjem svojstva parnosti funkcije \(x\mapsto x^2\), tj. činjenice da je \((-x)^2=x^2\) za sve \(x\in \mathbb{R}\).
-\end{proof}
-Slijede zadatci gdje određujemo sliku \(\mathcal{R}(f)\) zadane funkcije \(f\).
-
 \begin{exercise}{Zadatak}
 \label{eximg}
 Neka je \(f : \mathbb{R}\to \mathbb{R}\) zadana formulom
@@ -752,8 +1018,6 @@ b) Neka su \(x, y\in S\) takvi da je \(x<y\). Zbog strogog rasta od \(f_1\) imam
 
 Lako se vidi da tvrdnja ne vrijedi za strogo padajuće funkcije, npr. \(g : \mathbb{R}\to \mathbb{R}\), \(g(x)=-x\) je strogo padajuća, a \(g\circ g\) nije strogo padajuća. 
 
-Štoviše, tvrdimo da je kompozicija dvije strogo padajuće funkcije uvijek strogo rastuća. Zaista, uzmimo \(f_1\) i \(f_2\) iz uvjeta zadatka i pretpostavimo da su one strogo padajuće, te neka su \(x, y\in S\) takvi da je \(x<y\). Zbog strogog pada od \(f_1\) imamo \(f_1(x)>f_2(x)\), te zbog strogog pada od \(f_2\) imamo \(f_2\left(f_1(x)\right)<f_2\left(f_1(y)\right)\).
-
 c) Prvo ćemo dokazati da je \(\sh\) injekcija i to tako da ćemo pokazati da je strogo rastuća. Naime, lako je pokazati da je \(g_1 : \mathbb{R}\to \mathbb{R}\), \(g_1(x)=\dfrac{e^x}{2}\) strogo rastuća i \(g_2 : \mathbb{R}\to \mathbb{R}\), \(g_2(x)=\dfrac{e^{-x}}{2}\) strogo padajuća. Kako je graf funkcije \(g_3 : \mathbb{R}\to \mathbb{R}\), \(g_3(x)= -\dfrac{e^{-x}}{2}\) osna simetrija grafa funkcije \(g_2\) u odnosu na os \(y\), naslućujemo da je \(g_3\) strogo rastuća.
 
 Zaista, ako je \(S\subseteq \mathbb{R}\) neprazan i \(f : S\to \mathbb{R}\) strogo padajuća, onda je \(-f\) strogo padajuća i obratno, jer uzmemo li proizvoljne \(x, y\in S\), \(x<y\) povlači \(f(x)>f(y)\), što povlači \(-f(x)<-f(y)\), čime je tvrdnja pokazana. 
@@ -770,9 +1034,6 @@ Neka su \(f_1\), \(f_2\), \(\dots\), \(f_{2n-1}\), \(f_{2n}\) definirane kao u d
 Dokažimo tvrdnju za \(n+1\). Kompozicija \((f_{2n+2}\circ f_{2n+1})\circ(f_{2n}\circ \dots \circ f_1)\) je dobro definirana i vrijedi\footnote{Dokaz ove tvrdnje bi se proveo slično kao u zadatku \ref{genasoc}, samo bi prvo trebalo pokazati da je \((f_{2n+2}\circ f_{2n+1})\circ(f_{2n}\circ \dots \circ f_1)\) zaista dobro definirana.}
 \[f_{2n+2}\circ f_{2n+1}\circ f_{2n}\circ \dots \circ f_{1}=(f_{2n+2}\circ f_{2n+1})\circ (f_{2n}\circ \dots \circ f_{1}),\] gdje su funkcije u zagradama obje strogo rastuće, gdje strogi rast funkcije \(f_{2n+2}\circ f_{2n+1}\) izlazi iz baze indukcije, a strogi rast funkcije \(f_{2n}\circ \dots \circ f_{1}\) iz pretpostavke indukcije. Sada tvrdnja slijedi iz a).
 \end{remark}
-\begin{definition}
-Neka su \(S, S'\subseteq \mathbb{R}\) neprazni i neka je zadana injekcija \(f : S\to S'\). Tada svakom \(y\in \mathcal{R}(f)\) odgovara jedinstveni \(x\in S\) takav da je \(y=f(x)\). Funkcija \(f^{-1} : \mathcal{R}(f)\to S\), \(f^{-1}(y)=x\) zove se \textbf{inverzna funkcija} od \(f\).
-\end{definition}
 \begin{exercise}{Zadatak}
 \label{inv1}
 Zadana je \(f : \mathbb{R}\to \mathbb{R}\), \(f(x)=e^{2x+1}\). Odredite inverznu funkciju, ako postoji.
@@ -786,10 +1047,7 @@ Dakle, to je upravo traženi \(x\in \mathbb{R}\). Zaključujemo da je inverzna f
 Zapravo, u zadatku \ref{inv1} nije trebalo pokazivati da je \(f\) injekcija, jer to slijedi iz činjenice da je
 \[y=e^{2x+1}\Leftrightarrow x=\dfrac{\log_2{y}-1}{2}.\]
 \end{remark}
-\begin{remark}[Teorem o inverznoj funkciji strogo monotone funkcije]
-Neka su \(S, S'\subseteq \mathbb{R}\) neprazni i \(f : S\to S'\) strogo rastuća (padajuća). Tada \(f\) ima inverznu funkciju koja strogo raste (strogo pada).
-\end{remark}
-Iz prethodne napomene slijedi da sve funkcije \[\mathrm{Sin}:=\sin|_{\left[-\frac{\pi}{2},\frac{\pi}{2}\right]},\;\;\mathrm{Cos}:=\cos|_{\left[0, \pi\right]},\;\;\mathrm{Tg}:=\tg|_{\left\langle-\frac{\pi}{2},\frac{\pi}{2}\right\rangle},\;\;\mathrm{Ctg}:=\ctg|_{\left\langle 0, \pi\right\rangle}\]
+Iz napomene \ref{invmon} slijedi da sve funkcije \[\mathrm{Sin}:=\sin|_{\left[-\frac{\pi}{2},\frac{\pi}{2}\right]},\;\;\mathrm{Cos}:=\cos|_{\left[0, \pi\right]},\;\;\mathrm{Tg}:=\tg|_{\left\langle-\frac{\pi}{2},\frac{\pi}{2}\right\rangle},\;\;\mathrm{Ctg}:=\ctg|_{\left\langle 0, \pi\right\rangle}\]
 imaju inverze, jer su strogo monotone. Funkciju \(\arcsin:=\mathrm{Sin}^{-1}\) zovemo \textbf{arkus sinus}, \(\arccos:=\mathrm{Cos}^{-1}\) je \textbf{arkus kosinus}, \(\arctg:=\mathrm{Tg}^{-1}\) je \textbf{arkus tangens}, \(\arcctg:=\mathrm{Ctg}^{-1}\) je \textbf{arkus kotangens}.
 
 Slično definiramo i tzv. \textbf{area funkcije} -- \(\mathrm{arsh}:=\sh^{-1}\) je \textbf{area sinus hiperbolni}, \(\mathrm{arch}:={\ch|_{[0, \infty\rangle}}^{-1}\) je \textbf{area kosinus hiperbolni}, \(\mathrm{arth}:=\th^{-1}\) je \textbf{area tangens hiperbolni}, a \(\mathrm{arcth}:={\cth|_{\langle 0, \infty\rangle}}^{-1}\)
@@ -861,82 +1119,6 @@ Funkciju \(f\) možemo nacrtati tako da promotrimo \(f_1, f_2 : \left[-\dfrac{1}
 \caption{\label{gr5} Graf funkcije iz zadatka \ref{invgraph}}
 \end{figure}
 \end{proof}
-\section{Rastav na parcijalne razlomke}
-
-\begin{definition}
-\textbf{Racionalna funkcija} je funkcija oblika
-\[x\mapsto \dfrac{f(x)}{g(x)},\]
-gdje su \(f\) i \(g\) polinomi i \(g\neq 0\) za bar jedan \(x\in \mathbb{R}\). Ako je \(\st{f}<\st{g}\), onda kažemo da je ona \textbf{prava} racionalna funkcija, a ako je \(\st{f}\geq \st{g}\), kažemo da je ona \textbf{neprava}.
-\end{definition}
-
-\begin{remark}[O rastavu prave racionalne funkcije na parcijalne razlomke]
-\label{partfrac}
-Neka su \(f\) i \(g\neq 0\) polinomi. Svaka prava racionalna funkcija \(x\mapsto R(x)=\dfrac{f(x)}{g(x)}\) može se na jedinstven način prikazati kao zbroj parcijalnih razlomaka. Preciznije, zapišimo \(g(x)\) u obliku
-\[g(x)=(x-x_1)^{k_1}\dots (x-x_s)^{k_s}(x^2+a_1x+b_1)^{l_1}\dots (x^2+a_rx+b_r)^{l_r}.\]
-Tada postoje jedinstveni realni brojevi \(A_1, \dots, A_{k_1}, D_1,\) \(\dots, D_{k_s}, M_1, N_1,\) \( \dots, M_{l_1},\) \( N_{l_1},\) \( \dots R_1,\) \( S_1,\) \(\dots, R_{l_r}, S_{l_r}\in \mathbb{R}\) takvi da za sve \(x\) iz domene funkcije \(x\mapsto R(x)\) vrijedi
-\begin{align*}
-R(x)&=\dfrac{A_1}{x-x_1}+\dots+\dfrac{A_{k_1}}{(x-x_1)^{k_1}}+\dots+\dfrac{D_1}{x-x_s}+\dots+\dfrac{D_{k_s}}{(x-x_s)^{k_s}} \\
-&+\dfrac{M_1x+N_1}{x^2+a_1x+b_1}+\dots+\dfrac{M_{l_1}x+N_{l_1}}{(x^2+a_1x+b_1)^{l_1}}+\dots \\
-&+\dfrac{R_1x+S_1}{x^2+a_rx+b_r}+\dots+\dfrac{R_{l_r}x+S_{l_r}}{(x^2+a_rx+b_r)^{l_r}}.
-\end{align*}
-\end{remark}
-Pri rješavanju zadataka trebat će nam još i sljedeći rezultat.
-\begin{remark}
-\label{poleq}
-Neka je \(S\) podskup od \(\mathbb{R}\) koji se sastoji od svih realnih brojeva, osim možda njih konačno mnogo. Zadane su funkcije \(f, g : S\to \mathbb{R}\),
-\[f(x)=\sum_{k=0}^n{a_kx^k},\;\;\;g(x)=\sum_{k=0}^m{b_lx^l},\]
-gdje su \(a_n, b_m\neq 0\). Tada vrijedi \(f=g\) ako i samo ako je \(m=n\) i \(a_j=b_j\) za sve \(j=0, 1, \dots, n\).
-\end{remark}
-Prethodna tvrdnja je zapravo generalizacija teorema o jednakosti polinoma i na one polinome koji nisu definirani na cijelom \(\mathbb{R}\).\footnote{U strogom smislu, takve funkcije nisu polinomi, jer ste na predavanju sve polinome definirali na cijelom \(\mathbb{R}\), v. \cite{3}.} Međutim, dokaz je potpuno analogan.\footnote{v. \cite{12}, str. 58, 59. Za vježbu pokušajte uočiti što bi trebalo promijeniti u dokazu teorema 1 i 2.}
-\begin{exercise}{Zadatak}
-Rastavite funkciju \(x\mapsto \dfrac{1}{(x+2)(x+3)^2}\) na parcijalne razlomke.
-\end{exercise}
-\begin{proof*}
-Prema napomeni \ref{partfrac} znamo da postoje i jedinstveni su brojevi \(A\), \(B\) i \(C\) takvi da za sve \(x\in \mathbb{R}\setminus\{-2, -3\}\) vrijedi
-\[\dfrac{1}{(x+2)(x+3)^2}=\dfrac{A}{x+2}+\dfrac{B}{x+3}+\dfrac{C}{(x+3)^2}.\]
-Želimo odrediti \(A\), \(B\) i \(C\). Pomnožimo li obje strane s \((x+2)(x+3)^2\), proširivanjem dobivamo da za sve \(x\in \mathbb{R}\setminus\{-2, -3\}\) vrijedi
-\[1=Ax^2+6Ax+9A+Bx^2+5Bx+6B+Cx+2C,\]
-odnosno
-\[1=(A+B)x^2+(6A+5B+C)x+(9A+6B+2C).\]
-Iz prethodnog imamo da su \[P_1, P_2 : \mathbb{R}\setminus\{-2, -3\}\to \mathbb{R},\;P_1(x)=1,\; P_2(x)= (A+B)x^2+(6A+5B+C)x+(9A+6B+2C)\] jednaki, pa iz napomene \ref{poleq} slijedi
-\[\begin{cases}
-A+B=0, \\
-6A+5B+C=0, \\
-9A+6B+2C=1.
-   \end{cases}\]
-Rješavanjem prethodnog sustava dobivamo \(A=1\), \(B=-1\) i \(C=-1\), pa zaključujemo da je
-\[
-\pushQED{\qed}
-\dfrac{1}{(x+2)(x+3)^2}=\dfrac{1}{x+2}-\dfrac{1}{x+3}-\dfrac{1}{(x+3)^2}.\qedhere
-\popQED
-\]
-\end{proof*}
-\begin{exercise}{Zadatak}
-Dokažite da je funkcija zadana formulom \(x\mapsto R(x)=\dfrac{x^3+6x^2+9x+1}{x^2+5x+6}\) injekcija na \(\langle -2, \infty\rangle\).
-\end{exercise}
-\begin{proof}[Rješenje]
-Ideja je \(R(x)\) prikazati kao sumu jednostavnijih razlomaka, u nadi da ćemo funkciju iz zadatka moći prikazati kao zbroj strogo rastućih funkcija. Dijeljenjem polinoma imamo
-\[\dfrac{x^3+6x^2+9x+1}{x^2+5x+6}=x+1+\dfrac{-2x-5}{x^2+5x+6}.\]
-Rastavimo \(x\mapsto \dfrac{-2x-5}{x^2+5x+6}\) na parcijalne razlomke. Faktorizacijom nazivnika dobivamo \(x^2+5x+6=(x+3)(x+2)\). Slijedi da postoje jedinstveni \(A\), \(B\in \mathbb{R}\) takvi da za sve \(x\in \mathbb{R}\setminus\{-2, -3\}\) vrijedi
-\[\dfrac{-2x-5}{(x+2)(x+3)}=\dfrac{A}{x+2}+\dfrac{B}{x+3},\]
-te množenjem s \((x+2)(x+3)\) dobivamo 
-\begin{gather}
-\label{partfrac2}
--2x-5=A(x+3)+B(x+2),\;\;\; \forall x\in \mathbb{R}\setminus\{2, 3\}.
-\end{gather}
-Analogno kao u prethodnom zadatku dobivamo \(A, B=-1\). To znači da vrijedi
-\[\dfrac{x^3+6x^2+9x+1}{x^2+5x+6}=x+1-\dfrac{1}{x+2}-\dfrac{1}{x+3}\]
-za sve \(x\in \mathbb{R}\setminus\{-2, -3\}\), pa specijalno i za sve \(x\in\langle -2,\infty \rangle\). Kako su \(x\mapsto x+1\), \(x\mapsto -\dfrac{1}{x+2}\), \(x\mapsto -\dfrac{1}{x+3}\) strogo rastuće na \(\langle -2,\infty \rangle\), slijedi i da je početna funkcija strogo rastuća na tom intervalu.
-\end{proof}
-\begin{remark}
-Na ovome mjestu bi bilo dobro spomenuti jedan trik koji bi u situacijama poput ove mogao uštedjeti vrijeme. Naime, da bi odredili \(A\) i \(B\) dovoljno je u (\ref{partfrac2}) uvrstiti \(x=-2\) i \(x=-3\), respektivno. Međutim, nije odmah očigledno da to možemo, jer u (\ref{partfrac2}) nemamo jednakost polinoma i u točkama \(x=2\), \(x=3\). 
-
-Tvrdimo da su polinomi jednaki i u tim točkama. Zaista, znamo da svaki polinom koji nije konstanta ima najviše \(n\) nultočaka, gdje je \(n\in \mathbb{N}\) stupanj polinoma. Kontrapozicijom dobivamo da ako proizvoljan polinom ima beskonačno mnogo nultočaka, onda je on nužno konstanta. No lako vidimo da je jedini polinom koji uopće ima nultočku nul-polinom. 
-
-Posljedica prethodne tvrdnje je sljedeća -- ako su dva polinoma jednaka u beskonačno mnogo točaka, onda su oni jednaki za sve realne brojeve. Zaista, neka su \(f\) i \(g\) polinomi koji su jednaki u beskonačno mnogo točaka. No tada \(f-g\) ima beskonačno mnogo nultočaka, a to znači da je \(f-g=0\), odnosno \(f=g\). Time smo dokazali tvrdnju. 
-
-Kako su u našem slučaju polinomi \(x\mapsto -2x-5\) i \(x\mapsto A(x+3)+B(x+2)\) očito jednaki u beskonačno mnogo točaka, oni su sigurno jednaki i u \(x=-2\) i \(x=-3\), što smo i tvrdili.
-\end{remark}
 \section{Prirodna domena}
 \begin{remark}
 Neka je \(x\mapsto f(x)\) funkcija zadana formulom. Skup svih \(x\in \mathbb{R}\) za koju je \(f(x)\) dobro definiran zove se \textbf{prirodna domena} funkcije \(f\).
@@ -993,7 +1175,7 @@ Očito za sve \(x>-2\) vrijedi \(\dfrac{\log_2(x+2)}{2}\in [-1, 1]\) ako i samo 
 \[-2\leq \log_2(x+2)\leq 2,\]
 što je ekvivalentno tvrdnji
 \[\dfrac{1}{4}\leq x+2\leq 4,\]
-što vrijedi ako i samo ako je \(x\in \left[-\dfrac{7}{4}, 2\right]\). Dakle jedini realan broj za kojeg su oba izraza definirana je upravo \(\dfrac{7}{4}\). No lako se provjeri da \(x\mapsto \arcsin{\dfrac{\log_2(x+2)}{2}}\) i \(x\mapsto \sqrt{-x-\dfrac{7}{4}}-\dfrac{\pi}{2}\) poprimaju vrijednost \(-\dfrac{\pi}{2}\) za \(x=\dfrac{7}{4}\). Zato je to jedino rješenje početne jednadžbe.
+što vrijedi ako i samo ako je \(x\in \left[-\dfrac{7}{4}, 2\right]\). Dakle jedini realan broj za kojeg su oba izraza definirana je upravo \(-\dfrac{7}{4}\). No lako se provjeri da \(x\mapsto \arcsin{\dfrac{\log_2(x+2)}{2}}\) i \(x\mapsto \sqrt{-x-\dfrac{7}{4}}-\dfrac{\pi}{2}\) poprimaju vrijednost \(-\dfrac{\pi}{2}\) za \(x=-\dfrac{7}{4}\). Zato je to jedino rješenje početne jednadžbe.
 \end{proof}
 \begin{exercise}{Zadatak}
 Neka je \(x\mapsto f(x)\) funkcija zadana formulom \(f(x)=\arccos\left(\tg\left(1+\dfrac{1}{x}\right)\right)\). Odredite prirodnu domenu ove funkcije.
