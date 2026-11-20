@@ -262,9 +262,8 @@ Tvrdimo da su polinomi jednaki i u tim točkama. Zaista, kontrapozicijom napomen
 
 Kako su u našem slučaju polinomi \(x\mapsto -2x-5\) i \(x\mapsto A(x+3)+B(x+2)\) očito jednaki u beskonačno mnogo točaka, oni su sigurno jednaki i u \(x=-2\) i \(x=-3\), što smo i tvrdili.
 \end{remark}
-\section{Injekcija, surjekcija i bijekcija. Slika i praslika skupa}
-
 \begin{definition}
+\label{bijdef}
 Neka su \(S\) i \(S'\) neprazni skupovi. Funkcija \(f : S\to S'\) je
 \begin{itemize}
 \item \textbf{injekcija} ako za sve \(x\), \(y\in S\) vrijedi \[f(x)=f(y)\Rightarrow x=y.\]
@@ -272,142 +271,28 @@ Neka su \(S\) i \(S'\) neprazni skupovi. Funkcija \(f : S\to S'\) je
 \item \textbf{bijekcija} ako je injekcija i surjekcija.
 \end{itemize}
 \end{definition}
-
-\begin{exercise}{Zadatak}
-Neka je \(f : \mathbb{R}^+\to \langle 1, \infty\rangle \) zadana formulom \(f(x)=1+\dfrac{1}{x}\). Dokažite da je \(f\) bijekcija.
-\end{exercise}
-\begin{proof}[Rješenje]
-Dokažimo da je \(f\) injekcija. Neka su \(x, y\in \langle 1, \infty\rangle\) takvi da vrijedi \[1+\dfrac{1}{x}=1+\dfrac{1}{y}.\] Zbog \(x\), \(y\neq 0\) pojednostavljivanjem i množenjem dobivamo \(x=y\). 
-
-Dokažimo da je \(f\) surjekcija. Neka je \(y\in \langle 1, \infty\rangle\) proizvoljan. Treba dokazati da tada postoji bar jedan \(x\) takav da je \[y=1+\dfrac{1}{x}.\] No ovo je zbog \(x\neq 0\) i \(y-1\neq 0\) ekvivalentno s \[x=\dfrac{1}{y-1}.\] Zaista, \(\dfrac{1}{y-1}\) je upravo jedan (i jedini) takav \(x\).
-\end{proof}
-\begin{remark}
-Lako se vidi sljedeća formulacija definicije bijekcije: \(f : S\to S'\) je bijekcija ako i samo ako za svaki \(y\in S'\) postoji i jedinstven je \(x\in S\) takav da je \(y=f(x)\). Prema tome, u prethodnom zadatku prvi dio rješenja je zapravo suvišan.
-\end{remark}
-
-\begin{exercise}{Zadatak}
-Dokažite da je \(f : \mathbb{R}\to \langle 0, 1]\) zadana formulom \(f(x)=\dfrac{1}{x^2+1}\) surjekcija. Je li i injekcija?
-\end{exercise}
-\begin{proof}[Rješenje]
-Neka je \(y\in \langle 0, 1]\). Treba dokazati da postoji bar jedan \(x\in \mathbb{R}\) takav da je \[y=\dfrac{1}{1+x^2}.\] No to je ekvivalentno s \[x^2=\dfrac{1}{y}-1.\] 
-Očito je \(x=\sqrt{\dfrac{1}{y}-1}\) jedan \(x\) koji zadovoljava tvrdnju. Nadalje, \(f\) nije injekcija, jer je \(-1\neq 1\) i \(f(1)=f(-1)\).
-\end{proof}
-\begin{exercise}{Zadatak} \textbf{}
-\label{bijexmp}
-\begin{itemize}
-\item[a)] Odredite neku bijekciju (ako postoji) s \(\mathbb{N}\) u \(\mathbb{N}\setminus\{1, 2\}\).
-\item[b)] Odredite neku bijekciju (ako postoji) s \(\mathbb{N}\) s \([0, 1]\) u \([1, 3]\).
-\item[c)] Odredite neku bijekciju (ako postoji) s \(\mathbb{N}\) s \([0, 1]\) u \([0, 1\rangle\).
-\item[d)] Odredite neku bijekciju (ako postoji) s \(\mathbb{R}\) u skup svih funkcija s \(\mathbb{R}\) u \(\mathbb{R}\) (Taj skup nazivamo \(\mathbb{R}^\mathbb{R}\)).
-\end{itemize}
-\end{exercise}
-\begin{proof}[Rješenje]
-a) Neka je zadana \(f : \mathbb{N}\to \mathbb{N}\setminus \{1, 2\}\), \(f(n)=n+2\) (ideja je "pomaknuti" svaki broj za \(2\) udesno). Uvjerite se da je ova funkcija zaista bijekcija.
-
-b) Ideja će biti uzeti linearnu funkciju čiji graf prolazi kroz točke \((0, 1)\) i \((1, 3)\) i promotriti njezinu restrikciju na segment \([0, 1]\). Uzmimo \(f :[0, 1]\to [1, 3]\), \(f(x)=2x+1\). Nije teško pokazati da je ova funkcija zaista bijekcija.
-
-c) Promotrimo funkciju \(f : [0, 1]\to [0, 1]\), \(f(x)=x\). Ona je očito bijekcija s \([0, 1]\) na \([0, 1]\). Ideja će sada biti nju izmijeniti tako da \(f(1)\) bude neki broj iz skupa \([0, 1\rangle\). Doduše, ako to napravimo, funkcija više neće biti injekcija. Zaista, znamo da je \(f(f(1))=f(1)\), pa kad bi ona bila injekcija bilo bi \(f(1)=1\), što nije točno. Dakle, da bi izbjegli situaciju gdje funkcija poprima dvije jednake vrijednosti, moramo je izmijeniti i za \(x=f(1)\). Injektivnost će se opet "pokvariti", ali ćemo tada funkciju moći opet izmijeniti u točki koja "kvari" injektivnost. Ovaj postupak ponavljamo u beskonačnost. Zato ima smisla promotriti npr. funkciju \(g : [0, 1]\to [0, 1\rangle\),
-
-\[g(x)=\begin{cases}
-x, &\;x\notin S,\\[2pt]
-\dfrac{x}{2}, &\; x\in S,
-\end{cases}\]
-gdje je \(S=\left\{\dfrac{1}{2^n} : n\in \mathbb{N}_0\right\}\).
-
-Tvrdimo da je \(g\) injekcija. Zaista, neka su \(x, y\in [0, 1\rangle\) takvi da je \(f(x)=f(y)\). Uočimo da ako je \(x\in S\) ako i samo ako je \(f(x)\in S\), pa ako je \(f(x)=f(y)\), onda su ili \(x, y\) oboje u \(S\), ili oboje nisu u \(S\). U oba slučaja je očigledno \(x=y\).
-
-Tvrdimo da je \(g\) i surjekcija. Zaista, neka je \(y\in [0, 1\rangle\) proizvoljan. Ako je \(y\notin S\), onda je \(f(y)=y\), ako je \(y\in S\), onda postoji \(p\in \mathbb{N}\) takav da je \(y=\dfrac{1}{2^p}\). No tada je \[g\left(\dfrac{1}{2^{p-1}}\right)=\dfrac{1}{2^p},\]
-gdje je \(\dfrac{1}{2^{p-1}}\in S\), budući da je \(y\neq 1\).
-
-\begin{figure}[ht]
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[axis lines=middle,   xlabel=\(x\),ylabel=\(y\),xmin=-0.2,xmax=1.2,ymin=-0.2,ymax=1.2]
-
-\addplot[thick,color=black,domain=0:1] {x};
-
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1, 1) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (0.5, 0.5) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (0.25, 0.25) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/8, 1/8) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/16, 1/16) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/32, 1/32) {};
-\node[circle,draw=black, fill=white, inner sep=0pt,minimum size=5pt] at (1/64, 1/64) {};
-
-\node[circle,fill,inner sep=2pt] at (axis cs:1, 0.5) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:0.5, 0.25) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:0.25, 1/8) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:1/8, 1/16) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:1/16, 1/32) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:1/32, 1/64) {};
-\node[circle,fill,inner sep=2pt] at (axis cs:1/64, 1/128) {};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\caption{\label{exbij} Graf funkcije iz zadatka \ref{bijexmp} c)}
-\end{figure}
-
-d) Tvrdimo da takva bijekcija ne postoji. Zaista, pretpostavimo da postoji bijekcija \(f : \mathbb{R}\to \mathbb{R}^{\mathbb{R}}\). Tada je ona surjekcija, što znači da za svaki \(y\in \mathbb{R}^{\mathbb{R}}\) postoji \(x_0\in \mathbb{R}\) takav da je \(f(x_0)=y\), što povlači da je \(f(x_0)(x_0)=y(x_0)\). No to očito ne vrijedi ako promotrimo funkciju \(y : \mathbb{R}\to \mathbb{R}\) definiranu formulom \(y(x)=f(x)(x)+1\), za svaki \(x\in \mathbb{R}\).
-\end{proof}
+Iduće četiri definicije bi se mogle svrstati u skupinu definicija koju zovemo \textit{klasifikacija realnih funkcija pomoću grafa}.
 \begin{definition}
 \label{monotonic}
 Neka je \(S\subseteq \mathbb{R}\) neprazan, te \(x, y\in S\). Kažemo da je funkcija \(f : S\to \mathbb{R}\) \textbf{monotono rastuća} (kraće: rastuća) ako vrijedi \(x<y\Rightarrow f(x)\leq f(y)\), \textbf{strogo rastuća} ako vrijedi \(x<y\Rightarrow f(x)<f(y)\), \textbf{monotono padajuća} (kraće: padajuća) ako vrijedi \(x<y\Rightarrow f(x)\geq f(y)\), \textbf{strogo padajuća} ako vrijedi \(x<y\Rightarrow f(x)>f(y)\).
 \end{definition}
 \begin{remark}
+Neka je \(S\subseteq \mathbb{R}\) neprazan. Kažemo da je \(f : S\to \mathbb{R}\) injekcija, odnosno surjekcija na nekom podskupu od \(S'\subseteq S\) ako je \(f|_{S'}\) injekcija, odnosno surjekcija. Također, kažemo da je \(f\) strogo rastuća (padajuća) na \(S'\) ako je \(f|_{S'}\) strogo rastuća (padajuća) na \(S\).
+\end{remark}
+\begin{definition}
+Neka je $a>0$ i $f : \langle -a, a\rangle\to \mathbb{R}$. Kažemo da je $f$ \textbf{parna} ako za sve $x\in \langle -a, a\rangle$ vrijedi $f(-x)=f(x)$, a \textbf{neparna} ako za sve $x\in \langle -a, a\rangle$ vrijedi $f(-x)=-f(x)$.
+\end{definition}
+\begin{definition}
+Neka je $S\subseteq \mathbb{R}$ neprazan i $f : S\to \mathbb{R}$. Kažemo da je $f$ \textbf{odozgo} (odozdo) \textbf{omeđena} ako je skup $\mathcal{R}(f)$ odozgo (odozdo) omeđen, tj. da je odozgo (odozdo) \textbf{neomeđena} u suprotome, te je \textbf{omeđena} ako je odozgo i odozdo omeđena.
+\end{definition}
+Drugim riječima, funkcija $f : S\to \mathbb{R}$ je odozgo omeđena ako postoji $M\in \mathbb{R}$ takav da za svaki $x\in S$ vrijedi $f(x)\leq M$, te odozdo omeđena ako postoji $m\in \mathbb{R}$ takav da za svaki $x\in S$ vrijedi $f(x)\geq m$.
+\begin{definition}
+\label{perioddef}
+Neka je $A\subseteq \mathbb{R}$ neprazan,\(f : A\to \mathbb{R}\) i \(\tau>0\). Kažemo da je \(f\) \textbf{periodična s periodom \(\tau\)} ako za sve \(x\in A\) vrijedi \(x+\tau \in A\) i \(f(x+\tau)=f(x)\). Najmanji od svih perioda, ako postoji, zvat ćemo \textbf{temeljnim periodom}.
+\end{definition}
+\begin{remark}
 Neka su \(S, S'\subseteq \mathbb{R}\) neprazni i neka je zadana \(f : S\to S'\). Ako je \(f\) strogo monotona (tj. strogo rastuća ili strogo padajuća), ona je injekcija.
 \end{remark}
-\begin{exercise}{Zadatak} \textbf{}
-\begin{itemize}
-\item[a)] Dokažite da je funkcija $f : \mathbb{R}\to \mathbb{R}$, $f(x)=x^3$ strogo rastuća.
-\item[b)] Neka je $a=\dfrac{-3+\sqrt{21}}{6}$ i $f : \left[a, \infty\right\rangle\to \mathbb{R}$, $f(x)=\dfrac{2x+1}{3x^2+1}$. Dokažite da je $f$ padajuća.
-\end{itemize}
-\end{exercise}
-ZADATAK ZA VJEŽBU!!!: Dokažite ili opovrgnite: Za svaku rastuću funkciju $f : \mathbb{R}\to \mathbb{R}$ postoji padajuća funkcija $g : \mathbb{R}\to \mathbb{R}$ takva da je $g(x)>f(x)$ za sve $x\in \mathbb{R}$.
-\begin{proof}[Rješenje]
-a) Neka su $x, y\in \mathbb{R}$ takvi da je $x<y$. Ako su $x, y\geq 0$, onda množenjem obje strane s $x$ dobivamo $x^2<yx<y^2$ i $x^3<xy^2<y^3$. Ako je $x<0$ i $y\geq 0$ onda je trivijalno $x^3<y^3$ jer je $x^3<0$ i $y^3\geq 0$, a ako su $x, y<0$, onda su $-x, -y>0$ i vrijedi $-y<-x$, pa i $(-y)^3<(-x)^3$, tj. $-y^3<-x^3$, odakle imamo $x^3<y^3$.
-
-b) Neka su $x, y\in [a, \infty\rangle$ i $x<y$. Imamo
-\begin{gather*}
-\frac{2x+1}{3x^{2}+1}<\frac{2y+1}{3y^{2}+1}\Leftrightarrow \left(2x+1\right)\left(3y^{2}+1\right)<\left(2y+1\right)\left(3x^{2}+1\right)\\\Leftrightarrow 6xy^{2}+2x+3y^{2}-6x^{2}y-2y-3x^{2}<0
-\Leftrightarrow 6xy\left(y-x\right)-2\left(y-x\right)+3\left(y-x\right)\left(y+x\right)<0\\ \Leftrightarrow 6xy-2+3\left(y+x\right)>0\Leftrightarrow
-\left(6xy+\frac{3}{2}+3y+3x\right)-\frac{3}{2}-2>0 \\
-\Leftrightarrow 3y\left(2x+1\right)+\frac{3}{2}\left(2x+1\right)>\frac{3}{2}+2
-\Leftrightarrow \left(2x+1\right)\left(3y+\frac{3}{2}\right)>\frac{7}{2}.
-\end{gather*}
-Uočimo da je $\left(2x+1\right)\left(3y+\dfrac{3}{2}\right)>\left(2x+1\right)\left(3x+\dfrac{3}{2}\right)$, a rješavanjem nejednadžbe $$\left(2x+1\right)\left(3x+\dfrac{3}{2}\right)\geq \dfrac{7}{2}$$ vidimo da se nejednakost sigurno postiže za sve $x\in [a, \infty\rangle$.
-\end{proof}
-\begin{definition}
-Neka je \(S\subseteq \mathbb{R}\) neprazan. Kažemo da je \(f : S\to \mathbb{R}\) injekcija, odnosno surjekcija na nekom podskupu od \(S'\subseteq S\) ako je \(f|_{S'}\) injekcija, odnosno surjekcija. Također, kažemo da je \(f\) strogo rastuća (padajuća) na \(S'\) ako je \(f|_{S'}\) strogo rastuća (padajuća) na \(S\).
-\end{definition}
-\begin{exercise}{Zadatak}
-Dokažite da je funkcija \(f : \mathbb{R}\to \mathbb{R}\), \(f(x)=x\sqrt{1+x^2}\) injekcija.
-\end{exercise}
-\begin{proof}[Rješenje]
-Iz grafa funkcije \(f\) vidi se da je ona strogo rastuća.
-\begin{figure}[ht]
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[axis lines=middle, xlabel=\(x\),ylabel=\(y\),xmin=-6.2,xmax=6.2,ymin=-8.2,ymax=8.2, samples=150]
-
-
-\addplot[thick,color=black,domain=-4.3:4.3] {x*sqrt(1+x^2)};
-
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\caption{\label{gr4} Graf funkcije \(x\mapsto x\sqrt{1+x^2}\)}
-\end{figure}
-
-Dokažimo to! Uočimo da je \(x\mapsto \sqrt{1+x^2}\) strogo rastuća na \([0, \infty\rangle\) i strogo padajuća na \(\langle-\infty, 0]\). Zaista, za sve \(x, y\geq 0\) vrijedi
-\[x<y\Rightarrow x^2<y^2\Rightarrow 1+x^2<1+y^2\Rightarrow \sqrt{1+x^2}<\sqrt{1+y^2}.\]
-Analogno dobivamo i da \(f\) strogo pada na \(\langle-\infty, 0]\). Neka su sada \(x, y\in \mathbb{R}\) takvi da je \(x<y\). Razlikujemo tri slučaja:
-\[\text{a)}\quad x\leq 0,\; y>0, \quad \text{b)}\quad x, y>0, \quad \text{c)}\quad x<0,\; y\leq 0.\]
-
-U slučaju a), \(f(x)<f(y)\) je trivijalno, jer je \(f(x)\leq 0\) i \(f(y)>0\). 
-
-U slučaju b) imamo \(\sqrt{1+x^2}<\sqrt{1+y^2}\), pa množenjem s $x$ dobivamo \[x\sqrt{1+x^2}<x\sqrt{1+y^2}<y\sqrt{1+y^2}.\]
-U slučaju c), ako je $y=0$ onda tvrdnja vrijedi trivijalno, a u suprotnome imamo \(-y<-x\) i \(-y, -x>0\), pa iz b) slijedi \[-y\sqrt{1+(-y)^2}<-x\sqrt{1+(-x)^2}.\] Tvrdnja sada slijedi množenjem s \(-1\) i korištenjem svojstva parnosti funkcije \(x\mapsto x^2\), tj. činjenice da je \((-x)^2=x^2\) za sve \(x\in \mathbb{R}\).
-\end{proof}
 \begin{definition}
 Neka su \(S, S'\subseteq \mathbb{R}\) neprazni i neka je zadana injekcija \(f : S\to S'\). Tada svakom \(y\in \mathcal{R}(f)\) odgovara jedinstveni \(x\in S\) takav da je \(y=f(x)\). Funkcija \(f^{-1} : \mathcal{R}(f)\to S\), \(f^{-1}(y)=x\) zove se \textbf{inverzna funkcija} od \(f\).
 \end{definition}
@@ -442,8 +327,240 @@ Uočimo da iz napomene \ref{invmon} slijedi da je $n$-ti korijen rastuća funkci
 \caption*{Graf funkcije \(x\mapsto \sqrt[3]{x}\)}
 \end{subfigure}
 \end{figure}
-DODATI EKSPONENCIJALNU!!!
-Slijede zadatci gdje određujemo sliku \(\mathcal{R}(f)\) zadane funkcije \(f\). OVO PREBACITI POSLIJE!!!
+\begin{definition}
+Neka je $a>0$ i $a\neq 1$. \textit{Eksponencijalna funkcija} s bazom $a$ je je strogo monotona bijekcija $f : \mathbb{R}\to \langle 0, \infty\rangle$ takva da je $f(1)=a$ i $f(x+y)=f(x)f(y)$ za sve $x, y\in \mathbb{R}$ (može se pokazati da je funkcija s takvim svojstvima jedinstvena). Za svaki $x\in \mathbb{R}$ koristimo oznaku $a^x:=f(x)$.
+\end{definition}
+\begin{remark}
+Eksponencijalna funkcija s bazom $a$ strogo raste za $a>1$, a strogo pada za $0<a<1$. Također, vrijedi $\mathcal{R}(f)=\langle 0, \infty\rangle$.
+\end{remark}
+Uočimo da iz stroge monotonosti eksponencijalne funkcije i napomene \ref{invmon} slijedi da ona ima inverznu funkciju.
+\begin{definition}
+Neka je $f : \mathbb{R}\to \langle 0, \infty\rangle$ eksponencijalna funkcija s bazom $a$. Funkcija $f^{-1} : \langle 0, \infty\rangle\to \mathbb{R}$ zove se \textit{logaritamska funkcija} s bazom $a$. Za svaki $x\in \langle 0, \infty\rangle$ koristimo oznaku $\log_a{x}:=f^{-1}(x)$.
+\end{definition}
+Navedimo neka svojstva logaritamske funkcije.
+\begin{itemize}
+\item Logaritamska funkcija je strogo rastuća za $a>1$ i strogo padajuća za $0<a<1$.
+\item Za svaki $a\in \langle 0, \infty\rangle\setminus\{1\}$ i sve $x, y>0$ vrijedi $\log_a{xy}=\log_a{x}+\log_a{y}$.
+\item Za svaki $a\in \langle 0, \infty\rangle\setminus\{1\}$ i sve $x>0$ i $y\in \mathbb{R}$ vrijedi $\log_a{x^y}=y\log_a{x}$.
+\item Slika logaritamske funkcije je skup $\mathbb{R}$.
+\end{itemize}
+Često je zanimljiv poseban slučaj eksponencijalne funkcije za $a=e$, gdje je $e\approx 2.71828$ i njena pripadna inverzna funkcija, za koju uvodimo oznaku $\ln{x}:=\log_e{x}$, za svaki $x>0$. Taj logaritam zovemo \textit{prirodni logaritam}.
+
+Neka je $p$ polupravac koji zatvara kut $\alpha\in [0, 2\pi\rangle$ s $x$-osi. Pritom, možemo promatrati i $\alpha\in \mathbb{R}$, gdje ćemo onda pripadni kut dobiti uzastopnim zbrajanjem ili oduzimanjem s $2\pi$ dok ne dođemo u interval $[0, 2\pi\rangle$. Označimo sjecište pravca $p$ s kružnicom radijusa $1$ sa središtem u ishodištu s $(x, y)$. Točka $x$ zove se \textit{kosinus} od $\alpha$, a točku $y$ zovemo \textit{sinus} od $\alpha$, te koristimo oznake $\cos{\alpha}:=x$ i $\sin{\alpha}:=y$. Nadalje, definiramo \textit{tangens} od $\alpha$ (u oznaci $\tg{\alpha}$) i \textit{kotangens} od $\alpha$ (u oznaci $\ctg{\alpha}$) s
+$$\tg{\alpha}=\dfrac{\sin{\alpha}}{\cos{\alpha}},\;\; \ctg{\alpha}=\dfrac{\cos{\alpha}}{\sin{\alpha}},$$
+gdje je $\alpha\neq \dfrac{\pi}{2}+k\pi$ kako bi tangens bio definiran ili $a\neq k\pi$ kako bi kotangens bio definiran. DODATI SLIKU!!!
+
+Navedimo neka svojstva trigonometrijskih funkcija.
+\begin{itemize}
+\item Vrijedi $\sin^2{x}+\cos^2{x}=1$ za sve $x\in \mathbb{R}$.
+\item Za sve $x, y\in \mathbb{R}$ vrijedi
+\begin{gather*}
+\sin{(x+y)}=\sin{x}\cos{y}+\cos{x}\sin{y},\quad \cos{(x+y)}=\cos{x}\cos{y}-\sin{x}\sin{y},\\
+\sin{x}+\sin{y}=2\sin{\dfrac{x+y}{2}}\cos{\dfrac{x-y}{2}},\quad \sin{x}-\sin{y}=2\cos{\dfrac{x+y}{2}}\sin{\dfrac{x-y}{2}},\\
+\cos{x}+\cos{y}=2\cos{\dfrac{x+y}{2}}\cos{\dfrac{x-y}{2}},\quad \cos{x}-\cos{y}=-2\sin{\dfrac{x+y}{2}}\sin{\dfrac{x-y}{2}}.
+\end{gather*}
+\item Vrijedi $\mathcal{R}(\sin)=\mathcal{R}(\cos)=[-1, 1]$ i $\mathcal{R}(\tg)=\mathcal{R}(\ctg)=\mathbb{R}$.
+\end{itemize}
+\section{Injekcija, surjekcija i bijekcija. Klasifikacija realnih funkcija pomoću grafa}
+Za sljedeće zadatke biti će potrebno poznavanje pojmova iz definicije \ref{bijdef}.
+\begin{exercise}{Zadatak} \textbf{}
+\begin{itemize}
+\item[a)] Neka je \(f : \mathbb{R}^+\to \langle 1, \infty\rangle \) zadana formulom \(f(x)=1+\dfrac{1}{x}\). Dokažite da je \(f\) bijekcija.
+\item[b)] Dokažite da je \(f : \mathbb{R}\to \langle 0, 1]\) zadana formulom \(f(x)=\dfrac{1}{x^2+1}\) surjekcija. Je li i injekcija?
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Dokažimo da je \(f\) injekcija. Neka su \(x, y\in \langle 1, \infty\rangle\) takvi da vrijedi \[1+\dfrac{1}{x}=1+\dfrac{1}{y}.\] Zbog \(x\), \(y\neq 0\) pojednostavljivanjem i množenjem dobivamo \(x=y\). 
+
+Dokažimo da je \(f\) surjekcija. Neka je \(y\in \langle 1, \infty\rangle\) proizvoljan. Treba dokazati da tada postoji bar jedan \(x\) takav da je \(y=1+\dfrac{1}{x}\). No ovo je zbog \(x\neq 0\) i \(y-1\neq 0\) ekvivalentno s \(x=\dfrac{1}{y-1}\). Zaista, \(\dfrac{1}{y-1}\) je upravo jedan (i jedini) takav \(x\).
+
+b) Neka je \(y\in \langle 0, 1]\). Treba dokazati da postoji bar jedan \(x\in \mathbb{R}\) takav da je \(y=\dfrac{1}{1+x^2}\). No to je ekvivalentno s \(x^2=\dfrac{1}{y}-1\). Očito je \(x=\sqrt{\dfrac{1}{y}-1}\) jedan \(x\) koji zadovoljava tvrdnju. Nadalje, \(f\) nije injekcija, jer je \(-1\neq 1\) i \(f(1)=f(-1)\).
+\end{proof}
+\begin{remark}
+\label{altbij}
+Lako se vidi sljedeća formulacija definicije bijekcije: \(f : S\to S'\) je bijekcija ako i samo ako za svaki \(y\in S'\) postoji i jedinstven je \(x\in S\) takav da je \(y=f(x)\). Prema tome, u a) dijelu prethodnog zadatka prvi dio rješenja je zapravo suvišan.
+\end{remark}
+\begin{exercise}{Zadatak} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da je funkcija \(f : \mathbb{R} \to \langle -1, 1\rangle\), \(f(x)=\dfrac{x}{1+|x|}\) bijekcija.
+\item[b)] Dokažite da je funkcija \(f : \mathbb{R} \to \mathbb{R}\), \(f(x)=x\sqrt{1+x^2}\) bijekcija.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Iskoristit ćemo napomenu \ref{altbij}, tj. pokazat ćemo da za svaki $a\in \langle -1, 1\rangle$ postoji točno jedan $x\in \mathbb{R}$ takav da je $a=\dfrac{x}{1+|x|}$. Uočimo da za $x\geq 0$ se graf podudara s grafom funkcije $x\mapsto \dfrac{x}{1+x}$ i vrijedi $\dfrac{x}{1+x}\geq 0$ za $x\geq 0$, te za $x<0$ se podudara s grafom funkcije $x\mapsto \dfrac{x}{1-x}$ i vrijedi $\dfrac{x}{1-x}<0$ za $x<0$. Ova razmatranja motiviraju sljedeći postupak.
+
+Promotrimo slučaj kada je $a\geq 0$. Tada je $a(1+|x|)=x$, odakle slijedi $x\geq 0$. Slijedi da je posljednje ekvivalentno s $a(1+x)=x$, odnosno $x=\dfrac{a}{1-a}$. Ako je pak $a<0$, onda analogno imamo $x<0$ i $a(1-x)=x$, tj. $x=\dfrac{a}{a+1}$.
+
+b) Neka je $a\in \mathbb{R}$. Promotrimo slučaj $a\geq 0$. Tražimo one $x\in \mathbb{R}$ za koje vrijedi $a=x\sqrt{1+x^2}$. Uočimo da iz $a\geq 0$ slijedi i $x\geq 0$. Lako se vidi da su $x\mapsto x^2$ i $x\mapsto \sqrt{x}$ injekcije na $[0, \infty\rangle$, stoga je gornje ekvivalentno s $a^2=x^2(1+x^2)$. Rješavanjem jednadžbe i odbacivanjem rješenja koja nisu realni brojevi i negativna rješenja dobivamo jedinstveno rješenje $x=\sqrt{\dfrac{-1+\sqrt{1+4a^2}}{2}}$.
+
+Neka je $a<0$. Uočimo da je $-a=-x\sqrt{1+(-x)^2}$, stoga smo u prethodnom slučaju i imamo da je nužno $-x=\sqrt{\dfrac{-1+\sqrt{1+4\left(-a\right)^2}}{2}}$, tj. $x=-\sqrt{\dfrac{-1+\sqrt{1+4a^2}}{2}}$.
+\end{proof}
+\begin{exercise}{Zadatak} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da je funkcija $f : \mathbb{R}\to \mathbb{R}$, $f(x)=x^3$ strogo rastuća.
+\item[b)] Neka je $a=\dfrac{-3+\sqrt{21}}{6}$ i $f : \left[a, \infty\right\rangle\to \mathbb{R}$, $f(x)=\dfrac{2x+1}{3x^2+1}$. Dokažite da je $f$ strogo padajuća.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Neka su $x, y\in \mathbb{R}$ takvi da je $x<y$. Ako su $x, y\geq 0$, onda množenjem obje strane s $x$ dobivamo $x^2<yx<y^2$ i $x^3<xy^2<y^3$. Ako je $x<0$ i $y\geq 0$ onda je trivijalno $x^3<y^3$ jer je $x^3<0$ i $y^3\geq 0$, a ako su $x, y<0$, onda su $-x, -y>0$ i vrijedi $-y<-x$, pa i $(-y)^3<(-x)^3$, tj. $-y^3<-x^3$, odakle imamo $x^3<y^3$.
+
+b) Neka su $x, y\in [a, \infty\rangle$ i $x<y$. Imamo
+\begin{gather*}
+\frac{2x+1}{3x^{2}+1}<\frac{2y+1}{3y^{2}+1}\Leftrightarrow \left(2x+1\right)\left(3y^{2}+1\right)<\left(2y+1\right)\left(3x^{2}+1\right)\\\Leftrightarrow 6xy^{2}+2x+3y^{2}-6x^{2}y-2y-3x^{2}<0
+\Leftrightarrow 6xy\left(y-x\right)-2\left(y-x\right)+3\left(y-x\right)\left(y+x\right)<0\\ \Leftrightarrow 6xy-2+3\left(y+x\right)>0\Leftrightarrow
+\left(6xy+\frac{3}{2}+3y+3x\right)-\frac{3}{2}-2>0 \\
+\Leftrightarrow 3y\left(2x+1\right)+\frac{3}{2}\left(2x+1\right)>\frac{3}{2}+2
+\Leftrightarrow \left(2x+1\right)\left(3y+\frac{3}{2}\right)>\frac{7}{2}.
+\end{gather*}
+Uočimo da je $\left(2x+1\right)\left(3y+\dfrac{3}{2}\right)>\left(2x+1\right)\left(3x+\dfrac{3}{2}\right)$, a rješavanjem nejednadžbe $$\left(2x+1\right)\left(3x+\dfrac{3}{2}\right)\geq \dfrac{7}{2}$$ vidimo da se nejednakost sigurno postiže za sve $x\in [a, \infty\rangle$.
+\end{proof}
+\begin{exercise}{Zadatak}
+Dokažite da je funkcija \(f : \mathbb{R}\to \mathbb{R}\), \(f(x)=x\sqrt{1+x^4}\) injekcija.
+\end{exercise}
+\begin{proof}[Rješenje]
+\textit{Prvi način.} Neka su $x, y\in \mathbb{R}$ takvi da je $x\sqrt{1+x^4}=y\sqrt{1+y^4}$. Pretpostavimo suprotno, da je $x\neq y$. Uočimo da je $x\neq -y$, jer bi inače strane dvije strane jednakosti bile različitog predznaka. Imamo
+\begin{gather*}
+x^2(1+x^4)=y^2(1+y^4)\\
+\Leftrightarrow x^2+x^6=y^2+y^6\Leftrightarrow x^6-y^6=y^2-x^2
+\Leftrightarrow (x^3-y^3)(x^3+y^3)=(y-x)(x+y)\\
+\Leftrightarrow (x-y)(x^2+xy+y^2)(x+y)(x^2-xy+y^2)=(y-x)(x+y)\\
+\Leftrightarrow (x^2-xy+y^2)(x^2+xy+y^2)=-1
+\Leftrightarrow (x^2+y^2)^2-x^2y^2=-1
+\Leftrightarrow x^4+x^2y^2+y^4=-1,
+\end{gather*}
+a posljednje je očito nemoguće jer je $x^4+x^2y^2+y^4\geq 0$ i $-1<0$.
+
+\textit{Drugi način.} Tvrdimo da je $f$ strogo rastuća, odakle slijedi i da je injekcija.
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=\(x\),ylabel=\(y\),xmin=-6.2,xmax=6.2,ymin=-8.2,ymax=8.2, samples=150]
+
+
+\addplot[thick,color=black,domain=-4.3:4.3] {x*sqrt(1+x^4)};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{\label{gr4} Graf funkcije \(x\mapsto x\sqrt{1+x^4}\)}
+\end{figure}
+
+Dokažimo to! Uočimo da je \(x\mapsto \sqrt{1+x^4}\) strogo rastuća na \([0, \infty\rangle\) i strogo padajuća na \(\langle-\infty, 0]\). Zaista, za sve \(x, y\geq 0\) vrijedi
+\[x<y\Rightarrow x^4<y^4\Rightarrow 1+x^4<1+y^4\Rightarrow \sqrt{1+x^4}<\sqrt{1+y^4}.\]
+Analogno dobivamo i da \(f\) strogo pada na \(\langle-\infty, 0]\). Neka su sada \(x, y\in \mathbb{R}\) takvi da je \(x<y\). Razlikujemo tri slučaja:
+\[\text{a)}\; x\leq 0,\; y>0, \quad \text{b)}\; x, y>0, \quad \text{c)}\; x<0,\; y\leq 0.\]
+
+U slučaju a), \(f(x)<f(y)\) je trivijalno, jer je \(f(x)\leq 0\) i \(f(y)>0\). 
+
+U slučaju b) imamo \(\sqrt{1+x^4}<\sqrt{1+y^4}\), pa množenjem s $x$ dobivamo \[x\sqrt{1+x^4}<x\sqrt{1+y^4}<y\sqrt{1+y^2}.\]
+U slučaju c), ako je $y=0$ onda tvrdnja vrijedi trivijalno, a u suprotnome imamo \(-y<-x\) i \(-y, -x>0\), pa iz b) slijedi \[-y\sqrt{1+(-y)^4}<-x\sqrt{1+(-x)^4}.\] Tvrdnja sada slijedi množenjem s \(-1\) i korištenjem činjenice da je \((-x)^4=x^4\) za sve \(x\in \mathbb{R}\).
+\end{proof}
+\begin{remark}
+Za sada još nemamo alate da pokažemo da je funkcija iz prethodnog zadatka i bijekcija (problem se svodi na rješavanje kubne jednadžbe), no to ćemo biti u stanju pokazati kad budemo obradili neke važne rezultate vezane uz neprekidnost funkcije. 
+\end{remark}
+Slijede zadatci vezani uz pojmove omeđenosti i parnosti funkcije.
+\begin{exercise}{Zadatak} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da je $f : \langle -1, 1\rangle\to \mathbb{R}$, $f(x)=\dfrac{1}{x+1}-\dfrac{1}{x-1}$ odozdo omeđena.
+\item[b)] Dokažite da je funkcija $f : \mathbb{R}\to \mathbb{R}$, $f(x)=\dfrac{x+1}{x^4+1}$ odozgo omeđena.
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Uočimo da za sve $x\in \langle -1, 1\rangle$ vrijedi
+$$\dfrac{1}{x+1}-\dfrac{1}{x-1}=\dfrac{-2}{(x+1)(x-1)}=\dfrac{-2}{x^2-1}.$$
+Uočimo da vrijedi npr. $\dfrac{-2}{x^2-1}\geq 1$, jer je to ekvivalentno s $x^2-1\geq -2$, tj. $x^2+1\geq 0$.
+
+b) Želimo pokazati da postoji $M\in \mathbb{R}$ takav da za svaki $x\in \mathbb{R}$ vrijedi 
+$$\dfrac{x+1}{x^4+1}\leq M \Leftrightarrow M(x^4+1)\geq x+1 \Leftrightarrow Mx^4+M-x-1\geq 0.$$ Ovdje dobivamo nejednakost $4$-tog stupnja, s kojom nam je "nezgodno" raditi, stoga učinimo sljedeće -- neka je $x\in \mathbb{R}$. Uočimo da je
+$$\dfrac{x+1}{x^4+1}\leq \dfrac{x^2+2}{x^4+1}.$$
+Uvrštavanjem raznih brojeva (ili analizom grafa funkcije) naslućujemo da je $\dfrac{x^2+2}{x^4+1}\leq 3$. Zaista, taj zahtjev je ekvivalentan s $3x^4-x^2+1\geq 0$, što vrijedi jer vrijedi $3t^2-t+1\geq 0$ za sve $t\in \mathbb{R}$, budući da je vodeći koeficijent pozitivan i diskriminanta negativna.
+\end{proof}
+\begin{exercise}{Zadatak} \textbf{}
+\begin{itemize}
+\item[a)] Neka je $a\in \mathbb{R}$ i $f : \langle -a, a\rangle\to \mathbb{R}$ odozgo omeđena i neparna. Dokažite da je ona tada i odozdo omeđena.
+\item[b)] Neka je $a\in \mathbb{R}$ i $f : \langle -a, a\rangle\to \mathbb{R}$. Dokažite da se $f$ može prikazati kao zbroj parne i neparne funkcije.
+\end{itemize}
+\end{exercise}
+\begin{proof*}
+b) Prvo analizirajmo kako iz $f$ možemo "prirodno" generirati određene parne i neparne funkcije. Promotrimo funkcije $f_{pl}, f_{pr}, f_{nl}, f_{nr} : \langle -a, a\rangle \to \mathbb{R}$,
+\begin{gather*}
+f_{pl}(x)=\begin{cases}
+f(x), & x\leq 0,\\
+f(-x) & x>0.
+\end{cases} \;\;
+f_{pr}(x)=\begin{cases}
+f(-x), & x\leq 0,\\
+f(x) & x>0.
+\end{cases}\\
+f_{nl}(x)=\begin{cases}
+f(x), & x< 0,\\
+0, & x=0,\\
+-f(-x) & x>0.
+\end{cases} \;\;
+f_{nr}(x)=\begin{cases}
+-f(-x), & x\leq 0,\\
+0, & x=0,\\
+f(x) & x>0.
+\end{cases}.
+\end{gather*}
+Graf funkcije $f_{pr}$ dobiven je osnom simetrijom desne strane grafa funkcije u odnosu na os $y$ na lijevu stranu, a desna strana je identična desnoj strani grafa od $f$, analogno je $f_{pl}$ dobiven pomoću osne simetrije lijeve strane u odnosu na os $y$. Graf funkcije $f_{nr}$ je dobiven centralnom simetrijom desne strane u odnosu na ishodište (desna strana je identična desnoj strani grafa od $f$), a $f_{nl}$ je analogno dobivena centralnom simetrijom lijeve strane u odnosu na ishodište. Lako se vidi da su $f_{pr}$ i $f_{pl}$ parne, a $f_{nr}$ i $f_{nl}$ neparne. 
+
+Kako je zbroj (odnosno razlika) parnih (odnosno neparnih) funkcija opet parna (odnosno neparna) funkcija, ideja će biti pokušati zbrajanjem (ili oduzimanjem) $f_{pl}$ i $f_{pr}$, te $f_{nl}$ i $f_{nr}$ doći do $f$. Uočimo da je npr. $f_{pl}+f_{pr}=f(x)+f(-x)$, a $f_{nl}+f_{nr}=f(x)-f(-x)$, te je $\left(f_{pl}+f_{pr}\right)+\left(f_{nl}+f_{nr}\right)=2f(x)$. Slijedi
+\[
+\pushQED{\qed}
+f(x)=\dfrac{f_{pl}+f_{pr}}{2}+\dfrac{f_{nl}+f_{nr}}{2}=\dfrac{f(x)+f(-x)}{2}+\dfrac{f(x)-f(-x)}{2}.\qedhere
+\popQED
+\]
+\end{proof*}
+Idući zadatci vezani su uz pojam periodičnih funkcija (v. definiciju \ref{perioddef}). Lako vidimo iz grafova od npr. \(\sin\) i \(\cos\) da su oni periodični s temeljnim periodom \(2\pi\). Nadalje, funkcija \(x\mapsto c\), \(c\in \mathbb{R}\) je periodična i ona nema temeljni period.
+\begin{exercise}{Zadatak} \textbf{}
+\begin{itemize}
+\item[a)] Dokažite da je \(x\mapsto \sin{x}\) periodična s temeljnim periodom \(2\pi\).
+\item[b)] Funkcija \(D : \mathbb{R}\to \mathbb{R}\),
+\[D(x)=\begin{cases}
+0, & x\in \mathbb{I},\\
+1, & x\in \mathbb{Q}
+\end{cases}\]
+zove se \textit{Dirichletova funkcija}. Dokažite da je ona periodična, ali nema temeljni period. 
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Znamo da \(x\mapsto \sin{x}\) ima domenu \(\mathbb{R}\), pa je tvrdnja o domeni trivijalno zadovoljena za bilo koji \(\tau\in \mathbb{R}\). Znamo i da je \[\sin(x+2\pi)=\sin{x}\cos{2\pi}+\cos{x}\sin{2\pi}=\sin{x},\;\;\; \forall x\in \mathbb{R}.\] Još preostaje pokazati da je \(2\pi\) temeljni period. Pretpostavimo da postoji neki period \(\tau_0\) takav da je \(\tau_0<2\pi\). Tada je \(\sin(x+\tau_0)=\sin{x}\). Specijalno, iz definicije za \(x=0\) imamo \(\sin{\tau_0}=0\). To je moguće ako i samo ako vrijedi \(\tau_0\in \{k\pi : k\in \mathbb{Z}\}\). No kako imamo \(0<\tau_0<2\pi\) slijedi nužno \(\tau_0=\pi\), a \(\pi\) očito nije period, jer je npr. \(\sin{\dfrac{\pi}{2}}=1\) i \(\sin\left(\dfrac{\pi}{2}+\pi\right)=-1\).
+
+b) Tvrdimo da je svaki pozitivan \(\tau\in \mathbb{Q^+}\) jedan period funkcije \(D\). Odavde će biti očito da je \(D\) periodična i da nema temeljni period.
+
+Zaista, neka je \(x\in \mathbb{R}\) proizvoljan. Tvrdimo da je \(x\in \mathbb{Q}\) ako i samo ako je \(x+\tau\in \mathbb{Q}\). Zaista, ako je \(x\in \mathbb{Q}\), onda je očito \(x+\tau\in \mathbb{Q}\). Nadalje, ako je \(x+\tau\in \mathbb{Q}\), iz činjenice da je \(-\tau\in \mathbb{Q}\) slijedi da je i \((x+\tau)-\tau=x\in \mathbb{Q}\).
+
+Kontrapozicijom slijedi: Ako je \(x\in \mathbb{Q}\), onda je \(x+\tau\in \mathbb{Q}\), te ako je \(x\in \mathbb{I}\) iracionalan, onda je i \(x+\tau\in \mathbb{I}\). U oba slučaja imamo \(f(x+\tau)=f(x)\) i tvrdnja je dokazana.
+\end{proof}
+\begin{exercise}{Zadatak} \textbf{}
+\begin{itemize}
+\item[a)] Je li funkcija \(x\mapsto x\sin{x}\) periodična?
+\item[b)] Je li funkcija \(x\mapsto \sin{x^2}\) periodična? 
+\end{itemize}
+\end{exercise}
+\begin{proof}[Rješenje]
+a) Iz grafa funkcije možemo naslutiti da ona nije periodična.
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=\(x\),ylabel=\(y\),xmin=-20.2,xmax=20.2,ymin=-20.2,ymax=20.2, samples=150]
+
+\addplot[thick, color=black,domain=-21:21] {x*sin(deg(x))};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{\label{gr6} Graf funkcije \(x\mapsto x\sin{x}\)}
+\end{figure}
+
+Dokažimo tvrdnju. Zaista, pretpostavimo da postoji neki period \(\tau>0\). Funkcija je definirana za sve realne brojeve, pa je \(x+\tau\in \mathcal{D}(f)\). Po pretpostavci imamo \[(x+\tau)\sin(x+\tau)=x\sin{x},\; \forall x\in \mathbb{R}.\] 
+Specijalno, za \(x=0\) imamo \(\tau\sin{\tau}=0\), odnosno \(\sin{\tau}=0\). To je ekvivalentno sa \(\tau\in \{k\pi : k\in \mathbb{N}\}\), gdje je \(k\in \mathbb{N}\) jer je \(\tau>0\), po definiciji perioda. No to znači da postoji \(k\in \mathbb{N}\) takav da je \[(x+k\pi)\sin(x+k\pi)=x\sin{x},\;\forall x\in \mathbb{R}.\] Ako je \(k\) paran, onda je \(\sin(x+k\pi)=\sin{x}\). Uzmimo \(x\) takav da je \(\sin{x}\neq 0\). Tada dijeljenjem sa \(\sin{x}\) dobivamo \(\pi=0\), kontradikcija! 
+
+Ako je \(k\) neparan, onda je \(\sin(x+k\pi)=-\sin{x}\). Uzmimo \(x\) takav da je \(x\in \mathbb{N}\). Zaista, kako je \(\pi\in \mathbb{I}\), vrijedi \(\sin{x}\neq 0\), jer bi u suprotnom imali \(\dfrac{x}{k}=\pi\). Dijeljenjem sa \(\sin{x}\) dobivamo \(-x-k\pi=x\), odnosno \(-\dfrac{2x}{k}=\pi\). Kontradikcija s činjenicom da je \(\pi\in \mathbb{I}\)! Dakle slijedi \(\tau\notin \{k\pi : k\in \mathbb{N}\}\), čime imamo kontradikciju s činjenicom \(\tau\in \{k\pi : k\in \mathbb{N}\}\), i time smo dokazali tvrdnju.
+
+b) NACRTATI GRAF!!! MAKNUTI SKUP SVIH KPI!!! NE KORISTITI ZAPIS FUNKCIJE ZADANE FORMULOM!!! Kao i prije, iz grafa možemo naslutiti da funkcija nije periodična. Pretpostavimo da postoji period $\tau>0$. Tada za svaki $x\in \mathbb{R}$ vrijedi $$\sin{\left(x^2+2x\tau+\tau^2\right)}=\sin{x},$$ pa specijalno za $x=0$ imamo $\sin{\tau^2}=0$, odakle imamo $\tau^2=k\pi$ za neki $k\in \mathbb{Z}$, a s druge strane, za $x=-\tau$ imamo $\sin{\tau}=0$, tj. $\tau=l\pi$ za neki $l\in \mathbb{Z}$. Kako je $\tau>0$, vrijedi i $l\neq 0$ pa je $\tau\in \mathbb{I}$. a s druge strane dijeljenjem posljednje dvije jednakosti imamo $\tau=\dfrac{k}{l}$, što je nemoguće.
+\end{proof}
+(STALI SMO OVDJE!!!) Slijede zadatci gdje određujemo sliku \(\mathcal{R}(f)\) zadane funkcije \(f\). OVO PREBACITI POSLIJE!!!
 \begin{definition}[Operacije s funkcijama]
 Neka je \(S\) neprazan skup i neka su zadane \(f, g : S\to \mathbb{R}\). Tada definiramo \(f+g, fg, \alpha f : S\to \mathbb{R}\) formulama
 \begin{gather*}
@@ -826,32 +943,6 @@ Neka su \(A, B, X, Y\) i \(f\) isti kao i u napomeni \ref{imset}. Dokažite \(f(
 \begin{proof}
 Neka je \(y\in f(A\cup B)\). Tada postoji \(x\in A\cup B\) takav da je \(y=f(x)\). No ovo vrijedi ako i samo ako postoji \(x\in A\) takav da je \(y=f(x)\), ili postoji \(x\in B\) takav da je \(y=f(x)\), što zapravo znači \(y\in f(A)\cup f(B)\).
 \end{proof}
-\begin{exercise}{Zadatak}
-Dokažite da je funkcija \(f : \mathbb{R} \to \langle -1, 1\rangle\) zadana formulom \(f(x)=\dfrac{x}{1+|x|}\) bijekcija.
-\end{exercise}
-\begin{proof}[Rješenje]
-Dokažimo prvo injektivnost. Neka su \(x\) i \(y\) proizvoljni i neka vrijedi \(f(x)=f(y)\), tj.
-\[\dfrac{x}{1+|x|}=\dfrac{y}{1+|y|}\Leftrightarrow x\left(1+|y|\right)=y\left(1+|x|\right).\]
-Kako je ovaj izraz simetričan, odnosno možemo zamijeniti mjesta varijablama \(x\) i \(y\) bez promjene smisla jednakosti, bez smanjenja općenitosti možemo uzeti da je \(x\leq y\). Sada imamo tri slučaja: 
-\begin{itemize}
-\item \(y\geq 0\) i \(x\geq 0\), 
-\item \(y\leq 0\) i \(x\leq 0\), 
-\item \(y\geq 0\) i \(x\leq 0\).
-\end{itemize}
-U prvom slučaju imamo 
-\[x(1+y)=y(1+x),\]
-što je ekvivalentno tvrdnji \(x=y\). Drugi slučaj je analogan. 
-
-Treći slučaj je nešto zahtjevniji. Ako je \(y\geq 0\) i \(x\leq 0\), onda je \(|y|=y\) i \(|x|=-x\). No to povlači da za sve tako odabrane \(x\) i \(y\) vrijedi \[x(1+y)=y(1-x),\;\;\;\text{odnosno}\;\;\;x+2xy-y=0.\] Rješavanjem po \(y\) dobivamo
-\[y=-\dfrac{x}{2x-1}.\]
-Sada iz \(x\leq 0\) slijedi \(2x-1<0\), pa iz toga i iz \(y\geq 0\) imamo
-\[y=-\dfrac{x}{2x-1}\geq 0\Leftrightarrow -x\leq 0\Leftrightarrow x\geq 0.\]
-Sada \(x\leq 0\) i \(x\geq 0\) povlači \(x=0\) i posljedično \(y=0\), pa očito vrijedi \(x=y\). 
-
-Dokažimo sada surjektivnost. Zapravo treba pokazati da je \(f(\mathbb{R})=\langle -1, 1\rangle\). To će biti najlakše korištenjem napomene \ref{imset}. Znamo da je 
-\[f(\mathbb{R})=f\left(\langle -\infty, 0]\cup [0,\infty\rangle\right)=f\left(\langle -\infty, 0]\right)\cup f\left([0,\infty\rangle\right)\]
-Kako za \(g=f | _{[0, \infty\rangle}\) vrijedi \(g(x)=\dfrac{x}{1+x}\) i vrijedi \(f\left([0,\infty\rangle\right)=g\left([0,\infty\rangle\right)=\mathcal{R}(g)\), slijedi da je \(f\left([0,\infty\rangle\right)=[0, 1\rangle\) i \(f\left(\langle -\infty, 0]\right)=\langle -1, 0]\) (Uvjerite se u to!). Sada je \(f(\mathbb{R})=\langle -1, 1\rangle\) i tvrdnja je dokazana.
-\end{proof}
 \section{Kompozicija funkcija. Inverzna funkcija}
 \begin{definition}
 Zadane su funkcije \(f : A\to B\) i \(g : C\to D\). Ako je \(\mathcal{R}(f)\subseteq \mathcal{D}(g)\), onda je funkcija \(h : A\to D\), \(h(x)=g(f(x))\) \textbf{kompozicija funkcija} \(f\) i \(g\), i označavamo je s \(h=g\circ f\).
@@ -1216,59 +1307,6 @@ Uočite da smo u prethodnom zadatku primijenili vrlo intuitivnu činjenicu da je
 \[\bigcup_{k\in \mathbb{Z}}{A_n}=\bigcup_{k\in \mathbb{N}}{A_n}\cup \bigcup_{k\in \mathbb{Z}\setminus\mathbb{N}}{A_n}.\]
 Dokažimo to! Zaista, vrijedi \(\displaystyle x\in \bigcup_{k\in \mathbb{N}}{A_n}\cup \bigcup_{k\in \mathbb{Z}\setminus\mathbb{N}}{A_n}\) ako i samo ako ili postoji \(i\in \mathbb{N}\) takav da je \(x\in A_i\), ili postoji \(j\in \mathbb{Z}\setminus\mathbb{N}\) takav da je \(x\in A_j\). Očito, to vrijedi ako i samo ako postoji \(k\in \mathbb{Z}\) takav da je \(x\in A_k\), tj. \(\displaystyle x\in \bigcup_{k\in \mathbb{Z}}{A_n}\).
 \end{remark}
-
-\section{Periodične funkcije}
-
-\begin{definition}
-Neka je zadana funkcija \(f : A\to B\), \(A\), \(B\subseteq \mathbb{R}\) i \(\tau>0\). Kažemo da je \(f\) \textbf{periodična s periodom \(\tau\)} ako za sve \(x\in A\) vrijedi \(x+\tau \in A\) i \(f(x+\tau)=f(x)\). Najmanji od svih perioda, ako postoji, zvat ćemo \textbf{temeljnim periodom}.
-\end{definition}
-
-Lako vidimo iz grafova od \(\sin\) i \(\cos\) da su oni periodični s temeljnim periodom \(2\pi\). Nadalje, funkcija \(x\mapsto c\), \(c\in \mathbb{R}\) je periodična i ona nema temeljni period.
-\begin{exercise}{Zadatak}
-Dokažite da je \(x\mapsto \sin{x}\) periodična s temeljnim periodom \(2\pi\).
-\end{exercise}
-\begin{proof}[Rješenje]
-Znamo da \(x\mapsto \sin{x}\) ima domenu \(\mathbb{R}\), pa je tvrdnja o domeni trivijalno zadovoljena za bilo koji \(\tau\in \mathbb{R}\). Znamo i da je \[\sin(x+2\pi)=\sin{x},\;\;\; \forall x\in \mathbb{R}.\] Još preostaje pokazati da je \(2\pi\) temeljni period. 
-
-Pretpostavimo da postoji neki period \(\tau_0\) takav da je \(\tau_0<2\pi\). Tada je \(\sin(x+\tau_0)=\sin{x}\). Specijalno, iz definicije za \(x=0\) imamo \(\sin{\tau_0}=0\). To je moguće ako i samo ako je \[x\in \{k\pi : k\in \mathbb{Z}\}.\] No kako imamo \(0<\tau_0<2\pi\) slijedi nužno \(\tau_0=\pi\). No \(\pi\) očito nije period, jer je npr. \(\sin{\dfrac{\pi}{2}}=1\) i \(\sin\left(\dfrac{\pi}{2}+\pi\right)=-1\).
-\end{proof}
-\begin{exercise}{Zadatak}
-Funkcija \(D : \mathbb{R}\to \mathbb{R}\),
-\[D(x)=\begin{cases}
-0, & x\in \mathbb{I},\\
-1, & x\in \mathbb{Q}
-\end{cases}\]
-zove se \textit{Dirichletova funkcija}. Dokažite da je ona periodična, ali nema temeljni period.
-\end{exercise}
-\begin{proof}[Rješenje]
-Tvrdimo da je svaki pozitivan \(\tau\in \mathbb{Q^+}\) jedan period funkcije \(D\). Odavde će biti očito da je \(D\) periodična i da nema temeljni period.
-
-Zaista, neka je \(x\in \mathbb{R}\) proizvoljan. Tvrdimo da je \(x\in \mathbb{Q}\) ako i samo ako je \(x+\tau\in \mathbb{Q}\). Zaista, ako je \(x\in \mathbb{Q}\), onda je očito \(x+\tau\in \mathbb{Q}\). Nadalje, ako je \(x+\tau\in \mathbb{Q}\), iz činjenice da je \(-\tau\in \mathbb{Q}\) slijedi da je i \((x+\tau)-\tau=x\in \mathbb{Q}\).
-
-Kontrapozicijom slijedi: Ako je \(x\in \mathbb{Q}\), onda je \(x+\tau\in \mathbb{Q}\), te ako je \(x\in \mathbb{I}\) iracionalan, onda je i \(x+\tau\in \mathbb{I}\). U oba slučaja imamo \(f(x+\tau)=f(x)\) i tvrdnja je dokazana.
-\end{proof}
-\begin{exercise}{Zadatak}
-Je li funkcija \(x\mapsto x\sin{x}\) periodična?
-\end{exercise}
-\begin{proof}[Rješenje]
-Iz grafa funkcije možemo naslutiti da ona nije periodična.
-\begin{figure}[ht]
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[axis lines=middle, xlabel=\(x\),ylabel=\(y\),xmin=-20.2,xmax=20.2,ymin=-20.2,ymax=20.2, samples=150]
-
-\addplot[thick, color=black,domain=-21:21] {x*sin(deg(x))};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\caption{\label{gr6} Graf funkcije \(x\mapsto x\sin{x}\)}
-\end{figure}
-
-Dokažimo tvrdnju. Zaista, pretpostavimo da postoji neki period \(\tau>0\). Funkcija je definirana za sve realne brojeve, pa je \(x+\tau\in \mathcal{D}(f)\). Po pretpostavci imamo \[(x+\tau)\sin(x+\tau)=x\sin{x},\; \forall x\in \mathbb{R}.\] 
-Specijalno, za \(x=-\tau\) imamo \(\tau\sin{\tau}=0\), odnosno \(\sin{\tau}=0\). To je ekvivalentno sa \(\tau\in \{k\pi : k\in \mathbb{N}\}\), gdje je \(k\in \mathbb{N}\) jer je \(\tau>0\), po definiciji perioda. No to znači da postoji \(k\in \mathbb{N}\) takav da je \[(x+k\pi)\sin(x+k\pi)=x\sin{x},\;\forall x\in \mathbb{R}.\] Ako je \(k\) paran, onda je \(\sin(x+k\pi)=\sin{x}\). Uzmimo \(x\) takav da je \(\sin{x}\neq 0\). Tada dijeljenjem sa \(\sin{x}\) dobivamo \(\pi=0\), kontradikcija! 
-
-Ako je \(k\) neparan, onda je \(\sin(x+k\pi)=-\sin{x}\). Uzmimo \(x\) takav da je \(x\in \mathbb{N}\). Zaista, kako je \(\pi\in \mathbb{I}\), vrijedi \(\sin{x}\neq 0\), jer bi u suprotnom imali \(\dfrac{x}{k}=\pi\). Dijeljenjem sa \(\sin{x}\) dobivamo \(-x-k\pi=x\), odnosno \(-\dfrac{2x}{k}=\pi\). Kontradikcija s činjenicom da je \(\pi\in \mathbb{I}\)! Dakle slijedi \(\tau\notin \{k\pi : k\in \mathbb{N}\}\), čime imamo kontradikciju s činjenicom \(\tau\in \{k\pi : k\in \mathbb{N}\}\), i time smo dokazali tvrdnju.
-\end{proof}
 \newpage
 \section*{Zadatci za vježbu}
 \addtocontents{toc}{\protect\pagebreak[4]}
@@ -1437,6 +1475,9 @@ Odredite prirodnu domenu sljedećih funkcija.
 \subsection*{Periodične funkcije}
 \begin{exercise}{Zadatak}
 Je li \(x\mapsto \sin^2{x}\) periodična? Ako je, koji joj je temeljni period? Dokažite sve svoje tvrdnje.
+\end{exercise}
+\begin{exercise}{Zadatak}
+Dokažite ili opovrgnite: Svaka funkcija $f : \mathbb{R}\to \mathbb{R}$ može se prikazati kao suma dvaju periodičnih funkcija, tj, postoje periodične funkcije $g_1, g_2 : \mathbb{R}\to \mathbb{R}$, takve da je $f=g_1+g_2$.
 \end{exercise}
 \begin{exercise}{Zadatak}
 Zadana je funkcija \(f : \mathbb{R}\to \mathbb{R}\),
